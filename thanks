@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>送信完了 | HÉLMIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .thanks-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7f4ef;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .thanks-box {
+      background: #fff;
+      padding: 80px 10%;
+      max-width: 760px;
+      border: 1px solid #d8d0c5;
+    }
+
+    .thanks-box h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 86px);
+      font-weight: 300;
+      letter-spacing: .08em;
+      margin-bottom: 24px;
+    }
+
+    .thanks-box p {
+      font-size: 18px;
+      line-height: 2;
+      letter-spacing: .06em;
+      margin-bottom: 36px;
+    }
+
+    .thanks-box a {
+      display: inline-block;
+      padding: 14px 42px;
+      background: #d8d1d1;
+      color: #555;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thanks-page">
+    <div class="thanks-box">
+      <h1>THANK YOU</h1>
+      <p>
+        お問い合わせありがとうございます。<br>
+        内容を確認のうえ、担当者よりご連絡いたします。
+      </p>
+      <a href="index.html">TOPへ戻る</a>
+    </div>
+  </div>
+</body>
+</html>
