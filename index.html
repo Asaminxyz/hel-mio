@@ -120,19 +120,23 @@
           活動したい方を随時募集しています。
         </div>
 
-        <form class="form" action="https://formspree.io/f/mwvdkbrd" method="POST">
-          <input type="hidden" name="_subject" value="HÉLMIO タレント応募">
-          <input type="hidden" name="_next" value="http://hel-mio.com/thanks.html">
+<form class="form" action="https://formspree.io/f/mwvdkbrd" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="HÉLMIO タレント応募">
+  <input type="hidden" name="_next" value="http://hel-mio.com/thanks.html">
 
-          <input type="text" name="name" placeholder="お名前" required>
-          <input type="email" name="email" placeholder="メールアドレス" required>
-          <input type="text" name="age" placeholder="年齢">
-          <input type="text" name="area" placeholder="お住まいの地域">
-          <input type="url" name="sns" placeholder="Instagram / SNS URL">
-          <input type="file" name="photo" accept="image/*">
-          <textarea name="message" rows="6" placeholder="自己PR・経歴・応募動機"></textarea>
-          <button type="submit">応募する</button>
-        </form>
+  <input type="text" name="name" placeholder="お名前" required>
+  <input type="email" name="email" placeholder="メールアドレス" required>
+  <input type="text" name="age" placeholder="年齢">
+  <input type="text" name="area" placeholder="お住まいの地域">
+
+  <input type="text" name="height" placeholder="身長">
+  <input type="text" name="three_size" placeholder="スリーサイズ（B / W / H）※任意">
+  
+  <input type="url" name="sns" placeholder="Instagram / SNS URL">
+  <input type="file" name="photo" accept="image/*"写真>
+  <textarea name="message" rows="6" placeholder="自己PR・経歴・応募動機"></textarea>
+  <button type="submit">応募する</button>
+</form>
       </section>
 
       <section class="section" id="company">
