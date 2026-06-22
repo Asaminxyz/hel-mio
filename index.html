@@ -69,27 +69,42 @@
         <div class="flow">
           <div class="flow-item">
             <div class="flow-num">STEP<strong>01</strong></div>
-            <div><h3>お問い合わせ</h3><p>日程、案件内容、出演者イメージ、ご予算などをお知らせください。</p></div>
+            <div>
+              <h3>お問い合わせ</h3>
+              <p>日程、案件内容、出演者イメージ、ご予算などをお知らせください。</p>
+            </div>
           </div>
 
           <div class="flow-item">
             <div class="flow-num">STEP<strong>02</strong></div>
-            <div><h3>ヒアリング</h3><p>使用媒体、拘束時間、求める雰囲気などを確認いたします。</p></div>
+            <div>
+              <h3>ヒアリング</h3>
+              <p>使用媒体、拘束時間、求める雰囲気などを確認いたします。</p>
+            </div>
           </div>
 
           <div class="flow-item">
             <div class="flow-num">STEP<strong>03</strong></div>
-            <div><h3>候補者ご提案</h3><p>条件に合う人材のプロフィールやサンプルをご提案いたします。</p></div>
+            <div>
+              <h3>候補者ご提案</h3>
+              <p>条件に合う人材のプロフィールやサンプルをご提案いたします。</p>
+            </div>
           </div>
 
           <div class="flow-item">
             <div class="flow-num">STEP<strong>04</strong></div>
-            <div><h3>正式決定</h3><p>出演料、スケジュール、使用範囲などを確認し決定します。</p></div>
+            <div>
+              <h3>正式決定</h3>
+              <p>出演料、スケジュール、使用範囲などを確認し決定します。</p>
+            </div>
           </div>
 
           <div class="flow-item">
             <div class="flow-num">STEP<strong>05</strong></div>
-            <div><h3>本番</h3><p>当日の進行に合わせ、現場で柔軟に対応いたします。</p></div>
+            <div>
+              <h3>本番</h3>
+              <p>当日の進行に合わせ、現場で柔軟に対応いたします。</p>
+            </div>
           </div>
         </div>
       </section>
@@ -105,8 +120,10 @@
           活動したい方を随時募集しています。
         </div>
 
-        <form class="form" action="https://formspree.io/f/mgojeynq" method="POST">
+        <form class="form" action="https://formspree.io/f/mwvdkbrd" method="POST">
           <input type="hidden" name="_subject" value="HÉLMIO タレント応募">
+          <input type="hidden" name="_next" value="http://hel-mio.com/thanks.html">
+
           <input type="text" name="name" placeholder="お名前" required>
           <input type="email" name="email" placeholder="メールアドレス" required>
           <input type="text" name="age" placeholder="年齢">
@@ -124,10 +141,26 @@
         </div>
 
         <table class="company-table">
-          <tr><th>会社名</th><td>HÉLMIO</td></tr>
-          <tr><th>代表</th><td>新島 麻生</td></tr>
-          <tr><th>所在地</th><td>東京都港区青山</td></tr>
-          <tr><th>事業内容</th><td>キャスティング<br>イベント運営<br>タレントマネジメント</td></tr>
+          <tr>
+            <th>会社名</th>
+            <td>HÉLMIO</td>
+          </tr>
+          <tr>
+            <th>代表</th>
+            <td>新島 麻生</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>東京都港区青山</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              キャスティング<br>
+              イベント運営<br>
+              タレントマネジメント
+            </td>
+          </tr>
         </table>
       </section>
 
@@ -139,18 +172,20 @@
 
         <form class="form" action="https://formspree.io/f/mgojeynq" method="POST">
           <input type="hidden" name="_subject" value="HÉLMIO お問い合わせ">
+          <input type="hidden" name="_next" value="http://hel-mio.com/thanks.html">
+
           <input type="text" name="company" placeholder="会社名 / 団体名">
           <input type="text" name="name" placeholder="お名前" required>
           <input type="email" name="email" placeholder="メールアドレス" required>
           <input type="tel" name="tel" placeholder="電話番号">
+
           <select name="category">
             <option value="">お問い合わせ種別</option>
-            <option value="casting">キャスティング依頼</option>
-            <option value="event">イベント司会</option>
-            <option value="narration">ナレーション</option>
-            <option value="model">モデル</option>
+            <option value="casting">ご相談</option>
+            <option value="event">依頼</option>
             <option value="other">その他</option>
           </select>
+
           <textarea name="message" rows="7" placeholder="案件内容・日程・ご予算・希望イメージなど"></textarea>
           <button type="submit">送信する</button>
         </form>
