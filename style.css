@@ -486,3 +486,55 @@ footer {
     letter-spacing: .14em;
   }
 }
+/* ===== HÉLMIO size balance only ===== */
+
+.hero {
+  padding-top: 90px;
+  padding-bottom: 70px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+  margin-bottom: 38px;
+}
+
+.hero .divider {
+  margin: 0 auto 38px;
+  width: 70px;
+}
+
+.hero p,
+.hero .sub-copy {
+  font-size: 25px;
+  line-height: 1.85;
+  letter-spacing: 0.07em;
+  margin-bottom: 64px;
+}
+
+.talent-list,
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.talent-card {
+  height: 360px;
+}
+
+.talent-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.talent-card .name,
+.talent-name {
+  font-size: 27px;
+  letter-spacing: 0.12em;
+  bottom: 34px;
+}
