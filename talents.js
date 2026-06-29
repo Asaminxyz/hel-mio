@@ -11,12 +11,12 @@ const talents = [
     skill: "イベント司会、企業案件、ナレーション",
     works: "TVリポーター / 企業VP / 記者発表会 / セミナーMC / PRイベント",
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "audio/asami.mp3"
+    audio: "asami.mp3"
   },
   {
-    id: "rina",
+    id: "seira",
     name: "南 青良",
-    en: "Model",
+    en: "Seira Minami",
     image: "seira.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=900&q=80",
     category: "モデル / 広告出演",
@@ -24,12 +24,12 @@ const talents = [
     skill: "広告撮影、EC、ブランドビジュアル",
     works: "CM / アパレル撮影 / 美容広告 / PRイベント",
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "audio/rina.mp3"
+    audio: "rina.mp3"
   },
   {
-    id: "miyu",
-    name: "村上 史,
-    en: "Narrator",
+    id: "fumi",
+    name: "村上 史",
+    en: "Fumi Murakami",
     image: "fumi.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
     category: "ナレーター / リポーター",
@@ -37,19 +37,19 @@ const talents = [
     skill: "企業VP、商品紹介、式典MC",
     works: "通販番組 / 企業VP / 商品紹介動画 / 表彰式",
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "audio/miyu.mp3"
+    audio: "miyu.mp3"
   },
   {
     id: "sara",
     name: "SARA",
     en: "Talent",
-    image: "images/sara.jpg",
+    image: "sara.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
     category: "タレント / モデル",
     area: "関東・東海",
     skill: "SNSプロモーション、イベント出演",
     works: "タレントトークショー / PRイベント / SNS広告 / ライブ配信",
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "audio/sara.mp3"
+    audio: "sara.mp3"
   }
 ];
