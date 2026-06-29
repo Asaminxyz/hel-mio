@@ -17,7 +17,7 @@ const talents = [
     id: "seira",
     name: "南 青良",
     en: "Seira Minami",
-    image: "seira.jpg",
+    image: "seira-new.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=900&q=80",
     category: "モデル / 広告出演",
     area: "全国対応",
