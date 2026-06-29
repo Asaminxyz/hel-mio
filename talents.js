@@ -15,9 +15,9 @@ const talents = [
   },
   {
     id: "rina",
-    name: "RINA",
+    name: "南 青良",
     en: "Model",
-    image: "セイラちゃん.jpeg",
+    image: "seira.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=900&q=80",
     category: "モデル / 広告出演",
     area: "全国対応",
@@ -28,9 +28,9 @@ const talents = [
   },
   {
     id: "miyu",
-    name: "MIYU",
+    name: "村上 史,
     en: "Narrator",
-    image: "ふみさん.jpg",
+    image: "fumi.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
     category: "ナレーター / リポーター",
     area: "関東",
