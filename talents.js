@@ -4,7 +4,7 @@ const talents = [
     id: "asami",
     name: "新島 麻生",
     en: "Asami Niijima",
-    image: "asami.jpg",
+    image:images/asami.jpg
     fallbackImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
     category: "司会 / ナレーター / モデル",
     area: "東京・全国対応",
@@ -17,7 +17,7 @@ const talents = [
     id: "seira",
     name: "南 青良",
     en: "Seira Minami",
-    image: "seira.jpeg",
+    image:images/seira.jpg
     fallbackImage: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=900&q=80",
     category: "モデル / 広告出演",
     area: "全国対応",
@@ -30,7 +30,7 @@ const talents = [
     id: "fumi",
     name: "村上 史",
     en: "Fumi Murakami",
-    image: "fumi.jpg",
+    image:images/fumi.jpg
     fallbackImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
     category: "ナレーター / リポーター",
     area: "関東",
