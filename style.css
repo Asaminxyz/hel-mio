@@ -629,7 +629,7 @@ footer {
     margin-bottom: 8px;
   }
   .about-text {
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-size: clamp(14px, 1.4vw, 22px);
   line-height: 2;
   letter-spacing: .06em;
   max-width: 920px;
