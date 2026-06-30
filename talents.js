@@ -1,5 +1,4 @@
 const talents = [
- 
   {
     id: "asami",
     name: "新島 麻生",
