@@ -4,119 +4,168 @@ const talents = [
     name: "新島 麻生",
     kana: "にいじま あさみ",
     en: "Asami Niijima",
-    image: "asami.jpg",
-    thumbnails: ["asami.jpg", "asami.jpg", "asami.jpg"],
+    title: "MC / Announcer / Narrator / Model",
 
-    category: "司会 / ナレーター / モデル",
-    birthday: "1997/04/09",
-    height: "161cm",
-    birthplace: "東京都",
-    blood: "A型",
-    education: "青山学院大学 卒業",
-    hobbies: "料理、旅行、スポーツ観戦",
-    skills: "イベント司会、企業VP、ナレーション、PRイベント",
-    licenses: "アナウンス検定、秘書検定 ほか",
-
-    careers: [
-      ["日本テレビ", "NEWS ZERO お天気キャスター"],
-      ["TBS", "クイズでGO！ ローカル線の旅司会"],
-      ["TOKYO MX", "TOKYO MX NEWS"],
-      ["イベント", "記者発表会MC、表彰式、セミナー司会"],
-      ["その他", "CM、企業VP、PRイベント出演 ほか"]
+    photos: [
+      "asami.jpg"
     ],
 
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    voice: "アナミ.mp3",
-
-    sns: {
-      instagram: "https://www.instagram.com/",
-      youtube: "https://www.youtube.com/",
-      tiktok: "https://www.tiktok.com/",
-      x: "https://x.com/"
-    },
-
-    snsEmbedTitle: "SNS SAMPLE",
-    snsEmbedHtml: `
-      <blockquote class="sns-embed-sample">
-        Instagram / TikTok / X の埋め込みコードをここに入れられます。<br>
-        今は仮表示です。
-      </blockquote>
-    `
-  },
-
-  {
-    id: "rina",
-    name: "RINA",
-    kana: "りな",
-    en: "Rina",
-    image: "rina.jpg",
-    thumbnails: ["rina.jpg"],
-
-    category: "モデル / 広告出演",
-    birthday: "",
-    height: "165cm",
+    category: "司会 / アナウンサー / ナレーター / モデル",
+    height: "",
     birthplace: "",
-    blood: "",
-    education: "",
+    area: "東京・全国対応",
+    skills: "イベント司会、企業案件、ナレーション、PRイベント",
     hobbies: "",
-    skills: "広告撮影、EC、ブランドビジュアル",
     licenses: "",
 
+    genres: [
+      "記者発表会",
+      "セミナー",
+      "表彰式",
+      "企業VP",
+      "PRイベント",
+      "ナレーション",
+      "モデル"
+    ],
+
     careers: [
-      ["CM", "美容・アパレル広告"],
-      ["イベント", "PRイベント、展示会出演"],
-      ["その他", "SNSプロモーション、EC撮影"]
+      ["TV", "リポーター・キャスター"],
+      ["MC", "記者発表会、表彰式、セミナー、PRイベント"],
+      ["Narration", "企業VP、Web動画、商品紹介"],
+      ["Model", "広告、スチール、プロモーション"]
+    ],
+
+    gallery: [
+      { image: "asami.jpg", caption: "MC / Announcer" }
     ],
 
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    voice: "rina.mp3",
 
-    sns: {
-      instagram: "https://www.instagram.com/",
-      youtube: "",
-      tiktok: "",
-      x: ""
-    },
-
-    snsEmbedTitle: "SNS SAMPLE",
-    snsEmbedHtml: ""
-  },
-
-  {
-    id: "miyu",
-    name: "MIYU",
-    kana: "みゆ",
-    en: "Miyu",
-    image: "miyu.jpg",
-    thumbnails: ["miyu.jpg"],
-
-    category: "ナレーター / リポーター",
-    birthday: "",
-    height: "160cm",
-    birthplace: "",
-    blood: "",
-    education: "",
-    hobbies: "",
-    skills: "企業VP、商品紹介、式典MC",
-    licenses: "",
-
-    careers: [
-      ["企業VP", "ナレーション、商品紹介"],
-      ["イベント", "表彰式、セミナーMC"],
-      ["その他", "通販番組、PR動画"]
+    voices: [
+      {
+        title: "Voice Sample",
+        file: "asami.mp3"
+      }
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    voice: "miyu.mp3",
 
     sns: {
       instagram: "",
+      x: "",
       youtube: "",
-      tiktok: "",
-      x: ""
+      tiktok: ""
     },
 
-    snsEmbedTitle: "SNS SAMPLE",
-    snsEmbedHtml: ""
+    instagramEmbed: ""
+  },
+
+  {
+    id: "seira",
+    name: "南 青良",
+    kana: "みなみ せいら",
+    en: "Seira Minami",
+    title: "Model / Talent",
+
+    photos: [
+      "seira.jpg"
+    ],
+
+    category: "モデル / タレント",
+    height: "",
+    birthplace: "",
+    area: "全国対応",
+    skills: "広告撮影、PRイベント、映像出演",
+    hobbies: "",
+    licenses: "",
+
+    genres: [
+      "CM",
+      "広告",
+      "スチール撮影",
+      "PRイベント",
+      "企業VP",
+      "SNSプロモーション"
+    ],
+
+    careers: [
+      ["CM / 広告", "各種広告・プロモーション出演"],
+      ["Model", "スチール撮影、ブランドビジュアル"],
+      ["Event", "PRイベント、展示会、キャンペーン出演"],
+      ["Movie", "企業VP、Web動画出演"]
+    ],
+
+    gallery: [
+      { image: "seira.jpg", caption: "Model / Talent" }
+    ],
+
+    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+
+    voices: [],
+
+    sns: {
+      instagram: "",
+      x: "",
+      youtube: "",
+      tiktok: ""
+    },
+
+    instagramEmbed: ""
+  },
+
+  {
+    id: "fumi",
+    name: "村上 史",
+    kana: "むらかみ ふみ",
+    en: "Fumi Murakami",
+    title: "Narrator / MC / Talent",
+
+    photos: [
+      "fumi.jpg"
+    ],
+
+    category: "ナレーター / 司会 / タレント",
+    height: "",
+    birthplace: "",
+    area: "全国対応",
+    skills: "ナレーション、イベント司会、企業案件",
+    hobbies: "",
+    licenses: "",
+
+    genres: [
+      "ナレーション",
+      "企業VP",
+      "通販番組",
+      "セミナー",
+      "表彰式",
+      "PRイベント"
+    ],
+
+    careers: [
+      ["Narration", "企業VP、商品紹介、Web動画"],
+      ["MC", "セミナー、表彰式、PRイベント"],
+      ["TV / Movie", "番組・映像関連案件"],
+      ["Event", "展示会、企業イベント、各種司会"]
+    ],
+
+    gallery: [
+      { image: "fumi.jpg", caption: "Narrator / MC" }
+    ],
+
+    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+
+    voices: [
+      {
+        title: "Voice Sample",
+        file: "fumi.mp3"
+      }
+    ],
+
+    sns: {
+      instagram: "",
+      x: "",
+      youtube: "",
+      tiktok: ""
+    },
+
+    instagramEmbed: ""
   }
 ];
