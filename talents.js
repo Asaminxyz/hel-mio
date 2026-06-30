@@ -1,11 +1,11 @@
 const talents = [
-    {
+  {
     id: "asami",
     name: "新島 麻生",
     kana: "にいじま あさみ",
     en: "Asami Niijima",
     title: "MC / Announcer / Narrator / Model",
-    photos: ["S__27566083.jpg"],　
+    photos: ["S__27566083.jpg"],
 
     profile: [
       ["生年月日", ""],
@@ -32,14 +32,17 @@ const talents = [
         file: "アサミ.mp3"
       }
     ],
+
     sns: {
       instagram: "",
       x: "",
       youtube: "",
       tiktok: ""
     },
+
     instagramEmbed: ""
   },
+
   {
     id: "seira",
     name: "南 青良",
@@ -68,12 +71,14 @@ const talents = [
 
     youtube: "",
     voices: [],
+
     sns: {
       instagram: "",
       x: "",
       youtube: "",
       tiktok: ""
     },
+
     instagramEmbed: ""
   },
 
@@ -83,7 +88,7 @@ const talents = [
     kana: "むらかみ ふみ",
     en: "Fumi Murakami",
     title: "Narrator / MC / Talent",
-    photos: ["S__27557921.jpg],
+    photos: ["S__27557921.jpg"],
 
     profile: [
       ["生年月日", ""],
@@ -110,12 +115,14 @@ const talents = [
         file: "fumi.mp3"
       }
     ],
+
     sns: {
       instagram: "",
       x: "",
       youtube: "",
       tiktok: ""
     },
+
     instagramEmbed: ""
   },
 
