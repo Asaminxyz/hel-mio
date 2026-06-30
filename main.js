@@ -9,68 +9,48 @@ function photoOrPlaceholder(talent) {
 
 function renderCardImage(talent) {
   const photo = photoOrPlaceholder(talent);
-
-  if (!photo) {
-    return `<div class="talent-placeholder">HÉLMIO</div>`;
-  }
-
-  return `<img src="${photo}" alt="${talent.name}">`;
+  return photo
+    ? `<img src="${photo}" alt="${talent.name}">`
+    : `<div class="talent-placeholder">HÉLMIO</div>`;
 }
 
-function renderSnsLinks(sns = {}) {
+function renderSnsIcons(sns = {}) {
   const icons = {
-    instagram: "IG",
-    x: "X",
-    youtube: "YT",
-    tiktok: "TT"
+    instagram: "◎",
+    x: "𝕏",
+    youtube: "▶",
+    tiktok: "♪"
   };
 
   return Object.entries(sns)
     .filter(([, url]) => url)
     .map(([key, url]) => `
-      <a href="${url}" target="_blank" rel="noopener noreferrer" class="sns-icon">
+      <a href="${url}" target="_blank" rel="noopener noreferrer" class="profile-sns-icon">
         ${icons[key] || key}
       </a>
     `)
     .join("");
 }
 
-function renderInfoRows(data) {
-  const rows = [
-    ["カテゴリ", data.category],
-    ["身長", data.height],
-    ["対応エリア", data.area],
-    ["得意分野", data.skills]
-  ].filter(([, value]) => value);
-
-  return rows.map(([label, value]) => `
-    <tr>
-      <th>${label}</th>
-      <td>${value}</td>
-    </tr>
-  `).join("");
-}
-
-function renderGenres(genres = []) {
-  if (!genres.length) return "";
-
-  return `
-    <section class="profile-section">
-      <h3>対応ジャンル</h3>
-      <div class="genre-tags">
-        ${genres.map(item => `<span>${item}</span>`).join("")}
+function renderProfileRows(profile = []) {
+  return profile
+    .filter(([, value]) => value)
+    .map(([label, value]) => `
+      <div class="profile-row">
+        <div class="profile-label">${label}：</div>
+        <div class="profile-value">${value}</div>
       </div>
-    </section>
-  `;
+    `)
+    .join("");
 }
 
-function renderCareers(careers = []) {
+function renderCareerRows(careers = []) {
   if (!careers.length) return "";
 
   return `
-    <section class="profile-section">
-      <h3>経歴・実績</h3>
-      <table class="career-table">
+    <section class="profile-career">
+      <h3>経歴</h3>
+      <table>
         ${careers.map(([label, detail]) => `
           <tr>
             <th>${label}</th>
@@ -83,14 +63,7 @@ function renderCareers(careers = []) {
 }
 
 function renderYoutube(url) {
-  if (!url) {
-    return `
-      <div class="profile-media-box">
-        <h3>YOUTUBE</h3>
-        <p>準備中です。</p>
-      </div>
-    `;
-  }
+  if (!url) return "";
 
   return `
     <div class="profile-media-box">
@@ -101,33 +74,26 @@ function renderYoutube(url) {
 }
 
 function renderVoices(voices = []) {
-  if (!voices.length) {
-    return `
-      <div class="profile-media-box">
-        <h3>VOICE SAMPLE</h3>
-        <p>準備中です。</p>
-      </div>
-    `;
-  }
+  if (!voices.length) return "";
 
   return `
     <div class="profile-media-box">
       <h3>VOICE SAMPLE</h3>
       ${voices.map(voice => `
-        <div class="voice-item">
-          <p>${voice.title}</p>
-          <audio controls src="${voice.file}"></audio>
-        </div>
+        <p>${voice.title}</p>
+        <audio controls src="${voice.file}"></audio>
       `).join("")}
     </div>
   `;
 }
 
 function renderInstagram(embed = "") {
+  if (!embed) return "";
+
   return `
     <div class="profile-media-box profile-media-wide">
       <h3>INSTAGRAM</h3>
-      ${embed || "<p>Instagram投稿の埋め込みをここに表示できます。</p>"}
+      <div class="sns-embed">${embed}</div>
     </div>
   `;
 }
@@ -153,8 +119,8 @@ function openProfile(data) {
 
   modalContent.innerHTML = `
     <div class="profile-full">
-      <div class="profile-top">
-        <div class="profile-photo-area">
+      <div class="profile-main-layout">
+        <div class="profile-photo-wrap">
           ${
             mainPhoto
               ? `<img class="profile-main-photo" src="${mainPhoto}" alt="${data.name}">`
@@ -162,23 +128,23 @@ function openProfile(data) {
           }
         </div>
 
-        <div class="profile-info-area">
-          <div class="profile-heading">
-            <div class="profile-title">${data.title || ""}</div>
+        <div class="profile-text-wrap">
+          <div class="profile-name-line">
             <h2>${data.name}</h2>
-            <div class="profile-kana">${data.kana || ""}</div>
-            <div class="profile-en">${data.en || ""}</div>
-            <div class="profile-sns">${renderSnsLinks(data.sns)}</div>
+            <div class="profile-sns-icons">
+              ${renderSnsIcons(data.sns)}
+            </div>
           </div>
 
-          <table class="profile-detail-table">
-            ${renderInfoRows(data)}
-          </table>
+          <div class="profile-kana">${data.kana || ""}</div>
+
+          <div class="profile-basic">
+            ${renderProfileRows(data.profile)}
+          </div>
         </div>
       </div>
 
-      ${renderGenres(data.genres)}
-      ${renderCareers(data.careers)}
+      ${renderCareerRows(data.careers)}
 
       <div class="profile-media-grid">
         ${renderYoutube(data.youtube)}
@@ -198,7 +164,6 @@ function openProfile(data) {
   if (contactButton) {
     contactButton.addEventListener("click", () => {
       modal.classList.remove("is-open");
-
       const messageBox = document.querySelector('#contact textarea[name="message"]');
       if (messageBox && data.id !== "dummy") {
         messageBox.value = `${data.name}さんへの出演依頼について相談したいです。`;
