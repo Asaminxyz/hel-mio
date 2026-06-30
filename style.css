@@ -741,4 +741,310 @@ footer {
   .profile-heading h2 {
     font-size: 34px;
   }
+  /* =========================
+   Talent Profile Modal
+========================= */
+
+.profile-full {
+  color: #3a3a3a;
+}
+
+.profile-top {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.profile-photo-area {
+  width: 100%;
+}
+
+.profile-main-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #f5f5f5;
+  border: 1px solid #e6dfd5;
+}
+
+.profile-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.profile-thumb {
+  border: 1px solid #d8d0c5;
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profile-thumb img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.profile-title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: #a8967d;
+  margin-bottom: 14px;
+}
+
+.profile-heading h2 {
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: .12em;
+  margin-bottom: 4px;
+}
+
+.profile-kana {
+  color: #a8967d;
+  letter-spacing: .34em;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.profile-en {
+  font-family: "Cormorant Garamond", serif;
+  color: #a8967d;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.profile-sns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.sns-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d8d0c5;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.sns-icon::before {
+  color: #4a4a4a;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sns-instagram::before {
+  content: "IG";
+}
+
+.sns-x::before {
+  content: "X";
+}
+
+.sns-youtube::before {
+  content: "YT";
+}
+
+.sns-tiktok::before {
+  content: "TT";
+}
+
+.profile-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.profile-detail-table th,
+.profile-detail-table td {
+  padding: 9px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-detail-table th {
+  width: 105px;
+  color: #777;
+  text-align: left;
+  font-weight: 500;
+}
+
+.profile-section {
+  margin-top: 52px;
+}
+
+.profile-section h3 {
+  font-size: 28px;
+  font-weight: 300;
+  border-bottom: 1px solid #c8ab6a;
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  letter-spacing: .08em;
+}
+
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.genre-tags span {
+  padding: 8px 16px;
+  border: 1px solid #d8d0c5;
+  background: #fbfaf8;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+
+.career-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+}
+
+.career-table th,
+.career-table td {
+  border-bottom: 1px solid #e5e0d8;
+  padding: 13px 0;
+  vertical-align: top;
+}
+
+.career-table th {
+  width: 180px;
+  text-align: left;
+  font-weight: 700;
+  color: #666;
+}
+
+.works-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.works-gallery figure {
+  background: #fbfaf8;
+  border: 1px solid #e6dfd5;
+}
+
+.works-gallery img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.works-gallery figcaption {
+  padding: 10px 12px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: #666;
+}
+
+.profile-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 52px;
+}
+
+.profile-media-box {
+  background: #f7f4ef;
+  padding: 28px;
+  border: 1px solid #e6dfd5;
+}
+
+.profile-media-box h3 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: .16em;
+  margin-bottom: 20px;
+}
+
+.profile-media-box iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.profile-media-box audio {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.voice-item + .voice-item {
+  margin-top: 18px;
+}
+
+.voice-item p {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.profile-media-wide {
+  grid-column: 1 / -1;
+}
+
+.sns-embed {
+  background: #fff;
+  border: 1px solid #d8d0c5;
+  padding: 24px;
+  min-height: 120px;
+}
+
+.profile-actions {
+  margin-top: 44px;
+}
+
+.profile-actions a {
+  display: block;
+  text-align: center;
+  padding: 17px 24px;
+  background: #a8967d;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+
+.modal-box {
+  width: min(1080px, 94vw);
+}
+
+@media (max-width: 850px) {
+  .profile-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .profile-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .works-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .career-table th {
+    width: 120px;
+  }
+
+  .profile-heading h2 {
+    font-size: 34px;
+  }
+}
 }
