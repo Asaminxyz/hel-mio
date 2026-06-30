@@ -1,5 +1,30 @@
 const talents = [
+ 
   {
+    id: "asami",
+    name: "新島 麻生",
+    kana: "にいじま あさみ",
+    en: "Asami Niijima",
+    title: "MC / Announcer / Narrator / Model",
+    photos: ["asami-new.jpg"],
+    category: "司会 / アナウンサー / ナレーター / モデル",
+    height: "",
+    area: "東京・全国対応",
+    skills: "イベント司会、企業案件、ナレーション、PRイベント",
+    genres: ["記者発表会", "セミナー", "表彰式", "企業VP", "PRイベント", "ナレーション", "モデル"],
+    careers: [
+      ["TV", "リポーター・キャスター"],
+      ["MC", "記者発表会、表彰式、セミナー、PRイベント"],
+      ["Narration", "企業VP、Web動画、商品紹介"],
+      ["Model", "広告、スチール、プロモーション"]
+    ],
+    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    voices: [{ title: "Voice Sample", file: "アサミ.mp3" }],
+    sns: { instagram: "", x: "", youtube: "", tiktok: "" },
+    instagramEmbed: ""
+  },
+
+ {
     id: "seira",
     name: "南 青良",
     kana: "みなみ せいら",
@@ -46,31 +71,7 @@ const talents = [
     sns: { instagram: "", x: "", youtube: "", tiktok: "" },
     instagramEmbed: ""
   },
-
-  {
-    id: "asami",
-    name: "新島 麻生",
-    kana: "にいじま あさみ",
-    en: "Asami Niijima",
-    title: "MC / Announcer / Narrator / Model",
-    photos: ["asami-new.jpg"],
-    category: "司会 / アナウンサー / ナレーター / モデル",
-    height: "",
-    area: "東京・全国対応",
-    skills: "イベント司会、企業案件、ナレーション、PRイベント",
-    genres: ["記者発表会", "セミナー", "表彰式", "企業VP", "PRイベント", "ナレーション", "モデル"],
-    careers: [
-      ["TV", "リポーター・キャスター"],
-      ["MC", "記者発表会、表彰式、セミナー、PRイベント"],
-      ["Narration", "企業VP、Web動画、商品紹介"],
-      ["Model", "広告、スチール、プロモーション"]
-    ],
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    voices: [{ title: "Voice Sample", file: "アサミ.mp3" }],
-    sns: { instagram: "", x: "", youtube: "", tiktok: "" },
-    instagramEmbed: ""
-  },
-
+  
   {
     id: "dummy",
     name: "Coming Soon",
