@@ -3,7 +3,7 @@ const talents = [
     id: "asami",
     name: "新島 麻生",
     kana: "にいじま あさみ",
-    en: "Asami Niijima",
+    en: "asami-new.jpg",
     title: "MC / Announcer / Narrator / Model",
 
     photos: [
@@ -36,7 +36,7 @@ const talents = [
     ],
 
     gallery: [
-      { image: "asami.jpg", caption: "MC / Announcer" }
+      { image: "asami-new.jpg", caption: "MC / Announcer" }
     ],
 
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -66,7 +66,7 @@ const talents = [
     title: "Model / Talent",
 
     photos: [
-      "seira.jpg"
+      "seira-new.jpeg"
     ],
 
     category: "モデル / タレント",
