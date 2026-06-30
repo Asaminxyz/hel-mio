@@ -4,7 +4,7 @@ const talents = [
     id: "asami",
     name: "新島 麻生",
     en: "Asami Niijima",
-    image: "スクリーンショット 2026-06-30 20.16.51.png.jpg",
+    image: "image: "スクリーンショット 2026-06-30 20.16.51.png",
     fallbackImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
     category: "司会 / ナレーター / リポーター　/ モデル",
     area: "東京・全国対応",
