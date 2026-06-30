@@ -107,10 +107,10 @@ main {
 }
 
 .hero-copy {
-  font-size: clamp(24px, 3vw, 38px);
-  line-height: 2.1;
-  letter-spacing: .12em;
-  margin-bottom: 60px;
+  font-size: clamp(24px, 2.6vw, 44px);
+  line-height: 1.9;
+  letter-spacing: .08em;
+  margin-bottom: 70px;
 }
 
 .talent-cards {
@@ -628,4 +628,11 @@ footer {
     grid-template-columns: 1fr;
     margin-bottom: 8px;
   }
+  .about-text {
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 2;
+  letter-spacing: .06em;
+  max-width: 920px;
+  margin: 0 auto;
+}
 }
