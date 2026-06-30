@@ -3,15 +3,18 @@ const modal = document.getElementById("profileModal");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
 
-function photoOrPlaceholder(talent) {
+function getMainPhoto(talent) {
   return talent.photos && talent.photos.length ? talent.photos[0] : "";
 }
 
 function renderCardImage(talent) {
-  const photo = photoOrPlaceholder(talent);
-  return photo
-    ? `<img src="${photo}" alt="${talent.name}">`
-    : `<div class="talent-placeholder">HÉLMIO</div>`;
+  const photo = getMainPhoto(talent);
+
+  if (!photo) {
+    return `<div class="talent-placeholder">HÉLMIO</div>`;
+  }
+
+  return `<img src="${photo}" alt="${talent.name}">`;
 }
 
 function renderSnsIcons(sns = {}) {
@@ -108,14 +111,15 @@ function renderTalentCards() {
 
   document.querySelectorAll(".talent-card").forEach(card => {
     card.addEventListener("click", () => {
-      const data = talents.find(t => t.id === card.dataset.profile);
+      const data = talents.find(talent => talent.id === card.dataset.profile);
       openProfile(data);
     });
   });
 }
 
 function openProfile(data) {
-  const mainPhoto = photoOrPlaceholder(data);
+  const mainPhoto = getMainPhoto(data);
+  const snsIcons = renderSnsIcons(data.sns);
 
   modalContent.innerHTML = `
     <div class="profile-full">
@@ -131,9 +135,7 @@ function openProfile(data) {
         <div class="profile-text-wrap">
           <div class="profile-name-line">
             <h2>${data.name}</h2>
-            <div class="profile-sns-icons">
-              ${renderSnsIcons(data.sns)}
-            </div>
+            ${snsIcons ? `<div class="profile-sns-icons">${snsIcons}</div>` : ""}
           </div>
 
           <div class="profile-kana">${data.kana || ""}</div>
@@ -161,10 +163,13 @@ function openProfile(data) {
   modal.classList.add("is-open");
 
   const contactButton = document.getElementById("profileContactButton");
+
   if (contactButton) {
     contactButton.addEventListener("click", () => {
       modal.classList.remove("is-open");
+
       const messageBox = document.querySelector('#contact textarea[name="message"]');
+
       if (messageBox && data.id !== "dummy") {
         messageBox.value = `${data.name}さんへの出演依頼について相談したいです。`;
       }
