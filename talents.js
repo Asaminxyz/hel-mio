@@ -83,7 +83,7 @@ const talents = [
     kana: "むらかみ ふみ",
     en: "Fumi Murakami",
     title: "Narrator / MC / Talent",
-    photos: ["fumi.jpg"],
+    photos: ["S__27557921.jpg],
 
     profile: [
       ["生年月日", ""],
