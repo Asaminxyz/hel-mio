@@ -5,7 +5,7 @@ const talents = [
     kana: "にいじま あさみ",
     en: "Asami Niijima",
     title: "MC / Announcer / Narrator / Model",
-    photos: ["S__27566083.jpg"],
+    photos: ["S__27566083.jpg"],　
 
     profile: [
       ["生年月日", ""],
