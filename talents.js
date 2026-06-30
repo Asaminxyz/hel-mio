@@ -35,10 +35,6 @@ const talents = [
       ["Model", "広告、スチール、プロモーション"]
     ],
 
-    gallery: [
-      { image: "asami-new.jpg", caption: "MC / Announcer" }
-    ],
-
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
 
     voices: [
@@ -93,10 +89,6 @@ const talents = [
       ["Movie", "企業VP、Web動画出演"]
     ],
 
-    gallery: [
-      { image: "seira.jpg", caption: "Model / Talent" }
-    ],
-
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
 
     voices: [],
@@ -144,10 +136,6 @@ const talents = [
       ["MC", "セミナー、表彰式、PRイベント"],
       ["TV / Movie", "番組・映像関連案件"],
       ["Event", "展示会、企業イベント、各種司会"]
-    ],
-
-    gallery: [
-      { image: "fumi.jpg", caption: "Narrator / MC" }
     ],
 
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
