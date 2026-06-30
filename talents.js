@@ -1,10 +1,10 @@
-// ここだけ編集すれば、写真・YouTube・ボイスサンプル・プロフィールを差し替えられます。
+// タレント情報はここだけ編集します。
 const talents = [
   {
     id: "asami",
     name: "新島 麻生",
     en: "Asami Niijima",
-    image: "asami-new.jpg",　
+    image: "asami-new.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
     category: "司会 / ナレーター / モデル",
     area: "東京・全国対応",
@@ -43,7 +43,7 @@ const talents = [
     id: "sara",
     name: "SARA",
     en: "Talent",
-    image: "images/sara.jpg",
+    image: "sara.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
     category: "タレント / モデル",
     area: "関東・東海",
