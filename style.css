@@ -635,4 +635,24 @@ footer {
   max-width: 920px;
   margin: 0 auto;
 }
+  .hero-copy {
+  font-size: 28px;
+  line-height: 1.9;
+  letter-spacing: .08em;
+  margin-bottom: 54px;
+}
+
+.hero-main {
+  display: block;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.8;
+}
+
+.hero-sub {
+  display: block;
+  margin-top: 34px;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 2;
+  letter-spacing: .07em;
+}
 }
