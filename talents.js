@@ -28,9 +28,9 @@ const talents = [
   },
   {
     id: "fumi",
-    name: "村上 史",
+　　 name: "村上 史",
     en: "Fumi Murakami",
-    image: "fumi.jpg",　
+    image: "S__27557921.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
     category: "司会 / ナレーター / リポーター",
     area: "西日本中心",
