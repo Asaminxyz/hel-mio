@@ -3,22 +3,22 @@ const modal = document.getElementById("profileModal");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
 
-function snsIcon(label) {
-  const icons = {
+function iconLabel(key) {
+  const labels = {
     instagram: "Instagram",
+    x: "X",
     youtube: "YouTube",
-    tiktok: "TikTok",
-    x: "X"
+    tiktok: "TikTok"
   };
-  return icons[label] || label;
+  return labels[key] || key;
 }
 
 function renderSnsLinks(sns = {}) {
   const links = Object.entries(sns)
     .filter(([, url]) => url)
     .map(([key, url]) => `
-      <a href="${url}" target="_blank" rel="noopener noreferrer">
-        ${snsIcon(key)}
+      <a href="${url}" target="_blank" rel="noopener noreferrer" class="sns-icon sns-${key}">
+        ${iconLabel(key)}
       </a>
     `)
     .join("");
@@ -29,13 +29,11 @@ function renderSnsLinks(sns = {}) {
 function renderInfoRows(data) {
   const rows = [
     ["カテゴリ", data.category],
-    ["生年月日", data.birthday],
     ["身長", data.height],
     ["出身地", data.birthplace],
-    ["血液型", data.blood],
-    ["学歴", data.education],
+    ["対応エリア", data.area],
+    ["得意分野", data.skills],
     ["趣味", data.hobbies],
-    ["特技", data.skills],
     ["資格", data.licenses]
   ].filter(([, value]) => value);
 
@@ -47,16 +45,29 @@ function renderInfoRows(data) {
   `).join("");
 }
 
+function renderGenres(genres = []) {
+  if (!genres.length) return "";
+
+  return `
+    <div class="profile-section">
+      <h3>対応ジャンル</h3>
+      <div class="genre-tags">
+        ${genres.map(item => `<span>${item}</span>`).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderCareers(careers = []) {
   if (!careers.length) return "";
 
   return `
-    <div class="career-block">
-      <h3>経歴</h3>
+    <div class="profile-section">
+      <h3>経歴・実績</h3>
       <table class="career-table">
-        ${careers.map(([media, detail]) => `
+        ${careers.map(([label, detail]) => `
           <tr>
-            <th>${media}</th>
+            <th>${label}</th>
             <td>${detail}</td>
           </tr>
         `).join("")}
@@ -65,13 +76,76 @@ function renderCareers(careers = []) {
   `;
 }
 
-function renderThumbnails(data) {
-  if (!data.thumbnails || !data.thumbnails.length) return "";
+function renderGallery(gallery = []) {
+  if (!gallery.length) return "";
+
+  return `
+    <div class="profile-section">
+      <h3>出演実績ギャラリー</h3>
+      <div class="works-gallery">
+        ${gallery.map(item => `
+          <figure>
+            <img src="${item.image}" alt="${item.caption || ""}">
+            <figcaption>${item.caption || ""}</figcaption>
+          </figure>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderVoices(voices = []) {
+  if (!voices.length) {
+    return `
+      <div class="profile-media-box">
+        <h3>VOICE SAMPLE</h3>
+        <p>準備中です。</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="profile-media-box">
+      <h3>VOICE SAMPLE</h3>
+      ${voices.map(voice => `
+        <div class="voice-item">
+          <p>${voice.title}</p>
+          <audio controls src="${voice.file}"></audio>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderInstagramEmbed(embed = "") {
+  if (!embed) {
+    return `
+      <div class="profile-media-box profile-media-wide">
+        <h3>INSTAGRAM</h3>
+        <p>Instagram投稿の埋め込みをここに表示できます。</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="profile-media-box profile-media-wide">
+      <h3>INSTAGRAM</h3>
+      <div class="sns-embed">
+        ${embed}
+      </div>
+    </div>
+  `;
+}
+
+function renderPhotoThumbs(data) {
+  if (!data.photos || data.photos.length <= 1) return "";
 
   return `
     <div class="profile-thumbs">
-      ${data.thumbnails.map(src => `
-        <img src="${src}" alt="${data.name}">
+      ${data.photos.map(src => `
+        <button type="button" class="profile-thumb" data-src="${src}">
+          <img src="${src}" alt="${data.name}">
+        </button>
       `).join("")}
     </div>
   `;
@@ -80,7 +154,7 @@ function renderThumbnails(data) {
 function renderTalentCards() {
   talentCards.innerHTML = talents.map(talent => `
     <button class="talent-card" data-profile="${talent.id}">
-      <img src="${talent.image}" alt="${talent.name}">
+      <img src="${talent.photos[0]}" alt="${talent.name}">
       <div class="talent-name">${talent.name}</div>
     </button>
   `).join("");
@@ -98,12 +172,13 @@ function openProfile(data) {
     <div class="profile-full">
       <div class="profile-top">
         <div class="profile-photo-area">
-          <img class="profile-main-photo" src="${data.image}" alt="${data.name}">
-          ${renderThumbnails(data)}
+          <img class="profile-main-photo" id="profileMainPhoto" src="${data.photos[0]}" alt="${data.name}">
+          ${renderPhotoThumbs(data)}
         </div>
 
         <div class="profile-info-area">
           <div class="profile-heading">
+            <div class="profile-title">${data.title || ""}</div>
             <h2>${data.name}</h2>
             <div class="profile-kana">${data.kana || ""}</div>
             <div class="profile-en">${data.en || ""}</div>
@@ -116,7 +191,9 @@ function openProfile(data) {
         </div>
       </div>
 
+      ${renderGenres(data.genres)}
       ${renderCareers(data.careers)}
+      ${renderGallery(data.gallery)}
 
       <div class="profile-media-grid">
         <div class="profile-media-box">
@@ -124,20 +201,13 @@ function openProfile(data) {
           <iframe src="${data.youtube}" allowfullscreen></iframe>
         </div>
 
-        <div class="profile-media-box">
-          <h3>VOICE SAMPLE</h3>
-          <p>ナレーション / MCサンプル</p>
-          <audio controls src="${data.voice}"></audio>
-        </div>
+        ${renderVoices(data.voices)}
 
-        <div class="profile-media-box profile-media-wide">
-          <h3>${data.snsEmbedTitle || "SNS SAMPLE"}</h3>
-          ${data.snsEmbedHtml || "<p>SNS投稿の埋め込みをここに表示できます。</p>"}
-        </div>
+        ${renderInstagramEmbed(data.instagramEmbed)}
       </div>
 
       <div class="profile-actions">
-        <a href="#contact" onclick="document.getElementById('profileModal').classList.remove('is-open')">
+        <a href="#contact" id="profileContactButton">
           このタレントに依頼する
         </a>
       </div>
@@ -145,6 +215,23 @@ function openProfile(data) {
   `;
 
   modal.classList.add("is-open");
+
+  document.querySelectorAll(".profile-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("profileMainPhoto").src = button.dataset.src;
+    });
+  });
+
+  const contactButton = document.getElementById("profileContactButton");
+  if (contactButton) {
+    contactButton.addEventListener("click", () => {
+      modal.classList.remove("is-open");
+      const messageBox = document.querySelector('#contact textarea[name="message"]');
+      if (messageBox) {
+        messageBox.value = `${data.name}さんへの出演依頼について相談したいです。`;
+      }
+    });
+  }
 }
 
 modalClose.addEventListener("click", () => {
