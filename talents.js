@@ -19,7 +19,7 @@ const talents = [
     ],
 
     careers: [
-      ["TV", "NHK地方局 朝のキャスター/報道リポーター/スポーツキャスター、KBS京都ニュースキャスター、MXショッピング、J:com LIVE news、BS ONSEN"],
+      ["TV", "NHK地方局 朝のキャスター/報道リポーター/スポーツキャスター、KBS京都ニュースキャスター、サンテレビ『キャッチ＋』、MXショッピング、J:com LIVE news、BS ONSEN"],
       ["MC", "Jリーグアウォーズ、大阪関西万博BLUE OCEAN DOME、東京オリンピックパラリンピックレガシーイベント"],
       ["Narration", "大正製薬「alli」、TOYOTA×JTB 『e-Palette』、大阪工業大学インフォマーシャル"],
       ["Reporter", "笹川平和財団ブルーエコノミー、東京電力『福島第一原子力発電所は、今』、東大ゴルフ！、さんふらわあ号"],
