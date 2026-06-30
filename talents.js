@@ -1,55 +1,122 @@
-// タレント情報はここだけ編集します。
 const talents = [
   {
     id: "asami",
     name: "新島 麻生",
+    kana: "にいじま あさみ",
     en: "Asami Niijima",
-    image: "image: "スクリーンショット 2026-06-30 20.16.51.png",
-    fallbackImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
-    category: "司会 / ナレーター / リポーター　/ モデル",
-    area: "東京・全国対応",
-    skill: "イベント司会、企業案件、ナレーション",
-    works: "TVリポーター / 企業VP / 記者発表会 / セミナーMC / PRイベント",
+    image: "asami.jpg",
+    thumbnails: ["asami.jpg", "asami.jpg", "asami.jpg"],
+
+    category: "司会 / ナレーター / モデル",
+    birthday: "1997/04/09",
+    height: "161cm",
+    birthplace: "東京都",
+    blood: "A型",
+    education: "青山学院大学 卒業",
+    hobbies: "料理、旅行、スポーツ観戦",
+    skills: "イベント司会、企業VP、ナレーション、PRイベント",
+    licenses: "アナウンス検定、秘書検定 ほか",
+
+    careers: [
+      ["日本テレビ", "NEWS ZERO お天気キャスター"],
+      ["TBS", "クイズでGO！ ローカル線の旅司会"],
+      ["TOKYO MX", "TOKYO MX NEWS"],
+      ["イベント", "記者発表会MC、表彰式、セミナー司会"],
+      ["その他", "CM、企業VP、PRイベント出演 ほか"]
+    ],
+
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "asami.mp3"
+    voice: "アナミ.mp3",
+
+    sns: {
+      instagram: "https://www.instagram.com/",
+      youtube: "https://www.youtube.com/",
+      tiktok: "https://www.tiktok.com/",
+      x: "https://x.com/"
+    },
+
+    snsEmbedTitle: "SNS SAMPLE",
+    snsEmbedHtml: `
+      <blockquote class="sns-embed-sample">
+        Instagram / TikTok / X の埋め込みコードをここに入れられます。<br>
+        今は仮表示です。
+      </blockquote>
+    `
   },
+
   {
-    id: "seira",
-    name: "南 青良",
-    en: "Seira Minami",
-    image: "seira-new.jpeg",
-    fallbackImage: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=900&q=80",
-    category: "モデル / ナレーター",
-    area: "東京・全国対応",
-    skill: "広告撮影、EC、ブランドビジュアル",
-    works: "CM / アパレル撮影 / 美容広告 / PRイベント",
+    id: "rina",
+    name: "RINA",
+    kana: "りな",
+    en: "Rina",
+    image: "rina.jpg",
+    thumbnails: ["rina.jpg"],
+
+    category: "モデル / 広告出演",
+    birthday: "",
+    height: "165cm",
+    birthplace: "",
+    blood: "",
+    education: "",
+    hobbies: "",
+    skills: "広告撮影、EC、ブランドビジュアル",
+    licenses: "",
+
+    careers: [
+      ["CM", "美容・アパレル広告"],
+      ["イベント", "PRイベント、展示会出演"],
+      ["その他", "SNSプロモーション、EC撮影"]
+    ],
+
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "rina.mp3"
+    voice: "rina.mp3",
+
+    sns: {
+      instagram: "https://www.instagram.com/",
+      youtube: "",
+      tiktok: "",
+      x: ""
+    },
+
+    snsEmbedTitle: "SNS SAMPLE",
+    snsEmbedHtml: ""
   },
+
   {
-    id: "fumi",
-　　 name: "村上 史",
-    en: "Fumi Murakami",
-    image: "S__27557921.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
-    category: "司会 / ナレーター / リポーター",
-    area: "西日本中心",
-    skill: "企業VP、商品紹介、式典MC",
-    works: "通販番組 / 企業VP / 商品紹介動画 / 表彰式",
+    id: "miyu",
+    name: "MIYU",
+    kana: "みゆ",
+    en: "Miyu",
+    image: "miyu.jpg",
+    thumbnails: ["miyu.jpg"],
+
+    category: "ナレーター / リポーター",
+    birthday: "",
+    height: "160cm",
+    birthplace: "",
+    blood: "",
+    education: "",
+    hobbies: "",
+    skills: "企業VP、商品紹介、式典MC",
+    licenses: "",
+
+    careers: [
+      ["企業VP", "ナレーション、商品紹介"],
+      ["イベント", "表彰式、セミナーMC"],
+      ["その他", "通販番組、PR動画"]
+    ],
+
     youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "miyu.mp3"
-  },
-  {
-    id: "sara",
-    name: "SARA",
-    en: "Talent",
-    image: "sara.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
-    category: "タレント / モデル",
-    area: "関東・東海",
-    skill: "SNSプロモーション、イベント出演",
-    works: "タレントトークショー / PRイベント / SNS広告 / ライブ配信",
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    audio: "sara.mp3"
+    voice: "miyu.mp3",
+
+    sns: {
+      instagram: "",
+      youtube: "",
+      tiktok: "",
+      x: ""
+    },
+
+    snsEmbedTitle: "SNS SAMPLE",
+    snsEmbedHtml: ""
   }
 ];
