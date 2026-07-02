@@ -9,12 +9,9 @@ function getMainPhoto(talent) {
 
 function renderCardImage(talent) {
   const photo = getMainPhoto(talent);
-
-  if (!photo) {
-    return `<div class="talent-placeholder">HÉLMIO</div>`;
-  }
-
-  return `<img src="${photo}" alt="${talent.name}">`;
+  return photo
+    ? `<img src="${photo}" alt="${talent.name}">`
+    : `<div class="talent-placeholder">HÉLMIO</div>`;
 }
 
 function renderSnsIcons(sns = {}) {
@@ -45,6 +42,20 @@ function renderProfileRows(profile = []) {
       </div>
     `)
     .join("");
+}
+
+function renderPhotoThumbs(photos = [], name = "") {
+  if (!photos || photos.length <= 1) return "";
+
+  return `
+    <div class="profile-thumbs">
+      ${photos.map((photo, index) => `
+        <button class="profile-thumb ${index === 0 ? "is-active" : ""}" type="button" data-photo="${photo}">
+          <img src="${photo}" alt="${name}">
+        </button>
+      `).join("")}
+    </div>
+  `;
 }
 
 function renderCareerRows(careers = []) {
@@ -90,17 +101,6 @@ function renderVoices(voices = []) {
   `;
 }
 
-function renderInstagram(embed = "") {
-  if (!embed) return "";
-
-  return `
-    <div class="profile-media-box profile-media-wide">
-      <h3>INSTAGRAM</h3>
-      <div class="sns-embed">${embed}</div>
-    </div>
-  `;
-}
-
 function renderTalentCards() {
   talentCards.innerHTML = talents.map(talent => `
     <button class="talent-card" data-profile="${talent.id}">
@@ -127,9 +127,10 @@ function openProfile(data) {
         <div class="profile-photo-wrap">
           ${
             mainPhoto
-              ? `<img class="profile-main-photo" src="${mainPhoto}" alt="${data.name}">`
+              ? `<img class="profile-main-photo" id="profileMainPhoto" src="${mainPhoto}" alt="${data.name}">`
               : `<div class="profile-main-placeholder">HÉLMIO</div>`
           }
+          ${renderPhotoThumbs(data.photos, data.name)}
         </div>
 
         <div class="profile-text-wrap">
@@ -151,7 +152,6 @@ function openProfile(data) {
       <div class="profile-media-grid">
         ${renderYoutube(data.youtube)}
         ${renderVoices(data.voices)}
-        ${renderInstagram(data.instagramEmbed)}
       </div>
 
       <div class="profile-actions">
@@ -161,6 +161,21 @@ function openProfile(data) {
   `;
 
   modal.classList.add("is-open");
+
+  document.querySelectorAll(".profile-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      const mainPhotoEl = document.getElementById("profileMainPhoto");
+      if (mainPhotoEl) {
+        mainPhotoEl.src = button.dataset.photo;
+      }
+
+      document.querySelectorAll(".profile-thumb").forEach(item => {
+        item.classList.remove("is-active");
+      });
+
+      button.classList.add("is-active");
+    });
+  });
 
   const contactButton = document.getElementById("profileContactButton");
 
