@@ -989,3 +989,127 @@ WHY HÉLMIO
         padding: 30px;
     }
 }
+   /*==================================================
+WORKS
+==================================================*/
+
+.works-section {
+    background: #fff;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.works-grid figure {
+    background: #f7f3ee;
+    border: 1px solid var(--line);
+    overflow: hidden;
+}
+
+.works-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: #eee7de;
+    transition: .45s;
+}
+
+.works-grid figure:hover img {
+    transform: scale(1.04);
+}
+
+.works-grid figcaption {
+    padding: 18px 20px;
+    text-align: center;
+    color: var(--navy);
+    font-size: 15px;
+    letter-spacing: .08em;
+}
+
+
+/*==================================================
+PROFESSIONALS
+==================================================*/
+
+.talent-section {
+    background: #f7f3ee;
+}
+
+.talent-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.talent-card {
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 14px 34px rgba(20,20,20,.06);
+    transition: .35s;
+}
+
+.talent-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(20,20,20,.10);
+}
+
+.talent-card img,
+.talent-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 3.9;
+    object-fit: cover;
+    object-position: center top;
+    background: linear-gradient(180deg, #f7f4ef, #d8d0c5);
+}
+
+.talent-placeholder {
+    display: grid;
+    place-items: center;
+    font-family: "Cormorant Garamond", serif;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: .16em;
+}
+
+.talent-card-body {
+    padding: 24px 18px 26px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
+
+.talent-name {
+    color: var(--navy);
+    font-size: 22px;
+    letter-spacing: .14em;
+}
+
+.talent-title {
+    margin-top: 8px;
+    color: var(--sub);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: .08em;
+}
+
+@media(max-width:960px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .talent-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:560px) {
+    .works-grid,
+    .talent-cards {
+        grid-template-columns: 1fr;
+    }
+}
