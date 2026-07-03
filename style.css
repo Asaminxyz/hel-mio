@@ -585,6 +585,215 @@ gap:28px;
 
 font-size:30px;
 
+   /*==================================================
+SERVICE
+==================================================*/
+
+.service-section{
+
+    background:#faf8f5;
+
+}
+
+.service-layout{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:90px;
+
+    align-items:start;
+
+}
+
+.service-left{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.service-left h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:58px;
+
+    font-weight:300;
+
+    color:var(--navy);
+
+    line-height:1.15;
+
+    margin-bottom:28px;
+
+    letter-spacing:.08em;
+
+}
+
+.service-left p{
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:2.1;
+
+    margin-bottom:36px;
+
+}
+
+.service-left img{
+
+    border-radius:4px;
+
+    overflow:hidden;
+
+}
+
+.service-list{
+
+    border-top:1px solid var(--line);
+
+}
+
+.service-row{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 42px;
+
+    gap:40px;
+
+    align-items:start;
+
+    padding:42px 0;
+
+    border-bottom:1px solid var(--line);
+
+    transition:.35s;
+
+}
+
+.service-row:hover{
+
+    padding-left:18px;
+
+}
+
+.service-row span{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    color:var(--gold);
+
+    letter-spacing:.12em;
+
+    margin-top:6px;
+
+}
+
+.service-row strong{
+
+    display:block;
+
+    font-size:28px;
+
+    font-weight:500;
+
+    color:var(--navy);
+
+    line-height:1.45;
+
+    margin-bottom:14px;
+
+}
+
+.service-row p{
+
+    font-size:16px;
+
+    color:#666;
+
+    line-height:2;
+
+}
+
+.service-row::after{
+
+    content:"→";
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid var(--line);
+
+    border-radius:50%;
+
+    color:var(--gold);
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+.service-row:hover::after{
+
+    background:var(--gold);
+
+    color:#fff;
+
+}
+
+@media(max-width:1000px){
+
+.service-layout{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.service-left{
+
+position:static;
+
+}
+
+.service-row{
+
+grid-template-columns:1fr;
+
+gap:12px;
+
+}
+
+.service-row::after{
+
+display:none;
+
+}
+
+.service-row strong{
+
+font-size:24px;
+
+}
+
+}
 }
 
 }
