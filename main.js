@@ -1,266 +1,211 @@
-/* ==================================================
-   HÉLMIO
-   main.js
-================================================== */
+const talentCards = document.getElementById("talentCards");
+const modal = document.getElementById("profileModal");
+const modalContent = document.getElementById("modalContent");
+const modalClose = document.getElementById("modalClose");
 
-document.addEventListener("DOMContentLoaded", () => {
+function getMainPhoto(talent) {
+  return talent.photos && talent.photos.length ? talent.photos[0] : "";
+}
 
-  /* -------------------------------
-     Talent Cards
-  --------------------------------*/
+function renderCardImage(talent) {
+  const photo = getMainPhoto(talent);
 
-  const cards = document.getElementById("talentCards");
+  return photo
+    ? `<img src="${photo}" alt="${talent.name}">`
+    : `<div class="talent-placeholder">HÉLMIO</div>`;
+}
 
-  if (cards && window.TALENTS) {
+function renderSnsIcons(sns = {}) {
+  const icons = {
+    instagram: "◎",
+    x: "𝕏",
+    youtube: "▶",
+    tiktok: "♪"
+  };
 
-    cards.innerHTML = "";
+  return Object.entries(sns)
+    .filter(([, url]) => url)
+    .map(([key, url]) => `
+      <a href="${url}" target="_blank" rel="noopener noreferrer" class="profile-sns-icon">
+        ${icons[key] || key}
+      </a>
+    `)
+    .join("");
+}
 
-    TALENTS.forEach((talent) => {
+function renderProfileRows(profile = []) {
+  return profile
+    .filter(([, value]) => value)
+    .map(([label, value]) => `
+      <div class="profile-row">
+        <div class="profile-label">${label}：</div>
+        <div class="profile-value">${value}</div>
+      </div>
+    `)
+    .join("");
+}
 
-      const card = document.createElement("button");
-      card.className = "talent-card";
-      card.type = "button";
+function renderPhotoThumbs(photos = [], name = "") {
+  if (!photos || photos.length <= 1) return "";
 
-      const thumb = talent.photos && talent.photos.length
-        ? `<img src="${talent.photos[0]}" alt="${talent.name}">`
-        : `<div class="talent-placeholder">${talent.name.charAt(0)}</div>`;
+  return `
+    <div class="profile-thumbs">
+      ${photos.map((photo, index) => `
+        <button class="profile-thumb ${index === 0 ? "is-active" : ""}" type="button" data-photo="${photo}">
+          <img src="${photo}" alt="${name}">
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
 
-      card.innerHTML = `
-        ${thumb}
-        <div class="talent-card-body">
-            <div class="talent-name">${talent.name}</div>
-            <div class="talent-title">${talent.title || ""}</div>
-        </div>
-      `;
+function renderCareerRows(careers = []) {
+  if (!careers.length) return "";
 
-      card.addEventListener("click", () => openProfile(talent));
-
-      cards.appendChild(card);
-
-    });
-
-  }
-
-
-  /* -------------------------------
-     Modal
-  --------------------------------*/
-
-  const modal = document.getElementById("profileModal");
-  const content = document.getElementById("modalContent");
-  const closeBtn = document.getElementById("modalClose");
-
-  function openProfile(talent){
-
-      if(!modal || !content) return;
-
-      const photos = talent.photos || [];
-
-      const mainPhoto = photos.length
-          ? `<img class="profile-main-photo" id="mainPhoto" src="${photos[0]}" alt="${talent.name}">`
-          : `<div class="profile-main-placeholder">${talent.name.charAt(0)}</div>`;
-
-      const thumbs = photos.map((src,index)=>`
-          <button class="profile-thumb ${index===0 ? "is-active":""}"
-                  data-src="${src}">
-              <img src="${src}" alt="">
-          </button>
-      `).join("");
-
-      const careerRows = (talent.career || []).map(item=>`
+  return `
+    <section class="profile-career">
+      <h3>経歴</h3>
+      <table>
+        ${careers.map(([label, detail]) => `
           <tr>
-            <th>${item.year}</th>
-            <td>${item.text}</td>
+            <th>${label}</th>
+            <td>${detail}</td>
           </tr>
-      `).join("");
-
-      content.innerHTML = `
-
-<div class="profile-main-layout">
-
-<div>
-
-${mainPhoto}
-
-${photos.length>1 ? `
-<div class="profile-thumbs">
-${thumbs}
-</div>` : ""}
-
-</div>
-
-<div>
-
-<div class="profile-name-line">
-
-<div>
-
-<h2>${talent.name}</h2>
-
-<div class="profile-kana">${talent.kana || ""}</div>
-
-<div class="profile-en">${talent.en || ""}</div>
-
-</div>
-
-</div>
-
-<div class="profile-basic">
-
-${talent.birth ? `
-<div class="profile-row">
-<div class="profile-label">生年月日</div>
-<div class="profile-value">${talent.birth}</div>
-</div>` : ""}
-
-${talent.height ? `
-<div class="profile-row">
-<div class="profile-label">身長</div>
-<div class="profile-value">${talent.height}</div>
-</div>` : ""}
-
-${talent.skills ? `
-<div class="profile-row">
-<div class="profile-label">特技</div>
-<div class="profile-value">${talent.skills}</div>
-</div>` : ""}
-
-</div>
-
-</div>
-
-</div>
-
-${careerRows ? `
-<div class="profile-career">
-
-<h3>Career</h3>
-
-<table>
-
-${careerRows}
-
-</table>
-
-</div>` : ""}
-
-${talent.youtube ? `
-<div class="profile-media-grid">
-
-<div class="profile-media-box">
-
-<h3>Movie</h3>
-
-<iframe
-src="https://www.youtube.com/embed/${talent.youtube}"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>` : ""}
-
-<div class="profile-actions">
-
-<a href="#contact"
-onclick="document.getElementById('profileModal').classList.remove('is-open');">
-
-お問い合わせはこちら
-
-</a>
-
-</div>
-
-`;
-
-      modal.classList.add("is-open");
-
-      document.body.style.overflow="hidden";
-
-
-      const thumbButtons = modal.querySelectorAll(".profile-thumb");
-
-      thumbButtons.forEach(btn=>{
-
-          btn.addEventListener("click",()=>{
-
-              document.getElementById("mainPhoto").src=btn.dataset.src;
-
-              thumbButtons.forEach(t=>t.classList.remove("is-active"));
-
-              btn.classList.add("is-active");
-
-          });
-
-      });
-
-  }
-
-
-  function closeModal(){
-
-      modal.classList.remove("is-open");
-
-      document.body.style.overflow="";
-
-  }
-
-
-  if(closeBtn){
-
-      closeBtn.addEventListener("click",closeModal);
-
-  }
-
-  if(modal){
-
-      modal.addEventListener("click",(e)=>{
-
-          if(e.target===modal){
-
-              closeModal();
-
+        `).join("")}
+      </table>
+    </section>
+  `;
+}
+
+function renderYoutube(url) {
+  if (!url) return "";
+
+  return `
+    <div class="profile-media-box">
+      <h3>YOUTUBE</h3>
+      <iframe src="${url}" allowfullscreen></iframe>
+    </div>
+  `;
+}
+
+function renderVoices(voices = []) {
+  if (!voices.length) return "";
+
+  return `
+    <div class="profile-media-box">
+      <h3>VOICE SAMPLE</h3>
+      ${voices.map(voice => `
+        <p>${voice.title}</p>
+        <audio controls src="${voice.file}"></audio>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderTalentCards() {
+  talentCards.innerHTML = talents.map(talent => `
+    <button class="talent-card" data-profile="${talent.id}">
+      ${renderCardImage(talent)}
+      <div class="talent-card-body">
+        <div class="talent-name">${talent.name}</div>
+        <div class="talent-title">${talent.title || ""}</div>
+      </div>
+    </button>
+  `).join("");
+
+  document.querySelectorAll(".talent-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const data = talents.find(talent => talent.id === card.dataset.profile);
+      openProfile(data);
+    });
+  });
+}
+
+function openProfile(data) {
+  const mainPhoto = getMainPhoto(data);
+  const snsIcons = renderSnsIcons(data.sns);
+
+  modalContent.innerHTML = `
+    <div class="profile-full">
+      <div class="profile-main-layout">
+        <div class="profile-photo-wrap">
+          ${
+            mainPhoto
+              ? `<img class="profile-main-photo" id="profileMainPhoto" src="${mainPhoto}" alt="${data.name}">`
+              : `<div class="profile-main-placeholder">HÉLMIO</div>`
           }
+          ${renderPhotoThumbs(data.photos, data.name)}
+        </div>
 
-      });
+        <div class="profile-text-wrap">
+          <div class="profile-name-line">
+            <h2>${data.name}</h2>
+            ${snsIcons ? `<div class="profile-sns-icons">${snsIcons}</div>` : ""}
+          </div>
 
-  }
+          <div class="profile-kana">${data.kana || ""}</div>
+          <div class="profile-en">${data.en || ""}</div>
 
-  document.addEventListener("keydown",(e)=>{
+          <div class="profile-basic">
+            ${renderProfileRows(data.profile)}
+          </div>
+        </div>
+      </div>
 
-      if(e.key==="Escape"){
+      ${renderCareerRows(data.careers)}
 
-          closeModal();
+      <div class="profile-media-grid">
+        ${renderYoutube(data.youtube)}
+        ${renderVoices(data.voices)}
+      </div>
 
+      <div class="profile-actions">
+        <a href="#contact" id="profileContactButton">このタレントに依頼する</a>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add("is-open");
+
+  document.querySelectorAll(".profile-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      const mainPhotoEl = document.getElementById("profileMainPhoto");
+
+      if (mainPhotoEl) {
+        mainPhotoEl.src = button.dataset.photo;
       }
 
-  });
-
-
-  /* -------------------------------
-     Smooth Scroll
-  --------------------------------*/
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-      anchor.addEventListener("click",(e)=>{
-
-          const target=document.querySelector(anchor.getAttribute("href"));
-
-          if(!target) return;
-
-          e.preventDefault();
-
-          target.scrollIntoView({
-
-              behavior:"smooth",
-
-              block:"start"
-
-          });
-
+      document.querySelectorAll(".profile-thumb").forEach(item => {
+        item.classList.remove("is-active");
       });
 
+      button.classList.add("is-active");
+    });
   });
 
+  const contactButton = document.getElementById("profileContactButton");
+
+  if (contactButton) {
+    contactButton.addEventListener("click", () => {
+      modal.classList.remove("is-open");
+
+      const messageBox = document.querySelector('#contact textarea[name="message"]');
+
+      if (messageBox && data.id !== "dummy") {
+        messageBox.value = `${data.name}さんへの出演依頼について相談したいです。`;
+      }
+    });
+  }
+}
+
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("is-open");
 });
+
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.remove("is-open");
+  }
+});
+
+renderTalentCards();
