@@ -255,5 +255,201 @@ select{
 .nav-contact:hover{
 
     background:var(--gold);
+/* ===========================================
+   HERO
+=========================================== */
 
+.hero{
+
+    display:grid;
+
+    grid-template-columns:1.02fr .98fr;
+
+    min-height:720px;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--line);
+}
+
+.hero-text{
+
+    padding:110px 72px 96px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.eyebrow{
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--gold);
+
+    font-size:17px;
+
+    letter-spacing:.22em;
+
+    margin-bottom:30px;
+
+    text-transform:uppercase;
+}
+
+.hero h1{
+
+    color:var(--navy);
+
+    font-size:clamp(36px,4.4vw,64px);
+
+    font-weight:400;
+
+    line-height:1.45;
+
+    letter-spacing:.08em;
+
+}
+
+.hero h1 span{
+
+    color:var(--gold);
+}
+
+.hero-lead{
+
+    margin-top:34px;
+
+    max-width:680px;
+
+    color:#394354;
+
+    font-size:18px;
+
+    line-height:2.15;
+
+    letter-spacing:.045em;
+}
+
+.primary-btn{
+
+    width:fit-content;
+
+    margin-top:42px;
+
+    background:var(--navy);
+
+    color:#fff;
+
+    padding:16px 42px;
+
+    font-size:15px;
+
+    letter-spacing:.14em;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+
+    background:var(--gold);
+}
+
+.hero-visual{
+
+    position:relative;
+
+    min-height:720px;
+
+    overflow:hidden;
+
+    background:#ece6dd;
+}
+
+.hero-visual img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+.hero-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,.72) 0%,
+        rgba(255,255,255,.18) 36%,
+        rgba(255,255,255,0) 72%
+    );
+
+    z-index:1;
+
+    pointer-events:none;
+}
+
+
+/* HERO mobile */
+
+@media(max-width:960px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        min-height:auto;
+    }
+
+    .hero-text{
+
+        padding:80px 32px 56px;
+    }
+
+    .hero-visual{
+
+        min-height:420px;
+    }
+
+    .hero h1{
+
+        font-size:clamp(32px,8vw,48px);
+    }
+
+    .hero-lead{
+
+        font-size:16px;
+
+        line-height:2;
+    }
+}
+
+@media(max-width:560px){
+
+    .hero-text{
+
+        padding:68px 24px 46px;
+    }
+
+    .hero-visual{
+
+        min-height:320px;
+    }
+
+    .primary-btn{
+
+        width:100%;
+
+        text-align:center;
+    }
+}
 }
