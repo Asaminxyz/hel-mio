@@ -1,1 +1,266 @@
-const talentCards=document.getElementById("talentCards"),modal=document.getElementById("profileModal"),modalContent=document.getElementById("modalContent"),modalClose=document.getElementById("modalClose");function getMainPhoto(t){return t.photos&&t.photos.length?t.photos[0]:""}function renderCardImage(t){const p=getMainPhoto(t);return p?`<img src="${p}" alt="${t.name}">`:`<div class="talent-placeholder">HÉLMIO</div>`}function renderProfileRows(p=[]){return p.filter(([,v])=>v).map(([l,v])=>`<div class="profile-row"><div class="profile-label">${l}：</div><div class="profile-value">${v}</div></div>`).join("")}function renderPhotoThumbs(photos=[],name=""){if(!photos||photos.length<=1)return"";return`<div class="profile-thumbs">${photos.map((p,i)=>`<button class="profile-thumb ${i===0?"is-active":""}" type="button" data-photo="${p}"><img src="${p}" alt="${name}"></button>`).join("")}</div>`}function renderCareerRows(c=[]){if(!c.length)return"";return`<section class="profile-career"><h3> </h3><table>${c.map(([l,d])=>`<tr><th>${l}</th><td>${d}</td></tr>`).join("")}</table></section>`}function renderYoutube(u){return u?`<div class="profile-media-box"><h3>YOUTUBE</h3><iframe src="${u}" allowfullscreen></iframe></div>`:""}function renderVoices(v=[]){return v.length?`<div class="profile-media-box"><h3>VOICE SAMPLE</h3>${v.map(x=>`<p>${x.title}</p><audio controls src="${x.file}"></audio>`).join("")}</div>`:""}function renderTalentCards(){talentCards.innerHTML=talents.map(t=>`<button class="talent-card" data-profile="${t.id}">${renderCardImage(t)}<div class="talent-card-body"><div class="talent-name">${t.name}</div><div class="talent-title">${t.title||""}</div></div></button>`).join("");document.querySelectorAll(".talent-card").forEach(c=>c.addEventListener("click",()=>openProfile(talents.find(t=>t.id===c.dataset.profile))))}function openProfile(d){const p=getMainPhoto(d);modalContent.innerHTML=`<div class="profile-full"><div class="profile-main-layout"><div class="profile-photo-wrap">${p?`<img class="profile-main-photo" id="profileMainPhoto" src="${p}" alt="${d.name}">`:`<div class="profile-main-placeholder">HÉLMIO</div>`}${renderPhotoThumbs(d.photos,d.name)}</div><div class="profile-text-wrap"><div class="profile-name-line"><h2>${d.name}</h2></div><div class="profile-kana">${d.kana||""}</div><div class="profile-en">${d.en||""}</div><div class="profile-basic">${renderProfileRows(d.profile)}</div></div></div>${renderCareerRows(d.careers)}<div class="profile-media-grid">${renderYoutube(d.youtube)}${renderVoices(d.voices)}</div><div class="profile-actions"><a href="#contact" id="profileContactButton">このタレントに依頼する</a></div></div>`;modal.classList.add("is-open");document.querySelectorAll(".profile-thumb").forEach(b=>b.addEventListener("click",()=>{const) m=document.getElementById("profileMainPhoto");if(m)m.src=b.dataset.photo;document.querySelectorAll(".profile-thumb").forEach(x=>x.classList.remove("is-active"));b.classList.add("is-active")}));const btn=document.getElementById("profileContactButton");if(btn)btn.addEventListener("click",()=>{modal.classList.remove("is-open");const box=document.querySelector('#contact textarea[name="message"]');if(box&&d.id!=="dummy")box.value=`${d.name}さんへの出演依頼について相談したいです。`})}modalClose.addEventListener("click",()=>modal. classList.remove("is-open"));modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("is-open")});renderTalentCards();getElementById("profileContactButton");if(btn)btn.addEventListener("click",()=>{modal.classList.remove("is-open");const box=document.querySelector('#contact textarea[name="message"]');if(box&&d.id!=="dummy")box.value=`${d.name}さんへの出演依頼について相談したいです。`})}modalClose.addEventListener("click",()=>modal. classList.remove("is-open"));modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("is-open")});renderTalentCards();getElementById("profileContactButton");if(btn)btn.addEventListener("click",()=>{modal.classList.remove("is-open");const box=document.querySelector('#contact textarea[name="message"]');if(box&&d.id!=="dummy")box.value=`${d.name}さんへの出演依頼について相談したいです。`})}modalClose.addEventListener("click",()=>modal. classList.remove("is-open"));modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("is-open")});renderTalentCards();
+/* ==================================================
+   HÉLMIO
+   main.js
+================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -------------------------------
+     Talent Cards
+  --------------------------------*/
+
+  const cards = document.getElementById("talentCards");
+
+  if (cards && window.TALENTS) {
+
+    cards.innerHTML = "";
+
+    TALENTS.forEach((talent) => {
+
+      const card = document.createElement("button");
+      card.className = "talent-card";
+      card.type = "button";
+
+      const thumb = talent.photos && talent.photos.length
+        ? `<img src="${talent.photos[0]}" alt="${talent.name}">`
+        : `<div class="talent-placeholder">${talent.name.charAt(0)}</div>`;
+
+      card.innerHTML = `
+        ${thumb}
+        <div class="talent-card-body">
+            <div class="talent-name">${talent.name}</div>
+            <div class="talent-title">${talent.title || ""}</div>
+        </div>
+      `;
+
+      card.addEventListener("click", () => openProfile(talent));
+
+      cards.appendChild(card);
+
+    });
+
+  }
+
+
+  /* -------------------------------
+     Modal
+  --------------------------------*/
+
+  const modal = document.getElementById("profileModal");
+  const content = document.getElementById("modalContent");
+  const closeBtn = document.getElementById("modalClose");
+
+  function openProfile(talent){
+
+      if(!modal || !content) return;
+
+      const photos = talent.photos || [];
+
+      const mainPhoto = photos.length
+          ? `<img class="profile-main-photo" id="mainPhoto" src="${photos[0]}" alt="${talent.name}">`
+          : `<div class="profile-main-placeholder">${talent.name.charAt(0)}</div>`;
+
+      const thumbs = photos.map((src,index)=>`
+          <button class="profile-thumb ${index===0 ? "is-active":""}"
+                  data-src="${src}">
+              <img src="${src}" alt="">
+          </button>
+      `).join("");
+
+      const careerRows = (talent.career || []).map(item=>`
+          <tr>
+            <th>${item.year}</th>
+            <td>${item.text}</td>
+          </tr>
+      `).join("");
+
+      content.innerHTML = `
+
+<div class="profile-main-layout">
+
+<div>
+
+${mainPhoto}
+
+${photos.length>1 ? `
+<div class="profile-thumbs">
+${thumbs}
+</div>` : ""}
+
+</div>
+
+<div>
+
+<div class="profile-name-line">
+
+<div>
+
+<h2>${talent.name}</h2>
+
+<div class="profile-kana">${talent.kana || ""}</div>
+
+<div class="profile-en">${talent.en || ""}</div>
+
+</div>
+
+</div>
+
+<div class="profile-basic">
+
+${talent.birth ? `
+<div class="profile-row">
+<div class="profile-label">生年月日</div>
+<div class="profile-value">${talent.birth}</div>
+</div>` : ""}
+
+${talent.height ? `
+<div class="profile-row">
+<div class="profile-label">身長</div>
+<div class="profile-value">${talent.height}</div>
+</div>` : ""}
+
+${talent.skills ? `
+<div class="profile-row">
+<div class="profile-label">特技</div>
+<div class="profile-value">${talent.skills}</div>
+</div>` : ""}
+
+</div>
+
+</div>
+
+</div>
+
+${careerRows ? `
+<div class="profile-career">
+
+<h3>Career</h3>
+
+<table>
+
+${careerRows}
+
+</table>
+
+</div>` : ""}
+
+${talent.youtube ? `
+<div class="profile-media-grid">
+
+<div class="profile-media-box">
+
+<h3>Movie</h3>
+
+<iframe
+src="https://www.youtube.com/embed/${talent.youtube}"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>` : ""}
+
+<div class="profile-actions">
+
+<a href="#contact"
+onclick="document.getElementById('profileModal').classList.remove('is-open');">
+
+お問い合わせはこちら
+
+</a>
+
+</div>
+
+`;
+
+      modal.classList.add("is-open");
+
+      document.body.style.overflow="hidden";
+
+
+      const thumbButtons = modal.querySelectorAll(".profile-thumb");
+
+      thumbButtons.forEach(btn=>{
+
+          btn.addEventListener("click",()=>{
+
+              document.getElementById("mainPhoto").src=btn.dataset.src;
+
+              thumbButtons.forEach(t=>t.classList.remove("is-active"));
+
+              btn.classList.add("is-active");
+
+          });
+
+      });
+
+  }
+
+
+  function closeModal(){
+
+      modal.classList.remove("is-open");
+
+      document.body.style.overflow="";
+
+  }
+
+
+  if(closeBtn){
+
+      closeBtn.addEventListener("click",closeModal);
+
+  }
+
+  if(modal){
+
+      modal.addEventListener("click",(e)=>{
+
+          if(e.target===modal){
+
+              closeModal();
+
+          }
+
+      });
+
+  }
+
+  document.addEventListener("keydown",(e)=>{
+
+      if(e.key==="Escape"){
+
+          closeModal();
+
+      }
+
+  });
+
+
+  /* -------------------------------
+     Smooth Scroll
+  --------------------------------*/
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+      anchor.addEventListener("click",(e)=>{
+
+          const target=document.querySelector(anchor.getAttribute("href"));
+
+          if(!target) return;
+
+          e.preventDefault();
+
+          target.scrollIntoView({
+
+              behavior:"smooth",
+
+              block:"start"
+
+          });
+
+      });
+
+  });
+
+});
