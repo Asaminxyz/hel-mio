@@ -1113,3 +1113,488 @@ PROFESSIONALS
         grid-template-columns: 1fr;
     }
 }
+   /*==================================================
+MESSAGE
+==================================================*/
+
+.message-section {
+    background: #fff;
+}
+
+.message-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 64px;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.message-layout h2 {
+    color: var(--navy);
+    font-size: clamp(30px, 3.2vw, 46px);
+    line-height: 1.55;
+    font-weight: 400;
+    letter-spacing: .08em;
+    margin-bottom: 28px;
+}
+
+.message-layout p {
+    color: #444;
+    font-size: 17px;
+    line-height: 2.15;
+    letter-spacing: .04em;
+}
+
+.message-layout img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #eee7de;
+}
+
+
+/*==================================================
+REQUEST
+==================================================*/
+
+.request-section {
+    background: #f7f3ee;
+}
+
+.flow {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.flow-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 34px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.flow-num {
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: .14em;
+    font-size: 15px;
+}
+
+.flow-num strong {
+    display: block;
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.flow-item h3 {
+    color: var(--navy);
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    margin-bottom: 8px;
+}
+
+.flow-item p {
+    color: #555;
+    font-size: 16px;
+    line-height: 2;
+}
+
+
+/*==================================================
+CONTACT
+==================================================*/
+
+.contact-box {
+    width: min(1120px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 120px 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+
+.contact-box h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--navy);
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 300;
+    letter-spacing: .16em;
+    line-height: 1.1;
+    margin-bottom: 28px;
+}
+
+.contact-lead {
+    color: var(--sub);
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 46px;
+}
+
+.form {
+    width: min(680px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 14px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+.form button {
+    border: 0;
+    background: var(--navy);
+    color: #fff;
+    padding: 17px 24px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form button:hover {
+    background: var(--gold);
+}
+
+
+/*==================================================
+FOOTER
+==================================================*/
+
+footer {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 36px 0;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: .14em;
+}
+
+
+/*==================================================
+MODAL / PROFILE
+==================================================*/
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+    background: rgba(0,0,0,.55);
+    padding: 42px 0;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal-box {
+    position: relative;
+    width: min(980px, 94vw);
+    margin: 0 auto;
+    background: #fff;
+    padding: 48px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: 0;
+    background: none;
+    font-size: 42px;
+    line-height: 1;
+    color: #555;
+    cursor: pointer;
+}
+
+.profile-main-layout {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 42px;
+    align-items: start;
+}
+
+.profile-main-photo,
+.profile-main-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4.35;
+    object-fit: cover;
+    object-position: center top;
+    background: #f4efe8;
+}
+
+.profile-main-placeholder {
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    letter-spacing: .16em;
+    background: linear-gradient(180deg, #f7f4ef, #d8d0c5);
+}
+
+.profile-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.profile-thumb {
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 0;
+    cursor: pointer;
+    opacity: .65;
+}
+
+.profile-thumb.is-active {
+    opacity: 1;
+    border-color: var(--gold);
+}
+
+.profile-thumb img {
+    height: 82px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.profile-name-line {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.profile-name-line h2 {
+    color: var(--navy);
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: .16em;
+    line-height: 1.25;
+}
+
+.profile-kana {
+    color: var(--gold);
+    letter-spacing: .35em;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.profile-en {
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.profile-sns-icons {
+    display: flex;
+    gap: 13px;
+}
+
+.profile-sns-icon {
+    font-size: 20px;
+}
+
+.profile-basic {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+}
+
+.profile-label {
+    color: #666;
+}
+
+.profile-value {
+    color: #444;
+}
+
+.profile-career {
+    margin-top: 52px;
+}
+
+.profile-career h3 {
+    color: var(--navy);
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: .08em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+}
+
+.profile-career table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+}
+
+.profile-career th,
+.profile-career td {
+    padding: 14px 0;
+    border-bottom: 1px solid #e8dfd3;
+    vertical-align: top;
+}
+
+.profile-career th {
+    width: 180px;
+    text-align: left;
+    color: #555;
+}
+
+.profile-media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 46px;
+}
+
+.profile-media-box {
+    background: #f7f3ee;
+    padding: 28px;
+}
+
+.profile-media-box h3 {
+    font-size: 17px;
+    letter-spacing: .16em;
+    margin-bottom: 20px;
+}
+
+.profile-media-box iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.profile-actions {
+    margin-top: 42px;
+}
+
+.profile-actions a {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: #fff;
+    padding: 17px 24px;
+    font-weight: 600;
+    letter-spacing: .12em;
+}
+
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:960px) {
+    .site-header {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+    }
+
+    .site-nav {
+        flex-wrap: wrap;
+        gap: 18px 24px;
+    }
+
+    .section,
+    .contact-box,
+    .clients-inner {
+        width: min(100% - 48px, 1320px);
+        padding-top: 84px;
+        padding-bottom: 84px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+    }
+
+    .flow-item,
+    .message-layout,
+    .profile-main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-box {
+        padding: 34px 24px;
+    }
+}
+
+@media(max-width:560px) {
+    .section,
+    .contact-box,
+    .clients-inner {
+        width: min(100% - 28px, 1320px);
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .section-title {
+        margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .support-section h2,
+    .message-layout h2 {
+        font-size: 28px;
+    }
+
+    .reason-card,
+    .support-box,
+    .modal-box {
+        padding: 26px 22px;
+    }
+
+    .reason-card h3 {
+        font-size: 22px;
+    }
+
+    .reason-card p,
+    .support-box li,
+    .message-layout p {
+        font-size: 16px;
+    }
+
+    .flow-num strong {
+        font-size: 32px;
+    }
+
+    .contact-box h2 {
+        font-size: 42px;
+    }
+}
