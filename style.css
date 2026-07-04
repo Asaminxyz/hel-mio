@@ -397,7 +397,7 @@ button, input, textarea, select { font: inherit; }
 }
 
 .service-row::after {
-  content: "竊�";
+  content: "→";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -504,7 +504,7 @@ button, input, textarea, select { font: inherit; }
 }
 
 /* ===========================================
-   WHY Hﾃ鵜MIO
+   WHY HELMIO
 =========================================== */
 .reason-section { background: #f7f3ee; }
 
