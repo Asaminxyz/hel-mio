@@ -397,7 +397,8 @@ button, input, textarea, select { font: inherit; }
 }
 
 .service-row::after {
-  content: "→";
+  content: "›";
+}
   display: flex;
   align-items: center;
   justify-content: center;
