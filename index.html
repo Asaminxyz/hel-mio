@@ -1,6 +1,4 @@
-from pathlib import Path
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -605,8 +603,3 @@ html = r'''<!DOCTYPE html>
 <script src="main.js"></script>
 </body>
 </html>
-'''
-
-path = Path("/mnt/data/helmio_index_final_final.html")
-path.write_text(html, encoding="utf-8")
-print(path)
