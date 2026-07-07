@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -10,8 +12,185 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* index.html 側の最終調整。既存style.cssを壊さず、崩れやすい箇所だけ上書き */
+    .clients-section{
+      background:#f7f3ee;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .clients-inner{
+      width:min(1320px,calc(100% - 80px));
+      margin:auto;
+      padding:90px 0;
+      text-align:center;
+      background:transparent;
+    }
+
+    .clients-inner h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(40px,4vw,64px);
+      font-weight:300;
+      letter-spacing:.18em;
+      color:var(--navy);
+      margin-bottom:54px;
+    }
+
+    .client-list{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:46px;
+      align-items:center;
+      margin-bottom:44px;
+    }
+
+    .client-list img{
+      width:100%;
+      max-height:54px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:.7;
+    }
+
+    .clients-inner p{
+      max-width:760px;
+      margin:auto;
+      color:var(--sub);
+      font-size:15px;
+      line-height:2;
+      letter-spacing:.04em;
+    }
+
+    .partner-section{
+      background:#fff;
+      text-align:center;
+    }
+
+    .partner-section h2{
+      max-width:980px;
+      margin:0 auto 46px;
+      color:var(--navy);
+      font-size:clamp(34px,4vw,56px);
+      font-weight:400;
+      line-height:1.6;
+      letter-spacing:.08em;
+    }
+
+    .partner-copy{
+      max-width:880px;
+      margin:0 auto;
+      text-align:left;
+    }
+
+    .partner-copy p{
+      color:#444;
+      font-size:18px;
+      line-height:2.2;
+      letter-spacing:.04em;
+      margin-bottom:28px;
+    }
+
+    .partner-emphasis{
+      text-align:center;
+      color:var(--navy)!important;
+      font-size:22px!important;
+      line-height:2!important;
+      margin-top:42px;
+    }
+
+    .talent-section{
+      background:#f7f3ee;
+    }
+
+    .talent-cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+    }
+
+    .talent-card{
+      border:0;
+      background:#fff;
+      cursor:pointer;
+      overflow:hidden;
+      text-align:left;
+      box-shadow:0 14px 34px rgba(20,20,20,.06);
+      transition:.35s;
+      padding:0;
+      font:inherit;
+      color:inherit;
+    }
+
+    .talent-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 42px rgba(20,20,20,.10);
+    }
+
+    .talent-card img,
+    .talent-placeholder{
+      width:100%;
+      aspect-ratio:3 / 3.9;
+      object-fit:cover;
+      object-position:center top;
+      background:linear-gradient(180deg,#f7f4ef,#d8d0c5);
+      display:block;
+    }
+
+    .talent-placeholder{
+      display:grid;
+      place-items:center;
+      font-family:"Cormorant Garamond",serif;
+      color:#fff;
+      font-size:30px;
+      letter-spacing:.16em;
+    }
+
+    .talent-card-body{
+      padding:24px 18px 26px;
+      border-top:1px solid var(--line);
+      text-align:center;
+    }
+
+    .talent-name{
+      color:var(--navy);
+      font-size:22px;
+      letter-spacing:.14em;
+    }
+
+    .talent-title{
+      margin-top:8px;
+      color:var(--sub);
+      font-family:"Cormorant Garamond",serif;
+      font-size:13px;
+      letter-spacing:.08em;
+    }
+
+    @media(max-width:960px){
+      .client-list{
+        grid-template-columns:repeat(3,1fr);
+        gap:34px;
+      }
+
+      .talent-cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:560px){
+      .clients-inner{
+        width:min(100% - 28px,1320px);
+        padding:64px 0;
+      }
+
+      .client-list,
+      .talent-cards{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -24,14 +203,14 @@
     </a>
 
     <nav class="site-nav">
-      <a href="#partner">パートナー</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">選ばれる理由</a>
-      <a href="#works">実績</a>
-      <a href="#talent">プロフェッショナル</a>
-      <a href="#request">ご依頼の流れ</a>
-      <a href="#audition">募集</a>
-      <a href="#contact" class="nav-contact">お問い合わせ</a>
+      <a href="#partner">Partner</a>
+      <a href="#service">Service</a>
+      <a href="#reason">Why</a>
+      <a href="#works">Works</a>
+      <a href="#talent">Professionals</a>
+      <a href="#request">Request</a>
+      <a href="#audition">Audition</a>
+      <a href="#contact" class="nav-contact">Contact</a>
     </nav>
   </header>
 
@@ -255,7 +434,39 @@
         <span>Communication Partners</span>
       </div>
 
-      <div class="talent-cards" id="talentCards"></div>
+      <div class="talent-cards" id="talentCards">
+        <button class="talent-card" type="button" data-talent="0">
+          <img src="asami.jpg" alt="新島 麻生">
+          <div class="talent-card-body">
+            <div class="talent-name">新島 麻生</div>
+            <div class="talent-title">Announcer / MC</div>
+          </div>
+        </button>
+
+        <button class="talent-card" type="button" data-talent="1">
+          <img src="miyu.jpg" alt="南 青良">
+          <div class="talent-card-body">
+            <div class="talent-name">南 青良</div>
+            <div class="talent-title">Announcer / Model</div>
+          </div>
+        </button>
+
+        <button class="talent-card" type="button" data-talent="2">
+          <img src="rina.jpg" alt="村上 史">
+          <div class="talent-card-body">
+            <div class="talent-name">村上 史</div>
+            <div class="talent-title">Announcer / Actress</div>
+          </div>
+        </button>
+
+        <button class="talent-card" type="button" data-talent="3">
+          <div class="talent-placeholder">HÉLMIO</div>
+          <div class="talent-card-body">
+            <div class="talent-name">Coming Soon</div>
+            <div class="talent-title">Professional</div>
+          </div>
+        </button>
+      </div>
     </section>
 
     <section class="section message-section" id="message">
@@ -394,3 +605,8 @@
 <script src="main.js"></script>
 </body>
 </html>
+'''
+
+path = Path("/mnt/data/helmio_index_final_final.html")
+path.write_text(html, encoding="utf-8")
+print(path)
