@@ -1,254 +1,52 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Corporate Communication &amp; Casting</p>
 
-  <title>HÉLMIO | Corporate Communication & Casting</title>
-  <meta name="description" content="HÉLMIOは、局アナ・報道出身など第一線で活躍してきたプロフェッショナルによる、企業コミュニケーションとキャスティングのオフィスです。">
+    <h1>
+      局アナ・女優出身の<br>
+      プロフェッショナルが、<br>
+      企業の「伝える」を設計します。
+    </h1>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <p class="hero-lead">
+      HÉLMIOは、キャスティングだけではありません。<br>
+      PR・広報、スピーチ、プレゼンテーション、展示会・イベント、映像制作まで、
+      企業やブランドの価値が伝わるコミュニケーションを、一貫してサポートします。
+    </p>
 
-  <style>
-    /* index.html 側の最終調整。既存style.cssを壊さず、崩れやすい箇所だけ上書き */
-    .clients-section{
-      background:#f7f3ee;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
+    <a href="#contact" class="primary-btn">お問い合わせはこちら</a>
+  </div>
 
-    .clients-inner{
-      width:min(1320px,calc(100% - 80px));
-      margin:auto;
-      padding:90px 0;
-      text-align:center;
-      background:transparent;
-    }
+  <div class="hero-visual">
+    <img src="top.png" alt="HÉLMIO イメージ画像">
+  </div>
+</section>
 
-    .clients-inner h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(40px,4vw,64px);
-      font-weight:300;
-      letter-spacing:.18em;
-      color:var(--navy);
-      margin-bottom:54px;
-    }
-
-    .client-list{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:46px;
-      align-items:center;
-      margin-bottom:44px;
-    }
-
-    .client-list img{
-      width:100%;
-      max-height:54px;
-      object-fit:contain;
-      filter:grayscale(100%);
-      opacity:.7;
-    }
-
-    .clients-inner p{
-      max-width:760px;
-      margin:auto;
-      color:var(--sub);
-      font-size:15px;
-      line-height:2;
-      letter-spacing:.04em;
-    }
-
-    .partner-section{
-      background:#fff;
-      text-align:center;
-    }
-
-    .partner-section h2{
-      max-width:980px;
-      margin:0 auto 46px;
-      color:var(--navy);
-      font-size:clamp(34px,4vw,56px);
-      font-weight:400;
-      line-height:1.6;
-      letter-spacing:.08em;
-    }
-
-    .partner-copy{
-      max-width:880px;
-      margin:0 auto;
-      text-align:left;
-    }
-
-    .partner-copy p{
-      color:#444;
-      font-size:18px;
-      line-height:2.2;
-      letter-spacing:.04em;
-      margin-bottom:28px;
-    }
-
-    .partner-emphasis{
-      text-align:center;
-      color:var(--navy)!important;
-      font-size:22px!important;
-      line-height:2!important;
-      margin-top:42px;
-    }
-
-    .talent-section{
-      background:#f7f3ee;
-    }
-
-    .talent-cards{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:28px;
-    }
-
-    .talent-card{
-      border:0;
-      background:#fff;
-      cursor:pointer;
-      overflow:hidden;
-      text-align:left;
-      box-shadow:0 14px 34px rgba(20,20,20,.06);
-      transition:.35s;
-      padding:0;
-      font:inherit;
-      color:inherit;
-    }
-
-    .talent-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 42px rgba(20,20,20,.10);
-    }
-
-    .talent-card img,
-    .talent-placeholder{
-      width:100%;
-      aspect-ratio:3 / 3.9;
-      object-fit:cover;
-      object-position:center top;
-      background:linear-gradient(180deg,#f7f4ef,#d8d0c5);
-      display:block;
-    }
-
-    .talent-placeholder{
-      display:grid;
-      place-items:center;
-      font-family:"Cormorant Garamond",serif;
-      color:#fff;
-      font-size:30px;
-      letter-spacing:.16em;
-    }
-
-    .talent-card-body{
-      padding:24px 18px 26px;
-      border-top:1px solid var(--line);
-      text-align:center;
-    }
-
-    .talent-name{
-      color:var(--navy);
-      font-size:22px;
-      letter-spacing:.14em;
-    }
-
-    .talent-title{
-      margin-top:8px;
-      color:var(--sub);
-      font-family:"Cormorant Garamond",serif;
-      font-size:13px;
-      letter-spacing:.08em;
-    }
-
-    @media(max-width:960px){
-      .client-list{
-        grid-template-columns:repeat(3,1fr);
-        gap:34px;
-      }
-
-      .talent-cards{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media(max-width:560px){
-      .clients-inner{
-        width:min(100% - 28px,1320px);
-        padding:64px 0;
-      }
-
-      .client-list,
-      .talent-cards{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-<div class="page">
-
-  <header class="site-header">
-    <a href="#top" class="brand">
-      <div class="logo">HÉLMIO</div>
-      <div class="logo-sub">Corporate Communication & Casting</div>
-    </a>
-
-    <nav class="site-nav">
-      <a href="#partner">Partner</a>
-      <a href="#service">Service</a>
-      <a href="#reason">Why</a>
-      <a href="#works">Works</a>
-      <a href="#talent">Professionals</a>
-      <a href="#request">Request</a>
-      <a href="#audition">Audition</a>
-      <a href="#contact" class="nav-contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-
-    <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Corporate Communication & Casting</p>
-
-        <h1>
-          局アナ・女優出身の<br>
-          プロフェッショナルが、<br>
-          企業の「伝える」を設計します。
-        </h1>
-
-        <p class="hero-lead">
-          HELMIOは、キャスティングだけではありません。<br>
-          PR・広報、スピーチ、プレゼンテーション、展示会・イベント、映像制作まで、
-          企業やブランドの価値が伝わるコミュニケーションを、一貫してサポートします。
-        </p>
-
-        <a href="#contact" class="primary-btn">お問い合わせはこちら</a>
-      </div>
 
 <section class="section achievements-section" id="achievements">
   <div class="achievements-heading">
     <p class="section-kicker center">SELECTED EXPERIENCE</p>
+
     <h2>HÉLMIOメンバーの主な実績</h2>
+
     <p class="achievements-note">
-      代表および所属・提携プロフェッショナルが、これまでに携わった実績の一部です。
+      代表および所属・提携プロフェッショナルが、
+      これまでに携わった実績の一部です。
     </p>
   </div>
 
   <div class="achievements-grid">
 
-    <!-- スピーチ・プレゼンテーション -->
+    <!-- 01 スピーチ・プレゼンテーション -->
     <section class="achievement-category">
       <div class="achievement-category-heading">
         <p>01</p>
-        <h3>スピーチ・<br>プレゼンテーション</h3>
+
+        <h3>
+          スピーチ・<br>
+          プレゼンテーション
+        </h3>
+
         <span>Speech &amp; Presentation</span>
       </div>
 
@@ -279,11 +77,17 @@
       </div>
     </section>
 
-    <!-- 報道・メディア -->
+
+    <!-- 02 報道・メディア -->
     <section class="achievement-category">
       <div class="achievement-category-heading">
         <p>02</p>
-        <h3>報道・<br>メディア</h3>
+
+        <h3>
+          報道・<br>
+          メディア
+        </h3>
+
         <span>Media &amp; Reporting</span>
       </div>
 
@@ -314,11 +118,17 @@
       </div>
     </section>
 
-    <!-- 大型イベント・企業案件 -->
+
+    <!-- 03 大型イベント・企業案件 -->
     <section class="achievement-category">
       <div class="achievement-category-heading">
         <p>03</p>
-        <h3>大型イベント・<br>企業案件</h3>
+
+        <h3>
+          大型イベント・<br>
+          企業案件
+        </h3>
+
         <span>Corporate Events</span>
       </div>
 
