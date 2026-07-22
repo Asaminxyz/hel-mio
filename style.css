@@ -2026,3 +2026,176 @@ button {
     display: none;
   }
 }
+/* ==============================
+   COMPANY PAGE
+============================== */
+
+.company-main {
+  padding-top: 0;
+}
+
+.company-page-about {
+  min-height: auto;
+}
+
+.company-page-about .section {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.company-page-about .section-title h1 {
+  color: var(--navy);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+.company-page-about .section-title > p:last-child {
+  margin-top: 18px;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+
+.company-experience-section {
+  background: rgba(247, 243, 238, 0.72);
+}
+
+.company-experience-section .section {
+  padding-top: 100px;
+  padding-bottom: 110px;
+}
+
+.experience-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 54px;
+}
+
+.experience-archive-category {
+  padding: 32px 34px 34px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(183, 155, 93, 0.2);
+}
+
+.experience-archive-en {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.experience-archive-category h3 {
+  margin-bottom: 22px;
+  color: var(--navy);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.experience-archive-category ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-archive-category li {
+  position: relative;
+  padding: 11px 0 11px 16px;
+  color: #454545;
+  font-size: 14px;
+  line-height: 1.75;
+  border-top: 1px solid rgba(221, 212, 199, 0.72);
+}
+
+.experience-archive-category li::before {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.experience-note {
+  margin-top: 26px;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+
+/* ==============================
+   COMPANY PAGE TABLET
+============================== */
+
+@media (max-width: 1000px) {
+
+  .company-page-about .section {
+    padding-top: 76px;
+    padding-bottom: 82px;
+  }
+
+  .experience-archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==============================
+   COMPANY PAGE MOBILE
+============================== */
+
+@media (max-width: 650px) {
+
+  .company-page-about .section {
+    padding-top: 58px;
+    padding-bottom: 66px;
+  }
+
+  .company-page-about .section-title h1 {
+    font-size: 43px;
+  }
+
+  .company-experience-section .section {
+    padding-top: 66px;
+    padding-bottom: 74px;
+  }
+
+  .experience-archive-grid {
+    gap: 15px;
+    margin-top: 36px;
+  }
+
+  .experience-archive-category {
+    padding: 25px 20px 27px;
+  }
+
+  .experience-archive-category h3 {
+    margin-bottom: 17px;
+    font-size: 22px;
+  }
+
+  .experience-archive-category li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .experience-note {
+    margin-top: 19px;
+    font-size: 10px;
+    text-align: left;
+  }
+
+}
