@@ -2199,3 +2199,17 @@ button {
   }
 
 }
+/* 実績セクション上部の空白調整 */
+.achievements-section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.achievements-heading {
+  margin-bottom: 40px;
+}
+
+.achievements-grid {
+  margin-top: 0;
+  align-items: start;
+}
