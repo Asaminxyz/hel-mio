@@ -1919,3 +1919,73 @@ button {
   }
 
 }
+@media (max-width: 1000px) {
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .achievement-category {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 30px;
+    padding: 28px;
+  }
+
+  .achievement-category + .achievement-category {
+    border-left: 1px solid rgba(183, 155, 93, 0.22);
+  }
+
+  .achievement-category-heading {
+    min-height: auto;
+    margin-bottom: 0;
+  }
+
+  .achievement-list {
+    border-top: 0;
+  }
+
+  .achievement-item:first-child {
+    padding-top: 0;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .achievements-section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .achievements-heading {
+    margin-bottom: 32px;
+  }
+
+  .achievement-category {
+    display: block;
+    padding: 25px 21px;
+  }
+
+  .achievement-category-heading {
+    margin-bottom: 17px;
+  }
+
+  .achievement-item {
+    padding: 13px 0;
+  }
+
+  .achievement-item h4 {
+    font-size: 15px;
+  }
+
+  .achievement-item:first-child h4 {
+    font-size: 18px;
+  }
+
+  .achievements-disclaimer {
+    text-align: left;
+  }
+
+}
