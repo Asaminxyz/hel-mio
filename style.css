@@ -1775,22 +1775,108 @@ button {
     min-height: 300px;
   }
 
+  /* ==============================
+     ACHIEVEMENTS MOBILE
+  ============================== */
+
+  .achievements-section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .achievements-heading {
+    margin-bottom: 32px;
+  }
+
+  .achievements-heading h2 {
+    font-size: 27px;
+    line-height: 1.45;
+  }
+
+  .achievements-note {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
   .achievement-category {
     display: block;
-    padding: 33px 5px;
+    padding: 24px 20px 21px;
   }
 
   .achievement-category-heading {
-    margin-bottom: 25px;
+    min-height: auto;
+    margin-bottom: 17px;
+  }
+
+  .achievement-category-heading > p {
+    margin: 0 0 11px;
+    font-size: 36px;
+    line-height: 0.9;
+  }
+
+  .achievement-category-heading h3 {
+    max-width: none;
+    font-size: 23px;
+    line-height: 1.38;
+    letter-spacing: 0.03em;
+  }
+
+  .achievement-category-heading h3::after {
+    width: 45px;
+    margin-top: 13px;
+  }
+
+  .achievement-category-heading span {
+    margin-top: 9px;
+    font-size: 9px;
+    letter-spacing: 0.17em;
+  }
+
+  .achievement-list {
+    border-top: 1px solid rgba(221, 212, 199, 0.82);
   }
 
   .achievement-item {
     min-height: auto;
+    padding: 13px 0;
+  }
+
+  .achievement-label {
+    margin-bottom: 3px;
+    font-size: 8px;
+  }
+
+  .achievement-item h4 {
+    margin-bottom: 2px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .achievement-item:first-child h4 {
+    font-size: 18px;
+  }
+
+  .achievement-item > p:last-child {
+    font-size: 10px;
+    line-height: 1.65;
   }
 
   .achievements-disclaimer {
+    margin-top: 12px;
+    font-size: 9px;
+    line-height: 1.6;
     text-align: left;
   }
+
+  /* ==============================
+     OTHER MOBILE STYLES
+  ============================== */
 
   .partner-section h2 {
     font-size: 28px;
@@ -1835,7 +1921,6 @@ button {
   .footer-inner {
     display: grid;
     gap: 38px;
-
     width: calc(100% - 40px);
   }
 
@@ -1877,145 +1962,4 @@ button {
   .audition-main {
     padding: 65px 0 85px;
   }
-
-}
-@media (max-width: 1000px) {
-
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .achievement-category {
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 30px;
-    padding: 28px;
-  }
-
-  .achievement-category + .achievement-category {
-    border-left: 1px solid rgba(183, 155, 93, 0.22);
-  }
-
-  .achievement-category-heading {
-    min-height: auto;
-    margin-bottom: 0;
-  }
-
-  .achievement-list {
-    border-top: 0;
-  }
-
-  .achievement-item:first-child {
-    padding-top: 0;
-  }
-
-}
-
-@media (max-width: 650px) {
-
-  .achievements-section {
-    padding-top: 58px;
-    padding-bottom: 58px;
-  }
-
-  .achievements-heading {
-    margin-bottom: 32px;
-  }
-
-  .achievement-category {
-    display: block;
-    padding: 25px 21px;
-  }
-
-  .achievement-category-heading {
-    margin-bottom: 17px;
-  }
-
-  .achievement-item {
-    padding: 13px 0;
-  }
-
-  .achievement-item h4 {
-    font-size: 15px;
-  }
-
-  .achievement-item:first-child h4 {
-    font-size: 18px;
-  }
-
-  .achievements-disclaimer {
-    text-align: left;
-  }
-
-}
-@media (max-width: 1000px) {
-
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .achievement-category {
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 30px;
-    padding: 28px;
-  }
-
-  .achievement-category + .achievement-category {
-    border-left: 1px solid rgba(183, 155, 93, 0.22);
-  }
-
-  .achievement-category-heading {
-    min-height: auto;
-    margin-bottom: 0;
-  }
-
-  .achievement-list {
-    border-top: 0;
-  }
-
-  .achievement-item:first-child {
-    padding-top: 0;
-  }
-
-}
-
-@media (max-width: 650px) {
-
-  .achievements-section {
-    padding-top: 58px;
-    padding-bottom: 58px;
-  }
-
-  .achievements-heading {
-    margin-bottom: 32px;
-  }
-
-  .achievement-category {
-    display: block;
-    padding: 25px 21px;
-  }
-
-  .achievement-category-heading {
-    margin-bottom: 17px;
-  }
-
-  .achievement-item {
-    padding: 13px 0;
-  }
-
-  .achievement-item h4 {
-    font-size: 15px;
-  }
-
-  .achievement-item:first-child h4 {
-    font-size: 18px;
-  }
-
-  .achievements-disclaimer {
-    text-align: left;
-  }
-
 }
