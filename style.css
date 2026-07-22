@@ -1972,3 +1972,82 @@ button {
     padding: 65px 0 85px;
   }
 }
+/* ==============================
+
+   HERO TEXT ADJUSTMENT
+
+============================== */
+
+
+
+/* PC */
+
+.hero h1 {
+
+  font-size: clamp(28px, 2.5vw, 43px);
+
+  line-height: 1.55;
+
+  letter-spacing: 0.035em;
+
+}
+
+
+
+.hero-lead {
+
+  margin-top: 26px;
+
+  font-size: 15px;
+
+  line-height: 2;
+
+  letter-spacing: 0.035em;
+
+}
+
+
+
+/* スマホ */
+
+@media (max-width: 650px) {
+
+  .hero h1 {
+
+    font-size: 25px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.025em;
+
+  }
+
+
+
+  .hero-lead {
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+  }
+
+}.pc-only {
+
+  display: inline;
+
+}
+
+
+
+@media (max-width: 650px) {
+
+  .pc-only {
+
+    display: none;
+
+  }
+
+}
