@@ -1,1 +1,232 @@
+    <!-- ==============================
+         REQUEST FLOW
+    ============================== -->
+
+    <section
+      class="section request-section"
+      id="request"
+    >
+
+      <div class="section-title">
+
+        <h2>
+          REQUEST
+        </h2>
+
+        <span>
+          ご依頼の流れ
+        </span>
+
+      </div>
+
+
+      <div class="flow">
+
+        <div class="flow-item">
+
+          <div class="flow-num">
+            STEP
+            <strong>
+              01
+            </strong>
+          </div>
+
+          <div>
+
+            <h3>
+              ご相談・お問い合わせ
+            </h3>
+
+            <p>
+              まずは「何を伝えたいか」をお聞かせください。
+              案件が具体化していない段階からでも
+              ご相談いただけます。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="flow-item">
+
+          <div class="flow-num">
+            STEP
+            <strong>
+              02
+            </strong>
+          </div>
+
+          <div>
+
+            <h3>
+              ヒアリング・課題整理
+            </h3>
+
+            <p>
+              企業やブランドの想い、目的、
+              ターゲット、ご予算、スケジュールなどを整理し、
+              最適な方向性を設計します。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="flow-item">
+
+          <div class="flow-num">
+            STEP
+            <strong>
+              03
+            </strong>
+          </div>
+
+          <div>
+
+            <h3>
+              企画・チーム編成
+            </h3>
+
+            <p>
+              必要に応じて、映像・デザイン・イベント運営など、
+              各分野のパートナーと連携し、
+              案件ごとに最適なチームを編成します。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="flow-item">
+
+          <div class="flow-num">
+            STEP
+            <strong>
+              04
+            </strong>
+          </div>
+
+          <div>
+
+            <h3>
+              制作・準備
+            </h3>
+
+            <p>
+              キャスティング、台本・構成作成、
+              進行設計、映像・デザイン制作など、
+              本番に向けた準備を進めます。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="flow-item">
+
+          <div class="flow-num">
+            STEP
+            <strong>
+              05
+            </strong>
+          </div>
+
+          <div>
+
+            <h3>
+              本番・運営・アフターフォロー
+            </h3>
+
+            <p>
+              イベント運営、司会、メディア対応まで
+              一貫してサポート。
+              終了後の振り返りや改善提案まで伴走します。
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+   <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section
+      class="contact-box"
+      id="contact"
+    >
+
+      <p class="section-kicker center">
+        FOR CORPORATE CLIENTS
+      </p>
+
+      <h2>
+        CONTACT
+      </h2>
+
+      <p class="contact-lead">
+        企業PR・キャスティング・展示会・スピーチ・
+        プレゼンテーションなど、
+        案件が具体化していない段階からでも
+        ご相談いただけます。
+      </p>
+
+
+      <form
+        class="form"
+        action="https://formspree.io/f/mgojeynq"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="HÉLMIO 法人お問い合わせ"
+        >
+
+        <input
+          type="text"
+          name="company"
+          placeholder="会社名 / 団体名"
+          required
+        >
+
+        <input
+          type="text"
+          name="name"
+          placeholder="お名前"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="メールアドレス"
+          required
+        >
+
+        <textarea
+          name="message"
+          rows="7"
+          placeholder="お問い合わせ内容"
+          required
+        ></textarea>
+
+        <button type="submit">
+          法人のお問い合わせを送信する
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
 
