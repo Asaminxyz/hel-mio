@@ -188,6 +188,15 @@ button {
   background: var(--navy);
 }
 
+.site-nav .nav-audition {
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.site-nav .nav-audition:hover {
+  color: var(--navy);
+}
+
 /* ==============================
    HERO
 ============================== */
