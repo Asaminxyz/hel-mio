@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    出演者募集 | HÉLMIO
+  </title>
+
+  <meta
+    name="description"
+    content="HÉLMIOの出演者募集ページです。アナウンサー、MC、ナレーター、女優、モデルなどの経験者からの応募を受け付けています。"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body class="audition-page">
+
+  <header class="audition-header">
+
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="HÉLMIOトップページへ"
+    >
+      <div class="logo">
+        HÉLMIO
+      </div>
+
+      <div class="logo-sub">
+        Corporate Communication &amp; Casting
+      </div>
+    </a>
+
+    <a
+      href="index.html"
+      class="audition-back"
+    >
+      ← 法人向けサイトへ戻る
+    </a>
+
+  </header>
+
+
+  <main class="audition-main">
+
+    <div class="audition-title">
+
+      <h1>
+        AUDITION
+      </h1>
+
+      <span>
+        出演者募集
+      </span>
+
+    </div>
+
+
+    <p class="audition-intro">
+      HÉLMIOでは、アナウンサー、MC、ナレーター、
+      女優、モデルなど、
+      「伝える」ことを仕事にしたい方からの
+      ご応募を受け付けています。
+    </p>
+
+
+    <div class="audition-notice">
+      応募内容を確認後、活動内容や案件との適性を踏まえ、
+      面談をお願いする方にのみご連絡いたします。
+      応募によって所属や案件紹介を保証するものではありません。
+    </div>
+
+
+    <form
+      class="form"
+      action="https://formspree.io/f/mwvdkbrd"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="HÉLMIO 出演者応募"
+      >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="お名前"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="メールアドレス"
+        required
+      >
+
+      <input
+        type="text"
+        name="age"
+        placeholder="年齢"
+      >
+
+      <input
+        type="text"
+        name="area"
+        placeholder="お住まいの地域"
+      >
+
+      <input
+        type="text"
+        name="height"
+        placeholder="身長"
+      >
+
+      <input
+        type="url"
+        name="sns"
+        placeholder="Instagram・SNS・プロフィールURL"
+      >
+
+      <input
+        type="url"
+        name="youtube"
+        placeholder="YouTube・動画サンプルURL"
+      >
+
+      <input
+        type="file"
+        name="photo"
+        accept="image/*"
+      >
+
+      <textarea
+        name="message"
+        rows="7"
+        placeholder="経歴・自己PR・応募動機"
+        required
+      ></textarea>
+
+      <button type="submit">
+        応募内容を送信する
+      </button>
+
+    </form>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 HÉLMIO
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
