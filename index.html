@@ -11,7 +11,107 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20260723-8" rel="stylesheet"/>
+<link href="style.css?v=20260724-1" rel="stylesheet"/>
+<style>
+/* PROFILE MODAL — complete unified layout */
+.profile-top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.profile-top-actions .profile-action {
+  min-width: 210px;
+  justify-content: center;
+}
+
+.profile-action.is-disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.profile-career-groups {
+  display: grid;
+  gap: 34px;
+}
+
+.profile-career-group {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(177, 138, 67, 0.22);
+}
+
+.profile-career-group:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.profile-career-group-title {
+  margin: 0 0 14px;
+  color: #b18a43;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+.profile-career-group-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.profile-career-group-list li {
+  margin: 0;
+  color: #42484c;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.profile-actions--bottom {
+  justify-content: flex-start;
+  margin-top: 38px;
+}
+
+.pdf-export .profile-top-actions,
+.pdf-export .profile-actions--bottom {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .profile-top-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .profile-top-actions .profile-action {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profile-career-groups {
+    gap: 28px;
+  }
+
+  .profile-career-group {
+    padding-bottom: 23px;
+  }
+
+  .profile-career-group-title {
+    margin-bottom: 11px;
+    font-size: 17px;
+  }
+
+  .profile-career-group-list li {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+</style>
 </head>
 <body>
 <div class="page">
@@ -20,7 +120,7 @@
     ============================== -->
 <header class="site-header">
 <a aria-label="HÉLMIO トップへ" class="brand" href="#top">
-<div class="logo"
+<div class="logo">
           HÉLMIO
         </div>
 <div class="logo-sub">
@@ -491,7 +591,6 @@
 <img alt="南青良" loading="lazy" src="seira-new.jpeg"/>
 <div class="talent-card-body">
 <p class="talent-name">南 青良</p>
-<p class="talent-title">
 </div>
 </button>
 <button aria-haspopup="dialog" class="talent-card" data-talent-id="fumi-murakami" type="button">
@@ -506,9 +605,6 @@
           </div>
 <div class="talent-card-body">
 <p class="talent-name">Coming Soon</p>
-<p class="talent-title">
-              新しいプロフィールを準備中です
-            </p>
 </div>
 </button>
 </div>
@@ -596,7 +692,7 @@
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="talents.js"></script>
+<script src="talents.js?v=20260724-1"></script>
 <script>
   (() => {
     "use strict";
@@ -621,60 +717,115 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
 
-    const toYouTubeEmbedUrl = (url = "") => {
+    const toYouTubeWatchUrl = (url = "") => {
       try {
         const parsed = new URL(url);
+        const hostname = parsed.hostname.replace(/^www\./, "");
+        let videoId = "";
 
-        if (parsed.hostname.includes("youtu.be")) {
-          const videoId = parsed.pathname.replace("/", "");
-          return videoId
-            ? `https://www.youtube.com/embed/${videoId}`
-            : "";
+        if (hostname === "youtu.be") {
+          videoId = parsed.pathname.split("/").filter(Boolean)[0] || "";
+        } else if (
+          hostname === "youtube.com" ||
+          hostname === "m.youtube.com"
+        ) {
+          if (parsed.pathname.includes("/embed/")) {
+            videoId = parsed.pathname.split("/embed/")[1]?.split("/")[0] || "";
+          } else if (parsed.pathname.includes("/shorts/")) {
+            videoId = parsed.pathname.split("/shorts/")[1]?.split("/")[0] || "";
+          } else {
+            videoId = parsed.searchParams.get("v") || "";
+          }
         }
 
-        if (parsed.pathname.includes("/embed/")) {
-          return url;
-        }
-
-        const videoId = parsed.searchParams.get("v");
         return videoId
-          ? `https://www.youtube.com/embed/${videoId}`
+          ? `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`
           : "";
       } catch (error) {
         return "";
       }
     };
 
-   const profileLabels = {
-  height: "身長",
-  birthplace: "出身地",
-  bloodType: "血液型",
-  education: "学歴",
-  hobbies: "趣味",
-  skills: "特技",
-  qualifications: "資格"
-};
+    const profileLabels = {
+      height: "身長",
+      birthplace: "出身地",
+      bloodType: "血液型",
+      education: "学歴",
+      hobbies: "趣味",
+      skills: "特技",
+      qualifications: "資格"
+    };
 
-const createProfileMeta = (profile = {}) => {
-  const rows = Object.entries(profileLabels)
-    .map(([key, label]) => [label, profile[key]])
-    .filter(([, value]) => value);
+    const createProfileMeta = (profile = {}) => {
+      const rows = Object.entries(profileLabels)
+        .map(([key, label]) => [label, profile[key]])
+        .filter(
+          ([, value]) =>
+            typeof value === "string" && value.trim() !== ""
+        );
 
-  return `
-    <div class="profile-meta">
-      ${rows
-        .map(
-          ([label, value]) => `
-            <div class="profile-meta-row">
-              <span class="profile-meta-label">${escapeHtml(label)}</span>
-              <span class="profile-meta-value">${escapeHtml(value)}</span>
-            </div>
-          `
-        )
-        .join("")}
-    </div>
-  `;
-};
+      if (!rows.length) {
+        return "";
+      }
+
+      return `
+        <div class="profile-meta">
+          ${rows
+            .map(
+              ([label, value]) => `
+                <div class="profile-meta-row">
+                  <span class="profile-meta-label">${escapeHtml(label)}</span>
+                  <span class="profile-meta-value">${escapeHtml(value)}</span>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      `;
+    };
+
+    const createProfileTopActions = (talent) => {
+      const movies = Array.isArray(talent.youtube) ? talent.youtube : [];
+      const firstMovie = movies.find(
+        (movie) =>
+          movie &&
+          typeof movie.url === "string" &&
+          movie.url.trim() !== ""
+      );
+
+      const youtubeUrl = firstMovie
+        ? toYouTubeWatchUrl(firstMovie.url)
+        : "";
+
+      const videoAction = youtubeUrl
+        ? `
+          <a
+            class="profile-action secondary"
+            href="${escapeHtml(youtubeUrl)}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            出演動画を見る
+          </a>
+        `
+        : `
+          <span
+            class="profile-action secondary is-disabled"
+            aria-disabled="true"
+          >
+            出演動画を見る
+          </span>
+        `;
+
+      return `
+        <div class="profile-actions profile-top-actions">
+          <a class="profile-action primary" href="contact.html">
+            この方について相談する
+          </a>
+          ${videoAction}
+        </div>
+      `;
+    };
 
     const createPhotoArea = (talent) => {
       const photos = Array.isArray(talent.photos)
@@ -686,36 +837,35 @@ const createProfileMeta = (profile = {}) => {
       if (!mainPhoto) {
         return `
           <div>
-            <div class="profile-main-placeholder">
-              Coming Soon
-            </div>
+            <div class="profile-main-placeholder">Coming Soon</div>
           </div>
         `;
       }
 
-      const thumbs = photos.length > 1
-        ? `
-          <div class="profile-thumbs">
-            ${photos
-              .map(
-                (photo, index) => `
-                  <button
-                    class="profile-thumb${index === 0 ? " is-active" : ""}"
-                    type="button"
-                    data-photo="${escapeHtml(photo)}"
-                    aria-label="写真${index + 1}を表示"
-                  >
-                    <img
-                      src="${escapeHtml(photo)}"
-                      alt="${escapeHtml(talent.name)} 写真${index + 1}"
+      const thumbs =
+        photos.length > 1
+          ? `
+            <div class="profile-thumbs">
+              ${photos
+                .map(
+                  (photo, index) => `
+                    <button
+                      class="profile-thumb${index === 0 ? " is-active" : ""}"
+                      type="button"
+                      data-photo="${escapeHtml(photo)}"
+                      aria-label="写真${index + 1}を表示"
                     >
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-        `
-        : "";
+                      <img
+                        src="${escapeHtml(photo)}"
+                        alt="${escapeHtml(talent.name)} 写真${index + 1}"
+                      >
+                    </button>
+                  `
+                )
+                .join("")}
+            </div>
+          `
+          : "";
 
       return `
         <div>
@@ -734,19 +884,58 @@ const createProfileMeta = (profile = {}) => {
         return "";
       }
 
+      const groups = new Map();
+
+      careers.forEach((career) => {
+        if (!career) {
+          return;
+        }
+
+        const category =
+          typeof career.category === "string" && career.category.trim() !== ""
+            ? career.category.trim()
+            : "その他";
+
+        const itemText =
+          typeof career.text === "string" ? career.text.trim() : "";
+
+        if (!itemText) {
+          return;
+        }
+
+        if (!groups.has(category)) {
+          groups.set(category, []);
+        }
+
+        const items = groups.get(category);
+        if (!items.includes(itemText)) {
+          items.push(itemText);
+        }
+      });
+
+      if (!groups.size) {
+        return "";
+      }
+
       return `
         <section class="profile-section">
           <h3 class="profile-section-title">主な経歴・実績</h3>
-          <div class="profile-career-list">
-            ${careers
+
+          <div class="profile-career-groups">
+            ${Array.from(groups.entries())
               .map(
-                (career) => `
-                  <div class="profile-career-row">
-                    <span class="profile-career-category">
-                      ${escapeHtml(career.category)}
-                    </span>
-                    <span>${escapeHtml(career.text)}</span>
-                  </div>
+                ([category, items]) => `
+                  <section class="profile-career-group">
+                    <h4 class="profile-career-group-title">
+                      ${escapeHtml(category)}
+                    </h4>
+
+                    <ul class="profile-career-group-list">
+                      ${items
+                        .map((item) => `<li>${escapeHtml(item)}</li>`)
+                        .join("")}
+                    </ul>
+                  </section>
                 `
               )
               .join("")}
@@ -760,63 +949,25 @@ const createProfileMeta = (profile = {}) => {
         return "";
       }
 
+      const validTags = tags.filter(
+        (tag) => typeof tag === "string" && tag.trim() !== ""
+      );
+
+      if (!validTags.length) {
+        return "";
+      }
+
       return `
         <section class="profile-section">
           <h3 class="profile-section-title">対応領域</h3>
           <div class="profile-tags">
-            ${tags
+            ${validTags
               .map(
                 (tag) => `
                   <span class="profile-tag">${escapeHtml(tag)}</span>
                 `
               )
               .join("")}
-          </div>
-        </section>
-      `;
-    };
-
-    const createMovieSection = (movies = []) => {
-      if (!Array.isArray(movies) || !movies.length) {
-        return "";
-      }
-
-      const movieItems = movies
-        .map((movie) => {
-          const embedUrl = toYouTubeEmbedUrl(movie.url);
-
-          if (!embedUrl) {
-            return "";
-          }
-
-          return `
-            <div>
-              <div class="profile-movie-frame">
-                <iframe
-                  src="${escapeHtml(embedUrl)}"
-                  title="${escapeHtml(movie.title)}"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <p class="profile-movie-title">
-                ${escapeHtml(movie.title)}
-              </p>
-            </div>
-          `;
-        })
-        .join("");
-
-      if (!movieItems) {
-        return "";
-      }
-
-      return `
-        <section class="profile-section profile-movie-section">
-          <h3 class="profile-section-title">動画</h3>
-          <div class="profile-movie-list">
-            ${movieItems}
           </div>
         </section>
       `;
@@ -847,22 +998,16 @@ const createProfileMeta = (profile = {}) => {
               <p class="profile-kana">${escapeHtml(talent.kana)}</p>
               <p class="profile-en">${escapeHtml(talent.englishName)}</p>
               <p class="profile-summary">${escapeHtml(talent.summary)}</p>
+
               ${createProfileMeta(talent.profile)}
+              ${createProfileTopActions(talent)}
             </div>
           </div>
 
           ${createCareerSection(talent.careers)}
           ${createTagSection(talent.tags)}
-          ${createMovieSection(talent.youtube)}
 
-          <div class="profile-actions">
-            <a
-              class="profile-action primary"
-              href="contact.html"
-            >
-              この方について相談する
-            </a>
-
+          <div class="profile-actions profile-actions--bottom">
             <button
               class="profile-action secondary"
               id="profileDownload"
@@ -912,7 +1057,11 @@ const createProfileMeta = (profile = {}) => {
                 filename: `${talent.englishName || talent.name}-profile.pdf`,
                 image: { type: "jpeg", quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
-                jsPDF: { unit: "px", format: [794, 1123], orientation: "portrait" }
+                jsPDF: {
+                  unit: "px",
+                  format: [794, 1123],
+                  orientation: "portrait"
+                }
               })
               .from(profileSheet)
               .save();
@@ -977,7 +1126,10 @@ const createProfileMeta = (profile = {}) => {
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && profileModal?.classList.contains("is-open")) {
+      if (
+        event.key === "Escape" &&
+        profileModal?.classList.contains("is-open")
+      ) {
         closeProfile();
       }
     });
