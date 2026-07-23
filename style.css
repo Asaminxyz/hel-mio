@@ -59,3 +59,55 @@
     grid-template-columns: 1fr;
   }
 }
+/* WORKS：PCで4カード横並び */
+
+.helmio-showcase__inner {
+  width: min(1440px, 100%);
+}
+
+.helmio-showcase__layout {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__card--wide {
+  grid-column: auto;
+  min-width: 0;
+  height: 100%;
+  padding: 24px 20px 22px;
+}
+
+.helmio-showcase__card-heading h3 {
+  font-size: 17px;
+}
+
+.helmio-showcase__card-heading p {
+  font-size: 9px;
+}
+
+.helmio-showcase__item h4,
+.helmio-showcase__row-title h4 {
+  font-size: 13px;
+}
+
+.helmio-showcase__item p,
+.helmio-showcase__row > p {
+  font-size: 11px;
+}
+
+/* タブレットは2列 */
+@media screen and (max-width: 1100px) {
+  .helmio-showcase__layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* スマホは1列 */
+@media screen and (max-width: 650px) {
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr;
+  }
+}
