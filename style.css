@@ -528,94 +528,130 @@ button {
   background: #faf8f5;
 }
 
+/*
+  参考デザインのように、
+  左右とも横幅を制限して中央へまとめる
+*/
 .service-layout {
   display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 72px;
+  grid-template-columns: 360px 540px;
+  justify-content: center;
   align-items: start;
-  max-width: 1180px;
+  gap: 64px;
+
+  width: 100%;
+  max-width: 1040px;
   margin: 0 auto;
 }
+
+/* ==============================
+   LEFT
+============================== */
 
 .service-left {
   position: sticky;
   top: 110px;
+  min-width: 0;
 }
 
 .service-left h2 {
   margin: 0 0 22px;
 
   color: var(--navy);
-  font-family: "Cormorant Garamond","Noto Serif JP",serif;
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif JP",
+    serif;
   font-size: 48px;
   font-weight: 300;
   line-height: 1.18;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
 
 .service-left p {
-  margin: 0 0 28px;
+  margin: 0 0 26px;
 
-  color: #666;
+  color: #666666;
   font-size: 15px;
   line-height: 1.9;
 }
 
+/* 参考画像のような縦長写真 */
 .service-left img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 500px;
+
   object-fit: cover;
+  background: #eee7de;
 }
 
-/* ---------- Right ---------- */
+/* ==============================
+   RIGHT
+============================== */
 
 .service-list {
+  width: 100%;
+  max-width: 540px;
+
   border-top: 1px solid var(--line);
 }
 
 .service-row {
   display: grid;
-  grid-template-columns: 72px 1fr 48px;
-  gap: 26px;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
   align-items: center;
+  gap: 20px;
 
-  padding: 30px 0;
+  min-height: 112px;
+  padding: 22px 0;
 
   border-bottom: 1px solid var(--line);
 
-  transition: all .28s ease;
+  transition:
+    background-color 0.25s ease,
+    padding 0.25s ease;
 }
 
 .service-row:hover {
-  transform: translateX(10px);
+  padding-right: 10px;
+  padding-left: 10px;
+  background: rgba(183, 148, 83, 0.055);
 }
 
-.service-row>span {
+/* 番号 */
+.service-row > span {
+  align-self: start;
+  padding-top: 3px;
+
   color: var(--gold);
-  font-family: "Cormorant Garamond",serif;
-  font-size: 32px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
   line-height: 1;
 }
 
+/* タイトル */
 .service-row strong {
   display: block;
-  margin: 0 0 8px;
+  margin: 0 0 7px;
 
   color: var(--navy);
-  font-size: 30px;
+  font-size: 23px;
   font-weight: 500;
   line-height: 1.45;
+  letter-spacing: 0.02em;
 }
 
+/* 説明文 */
 .service-row p {
   margin: 0;
 
-  color: #666;
-  font-size: 15px;
-  line-height: 1.8;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.75;
 }
 
+/* 円形矢印 */
 .service-row::after {
   content: "→";
 
@@ -627,92 +663,146 @@ button {
   height: 46px;
 
   color: var(--gold);
+  font-size: 17px;
 
-  border: 1px solid #d9cfbf;
+  border: 1px solid rgba(183, 148, 83, 0.48);
   border-radius: 50%;
 
-  transition: .28s;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .service-row:hover::after {
+  color: #ffffff;
   background: var(--gold);
-  color: #fff;
   border-color: var(--gold);
 }
 
-/* ---------- Tablet ---------- */
+/* ==============================
+   TABLET
+============================== */
 
-@media (max-width:1024px){
+@media screen and (max-width: 1100px) {
+  .service-layout {
+    grid-template-columns:
+      minmax(280px, 340px)
+      minmax(440px, 520px);
+    gap: 46px;
 
-.service-layout{
+    max-width: 920px;
+    padding: 0 24px;
+  }
 
-grid-template-columns:300px 1fr;
-gap:48px;
+  .service-left img {
+    height: 460px;
+  }
 
+  .service-row {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 16px;
+  }
+
+  .service-row strong {
+    font-size: 21px;
+  }
+
+  .service-row::after {
+    width: 42px;
+    height: 42px;
+  }
 }
 
-.service-left h2{
+/* ==============================
+   MOBILE
+============================== */
 
-font-size:42px;
+@media screen and (max-width: 780px) {
+  .service-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
 
+    width: 100%;
+    max-width: 560px;
+    padding: 0 20px;
+  }
+
+  .service-left {
+    position: static;
+  }
+
+  .service-left h2 {
+    font-size: 40px;
+  }
+
+  .service-left img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-list {
+    max-width: none;
+  }
+
+  .service-row {
+    grid-template-columns: 42px minmax(0, 1fr) 40px;
+    gap: 13px;
+
+    min-height: auto;
+    padding: 21px 0;
+  }
+
+  .service-row:hover {
+    padding-right: 0;
+    padding-left: 0;
+    background: transparent;
+  }
+
+  .service-row > span {
+    font-size: 25px;
+  }
+
+  .service-row strong {
+    font-size: 20px;
+  }
+
+  .service-row p {
+    font-size: 13px;
+  }
+
+  .service-row::after {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
 }
 
-.service-row strong{
+/* ==============================
+   SMALL MOBILE
+============================== */
 
-font-size:26px;
+@media screen and (max-width: 480px) {
+  .service-layout {
+    padding: 0 16px;
+  }
 
-}
+  .service-left h2 {
+    font-size: 36px;
+  }
 
-}
+  .service-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
 
-/* ---------- Mobile ---------- */
+  .service-row::after {
+    display: none;
+  }
 
-@media (max-width:768px){
-
-.service-layout{
-
-grid-template-columns:1fr;
-gap:42px;
-
-}
-
-.service-left{
-
-position:static;
-
-}
-
-.service-left img{
-
-aspect-ratio:16/10;
-
-}
-
-.service-row{
-
-grid-template-columns:56px 1fr;
-padding:24px 0;
-
-}
-
-.service-row::after{
-
-display:none;
-
-}
-
-.service-row strong{
-
-font-size:22px;
-
-}
-
-.service-row p{
-
-font-size:14px;
-
-}
-
+  .service-row strong {
+    font-size: 19px;
+  }
 }
 /* ==============================
    WHY
