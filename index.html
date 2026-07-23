@@ -645,34 +645,36 @@
       }
     };
 
-    const createProfileMeta = (profile = {}) => {
-      const rows = [
-        ["出身地", profile.birthplace],
-        ["身長", profile.height],
-        ["専門分野", profile.specialties],
-        ["言語", profile.languages],
-        ["資格", profile.qualifications]
-      ].filter(([, value]) => value);
+   const profileLabels = {
+  height: "身長",
+  birthplace: "出身地",
+  bloodType: "血液型",
+  education: "学歴",
+  hobbies: "趣味",
+  skills: "特技",
+  qualifications: "資格"
+};
 
-      if (!rows.length) {
-        return "";
-      }
+const createProfileMeta = (profile = {}) => {
+  const rows = Object.entries(profileLabels)
+    .map(([key, label]) => [label, profile[key]])
+    .filter(([, value]) => value);
 
-      return `
-        <div class="profile-meta">
-          ${rows
-            .map(
-              ([label, value]) => `
-                <div class="profile-meta-row">
-                  <span class="profile-meta-label">${escapeHtml(label)}</span>
-                  <span class="profile-meta-value">${escapeHtml(value)}</span>
-                </div>
-              `
-            )
-            .join("")}
-        </div>
-      `;
-    };
+  return `
+    <div class="profile-meta">
+      ${rows
+        .map(
+          ([label, value]) => `
+            <div class="profile-meta-row">
+              <span class="profile-meta-label">${escapeHtml(label)}</span>
+              <span class="profile-meta-value">${escapeHtml(value)}</span>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+};
 
     const createPhotoArea = (talent) => {
       const photos = Array.isArray(talent.photos)
