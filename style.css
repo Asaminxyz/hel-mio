@@ -529,21 +529,304 @@ button {
 }
 
 /*
-  参考デザインのように、
-  左右とも横幅を制限して中央へまとめる
+  左カラム全体と右側のリスト全体を
+  ほぼ同じ高さにする
 */
 .service-layout {
   display: grid;
-  grid-template-columns: 360px 540px;
-  justify-content: center;
-  align-items: start;
+  grid-template-columns: 360px 560px;
   gap: 64px;
+  align-items: stretch;
+  justify-content: center;
 
   width: 100%;
-  max-width: 1040px;
+  max-width: 984px;
   margin: 0 auto;
 }
 
+/* ==============================
+   LEFT
+============================== */
+
+.service-left {
+  position: static;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.service-left h2 {
+  margin: 0 0 20px;
+
+  color: var(--navy);
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif JP",
+    serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: 0.06em;
+}
+
+.service-left p {
+  margin: 0 0 26px;
+
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/*
+  見出し・説明文を含めた左カラム全体が
+  右側の5項目と揃う高さ
+*/
+.service-left img {
+  display: block;
+  width: 100%;
+  height: 468px;
+  margin-top: auto;
+
+  object-fit: cover;
+  object-position: center;
+  background: #eee7de;
+}
+
+/* ==============================
+   RIGHT
+============================== */
+
+.service-list {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+
+  width: 100%;
+  min-height: 650px;
+
+  border-top: 1px solid var(--line);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 48px;
+  gap: 20px;
+  align-items: center;
+
+  min-width: 0;
+  padding: 22px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    background-color 0.25s ease,
+    padding 0.25s ease;
+}
+
+.service-row:hover {
+  padding-right: 10px;
+  padding-left: 10px;
+  background: rgba(183, 148, 83, 0.055);
+}
+
+/* 番号 */
+
+.service-row > span {
+  align-self: start;
+  padding-top: 5px;
+
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* 内容部分 */
+
+.service-row > div {
+  min-width: 0;
+}
+
+.service-row strong {
+  display: block;
+  margin: 0 0 9px;
+
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+}
+
+.service-row p {
+  margin: 0;
+
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* 円形矢印 */
+
+.service-row::after {
+  content: "→";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  color: var(--gold);
+  font-size: 17px;
+  line-height: 1;
+
+  border: 1px solid rgba(183, 148, 83, 0.48);
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-row:hover::after {
+  color: #ffffff;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media screen and (max-width: 1080px) {
+  .service-layout {
+    grid-template-columns:
+      minmax(300px, 340px)
+      minmax(460px, 540px);
+    gap: 46px;
+
+    max-width: 930px;
+    padding: 0 24px;
+  }
+
+  .service-left h2 {
+    font-size: 43px;
+  }
+
+  .service-left img {
+    height: 440px;
+  }
+
+  .service-list {
+    min-height: 620px;
+  }
+
+  .service-row {
+    grid-template-columns: 50px minmax(0, 1fr) 44px;
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .service-row strong {
+    font-size: 21px;
+  }
+
+  .service-row::after {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media screen and (max-width: 780px) {
+  .service-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+
+    width: 100%;
+    max-width: 560px;
+    padding: 0 20px;
+  }
+
+  .service-left h2 {
+    font-size: 40px;
+  }
+
+  .service-left img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-list {
+    display: block;
+    min-height: 0;
+  }
+
+  .service-row {
+    grid-template-columns: 42px minmax(0, 1fr) 40px;
+    gap: 13px;
+
+    padding: 22px 0;
+  }
+
+  .service-row:hover {
+    padding-right: 0;
+    padding-left: 0;
+    background: transparent;
+  }
+
+  .service-row > span {
+    font-size: 25px;
+  }
+
+  .service-row strong {
+    font-size: 20px;
+  }
+
+  .service-row p {
+    font-size: 13px;
+  }
+
+  .service-row::after {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media screen and (max-width: 480px) {
+  .service-layout {
+    padding: 0 16px;
+  }
+
+  .service-left h2 {
+    font-size: 36px;
+  }
+
+  .service-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .service-row::after {
+    display: none;
+  }
+
+  .service-row strong {
+    font-size: 19px;
+  }
+}
 /* ==============================
    LEFT
 ============================== */
