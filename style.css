@@ -2901,3 +2901,269 @@ button {
     </div>
   </div>
 </section>
+/* =========================================================
+   HÉLMIO SHOWCASE
+========================================================= */
+
+.helmio-showcase,
+.helmio-showcase * {
+  box-sizing: border-box;
+}
+
+.helmio-showcase {
+  width: 100%;
+  padding: 112px 24px;
+  background: #f5f2ed;
+}
+
+.helmio-showcase__inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.helmio-showcase__heading {
+  margin: 0 0 52px;
+}
+
+.helmio-showcase__eyebrow {
+  margin: 0 0 12px;
+  color: #907b57;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.22em;
+}
+
+.helmio-showcase__title {
+  margin: 0;
+  color: #26231f;
+  font-family: "Noto Serif JP", "Yu Mincho", serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+
+.helmio-showcase__lead {
+  margin: 22px 0 0;
+  color: #69635c;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+.helmio-showcase__layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.helmio-showcase__card {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 36px 34px 32px;
+  border: 1px solid rgba(48, 43, 37, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.helmio-showcase__card--wide {
+  grid-column: 1 / -1;
+}
+
+.helmio-showcase__card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 0 0 24px;
+  border-bottom: 1px solid rgba(48, 43, 37, 0.12);
+}
+
+.helmio-showcase__card-number {
+  flex: 0 0 auto;
+  display: block;
+  margin-top: 4px;
+  color: #907b57;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.helmio-showcase__card-heading h3 {
+  margin: 0;
+  color: #282521;
+  font-family: "Noto Serif JP", "Yu Mincho", serif;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.helmio-showcase__card-heading p {
+  margin: 7px 0 0;
+  color: #907b57;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.helmio-showcase__list {
+  padding-top: 8px;
+}
+
+.helmio-showcase__item {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(48, 43, 37, 0.09);
+}
+
+.helmio-showcase__item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.helmio-showcase__item h4 {
+  margin: 0 0 6px;
+  color: #2c2925;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+.helmio-showcase__item p {
+  margin: 0;
+  color: #716b64;
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+/* 横長カード */
+
+.helmio-showcase__rows {
+  padding-top: 8px;
+}
+
+.helmio-showcase__row {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 36px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(48, 43, 37, 0.09);
+}
+
+.helmio-showcase__row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.helmio-showcase__row-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.helmio-showcase__row-title > span {
+  flex: 0 0 auto;
+  display: block;
+  margin-top: 4px;
+  color: #907b57;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.helmio-showcase__row-title h4 {
+  min-width: 0;
+  margin: 0;
+  color: #2c2925;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+.helmio-showcase__row > p {
+  min-width: 0;
+  margin: 0;
+  color: #716b64;
+  font-size: 13px;
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+}
+
+/* タブレット */
+
+@media screen and (max-width: 900px) {
+  .helmio-showcase {
+    padding: 88px 24px;
+  }
+
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .helmio-showcase__card--wide {
+    grid-column: auto;
+  }
+
+  .helmio-showcase__row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .helmio-showcase__row > p {
+    padding-left: 29px;
+  }
+}
+
+/* スマートフォン */
+
+@media screen and (max-width: 600px) {
+  .helmio-showcase {
+    padding: 70px 18px;
+  }
+
+  .helmio-showcase__heading {
+    margin-bottom: 34px;
+  }
+
+  .helmio-showcase__lead br {
+    display: none;
+  }
+
+  .helmio-showcase__layout {
+    gap: 16px;
+  }
+
+  .helmio-showcase__card {
+    padding: 27px 21px 25px;
+  }
+
+  .helmio-showcase__card-heading {
+    gap: 13px;
+    padding-bottom: 19px;
+  }
+
+  .helmio-showcase__card-heading h3 {
+    font-size: 19px;
+  }
+
+  .helmio-showcase__item {
+    padding: 16px 0;
+  }
+
+  .helmio-showcase__row {
+    padding: 17px 0;
+  }
+
+  .helmio-showcase__row > p {
+    padding-left: 27px;
+  }
+}
