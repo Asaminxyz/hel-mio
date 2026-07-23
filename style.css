@@ -3867,3 +3867,218 @@ button {
     font-size: 12px;
   }
 }
+
+/* =========================================================
+   FINAL HOMEPAGE FIXES 窶� 2026-07-23
+========================================================= */
+
+/* ---------- WORKS�啀C縺ｯ蠢�★4蛻� ---------- */
+.helmio-showcase {
+  padding: 96px 24px;
+}
+
+.helmio-showcase__inner {
+  width: calc(100% - 64px) !important;
+  max-width: 1600px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.helmio-showcase__heading {
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.helmio-showcase__title {
+  font-size: clamp(42px, 4.2vw, 62px) !important;
+  line-height: 1.25 !important;
+}
+
+.helmio-showcase__lead {
+  margin-top: 20px;
+  color: #5f5952;
+  font-size: 16px !important;
+  line-height: 2;
+}
+
+.helmio-showcase__layout {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  align-items: stretch !important;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__card--wide {
+  grid-column: auto !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 30px 26px 28px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(34, 44, 56, 0.15) !important;
+  box-shadow: 0 15px 38px rgba(23, 34, 47, 0.06);
+}
+
+.helmio-showcase__card-heading {
+  min-height: 90px;
+  gap: 12px !important;
+  padding-bottom: 20px !important;
+}
+
+.helmio-showcase__card-number {
+  margin-top: 6px;
+  font-size: 13px !important;
+}
+
+.helmio-showcase__card-heading h3 {
+  color: #102d4f !important;
+  font-size: clamp(18px, 1.35vw, 23px) !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.helmio-showcase__card-heading p {
+  margin-top: 7px !important;
+  font-size: 11px !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.12em !important;
+}
+
+.helmio-showcase__list,
+.helmio-showcase__rows {
+  padding-top: 8px !important;
+}
+
+.helmio-showcase__item,
+.helmio-showcase__row {
+  padding: 16px 0 !important;
+}
+
+.helmio-showcase__item h4,
+.helmio-showcase__row-title h4 {
+  color: #28231f !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.65 !important;
+}
+
+.helmio-showcase__item p,
+.helmio-showcase__row > p {
+  margin-top: 6px !important;
+  color: #6d665f !important;
+  font-size: 12.5px !important;
+  line-height: 1.75 !important;
+}
+
+/* 逕ｻ髱｢蟷�′縺九↑繧顔強縺上↑繧九∪縺ｧ縺ｯ4蛻励ｒ邯ｭ謖� */
+@media screen and (max-width: 760px) {
+  .helmio-showcase {
+    padding: 64px 16px;
+  }
+
+  .helmio-showcase__inner {
+    width: 100% !important;
+  }
+
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .helmio-showcase__title {
+    font-size: 36px !important;
+  }
+}
+
+/* ---------- COMMUNICATION PARTNER ---------- */
+.partner-section h2 {
+  color: #102d4f;
+}
+
+.partner-copy {
+  max-width: 820px;
+}
+
+.partner-copy p {
+  font-size: 16px;
+  line-height: 2.05;
+}
+
+/* ---------- WHY��3繧ｫ繝ｼ繝� ---------- */
+.reason-cards {
+  max-width: 1240px;
+}
+
+.reason-card {
+  min-height: 390px;
+}
+
+/* ---------- SERVICE�夂判蜒上→遏｢蜊ｰ譁�ｭ怜喧縺大ｯｾ遲� ---------- */
+.service-row::after {
+  content: "\2192" !important;
+  font-family: Arial, sans-serif !important;
+  line-height: 1 !important;
+}
+
+/* ---------- PROFESSIONALS ---------- */
+.talent-cards {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+.talent-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+.talent-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 120px;
+  padding: 18px 20px 22px;
+  text-align: left;
+}
+
+.talent-name,
+.talent-title {
+  display: block;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.talent-name {
+  margin: 0 0 6px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.talent-title {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.talent-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .talent-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .talent-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
