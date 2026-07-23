@@ -13,10 +13,9 @@
 
   <meta
     name="description"
-    content="HÉLMIOへの法人お問い合わせページです。企業PR、キャスティング、展示会、イベント、スピーチ支援などをご相談いただけます。"
+    content="HÉLMIOへの法人お問い合わせページです。展示会、採用イベント、企業PR、キャスティング、スピーチ・プレゼンテーション支援などをご相談いただけます。"
   >
 
-  <!-- contact.html と style.css が同じフォルダにある場合 -->
   <link
     rel="stylesheet"
     href="style.css"
@@ -26,69 +25,86 @@
 
 <body>
 
-  <!-- HEADER -->
-<header class="site-header">
-
-  <a
-    href="index.html"
-    class="logo-wrap"
-    aria-label="HÉLMIO トップページ"
-  >
-
-    <div class="logo">
-      HÉLMIO
-    </div>
-
-    <div class="logo-sub">
-      Corporate Communication &amp; Casting
-    </div>
-
-  </a>
-
-
-  <nav
-    class="site-nav"
-    id="siteNav"
-  >
-
-    <a href="index.html#service">
-      サービス
-    </a>
-
-    <a href="index.html#achievements">
-      実績
-    </a>
-
-    <a href="index.html#talent">
-      プロフェッショナル
-    </a>
-
-    <a href="company.html">
-      会社概要
-    </a>
-
-    <a href="contact.html#request">
-      ご相談の流れ
-    </a>
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="site-header">
 
     <a
-      href="audition.html"
-      class="nav-audition"
+      href="index.html"
+      class="logo-wrap"
+      aria-label="HÉLMIO トップページ"
     >
-      オーディション
+      <div class="logo">
+        HÉLMIO
+      </div>
+
+      <div class="logo-sub">
+        Corporate Communication &amp; Casting
+      </div>
     </a>
 
-    <a
-      href="contact.html"
-      class="nav-contact"
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="メニューを開く"
+      aria-controls="siteNav"
+      aria-expanded="false"
     >
-      法人のお問い合わせ
-    </a>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  </nav>
 
-</header>
+    <nav
+      class="site-nav"
+      id="siteNav"
+      aria-label="メインナビゲーション"
+    >
+      <a href="index.html#service">
+        サービス
+      </a>
 
+      <a href="index.html#works">
+        実績
+      </a>
+
+      <a href="index.html#talent">
+        プロフェッショナル
+      </a>
+
+      <a href="company.html">
+        会社概要
+      </a>
+
+      <a href="contact.html#request">
+        ご相談の流れ
+      </a>
+
+      <a
+        href="audition.html"
+        class="nav-audition"
+      >
+        オーディション
+      </a>
+
+      <a
+        href="contact.html"
+        class="nav-contact"
+        aria-current="page"
+      >
+        法人のお問い合わせ
+      </a>
+    </nav>
+
+  </header>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
   <main class="contact-page-main">
 
     <!-- PAGE HERO -->
@@ -109,9 +125,9 @@
         </p>
 
         <p class="contact-page-intro">
-          企業PR、キャスティング、展示会、スピーチ・プレゼンテーション、
-          イベント企画運営、映像制作など、案件が具体化していない段階から
-          お気軽にご相談ください。
+          展示会、採用イベント、企業PR、キャスティング、
+          スピーチ・プレゼンテーション、イベント企画運営など。
+          案件がまだ具体化していない段階からご相談いただけます。
         </p>
 
       </div>
@@ -119,8 +135,57 @@
     </section>
 
 
+    <!-- INITIAL CONSULTATION -->
+    <section
+      class="contact-consultation-section"
+      aria-labelledby="consultation-title"
+    >
+
+      <div class="contact-page-container">
+
+        <div class="contact-consultation-note">
+
+          <p class="contact-consultation-note__label">
+            INITIAL CONSULTATION
+          </p>
+
+          <h2
+            class="contact-consultation-note__title"
+            id="consultation-title"
+          >
+            初回のご相談・お見積りは無料です。
+          </h2>
+
+          <p class="contact-consultation-note__text">
+            「何から相談すればよいか分からない」という段階でも問題ありません。<br>
+            現在のお悩みや、実現したいことをお聞かせください。
+          </p>
+
+          <p class="contact-consultation-note__sub">
+            開催日や本番日が決まっている案件は、
+            企画や出演者の選定期間を確保するため、
+            早い段階でのご相談をおすすめしています。
+          </p>
+
+          <a
+            href="#contact-form"
+            class="contact-consultation-note__button"
+          >
+            お問い合わせフォームへ
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
     <!-- REQUEST FLOW -->
-    <section class="request-section">
+    <section
+      class="request-section"
+      id="request"
+    >
 
       <div class="contact-page-container">
 
@@ -135,7 +200,8 @@
           </h2>
 
           <p>
-            ご相談から実施後のフォローまで、一貫してサポートします。
+            ご相談から実施後のフォローまで、
+            プロジェクトに必要な範囲を一貫してサポートします。
           </p>
 
         </div>
@@ -158,8 +224,9 @@
               </h3>
 
               <p>
-                まずは「何を伝えたいか」をお聞かせください。
-                案件が具体化していない段階からでもご相談いただけます。
+                まずは「何を伝えたいか」「どのような場を予定しているか」を
+                お聞かせください。案件が具体化していない段階からでも
+                ご相談いただけます。
               </p>
 
             </div>
@@ -183,7 +250,8 @@
 
               <p>
                 企業やブランドの想い、目的、ターゲット、ご予算、
-                スケジュールなどを整理し、最適な方向性を設計します。
+                スケジュールを伺い、プロジェクトの課題と
+                必要な支援範囲を整理します。
               </p>
 
             </div>
@@ -202,12 +270,13 @@
             <div class="request-step-content">
 
               <h3>
-                企画・チーム編成
+                企画・ご提案
               </h3>
 
               <p>
-                必要に応じて、映像・デザイン・イベント運営など、
-                各分野のパートナーと連携し、案件ごとに最適なチームを編成します。
+                メッセージ設計、構成、台本、資料、キャスティング、
+                現場進行など、目的に応じた企画と実施内容を
+                ご提案します。
               </p>
 
             </div>
@@ -230,8 +299,8 @@
               </h3>
 
               <p>
-                キャスティング、台本・構成作成、進行設計、
-                映像・デザイン制作など、本番に向けた準備を進めます。
+                商品や事業への理解を深めながら、台本・構成・資料の制作、
+                出演者の選定、リハーサル、当日の進行設計などを進めます。
               </p>
 
             </div>
@@ -250,12 +319,13 @@
             <div class="request-step-content">
 
               <h3>
-                本番・運営・アフターフォロー
+                本番・運営・フォロー
               </h3>
 
               <p>
-                イベント運営、司会、メディア対応まで一貫してサポート。
-                終了後の振り返りや改善提案まで伴走します。
+                司会・プレゼンテーション・イベント運営・メディア対応まで、
+                必要な範囲をサポートします。終了後の振り返りや
+                改善提案にも対応します。
               </p>
 
             </div>
@@ -294,8 +364,13 @@
             </p>
 
             <p>
-              企業PR、キャスティング、展示会、スピーチ・プレゼンテーションなど、
-              案件が具体化していない段階からでもご相談いただけます。
+              展示会、採用イベント、企業PR、キャスティング、
+              スピーチ・プレゼンテーションなど、
+              現在の課題や実現したいことをお聞かせください。
+            </p>
+
+            <p class="contact-form-free">
+              初回のご相談・お見積りは無料です。
             </p>
 
             <p class="contact-form-note">
@@ -398,6 +473,14 @@
                   選択してください
                 </option>
 
+                <option value="exhibition">
+                  展示会支援
+                </option>
+
+                <option value="recruitment">
+                  採用イベント
+                </option>
+
                 <option value="communication">
                   企業コミュニケーション支援
                 </option>
@@ -411,11 +494,11 @@
                 </option>
 
                 <option value="event">
-                  展示会・イベント
+                  イベント企画・運営
                 </option>
 
                 <option value="pr">
-                  PR支援
+                  企業PR・メディア対応
                 </option>
 
                 <option value="video">
@@ -441,6 +524,7 @@
                 id="message"
                 name="message"
                 rows="8"
+                placeholder="案件の概要、開催予定日、ご予算、現在のお悩みなど、分かる範囲でご記入ください。"
                 required
               ></textarea>
 
@@ -484,12 +568,14 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
   <footer class="site-footer">
 
     <div class="footer-inner">
 
-      <div>
+      <div class="footer-brand">
 
         <div class="footer-logo">
           HÉLMIO
@@ -502,8 +588,10 @@
       </div>
 
 
-      <nav class="footer-nav">
-
+      <nav
+        class="footer-nav"
+        aria-label="フッターナビゲーション"
+      >
         <a href="index.html">
           トップ
         </a>
@@ -512,7 +600,7 @@
           サービス
         </a>
 
-        <a href="index.html#achievements">
+        <a href="index.html#works">
           実績
         </a>
 
@@ -524,6 +612,10 @@
           会社概要
         </a>
 
+        <a href="contact.html#request">
+          ご相談の流れ
+        </a>
+
         <a href="audition.html">
           オーディション
         </a>
@@ -531,12 +623,27 @@
         <a href="contact.html">
           法人のお問い合わせ
         </a>
-
       </nav>
 
     </div>
 
   </footer>
+
+
+  <!-- MOBILE FIXED CTA -->
+  <a
+    href="#contact-form"
+    class="mobile-contact-cta"
+    aria-label="お問い合わせフォームへ移動する"
+  >
+    <span class="mobile-contact-cta__label">
+      法人のご相談
+    </span>
+
+    <span class="mobile-contact-cta__en">
+      CONTACT
+    </span>
+  </a>
 
 
   <script src="main.js"></script>
