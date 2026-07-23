@@ -4487,3 +4487,96 @@ body {
     padding: 27px 0 !important;
   }
 }
+/* =========================================
+   WORKS：2列×2段・確定版
+========================================= */
+
+.helmio-showcase__inner {
+  width: min(1180px, calc(100% - 64px)) !important;
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+}
+
+.helmio-showcase__layout {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__card--wide {
+  grid-column: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  align-self: start !important;
+  padding: 38px 36px !important;
+}
+
+.helmio-showcase__card-heading {
+  margin-bottom: 28px !important;
+  padding-bottom: 24px !important;
+}
+
+.helmio-showcase__card-heading h3 {
+  font-size: clamp(26px, 2.2vw, 34px) !important;
+  line-height: 1.45 !important;
+}
+
+.helmio-showcase__item h4,
+.helmio-showcase__row-title h4 {
+  font-family:
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1.65 !important;
+  font-weight: 600 !important;
+  color: #30363a !important;
+}
+
+.helmio-showcase__item p,
+.helmio-showcase__row p {
+  font-family:
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1.85 !important;
+  font-weight: 400 !important;
+  color: #41474b !important;
+}
+
+.helmio-showcase__item,
+.helmio-showcase__row {
+  padding: 22px 0 !important;
+}
+
+@media (max-width: 760px) {
+  .helmio-showcase__inner {
+    width: calc(100% - 32px) !important;
+  }
+
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .helmio-showcase__card,
+  .helmio-showcase__card--wide {
+    padding: 30px 24px !important;
+  }
+
+  .helmio-showcase__item h4,
+  .helmio-showcase__row-title h4 {
+    font-size: 18px !important;
+  }
+
+  .helmio-showcase__item p,
+  .helmio-showcase__row p {
+    font-size: 17px !important;
+  }
+}
