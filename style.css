@@ -4580,3 +4580,23 @@ body {
     font-size: 17px !important;
   }
 }
+/* SERVICE：見出しと説明文をひと回り小さく */
+.service-row strong {
+  font-size: clamp(23px, 1.8vw, 28px) !important;
+  line-height: 1.45 !important;
+}
+
+.service-row p {
+  font-size: 17.5px !important;
+  line-height: 1.8 !important;
+}
+
+@media screen and (max-width: 820px) {
+  .service-row strong {
+    font-size: 23px !important;
+  }
+
+  .service-row p {
+    font-size: 16.5px !important;
+  }
+}
