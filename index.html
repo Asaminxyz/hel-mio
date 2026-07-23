@@ -1,1139 +1,612 @@
-<!DOCTYPE html>
+const profileLabels = {
+  height: "身長",
+  birthplace: "出身地",
+  bloodType: "血液型",
+  education: "学歴",
+  hobbies: "趣味",
+  skills: "特技",
+  qualifications: "資格"
+};
 
-<html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>
-    HÉLMIO | Corporate Communication &amp; Casting
-  </title>
-<meta content="HÉLMIOは、局アナウンサー・女優・報道出身など、第一線で活躍してきたプロフェッショナルによる企業コミュニケーション支援とキャスティングの会社です。" name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20260724-1" rel="stylesheet"/>
-<style>
-/* PROFILE MODAL — complete unified layout */
-.profile-top-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 26px;
-}
+const talents = [
+  {
+    id: "asami-niijima",
 
-.profile-top-actions .profile-action {
-  min-width: 210px;
-  justify-content: center;
-}
+    name: "新島 麻生",
+    kana: "にいじま あさみ",
+    englishName: "ASAMI NIIJIMA",
 
-.profile-action.is-disabled {
-  pointer-events: none;
-  opacity: 0.45;
-}
+    cardImage: "S__27566083.jpg",
 
-.profile-career-groups {
-  display: grid;
-  gap: 34px;
-}
+    photos: [
+      "S__27566083.jpg",
+      "S__27672581_0.jpg",
+      "S__27672582_0.jpg"
+    ],
 
-.profile-career-group {
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(177, 138, 67, 0.22);
-}
+    summary:
+      "NHK地方局のニュースキャスター、スポーツキャスター、報道フィールドキャスターを経て、テレビ、企業イベント、国際イベント、スポーツ、広告・企業VPなど幅広い分野で活動。取材・インタビューからカンファレンスや式典の進行、登壇者のスピーチ支援まで、伝える内容の整理と現場での表現を一貫して支援する。",
 
-.profile-career-group:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
+    profile: {
+      height: "160cm",
+      birthplace: "大阪府",
+      bloodType: "O型",
+      education: "関西学院大学 国際学部",
+      hobbies: "温泉、お酒",
+      skills: "ラクロス、ピアノ",
+      qualifications: "パーソナルカラー診断関連資格"
+    },
 
-.profile-career-group-title {
-  margin: 0 0 14px;
-  color: #b18a43;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0.03em;
-}
+    tags: [
+      "ニュース・報道",
+      "リポーター",
+      "企業イベント",
+      "国際イベント",
+      "展示会",
+      "式典",
+      "スポーツ",
+      "トークショー",
+      "広告・企業VP",
+      "スピーチ指導"
+    ],
 
-.profile-career-group-list {
-  display: grid;
-  gap: 9px;
-  margin: 0;
-  padding-left: 1.3em;
-}
+    careers: [
+      /* ==============================
+         テレビ・キャスター
+      ============================== */
+      {
+        category: "テレビ・キャスター",
+        text:
+          "NHK地方局アナウンサー／朝のニュースキャスター・スポーツキャスター・報道フィールドキャスター"
+      },
+      {
+        category: "テレビ・キャスター",
+        text: "KBS京都 ニュースキャスター"
+      },
+      {
+        category: "テレビ・キャスター",
+        text: "J:COM『LIVE news』リポーター"
+      },
+      {
+        category: "テレビ・キャスター",
+        text: "サンテレビ『NEWS×情報キャッチ＋』リポーター"
+      },
+      {
+        category: "リポーター",
+        text:
+          "サンテレビ『日本財団 海と日本PROJECT inひょうご 海LIVE』リポーター"
+      },
+      {
+        category: "リポーター",
+        text:
+          "東京MX『阪急交通社　北海道4日間の旅』リポーター"
+      },
+      {
+        category: "リポーター",
+        text:
+          "BS『ONSEN TABI』リポーター"そのほか
+      },
+      {
+      /* ==============================
+         リポーター
+      ============================== */
+      {
+        category: "リポーター",
+        text: "笹川平和財団『ブルーエコノミー』広報・現地調査リポート"
+      },
+      {
+        category: "リポーター",
+        text: "YBS ルヴァンカップ リポーター"
+      },
+      {
+        category: "リポーター",
+        text: "Audi『チャージハブ』リポーター"
+      },
+      {
+        category: "リポーター",
+        text: "docomo公式ゴルフコンテンツ『東大ゴルフ』リポーター"
+      },
+      {
+        category: "リポーター",
+        text:
+          "URBAN FUTURES presented by Livedoor リポーター・インタビュアー"
+      },
+      {
+        category: "リポーター",
+        text: "MBSラジオ『ええかげんにせぇ！』リポーター"そのほか
+ 　　  },
+      {
+      /* ==============================
+         広告・企業VP
+      ============================== */
+      {
+        category: "広告・企業VP",
+        text: "日立ソリューションズ タクシー広告"
+      },
+      {
+        category: "広告・企業VP",
+        text: "東京インテリア テレビCM"
+      },
+      {
+        category: "広告・企業VP",
+        text: "KDDI・大正製薬『アライ』WEB広告・プロモーション映像"
+      },
+      {
+        category: "広告・企業VP",
+        text: "JCB テレビ・インフォマーシャル"
+      },
+      {
+        category: "広告・企業VP",
+        text:
+          "鈴茂器工 /オンライン家庭教師メガスタ企"
+  　　 },
+      {
+        category: "広告・企業VP",
+        text: "オリックス自動車　動画ナビゲーター"
+      },
 
-.profile-career-group-list li {
-  margin: 0;
-  color: #42484c;
-  font-size: 15px;
-  line-height: 1.85;
-}
+      /* ==============================
+         イベント・カンファレンス
+      ============================== */
+      {
+        category: "イベント・カンファレンス",
+        text: "大阪・関西万博 BLUE OCEAN DOME ファシリテーター"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "大阪・関西万博 世界海の日特別イベント MatsuriステージMC"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "経済産業省主催ピッチコンテスト『アトツギ甲子園』"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "経団連主催 大企業経営層・人事担当者向けセミナー"
+      },
 
-.profile-actions--bottom {
-  justify-content: flex-start;
-  margin-top: 38px;
-}
+      /* ==============================
+         展示会・式典・メディア
+      ============================== */
+      {
+        category: "展示会,
+        text:
+          "TOYOTAグループ・BMW・OMRON・大塚商会・JTBグループ・Canonなど展示会MC"
+      },
+      {
+        category: "式典",
+        text: "ZTE Japan 新製品発表会"
+      },
+      {
+        category: "展示会・式典",
+        text: "JTB入社式 2023年〜"
+      },
+      {
+        category: "展示会・式典",
+        text: "商船三井クルーズ×JTB 連携協定発表会"
+      },
+      {
+        category: "展示会・式典",
+        text: "一般財団法人大阪国際経済振興センター30周年記念パーティ"
+      },
+      {
+        category: "展示会・式典",
+        text: "企業表彰式・周年記念式典・新製品発表会 多数"
+      },
 
-.pdf-export .profile-top-actions,
-.pdf-export .profile-actions--bottom {
-  display: none !important;
-}
+      /* ==============================
+         スポーツ
+      ============================== */
+      {
+        category: "スポーツ",
+        text: "Jリーグアウォーズ 2023〜2025 MC"
+      },
+      {
+        category: "スポーツ",
+        text: "ヴィッセル神戸 二冠優勝パーティ 司会"
+      },
+      {
+        category: "スポーツ",
+        text: "セレッソ大阪 パブリックビューイング・選手ステージ進行"
+      },
+      {
+        category: "スポーツ",
+        text:
+          "三井不動産プレゼンツ サッカー日本代表戦パブリックビューイング"
+      },
+      {
+        category: "スポーツ",
+        text: "ダンロップフェニックストーナメント前夜祭"
+      },
 
-@media (max-width: 760px) {
-  .profile-top-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-top: 22px;
+      /* ==============================
+         トークショー
+      ============================== */
+      {
+        category: "トークショー",
+        text: "西野七瀬さん・松下奈緒さん・柴田理恵さん・武井壮さん・佐久間宣之さん・福田正博さんほか"
+      },
+      {
+        category: "トークショー",
+        text: "マセラティ タレントトークショー"
+      },
+      {
+        category: "トークショー",
+        text: "BMW全国キャラバン・荒聖次ゲストトークショー"
+      },
+
+      /* ==============================
+         モデル
+      ============================== */
+      {
+        category: "広告",
+        text:
+          "YA-MAN /ニトリセキスイハイム/ 広告・WEB・店頭ビジュアル"
+      },
+      {
+        category: "広告・企業VP",
+        text: "さんふらわあ PV・駅サイネージ・パンフレット"
+      {
+    
+
+      /* ==============================
+         スピーチ・登壇支援
+      ============================== */
+      {
+        category: "スピーチ・登壇支援",
+        text: "2024年 総裁選候補者への表現・スピーチ指導"
+      },
+      {
+        category: "スピーチ・登壇支援",
+        text: "国会議員・経営者の演説、登壇、プレゼンテーション支援"
+      }
+    ],
+
+    youtube: [
+      {
+        title: "出演・司会サンプル",
+        url: "https://www.youtube.com/embed/M7lc1UVf-VE"
+      }
+    ]
+  },
+
+  {
+    id: "seira-minami",
+
+    name: "南 青良",
+    kana: "みなみ せいら",
+    englishName: "SEIRA MINAMI",
+
+    cardImage: "seira-new.jpeg",
+
+    photos: [
+      "seira-new.jpeg",
+      "IMG_5397 (1).jpeg",
+      "CCCC1076.jpeg"
+    ],
+
+    summary:
+      "幼少期から歌手・女優として表現の世界で活動し、現在はモデル、MC、リポーターとしても幅広く活躍。長年培った表現力と、親しみやすく華やかな存在感を活かし、テレビ、企業イベント、展示会、広告、映像など多様な現場に対応する。ステージ上での進行力に加え、役柄やブランドの世界観を的確に表現できることを強みとする。",
+
+    profile: {
+      height: "160cm",
+      birthplace: "東京都",
+      bloodType: "A型",
+      education: "桜美林大学 卒業",
+      hobbies: "旅行、釣り、シュノーケリング",
+      skills: "歌、水泳",
+      qualifications: "実用英語技能検定 準2級、普通自動車運転免許"
+    },
+
+    tags: [
+      "テレビ",
+      "リポーター",
+      "企業VP",
+      "イベントMC",
+      "カンファレンス",
+      "展示会",
+      "式典",
+      "トークショー",
+      "モデル",
+      "広告"
+    ],
+
+    careers: [
+      /* ==============================
+         テレビ・リポーター
+      ============================== */
+      {
+        category: "テレビ・リポーター",
+        text: "NHK Eテレ 小学生ボッチャ競技会 進行MC"
+      },
+      {
+        category: "テレビ・リポーター",
+        text: "TBS『Nスタ』出演"
+      },
+      {
+        category: "テレビ・リポーター",
+        text: "J:COM『つながるセブン』『湘南デイリーニュース』"
+      },
+      {
+        category: "テレビ・リポーター",
+        text: "J:COM IBSA柔道 東京国際オープントーナメント"
+      },
+      {
+        category: "テレビ・リポーター",
+        text: "船橋競馬パドック中継・CS放送 平塚競輪・スカパー"
+      },
+      {
+        category: "テレビ・リポーター",
+        text: "FM湘南ナパサ・レディオ湘南『GOOD MORNING』・FMヨコハマ"
+      },
+
+      /* ==============================
+         広告・企業VP
+      ============================== */
+      {
+        category: "広告・企業VP",
+        text: "積水ハウス 新施設紹介映像"
+      },
+      {
+        category: "広告・企業VP",
+        text: "メディカル・コンシェルジュ 企業説明動画"
+      },
+      {
+        category: "広告・企業VP",
+        text: "大阪中小企業投資育成 デジタルサイネージ映像"
+      },
+      {
+        category: "広告・企業VP",
+        text: "ルーシッドCM・日本政策金融公庫・アクアプラネット MA・ナレーション"
+      },
+      {
+        category: "広告・企業VP",
+        text: "企業紹介映像・サービス紹介映像・ナレーション 多数"
+      },
+
+      /* ==============================
+         イベント・カンファレンス
+      ============================== */
+      {
+        category: "イベント・カンファレンス",
+        text: "Google Cloud Next Tokyo 2024・2025 MC"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text:
+          "Gartner Symposium・CIO Leadership Forum・Digital Workplace Summit MC"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "PwC All Staff Meeting MC"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "日経xwoman・日経ヘルス・日経IR関連セミナー"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text:
+          "Panasonic・サントリーホールディングス・デジタルアーツ オンラインイベント"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text: "Googleセミナー・CP＋主催者ステージ・FOODEX 美食女子"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text:
+          "ENEOSパビリオン・大塚商会・freee・セイコーなど企業イベントMC"
+      },
+      {
+        category: "イベント・カンファレンス",
+        text:
+          "NikkeiBP Executive Women カンファレンス・J-MONEYカンファレンス"
+      },
+
+      /* ==============================
+         展示会・式典
+      ============================== */
+      {
+        category: "展示会・式典",
+        text: "Japan Mobility Show 2025 主催者ステージMC・ナレーター"
+      },
+      {
+        category: "展示会・式典",
+        text:
+          "東京オートサロン・大阪オートメッセ・国際福祉機器展／SUZUKI"
+      },
+      {
+        category: "展示会・式典",
+        text:
+          "CP＋・Inter BEE・Interop Tokyo・JIMTOF・JASISなど展示会MC"
+      },
+      {
+        category: "展示会・式典",
+        text:
+          "ドラッグストアショー・リテールテック・CEATEC・働き方改革EXPOなど展示会MC"
+      },
+      {
+        category: "展示会・式典",
+        text: "TOYOTA・いすゞ自動車 新車発表会"
+      },
+      {
+        category: "展示会・式典",
+        text:
+          "三菱電機・ウエルシア オープニングイベント・新ブランド発表会"
+      },
+      {
+        category: "展示会・式典",
+        text:
+          "習志野市シルバー人材センター40周年記念式典・企業表彰式・顧客招待イベント"
+      },
+      {
+        category: "展示会・式典",
+        text: "企業表彰式・周年記念式典・新製品発表会 多数"
+      },
+
+      /* ==============================
+         トークショー
+      ============================== */
+      {
+        category: "トークショー",
+        text: "dynabook35周年イベント／伊沢拓司"
+      },
+      {
+        category: "トークショー",
+        text: "セイコーゴールデングランプリ陸上2024 セイコーブース"
+      },
+      {
+        category: "トークショー",
+        text: "俳優・アスリート・文化人を迎えたトークショー司会"
+      },
+
+      /* ==============================
+         モデル・広告
+      ============================== */
+      {
+        category: "モデル・広告",
+        text:
+          "アデランス広告モデル／日本・中国・香港・台湾・タイ・シンガポール展開"
+      },
+      {
+        category: "モデル・広告",
+        text: "日産自動車『SAKURA』紹介動画"
+      },
+      {
+        category: "モデル・広告",
+        text: "SoftBank 広告・新商品発表会モデル"
+      },
+      {
+        category: "モデル・広告",
+        text: "ニトリ ルームウェアモデル"
+      },
+      {
+        category: "モデル・広告",
+        text: "Nikon 和装ウエディング・富士フイルム写真展イメージモデル"
+      },
+      {
+        category: "モデル・広告",
+        text:
+          "オリエンタルランド・ワタミ・第一興商・飛島建設など広告モデル"
+      },
+      {
+        category: "モデル・広告",
+        text:
+          "湘南ガールコンテスト準グランプリ・雑誌表紙・アパレルモデル"
+      },
+      {
+        category: "モデル・広告",
+        text:
+          "TVCM・WEB・スチール・カタログ・ブランドプロモーション出演多数"
+      }
+    ],
+
+    youtube: [
+      {
+        title: "演技・出演サンプル",
+        url: "https://www.youtube.com/embed/M7lc1UVf-VE"
+      }
+    ]
+  },
+
+  {
+    id: "fumi-murakami",
+
+    name: "村上 史",
+    kana: "むらかみ ふみ",
+    englishName: "FUMI MURAKAMI",
+
+    cardImage: "S__27557921.jpg",
+
+    photos: [
+      "S__27557921.jpg"
+    ],
+
+    summary:
+      "summary:
+  "新卒でラジオアナウンサーとしてキャリアをスタート。10年以上にわたり、放送局アナウンサーとして多様な現場で経験を重ねてきた。安定した進行力と落ち着き、聞き手に安心感を与える声に定評があり、格式ある式典から親しみやすいステージまで柔軟に対応。保育士資格を活かし、子ども向けイベントでも温かく丁寧な進行を行う。",
+
+    profile: {
+      height: "154cm",
+      bloodType: "O型",
+      education: "西南学院大学",
+      hobbies: "鳥と遊ぶ",
+      skills: "子供と遊ぶ",
+      qualifications: "保育士資格"
+    },
+
+    tags: [
+      "司会",
+      "式典",
+      "セミナー",
+      "企業イベント",
+      "インタビュー",
+      "ナレーション",
+      "オンライン配信"
+    ],
+
+    careers: [
+      {
+        category: "企業イベント",
+        text: "企業カンファレンス・セミナー司会"
+      },
+      {
+        category: "式典",
+        text: "表彰式・周年記念式典・開会式進行"
+      },
+      {
+        category: "インタビュー",
+        text: "経営者・有識者・ゲストインタビュー"
+      },
+      {
+        category: "ナレーション",
+        text: "企業映像・紹介映像・イベント映像ナレーション"
+      },
+      {
+        category: "オンライン",
+        text: "オンラインイベント・ライブ配信進行"
+      },
+      {
+        category: "その他",
+        text: "案件内容に合わせた台本読み、アナウンス、ステージ進行"
+      }
+    ],
+
+    youtube: [
+      {
+        title: "MC・ナレーションサンプル",
+        url: "https://www.youtube.com/embed/M7lc1UVf-VE"
+      }
+    ]
+  },
+
+  {
+    id: "coming-soon",
+
+    name: "Coming Soon",
+    kana: "",
+    englishName: "NEW PROFESSIONAL",
+
+    cardImage: "",
+
+    photos: [],
+
+    summary:
+      "新しいプロフェッショナルのプロフィールを準備しています。キャスティングのご相談は、法人お問い合わせフォームからご連絡ください。",
+
+    profile: {
+      height: "",
+      birthplace: "",
+      bloodType: "",
+      education: "",
+      hobbies: "",
+      skills: "",
+      qualifications: ""
+    },
+
+    tags: [],
+    careers: [],
+    youtube: []
   }
-
-  .profile-top-actions .profile-action {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .profile-career-groups {
-    gap: 28px;
-  }
-
-  .profile-career-group {
-    padding-bottom: 23px;
-  }
-
-  .profile-career-group-title {
-    margin-bottom: 11px;
-    font-size: 17px;
-  }
-
-  .profile-career-group-list li {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-}
-</style>
-</head>
-<body>
-<div class="page">
-<!-- ==============================
-         HEADER
-    ============================== -->
-<header class="site-header">
-<a aria-label="HÉLMIO トップへ" class="brand" href="#top">
-<div class="logo">
-          HÉLMIO
-        </div>
-<div class="logo-sub">
-          Corporate Communication &amp; Casting
-        </div>
-</a>
-<button aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
-<span></span>
-<span></span>
-<span></span>
-</button>
-<nav aria-label="メインナビゲーション" class="site-nav" id="siteNav">
-<a href="#service">
-          サービス
-        </a>
-<a href="#works">
-          実績
-        </a>
-<a href="#talent">
-          プロフェッショナル
-        </a>
-<a href="company.html">
-          会社概要
-        </a>
-<a href="contact.html#request">
-          ご相談の流れ
-        </a>
-<a class="nav-audition" href="audition.html">
-          オーディション
-        </a>
-<a class="nav-contact" href="contact.html">
-          法人のお問い合わせ
-        </a>
-</nav>
-</header>
-<main id="top">
-<!-- ==============================
-           HERO
-      ============================== -->
-<section class="hero">
-<div class="hero-text">
-<p class="eyebrow">
-            Corporate Communication &amp; Casting
-          </p>
-<h1>
-            局アナウンサー・報道経験者など<br class="pc-only"/>
-            「伝えるプロ」が集う<br/>
-            コーポレートコミュニケーション＆<br class="pc-only"/>
-            キャスティング会社です。
-          </h1>
-<p class="hero-lead">
-            企業コミュニケーション支援、展示会支援、経営者スピーチ、<br class="pc-only"/>
-            イベント企画運営、映像制作まで。<br class="pc-only"/>
-            企業やブランドの価値を届けるための<br class="pc-only"/>
-            コミュニケーションを一貫して支援します。
-          </p>
-<a class="primary-btn" href="contact.html">
-            法人のお問い合わせ
-          </a>
-</div>
-<div class="hero-visual">
-<img alt="企業コミュニケーションを支援するHÉLMIO" src="top.png"/>
-</div>
-</section>
-<!-- ==============================
-     SELECTED EXPERIENCE
-============================== -->
-<section class="helmio-showcase" id="works">
-  <div class="helmio-showcase__inner">
-
-    <header class="helmio-showcase__heading">
-      <p class="helmio-showcase__eyebrow">WORKS</p>
-
-      <h2 class="helmio-showcase__title">
-        実績の一部
-      </h2>
-
-      <p class="helmio-showcase__lead">
-        政治・行政、企業コミュニケーション、報道、企業映像・広告など、<br>
-        幅広い領域でコミュニケーションを支援しています。
-      </p>
-    </header>
-
-    <div class="helmio-showcase__layout">
-
-      <!-- 01 政治・パブリック -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">01</span>
-          <div>
-            <h3>政治・パブリック</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>2024年 総裁選候補者</h4>
-            <p>表現・スピーチ指導</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>国会議員</h4>
-            <p>演説・登壇サポート</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>内閣官房オリンピック・パラリンピックレガシー推進室</h4>
-            <p>TOKYO 2020レガシー関連イベント</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>経済産業省</h4>
-            <p>アトツギ甲子園・ピッチコンテスト</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>経団連</h4>
-            <p>大企業経営層・人事担当者向けセミナー</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 02 企業コミュニケーション -->
-      <article class="helmio-showcase__card helmio-showcase__card--wide">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">02</span>
-          <div>
-            <h3>企業コミュニケーション</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__rows">
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>01</span>
-              <h4>笹川平和財団</h4>
-            </div>
-            <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>02</span>
-              <h4>大阪・関西万博</h4>
-            </div>
-            <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベントMC</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>03</span>
-              <h4>Jリーグアウォーズ</h4>
-            </div>
-            <p>2023〜2025 MC</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>04</span>
-              <h4>企業イベント・カンファレンス</h4>
-            </div>
-            <p>
-              Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・
-              Seiko・ZTE Japan・Audi ほか
-            </p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>05</span>
-              <h4>ベンチャー企業</h4>
-            </div>
-            <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 報道・メディア -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">03</span>
-          <div>
-            <h3>報道・メディア</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>NHK</h4>
-            <p>スポーツキャスター</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>KBS京都</h4>
-            <p>ニュースキャスター</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>TBS「Nスタ」</h4>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>J:COM「LIVE news」</h4>
-            <p>リポーター</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>サンテレビ「NEWS×情報キャッチ＋」</h4>
-            <p>リポーター</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 企業VP・広告出演 -->
-      <article class="helmio-showcase__card helmio-showcase__card--wide">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">04</span>
-          <div>
-            <h3>企業VP・広告出演</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__rows">
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>01</span>
-              <h4>日立ソリューションズ</h4>
-            </div>
-            <p>タクシー広告・プロモーション映像</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>02</span>
-              <h4>オリックス自動車</h4>
-            </div>
-            <p>社内研修用動画ナビゲーター</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>03</span>
-              <h4>JCB</h4>
-            </div>
-            <p>テレビ・インフォマーシャル</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>04</span>
-              <h4>KDDI・大正製薬「アライ」</h4>
-            </div>
-            <p>WEB広告・プロモーション映像</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>05</span>
-              <h4>YA-MAN・ニトリ・セキスイハイム</h4>
-            </div>
-            <p>WEB・店頭・広告パンフレット</p>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-<!-- ==============================
-         COMMUNICATION PARTNER
-    ============================== -->
-<section aria-labelledby="partner-title" class="section partner-section" id="partner">
-<p class="section-kicker center">
-        COMMUNICATION PARTNER
-      </p>
-<h2 id="partner-title">
-        つい、聞いてしまう。<br/>
-        心が動く。
-      </h2>
-<div class="partner-copy">
-<p>
-          説明はしているのに商品の価値が伝わっていない。
-          聞き手の理解や興味の流れが設計されていない。
-          人は集まっても、その後の相談や商談につながらない
-        </p>
-<p>
-          そんな場面でHÉLMIOは、必要なタイミングだけ、
-          企業のコミュニケーションパートナーとして参加します。
-        </p>
-<p>
-          局アナウンサー、女優、報道経験者など、
-          第一線で「伝える」を仕事にしてきたプロフェッショナルが、
-          成果につながるコミュニケーションを設計します。
-        </p>
-<p class="partner-emphasis">
-          必要なところだけでも。<br/>
-          プロジェクト全体でも。
-        </p>
-</div>
-</section>
-<!-- ==============================
-         WHY HÉLMIO
-    ============================== -->
-<section aria-labelledby="why-title" class="section reason-section" id="why">
-<div class="section-title">
-<h2 id="why-title">
-          HÉLMIOが選ばれる理由
-        </h2>
-<span>
-          WHY HÉLMIO
-        </span>
-</div>
-<div class="reason-cards">
-<!-- 01 -->
-<article class="reason-card">
-<div class="reason-text">
-<p class="reason-num">
-              01
-              <span>POINT</span>
-</p>
-<h3>
-              総裁選候補者・国会議員への<br/>
-              スピーチレッスン実績
-            </h3>
-<p>
-              話し方だけではなく、伝わる構成、表現、見せ方まで支援。
-              重要な場面で成果につながるスピーチをサポートします。
-            </p>
-</div>
-<img alt="総裁選候補者・国会議員へのスピーチ支援" loading="lazy" src="speech.png"/>
-</article>
-<!-- 02 -->
-<article class="reason-card">
-<div class="reason-text">
-<p class="reason-num">
-              02
-              <span>POINT</span>
-</p>
-<h3>
-              報道・メディア視点を活かした企業PR
-            </h3>
-<p>
-              テレビ局・報道経験を活かし、企業の魅力やストーリーを整理。
-              プレスリリース、記者発表、メディア対応まで支援します。
-            </p>
-</div>
-<img alt="報道・メディア視点を活かした企業PR支援" loading="lazy" src="shiten.png"/>
-</article>
-<!-- 03 -->
-<article class="reason-card">
-<div class="reason-text">
-<p class="reason-num">
-              03
-              <span>POINT</span>
-</p>
-<h3>
-              キャスティングだけで終わらない<br/>
-              トータルサポート
-            </h3>
-<p>
-              出演者を紹介して終わりではありません。
-              企画、構成、演出、プレゼン、PRまで、
-              企業のメッセージが一貫して伝わるようサポートします。
-            </p>
-</div>
-<img alt="企画からPRまでのトータルサポート" loading="lazy" src="casting.png"/>
-</article>
-</div>
-</section>
-<!-- ==============================
-         SERVICE
-    ============================== -->
-<section aria-labelledby="service-title" class="service-section" id="service">
-<div class="section">
-<div class="service-layout">
-<div class="service-left">
-<p class="section-kicker">
-              OUR SERVICE
-            </p>
-<h2 id="service-title">
-              SERVICE
-            </h2>
-<p>
-              企業の「伝える」に関わる課題を、
-              企画・人材・表現・運営の面から支援します。
-            </p>
-<img alt="HÉLMIOのコミュニケーション支援" height="1100" loading="lazy" src="cando.png" width="800"/>
-</div>
-<div class="service-list">
-<a class="service-row" href="contact.html">
-<span>01</span>
-<div>
-<strong>展示会</strong>
-<p>
-                  展示会やカンファレンスの企画、
-                  ステージ進行、MC、運営を支援します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>02</span>
-<div>
-<strong>キャスティング</strong>
-<p>
-                  案件の目的とブランドイメージに合う
-                  司会者、出演者、専門家を選定します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>03</span>
-<div>
-<strong>広報サポート</strong>
-<p>
-                  情報整理、発信内容の設計、取材対応など、
-                  企業広報の実務を支援します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>04</span>
-<div>
-<strong>スピーチ支援</strong>
-<p>
-                  経営者や登壇者のメッセージ設計、原稿作成、
-                  話し方のトレーニングを行います。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>05</span>
-<div>
-<strong>映像コンテンツ制作</strong>
-<p>
-                  インタビュー、会社紹介、イベント映像など、
-                  伝える目的に沿った映像を制作します。
-                </p>
-</div>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- ==============================
-         PROFESSIONALS
-    ============================== -->
-<section aria-labelledby="talent-title" class="section talent-section" id="talent">
-<div class="section-title">
-<h2 id="talent-title">
-          PROFESSIONALS
-        </h2>
-<span>
-          プロフェッショナル
-        </span>
-</div>
-<p class="talent-intro">
-        カードをクリックすると、
-        プロフィール・主な経歴・写真・動画をご覧いただけます。
-      </p>
-<div class="talent-cards" id="talentCards">
-<button aria-haspopup="dialog" class="talent-card" data-talent-id="asami-niijima" type="button">
-<img alt="新島麻生" loading="lazy" src="S__27566083.jpg"/>
-<div class="talent-card-body">
-<p class="talent-name">新島 麻生</p>
-</div>
-</button>
-<button aria-haspopup="dialog" class="talent-card" data-talent-id="seira-minami" type="button">
-<img alt="南青良" loading="lazy" src="seira-new.jpeg"/>
-<div class="talent-card-body">
-<p class="talent-name">南 青良</p>
-</div>
-</button>
-<button aria-haspopup="dialog" class="talent-card" data-talent-id="fumi-murakami" type="button">
-<img alt="村上史" loading="lazy" src="S__27557921.jpg"/>
-<div class="talent-card-body">
-<p class="talent-name">村上 史</p>
-</div>
-</button>
-<button aria-haspopup="dialog" class="talent-card" data-talent-id="coming-soon" type="button">
-<div class="talent-placeholder">
-            Coming Soon
-          </div>
-<div class="talent-card-body">
-<p class="talent-name">Coming Soon</p>
-</div>
-</button>
-</div>
-</section>
-<!-- ==============================
-         CONTACT CTA
-    ============================== -->
-<section aria-labelledby="contact-title" class="contact-box" id="contact">
-<p class="section-kicker">
-        CONTACT
-      </p>
-<h2 id="contact-title">
-        LET'S TALK
-      </h2>
-<p class="contact-lead">
-        まだ依頼内容が固まっていない段階でも構いません。<br/>
-        企業の「伝える」に関する課題をお聞かせください。
-      </p>
-<a class="primary-btn" href="contact.html">
-        お問い合わせはこちら
-      </a>
-</section>
-</main>
-<!-- ==============================
-       FOOTER
-  ============================== -->
-<footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-brand">
-<a class="footer-logo" href="#top">
-          HÉLMIO
-        </a>
-<p>
-          Corporate Communication &amp; Casting
-        </p>
-</div>
-<nav aria-label="フッターナビゲーション" class="footer-nav">
-<a href="#service">
-          サービス
-        </a>
-<a href="#works">
-          実績
-        </a>
-<a href="#talent">
-          プロフェッショナル
-        </a>
-<a href="company.html">
-          会社概要
-        </a>
-<a href="contact.html">
-          法人のお問い合わせ
-        </a>
-<a class="footer-audition-link" href="audition.html">
-          出演希望の方はこちら
-        </a>
-</nav>
-</div>
-<div class="footer-bottom">
-<p>
-        © 2026 HÉLMIO
-      </p>
-</div>
-</footer>
-</div>
-<!-- ==============================
-     MOBILE FIXED CTA
-============================== -->
-<a aria-label="法人のお問い合わせページへ移動する" class="mobile-contact-cta" href="contact.html">
-<span class="mobile-contact-cta__label">
-    法人のご相談
-  </span>
-<span class="mobile-contact-cta__en">
-    CONTACT
-  </span>
-</a>
-<!-- ==============================
-     PROFILE MODAL
-============================== -->
-<div aria-hidden="true" class="modal" id="profileModal">
-<div aria-labelledby="profileModalTitle" aria-modal="true" class="modal-box" role="dialog">
-<button aria-label="プロフィールを閉じる" class="modal-close" id="modalClose" type="button">
-      ×
-    </button>
-<div id="modalContent"></div>
-</div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="talents.js?v=20260724-1"></script>
-<script>
-  (() => {
-    "use strict";
-
-    const menuButton = document.getElementById("menuButton");
-    const siteNav = document.getElementById("siteNav");
-    const talentCards = document.getElementById("talentCards");
-    const profileModal = document.getElementById("profileModal");
-    const modalClose = document.getElementById("modalClose");
-    const modalContent = document.getElementById("modalContent");
-
-    const talentList =
-      typeof talents !== "undefined" && Array.isArray(talents)
-        ? talents
-        : [];
-
-    const escapeHtml = (value = "") =>
-      String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-    const toYouTubeWatchUrl = (url = "") => {
-      try {
-        const parsed = new URL(url);
-        const hostname = parsed.hostname.replace(/^www\./, "");
-        let videoId = "";
-
-        if (hostname === "youtu.be") {
-          videoId = parsed.pathname.split("/").filter(Boolean)[0] || "";
-        } else if (
-          hostname === "youtube.com" ||
-          hostname === "m.youtube.com"
-        ) {
-          if (parsed.pathname.includes("/embed/")) {
-            videoId = parsed.pathname.split("/embed/")[1]?.split("/")[0] || "";
-          } else if (parsed.pathname.includes("/shorts/")) {
-            videoId = parsed.pathname.split("/shorts/")[1]?.split("/")[0] || "";
-          } else {
-            videoId = parsed.searchParams.get("v") || "";
-          }
-        }
-
-        return videoId
-          ? `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`
-          : "";
-      } catch (error) {
-        return "";
-      }
-    };
-
-    const profileLabels = {
-      height: "身長",
-      birthplace: "出身地",
-      bloodType: "血液型",
-      education: "学歴",
-      hobbies: "趣味",
-      skills: "特技",
-      qualifications: "資格"
-    };
-
-    const createProfileMeta = (profile = {}) => {
-      const rows = Object.entries(profileLabels)
-        .map(([key, label]) => [label, profile[key]])
-        .filter(
-          ([, value]) =>
-            typeof value === "string" && value.trim() !== ""
-        );
-
-      if (!rows.length) {
-        return "";
-      }
-
-      return `
-        <div class="profile-meta">
-          ${rows
-            .map(
-              ([label, value]) => `
-                <div class="profile-meta-row">
-                  <span class="profile-meta-label">${escapeHtml(label)}</span>
-                  <span class="profile-meta-value">${escapeHtml(value)}</span>
-                </div>
-              `
-            )
-            .join("")}
-        </div>
-      `;
-    };
-
-    const createProfileTopActions = (talent) => {
-      const movies = Array.isArray(talent.youtube) ? talent.youtube : [];
-      const firstMovie = movies.find(
-        (movie) =>
-          movie &&
-          typeof movie.url === "string" &&
-          movie.url.trim() !== ""
-      );
-
-      const youtubeUrl = firstMovie
-        ? toYouTubeWatchUrl(firstMovie.url)
-        : "";
-
-      const videoAction = youtubeUrl
-        ? `
-          <a
-            class="profile-action secondary"
-            href="${escapeHtml(youtubeUrl)}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            出演動画を見る
-          </a>
-        `
-        : `
-          <span
-            class="profile-action secondary is-disabled"
-            aria-disabled="true"
-          >
-            出演動画を見る
-          </span>
-        `;
-
-      return `
-        <div class="profile-actions profile-top-actions">
-          <a class="profile-action primary" href="contact.html">
-            この方について相談する
-          </a>
-          ${videoAction}
-        </div>
-      `;
-    };
-
-    const createPhotoArea = (talent) => {
-      const photos = Array.isArray(talent.photos)
-        ? talent.photos.filter(Boolean)
-        : [];
-
-      const mainPhoto = photos[0] || talent.cardImage;
-
-      if (!mainPhoto) {
-        return `
-          <div>
-            <div class="profile-main-placeholder">Coming Soon</div>
-          </div>
-        `;
-      }
-
-      const thumbs =
-        photos.length > 1
-          ? `
-            <div class="profile-thumbs">
-              ${photos
-                .map(
-                  (photo, index) => `
-                    <button
-                      class="profile-thumb${index === 0 ? " is-active" : ""}"
-                      type="button"
-                      data-photo="${escapeHtml(photo)}"
-                      aria-label="写真${index + 1}を表示"
-                    >
-                      <img
-                        src="${escapeHtml(photo)}"
-                        alt="${escapeHtml(talent.name)} 写真${index + 1}"
-                      >
-                    </button>
-                  `
-                )
-                .join("")}
-            </div>
-          `
-          : "";
-
-      return `
-        <div>
-          <img
-            class="profile-main-photo"
-            src="${escapeHtml(mainPhoto)}"
-            alt="${escapeHtml(talent.name)}"
-          >
-          ${thumbs}
-        </div>
-      `;
-    };
-
-    const createCareerSection = (careers = []) => {
-      if (!Array.isArray(careers) || !careers.length) {
-        return "";
-      }
-
-      const groups = new Map();
-
-      careers.forEach((career) => {
-        if (!career) {
-          return;
-        }
-
-        const category =
-          typeof career.category === "string" && career.category.trim() !== ""
-            ? career.category.trim()
-            : "その他";
-
-        const itemText =
-          typeof career.text === "string" ? career.text.trim() : "";
-
-        if (!itemText) {
-          return;
-        }
-
-        if (!groups.has(category)) {
-          groups.set(category, []);
-        }
-
-        const items = groups.get(category);
-        if (!items.includes(itemText)) {
-          items.push(itemText);
-        }
-      });
-
-      if (!groups.size) {
-        return "";
-      }
-
-      return `
-        <section class="profile-section">
-          <h3 class="profile-section-title">主な経歴・実績</h3>
-
-          <div class="profile-career-groups">
-            ${Array.from(groups.entries())
-              .map(
-                ([category, items]) => `
-                  <section class="profile-career-group">
-                    <h4 class="profile-career-group-title">
-                      ${escapeHtml(category)}
-                    </h4>
-
-                    <ul class="profile-career-group-list">
-                      ${items
-                        .map((item) => `<li>${escapeHtml(item)}</li>`)
-                        .join("")}
-                    </ul>
-                  </section>
-                `
-              )
-              .join("")}
-          </div>
-        </section>
-      `;
-    };
-
-    const createTagSection = (tags = []) => {
-      if (!Array.isArray(tags) || !tags.length) {
-        return "";
-      }
-
-      const validTags = tags.filter(
-        (tag) => typeof tag === "string" && tag.trim() !== ""
-      );
-
-      if (!validTags.length) {
-        return "";
-      }
-
-      return `
-        <section class="profile-section">
-          <h3 class="profile-section-title">対応領域</h3>
-          <div class="profile-tags">
-            ${validTags
-              .map(
-                (tag) => `
-                  <span class="profile-tag">${escapeHtml(tag)}</span>
-                `
-              )
-              .join("")}
-          </div>
-        </section>
-      `;
-    };
-
-    const openProfile = (talentId) => {
-      const talent = talentList.find((item) => item.id === talentId);
-
-      if (!talent || !profileModal || !modalContent) {
-        return;
-      }
-
-      modalContent.innerHTML = `
-        <article class="profile-sheet">
-          <div class="pdf-only pdf-brand">
-            <strong>HÉLMIO</strong>
-            <span>Corporate Communication &amp; Casting</span>
-          </div>
-
-          <div class="profile-header">
-            ${createPhotoArea(talent)}
-
-            <div>
-              <p class="profile-overline">PROFESSIONAL PROFILE</p>
-              <h2 class="profile-name" id="profileModalTitle">
-                ${escapeHtml(talent.name)}
-              </h2>
-              <p class="profile-kana">${escapeHtml(talent.kana)}</p>
-              <p class="profile-en">${escapeHtml(talent.englishName)}</p>
-              <p class="profile-summary">${escapeHtml(talent.summary)}</p>
-
-              ${createProfileMeta(talent.profile)}
-              ${createProfileTopActions(talent)}
-            </div>
-          </div>
-
-          ${createCareerSection(talent.careers)}
-          ${createTagSection(talent.tags)}
-
-          <div class="profile-actions profile-actions--bottom">
-            <button
-              class="profile-action secondary"
-              id="profileDownload"
-              type="button"
-            >
-              PDFプロフィールを保存
-            </button>
-          </div>
-        </article>
-      `;
-
-      const mainPhoto = modalContent.querySelector(".profile-main-photo");
-      const thumbButtons = modalContent.querySelectorAll(".profile-thumb");
-
-      thumbButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!mainPhoto) {
-            return;
-          }
-
-          mainPhoto.src = button.dataset.photo || mainPhoto.src;
-
-          thumbButtons.forEach((thumb) => {
-            thumb.classList.remove("is-active");
-          });
-
-          button.classList.add("is-active");
-        });
-      });
-
-      const downloadButton = document.getElementById("profileDownload");
-
-      if (downloadButton) {
-        downloadButton.addEventListener("click", async () => {
-          const profileSheet = modalContent.querySelector(".profile-sheet");
-
-          if (!profileSheet || typeof html2pdf === "undefined") {
-            return;
-          }
-
-          profileSheet.classList.add("pdf-export");
-
-          try {
-            await html2pdf()
-              .set({
-                margin: 0,
-                filename: `${talent.englishName || talent.name}-profile.pdf`,
-                image: { type: "jpeg", quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: {
-                  unit: "px",
-                  format: [794, 1123],
-                  orientation: "portrait"
-                }
-              })
-              .from(profileSheet)
-              .save();
-          } finally {
-            profileSheet.classList.remove("pdf-export");
-          }
-        });
-      }
-
-      profileModal.classList.add("is-open");
-      profileModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      modalClose?.focus();
-    };
-
-    const closeProfile = () => {
-      if (!profileModal) {
-        return;
-      }
-
-      profileModal.classList.remove("is-open");
-      profileModal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("modal-open");
-
-      if (modalContent) {
-        modalContent.innerHTML = "";
-      }
-    };
-
-    if (menuButton && siteNav) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = siteNav.classList.toggle("is-open");
-
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute(
-          "aria-label",
-          isOpen ? "メニューを閉じる" : "メニューを開く"
-        );
-      });
-
-      siteNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          siteNav.classList.remove("is-open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.setAttribute("aria-label", "メニューを開く");
-        });
-      });
-    }
-
-    talentCards?.querySelectorAll("[data-talent-id]").forEach((card) => {
-      card.addEventListener("click", () => {
-        openProfile(card.dataset.talentId);
-      });
-    });
-
-    modalClose?.addEventListener("click", closeProfile);
-
-    profileModal?.addEventListener("click", (event) => {
-      if (event.target === profileModal) {
-        closeProfile();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.key === "Escape" &&
-        profileModal?.classList.contains("is-open")
-      ) {
-        closeProfile();
-      }
-    });
-  })();
-</script>
-</body>
-</html>
+];
