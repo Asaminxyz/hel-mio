@@ -1,0 +1,409 @@
+/* COMPANY PAGE
+   Upload this file beside company.html and the existing style.css.
+*/
+
+.company-page {
+  color: #3f4548;
+  background: #f7f3ee;
+}
+
+.company-page .site-nav .is-current {
+  color: var(--gold);
+}
+
+.company-main {
+  background: #ffffff;
+}
+
+.company-hero {
+  width: min(1320px, calc(100% - 96px));
+  margin: 0 auto;
+  padding: 126px 0 88px;
+  border-bottom: 1px solid #ddd4c7;
+}
+
+.company-hero__en {
+  margin-bottom: 12px;
+  color: #b79b5d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  letter-spacing: 0.24em;
+}
+
+.company-hero h1 {
+  color: #0f2747;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+}
+
+.company-profile,
+.achievements__intro,
+.achievement-index,
+.achievement-categories {
+  width: min(1320px, calc(100% - 96px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.company-profile {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 72px;
+  padding: 104px 0 126px;
+}
+
+.company-section-heading p {
+  margin-bottom: 9px;
+  color: #b79b5d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+}
+
+.company-section-heading h2 {
+  color: #0f2747;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+}
+
+.company-info {
+  margin: 0;
+  border-top: 1px solid #cfc8bd;
+}
+
+.company-info__row {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 36px;
+  padding: 27px 0;
+  border-bottom: 1px solid #ded8cf;
+}
+
+.company-info dt,
+.company-info dd,
+.company-business-list {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.company-info dt {
+  color: #0f2747;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.company-info dd {
+  margin: 0;
+  color: #3f4548;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.015em;
+}
+
+.company-business-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-business-list li {
+  position: relative;
+  padding-left: 17px;
+}
+
+.company-business-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.9em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: #b79b5d;
+  transform: translateY(-50%);
+}
+
+.achievements {
+  padding: 122px 0 138px;
+  background: #f7f3ee;
+  border-top: 1px solid #e1d9ce;
+}
+
+.achievements__intro {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.achievements__copy {
+  max-width: 870px;
+  padding-top: 6px;
+}
+
+.achievements__copy > p:first-child {
+  color: #3f4548;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.95;
+  letter-spacing: 0.015em;
+}
+
+.achievements__note {
+  margin-top: 22px;
+  color: #5a5f61;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.achievement-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 42px;
+  margin-top: 70px;
+  padding: 25px 34px;
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid #d8d0c5;
+  border-bottom: 1px solid #d8d0c5;
+}
+
+.achievement-index a {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 13px 0;
+  color: #26394f;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-bottom: 1px solid #e6e0d8;
+  transition: color 0.2s ease;
+}
+
+.achievement-index a:hover {
+  color: #b79b5d;
+}
+
+.achievement-index span {
+  flex: 0 0 auto;
+  color: #b79b5d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.achievement-categories {
+  margin-top: 82px;
+}
+
+.achievement-category {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 72px;
+  padding: 76px 0 88px;
+  scroll-margin-top: 120px;
+  border-top: 1px solid #cfc8bd;
+}
+
+.achievement-category:last-child {
+  border-bottom: 1px solid #cfc8bd;
+}
+
+.achievement-category__heading {
+  position: sticky;
+  top: 118px;
+  align-self: start;
+}
+
+.achievement-category__number {
+  margin-bottom: 10px;
+  color: #b79b5d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+.achievement-category__heading h3 {
+  color: #0f2747;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(27px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.48;
+  letter-spacing: 0.045em;
+}
+
+.achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 46px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #d8d0c5;
+}
+
+.achievement-list li {
+  min-width: 0;
+  padding: 16px 2px 17px;
+  color: #3f4548;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid #ded8cf;
+}
+
+.achievement-back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #6a6258;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #b79b5d;
+}
+
+.company-contact {
+  padding: 110px 48px 118px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.company-contact h2 {
+  color: #0f2747;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.06em;
+}
+
+.company-contact > p:not(.section-kicker) {
+  margin-top: 22px;
+  color: #3f4548;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.company-contact .primary-btn {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1050px) {
+  .company-profile,
+  .achievements__intro,
+  .achievement-category {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .achievement-category__heading {
+    position: static;
+  }
+
+  .achievement-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .company-hero,
+  .company-profile,
+  .achievements__intro,
+  .achievement-index,
+  .achievement-categories {
+    width: min(100% - 40px, 1320px);
+  }
+
+  .company-hero {
+    padding: 76px 0 54px;
+  }
+
+  .company-hero h1 {
+    font-size: 40px;
+  }
+
+  .company-profile {
+    padding: 70px 0 86px;
+  }
+
+  .company-info__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px 0;
+  }
+
+  .company-info dd {
+    font-size: 16px;
+  }
+
+  .company-business-list {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .achievements {
+    padding: 82px 0 96px;
+  }
+
+  .achievements__copy > p:first-child {
+    font-size: 17px;
+  }
+
+  .achievement-index {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 48px;
+    padding: 18px 22px;
+  }
+
+  .achievement-categories {
+    margin-top: 56px;
+  }
+
+  .achievement-category {
+    gap: 28px;
+    padding: 58px 0 68px;
+    scroll-margin-top: 88px;
+  }
+
+  .achievement-category__heading h3 {
+    font-size: 28px;
+  }
+
+  .achievement-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .achievement-list li {
+    padding: 15px 0 16px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .company-contact {
+    padding: 80px 24px 92px;
+  }
+
+  .company-contact > p:not(.section-kicker) {
+    font-size: 16px;
+  }
+}
