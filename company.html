@@ -1,1048 +1,509 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>HÉLMIO｜企業コミュニケーション・キャスティング</title>
-
-  <meta
-    name="description"
-    content="HÉLMIOは、展示会、キャスティング、広報サポート、スピーチ支援、映像コンテンツ制作を通じて、企業の「伝える」を設計するコミュニケーションパートナーです。"
-  >
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要・実績一覧 | HÉLMIO</title>
+  <meta name="description" content="株式会社HELMIOの会社概要と、企業コミュニケーション、展示会、イベント、報道、企業VP、広告出演などの実績一覧です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="style.css?v=20260723-8" rel="stylesheet">
+  <link href="company.css?v=20260723-1" rel="stylesheet">
 </head>
-
-
-<body>
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+<body class="company-page">
+<div class="page">
   <header class="site-header">
-
-    <a
-      href="index.html"
-      class="logo-wrap"
-      aria-label="HÉLMIO トップページ"
-    >
-      <div class="logo">
-        HÉLMIO
-      </div>
-
-      <div class="logo-sub">
-        Corporate Communication &amp; Casting
-      </div>
+    <a class="brand" href="index.html" aria-label="HÉLMIO トップへ">
+      <div class="logo">HÉLMIO</div>
+      <div class="logo-sub">Corporate Communication &amp; Casting</div>
     </a>
-
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="メニューを開く"
-      aria-controls="siteNav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-button" id="menuButton" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
     </button>
-
-
-    <nav
-      class="site-nav"
-      id="siteNav"
-      aria-label="メインナビゲーション"
-    >
-      <a href="#service">
-        サービス
-      </a>
-
-      <a href="#works">
-        実績
-      </a>
-
-      <a href="#talent">
-        プロフェッショナル
-      </a>
-
-      <a href="company.html">
-        会社概要
-      </a>
-
-      <a href="contact.html#request">
-        ご相談の流れ
-      </a>
-
-      <a
-        href="audition.html"
-        class="nav-audition"
-      >
-        オーディション
-      </a>
-
-      <a
-        href="contact.html"
-        class="nav-contact"
-      >
-        法人のお問い合わせ
-      </a>
+    <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
+      <a href="index.html#service">サービス</a>
+      <a href="index.html#works">実績</a>
+      <a href="index.html#talent">プロフェッショナル</a>
+      <a class="is-current" href="company.html">会社概要</a>
+      <a href="contact.html#request">ご相談の流れ</a>
+      <a class="nav-audition" href="audition.html">オーディション</a>
+      <a class="nav-contact" href="contact.html">法人のお問い合わせ</a>
     </nav>
-
   </header>
 
-
-  <main>
-
-    <!-- =====================================================
-         01 HERO
-    ====================================================== -->
-    <section
-      class="hero"
-      id="top"
-    >
-
-      <div class="hero-background">
-        <div class="hero-overlay"></div>
-      </div>
-
-
-      <div class="hero-inner">
-
-        <p class="hero-label">
-          CORPORATE COMMUNICATION &amp; CASTING
-        </p>
-
-        <h1 class="hero-title">
-          企業の「伝える」に、<br>
-          プロフェッショナルという選択を。
-        </h1>
-
-        <p class="hero-copy">
-          展示会、企業PR、採用イベント、スピーチ、映像制作。<br>
-          企画から表現、実施まで、伝わるコミュニケーションを設計します。
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a
-            href="contact.html"
-            class="hero-primary-button"
-          >
-            法人のご相談
-          </a>
-
-          <a
-            href="#service"
-            class="hero-secondary-button"
-          >
-            サービスを見る
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <a
-        href="#works"
-        class="hero-scroll"
-        aria-label="実績の一部へ移動"
-      >
-        <span>SCROLL</span>
-        <i></i>
-      </a>
-
+  <main id="top" class="company-main">
+    <section class="company-hero" aria-labelledby="company-title">
+      <p class="company-hero__en">COMPANY</p>
+      <h1 id="company-title">会社概要</h1>
     </section>
 
+    <section class="company-profile" aria-labelledby="company-profile-title">
+      <header class="company-section-heading">
+        <p>PROFILE</p>
+        <h2 id="company-profile-title">会社情報</h2>
+      </header>
 
-    <!-- =====================================================
-         02 WORKS / 実績の一部
-    ====================================================== -->
-    <section
-      class="works-overview"
-      id="works"
-    >
-
-      <div class="section-inner">
-
-        <div class="works-overview-heading">
-
-          <p class="section-label">
-            WORKS
-          </p>
-
-          <h2>
-            実績の一部
-          </h2>
-
-          <p>
-            企業、行政、報道、イベントなど、
-            幅広い領域のコミュニケーションに携わっています。
-          </p>
-
+      <dl class="company-info">
+        <div class="company-info__row">
+          <dt>会社名</dt>
+          <dd>株式会社HELMIO</dd>
         </div>
-
-
-        <div class="works-overview-list">
-
-          <div class="works-overview-item">
-            <span>TOYOTA</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>Panasonic</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>PwC</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>Gartner</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>日経BP</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>ENEOS</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>Seiko</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>Audi</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>NHK</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>経済産業省</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>大阪・関西万博</span>
-          </div>
-
-          <div class="works-overview-item">
-            <span>Jリーグアウォーズ</span>
-          </div>
-
+        <div class="company-info__row">
+          <dt>代表者</dt>
+          <dd>新島 麻生</dd>
         </div>
-
-
-        <p class="works-overview-note">
-          ※掲載内容には、所属プロフェッショナル個人の過去実績を含みます。
-        </p>
-
-      </div>
-
+        <div class="company-info__row">
+          <dt>所在地</dt>
+          <dd>〒107-0062<br>東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd>
+        </div>
+        <div class="company-info__row">
+          <dt>設立</dt>
+          <dd>2026年7月</dd>
+        </div>
+        <div class="company-info__row company-info__row--business">
+          <dt>事業内容</dt>
+          <dd>
+            <ul class="company-business-list">
+              <li>企業コミュニケーション設計</li>
+              <li>展示会・イベントの企画運営</li>
+              <li>マーケティング・広報PR</li>
+              <li>キャスティング</li>
+              <li>スピーチ指導</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
     </section>
 
-
-    <!-- =====================================================
-         03 COMMUNICATION PARTNER / 課題
-    ====================================================== -->
-    <section
-      class="communication-section"
-      id="communication"
-    >
-
-      <div class="communication-inner">
-
-        <div class="communication-heading">
-
-          <p class="section-label">
-            COMMUNICATION PARTNER
-          </p>
-
-          <h2 class="communication-title">
-            伝わらなければ、<br>
-            選ばれない。
-          </h2>
-
+    <section class="achievements" aria-labelledby="achievements-title">
+      <div class="achievements__intro">
+        <header class="company-section-heading">
+          <p>ACHIEVEMENTS</p>
+          <h2 id="achievements-title">実績一覧</h2>
+        </header>
+        <div class="achievements__copy">
+          <p>企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績を分野別に掲載しています。</p>
+          <p class="achievements__note">※掲載実績には、株式会社HELMIO設立以前に、代表者および参画プロフェッショナルが個人として担当した案件を含みます。</p>
         </div>
-
-
-        <div class="communication-content">
-
-          <p class="communication-lead">
-            展示会や企業イベントで説明はしているのに、
-            商品やサービスの価値が十分に伝わっていない。
-          </p>
-
-          <p>
-            資料に情報を並べただけで、
-            聞き手の理解や興味の流れが設計されていない。
-            来場者は集まっても、その後の相談や商談につながらない。
-          </p>
-
-          <p>
-            採用イベントでは会社について説明しても、
-            仕事の魅力や働く意味が伝わらず、
-            応募したいと思う動機が生まれない。
-          </p>
-
-          <p>
-            経営者や担当者が登壇しても、
-            本当に伝えたい内容が整理されておらず、
-            会社やブランドの魅力を十分に表現できない。
-          </p>
-
-          <p>
-            そんな場面でHÉLMIOは、必要なタイミングだけ、
-            企業のコミュニケーションパートナーとして参加します。
-          </p>
-
-          <p>
-            局アナウンサー、女優、報道経験者など、
-            第一線で「伝える」を仕事にしてきたプロフェッショナルが、
-            成果につながるコミュニケーションを設計します。
-          </p>
-
-          <p class="communication-closing">
-            必要なところだけでも。<br>
-            プロジェクト全体でも。
-          </p>
-
-        </div>
-
       </div>
 
-    </section>
-
-
-    <!-- =====================================================
-         04 WHY HÉLMIO
-    ====================================================== -->
-    <section
-      class="reason-section"
-      id="reason"
-    >
-
-      <div class="section-inner">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            WHY HÉLMIO
-          </p>
-
-          <h2>
-            なぜHÉLMIOが<br>
-            選ばれるのか。
-          </h2>
-
-          <p class="section-heading-text">
-            出演者を手配するだけではなく、
-            誰に、何を、どのように伝えるかを整理し、
-            企画から本番まで一貫して設計します。
-          </p>
-
-        </div>
-
-
-        <div class="reason-cards">
-
-          <!-- REASON 01 -->
-          <article class="reason-card">
-
-            <div class="reason-card-number">
-              01
-            </div>
-
-            <div class="reason-card-content">
-
-              <p class="reason-card-label">
-                PROFESSIONAL PERSPECTIVE
-              </p>
-
-              <h3>
-                「伝える」のプロが、<br>
-                企画段階から参加
-              </h3>
-
-              <p>
-                完成した台本を読むだけではありません。
-                商品や事業、企業の背景を理解し、
-                誰に何を届けるべきかを整理する段階から参加します。
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- REASON 02 -->
-          <article class="reason-card">
-
-            <div class="reason-card-number">
-              02
-            </div>
-
-            <div class="reason-card-content">
-
-              <p class="reason-card-label">
-                COMMUNICATION DESIGN
-              </p>
-
-              <h3>
-                情報を並べるのではなく、<br>
-                理解の流れを設計
-              </h3>
-
-              <p>
-                聞き手がどこで興味を持ち、
-                何を理解し、次にどのような行動を取るのか。
-                情報の順序や表現まで含めて設計します。
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- REASON 03 -->
-          <article class="reason-card">
-
-            <div class="reason-card-number">
-              03
-            </div>
-
-            <div class="reason-card-content">
-
-              <p class="reason-card-label">
-                ONE PROJECT
-              </p>
-
-              <h3>
-                企画から本番まで、<br>
-                一つのチームで支援
-              </h3>
-
-              <p>
-                構成、台本、資料、キャスティング、
-                リハーサル、現場進行まで。
-                各工程をつなげ、一貫した品質をつくります。
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- REASON 04 -->
-          <article class="reason-card">
-
-            <div class="reason-card-number">
-              04
-            </div>
-
-            <div class="reason-card-content">
-
-              <p class="reason-card-label">
-                FLEXIBLE PARTNERSHIP
-              </p>
-
-              <h3>
-                必要な範囲だけ、<br>
-                柔軟に依頼できる
-              </h3>
-
-              <p>
-                台本制作だけ、出演者の手配だけ、
-                スピーチ指導だけでも対応可能です。
-                既存の制作会社や社内チームとも連携します。
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         05 SERVICE
-    ====================================================== -->
-    <section
-      class="service-section"
-      id="service"
-    >
-
-      <div class="section-inner">
-
-        <div class="section-heading service-heading">
-
-          <p class="section-label">
-            SERVICE
-          </p>
-
-          <h2>
-            企業の「伝える」を、<br>
-            設計から実行まで。
-          </h2>
-
-          <p class="section-heading-text">
-            単独のサービスでも、
-            複数の領域を組み合わせたプロジェクトでも対応します。
-          </p>
-
-        </div>
-
-
-        <div class="service-layout">
-
-          <div class="service-visual">
-
-            <img
-              src="images/service-main.jpg"
-              alt="企業イベントやプレゼンテーションを支援するHÉLMIO"
-            >
-
-          </div>
-
-
-          <div class="service-list">
-
-            <!-- SERVICE 01 -->
-            <article class="service-item">
-
-              <div class="service-item-number">
-                01
-              </div>
-
-              <div class="service-item-content">
-
-                <h3>
-                  展示会
-                </h3>
-
-                <p>
-                  出展目的や商品の特徴を整理し、
-                  ステージ企画、プレゼンテーション構成、
-                  台本、資料、出演者、現場進行まで設計します。
-                </p>
-
-              </div>
-
-              <span
-                class="service-item-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </article>
-
-
-            <!-- SERVICE 02 -->
-            <article class="service-item">
-
-              <div class="service-item-number">
-                02
-              </div>
-
-              <div class="service-item-content">
-
-                <h3>
-                  キャスティング
-                </h3>
-
-                <p>
-                  MC、アナウンサー、俳優、ナレーターなど、
-                  案件の目的やブランドに合う
-                  プロフェッショナルを選定します。
-                </p>
-
-              </div>
-
-              <span
-                class="service-item-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </article>
-
-
-            <!-- SERVICE 03 -->
-            <article class="service-item">
-
-              <div class="service-item-number">
-                03
-              </div>
-
-              <div class="service-item-content">
-
-                <h3>
-                  広報サポート
-                </h3>
-
-                <p>
-                  記者発表、企業イベント、メディア対応、
-                  経営者メッセージなど、
-                  社外へ届ける情報と表現を整理します。
-                </p>
-
-              </div>
-
-              <span
-                class="service-item-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </article>
-
-
-            <!-- SERVICE 04 -->
-            <article class="service-item">
-
-              <div class="service-item-number">
-                04
-              </div>
-
-              <div class="service-item-content">
-
-                <h3>
-                  スピーチ支援
-                </h3>
-
-                <p>
-                  経営者や登壇者のスピーチ、
-                  プレゼンテーションを、
-                  構成、原稿、話し方、リハーサルまで支援します。
-                </p>
-
-              </div>
-
-              <span
-                class="service-item-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </article>
-
-
-            <!-- SERVICE 05 -->
-            <article class="service-item">
-
-              <div class="service-item-number">
-                05
-              </div>
-
-              <div class="service-item-content">
-
-                <h3>
-                  映像コンテンツ制作
-                </h3>
-
-                <p>
-                  企業紹介、採用、商品・サービス紹介、
-                  インタビューなど、
-                  伝える目的を整理した映像を制作します。
-                </p>
-
-              </div>
-
-              <span
-                class="service-item-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         06 DETAILED WORKS / 詳細実績
-    ====================================================== -->
-  <section
-  class="helmio-showcase"
-  id="works"
->
-  <div class="helmio-showcase__inner">
-
-    <header class="helmio-showcase__heading">
-      <p class="helmio-showcase__eyebrow">
-        SELECTED EXPERIENCE
-      </p>
-
-      <h2 class="helmio-showcase__title">
-        主な支援実績
-      </h2>
-
-      <p class="helmio-showcase__lead">
-        官公庁・報道・企業イベント・広告など、<br>
-        専門性が求められる現場での実績の一部です。
-      </p>
-    </header>
-
-
-    <div class="helmio-showcase__layout">
-
-      <!-- 01 -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">01</span>
-
-          <div>
-            <h3>政治・パブリック</h3>
-            <p>PUBLIC AFFAIRS</p>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>2024年 総裁選候補者</h4>
-            <p>表現・スピーチ指導</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>国会議員</h4>
-            <p>演説・登壇サポート</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>経済産業省</h4>
-            <p>主催イベント・公式進行</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>経団連</h4>
-            <p>経営層・人事担当者向けセミナー</p>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- 02 -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">02</span>
-
-          <div>
-            <h3>報道・メディア</h3>
-            <p>MEDIA &amp; JOURNALISM</p>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>NHK</h4>
-            <p>ニュース・スポーツ・報道</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>TOKYO MX・サンテレビ・KBS京都</h4>
-            <p>キャスター・リポーター・番組出演</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>MBSラジオ・宮崎放送</h4>
-            <p>ラジオアナウンサー・パーソナリティ</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>笹川平和財団</h4>
-            <p>「ブルーエコノミー」現地リポート</p>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- 03 -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">03</span>
-
-          <div>
-            <h3>企業PR・コミュニケーション</h3>
-            <p>CORPORATE COMMUNICATION &amp; PR</p>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>大阪・関西万博</h4>
-            <p>BLUE OCEAN DOME・世界海の日イベント 公式MC</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>Jリーグアウォーズ</h4>
-            <p>2023〜2025 公式MC</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>企業イベント・カンファレンス</h4>
-            <p>Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS ほか</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>企業コミュニケーション支援</h4>
-            <p>出展企画・営業導線・訴求設計・プレゼン設計</p>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- 04 -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">04</span>
-
-          <div>
-            <h3>広告・出演実績</h3>
-            <p>ADVERTISING &amp; APPEARANCE</p>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>日立ソリューションズ</h4>
-            <p>タクシー広告・プロモーション映像出演</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>東京インテリア</h4>
-            <p>テレビCM出演</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>セキスイハイム</h4>
-            <p>広告パンフレット・モデル出演</p>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>KDDI・大正製薬「アライ」</h4>
-            <p>WEB広告・プロモーション映像出演</p>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="achievements-disclaimer">
-      ※掲載内容には、所属プロフェッショナル個人の過去実績を含みます。
-    </p>
-
-  </div>
-</section>
-
-    <!-- =====================================================
-         07 PROFESSIONALS
-    ====================================================== -->
-    <section
-      class="talent-section"
-      id="talent"
-    >
-
-      <div class="section-inner">
-
-        <div class="section-heading talent-heading">
-
-          <p class="section-label">
-            PROFESSIONALS
-          </p>
-
-          <h2>
-            「伝える」を、<br>
-            仕事にしてきた人たち。
-          </h2>
-
-          <p class="section-heading-text">
-            アナウンサー、俳優、ナレーター、報道経験者など、
-            実務経験を持つプロフェッショナルが、
-            案件に応じて参加します。
-          </p>
-
-        </div>
-
-
-        <div
-          class="talent-grid"
-          id="talentGrid"
-        >
-          <!-- talents.jsでプロフェッショナルカードを表示 -->
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         08 CONTACT CTA
-    ====================================================== -->
-    <section class="contact-cta">
-
-      <div class="contact-cta-inner">
-
-        <p class="contact-cta-label">
-          CONTACT
-        </p>
-
-        <h2>
-          伝える場を、<br>
-          成果につながる場へ。
-        </h2>
-
-        <p class="contact-cta-text">
-          必要なところだけでも、プロジェクト全体でも。<br>
-          案件がまだ具体化していない段階からご相談いただけます。
-        </p>
-
-        <p class="contact-cta-free">
-          初回のご相談・お見積りは無料です。
-        </p>
-
-
-        <div class="contact-cta-actions">
-
-          <a
-            href="contact.html"
-            class="contact-cta-primary"
-          >
-            法人のお問い合わせ
-          </a>
-
-          <a
-            href="contact.html#request"
-            class="contact-cta-secondary"
-          >
-            ご相談の流れを見る
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-  <footer class="site-footer">
-
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-
-        <a
-          href="index.html"
-          class="footer-logo"
-          aria-label="HÉLMIO トップページ"
-        >
-          HÉLMIO
-        </a>
-
-        <p>
-          Corporate Communication &amp; Casting
-        </p>
-
-      </div>
-
-
-      <nav
-        class="footer-nav"
-        aria-label="フッターナビゲーション"
-      >
-        <a href="index.html">
-          トップ
-        </a>
-
-        <a href="#service">
-          サービス
-        </a>
-
-        <a href="#works">
-          実績
-        </a>
-
-        <a href="#talent">
-          プロフェッショナル
-        </a>
-
-        <a href="company.html">
-          会社概要
-        </a>
-
-        <a href="contact.html#request">
-          ご相談の流れ
-        </a>
-
-        <a href="audition.html">
-          オーディション
-        </a>
-
-        <a href="contact.html">
-          法人のお問い合わせ
-        </a>
+      <nav class="achievement-index" id="achievement-index" aria-label="実績カテゴリ一覧">
+        <a href="#achievement-01"><span>01</span>政治・行政・企業コミュニケーション</a>
+<a href="#achievement-02"><span>02</span>企業イベント・カンファレンス</a>
+<a href="#achievement-03"><span>03</span>展示会</a>
+<a href="#achievement-04"><span>04</span>式典・新製品発表会</a>
+<a href="#achievement-05"><span>05</span>セミナー・オンライン配信</a>
+<a href="#achievement-06"><span>06</span>テレビ・キャスター・リポーター</a>
+<a href="#achievement-07"><span>07</span>スポーツ</a>
+<a href="#achievement-08"><span>08</span>ラジオ</a>
+<a href="#achievement-09"><span>09</span>企業VP・ナレーション・MA</a>
+<a href="#achievement-10"><span>10</span>広告・CM・モデル</a>
+<a href="#achievement-11"><span>11</span>トークショー</a>
       </nav>
 
+      <div class="achievement-categories">
+        <section class="achievement-category" id="achievement-01" aria-labelledby="achievement-title-01">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">01</p>
+    <h3 id="achievement-title-01">政治・行政・企業コミュニケーション</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>2024年 総裁選候補者／表現・スピーチ指導</li>
+<li>国会議員／演説・登壇サポート</li>
+<li>内閣官房オリンピック・パラリンピックレガシー推進室主催イベント「大会を契機とした取り組みとレガシー〜TOKYO 2020〜」</li>
+<li>経済産業省主催ピッチコンテスト「アトツギ甲子園」</li>
+<li>経団連主催「大企業経営層・人事担当者向けセミナー」</li>
+<li>笹川平和財団「ブルーエコノミー」／広報・PR、調査・現地リポート</li>
+<li>大阪・関西万博 BLUE OCEAN DOME／ファシリテーター</li>
+<li>大阪・関西万博 世界海の日特別イベント「広げよう海の恵み、つなげよう未来と世界へ」／MatsuriステージMC</li>
+<li>ベンチャー企業／展示会出展企画・訴求設計・プレゼンテーション設計</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-02" aria-labelledby="achievement-title-02">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">02</p>
+    <h3 id="achievement-title-02">企業イベント・カンファレンス</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>Google Cloud Next Tokyo 2024・2025／MC</li>
+<li>Google Cloud Next Leaders Circle／MC</li>
+<li>PwC All Staff Meeting／MC</li>
+<li>Gartner デジタル・ワークプレース サミット／MC</li>
+<li>Gartner CIO Leadership Forum／MC</li>
+<li>Gartner シンポジウム 2024／MC</li>
+<li>Nikkei BP Executive Women カンファレンス／MC</li>
+<li>J-MONEYカンファレンス／MC</li>
+<li>Panasonic・パナソニックコネクト／イベントMC</li>
+<li>ENEOSパビリオン／MC</li>
+<li>大塚商会 実践ソリューションフェア／MC</li>
+<li>freee TOGO World 2024／MC</li>
+<li>セイコーゴールデングランプリ陸上2024／MC</li>
+<li>dynabook35周年イベント／MC</li>
+<li>NHK技研／MC</li>
+<li>ASUSイベント／MC</li>
+<li>KENWOODイベント／MC</li>
+<li>シチズン時計プロモーション／MC</li>
+<li>タカラトミー商談会／MC</li>
+<li>キノコ伝説 勇者と魔法のランプ イベント／MC</li>
+<li>声優朗読劇 フォアレーゼン千葉柏公演／MC</li>
+<li>第39回・第40回 横浜港カッターレース／MC</li>
+<li>朝日杯将棋オープン戦 名古屋対局／MC</li>
+<li>株式会社ALLULE セミナー／MC</li>
+<li>文京区都市交流フェスタ／MC</li>
+<li>ディスカバー沖縄 in 羽田空港／MC</li>
+<li>水かけまつり＆ワールドフェスタ／ステージMC</li>
+<li>SATORI株式会社／MC</li>
+<li>NTTコミュニケーションズ／ナレーター</li>
+<li>野村不動産／ナレーター</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-03" aria-labelledby="achievement-title-03">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">03</p>
+    <h3 id="achievement-title-03">展示会</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>Japan Mobility Show 2025／主催者ステージMC・ナレーター</li>
+<li>東京オートサロン／SUZUKIブースMC</li>
+<li>大阪オートメッセ／SUZUKIブースMC</li>
+<li>国際福祉機器展／SUZUKIブースMC</li>
+<li>Kawasaki KAZEギャル／MC</li>
+<li>ドラッグストアショー／クラシエブースMC</li>
+<li>ドラッグストアショー／hoyuブースMC</li>
+<li>HVAC＆R／東京ガスブースMC</li>
+<li>スマート工場EXPO／エレコムブースMC</li>
+<li>リテールテック／東芝テックブースMC・役者</li>
+<li>CETEC／デルタ電子ブースMC</li>
+<li>働き方改革EXPO／リコージャパンブースMC</li>
+<li>エコプロ／アイシティブースMC</li>
+<li>第13回インターペット／旭化成ブースMC</li>
+<li>Inter BEE／池上通信機ブースMC（2023・2024）</li>
+<li>Interop Tokyo／NTTコミュニケーションズ</li>
+<li>JIMTOF／ダイジェット工業ブースMC</li>
+<li>ハイウェイテクノフェア／飛島建設ブースMC（2023・2024・2025）</li>
+<li>プラントメンテナンスショー／高田工業所ブース ナレーター（2023・2024・2025）</li>
+<li>SEMICON Japan 2024／高田工業所ブース ナレーター</li>
+<li>国際物流総合展 2022／ブラザー販売ブースMC</li>
+<li>教育ITソリューションEXPO／DynabookブースMC</li>
+<li>メカトロテックジャパン／イスカルジャパンブースMC</li>
+<li>FISMA TOKYO／川上製作所ブース ナレーター</li>
+<li>地方自治情報化推進フェア／UiPathブースMC</li>
+<li>インターフェックス／フジシールブースMC</li>
+<li>インターフェックス／ダルトンブースMC</li>
+<li>TOKYO PACK 2022／レンゴーブースMC</li>
+<li>IGAS／ジクスブース ナレーター</li>
+<li>ENEX／関電ファシリティーズブースMC</li>
+<li>ブロックチェーンEXPO 2022・2023／パラミックスブースMC</li>
+<li>資産運用EXPO／スカイコートブースMC</li>
+<li>名古屋プラスチック工業展／東洋機械金属ブースMC</li>
+<li>ダイカスト展／東洋機械金属ブースMC</li>
+<li>コールセンター／CRM デモ＆コンファレンス／MC</li>
+<li>外食ウィーク／エフ・エスブースMC</li>
+<li>BATTERY JAPAN／LBHunetブースMC</li>
+<li>MF-TOKYO／ゼロフォーブースMC</li>
+<li>ロジスティクスソリューションフェア／日本通運ブースMC</li>
+<li>JASIS／主催者ブースMC（2024・2025）</li>
+<li>建築・建材展／光触媒工業会ブースMC</li>
+<li>CRPI-EXPO／EngconブースMC</li>
+<li>MF-TOKYO／旭精機工業ブースMC</li>
+<li>製造業人手不足対策EXPO／日総工産ブース ナレーター</li>
+<li>知財・情報フェア＆コンファレンス／アクアプラネットブース ナレーター</li>
+<li>TOYOTAグループ</li>
+<li>BMW</li>
+<li>OMRON</li>
+<li>大塚商会</li>
+<li>JTBグループ</li>
+<li>ツーリズムEXPO関西</li>
+<li>Canon（CP＋）</li>
+<li>DAIHEN</li>
+<li>安藤ハザマ</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-04" aria-labelledby="achievement-title-04">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">04</p>
+    <h3 id="achievement-title-04">式典・新製品発表会</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>TOYOTA 新車発表会／司会</li>
+<li>いすゞ自動車株式会社 新車発表会／司会</li>
+<li>ZTE Japan 新製品発表会／司会</li>
+<li>ヤマハ発動機 新製品発表会／MC</li>
+<li>ウエルシア 新ブランド発表会／MC</li>
+<li>JTB入社式（2023年〜）／司会</li>
+<li>ダンロップフェニックストーナメント前夜祭／司会</li>
+<li>茨城県×宇宙ベンチャー発表会「イバラキ・スペース」／司会</li>
+<li>商船三井クルーズ×JTB 連携協定発表会／司会</li>
+<li>一般財団法人大阪国際経済振興センター30周年記念パーティ／司会</li>
+<li>神戸ダイハツ自動車 社内表彰式／司会</li>
+<li>2023年度 グッドデザイン・ニューホープ賞 最終審査会／司会</li>
+<li>プレナス大学 開校式／司会</li>
+<li>ソニー生命 社内表彰式／司会</li>
+<li>株式会社ケミカル工事 50周年式典／司会</li>
+<li>株式会社BDS HOLDINHS 顧客招待イベント／MC</li>
+<li>習志野市シルバー人材センター 40周年記念式典／司会</li>
+<li>三菱ケミカル Science &amp; Innovation Center 本棟お披露目見学ツアー／MC</li>
+<li>東京ガスまわりテクニカルコンテスト表彰式／MC</li>
+<li>三菱電機「Serendie Street YIMP」オープニングイベント／MC</li>
+<li>JA共済 書道・交通安全ポスターコンクール表彰式／司会</li>
+<li>Daigasエナジー 価値創造セミナー／MC</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-05" aria-labelledby="achievement-title-05">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">05</p>
+    <h3 id="achievement-title-05">セミナー・オンライン配信</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>Googleセミナー／司会</li>
+<li>バイオフィリア オンラインセミナー／MC</li>
+<li>Panasonic／オンラインMC</li>
+<li>CP＋ 主催者ステージ／MC</li>
+<li>日経xwoman・日経ヘルスセミナー／MC</li>
+<li>日経IR・個人投資家フェアセミナー／MC</li>
+<li>日経主催「営業DX最前線―成果につながるデジタル活用の要点」／MC</li>
+<li>FOODEX 美食女子／リポーター</li>
+<li>デジタルアーツ パートナーミーティング／MC</li>
+<li>サントリーホールディングス／オンラインMC</li>
+<li>Miro Japan／セミナーMC</li>
+<li>SoftBank／セミナーMC</li>
+<li>株式会社NEWSTAR／セミナーMC</li>
+<li>株式会社スウェージロック・ジャパン／セミナーMC</li>
+<li>タニウム合同会社／セミナーMC</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-06" aria-labelledby="achievement-title-06">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">06</p>
+    <h3 id="achievement-title-06">テレビ・キャスター・リポーター</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>局アナウンサー／朝のニュースキャスター・スポーツキャスター・報道フィールドキャスター</li>
+<li>NHK スポーツキャスター</li>
+<li>NHK Eテレ 小学生ボッチャ競技会／進行MC</li>
+<li>KBS京都／ニュースキャスター</li>
+<li>TBS「Nスタ」／番組出演</li>
+<li>J:COM「LIVE news」／リポーター</li>
+<li>J:COM「つながるセブン」</li>
+<li>J:COM「湘南デイリーニュース」</li>
+<li>J:COM IBSA柔道 東京国際オープントーナメント大会</li>
+<li>サンテレビ「NEWS×情報キャッチ＋」／リポーター</li>
+<li>サンテレビ「日本財団 海と日本PROJECT in ひょうご 海LIVE」／リポーター</li>
+<li>船橋競馬パドック中継</li>
+<li>CS放送 平塚競輪</li>
+<li>スカパー</li>
+<li>BS「ONSEN女子旅」／リポーター</li>
+<li>さんふらわあ ツアーリポート</li>
+<li>Audi「チャージハブ」／リポーター</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-07" aria-labelledby="achievement-title-07">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">07</p>
+    <h3 id="achievement-title-07">スポーツ</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>Jリーグアウォーズ 2023〜2025／MC</li>
+<li>ヴィッセル神戸 二冠優勝パーティ／司会</li>
+<li>セレッソ大阪 パブリックビューイング＆選手トークショー／MC</li>
+<li>三井不動産プレゼンツ サッカー日本代表戦パブリックビューイング／MC</li>
+<li>YBSルヴァンカップ／リポーター</li>
+<li>ダンロップフェニックストーナメント前夜祭／司会</li>
+<li>docomo公式ゴルフコンテンツ「東大ゴルフ塾」／リポーター</li>
+<li>URBAN FUTURES presented by livedoor／リポーター＆インタビュアー</li>
+<li>TALENT SHOWCASE ラクロス＆アメリカンフットボールイベントトークショー／MC</li>
+<li>セイコーゴールデングランプリ陸上2024／MC</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-08" aria-labelledby="achievement-title-08">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">08</p>
+    <h3 id="achievement-title-08">ラジオ</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>MBSラジオ「ええかげんにせぇ！」／リポーター</li>
+<li>宮崎放送／ラジオパーソナリティ</li>
+<li>FM湘南ナパサ</li>
+<li>レディオ湘南「GOOD MORNING」</li>
+<li>FM横浜</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-09" aria-labelledby="achievement-title-09">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">09</p>
+    <h3 id="achievement-title-09">企業VP・ナレーション・MA</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>積水ハウス 新施設紹介／MC</li>
+<li>全国賃貸不動産管理業業界／進行MC</li>
+<li>メディカル・コンシェルジュ 企業説明動画</li>
+<li>大阪中小企業投資育成株式会社 デジタルサイネージ用映像</li>
+<li>クラウズ・スパイス社</li>
+<li>株式会社エスエナジー</li>
+<li>自社ローンの窓口</li>
+<li>Kredo</li>
+<li>楽トス</li>
+<li>オリックス自動車 社内研修用動画／ナビゲーター</li>
+<li>ルーシッドCM／MA</li>
+<li>日本金融政策公庫 団体信用生命保険／MA</li>
+<li>アクアプラネット／MA</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-10" aria-labelledby="achievement-title-10">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">10</p>
+    <h3 id="achievement-title-10">広告・CM・モデル</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>日立ソリューションズ／タクシー広告</li>
+<li>KDDI／WEB広告</li>
+<li>東京インテリア／テレビCM</li>
+<li>宮城県入浴施設 愛子天空の湯 そよぎの杜／テレビCM</li>
+<li>JCB／テレビ・インフォマーシャル</li>
+<li>美容機器メーカー YA-MAN／WEB・店頭</li>
+<li>ニトリ／WEB・ルームウェアモデル</li>
+<li>セキスイハイム／広告パンフレット</li>
+<li>オンライン家庭教師メガスタ／WEB広告</li>
+<li>さんふらわあ／駅サイネージ・パンフレット</li>
+<li>大正製薬「アライ」／WEB広告</li>
+<li>鈴茂器工／WEB・スチール</li>
+<li>大阪工業大学／テレビ・インフォマーシャル</li>
+<li>日経スペシャル「もしものマネー道 もしマネ」JCBインフォマーシャル</li>
+<li>アデランス広告モデル（日本・中国・香港・台湾・タイ・シンガポール）</li>
+<li>湘南ガールコンテスト／準グランプリ</li>
+<li>飛馬日本 atelier * momo&amp;momo／アパレルモデル</li>
+<li>アトリエ木下／着物モデル</li>
+<li>富士フイルム 写真展／イメージモデル</li>
+<li>渋谷植村スタジオ／モデル</li>
+<li>Brocade 7月号／表紙</li>
+<li>ORICON マウスケア商品／WEBモデル</li>
+<li>Nikon／和装ウエディングモデル</li>
+<li>シンガポール カメラ雑誌／表紙</li>
+<li>戦国炎舞／WEB CM</li>
+<li>オリエンタルランド 春キャン／モデル</li>
+<li>CP＋ ケンコー・トキナーステージ／モデル</li>
+<li>雑誌「ハイエースfan」／表紙</li>
+<li>株式会社イトーキ オフィス家具カタログ／モデル</li>
+<li>TGC NY STATE Bags／広告動画モデル</li>
+<li>ワタミ／広告モデル</li>
+<li>クラウズ・スパイス社／広告モデル</li>
+<li>第一興商／広告モデル</li>
+<li>カワサキバイクマガジン／モデル</li>
+<li>ソフトバンク／広告モデル</li>
+<li>ソフトバンク 新商品プレス向け発表会／モデル</li>
+<li>O-net／広告モデル</li>
+<li>横浜リーフみなとみらい検診クリニック／広告モデル</li>
+<li>飛島建設／広告モデル</li>
+<li>株式会社エフ・オー・プランニング／HPモデル</li>
+<li>KADOKAWA オリジナルバッグ新商品／モデル</li>
+<li>KADOKAWA 腕時計／モデル</li>
+<li>TVCM「アデランスヘアアップa」／施術士役</li>
+<li>dazzshop_official／メイク動画モデル</li>
+<li>日産自動車「SAKURA」紹介動画／モデル</li>
+<li>KING JIM 新商品発表会／モデル</li>
+<li>Inter BEE 2022 富士フイルム／被写体モデル</li>
+<li>ソフトバンクC&amp;S「Poly」動画／役者</li>
+<li>ボートレース津／キャンペーンモデル</li>
+<li>パーソルHRパートナーズ／モデル</li>
+<li>ワールドプラスジム／HPモデル</li>
+<li>FOODEX 美食女子／モデル</li>
+<li>リテールテックJAPAN 東芝テック／ステージモデル</li>
+<li>エミニナル矯正／YouTube出演</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section><section class="achievement-category" id="achievement-11" aria-labelledby="achievement-title-11">
+  <header class="achievement-category__heading">
+    <p class="achievement-category__number">11</p>
+    <h3 id="achievement-title-11">トークショー</h3>
+  </header>
+  <div class="achievement-category__content">
+    <ul class="achievement-list">
+      <li>マセラティ オーナー向けタレントトークショー／MC</li>
+<li>BMW 全国キャラバン＆トークショー／MC</li>
+<li>バカルディ・ジャパン ウイスキー試飲会／MC</li>
+<li>セイコーゴールデングランプリ陸上2024 セイコーブース／トークショーMC</li>
+<li>ウエルシア 新ブランド発表会／トークショーMC</li>
+<li>dynabook35周年イベント 伊沢拓司氏トークショー／MC</li>
+    </ul>
+    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
+  </div>
+</section>
+      </div>
+    </section>
+
+    <section class="company-contact" aria-labelledby="company-contact-title">
+      <p class="section-kicker">CONTACT</p>
+      <h2 id="company-contact-title">企業の「伝える」を、<br>一緒に設計します。</h2>
+      <p>企画段階のご相談から、キャスティング、当日の運営までご相談ください。</p>
+      <a class="primary-btn" href="contact.html">法人のお問い合わせ</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">HÉLMIO</a>
+        <p>Corporate Communication &amp; Casting</p>
+      </div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="index.html#service">サービス</a>
+        <a href="index.html#works">実績</a>
+        <a href="index.html#talent">プロフェッショナル</a>
+        <a href="company.html">会社概要</a>
+        <a href="contact.html">法人のお問い合わせ</a>
+        <a class="footer-audition-link" href="audition.html">出演希望の方はこちら</a>
+      </nav>
     </div>
-
+    <div class="footer-bottom"><p>© 2026 HÉLMIO</p></div>
   </footer>
+</div>
 
+<a class="mobile-contact-cta" href="contact.html" aria-label="法人のお問い合わせページへ移動する">
+  <span class="mobile-contact-cta__label">法人のご相談</span>
+  <span class="mobile-contact-cta__en">CONTACT</span>
+</a>
 
-  <!-- =====================================================
-       MOBILE FIXED CTA
-  ====================================================== -->
-  <a
-    href="contact.html"
-    class="mobile-contact-cta"
-    aria-label="法人のお問い合わせページへ移動する"
-  >
-    <span class="mobile-contact-cta__label">
-      法人のご相談
-    </span>
+<script>
+(() => {
+  const menuButton = document.getElementById('menuButton');
+  const siteNav = document.getElementById('siteNav');
+  if (!menuButton || !siteNav) return;
 
-    <span class="mobile-contact-cta__en">
-      CONTACT
-    </span>
-  </a>
+  menuButton.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
 
-
-  <script src="talents.js"></script>
-  <script src="main.js"></script>
-
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'メニューを開く');
+    });
+  });
+})();
+</script>
 </body>
-
 </html>
