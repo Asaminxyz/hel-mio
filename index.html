@@ -11,24 +11,44 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20260724-2" rel="stylesheet"/>
+<link href="style.css?v=20260725-2" rel="stylesheet"/>
 <style>
-/* PROFILE MODAL — complete unified layout */
+/* PROFILE MODAL — unified CTA and grouped career layout */
 .profile-top-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 26px;
+  margin-top: 28px;
 }
 
-.profile-top-actions .profile-action {
-  min-width: 210px;
+.profile-consult-action {
+  width: 100%;
   justify-content: center;
+}
+
+.profile-video-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.profile-video-actions .profile-action {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  text-align: center;
 }
 
 .profile-action.is-disabled {
   pointer-events: none;
-  opacity: 0.45;
+  cursor: default;
+  opacity: 0.48;
+}
+
+.profile-action-status {
+  display: block;
+  margin-left: 0.45em;
+  font-size: 0.72em;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .profile-career-groups {
@@ -82,13 +102,16 @@
 
 @media (max-width: 760px) {
   .profile-top-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
     margin-top: 22px;
   }
 
-  .profile-top-actions .profile-action {
+  .profile-video-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .profile-consult-action,
+  .profile-video-actions .profile-action {
     width: 100%;
     min-width: 0;
   }
@@ -692,7 +715,7 @@
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="talents.js?v=20260724-2"></script>
+<script src="talents.js?v=20260725-2"></script>
 <script>
   (() => {
     "use strict";
@@ -785,44 +808,65 @@
     };
 
     const createProfileTopActions = (talent) => {
-      const movies = Array.isArray(talent.youtube) ? talent.youtube : [];
-      const firstMovie = movies.find(
-        (movie) =>
-          movie &&
-          typeof movie.url === "string" &&
-          movie.url.trim() !== ""
-      );
+      const movies = Array.isArray(talent.youtube)
+        ? talent.youtube.filter(
+            (movie) =>
+              movie &&
+              typeof movie.title === "string" &&
+              movie.title.trim() !== ""
+          )
+        : [];
 
-      const youtubeUrl = firstMovie
-        ? toYouTubeWatchUrl(firstMovie.url)
+      const videoActions = movies
+        .map((movie) => {
+          const label = movie.title.trim();
+          const youtubeUrl =
+            typeof movie.url === "string"
+              ? toYouTubeWatchUrl(movie.url.trim())
+              : "";
+
+          if (youtubeUrl) {
+            return `
+              <a
+                class="profile-action secondary"
+                href="${escapeHtml(youtubeUrl)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ${escapeHtml(label)}
+              </a>
+            `;
+          }
+
+          return `
+            <span
+              class="profile-action secondary is-disabled"
+              aria-disabled="true"
+            >
+              ${escapeHtml(label)}
+              <small class="profile-action-status">準備中</small>
+            </span>
+          `;
+        })
+        .join("");
+
+      const videoArea = videoActions
+        ? `
+          <div class="profile-video-actions">
+            ${videoActions}
+          </div>
+        `
         : "";
 
-      const videoAction = youtubeUrl
-        ? `
-          <a
-            class="profile-action secondary"
-            href="${escapeHtml(youtubeUrl)}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            出演動画を見る
-          </a>
-        `
-        : `
-          <span
-            class="profile-action secondary is-disabled"
-            aria-disabled="true"
-          >
-            出演動画を見る
-          </span>
-        `;
-
       return `
-        <div class="profile-actions profile-top-actions">
-          <a class="profile-action primary" href="contact.html">
+        <div class="profile-top-actions">
+          <a
+            class="profile-action primary profile-consult-action"
+            href="contact.html"
+          >
             この方について相談する
           </a>
-          ${videoAction}
+          ${videoArea}
         </div>
       `;
     };
