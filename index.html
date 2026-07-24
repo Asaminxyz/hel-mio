@@ -11,30 +11,32 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20260725-2" rel="stylesheet"/>
+<link href="style.css?v=20260725-3" rel="stylesheet"/>
 <style>
-/* PROFILE MODAL — unified CTA and grouped career layout */
+/* PROFILE MODAL — equal CTA row and grouped career layout */
 .profile-top-actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
   margin-top: 28px;
 }
 
-.profile-consult-action {
-  width: 100%;
+.profile-top-actions .profile-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-
-.profile-video-actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.profile-video-actions .profile-action {
   width: 100%;
   min-width: 0;
-  justify-content: center;
+  min-height: 74px;
+  padding: 14px 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
   text-align: center;
+  white-space: normal;
 }
 
 .profile-action.is-disabled {
@@ -45,10 +47,16 @@
 
 .profile-action-status {
   display: block;
-  margin-left: 0.45em;
-  font-size: 0.72em;
+  margin-top: 4px;
+  font-size: 11px;
   font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   white-space: nowrap;
+}
+
+.profile-header + .profile-section {
+  margin-top: 34px;
 }
 
 .profile-career-groups {
@@ -100,20 +108,27 @@
   display: none !important;
 }
 
+@media (max-width: 980px) {
+  .profile-top-actions {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .profile-top-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
     margin-top: 22px;
   }
 
-  .profile-video-actions {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .profile-top-actions .profile-action {
+    min-height: 60px;
+    font-size: 14px;
   }
 
-  .profile-consult-action,
-  .profile-video-actions .profile-action {
-    width: 100%;
-    min-width: 0;
+  .profile-header + .profile-section {
+    margin-top: 30px;
   }
 
   .profile-career-groups {
@@ -1466,23 +1481,15 @@ const talents = [
         })
         .join("");
 
-      const videoArea = videoActions
-        ? `
-          <div class="profile-video-actions">
-            ${videoActions}
-          </div>
-        `
-        : "";
-
       return `
         <div class="profile-top-actions">
           <a
-            class="profile-action primary profile-consult-action"
+            class="profile-action primary"
             href="contact.html"
           >
             この方について相談する
           </a>
-          ${videoArea}
+          ${videoActions}
         </div>
       `;
     };
