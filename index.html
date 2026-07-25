@@ -11,9 +11,13 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20260725-3" rel="stylesheet"/>
+<link href="style.css?v=20260725-4" rel="stylesheet"/>
 <style>
 /* PROFILE MODAL — equal CTA row and grouped career layout */
+.profile-summary {
+  white-space: pre-line;
+}
+
 .profile-top-actions {
   display: grid;
   grid-auto-flow: column;
@@ -748,7 +752,7 @@ const talents = [
     ],
 
     summary:
-      "NHK地方局でニュースキャスター、スポーツキャスター、報道フィールドキャスターとして経験を積み、現在はテレビ、企業イベント、国際イベント、広報・マーケティングなど多方面で活躍。大阪・関西万博やJリーグアウォーズをはじめ、注目度の高い大型プロジェクトで司会・ファシリテーション・インタビューを担ってきた。報道現場で培った情報整理力と発信力を強みに、企業やブランドの広報支援、政治家・経営者のスピーチや登壇サポートにも対応。伝える内容の設計から表現、現場での届け方までを一貫して支援する。",
+      "NHKで朝のニュースキャスター、スポーツキャスター、報道リポーターとして経験を重ね、現在はフリーアナウンサーとして活動する一方、企業やブランドのマーケティング・PR支援にも携わる。\n\n大阪・関西万博やJリーグアウォーズなどの大型イベントでは、司会進行、ファシリテーション、インタビューを担当。報道現場で培った情報整理力と、相手の魅力や要点を的確に引き出す発信力を強みに、総裁選候補者へのスピーチ指導にも対応している。\n\n報道、スポーツ、旅番組から企業イベントまで、現場や目的に応じて柔軟に適応し、伝えるべき情報を分かりやすく伝える。",
 
     profile: {
       height: "160cm",
@@ -775,7 +779,7 @@ const talents = [
 
     careers: [
       /* ==============================
-         テレビ・キャスター
+         テレビ
       ============================== */
       {
         category: "テレビ・キャスター",
@@ -794,10 +798,6 @@ const talents = [
         category: "テレビ・キャスター",
         text: "サンテレビ『NEWS×情報キャッチ＋』リポーター"
       },
-
-      /* ==============================
-         テレビ・リポーター
-      ============================== */
       {
         category: "テレビ・リポーター",
         text:
@@ -838,30 +838,30 @@ const talents = [
       },
 
       /* ==============================
-         広告・企業VP
+         CM・企業VP・モデル
       ============================== */
       {
-        category: "広告・企業VP",
+        category: "CM・企業VP",
         text: "日立ソリューションズ タクシー広告"
       },
       {
-        category: "広告・企業VP",
+        category: "CM・企業VP",
         text: "東京インテリア テレビCM"
       },
       {
-        category: "広告・企業VP",
-        text: "KDDI・大正製薬『アライ』WEB広告・プロモーション映像"
+        category: "CM・企業VP",
+        text: "KDDI WEB広告・プロモーション映像"
       },
       {
-        category: "広告・企業VP",
+        category: "CM・企業VP",
         text: "大正製薬『アライ』WEB広告ナレーション"
       },
       {
-        category: "広告・企業VP",
+        category: "CM・企業VP",
         text: "JCB テレビ・インフォマーシャル"
       },
       {
-        category: "広告・企業VP",
+        category: "CM・企業VP",
         text: "オンライン家庭教師メガスタ 企業VP"
       },
       {
@@ -871,7 +871,7 @@ const talents = [
       {
         category: "広告・モデル",
         text:
-          "YA-MAN・ニトリ・セキスイハイム 広告・WEB・店頭ビジュアル"
+          "YA-MAN／ニトリ／セキスイハイム／広告・WEB・店頭ビジュアル"
       },
       {
         category: "企業モデル",
@@ -960,7 +960,7 @@ const talents = [
       },
       {
         category: "トークショー",
-        text: "マセラティ タレントトークショー"
+        text: "マセラティ 武井壮さんトークショー"
       },
       {
         category: "トークショー",
