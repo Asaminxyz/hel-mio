@@ -744,6 +744,7 @@ window.HELMIO_TALENTS = [
     name: "新島 麻生",
     kana: "にいじま あさみ",
     englishName: "ASAMI NIIJIMA",
+    pdf: "新島麻生プロフィール.pdf",
 
     cardImage: "S__27566083.jpg",
 
@@ -1005,6 +1006,7 @@ window.HELMIO_TALENTS = [
     name: "南 青良",
     kana: "みなみ せいら",
     englishName: "SEIRA MINAMI",
+    pdf: "南 青良プロフィール.pdf",
 
     cardImage: "seira-new.jpeg",
 
@@ -1681,15 +1683,18 @@ window.HELMIO_TALENT_VERSION = "20260725-6";
           ${createCareerSection(talent.careers)}
           ${createTagSection(talent.tags)}
 
-          <div class="profile-actions profile-actions--bottom">
-            <button
-              class="profile-action secondary"
-              id="profileDownload"
-              type="button"
-            >
-              PDFプロフィールを保存
-            </button>
-          </div>
+          ${talent.pdf ? `
+            <div class="profile-actions profile-actions--bottom">
+              <a
+                class="profile-action secondary"
+                href="${escapeHtml(talent.pdf)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PDFプロフィールを見る
+              </a>
+            </div>
+          ` : ""}
         </article>
       `;
 
@@ -1711,39 +1716,6 @@ window.HELMIO_TALENT_VERSION = "20260725-6";
           button.classList.add("is-active");
         });
       });
-
-      const downloadButton = document.getElementById("profileDownload");
-
-      if (downloadButton) {
-        downloadButton.addEventListener("click", async () => {
-          const profileSheet = modalContent.querySelector(".profile-sheet");
-
-          if (!profileSheet || typeof html2pdf === "undefined") {
-            return;
-          }
-
-          profileSheet.classList.add("pdf-export");
-
-          try {
-            await html2pdf()
-              .set({
-                margin: 0,
-                filename: `${talent.englishName || talent.name}-profile.pdf`,
-                image: { type: "jpeg", quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: {
-                  unit: "px",
-                  format: [794, 1123],
-                  orientation: "portrait"
-                }
-              })
-              .from(profileSheet)
-              .save();
-          } finally {
-            profileSheet.classList.remove("pdf-export");
-          }
-        });
-      }
 
       profileModal.classList.add("is-open");
       profileModal.setAttribute("aria-hidden", "false");
