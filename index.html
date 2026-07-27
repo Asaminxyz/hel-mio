@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<!-- HÉLMIO SINGLE-FILE BUILD 20260727-hero-approach-clean -->
+<!-- HÉLMIO SINGLE-FILE BUILD 20260727-works-heading-larger -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -431,26 +431,31 @@
    FINAL HERO / CHALLENGES REFINEMENT
 ============================== */
 .hero {
-  grid-template-columns: minmax(0, 1.22fr) minmax(420px, 0.78fr);
-  gap: 24px;
-  min-height: 0;
-  padding: 30px 48px 42px;
+  grid-template-columns: minmax(0, 620px) minmax(500px, 680px);
+  justify-content: center;
   align-items: center;
+  column-gap: 56px;
+  min-height: 0;
+  padding: 52px 56px 62px;
 }
 
 .hero-text {
-  padding: 66px 20px 66px 30px;
+  padding: 54px 0;
 }
 
 .hero-visual {
-  min-height: 540px;
-  max-height: 590px;
+  width: 100%;
+  height: 600px;
+  min-height: 0;
+  max-height: none;
   align-self: center;
 }
 
 .hero-visual img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .pr-challenges__heading {
@@ -475,20 +480,35 @@
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .hero {
-    grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.92fr);
-    gap: 18px;
-    padding: 24px 30px 34px;
+    grid-template-columns: minmax(0, 1fr) minmax(430px, 0.95fr);
+    column-gap: 38px;
+    padding: 42px 42px 50px;
   }
 
   .hero-text {
-    padding: 54px 16px 54px 18px;
+    padding: 46px 0;
   }
 
   .hero-visual {
-    min-height: 470px;
-    max-height: 520px;
+    height: 540px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+    column-gap: 26px;
+    padding: 34px 30px 42px;
+  }
+
+  .hero-text {
+    padding: 38px 0;
+  }
+
+  .hero-visual {
+    height: 480px;
   }
 }
 
@@ -504,8 +524,9 @@
   }
 
   .hero-visual {
+    width: 100%;
+    height: auto;
     min-height: 380px;
-    max-height: none;
   }
 }
 
@@ -534,6 +555,20 @@
   }
 }
 
+
+/* WORKS — company/project headings slightly larger */
+.helmio-showcase__item h4,
+.helmio-showcase__row-title h4 {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .helmio-showcase__item h4,
+  .helmio-showcase__row-title h4 {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 <body>
@@ -601,7 +636,7 @@
           </a>
 </div>
 <div class="hero-visual">
-<img alt="企業コミュニケーションを支援するHÉLMIO" src="hero.png"/>
+<img alt="企業コミュニケーションを支援するHÉLMIO" src="top.png"/>
 </div>
 </section>
 
