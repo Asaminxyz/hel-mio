@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<!-- HÉLMIO SINGLE-FILE BUILD 20260727-challenges-clean -->
+<!-- HÉLMIO SINGLE-FILE BUILD 20260727-hero-approach-clean -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -422,6 +422,114 @@
   }
 }
 
+
+/* ==============================
+   FINAL HERO / CHALLENGES REFINEMENT
+============================== */
+.hero {
+  grid-template-columns: minmax(0, 1.22fr) minmax(420px, 0.78fr);
+  gap: 24px;
+  min-height: 0;
+  padding: 30px 48px 42px;
+  align-items: center;
+}
+
+.hero-text {
+  padding: 66px 20px 66px 30px;
+}
+
+.hero-visual {
+  min-height: 540px;
+  max-height: 590px;
+  align-self: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+}
+
+.pr-challenges__heading {
+  margin-bottom: 36px;
+}
+
+.pr-challenges__answer {
+  display: block;
+  max-width: 980px;
+  margin: 42px auto 0;
+  padding-top: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(177, 138, 67, 0.38);
+}
+
+.pr-challenges__answer p {
+  margin: 0;
+  color: #102f52;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.92fr);
+    gap: 18px;
+    padding: 24px 30px 34px;
+  }
+
+  .hero-text {
+    padding: 54px 16px 54px 18px;
+  }
+
+  .hero-visual {
+    min-height: 470px;
+    max-height: 520px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .hero-text {
+    padding: 70px 32px 50px;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-text {
+    padding: 58px 22px 42px;
+  }
+
+  .hero-visual {
+    min-height: 290px;
+  }
+
+  .pr-challenges__heading {
+    margin-bottom: 28px;
+  }
+
+  .pr-challenges__answer {
+    margin-top: 32px;
+    padding-top: 24px;
+    text-align: left;
+  }
+
+  .pr-challenges__answer p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -489,7 +597,7 @@
           </a>
 </div>
 <div class="hero-visual">
-<img alt="企業コミュニケーションを支援するHÉLMIO" src="hero.png"/>
+<img alt="企業コミュニケーションを支援するHÉLMIO" src="top.png"/>
 </div>
 </section>
 
@@ -501,10 +609,6 @@
     <header class="pr-challenges__heading">
       <p class="pr-challenges__label">YOUR CHALLENGES</p>
       <h2 id="pr-challenges-title">こんな悩みはありませんか？</h2>
-      <p class="pr-challenges__intro">
-        商品や技術に強みがあっても、広報の視点と伝え方が整っていなければ、<br class="pc-only"/>
-        その価値は十分に届きません。
-      </p>
     </header>
 
     <ul class="pr-challenges__list">
@@ -539,14 +643,9 @@
         <p>展示会に出展しても、相談や商談につながらない</p>
       </li>
     </ul>
-
     <div class="pr-challenges__answer">
-      <div>
-        <p class="pr-challenges__answer-label">HÉLMIO'S APPROACH</p>
-        <h3>企業の価値を、<br/>世の中が求めるニュース文脈へ。</h3>
-      </div>
       <p>
-        数々の報道番組でニュースを伝えてきた「元アナウンサー・報道経験者」の視点で、
+        数々の報道番組でニュースを伝えてきた「アナウンサー・報道経験者」の視点で、
         貴社の商品・技術・取り組みを、今、世の中が求める「ニュース文脈」へと翻訳します。
       </p>
     </div>
@@ -755,38 +854,6 @@
 
     </div>
   </div>
-</section>
-<!-- ==============================
-         COMMUNICATION PARTNER
-    ============================== -->
-<section aria-labelledby="partner-title" class="section partner-section" id="partner">
-<p class="section-kicker center">
-        COMMUNICATION PARTNER
-      </p>
-<h2 id="partner-title">
-        つい、聞いてしまう。<br/>
-        心が動く。
-      </h2>
-<div class="partner-copy">
-<p>
-          説明はしているのに商品の価値が伝わっていない。
-          聞き手の理解や興味の流れが設計されていない。
-          人は集まっても、その後の相談や商談につながらない
-        </p>
-<p>
-          そんな場面でHÉLMIOは、必要なタイミングだけ、
-          企業のコミュニケーションパートナーとして参加します。
-        </p>
-<p>
-          局アナウンサー、女優、報道経験者など、
-          第一線で「伝える」を仕事にしてきたプロフェッショナルが、
-          成果につながるコミュニケーションを設計します。
-        </p>
-<p class="partner-emphasis">
-          必要なところだけでも。<br/>
-          プロジェクト全体でも。
-        </p>
-</div>
 </section>
 <!-- ==============================
          WHY HÉLMIO
