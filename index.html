@@ -1,7 +1,12 @@
+index.html
+
+
+
+
 <!DOCTYPE html>
 
 <html lang="ja">
-<!-- HÉLMIO SINGLE-FILE BUILD 20260727-works-heading-larger -->
+<!-- HÉLMIO SINGLE-FILE BUILD 20260729-pr-diagnosis-spacing-fixed -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -629,6 +634,592 @@
   opacity: 0.72;
 }
 
+
+
+/* ==============================
+   PR DIAGNOSIS CTA — compact report preview
+============================== */
+.pr-diagnosis-cta {
+  padding: 78px 0 84px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef5fc 100%);
+  border-top: 1px solid rgba(16, 47, 82, 0.08);
+  border-bottom: 1px solid rgba(16, 47, 82, 0.1);
+}
+
+.pr-diagnosis-cta__inner {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(540px, 1.14fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.pr-diagnosis-cta__label {
+  margin: 0 0 14px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
+
+.pr-diagnosis-cta__copy h2 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(31px, 3.7vw, 46px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.025em;
+}
+
+.pr-diagnosis-cta__copy h2 em {
+  color: #b78324;
+  font-style: normal;
+}
+
+.pr-diagnosis-cta__lead {
+  margin: 24px 0 0;
+  color: #34485c;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.pr-diagnosis-cta__needs {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-diagnosis-cta__needs li {
+  position: relative;
+  padding-left: 31px;
+  color: #102f52;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.pr-diagnosis-cta__needs li::before {
+  content: "✓";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  color: #fff;
+  background: #b18a43;
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.pr-diagnosis-cta__benefits-title {
+  margin: 34px 0 16px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.pr-diagnosis-cta__benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pr-diagnosis-cta__benefit {
+  min-height: 86px;
+  padding: 15px 16px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(16, 47, 82, 0.12);
+  border-radius: 10px;
+}
+
+.pr-diagnosis-cta__benefit strong {
+  display: block;
+  color: #102f52;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pr-diagnosis-cta__benefit span {
+  display: block;
+  margin-top: 4px;
+  color: #607080;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.pr-diagnosis-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 330px;
+  margin-top: 28px;
+  padding: 17px 22px 17px 26px;
+  color: #fff;
+  background: #102f52;
+  border: 1px solid #102f52;
+  box-shadow: 0 8px 22px rgba(16, 47, 82, 0.14);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.pr-diagnosis-cta__button::after {
+  content: "→";
+  margin-left: 28px;
+  font-size: 18px;
+}
+
+.pr-diagnosis-cta__note {
+  margin: 13px 0 0;
+  color: #6c7781;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.pr-diagnosis-report {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(16, 47, 82, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(16, 47, 82, 0.1);
+}
+
+.pr-diagnosis-report__title {
+  margin: 0 0 13px;
+  padding: 0 4px 12px;
+  color: #102f52;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.12);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pr-diagnosis-report__top {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.pr-diagnosis-report__panel {
+  background: #fff;
+  border: 1px solid rgba(16, 47, 82, 0.1);
+  border-radius: 12px;
+}
+
+.pr-diagnosis-score {
+  min-height: 326px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.pr-diagnosis-score__label {
+  display: block;
+  color: #102f52;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pr-diagnosis-score__circle {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 142px;
+  height: 142px;
+  margin: 20px auto 18px;
+  background:
+    radial-gradient(circle, #fff 62%, transparent 63%),
+    conic-gradient(#102f52 0deg 273.6deg, #dce3ea 273.6deg 360deg);
+  border-radius: 50%;
+}
+
+.pr-diagnosis-score__circle strong {
+  color: #102f52;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.pr-diagnosis-score__circle small {
+  margin-top: 7px;
+  color: #102f52;
+  font-size: 12px;
+}
+
+.pr-diagnosis-score__band {
+  display: inline-block;
+  padding: 8px 10px;
+  color: #102f52;
+  background: #eef5fb;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.pr-diagnosis-metrics {
+  padding: 14px 16px 12px;
+}
+
+.pr-diagnosis-metrics h3 {
+  margin: 0 0 10px;
+  color: #102f52;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pr-diagnosis-metric {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px 43px;
+  gap: 10px;
+  align-items: center;
+  min-height: 28px;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.08);
+}
+
+.pr-diagnosis-metric:last-child {
+  border-bottom: 0;
+}
+
+.pr-diagnosis-metric span {
+  color: #34485c;
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+.pr-diagnosis-metric__bar {
+  height: 6px;
+  overflow: hidden;
+  background: #e5eaf0;
+  border-radius: 999px;
+}
+
+.pr-diagnosis-metric__bar i {
+  display: block;
+  width: var(--score);
+  height: 100%;
+  background: #102f52;
+  border-radius: inherit;
+}
+
+.pr-diagnosis-metric b {
+  color: #102f52;
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pr-diagnosis-report__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.9fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pr-diagnosis-insight {
+  min-height: 182px;
+  padding: 16px;
+}
+
+.pr-diagnosis-insight h3 {
+  margin: 0 0 12px;
+  color: #102f52;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-insight p {
+  margin: 0;
+  color: #465665;
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+.pr-diagnosis-insight--state {
+  border-color: rgba(177, 138, 67, 0.48);
+  box-shadow: inset 0 3px 0 #b18a43;
+}
+
+.pr-diagnosis-insight--state p strong {
+  display: block;
+  margin: 6px 0;
+  color: #9a6b18;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.pr-diagnosis-blindspots {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: blindspot;
+}
+
+.pr-diagnosis-blindspots li {
+  counter-increment: blindspot;
+  position: relative;
+  min-height: 36px;
+  padding: 2px 0 8px 30px;
+  color: #34485c;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.09);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.pr-diagnosis-blindspots li + li {
+  margin-top: 8px;
+}
+
+.pr-diagnosis-blindspots li:last-child {
+  border-bottom: 0;
+}
+
+.pr-diagnosis-blindspots li::before {
+  content: counter(blindspot);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  background: #102f52;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.pr-diagnosis-seeds {
+  display: grid;
+  gap: 10px;
+}
+
+.pr-diagnosis-seed {
+  padding: 10px;
+  color: #34485c;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+@media (max-width: 1060px) {
+  .pr-diagnosis-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-diagnosis-report {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .pr-diagnosis-cta {
+    padding: 62px 0 68px;
+  }
+
+  .pr-diagnosis-cta__inner {
+    width: min(100% - 32px, 1180px);
+    gap: 34px;
+  }
+
+  .pr-diagnosis-cta__copy h2 {
+    font-size: 29px;
+  }
+
+  .pr-diagnosis-cta__benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-diagnosis-cta__button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pr-diagnosis-report__top,
+  .pr-diagnosis-report__bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-diagnosis-score {
+    min-height: 0;
+  }
+
+  .pr-diagnosis-metric {
+    grid-template-columns: minmax(0, 1fr) 76px 40px;
+  }
+}
+
+
+
+/* ==============================
+   PR DIAGNOSIS CTA — white compact refinement
+============================== */
+.pr-diagnosis-cta {
+  padding: 64px 0 70px;
+  background: #fff;
+}
+
+.pr-diagnosis-cta__inner {
+  gap: 42px;
+  align-items: center;
+}
+
+.pr-diagnosis-cta__copy h2 {
+  max-width: 560px;
+  font-size: clamp(30px, 3.3vw, 44px);
+  line-height: 1.5;
+}
+
+.pr-diagnosis-cta__lead {
+  max-width: 560px;
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.pr-diagnosis-cta__needline {
+  margin: 20px 0 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.pr-diagnosis-cta__benefits-title {
+  margin-top: 26px;
+  margin-bottom: 12px;
+}
+
+.pr-diagnosis-cta__benefits--compact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0 0 26px;
+  border-top: 1px solid rgba(16, 47, 82, 0.12);
+}
+
+.pr-diagnosis-cta__benefits--compact .pr-diagnosis-cta__benefit {
+  position: relative;
+  display: block;
+  padding: 12px 0 12px 24px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.12);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pr-diagnosis-cta__benefits--compact .pr-diagnosis-cta__benefit::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 2px;
+  width: 7px;
+  height: 7px;
+  background: #b18a43;
+  border-radius: 50%;
+}
+
+.pr-diagnosis-cta__benefits--compact .pr-diagnosis-cta__benefit strong {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pr-diagnosis-cta__button {
+  margin-top: 0;
+}
+
+.pr-diagnosis-report {
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(16, 47, 82, 0.075);
+}
+
+@media (max-width: 900px) {
+  .pr-diagnosis-cta {
+    padding: 58px 0 64px;
+  }
+  .pr-diagnosis-cta__inner {
+    gap: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pr-diagnosis-cta {
+    padding: 48px 0 54px;
+  }
+  .pr-diagnosis-cta__copy h2 {
+    font-size: 28px;
+  }
+  .pr-diagnosis-cta__lead br,
+  .pr-diagnosis-cta__needline br {
+    display: none;
+  }
+  .pr-diagnosis-cta__needline {
+    font-size: 15px;
+  }
+}
+
+
+
+/* ==============================
+   PR DIAGNOSIS — spacing / equal-height fix
+============================== */
+.pr-diagnosis-cta__inner {
+  align-items: start;
+}
+
+.pr-diagnosis-cta__benefits--compact {
+  margin-bottom: 22px;
+}
+
+.pr-diagnosis-cta__benefits--compact .pr-diagnosis-cta__benefit {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 13px 0 13px 24px;
+}
+
+.pr-diagnosis-cta__benefits--compact .pr-diagnosis-cta__benefit::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pr-diagnosis-report__bottom {
+  align-items: stretch;
+}
+
+.pr-diagnosis-report__bottom > .pr-diagnosis-insight {
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1061px) {
+  .pr-diagnosis-cta__copy {
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pr-diagnosis-report__bottom > .pr-diagnosis-insight {
+    height: auto;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -750,6 +1341,104 @@
     </div>
   </div>
 </section>
+
+<!-- ==============================
+     FREE PR DIAGNOSIS CTA
+============================== -->
+<section class="pr-diagnosis-cta" id="pr-diagnosis">
+  <div class="pr-diagnosis-cta__inner">
+    <div class="pr-diagnosis-cta__copy">
+      <p class="pr-diagnosis-cta__label">FREE PR DIAGNOSIS</p>
+      <h2>
+        御社の発信は、<br>
+        社会に<em>どう届いている</em>でしょうか？
+      </h2>
+      <p class="pr-diagnosis-cta__lead">
+        検索結果や公式サイトなどの公開情報から、<br>
+        御社の強み、課題、ニュースの可能性を可視化します。
+      </p>
+
+      <p class="pr-diagnosis-cta__needline">
+        売上・問い合わせを増やしたい。<br>
+        業界で信頼される立場をつくりたい。
+      </p>
+
+      <p class="pr-diagnosis-cta__benefits-title">診断で分かること</p>
+      <div class="pr-diagnosis-cta__benefits pr-diagnosis-cta__benefits--compact">
+        <div class="pr-diagnosis-cta__benefit"><strong>検索したときの第一印象</strong></div>
+        <div class="pr-diagnosis-cta__benefit"><strong>伝わっている強み</strong></div>
+        <div class="pr-diagnosis-cta__benefit"><strong>優先して直すべき3つの課題</strong></div>
+        <div class="pr-diagnosis-cta__benefit"><strong>社会の話題につながるニュースの種</strong></div>
+      </div>
+
+      <a class="pr-diagnosis-cta__button" href="contact.html#request">無料PR診断を受ける</a>
+      <p class="pr-diagnosis-cta__note">
+        ※法人・団体を対象とした診断です。公開情報をもとに簡易診断を行います。
+      </p>
+    </div>
+
+    <div class="pr-diagnosis-report" aria-label="PR診断レポートのサンプル">
+      <p class="pr-diagnosis-report__title">PR診断レポート（サンプル）</p>
+
+      <div class="pr-diagnosis-report__top">
+        <div class="pr-diagnosis-report__panel pr-diagnosis-score">
+          <span class="pr-diagnosis-score__label">総合PRスコア</span>
+          <div class="pr-diagnosis-score__circle">
+            <strong>76</strong>
+            <small>/100</small>
+          </div>
+          <span class="pr-diagnosis-score__band">
+            広報資産はあるが、<br>業界を代表する立場には未到達
+          </span>
+        </div>
+
+        <div class="pr-diagnosis-report__panel pr-diagnosis-metrics">
+          <h3>10項目の採点結果</h3>
+          <div class="pr-diagnosis-metric"><span>指名検索・検索結果の印象</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>12 / 15</b></div>
+          <div class="pr-diagnosis-metric"><span>公式サイト・ニュースルーム</span><span class="pr-diagnosis-metric__bar"><i style="--score:90%"></i></span><b>9 / 10</b></div>
+          <div class="pr-diagnosis-metric"><span>プレスリリースの質と継続性</span><span class="pr-diagnosis-metric__bar"><i style="--score:70%"></i></span><b>7 / 10</b></div>
+          <div class="pr-diagnosis-metric"><span>メディア露出・第三者評価</span><span class="pr-diagnosis-metric__bar"><i style="--score:73%"></i></span><b>11 / 15</b></div>
+          <div class="pr-diagnosis-metric"><span>SNSの運用状態</span><span class="pr-diagnosis-metric__bar"><i style="--score:30%"></i></span><b>3 / 10</b></div>
+          <div class="pr-diagnosis-metric"><span>ニュース性・社会との接続</span><span class="pr-diagnosis-metric__bar"><i style="--score:93%"></i></span><b>14 / 15</b></div>
+          <div class="pr-diagnosis-metric"><span>代表者・専門家の発信力</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>8 / 10</b></div>
+          <div class="pr-diagnosis-metric"><span>ブランドメッセージの一貫性</span><span class="pr-diagnosis-metric__bar"><i style="--score:100%"></i></span><b>5 / 5</b></div>
+          <div class="pr-diagnosis-metric"><span>信頼性・炎上・評判リスク</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>4 / 5</b></div>
+          <div class="pr-diagnosis-metric"><span>広報体制・効果測定</span><span class="pr-diagnosis-metric__bar"><i style="--score:60%"></i></span><b>3 / 5</b></div>
+        </div>
+      </div>
+
+      <div class="pr-diagnosis-report__bottom">
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight pr-diagnosis-insight--state">
+          <h3>現在の状態</h3>
+          <p>
+            技術力の高い会社という印象はある一方で、
+            <strong>「なぜ今、注目すべき会社なのか」</strong>
+            までは伝わっていません。実績はあるのに、検索上では「有力企業」で止まっている状態です。
+          </p>
+        </div>
+
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight">
+          <h3>今、優先して直すべき3つの盲点</h3>
+          <ol class="pr-diagnosis-blindspots">
+            <li>技術成果と社会課題の接点が見えない</li>
+            <li>発信が「出来事の報告」で終わっている</li>
+            <li>代表者の見解が検索資産になっていない</li>
+          </ol>
+        </div>
+
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight">
+          <h3>次に狙えるニュースの切り口</h3>
+          <div class="pr-diagnosis-seeds">
+            <div class="pr-diagnosis-seed">業界課題を切る独自調査</div>
+            <div class="pr-diagnosis-seed">専門家コメント・論点提起</div>
+            <div class="pr-diagnosis-seed">実績データの社会課題化</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ==============================
      SELECTED EXPERIENCE
 ============================== -->
