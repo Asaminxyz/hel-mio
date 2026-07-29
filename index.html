@@ -632,6 +632,35 @@
 
 
 
+/* WORKS — keep the 03/04 cards in the same two-column grid */
+.helmio-showcase__layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__list,
+.helmio-showcase__rows {
+  min-width: 0;
+}
+
+.helmio-showcase__card {
+  height: 100%;
+}
+
+.helmio-showcase__row-title h4,
+.helmio-showcase__item h4 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==============================
    PR DIAGNOSIS CAMPAIGN — stacked landing section
 ============================== */
@@ -807,7 +836,7 @@
 
 .pr-diagnosis-insight--state {
   border-width: 2px;
-  background: #fffdf7;
+  background: #faf8f3;
 }
 
 .pr-diagnosis-insight h3 {
@@ -825,7 +854,7 @@
 }
 
 .pr-diagnosis-insight strong {
-  color: #9b6812;
+  color: #765f38;
 }
 
 .pr-diagnosis-blindspots {
@@ -857,157 +886,111 @@
 }
 
 .pr-campaign__conversion {
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  gap: 34px;
+  align-items: center;
   max-width: 980px;
   margin: 38px auto 0;
-  padding: 34px 34px 30px;
-  overflow: hidden;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0c2c4e 0%, #123e6b 62%, #0c2c4e 100%);
-  border: 1px solid rgba(177, 138, 67, 0.72);
-  border-radius: 22px;
-  box-shadow: 0 18px 42px rgba(15, 53, 95, 0.18);
-  text-align: center;
+  padding: 30px 34px;
+  color: #17324d;
+  background: #f7f5f1;
+  border: 1px solid #ddd7cd;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(23, 50, 77, 0.06);
 }
 
-.pr-campaign__conversion::before {
+.pr-campaign__conversion-copy-block {
+  position: relative;
+  padding-left: 18px;
+}
+
+.pr-campaign__conversion-copy-block::before {
   content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 0 0, rgba(222, 181, 94, 0.22), transparent 32%),
-    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.09), transparent 28%);
-}
-
-.pr-campaign__conversion > * {
-  position: relative;
-  z-index: 1;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 2px;
+  background: #a88a59;
 }
 
 .pr-campaign__conversion-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 10px;
-  color: #f0d493;
+  margin: 0 0 7px;
+  color: #76654b;
+  font-family: "Cormorant Garamond", serif;
   font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.15em;
 }
 
 .pr-campaign__conversion h3 {
   margin: 0;
-  color: #ffffff;
+  color: #17324d;
   font-family: "Noto Serif JP", serif;
-  font-size: clamp(25px, 3vw, 36px);
+  font-size: clamp(23px, 2.7vw, 32px);
   font-weight: 500;
   line-height: 1.55;
+  letter-spacing: 0.02em;
 }
 
-.pr-campaign__conversion-copy {
-  margin: 12px 0 0;
-  color: #e8eef5;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.8;
-}
-
-.pr-campaign__conversion-points {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0 22px;
-  padding: 0;
-  list-style: none;
-}
-
-.pr-campaign__conversion-points li {
-  padding: 7px 12px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
+.pr-campaign__conversion-action {
+  display: grid;
+  gap: 9px;
 }
 
 .pr-campaign__cta-button {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "time arrow"
-    "main arrow";
+  display: flex;
   align-items: center;
-  width: min(100%, 690px);
-  min-height: 88px;
-  margin: 0 auto;
-  padding: 15px 24px 15px 28px;
-  color: #102f52;
-  background: linear-gradient(180deg, #f5d685 0%, #dfb24f 100%);
-  border: 0;
-  border-radius: 14px;
-  box-shadow: 0 9px 0 #9a6819, 0 17px 30px rgba(0, 0, 0, 0.22);
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 62px;
+  padding: 15px 22px;
+  color: #ffffff;
+  background: #173a5d;
+  border: 1px solid #173a5d;
+  border-radius: 7px;
+  box-shadow: none;
   font-family: "Noto Sans JP", sans-serif;
-  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+  text-align: center;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 
 .pr-campaign__cta-button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.025);
-  box-shadow: 0 11px 0 #9a6819, 0 21px 34px rgba(0, 0, 0, 0.24);
+  background: #102f4c;
+  border-color: #102f4c;
+  transform: translateY(-1px);
 }
 
 .pr-campaign__cta-button:active {
-  transform: translateY(5px);
-  box-shadow: 0 4px 0 #9a6819, 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
 }
 
 .pr-campaign__cta-button:focus-visible {
-  outline: 4px solid #ffffff;
-  outline-offset: 5px;
-}
-
-.pr-campaign__cta-time {
-  grid-area: time;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
-}
-
-.pr-campaign__cta-main {
-  grid-area: main;
-  margin-top: 2px;
-  font-size: clamp(20px, 2.4vw, 28px);
-  font-weight: 800;
-  line-height: 1.35;
+  outline: 3px solid rgba(23, 58, 93, 0.25);
+  outline-offset: 4px;
 }
 
 .pr-campaign__cta-arrow {
-  grid-area: arrow;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  margin-left: 18px;
-  color: #ffffff;
-  background: #102f52;
-  border-radius: 50%;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
 }
 
-.pr-campaign__conversion-note {
-  margin: 17px 0 0;
-  color: #dbe6f1;
-  font-size: 13px;
-  line-height: 1.7;
+.pr-campaign__conversion-meta {
+  margin: 0;
+  color: #65717c;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .pr-diagnosis-modal {
@@ -1018,7 +1001,7 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(7, 24, 42, 0.76);
+  background: rgba(15, 31, 46, 0.68);
   backdrop-filter: blur(6px);
 }
 
@@ -1033,9 +1016,9 @@
   overflow-y: auto;
   padding: 34px;
   background: #ffffff;
-  border: 1px solid rgba(177, 138, 67, 0.58);
-  border-radius: 20px;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  border: 1px solid #d9d4ca;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(15, 31, 46, 0.22);
 }
 
 .pr-diagnosis-modal__close {
@@ -1062,7 +1045,7 @@
 
 .pr-diagnosis-modal__eyebrow {
   margin: 0 0 8px;
-  color: #9b6812;
+  color: #76654b;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
@@ -1113,8 +1096,8 @@
 .pr-diagnosis-form__required {
   margin-left: 7px;
   padding: 2px 6px;
-  color: #ffffff;
-  background: #9b6812;
+  color: #674f2d;
+  background: #eee9df;
   border-radius: 4px;
   font-size: 10px;
   vertical-align: 1px;
@@ -1147,9 +1130,9 @@
 .pr-diagnosis-form input:focus,
 .pr-diagnosis-form select:focus,
 .pr-diagnosis-form textarea:focus {
-  border-color: #b58122;
+  border-color: #173a5d;
   outline: 0;
-  box-shadow: 0 0 0 4px rgba(181, 129, 34, 0.14);
+  box-shadow: 0 0 0 4px rgba(23, 58, 93, 0.12);
 }
 
 .pr-diagnosis-form__other[hidden] {
@@ -1162,21 +1145,21 @@
   margin-top: 4px;
   padding: 15px 22px;
   color: #ffffff;
-  background: #0f355f;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 9px 20px rgba(15, 53, 95, 0.19);
+  background: #173a5d;
+  border: 1px solid #173a5d;
+  border-radius: 7px;
+  box-shadow: none;
   font: 700 18px/1.5 "Noto Sans JP", sans-serif;
   cursor: pointer;
 }
 
 .pr-diagnosis-form__submit:hover {
-  background: #0a294a;
+  background: #102f4c;
 }
 
 .pr-diagnosis-form__submit:focus-visible,
 .pr-diagnosis-modal__close:focus-visible {
-  outline: 3px solid #b58122;
+  outline: 3px solid rgba(23, 58, 93, 0.28);
   outline-offset: 3px;
 }
 
@@ -1214,23 +1197,19 @@ body.pr-diagnosis-modal-open {
   }
 
   .pr-campaign__conversion {
-    padding: 28px 18px 25px;
-    border-radius: 17px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px 22px;
   }
 
-  .pr-campaign__conversion-copy {
-    font-size: 15px;
+  .pr-campaign__conversion-action {
+    width: 100%;
   }
 
   .pr-campaign__cta-button {
-    min-height: 82px;
-    padding: 13px 16px 13px 20px;
-  }
-
-  .pr-campaign__cta-arrow {
-    width: 40px;
-    height: 40px;
-    margin-left: 11px;
+    min-height: 58px;
+    padding: 14px 18px;
+    font-size: 16px;
   }
 
   .pr-diagnosis-modal {
@@ -1296,18 +1275,6 @@ body.pr-diagnosis-modal-open {
   .pr-diagnosis-blindspots li,
   .pr-diagnosis-seed {
     font-size: 13.5px;
-  }
-
-  .pr-campaign__conversion-points {
-    gap: 7px;
-  }
-
-  .pr-campaign__conversion-points li {
-    font-size: 12px;
-  }
-
-  .pr-campaign__cta-main {
-    font-size: 20px;
   }
 }
 
@@ -1492,20 +1459,17 @@ body.pr-diagnosis-modal-open {
     </div>
 
     <div class="pr-campaign__conversion">
-      <p class="pr-campaign__conversion-label">月5社限定・無料PR診断</p>
-      <h3>御社が今、何を発信すべきかを明確にします</h3>
-      <p class="pr-campaign__conversion-copy">PRの現在地、優先課題、ニュースになる切り口を整理してお届けします。</p>
-      <ul class="pr-campaign__conversion-points" aria-label="無料診断の特徴">
-        <li>公開情報をもとに診断</li>
-        <li>入力は4項目</li>
-        <li>経営課題から分析</li>
-      </ul>
-      <button class="pr-campaign__cta-button" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">
-        <span class="pr-campaign__cta-time">入力は約15秒</span>
-        <span class="pr-campaign__cta-main">無料PR診断を受ける</span>
-        <span class="pr-campaign__cta-arrow" aria-hidden="true">→</span>
-      </button>
-      <p class="pr-campaign__conversion-note">会社名・お名前・メールアドレス・経営課題を入力するだけです。</p>
+      <div class="pr-campaign__conversion-copy-block">
+        <p class="pr-campaign__conversion-label">FREE PR DIAGNOSIS</p>
+        <h3>御社のPR課題を、無料で可視化</h3>
+      </div>
+      <div class="pr-campaign__conversion-action">
+        <button class="pr-campaign__cta-button" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">
+          <span>無料PR診断を申し込む</span>
+          <span class="pr-campaign__cta-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="pr-campaign__conversion-meta">入力 約15秒</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1633,69 +1597,41 @@ body.pr-diagnosis-modal-open {
         </div>
 
         <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
-            <h4>NHK</h4>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>TBS 「Nスタ」</h4>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>KBS京都</h4>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>J:COM「LIVE news」</h4>
-          </div>
-
-          <div class="helmio-showcase__item">
-            <h4>サンテレビ、CS、BS等</h4>
+          <div class="helmio-showcase__item"><h4>NHK</h4></div>
+          <div class="helmio-showcase__item"><h4>TBS「Nスタ」</h4></div>
+          <div class="helmio-showcase__item"><h4>KBS京都</h4></div>
+          <div class="helmio-showcase__item"><h4>J:COM「LIVE news」</h4></div>
+          <div class="helmio-showcase__item"><h4>サンテレビ、CS、BS等</h4></div>
         </div>
       </article>
 
+      <!-- 04 企業VP・広告出演 -->
+      <article class="helmio-showcase__card helmio-showcase__card--wide">
+        <div class="helmio-showcase__card-heading">
+          <span class="helmio-showcase__card-number">04</span>
+          <div>
             <h3>企業VP・広告出演</h3>
           </div>
         </div>
 
         <div class="helmio-showcase__rows">
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>01</span>
-              <h4>日立ソリューションズ</h4>
-            </div>
+            <div class="helmio-showcase__row-title"><span>01</span><h4>日立ソリューションズ</h4></div>
           </div>
-
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>02</span>
-              <h4>オリックス自動車</h4>
-            </div>
+            <div class="helmio-showcase__row-title"><span>02</span><h4>オリックス自動車</h4></div>
           </div>
-
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>03</span>
-              <h4>JCB</h4>
-            </div>
+            <div class="helmio-showcase__row-title"><span>03</span><h4>JCB</h4></div>
           </div>
-
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>04</span>
-              <h4>KDDI・大正製薬「アライ」</h4>
-            </div>
+            <div class="helmio-showcase__row-title"><span>04</span><h4>KDDI・大正製薬「アライ」</h4></div>
           </div>
-
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>05</span>
-              <h4>YA-MAN・ニトリ・セキスイハイム</h4>
-            </div>
+            <div class="helmio-showcase__row-title"><span>05</span><h4>YA-MAN・ニトリ・セキスイハイム</h4></div>
           </div>
         </div>
       </article>
-
     </div>
   </div>
 </section>
@@ -1990,7 +1926,7 @@ body.pr-diagnosis-modal-open {
   <div class="pr-diagnosis-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="prDiagnosisModalTitle">
     <button class="pr-diagnosis-modal__close" id="prDiagnosisModalClose" type="button" aria-label="無料PR診断フォームを閉じる">×</button>
     <p class="pr-diagnosis-modal__eyebrow">FREE PR DIAGNOSIS</p>
-    <h2 id="prDiagnosisModalTitle">15秒で無料PR診断を申し込む</h2>
+    <h2 id="prDiagnosisModalTitle">無料PR診断のお申し込み</h2>
     <p class="pr-diagnosis-modal__lead">公開情報をもとに、御社のPRの現在地と、優先して改善すべきポイントを整理します。</p>
 
     <!-- 実運用時は action をフォームサービス／CRMの送信先に差し替えてください。 -->
