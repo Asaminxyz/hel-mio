@@ -1429,6 +1429,118 @@ body.pr-diagnosis-modal-open {
   }
 }
 
+
+/* ==============================
+   FINAL SPACING & COPY BALANCE
+============================== */
+.helmio-showcase__layout {
+  grid-auto-rows: auto;
+  align-items: start;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__card--wide {
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: start;
+}
+
+.helmio-showcase__item,
+.helmio-showcase__row {
+  min-height: 0;
+}
+
+.helmio-showcase__item h4,
+.helmio-showcase__row-title h4 {
+  margin: 0 !important;
+  line-height: 1.45;
+}
+
+.helmio-showcase__item p,
+.helmio-showcase__row p {
+  margin: 4px 0 0 !important;
+  line-height: 1.65;
+}
+
+.helmio-showcase__row-title {
+  margin: 0 !important;
+}
+
+.helmio-showcase__list,
+.helmio-showcase__rows {
+  margin-bottom: 0;
+}
+
+.pr-campaign__report-layout {
+  gap: 20px;
+  align-items: start;
+}
+
+.pr-campaign__benefit-column,
+.pr-diagnosis-report,
+.pr-diagnosis-report__bottom {
+  align-self: start;
+}
+
+.pr-diagnosis-report__bottom {
+  grid-auto-rows: auto;
+}
+
+.pr-diagnosis-report__bottom--full .pr-diagnosis-insight {
+  height: auto;
+  min-height: 0;
+}
+
+.pr-diagnosis-insight h3 {
+  margin-bottom: 10px;
+}
+
+.pr-diagnosis-insight p,
+.pr-diagnosis-blindspots li {
+  line-height: 1.75;
+}
+
+.pr-diagnosis-seed {
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .pr-campaign__report-layout {
+    gap: 16px;
+  }
+}
+
+
+/* Independent work columns remove uneven vertical gaps between cards. */
+.helmio-showcase__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.helmio-showcase__column {
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+  align-content: start;
+}
+
+.helmio-showcase__item p,
+.helmio-showcase__row p {
+  margin-top: 3px !important;
+}
+
+@media (max-width: 900px) {
+  .helmio-showcase__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .helmio-showcase__column {
+    gap: 24px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1585,10 +1697,10 @@ body.pr-diagnosis-modal-open {
       <div class="pr-campaign__benefit-column">
         <h3>診断で分かること</h3>
         <div class="pr-campaign__benefits">
-          <div>検索したときの第一印象</div>
-          <div>伝わっている強み</div>
-          <div>優先して直すべき3つの課題</div>
-          <div>社会の話題につながるニュースの種</div>
+          <div>社名検索で形成される「最初の10秒」の印象</div>
+          <div>第三者に正しく伝わっている強み</div>
+          <div>機会損失につながる優先改善点</div>
+          <div>社会・業界の関心と接続できるニューステーマ</div>
         </div>
       </div>
 
@@ -1597,15 +1709,15 @@ body.pr-diagnosis-modal-open {
         <div class="pr-diagnosis-report__top">
           <div class="pr-diagnosis-report__panel pr-diagnosis-score"><span class="pr-diagnosis-score__label">総合PRスコア</span><div class="pr-diagnosis-score__circle"><strong>76</strong><small>/100</small></div><span class="pr-diagnosis-score__band">広報資産はあるが、<br>業界を代表する立場には未到達</span></div>
           <div class="pr-diagnosis-report__panel pr-diagnosis-metrics"><h3>10項目の採点結果</h3>
-            <div class="pr-diagnosis-metric"><span>指名検索・検索結果の印象</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>12 / 15</b></div><div class="pr-diagnosis-metric"><span>公式サイト・ニュースルーム</span><span class="pr-diagnosis-metric__bar"><i style="--score:90%"></i></span><b>9 / 10</b></div><div class="pr-diagnosis-metric"><span>プレスリリースの質と継続性</span><span class="pr-diagnosis-metric__bar"><i style="--score:70%"></i></span><b>7 / 10</b></div><div class="pr-diagnosis-metric"><span>メディア露出・第三者評価</span><span class="pr-diagnosis-metric__bar"><i style="--score:73%"></i></span><b>11 / 15</b></div><div class="pr-diagnosis-metric"><span>SNSの運用状態</span><span class="pr-diagnosis-metric__bar"><i style="--score:30%"></i></span><b>3 / 10</b></div><div class="pr-diagnosis-metric"><span>ニュース性・社会との接続</span><span class="pr-diagnosis-metric__bar"><i style="--score:93%"></i></span><b>14 / 15</b></div><div class="pr-diagnosis-metric"><span>代表者・専門家の発信力</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>8 / 10</b></div><div class="pr-diagnosis-metric"><span>ブランドメッセージの一貫性</span><span class="pr-diagnosis-metric__bar"><i style="--score:100%"></i></span><b>5 / 5</b></div><div class="pr-diagnosis-metric"><span>信頼性・炎上・評判リスク</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>4 / 5</b></div><div class="pr-diagnosis-metric"><span>広報体制・効果測定</span><span class="pr-diagnosis-metric__bar"><i style="--score:60%"></i></span><b>3 / 5</b></div>
+            <div class="pr-diagnosis-metric"><span>社名検索・検索結果の第一印象</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>12 / 15</b></div><div class="pr-diagnosis-metric"><span>公式サイト・ニュースルームの整備</span><span class="pr-diagnosis-metric__bar"><i style="--score:90%"></i></span><b>9 / 10</b></div><div class="pr-diagnosis-metric"><span>プレスリリースの質と継続性</span><span class="pr-diagnosis-metric__bar"><i style="--score:70%"></i></span><b>7 / 10</b></div><div class="pr-diagnosis-metric"><span>メディア露出・第三者評価</span><span class="pr-diagnosis-metric__bar"><i style="--score:73%"></i></span><b>11 / 15</b></div><div class="pr-diagnosis-metric"><span>SNS・オウンドメディアの運用</span><span class="pr-diagnosis-metric__bar"><i style="--score:30%"></i></span><b>3 / 10</b></div><div class="pr-diagnosis-metric"><span>ニュース性・社会との接続</span><span class="pr-diagnosis-metric__bar"><i style="--score:93%"></i></span><b>14 / 15</b></div><div class="pr-diagnosis-metric"><span>代表者・専門家の発信力</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>8 / 10</b></div><div class="pr-diagnosis-metric"><span>ブランドメッセージの一貫性</span><span class="pr-diagnosis-metric__bar"><i style="--score:100%"></i></span><b>5 / 5</b></div><div class="pr-diagnosis-metric"><span>信頼性・評判リスク</span><span class="pr-diagnosis-metric__bar"><i style="--score:80%"></i></span><b>4 / 5</b></div><div class="pr-diagnosis-metric"><span>広報体制・効果測定</span><span class="pr-diagnosis-metric__bar"><i style="--score:60%"></i></span><b>3 / 5</b></div>
           </div>
         </div>
       </div>
 
       <div class="pr-diagnosis-report__bottom pr-diagnosis-report__bottom--full">
-        <div class="pr-diagnosis-report__panel pr-diagnosis-insight pr-diagnosis-insight--state"><h3>現在の状態</h3><p>技術力の高い会社という印象はある一方で、<strong>「なぜ今、注目すべき会社なのか」</strong>までは伝わっていません。実績はあるのに、検索上では「有力企業」で止まっている状態です。</p></div>
-        <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>今、優先して直すべき3つの課題</h3><ol class="pr-diagnosis-blindspots"><li>技術成果と社会課題の接点が見えない</li><li>発信が「出来事の報告」で終わっている</li><li>代表者の見解が検索資産になっていない</li></ol></div>
-        <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>次に狙えるニュースの切り口</h3><div class="pr-diagnosis-seeds"><div class="pr-diagnosis-seed">業界課題を切る独自調査</div><div class="pr-diagnosis-seed">専門家コメント・論点提起</div><div class="pr-diagnosis-seed">実績データの社会課題化</div></div></div>
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight pr-diagnosis-insight--state"><h3>現在の状態</h3><p>技術力や実績は確認できますが、会社名検索だけでは<strong>「何を強みに、なぜ今注目すべき会社なのか」</strong>を一度で理解できません。情報量はあるものの、事業・実績・代表者の発信が分散し、実力がひとつの企業価値として伝わり切っていない状態です。</p></div>
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>今、優先して直すべき3つの課題</h3><ol class="pr-diagnosis-blindspots"><li>技術・実績が、社会課題や業界変化と接続されていない</li><li>発信が告知や実績報告にとどまり、第三者が引用できる論点になっていない</li><li>代表者・専門家の知見が、検索され続けるコンテンツ資産になっていない</li></ol></div>
+        <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>次に狙えるニュースの切り口</h3><div class="pr-diagnosis-seeds"><div class="pr-diagnosis-seed">業界課題を可視化する独自調査</div><div class="pr-diagnosis-seed">代表者・専門家による時事解説</div><div class="pr-diagnosis-seed">実績データで示す社会的インパクト</div></div></div>
       </div>
     </div>
 
@@ -1645,8 +1757,8 @@ body.pr-diagnosis-modal-open {
     </header>
 
     <div class="helmio-showcase__layout">
-
-      <!-- 01 政治・パブリック -->
+      <div class="helmio-showcase__column">
+        <!-- 01 政治・パブリック -->
       <article class="helmio-showcase__card">
         <div class="helmio-showcase__card-heading">
           <span class="helmio-showcase__card-number">01</span>
@@ -1683,62 +1795,7 @@ body.pr-diagnosis-modal-open {
         </div>
       </article>
 
-      <!-- 02 企業コミュニケーション -->
-      <article class="helmio-showcase__card helmio-showcase__card--wide">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">02</span>
-          <div>
-            <h3>企業コミュニケーション</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__rows">
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>01</span>
-              <h4>笹川平和財団</h4>
-            </div>
-            <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>02</span>
-              <h4>大阪・関西万博</h4>
-            </div>
-            <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベント</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>03</span>
-              <h4>Jリーグアウォーズ</h4>
-            </div>
-            <p>2023〜2025 MC</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>04</span>
-              <h4>企業イベント・カンファレンス</h4>
-            </div>
-            <p>
-              Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・
-              Seiko・ZTE Japan・Audi ほか
-            </p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <span>05</span>
-              <h4>ベンチャー企業</h4>
-            </div>
-            <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 報道・メディア -->
+        <!-- 03 報道・メディア -->
       <article class="helmio-showcase__card">
         <div class="helmio-showcase__card-heading">
           <span class="helmio-showcase__card-number">03</span>
@@ -1755,8 +1812,60 @@ body.pr-diagnosis-modal-open {
           <div class="helmio-showcase__item"><h4>サンテレビ、CS、BS等</h4></div>
         </div>
       </article>
+      </div>
 
-      <!-- 04 企業VP・広告出演 -->
+      <div class="helmio-showcase__column">
+        <!-- 02 企業コミュニケーション -->
+      <article class="helmio-showcase__card helmio-showcase__card--wide">
+        <div class="helmio-showcase__card-heading">
+          <span class="helmio-showcase__card-number">02</span>
+          <div>
+            <h3>企業コミュニケーション</h3>
+          </div>
+        </div>
+
+        <div class="helmio-showcase__rows">
+          <div class="helmio-showcase__row">
+            <div class="helmio-showcase__row-title">
+              <h4>笹川平和財団</h4>
+            </div>
+            <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
+          </div>
+
+          <div class="helmio-showcase__row">
+            <div class="helmio-showcase__row-title">
+              <h4>大阪・関西万博</h4>
+            </div>
+            <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベント</p>
+          </div>
+
+          <div class="helmio-showcase__row">
+            <div class="helmio-showcase__row-title">
+              <h4>Jリーグアウォーズ</h4>
+            </div>
+            <p>2023〜2025 MC</p>
+          </div>
+
+          <div class="helmio-showcase__row">
+            <div class="helmio-showcase__row-title">
+              <h4>企業イベント・カンファレンス</h4>
+            </div>
+            <p>
+              Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・
+              Seiko・ZTE Japan・Audi ほか
+            </p>
+          </div>
+
+          <div class="helmio-showcase__row">
+            <div class="helmio-showcase__row-title">
+              <h4>ベンチャー企業</h4>
+            </div>
+            <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
+          </div>
+        </div>
+      </article>
+
+        <!-- 04 企業VP・広告出演 -->
       <article class="helmio-showcase__card helmio-showcase__card--wide">
         <div class="helmio-showcase__card-heading">
           <span class="helmio-showcase__card-number">04</span>
@@ -1767,22 +1876,28 @@ body.pr-diagnosis-modal-open {
 
         <div class="helmio-showcase__rows">
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title"><span>01</span><h4>日立ソリューションズ</h4></div>
+            <div class="helmio-showcase__row-title">
+              <h4>日立ソリューションズ</h4></div>
           </div>
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title"><span>02</span><h4>オリックス自動車</h4></div>
+            <div class="helmio-showcase__row-title">
+              <h4>オリックス自動車</h4></div>
           </div>
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title"><span>03</span><h4>JCB</h4></div>
+            <div class="helmio-showcase__row-title">
+              <h4>JCB</h4></div>
           </div>
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title"><span>04</span><h4>KDDI・大正製薬「アライ」</h4></div>
+            <div class="helmio-showcase__row-title">
+              <h4>KDDI・大正製薬「アライ」</h4></div>
           </div>
           <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title"><span>05</span><h4>YA-MAN・ニトリ・セキスイハイム</h4></div>
+            <div class="helmio-showcase__row-title">
+              <h4>YA-MAN・ニトリ・セキスイハイム</h4></div>
           </div>
         </div>
       </article>
+      </div>
     </div>
   </div>
 </section>
