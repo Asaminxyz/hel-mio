@@ -28,6 +28,11 @@
 
     .contact-form-status.is-success { color: #245d42; }
     .contact-form-status.is-error { color: #9a3a32; }
+
+    .contact-submit-button:disabled {
+      cursor: wait;
+      opacity: 0.68;
+    }
   </style>
 </head>
 <body>
@@ -124,13 +129,14 @@
             <p class="contact-form-note">通常、内容を確認後、3営業日以内を目安にご連絡いたします。</p>
           </div>
 
-          <form class="corporate-contact-form" action="send.php" method="post">
-            <input type="hidden" name="form_type" value="contact">
+          <form class="corporate-contact-form" id="corporateContactForm" action="https://formspree.io/f/mgojeynq" method="post">
+            <input type="hidden" name="_subject" value="【HÉLMIO】法人お問い合わせ">
+            <input type="hidden" name="form_name" value="法人お問い合わせ">
             <input type="hidden" name="source" value="corporate-contact">
 
             <div class="helmio-form-hp" aria-hidden="true">
               <label for="website">ウェブサイト</label>
-              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
             </div>
 
             <div class="contact-form-row">
@@ -208,17 +214,59 @@
   <script src="main.js"></script>
   <script>
     (() => {
-      const params = new URLSearchParams(window.location.search);
-      const status = document.getElementById("contactFormStatus");
-      if (!status || !params.has("sent")) return;
+      "use strict";
 
-      if (params.get("sent") === "1") {
-        status.textContent = "お問い合わせを送信しました。内容を確認後、担当者よりご連絡します。";
-        status.classList.add("is-success");
-      } else {
-        status.textContent = params.get("message") || "送信に失敗しました。時間を置いて再度お試しください。";
-        status.classList.add("is-error");
-      }
+      const form = document.getElementById("corporateContactForm");
+      const status = document.getElementById("contactFormStatus");
+      const submitButton = form?.querySelector('button[type="submit"]');
+
+      form?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        if (status) {
+          status.textContent = "送信しています…";
+          status.className = "contact-form-status";
+        }
+
+        if (submitButton) submitButton.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+          });
+
+          const data = await response.json().catch(() => ({}));
+
+          if (!response.ok) {
+            const details = Array.isArray(data.errors)
+              ? data.errors.map((item) => item.message).filter(Boolean).join("\n")
+              : "";
+            throw new Error(details || data.error || "送信に失敗しました。時間を置いて再度お試しください。");
+          }
+
+          form.reset();
+          if (status) {
+            status.textContent = "お問い合わせを送信しました。内容を確認後、担当者よりご連絡します。";
+            status.className = "contact-form-status is-success";
+          }
+        } catch (error) {
+          if (status) {
+            status.textContent = error instanceof Error
+              ? error.message
+              : "送信に失敗しました。時間を置いて再度お試しください。";
+            status.className = "contact-form-status is-error";
+          }
+        } finally {
+          if (submitButton) submitButton.disabled = false;
+        }
+      });
     })();
   </script>
 </body>
