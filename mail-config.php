@@ -11,7 +11,7 @@ declare(strict_types=1);
 return [
     'site_name'       => 'HÉLMIO',
     'recipient_name'  => 'HÉLMIO ご担当者様',
-    'recipient_email' => 'YOUR_EMAIL@example.com',
+    'recipient_email' => 'info@hel-mio.com',
     'from_name'       => 'HÉLMIO Web Form',
-    'from_email'      => 'no-reply@hel-mio.com',
+    'from_email'      => 'info@hel-mio.com',
 ];
