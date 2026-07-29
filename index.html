@@ -1278,6 +1278,157 @@ body.pr-diagnosis-modal-open {
   }
 }
 
+
+/* ==============================
+   FINAL CLEANUP — works / diagnosis / CTA polish
+============================== */
+.helmio-showcase__layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.helmio-showcase__card,
+.helmio-showcase__card--wide {
+  width: 100%;
+  min-width: 0;
+}
+
+.helmio-showcase__card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.helmio-showcase__card-heading > div {
+  min-width: 0;
+}
+
+.helmio-showcase__row-title {
+  display: block;
+}
+
+.helmio-showcase__row-title > span {
+  display: none !important;
+}
+
+.helmio-showcase__row-title h4,
+.helmio-showcase__item h4 {
+  margin: 0;
+}
+
+.helmio-showcase__row p,
+.helmio-showcase__item p {
+  margin-top: 8px;
+}
+
+.pr-campaign__report-layout,
+.pr-diagnosis-report__bottom {
+  align-items: stretch;
+}
+
+.pr-diagnosis-report__panel,
+.pr-diagnosis-insight,
+.pr-diagnosis-insight--state,
+.pr-diagnosis-seed {
+  background: #ffffff;
+}
+
+.pr-diagnosis-insight--state {
+  border-width: 1px;
+  border-color: #d9e2ea;
+}
+
+.pr-diagnosis-report__bottom--full .pr-diagnosis-insight {
+  min-height: 0;
+}
+
+.pr-campaign__conversion {
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 420px);
+  gap: 28px;
+  max-width: 1080px;
+  margin: 34px auto 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pr-campaign__conversion-copy-block {
+  padding-left: 0;
+}
+
+.pr-campaign__conversion-copy-block::before {
+  display: none;
+}
+
+.pr-campaign__conversion-label {
+  margin-bottom: 8px;
+  color: #8a7552;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+.pr-campaign__conversion h3 {
+  max-width: 14ch;
+  color: #102f52;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.42;
+}
+
+.pr-campaign__conversion-action {
+  align-self: center;
+}
+
+.pr-campaign__cta-button {
+  min-height: 64px;
+  border-radius: 8px;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.pr-campaign__conversion-meta {
+  margin-top: 2px;
+  color: #6d7782;
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .helmio-showcase__layout,
+  .pr-campaign__report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-campaign__conversion {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pr-campaign__conversion h3 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .helmio-showcase__layout {
+    gap: 24px;
+  }
+
+  .pr-campaign__conversion {
+    margin-top: 28px;
+  }
+
+  .pr-campaign__conversion h3 {
+    font-size: 28px;
+  }
+
+  .pr-campaign__cta-button {
+    min-height: 58px;
+    font-size: 16px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1461,7 +1612,7 @@ body.pr-diagnosis-modal-open {
     <div class="pr-campaign__conversion">
       <div class="pr-campaign__conversion-copy-block">
         <p class="pr-campaign__conversion-label">FREE PR DIAGNOSIS</p>
-        <h3>御社のPR課題を、無料で可視化</h3>
+        <h3>無料で、PR課題を診断します</h3>
       </div>
       <div class="pr-campaign__conversion-action">
         <button class="pr-campaign__cta-button" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">
