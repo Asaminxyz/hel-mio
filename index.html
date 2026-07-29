@@ -2230,14 +2230,14 @@ body.pr-diagnosis-modal-open {
     <h2 id="prDiagnosisModalTitle">無料PR診断のお申し込み</h2>
     <p class="pr-diagnosis-modal__lead">公開情報をもとに、御社のPRの現在地と、優先して改善すべきポイントを整理します。</p>
 
-    <form class="pr-diagnosis-form" id="prDiagnosisForm" action="send.php" method="post">
-      <input type="hidden" name="form_type" value="pr_diagnosis">
-      <input type="hidden" name="response_type" value="json">
+    <form class="pr-diagnosis-form" id="prDiagnosisForm" action="https://formspree.io/f/mykrvjbq" method="post">
+      <input type="hidden" name="_subject" value="【HÉLMIO】無料PR診断のお申し込み">
+      <input type="hidden" name="form_name" value="無料PR診断">
       <input type="hidden" name="source" value="free-pr-diagnosis">
 
       <div class="helmio-form-hp" aria-hidden="true">
         <label for="prWebsite">ウェブサイト</label>
-        <input id="prWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        <input id="prWebsite" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
       </div>
 
       <div class="pr-diagnosis-form__field pr-diagnosis-form__field--full">
@@ -3470,17 +3470,17 @@ window.HELMIO_TALENT_VERSION = "20260725-6";
           }
         });
 
-        const data = await response.json().catch(() => ({
-          ok: false,
-          message: "サーバーから正しい応答を受け取れませんでした。"
-        }));
+        const data = await response.json().catch(() => ({}));
 
-        if (!response.ok || !data.ok) {
-          throw new Error(data.message || "送信に失敗しました。");
+        if (!response.ok) {
+          const details = Array.isArray(data.errors)
+            ? data.errors.map((item) => item.message).filter(Boolean).join("\n")
+            : "";
+          throw new Error(details || data.error || "送信に失敗しました。時間を置いて再度お試しください。");
         }
 
         if (statusMessage) {
-          statusMessage.textContent = data.message;
+          statusMessage.textContent = "無料PR診断のお申し込みを受け付けました。";
           statusMessage.className = "pr-diagnosis-form__status is-success";
         }
 
