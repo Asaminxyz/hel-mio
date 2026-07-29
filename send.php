@@ -2,7 +2,15 @@
 
 declare(strict_types=1);
 
-session_start();
+// JSON応答にPHPの警告文が混ざらないよう、画面出力を抑えてログへ送ります。
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+error_reporting(E_ALL);
+date_default_timezone_set('Asia/Tokyo');
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    @session_start();
+}
 
 $configPath = __DIR__ . '/mail-config.php';
 if (!is_file($configPath)) {
@@ -298,14 +306,25 @@ function sendJapaneseMail(
     $additionalParameters = '-f' . $envelopeFrom;
 
     if (function_exists('mb_send_mail')) {
-        return mb_send_mail($to, $subject, $body, $headers, $additionalParameters);
+        // 一部サーバーでは第5引数（-f）が拒否されるため、失敗時は引数なしで再試行します。
+        $sent = @mb_send_mail($to, $subject, $body, $headers, $additionalParameters);
+        if ($sent) {
+            return true;
+        }
+
+        return @mb_send_mail($to, $subject, $body, $headers);
     }
 
     $encodedSubject = function_exists('mb_encode_mimeheader')
         ? mb_encode_mimeheader($subject, 'UTF-8', 'B', "\r\n")
         : $subject;
 
-    return mail($to, $encodedSubject, $body, $headers, $additionalParameters);
+    $sent = @mail($to, $encodedSubject, $body, $headers, $additionalParameters);
+    if ($sent) {
+        return true;
+    }
+
+    return @mail($to, $encodedSubject, $body, $headers);
 }
 
 function wantsJson(): bool
@@ -356,4 +375,3 @@ function respondError(string $message, int $statusCode): void
 
     header('Location: ' . $location, true, 303);
     exit;
-}
