@@ -4042,3 +4042,67 @@ body {
     padding-top: 40px !important;
   }
 }
+/* =========================================================
+   HÉLMIO COMPANY PAGE — 実績セクション調整
+   現在の style.css の一番下に追加してください。
+   ========================================================= */
+
+/* 会社概要の直後にある「ACHIEVEMENTS」までの空白を縮める */
+#achievement-index {
+  padding-top: 56px !important;
+}
+
+/* 見出しブロック側の余分な上余白を打ち消す */
+#achievement-index .section-heading,
+#achievement-index .achievement-heading,
+#achievement-index .company-section-heading {
+  margin-top: 0 !important;
+}
+
+/* 企業コミュニケーション内の各実績を、行単位で確実に区切る */
+#achievement-index .helmio-showcase__rows > .helmio-showcase__row {
+  padding: 22px 0 !important;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.12) !important;
+}
+
+/* 先頭行の上側だけ詰める */
+#achievement-index .helmio-showcase__rows > .helmio-showcase__row:first-child {
+  padding-top: 0 !important;
+}
+
+/* 最終行の下には線を残さない */
+#achievement-index .helmio-showcase__rows > .helmio-showcase__row:last-child {
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
+}
+
+/* 見出しと説明文の間隔 */
+#achievement-index .helmio-showcase__row-title h4 {
+  margin: 0 !important;
+}
+
+#achievement-index .helmio-showcase__row p {
+  margin: 4px 0 0 !important;
+}
+
+/* タブレット */
+@media (max-width: 900px) {
+  #achievement-index {
+    padding-top: 48px !important;
+  }
+
+  #achievement-index .helmio-showcase__rows > .helmio-showcase__row {
+    padding: 18px 0 !important;
+  }
+}
+
+/* スマートフォン */
+@media (max-width: 640px) {
+  #achievement-index {
+    padding-top: 40px !important;
+  }
+
+  #achievement-index .helmio-showcase__rows > .helmio-showcase__row {
+    padding: 16px 0 !important;
+  }
+}
