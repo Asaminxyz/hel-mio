@@ -4009,3 +4009,36 @@ body {
     margin-top: 30px;
   }
 }
+
+
+
+/* =========================================================
+   HÉLMIO COMPANY PAGE — 実績セクション余白調整
+   現在の style.css の一番下に追加してください。
+   ========================================================= */
+
+/* 会社概要の直後にある「ACHIEVEMENTS」までの空白を縮める */
+#achievement-index {
+  padding-top: 56px !important;
+}
+
+/* 見出しブロック側に上余白がある場合も打ち消す */
+#achievement-index .section-heading,
+#achievement-index .achievement-heading,
+#achievement-index .company-section-heading {
+  margin-top: 0 !important;
+}
+
+/* タブレット */
+@media (max-width: 900px) {
+  #achievement-index {
+    padding-top: 48px !important;
+  }
+}
+
+/* スマートフォン */
+@media (max-width: 640px) {
+  #achievement-index {
+    padding-top: 40px !important;
+  }
+}
