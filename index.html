@@ -659,6 +659,658 @@
 @media(max-width:980px){.pr-campaign__report-layout{grid-template-columns:1fr}.pr-diagnosis-report__bottom--full{grid-column:auto}.pr-campaign__benefit-column{max-width:720px;width:100%;margin:0 auto}}
 @media(max-width:640px){.pr-campaign__diagnosis-heading{margin:12px 0 16px;font-size:25px}.pr-campaign__report-layout{gap:12px}.pr-campaign__benefit-column{padding:18px}.pr-diagnosis-report__bottom--full .pr-diagnosis-insight{min-height:0}}
 
+
+
+/* ==============================
+   PR DIAGNOSIS — readability, CTA and form refinement
+============================== */
+.pr-campaign--exact {
+  background:
+    radial-gradient(circle at 10% 8%, rgba(177, 138, 67, 0.07), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.pr-campaign--exact .pr-campaign__sub {
+  color: #26394b;
+  font-size: 17px;
+  line-height: 1.8;
+  letter-spacing: 0.045em;
+}
+
+.pr-campaign__choice-text {
+  color: #193754;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.pr-campaign__choice:focus-within {
+  border-color: #b58122;
+  box-shadow: 0 0 0 4px rgba(181, 129, 34, 0.14);
+}
+
+.pr-campaign__benefit-column {
+  border-color: #cbd6e1;
+}
+
+.pr-campaign__benefit-column h3 {
+  color: #102f52;
+  font-size: 20px;
+}
+
+.pr-campaign__benefit-column .pr-campaign__benefits div {
+  color: #26394b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pr-diagnosis-report {
+  padding: 24px;
+  border-color: #cbd6e1;
+  box-shadow: 0 14px 34px rgba(16, 47, 82, 0.075);
+}
+
+.pr-diagnosis-report__title {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  color: #102f52;
+  border-bottom-color: #cbd6e1;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-report__top {
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.pr-diagnosis-report__panel {
+  border-color: #cbd6e1;
+}
+
+.pr-diagnosis-score {
+  padding: 20px 16px;
+}
+
+.pr-diagnosis-score__label {
+  color: #193754;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-score__circle {
+  width: 136px;
+  height: 136px;
+  margin: 17px auto;
+}
+
+.pr-diagnosis-score__circle strong {
+  color: #102f52;
+  font-size: 52px;
+}
+
+.pr-diagnosis-score__circle small {
+  color: #324b63;
+  font-size: 12px;
+}
+
+.pr-diagnosis-score__band {
+  padding: 12px 10px;
+  color: #193754;
+  background: #eaf1f7;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pr-diagnosis-metrics {
+  padding: 18px;
+}
+
+.pr-diagnosis-metrics h3 {
+  margin-bottom: 10px;
+  color: #102f52;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-metric {
+  grid-template-columns: minmax(185px, 1fr) 110px 52px;
+  gap: 10px;
+  padding: 8px 0;
+  color: #26394b;
+  border-bottom-color: #e3e9ef;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.pr-diagnosis-metric__bar {
+  height: 7px;
+  background: #dbe3eb;
+}
+
+.pr-diagnosis-metric b {
+  color: #102f52;
+  font-size: 12px;
+}
+
+.pr-diagnosis-report__bottom {
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pr-diagnosis-report__bottom--full .pr-diagnosis-insight {
+  min-height: 236px;
+}
+
+.pr-diagnosis-insight {
+  padding: 20px;
+}
+
+.pr-diagnosis-insight--state {
+  border-width: 2px;
+  background: #fffdf7;
+}
+
+.pr-diagnosis-insight h3 {
+  margin-bottom: 13px;
+  color: #102f52;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.pr-diagnosis-insight p,
+.pr-diagnosis-blindspots li {
+  color: #26394b;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.pr-diagnosis-insight strong {
+  color: #9b6812;
+}
+
+.pr-diagnosis-blindspots {
+  gap: 12px;
+}
+
+.pr-diagnosis-blindspots li {
+  padding-left: 32px;
+}
+
+.pr-diagnosis-blindspots li::before {
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+}
+
+.pr-diagnosis-seeds {
+  gap: 10px;
+}
+
+.pr-diagnosis-seed {
+  padding: 13px 14px;
+  color: #193754;
+  background: #edf3f8;
+  border: 1px solid #d9e3ec;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.pr-campaign__conversion {
+  position: relative;
+  max-width: 980px;
+  margin: 38px auto 0;
+  padding: 34px 34px 30px;
+  overflow: hidden;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0c2c4e 0%, #123e6b 62%, #0c2c4e 100%);
+  border: 1px solid rgba(177, 138, 67, 0.72);
+  border-radius: 22px;
+  box-shadow: 0 18px 42px rgba(15, 53, 95, 0.18);
+  text-align: center;
+}
+
+.pr-campaign__conversion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0 0, rgba(222, 181, 94, 0.22), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.09), transparent 28%);
+}
+
+.pr-campaign__conversion > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pr-campaign__conversion-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #f0d493;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+.pr-campaign__conversion h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.pr-campaign__conversion-copy {
+  margin: 12px 0 0;
+  color: #e8eef5;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.pr-campaign__conversion-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-campaign__conversion-points li {
+  padding: 7px 12px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pr-campaign__cta-button {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "time arrow"
+    "main arrow";
+  align-items: center;
+  width: min(100%, 690px);
+  min-height: 88px;
+  margin: 0 auto;
+  padding: 15px 24px 15px 28px;
+  color: #102f52;
+  background: linear-gradient(180deg, #f5d685 0%, #dfb24f 100%);
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 9px 0 #9a6819, 0 17px 30px rgba(0, 0, 0, 0.22);
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.pr-campaign__cta-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.025);
+  box-shadow: 0 11px 0 #9a6819, 0 21px 34px rgba(0, 0, 0, 0.24);
+}
+
+.pr-campaign__cta-button:active {
+  transform: translateY(5px);
+  box-shadow: 0 4px 0 #9a6819, 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pr-campaign__cta-button:focus-visible {
+  outline: 4px solid #ffffff;
+  outline-offset: 5px;
+}
+
+.pr-campaign__cta-time {
+  grid-area: time;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.pr-campaign__cta-main {
+  grid-area: main;
+  margin-top: 2px;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.pr-campaign__cta-arrow {
+  grid-area: arrow;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 18px;
+  color: #ffffff;
+  background: #102f52;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pr-campaign__conversion-note {
+  margin: 17px 0 0;
+  color: #dbe6f1;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pr-diagnosis-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(7, 24, 42, 0.76);
+  backdrop-filter: blur(6px);
+}
+
+.pr-diagnosis-modal.is-open {
+  display: flex;
+}
+
+.pr-diagnosis-modal__dialog {
+  position: relative;
+  width: min(100%, 720px);
+  max-height: min(90vh, 820px);
+  overflow-y: auto;
+  padding: 34px;
+  background: #ffffff;
+  border: 1px solid rgba(177, 138, 67, 0.58);
+  border-radius: 20px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.pr-diagnosis-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: #102f52;
+  background: #eef3f7;
+  border: 0;
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pr-diagnosis-modal__close:hover {
+  background: #dfe8f0;
+}
+
+.pr-diagnosis-modal__eyebrow {
+  margin: 0 0 8px;
+  color: #9b6812;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+}
+
+.pr-diagnosis-modal__dialog h2 {
+  margin: 0;
+  padding-right: 48px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-modal__lead {
+  margin: 12px 0 0;
+  color: #344b61;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.pr-diagnosis-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.pr-diagnosis-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.pr-diagnosis-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.pr-diagnosis-form__field label,
+.pr-diagnosis-form__legend {
+  color: #193754;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.pr-diagnosis-form__required {
+  margin-left: 7px;
+  padding: 2px 6px;
+  color: #ffffff;
+  background: #9b6812;
+  border-radius: 4px;
+  font-size: 10px;
+  vertical-align: 1px;
+}
+
+.pr-diagnosis-form input,
+.pr-diagnosis-form select,
+.pr-diagnosis-form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  color: #172f47;
+  background: #ffffff;
+  border: 1px solid #b9c7d4;
+  border-radius: 9px;
+  font: 500 16px/1.5 "Noto Sans JP", sans-serif;
+}
+
+.pr-diagnosis-form textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.pr-diagnosis-form input::placeholder,
+.pr-diagnosis-form textarea::placeholder {
+  color: #758595;
+  opacity: 1;
+}
+
+.pr-diagnosis-form input:focus,
+.pr-diagnosis-form select:focus,
+.pr-diagnosis-form textarea:focus {
+  border-color: #b58122;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(181, 129, 34, 0.14);
+}
+
+.pr-diagnosis-form__other[hidden] {
+  display: none;
+}
+
+.pr-diagnosis-form__submit {
+  grid-column: 1 / -1;
+  min-height: 62px;
+  margin-top: 4px;
+  padding: 15px 22px;
+  color: #ffffff;
+  background: #0f355f;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 9px 20px rgba(15, 53, 95, 0.19);
+  font: 700 18px/1.5 "Noto Sans JP", sans-serif;
+  cursor: pointer;
+}
+
+.pr-diagnosis-form__submit:hover {
+  background: #0a294a;
+}
+
+.pr-diagnosis-form__submit:focus-visible,
+.pr-diagnosis-modal__close:focus-visible {
+  outline: 3px solid #b58122;
+  outline-offset: 3px;
+}
+
+.pr-diagnosis-form__note {
+  grid-column: 1 / -1;
+  margin: -4px 0 0;
+  color: #596b7c;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+body.pr-diagnosis-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 980px) {
+  .pr-diagnosis-report__bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-diagnosis-report__bottom--full .pr-diagnosis-insight {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .pr-diagnosis-report__top {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-diagnosis-metric {
+    grid-template-columns: minmax(0, 1fr) 78px 46px;
+    font-size: 12.5px;
+  }
+
+  .pr-campaign__conversion {
+    padding: 28px 18px 25px;
+    border-radius: 17px;
+  }
+
+  .pr-campaign__conversion-copy {
+    font-size: 15px;
+  }
+
+  .pr-campaign__cta-button {
+    min-height: 82px;
+    padding: 13px 16px 13px 20px;
+  }
+
+  .pr-campaign__cta-arrow {
+    width: 40px;
+    height: 40px;
+    margin-left: 11px;
+  }
+
+  .pr-diagnosis-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .pr-diagnosis-modal__dialog {
+    width: 100%;
+    max-height: 94vh;
+    padding: 30px 20px 24px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .pr-diagnosis-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pr-diagnosis-form__field--full,
+  .pr-diagnosis-form__submit,
+  .pr-diagnosis-form__note {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pr-campaign--exact .pr-campaign__sub {
+    font-size: 14px;
+  }
+
+  .pr-diagnosis-report {
+    padding: 16px;
+  }
+
+  .pr-diagnosis-report__title {
+    font-size: 18px;
+  }
+
+  .pr-diagnosis-metrics {
+    padding: 14px;
+  }
+
+  .pr-diagnosis-metric {
+    grid-template-columns: minmax(0, 1fr) 58px 40px;
+    gap: 7px;
+    font-size: 11.5px;
+  }
+
+  .pr-diagnosis-metric b {
+    font-size: 10.5px;
+  }
+
+  .pr-diagnosis-insight {
+    padding: 17px;
+  }
+
+  .pr-diagnosis-insight h3 {
+    font-size: 16px;
+  }
+
+  .pr-diagnosis-insight p,
+  .pr-diagnosis-blindspots li,
+  .pr-diagnosis-seed {
+    font-size: 13.5px;
+  }
+
+  .pr-campaign__conversion-points {
+    gap: 7px;
+  }
+
+  .pr-campaign__conversion-points li {
+    font-size: 12px;
+  }
+
+  .pr-campaign__cta-main {
+    font-size: 20px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -792,13 +1444,13 @@
     <div class="pr-campaign__hero">
       <p class="pr-campaign__limit">ただいま<strong>月5社限定</strong></p>
       <h2 class="pr-campaign__title">無料診断<span>キャンペーン</span></h2>
-      <p class="pr-campaign__sub">公開情報をもとに、御社のPRの現在地を可視化します</p>
+      <p class="pr-campaign__sub">公開情報をもとに、御社のPRの現在地と改善優先順位を可視化します</p>
       <div class="pr-campaign__skyline" aria-hidden="true"></div>
     </div>
 
     <div class="pr-campaign__choices">
-      <h3 class="pr-campaign__choices-title">まずは経営課題だけ選んでください</h3>
-      <p class="pr-campaign__choices-example">例えば…</p>
+      <h3 class="pr-campaign__choices-title">まずは経営課題を選んでください</h3>
+      <p class="pr-campaign__choices-example">選んだ内容は、申込フォームに自動で反映されます</p>
       <div class="pr-campaign__choice-grid">
         <label class="pr-campaign__choice"><input type="radio" name="pr-goal" value="sales"><span class="pr-campaign__choice-icon"><svg viewBox="0 0 40 40"><path d="M6 33h29M9 29V18M17 29V11M25 29V15M33 29V6M8 14l8-7 7 5 10-9"/></svg></span><span class="pr-campaign__choice-text">売上・問い合わせを<br>増やしたい</span><span class="pr-campaign__radio"></span></label>
         <label class="pr-campaign__choice"><input type="radio" name="pr-goal" value="authority"><span class="pr-campaign__choice-icon"><svg viewBox="0 0 40 40"><circle cx="13" cy="13" r="5"/><circle cx="28" cy="13" r="5"/><path d="M5 32v-7c0-5 4-8 8-8s8 3 8 8v7M21 32v-7c0-5 3-8 7-8s7 3 7 8v7"/></svg></span><span class="pr-campaign__choice-text">業界で信頼される<br>立場をつくりたい</span><span class="pr-campaign__radio"></span></label>
@@ -809,7 +1461,7 @@
       </div>
     </div>
 
-    <h2 class="pr-campaign__diagnosis-heading">御社の発信は社会にどう届いているのでしょうか？</h2>
+    <h2 class="pr-campaign__diagnosis-heading">御社の発信は、社会にどう届いているのでしょうか？</h2>
 
     <div class="pr-campaign__report-layout">
       <div class="pr-campaign__benefit-column">
@@ -837,6 +1489,23 @@
         <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>今、優先して直すべき3つの課題</h3><ol class="pr-diagnosis-blindspots"><li>技術成果と社会課題の接点が見えない</li><li>発信が「出来事の報告」で終わっている</li><li>代表者の見解が検索資産になっていない</li></ol></div>
         <div class="pr-diagnosis-report__panel pr-diagnosis-insight"><h3>次に狙えるニュースの切り口</h3><div class="pr-diagnosis-seeds"><div class="pr-diagnosis-seed">業界課題を切る独自調査</div><div class="pr-diagnosis-seed">専門家コメント・論点提起</div><div class="pr-diagnosis-seed">実績データの社会課題化</div></div></div>
       </div>
+    </div>
+
+    <div class="pr-campaign__conversion">
+      <p class="pr-campaign__conversion-label">月5社限定・無料PR診断</p>
+      <h3>御社が今、何を発信すべきかを明確にします</h3>
+      <p class="pr-campaign__conversion-copy">PRの現在地、優先課題、ニュースになる切り口を整理してお届けします。</p>
+      <ul class="pr-campaign__conversion-points" aria-label="無料診断の特徴">
+        <li>公開情報をもとに診断</li>
+        <li>入力は4項目</li>
+        <li>経営課題から分析</li>
+      </ul>
+      <button class="pr-campaign__cta-button" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">
+        <span class="pr-campaign__cta-time">入力は約15秒</span>
+        <span class="pr-campaign__cta-main">無料PR診断を受ける</span>
+        <span class="pr-campaign__cta-arrow" aria-hidden="true">→</span>
+      </button>
+      <p class="pr-campaign__conversion-note">会社名・お名前・メールアドレス・経営課題を入力するだけです。</p>
     </div>
   </div>
 </section>
@@ -1314,6 +1983,63 @@
     CONTACT
   </span>
 </a>
+<!-- ==============================
+     FREE PR DIAGNOSIS FORM MODAL
+============================== -->
+<div class="pr-diagnosis-modal" id="prDiagnosisModal" aria-hidden="true">
+  <div class="pr-diagnosis-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="prDiagnosisModalTitle">
+    <button class="pr-diagnosis-modal__close" id="prDiagnosisModalClose" type="button" aria-label="無料PR診断フォームを閉じる">×</button>
+    <p class="pr-diagnosis-modal__eyebrow">FREE PR DIAGNOSIS</p>
+    <h2 id="prDiagnosisModalTitle">15秒で無料PR診断を申し込む</h2>
+    <p class="pr-diagnosis-modal__lead">公開情報をもとに、御社のPRの現在地と、優先して改善すべきポイントを整理します。</p>
+
+    <!-- 実運用時は action をフォームサービス／CRMの送信先に差し替えてください。 -->
+    <form class="pr-diagnosis-form" id="prDiagnosisForm" action="/api/pr-diagnosis" method="post">
+      <input type="hidden" name="source" value="free-pr-diagnosis">
+
+      <div class="pr-diagnosis-form__field pr-diagnosis-form__field--full">
+        <label for="prCompany">会社名<span class="pr-diagnosis-form__required">必須</span></label>
+        <input id="prCompany" name="company" type="text" autocomplete="organization" placeholder="例：株式会社HELMIO" required>
+      </div>
+
+      <div class="pr-diagnosis-form__field">
+        <label for="prEmail">メールアドレス<span class="pr-diagnosis-form__required">必須</span></label>
+        <input id="prEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="例：name@company.co.jp" required>
+      </div>
+
+      <div class="pr-diagnosis-form__field">
+        <label for="prName">お名前<span class="pr-diagnosis-form__required">必須</span></label>
+        <input id="prName" name="name" type="text" autocomplete="name" placeholder="例：山田 太郎" required>
+      </div>
+
+      <div class="pr-diagnosis-form__field pr-diagnosis-form__field--full">
+        <label for="prManagementIssue">経営課題（広報・PRで介入できる領域）<span class="pr-diagnosis-form__required">必須</span></label>
+        <select id="prManagementIssue" name="management_issue" required>
+          <option value="">選択してください</option>
+          <option value="sales">売上・問い合わせを増やしたい</option>
+          <option value="launch">新商品・新規事業の認知を広げたい</option>
+          <option value="authority">業界内での信頼・第一想起を高めたい</option>
+          <option value="recruit">採用応募・人材定着につなげたい</option>
+          <option value="event">展示会・イベントの成果を高めたい</option>
+          <option value="media">メディア掲載・取材機会を増やしたい</option>
+          <option value="spokesperson">代表者・専門家の発信力を高めたい</option>
+          <option value="message">会社の強み・発信テーマを整理したい</option>
+          <option value="reputation">企業・ブランドの評判リスクに備えたい</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+
+      <div class="pr-diagnosis-form__field pr-diagnosis-form__field--full pr-diagnosis-form__other" id="prOtherIssueField" hidden>
+        <label for="prOtherIssue">その他の経営課題</label>
+        <textarea id="prOtherIssue" name="other_issue" placeholder="現在感じている課題をご記入ください"></textarea>
+      </div>
+
+      <button class="pr-diagnosis-form__submit" type="submit">無料PR診断を申し込む</button>
+      <p class="pr-diagnosis-form__note">必須4項目でお申し込みいただけます。</p>
+    </form>
+  </div>
+</div>
+
 <!-- ==============================
      PROFILE MODAL
 ============================== -->
@@ -2378,5 +3104,106 @@ window.HELMIO_TALENT_VERSION = "20260725-6";
     });
   })();
 </script>
+
+<script>
+  (() => {
+    "use strict";
+
+    const modal = document.getElementById("prDiagnosisModal");
+    const closeButton = document.getElementById("prDiagnosisModalClose");
+    const form = document.getElementById("prDiagnosisForm");
+    const issueSelect = document.getElementById("prManagementIssue");
+    const otherField = document.getElementById("prOtherIssueField");
+    const otherInput = document.getElementById("prOtherIssue");
+    const openButtons = document.querySelectorAll("[data-open-pr-diagnosis]");
+    let returnFocus = null;
+
+    const syncOtherField = () => {
+      if (!issueSelect || !otherField || !otherInput) return;
+
+      const showOther = issueSelect.value === "other";
+      otherField.hidden = !showOther;
+      otherInput.required = showOther;
+
+      if (!showOther) {
+        otherInput.value = "";
+      }
+    };
+
+    const syncSelectedGoal = () => {
+      if (!issueSelect) return;
+
+      const selectedGoal = document.querySelector('input[name="pr-goal"]:checked');
+      if (!selectedGoal) return;
+
+      const matchingOption = Array.from(issueSelect.options).some(
+        (option) => option.value === selectedGoal.value
+      );
+
+      if (matchingOption) {
+        issueSelect.value = selectedGoal.value;
+        syncOtherField();
+      }
+    };
+
+    const openModal = (trigger) => {
+      if (!modal) return;
+
+      returnFocus = trigger instanceof HTMLElement ? trigger : null;
+      syncSelectedGoal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("pr-diagnosis-modal-open");
+
+      window.setTimeout(() => {
+        document.getElementById("prCompany")?.focus();
+      }, 30);
+    };
+
+    const closeModal = () => {
+      if (!modal) return;
+
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("pr-diagnosis-modal-open");
+      returnFocus?.focus();
+    };
+
+    openButtons.forEach((button) => {
+      button.addEventListener("click", () => openModal(button));
+    });
+
+    document.querySelectorAll('input[name="pr-goal"]').forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (issueSelect && radio.checked) {
+          issueSelect.value = radio.value;
+          syncOtherField();
+        }
+      });
+    });
+
+    issueSelect?.addEventListener("change", syncOtherField);
+    closeButton?.addEventListener("click", closeModal);
+
+    modal?.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal?.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+
+    form?.addEventListener("submit", () => {
+      syncOtherField();
+    });
+
+    syncOtherField();
+  })();
+</script>
+
 </body>
 </html>
