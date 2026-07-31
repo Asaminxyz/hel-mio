@@ -1,503 +1,836 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会社概要・実績一覧 | HÉLMIO</title>
-  <meta name="description" content="株式会社HELMIOの会社概要と、企業コミュニケーション、展示会、イベント、報道、企業VP、広告出演などの実績一覧です。">
+  <title>会社概要｜HÉLMIO</title>
+  <meta name="description" content="株式会社HELMIOの会社概要、代表メッセージ、主な実績をご紹介します。">
+  <link rel="canonical" href="https://hel-mio.com/company.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="style.css?v=20260723-8" rel="stylesheet">
-  <link href="company.css?v=20260723-1" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --company-navy: #102f52;
+      --company-text: #34404a;
+      --company-gold: #b18a43;
+      --company-line: rgba(16, 47, 82, 0.14);
+      --company-cream: #fbf8f2;
+      --company-white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .company-page-main {
+      color: var(--company-text);
+      background: var(--company-white);
+    }
+
+    .company-page-hero {
+      padding: 92px 0 82px;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(177, 138, 67, 0.09), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+      border-bottom: 1px solid rgba(177, 138, 67, 0.18);
+    }
+
+    .company-page-hero__inner,
+    .representative-message__inner,
+    .company-profile__inner,
+    .achievement-index__inner,
+    .company-contact__inner {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .company-page-hero__eyebrow,
+    .representative-message__label,
+    .company-profile__eyebrow,
+    .achievement-index__eyebrow,
+    .company-contact__eyebrow {
+      margin: 0 0 13px;
+      color: var(--company-gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+    }
+
+    .company-page-hero h1 {
+      margin: 0;
+      color: var(--company-navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 104px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+    }
+
+    .company-page-hero__ja {
+      margin: 22px 0 0;
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+    }
+
+    .company-page-hero__lead {
+      max-width: 740px;
+      margin: 22px 0 0;
+      color: #53616e;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    /* Representative message */
+    .representative-message {
+      padding: 96px 0;
+      background: var(--company-cream);
+      border-bottom: 1px solid rgba(177, 138, 67, 0.18);
+    }
+
+    .representative-message__label {
+      margin-bottom: 34px;
+    }
+
+    .representative-message__layout {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .representative-message__lead {
+      display: grid;
+      gap: 30px;
+    }
+
+    .representative-message h2 {
+      margin: 0;
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(35px, 4.1vw, 54px);
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+    }
+
+    .representative-message__photo {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #eae5dc;
+      box-shadow: 0 16px 40px rgba(16, 47, 82, 0.08);
+    }
+
+    .representative-message__photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .representative-message__body {
+      color: var(--company-text);
+      font-size: 16px;
+      line-height: 2.08;
+    }
+
+    .representative-message__body p {
+      margin: 0 0 25px;
+    }
+
+    .representative-message__signature {
+      display: grid;
+      gap: 6px;
+      justify-items: end;
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid var(--company-line);
+      text-align: right;
+    }
+
+    .representative-message__signature span {
+      color: #687480;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+
+    .representative-message__signature strong {
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+    }
+
+    /* Company profile */
+    .company-profile {
+      padding: 90px 0 76px;
+      background: #ffffff;
+    }
+
+    .company-section-heading {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .company-section-heading h2 {
+      margin: 0;
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(30px, 4vw, 45px);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+    }
+
+    .company-section-heading__lead {
+      margin: 0;
+      color: #56636f;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .company-profile__table {
+      margin: 0;
+      border-top: 1px solid var(--company-line);
+    }
+
+    .company-profile__row {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      border-bottom: 1px solid var(--company-line);
+    }
+
+    .company-profile__row dt,
+    .company-profile__row dd {
+      margin: 0;
+      padding: 25px 0;
+    }
+
+    .company-profile__row dt {
+      color: var(--company-navy);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .company-profile__row dd {
+      color: #3f4952;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .company-business-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .company-business-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .company-business-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.83em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--company-gold);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Achievements */
+    .achievement-index {
+      padding: 64px 0 94px;
+      background: #f8f5ef;
+      border-top: 1px solid rgba(177, 138, 67, 0.18);
+      scroll-margin-top: 90px;
+    }
+
+    .achievement-index__header {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .achievement-index__header h2 {
+      margin: 0;
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(30px, 4vw, 45px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .achievement-index__lead {
+      margin: 0;
+      color: #424c55;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.9;
+    }
+
+    .achievement-index__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      align-items: start;
+    }
+
+    .achievement-card {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(16, 47, 82, 0.12);
+      border-radius: 15px;
+      box-shadow: 0 12px 32px rgba(16, 47, 82, 0.045);
+    }
+
+    .achievement-card__heading {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      padding: 22px 24px;
+      background: var(--company-navy);
+      color: #ffffff;
+    }
+
+    .achievement-card__number {
+      color: #d8bd83;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .achievement-card__heading h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .achievement-card__list {
+      margin: 0;
+      padding: 0 24px;
+      list-style: none;
+    }
+
+    .achievement-card__item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(16, 47, 82, 0.12);
+    }
+
+    .achievement-card__item:last-child {
+      border-bottom: 0;
+    }
+
+    .achievement-card__item h4 {
+      margin: 0;
+      color: #303940;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .achievement-card__item p {
+      margin: 5px 0 0;
+      color: #4f5962;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* Contact CTA */
+    .company-contact {
+      padding: 80px 0;
+      color: #ffffff;
+      background: var(--company-navy);
+    }
+
+    .company-contact__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .company-contact__eyebrow {
+      color: #d9bd83;
+    }
+
+    .company-contact h2 {
+      margin: 0;
+      color: #ffffff;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(27px, 4vw, 42px);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .company-contact p:not(.company-contact__eyebrow) {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .company-contact__button {
+      display: inline-flex;
+      min-width: 260px;
+      min-height: 60px;
+      padding: 14px 24px;
+      align-items: center;
+      justify-content: center;
+      color: var(--company-navy);
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.18s ease, background-color 0.18s ease;
+    }
+
+    .company-contact__button:hover {
+      background: #f2eadb;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 900px) {
+      .company-page-hero {
+        padding: 76px 0 68px;
+      }
+
+      .representative-message {
+        padding: 76px 0;
+      }
+
+      .representative-message__layout,
+      .company-section-heading,
+      .achievement-index__header,
+      .company-contact__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .representative-message__layout {
+        gap: 38px;
+      }
+
+      .representative-message__photo {
+        max-width: 520px;
+      }
+
+      .company-profile__row {
+        grid-template-columns: 180px minmax(0, 1fr);
+      }
+
+      .achievement-index__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .company-contact__button {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .company-page-hero__inner,
+      .representative-message__inner,
+      .company-profile__inner,
+      .achievement-index__inner,
+      .company-contact__inner {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .company-page-hero {
+        padding: 58px 0 52px;
+      }
+
+      .company-page-hero__lead {
+        font-size: 14px;
+      }
+
+      .representative-message {
+        padding: 58px 0;
+      }
+
+      .representative-message__label {
+        margin-bottom: 24px;
+      }
+
+      .representative-message__lead {
+        gap: 23px;
+      }
+
+      .representative-message h2 {
+        font-size: 31px;
+      }
+
+      .representative-message__body {
+        font-size: 15px;
+        line-height: 1.95;
+      }
+
+      .representative-message__signature {
+        justify-items: start;
+        text-align: left;
+      }
+
+      .company-profile {
+        padding: 64px 0 52px;
+      }
+
+      .company-section-heading,
+      .achievement-index__header {
+        gap: 15px;
+        margin-bottom: 28px;
+      }
+
+      .company-profile__row {
+        grid-template-columns: 1fr;
+        padding: 20px 0;
+      }
+
+      .company-profile__row dt,
+      .company-profile__row dd {
+        padding: 0;
+      }
+
+      .company-profile__row dd {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+
+      .achievement-index {
+        padding: 44px 0 64px;
+      }
+
+      .achievement-index__lead {
+        font-size: 14px;
+      }
+
+      .achievement-card__heading {
+        padding: 19px 18px;
+      }
+
+      .achievement-card__list {
+        padding: 0 18px;
+      }
+
+      .achievement-card__item {
+        padding: 17px 0;
+      }
+
+      .achievement-card__item h4 {
+        font-size: 16px;
+      }
+
+      .company-contact {
+        padding: 60px 0;
+      }
+
+      .company-contact__button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
-<body class="company-page">
-<div class="page">
+
+<body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="HÉLMIO トップへ">
+    <a href="index.html" class="logo-wrap" aria-label="HÉLMIO トップページ">
       <div class="logo">HÉLMIO</div>
       <div class="logo-sub">Corporate Communication &amp; Casting</div>
     </a>
-    <button class="menu-button" id="menuButton" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く">
-      <span></span><span></span><span></span>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-controls="siteNav"
+      aria-expanded="false"
+      aria-label="メニューを開く"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
     <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
       <a href="index.html#service">サービス</a>
-      <a href="index.html#works">実績</a>
-      <a href="index.html#talent">プロフェッショナル</a>
-      <a class="is-current" href="company.html">会社概要</a>
+      <a href="company.html#achievement-index">実績</a>
+      <a href="index.html#talent">アナウンサー</a>
+      <a href="company.html" aria-current="page">会社概要</a>
       <a href="contact.html#request">ご相談の流れ</a>
-      <a class="nav-audition" href="audition.html">オーディション</a>
-      <a class="nav-contact" href="contact.html">法人のお問い合わせ</a>
+      <a href="audition.html" class="nav-audition">オーディション</a>
+      <a href="contact.html" class="nav-contact">法人のお問い合わせ</a>
     </nav>
   </header>
 
-    <section class="company-profile" aria-labelledby="company-profile-title">
-      <header class="company-section-heading">
-        <p>PROFILE</p>
-        <h2 id="company-profile-title">会社情報</h2>
-      </header>
-
-      <dl class="company-info">
-        <div class="company-info__row">
-          <dt>会社名</dt>
-          <dd>株式会社HELMIO</dd>
-        </div>
-        <div class="company-info__row">
-          <dt>代表者</dt>
-          <dd>新島 麻生</dd>
-        </div>
-        <div class="company-info__row">
-          <dt>所在地</dt>
-          <dd>〒107-0062<br>東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd>
-        </div>
-        <div class="company-info__row">
-          <dt>設立</dt>
-          <dd>2026年7月</dd>
-        </div>
-        <div class="company-info__row company-info__row--business">
-          <dt>事業内容</dt>
-          <dd>
-            <ul class="company-business-list">
-              <li>企業コミュニケーション設計</li>
-              <li>展示会・イベントの企画運営</li>
-              <li>マーケティング・広報PR</li>
-              <li>キャスティング</li>
-              <li>スピーチ指導</li>
-            </ul>
-          </dd>
-        </div>
-      </dl>
+  <main class="company-page-main" id="top">
+    <section class="company-page-hero" aria-labelledby="company-page-title">
+      <div class="company-page-hero__inner">
+        <p class="company-page-hero__eyebrow">About HÉLMIO</p>
+        <h1 id="company-page-title">COMPANY</h1>
+        <p class="company-page-hero__ja">会社概要</p>
+        <p class="company-page-hero__lead">
+          人や企業の中にある思いや価値を見つけ、社会に届く言葉と形へ変える。
+          HÉLMIOは、取材・言語化・戦略設計を通じて、企業のコミュニケーションを支援します。
+        </p>
+      </div>
     </section>
 
-    <section class="achievements" aria-labelledby="achievements-title">
-      <div class="achievements__intro">
-        <header class="company-section-heading">
-          <p>ACHIEVEMENTS</p>
-          <h2 id="achievements-title">実績一覧</h2>
-        </header>
-        <div class="achievements__copy">
-          <p>企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績を分野別に掲載しています。</p>
-          <p class="achievements__note">※掲載実績には、株式会社HELMIO設立以前に、代表者および参画プロフェッショナルが個人として担当した案件を含みます。</p>
+    <section class="representative-message" aria-labelledby="representative-message-title">
+      <div class="representative-message__inner">
+        <p class="representative-message__label">MESSAGE</p>
+
+        <div class="representative-message__layout">
+          <div class="representative-message__lead">
+            <h2 id="representative-message-title">
+              価値があるだけでは、<br>
+              伝わらない。
+            </h2>
+
+            <figure class="representative-message__photo">
+              <img src="kaisyashokai.jpg" alt="株式会社HELMIO 代表 新島麻生">
+            </figure>
+          </div>
+
+          <div class="representative-message__body">
+            <p>
+              私は記者・アナウンサーとして、世の中の動きを取材し、ニュースとして届けてきました。
+            </p>
+
+            <p>
+              アナウンサーを志したきっかけは、高校時代にある社会課題に触れ、大学でボランティア活動に取り組む中で、社会をより良くしようと行動する社会起業家たちに出会ったことです。
+            </p>
+
+            <p>
+              当時から、社会のために行動する人たちの思いや取り組みを知り、それを多くの人に届けたいという気持ちは変わっていません。
+            </p>
+
+            <p>
+              現在は、教育活動に取り組む一般社団法人の設立に向けて準備を進めています。また、アナウンサーという立場や放送という手段に限らず、人や企業の中にある思いや価値を見つけ、社会に届く形へ変えていきたいと考え、HÉLMIOを立ち上げました。
+            </p>
+
+            <p>
+              HÉLMIOでは、アナウンサーが培ってきた取材力・言語化力と、マーケターの戦略設計力を掛け合わせます。企業の中にある事実や強みを見つけ、社会が知りたいテーマへと接続し、メディア、イベント、映像、経営者の言葉など、目的に応じて最も届く形に整えます。
+            </p>
+
+            <div class="representative-message__signature">
+              <span>株式会社HELMIO 代表</span>
+              <strong>新島 麻生</strong>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <nav class="achievement-index" id="achievement-index" aria-label="実績カテゴリ一覧">
-        <a href="#achievement-01"><span>01</span>政治・行政・企業コミュニケーション</a>
-<a href="#achievement-02"><span>02</span>企業イベント・カンファレンス</a>
-<a href="#achievement-03"><span>03</span>展示会</a>
-<a href="#achievement-04"><span>04</span>式典・新製品発表会</a>
-<a href="#achievement-05"><span>05</span>セミナー・オンライン配信</a>
-<a href="#achievement-06"><span>06</span>テレビ・キャスター・リポーター</a>
-<a href="#achievement-07"><span>07</span>スポーツ</a>
-<a href="#achievement-08"><span>08</span>ラジオ</a>
-<a href="#achievement-09"><span>09</span>企業VP・ナレーション・MA</a>
-<a href="#achievement-10"><span>10</span>広告・CM・モデル</a>
-<a href="#achievement-11"><span>11</span>トークショー</a>
-      </nav>
+    <section class="company-profile" aria-labelledby="company-profile-title">
+      <div class="company-profile__inner">
+        <div class="company-section-heading">
+          <div>
+            <p class="company-profile__eyebrow">Company Profile</p>
+            <h2 id="company-profile-title">会社情報</h2>
+          </div>
+          <p class="company-section-heading__lead">
+            企業の「伝える」に関する課題を、取材と戦略の両面から支援します。
+          </p>
+        </div>
 
-      <div class="achievement-categories">
-        <section class="achievement-category" id="achievement-01" aria-labelledby="achievement-title-01">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">01</p>
-    <h3 id="achievement-title-01">政治・行政・企業コミュニケーション</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>2024年 総裁選候補者／表現・スピーチ指導</li>
-<li>国会議員／演説・登壇サポート</li>
-<li>内閣官房オリンピック・パラリンピックレガシー推進室主催イベント「大会を契機とした取り組みとレガシー〜TOKYO 2020〜」</li>
-<li>経済産業省主催ピッチコンテスト「アトツギ甲子園」</li>
-<li>経団連主催「大企業経営層・人事担当者向けセミナー」</li>
-<li>笹川平和財団「ブルーエコノミー」／広報・PR、調査・現地リポート</li>
-<li>大阪・関西万博 BLUE OCEAN DOME／ファシリテーター</li>
-<li>大阪・関西万博 世界海の日特別イベント「広げよう海の恵み、つなげよう未来と世界へ」／MatsuriステージMC</li>
-<li>ベンチャー企業／展示会出展企画・訴求設計・プレゼンテーション設計</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-02" aria-labelledby="achievement-title-02">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">02</p>
-    <h3 id="achievement-title-02">企業イベント・カンファレンス</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>Google Cloud Next Tokyo 2024・2025／MC</li>
-<li>Google Cloud Next Leaders Circle／MC</li>
-<li>PwC All Staff Meeting／MC</li>
-<li>Gartner デジタル・ワークプレース サミット／MC</li>
-<li>Gartner CIO Leadership Forum／MC</li>
-<li>Gartner シンポジウム 2024／MC</li>
-<li>Nikkei BP Executive Women カンファレンス／MC</li>
-<li>J-MONEYカンファレンス／MC</li>
-<li>Panasonic・パナソニックコネクト／イベントMC</li>
-<li>ENEOSパビリオン／MC</li>
-<li>大塚商会 実践ソリューションフェア／MC</li>
-<li>freee TOGO World 2024／MC</li>
-<li>セイコーゴールデングランプリ陸上2024／MC</li>
-<li>dynabook35周年イベント／MC</li>
-<li>NHK技研／MC</li>
-<li>ASUSイベント／MC</li>
-<li>KENWOODイベント／MC</li>
-<li>シチズン時計プロモーション／MC</li>
-<li>タカラトミー商談会／MC</li>
-<li>キノコ伝説 勇者と魔法のランプ イベント／MC</li>
-<li>声優朗読劇 フォアレーゼン千葉柏公演／MC</li>
-<li>第39回・第40回 横浜港カッターレース／MC</li>
-<li>朝日杯将棋オープン戦 名古屋対局／MC</li>
-<li>株式会社ALLULE セミナー／MC</li>
-<li>文京区都市交流フェスタ／MC</li>
-<li>ディスカバー沖縄 in 羽田空港／MC</li>
-<li>水かけまつり＆ワールドフェスタ／ステージMC</li>
-<li>SATORI株式会社／MC</li>
-<li>NTTコミュニケーションズ／ナレーター</li>
-<li>野村不動産／ナレーター</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-03" aria-labelledby="achievement-title-03">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">03</p>
-    <h3 id="achievement-title-03">展示会</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>Japan Mobility Show 2025／主催者ステージMC・ナレーター</li>
-<li>東京オートサロン／SUZUKIブースMC</li>
-<li>大阪オートメッセ／SUZUKIブースMC</li>
-<li>国際福祉機器展／SUZUKIブースMC</li>
-<li>Kawasaki KAZEギャル／MC</li>
-<li>ドラッグストアショー／クラシエブースMC</li>
-<li>ドラッグストアショー／hoyuブースMC</li>
-<li>HVAC＆R／東京ガスブースMC</li>
-<li>スマート工場EXPO／エレコムブースMC</li>
-<li>リテールテック／東芝テックブースMC・役者</li>
-<li>CETEC／デルタ電子ブースMC</li>
-<li>働き方改革EXPO／リコージャパンブースMC</li>
-<li>エコプロ／アイシティブースMC</li>
-<li>第13回インターペット／旭化成ブースMC</li>
-<li>Inter BEE／池上通信機ブースMC（2023・2024）</li>
-<li>Interop Tokyo／NTTコミュニケーションズ</li>
-<li>JIMTOF／ダイジェット工業ブースMC</li>
-<li>ハイウェイテクノフェア／飛島建設ブースMC（2023・2024・2025）</li>
-<li>プラントメンテナンスショー／高田工業所ブース ナレーター（2023・2024・2025）</li>
-<li>SEMICON Japan 2024／高田工業所ブース ナレーター</li>
-<li>国際物流総合展 2022／ブラザー販売ブースMC</li>
-<li>教育ITソリューションEXPO／DynabookブースMC</li>
-<li>メカトロテックジャパン／イスカルジャパンブースMC</li>
-<li>FISMA TOKYO／川上製作所ブース ナレーター</li>
-<li>地方自治情報化推進フェア／UiPathブースMC</li>
-<li>インターフェックス／フジシールブースMC</li>
-<li>インターフェックス／ダルトンブースMC</li>
-<li>TOKYO PACK 2022／レンゴーブースMC</li>
-<li>IGAS／ジクスブース ナレーター</li>
-<li>ENEX／関電ファシリティーズブースMC</li>
-<li>ブロックチェーンEXPO 2022・2023／パラミックスブースMC</li>
-<li>資産運用EXPO／スカイコートブースMC</li>
-<li>名古屋プラスチック工業展／東洋機械金属ブースMC</li>
-<li>ダイカスト展／東洋機械金属ブースMC</li>
-<li>コールセンター／CRM デモ＆コンファレンス／MC</li>
-<li>外食ウィーク／エフ・エスブースMC</li>
-<li>BATTERY JAPAN／LBHunetブースMC</li>
-<li>MF-TOKYO／ゼロフォーブースMC</li>
-<li>ロジスティクスソリューションフェア／日本通運ブースMC</li>
-<li>JASIS／主催者ブースMC（2024・2025）</li>
-<li>建築・建材展／光触媒工業会ブースMC</li>
-<li>CRPI-EXPO／EngconブースMC</li>
-<li>MF-TOKYO／旭精機工業ブースMC</li>
-<li>製造業人手不足対策EXPO／日総工産ブース ナレーター</li>
-<li>知財・情報フェア＆コンファレンス／アクアプラネットブース ナレーター</li>
-<li>TOYOTAグループ</li>
-<li>BMW</li>
-<li>OMRON</li>
-<li>大塚商会</li>
-<li>JTBグループ</li>
-<li>ツーリズムEXPO関西</li>
-<li>Canon（CP＋）</li>
-<li>DAIHEN</li>
-<li>安藤ハザマ</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-04" aria-labelledby="achievement-title-04">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">04</p>
-    <h3 id="achievement-title-04">式典・新製品発表会</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>TOYOTA 新車発表会／司会</li>
-<li>いすゞ自動車株式会社 新車発表会／司会</li>
-<li>ZTE Japan 新製品発表会／司会</li>
-<li>ヤマハ発動機 新製品発表会／MC</li>
-<li>ウエルシア 新ブランド発表会／MC</li>
-<li>JTB入社式（2023年〜）／司会</li>
-<li>ダンロップフェニックストーナメント前夜祭／司会</li>
-<li>茨城県×宇宙ベンチャー発表会「イバラキ・スペース」／司会</li>
-<li>商船三井クルーズ×JTB 連携協定発表会／司会</li>
-<li>一般財団法人大阪国際経済振興センター30周年記念パーティ／司会</li>
-<li>神戸ダイハツ自動車 社内表彰式／司会</li>
-<li>2023年度 グッドデザイン・ニューホープ賞 最終審査会／司会</li>
-<li>プレナス大学 開校式／司会</li>
-<li>ソニー生命 社内表彰式／司会</li>
-<li>株式会社ケミカル工事 50周年式典／司会</li>
-<li>株式会社BDS HOLDINHS 顧客招待イベント／MC</li>
-<li>習志野市シルバー人材センター 40周年記念式典／司会</li>
-<li>三菱ケミカル Science &amp; Innovation Center 本棟お披露目見学ツアー／MC</li>
-<li>東京ガスまわりテクニカルコンテスト表彰式／MC</li>
-<li>三菱電機「Serendie Street YIMP」オープニングイベント／MC</li>
-<li>JA共済 書道・交通安全ポスターコンクール表彰式／司会</li>
-<li>Daigasエナジー 価値創造セミナー／MC</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-05" aria-labelledby="achievement-title-05">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">05</p>
-    <h3 id="achievement-title-05">セミナー・オンライン配信</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>Googleセミナー／司会</li>
-<li>バイオフィリア オンラインセミナー／MC</li>
-<li>Panasonic／オンラインMC</li>
-<li>CP＋ 主催者ステージ／MC</li>
-<li>日経xwoman・日経ヘルスセミナー／MC</li>
-<li>日経IR・個人投資家フェアセミナー／MC</li>
-<li>日経主催「営業DX最前線―成果につながるデジタル活用の要点」／MC</li>
-<li>FOODEX 美食女子／リポーター</li>
-<li>デジタルアーツ パートナーミーティング／MC</li>
-<li>サントリーホールディングス／オンラインMC</li>
-<li>Miro Japan／セミナーMC</li>
-<li>SoftBank／セミナーMC</li>
-<li>株式会社NEWSTAR／セミナーMC</li>
-<li>株式会社スウェージロック・ジャパン／セミナーMC</li>
-<li>タニウム合同会社／セミナーMC</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-06" aria-labelledby="achievement-title-06">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">06</p>
-    <h3 id="achievement-title-06">テレビ・キャスター・リポーター</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>局アナウンサー／朝のニュースキャスター・スポーツキャスター・報道フィールドキャスター</li>
-<li>NHK スポーツキャスター</li>
-<li>NHK Eテレ 小学生ボッチャ競技会／進行MC</li>
-<li>KBS京都／ニュースキャスター</li>
-<li>TBS「Nスタ」／番組出演</li>
-<li>J:COM「LIVE news」／リポーター</li>
-<li>J:COM「つながるセブン」</li>
-<li>J:COM「湘南デイリーニュース」</li>
-<li>J:COM IBSA柔道 東京国際オープントーナメント大会</li>
-<li>サンテレビ「NEWS×情報キャッチ＋」／リポーター</li>
-<li>サンテレビ「日本財団 海と日本PROJECT in ひょうご 海LIVE」／リポーター</li>
-<li>船橋競馬パドック中継</li>
-<li>CS放送 平塚競輪</li>
-<li>スカパー</li>
-<li>BS「ONSEN女子旅」／リポーター</li>
-<li>さんふらわあ ツアーリポート</li>
-<li>Audi「チャージハブ」／リポーター</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-07" aria-labelledby="achievement-title-07">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">07</p>
-    <h3 id="achievement-title-07">スポーツ</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>Jリーグアウォーズ 2023〜2025／MC</li>
-<li>ヴィッセル神戸 二冠優勝パーティ／司会</li>
-<li>セレッソ大阪 パブリックビューイング＆選手トークショー／MC</li>
-<li>三井不動産プレゼンツ サッカー日本代表戦パブリックビューイング／MC</li>
-<li>YBSルヴァンカップ／リポーター</li>
-<li>ダンロップフェニックストーナメント前夜祭／司会</li>
-<li>docomo公式ゴルフコンテンツ「東大ゴルフ塾」／リポーター</li>
-<li>URBAN FUTURES presented by livedoor／リポーター＆インタビュアー</li>
-<li>TALENT SHOWCASE ラクロス＆アメリカンフットボールイベントトークショー／MC</li>
-<li>セイコーゴールデングランプリ陸上2024／MC</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-08" aria-labelledby="achievement-title-08">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">08</p>
-    <h3 id="achievement-title-08">ラジオ</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>MBSラジオ「ええかげんにせぇ！」／リポーター</li>
-<li>宮崎放送／ラジオパーソナリティ</li>
-<li>FM湘南ナパサ</li>
-<li>レディオ湘南「GOOD MORNING」</li>
-<li>FM横浜</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-09" aria-labelledby="achievement-title-09">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">09</p>
-    <h3 id="achievement-title-09">企業VP・ナレーション・MA</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>積水ハウス 新施設紹介／MC</li>
-<li>全国賃貸不動産管理業業界／進行MC</li>
-<li>メディカル・コンシェルジュ 企業説明動画</li>
-<li>大阪中小企業投資育成株式会社 デジタルサイネージ用映像</li>
-<li>クラウズ・スパイス社</li>
-<li>株式会社エスエナジー</li>
-<li>自社ローンの窓口</li>
-<li>Kredo</li>
-<li>楽トス</li>
-<li>オリックス自動車 社内研修用動画／ナビゲーター</li>
-<li>ルーシッドCM／MA</li>
-<li>日本金融政策公庫 団体信用生命保険／MA</li>
-<li>アクアプラネット／MA</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-10" aria-labelledby="achievement-title-10">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">10</p>
-    <h3 id="achievement-title-10">広告・CM・モデル</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>日立ソリューションズ／タクシー広告</li>
-<li>KDDI／WEB広告</li>
-<li>東京インテリア／テレビCM</li>
-<li>宮城県入浴施設 愛子天空の湯 そよぎの杜／テレビCM</li>
-<li>JCB／テレビ・インフォマーシャル</li>
-<li>美容機器メーカー YA-MAN／WEB・店頭</li>
-<li>ニトリ／WEB・ルームウェアモデル</li>
-<li>セキスイハイム／広告パンフレット</li>
-<li>オンライン家庭教師メガスタ／WEB広告</li>
-<li>さんふらわあ／駅サイネージ・パンフレット</li>
-<li>大正製薬「アライ」／WEB広告</li>
-<li>鈴茂器工／WEB・スチール</li>
-<li>大阪工業大学／テレビ・インフォマーシャル</li>
-<li>日経スペシャル「もしものマネー道 もしマネ」JCBインフォマーシャル</li>
-<li>アデランス広告モデル（日本・中国・香港・台湾・タイ・シンガポール）</li>
-<li>湘南ガールコンテスト／準グランプリ</li>
-<li>飛馬日本 atelier * momo&amp;momo／アパレルモデル</li>
-<li>アトリエ木下／着物モデル</li>
-<li>富士フイルム 写真展／イメージモデル</li>
-<li>渋谷植村スタジオ／モデル</li>
-<li>Brocade 7月号／表紙</li>
-<li>ORICON マウスケア商品／WEBモデル</li>
-<li>Nikon／和装ウエディングモデル</li>
-<li>シンガポール カメラ雑誌／表紙</li>
-<li>戦国炎舞／WEB CM</li>
-<li>オリエンタルランド 春キャン／モデル</li>
-<li>CP＋ ケンコー・トキナーステージ／モデル</li>
-<li>雑誌「ハイエースfan」／表紙</li>
-<li>株式会社イトーキ オフィス家具カタログ／モデル</li>
-<li>TGC NY STATE Bags／広告動画モデル</li>
-<li>ワタミ／広告モデル</li>
-<li>クラウズ・スパイス社／広告モデル</li>
-<li>第一興商／広告モデル</li>
-<li>カワサキバイクマガジン／モデル</li>
-<li>ソフトバンク／広告モデル</li>
-<li>ソフトバンク 新商品プレス向け発表会／モデル</li>
-<li>O-net／広告モデル</li>
-<li>横浜リーフみなとみらい検診クリニック／広告モデル</li>
-<li>飛島建設／広告モデル</li>
-<li>株式会社エフ・オー・プランニング／HPモデル</li>
-<li>KADOKAWA オリジナルバッグ新商品／モデル</li>
-<li>KADOKAWA 腕時計／モデル</li>
-<li>TVCM「アデランスヘアアップa」／施術士役</li>
-<li>dazzshop_official／メイク動画モデル</li>
-<li>日産自動車「SAKURA」紹介動画／モデル</li>
-<li>KING JIM 新商品発表会／モデル</li>
-<li>Inter BEE 2022 富士フイルム／被写体モデル</li>
-<li>ソフトバンクC&amp;S「Poly」動画／役者</li>
-<li>ボートレース津／キャンペーンモデル</li>
-<li>パーソルHRパートナーズ／モデル</li>
-<li>ワールドプラスジム／HPモデル</li>
-<li>FOODEX 美食女子／モデル</li>
-<li>リテールテックJAPAN 東芝テック／ステージモデル</li>
-<li>エミニナル矯正／YouTube出演</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section><section class="achievement-category" id="achievement-11" aria-labelledby="achievement-title-11">
-  <header class="achievement-category__heading">
-    <p class="achievement-category__number">11</p>
-    <h3 id="achievement-title-11">トークショー</h3>
-  </header>
-  <div class="achievement-category__content">
-    <ul class="achievement-list">
-      <li>マセラティ オーナー向けタレントトークショー／MC</li>
-<li>BMW 全国キャラバン＆トークショー／MC</li>
-<li>バカルディ・ジャパン ウイスキー試飲会／MC</li>
-<li>セイコーゴールデングランプリ陸上2024 セイコーブース／トークショーMC</li>
-<li>ウエルシア 新ブランド発表会／トークショーMC</li>
-<li>dynabook35周年イベント 伊沢拓司氏トークショー／MC</li>
-    </ul>
-    <a class="achievement-back" href="#achievement-index">実績一覧へ戻る</a>
-  </div>
-</section>
+        <dl class="company-profile__table">
+          <div class="company-profile__row">
+            <dt>会社名</dt>
+            <dd>株式会社HELMIO</dd>
+          </div>
+
+          <div class="company-profile__row">
+            <dt>代表</dt>
+            <dd>新島 麻生</dd>
+          </div>
+
+          <div class="company-profile__row">
+            <dt>所在地</dt>
+            <dd>〒107-0062 東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd>
+          </div>
+
+          <div class="company-profile__row">
+            <dt>設立</dt>
+            <dd>2026年7月</dd>
+          </div>
+
+          <div class="company-profile__row">
+            <dt>事業内容</dt>
+            <dd>
+              <ul class="company-business-list">
+                <li>企業コミュニケーション設計</li>
+                <li>展示会・イベントの企画運営</li>
+                <li>マーケティング・広報PR</li>
+                <li>キャスティング</li>
+                <li>スピーチ指導</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="achievement-index" id="achievement-index" aria-labelledby="achievement-index-title">
+      <div class="achievement-index__inner">
+        <header class="achievement-index__header">
+          <div>
+            <p class="achievement-index__eyebrow">ACHIEVEMENTS</p>
+            <h2 id="achievement-index-title">主な実績</h2>
+          </div>
+          <p class="achievement-index__lead">
+            企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績
+          </p>
+        </header>
+
+        <div class="achievement-index__grid">
+          <article class="achievement-card">
+            <div class="achievement-card__heading">
+              <span class="achievement-card__number">01</span>
+              <h3>政治・パブリック</h3>
+            </div>
+            <ul class="achievement-card__list">
+              <li class="achievement-card__item">
+                <h4>2024年 総裁選候補者</h4>
+                <p>表現・スピーチ指導</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>国会議員</h4>
+                <p>演説・登壇サポート</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>内閣官房オリンピック・パラリンピックレガシー推進室</h4>
+                <p>TOKYO 2020レガシー関連イベント</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>経済産業省</h4>
+                <p>アトツギ甲子園・ピッチコンテスト</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>経団連</h4>
+                <p>大企業経営層・人事担当者向けセミナー</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-card__heading">
+              <span class="achievement-card__number">02</span>
+              <h3>企業コミュニケーション</h3>
+            </div>
+            <ul class="achievement-card__list">
+              <li class="achievement-card__item">
+                <h4>笹川平和財団</h4>
+                <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>大阪・関西万博</h4>
+                <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベント</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>Jリーグアウォーズ</h4>
+              </li>
+              <li class="achievement-card__item">
+                <h4>企業イベント・カンファレンス</h4>
+                <p>Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・Seiko・ZTE Japan・Audi ほか</p>
+              </li>
+              <li class="achievement-card__item">
+                <h4>ベンチャー企業</h4>
+                <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-card__heading">
+              <span class="achievement-card__number">03</span>
+              <h3>報道・メディア</h3>
+            </div>
+            <ul class="achievement-card__list">
+              <li class="achievement-card__item"><h4>NHK</h4></li>
+              <li class="achievement-card__item"><h4>TBS「Nスタ」</h4></li>
+              <li class="achievement-card__item"><h4>KBS京都</h4></li>
+              <li class="achievement-card__item"><h4>J:COM「LIVE news」</h4></li>
+              <li class="achievement-card__item"><h4>サンテレビ、CS、BS等</h4></li>
+            </ul>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-card__heading">
+              <span class="achievement-card__number">04</span>
+              <h3>企業VP・広告出演</h3>
+            </div>
+            <ul class="achievement-card__list">
+              <li class="achievement-card__item"><h4>日立ソリューションズ</h4></li>
+              <li class="achievement-card__item"><h4>オリックス自動車</h4></li>
+              <li class="achievement-card__item"><h4>JCB</h4></li>
+              <li class="achievement-card__item"><h4>KDDI・大正製薬「アライ」</h4></li>
+              <li class="achievement-card__item"><h4>YA-MAN・ニトリ・セキスイハイム</h4></li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="company-contact" aria-labelledby="company-contact-title">
-      <p class="section-kicker">CONTACT</p>
-      <h2 id="company-contact-title">企業の「伝える」を、<br>一緒に設計します。</h2>
-      <p>企画段階のご相談から、キャスティング、当日の運営までご相談ください。</p>
-      <a class="primary-btn" href="contact.html">法人のお問い合わせ</a>
+      <div class="company-contact__inner">
+        <div>
+          <p class="company-contact__eyebrow">CONTACT</p>
+          <h2 id="company-contact-title">企業の「伝える」に関する課題をお聞かせください。</h2>
+          <p>まだ依頼内容が固まっていない段階でもご相談いただけます。</p>
+        </div>
+        <a class="company-contact__button" href="contact.html">法人のお問い合わせ</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
+      <div>
         <a class="footer-logo" href="index.html">HÉLMIO</a>
         <p>Corporate Communication &amp; Casting</p>
+        <p class="footer-company-name">株式会社HELMIO</p>
       </div>
+
       <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="index.html">トップ</a>
         <a href="index.html#service">サービス</a>
-        <a href="index.html#works">実績</a>
-        <a href="index.html#talent">プロフェッショナル</a>
+        <a href="company.html#achievement-index">実績</a>
+        <a href="index.html#talent">アナウンサー</a>
         <a href="company.html">会社概要</a>
+        <a href="audition.html">オーディション</a>
         <a href="contact.html">法人のお問い合わせ</a>
-        <a class="footer-audition-link" href="audition.html">出演希望の方はこちら</a>
       </nav>
     </div>
-    <div class="footer-bottom"><p>© 2026 HÉLMIO</p></div>
   </footer>
-</div>
 
-<a class="mobile-contact-cta" href="contact.html" aria-label="法人のお問い合わせページへ移動する">
-  <span class="mobile-contact-cta__label">法人のご相談</span>
-  <span class="mobile-contact-cta__en">CONTACT</span>
-</a>
-
-<script>
-(() => {
-  const menuButton = document.getElementById('menuButton');
-  const siteNav = document.getElementById('siteNav');
-  if (!menuButton || !siteNav) return;
-
-  menuButton.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('is-open');
-    menuButton.setAttribute('aria-expanded', String(isOpen));
-    menuButton.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-  });
-
-  siteNav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      siteNav.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'メニューを開く');
-    });
-  });
-})();
-</script>
+  <script src="main.js"></script>
 </body>
 </html>
