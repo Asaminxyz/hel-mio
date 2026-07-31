@@ -128,6 +128,13 @@
       display: block;
     }
 
+    .representative-message__title-main {
+      white-space: nowrap;
+      font-size: clamp(36px, 2.8vw, 44px);
+      line-height: 1.45;
+      letter-spacing: 0.015em;
+    }
+
     .representative-message__title-sub {
       margin-top: 2px;
       font-size: 0.72em;
@@ -452,6 +459,17 @@
       color: var(--company-navy);
     }
 
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .representative-message__layout {
+        grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.22fr);
+        gap: 42px;
+      }
+
+      .representative-message__title-main {
+        font-size: 32px;
+      }
+    }
+
     @media (max-width: 900px) {
       .achievement-index__header {
         grid-template-columns: 1fr;
@@ -657,6 +675,11 @@
         font-size: 31px;
       }
 
+      .representative-message__title-main {
+        font-size: 29px;
+        letter-spacing: 0.01em;
+      }
+
       .representative-message__body {
         font-size: 15px;
         line-height: 1.95;
@@ -761,7 +784,7 @@
             </h2>
 
             <figure class="representative-message__photo">
-              <img src="S__27566083.jpg" alt="株式会社HELMIO 代表 新島麻生">
+              <img src="kaisyashokai.jpg" alt="株式会社HELMIO 代表 新島麻生">
             </figure>
           </div>
 
@@ -771,19 +794,19 @@
             </p>
 
             <p>
-              アナウンサーを志したきっかけは、高校時代にある社会課題に触れ、大学でボランティア活動に取り組む中で、社会をより良くしようと行動する社会起業家たちに出会ったことです。
+              アナウンサーを志したきっかけは、高校時代にある社会課題に触れ、大学でボランティア活動に取り組む中で、その問題を社会をより良くしようと行動する社会起業家の方々に出会ったことです。
             </p>
 
             <p>
-              当時から、社会のために行動する人たちの思いや取り組みを知り、それを多くの人に届けたいという気持ちは変わっていません。
-            </p>
-
-            <p>
-              現在は、教育活動に取り組む一般社団法人の設立に向けて準備を進めています。また、アナウンサーという立場や放送という手段に限らず、人や企業の中にある思いや価値を見つけ、社会に届く形へ変えていきたいと考え、HÉLMIOを立ち上げました。
+              現在は、教育活動に取り組む一般社団法人の設立に向けて準備を進めています。また、アナウンサーという立場や放送という手段に限らず、行動する人や企業の中にある思いや価値を見つけ、社会に届く形へ変えていきたいと考え、HÉLMIOを立ち上げました。
             </p>
 
             <p>
               HÉLMIOでは、アナウンサーが培ってきた取材力・言語化力と、マーケターの戦略設計力を掛け合わせます。企業の中にある事実や強みを見つけ、社会が知りたいテーマへと接続し、メディア、イベント、映像、経営者の言葉など、目的に応じて最も届く形に整えます。
+            </p>
+
+            <p>
+              社会のために行動する人たちのすぐそばで、その思いや取り組みを社会に届ける、縁の下の力持ちとして、行動する人の思いに寄り添い、社会に届けます。
             </p>
 
             <div class="representative-message__signature">
@@ -1260,7 +1283,7 @@
       <div class="company-contact__inner">
         <div>
           <p class="company-contact__eyebrow">CONTACT</p>
-          <h2 id="company-contact-title">企業の「伝える」に関する課題をお聞かせください。</h2>
+          <h2 id="company-contact-title">企業の課題をお聞かせください。</h2>
           <p>まだ依頼内容が固まっていない段階でもご相談いただけます。</p>
         </div>
         <a class="company-contact__button" href="contact.html">法人のお問い合わせ</a>
