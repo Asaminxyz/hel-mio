@@ -259,29 +259,30 @@
       transform: translateY(-50%);
     }
 
-    /* Achievements */
+    /* Achievements archive */
     .achievement-index {
-      padding: 64px 0 94px;
-      background: #f8f5ef;
+      padding: 72px 0 96px;
+      background: #fbfaf7;
       border-top: 1px solid rgba(177, 138, 67, 0.18);
       scroll-margin-top: 90px;
     }
 
     .achievement-index__header {
       display: grid;
-      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
-      gap: 56px;
-      align-items: end;
-      margin-bottom: 38px;
+      grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1.38fr);
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 30px;
     }
 
     .achievement-index__header h2 {
       margin: 0;
       color: var(--company-navy);
       font-family: "Noto Serif JP", serif;
-      font-size: clamp(30px, 4vw, 45px);
+      font-size: clamp(32px, 4vw, 47px);
       font-weight: 500;
-      line-height: 1.5;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
     }
 
     .achievement-index__lead {
@@ -289,77 +290,236 @@
       color: #424c55;
       font-size: 16px;
       font-weight: 500;
-      line-height: 1.9;
+      line-height: 1.95;
     }
 
-    .achievement-index__grid {
+    .achievement-index__note {
+      margin: 18px 0 0;
+      padding: 0;
+      color: #5d6872;
+      background: transparent;
+      border: 0;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .achievement-jump-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
-      align-items: start;
+      margin: 46px 0 0;
+      border-top: 1px solid var(--company-line);
+      border-left: 1px solid var(--company-line);
     }
 
-    .achievement-card {
-      overflow: hidden;
-      background: #ffffff;
-      border: 1px solid rgba(16, 47, 82, 0.12);
-      border-radius: 15px;
-      box-shadow: 0 12px 32px rgba(16, 47, 82, 0.045);
-    }
-
-    .achievement-card__heading {
-      display: flex;
-      gap: 15px;
+    .achievement-jump-list a {
+      display: grid;
+      grid-template-columns: 62px minmax(0, 1fr) 22px;
+      gap: 16px;
       align-items: center;
-      padding: 22px 24px;
-      background: var(--company-navy);
-      color: #ffffff;
+      min-height: 78px;
+      padding: 17px 20px;
+      color: var(--company-navy);
+      background: #ffffff;
+      border-right: 1px solid var(--company-line);
+      border-bottom: 1px solid var(--company-line);
+      text-decoration: none;
+      transition: background-color 0.18s ease, color 0.18s ease;
     }
 
-    .achievement-card__number {
-      color: #d8bd83;
+    .achievement-jump-list a:hover {
+      color: #ffffff;
+      background: var(--company-navy);
+    }
+
+    .achievement-jump-list__number {
+      color: var(--company-gold);
       font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       line-height: 1;
     }
 
-    .achievement-card__heading h3 {
-      margin: 0;
-      color: #ffffff;
-      font-size: 18px;
+    .achievement-jump-list__title {
+      font-size: 15px;
       font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .achievement-card__list {
-      margin: 0;
-      padding: 0 24px;
-      list-style: none;
-    }
-
-    .achievement-card__item {
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(16, 47, 82, 0.12);
-    }
-
-    .achievement-card__item:last-child {
-      border-bottom: 0;
-    }
-
-    .achievement-card__item h4 {
-      margin: 0;
-      color: #303940;
-      font-size: 17px;
-      font-weight: 700;
       line-height: 1.6;
     }
 
-    .achievement-card__item p {
-      margin: 5px 0 0;
-      color: #4f5962;
+    .achievement-jump-list__arrow {
+      font-size: 18px;
+      line-height: 1;
+      text-align: right;
+    }
+
+    .achievement-archive {
+      margin-top: 78px;
+      border-top: 1px solid rgba(16, 47, 82, 0.22);
+    }
+
+    .achievement-detail {
+      padding: 66px 0 58px;
+      border-bottom: 1px solid rgba(16, 47, 82, 0.22);
+      scroll-margin-top: 92px;
+    }
+
+    .achievement-detail__header {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 24px;
+      align-items: baseline;
+      margin-bottom: 30px;
+    }
+
+    .achievement-detail__number {
+      color: var(--company-gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 44px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .achievement-detail__header h3 {
+      margin: 0;
+      color: var(--company-navy);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(25px, 3vw, 35px);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+    }
+
+    .achievement-detail__list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 52px;
+      margin: 0 0 0 128px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .achievement-detail__list li {
+      position: relative;
+      padding: 14px 0 14px 19px;
+      color: #3d474f;
+      border-bottom: 1px solid rgba(16, 47, 82, 0.1);
       font-size: 14px;
-      line-height: 1.75;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .achievement-detail__list li::before {
+      content: "";
+      position: absolute;
+      top: 1.92em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--company-gold);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .achievement-detail__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 28px 0 0 128px;
+      color: #63707b;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .achievement-detail__back::before {
+      content: "↑";
+      color: var(--company-gold);
+      font-size: 16px;
+    }
+
+    .achievement-detail__back:hover {
+      color: var(--company-navy);
+    }
+
+    @media (max-width: 900px) {
+      .achievement-index__header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .achievement-jump-list {
+        grid-template-columns: 1fr;
+      }
+
+      .achievement-detail__list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .achievement-index {
+        padding: 54px 0 72px;
+      }
+
+      .achievement-index__lead {
+        font-size: 14px;
+      }
+
+      .achievement-index__note {
+        font-size: 12px;
+      }
+
+      .achievement-jump-list {
+        margin-top: 32px;
+      }
+
+      .achievement-jump-list a {
+        grid-template-columns: 48px minmax(0, 1fr) 18px;
+        min-height: 68px;
+        padding: 14px 15px;
+      }
+
+      .achievement-jump-list__number {
+        font-size: 23px;
+      }
+
+      .achievement-jump-list__title {
+        font-size: 14px;
+      }
+
+      .achievement-archive {
+        margin-top: 54px;
+      }
+
+      .achievement-detail {
+        padding: 48px 0 42px;
+      }
+
+      .achievement-detail__header {
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 13px;
+        margin-bottom: 23px;
+      }
+
+      .achievement-detail__number {
+        font-size: 34px;
+      }
+
+      .achievement-detail__header h3 {
+        font-size: 23px;
+      }
+
+      .achievement-detail__list {
+        margin-left: 0;
+      }
+
+      .achievement-detail__list li {
+        padding: 12px 0 12px 17px;
+        font-size: 13px;
+      }
+
+      .achievement-detail__back {
+        margin-left: 0;
+      }
     }
 
     /* Contact CTA */
@@ -446,9 +606,6 @@
         grid-template-columns: 180px minmax(0, 1fr);
       }
 
-      .achievement-index__grid {
-        grid-template-columns: 1fr;
-      }
 
       .company-contact__button {
         justify-self: start;
@@ -523,29 +680,6 @@
         font-size: 14px;
       }
 
-      .achievement-index {
-        padding: 44px 0 64px;
-      }
-
-      .achievement-index__lead {
-        font-size: 14px;
-      }
-
-      .achievement-card__heading {
-        padding: 19px 18px;
-      }
-
-      .achievement-card__list {
-        padding: 0 18px;
-      }
-
-      .achievement-card__item {
-        padding: 17px 0;
-      }
-
-      .achievement-card__item h4 {
-        font-size: 16px;
-      }
 
       .company-contact {
         padding: 60px 0;
@@ -556,7 +690,7 @@
         min-width: 0;
       }
     }
-  </style>
+</style>
 </head>
 
 <body>
@@ -615,7 +749,7 @@
             </h2>
 
             <figure class="representative-message__photo">
-              <img src="kaisyashokai.jpg" alt="株式会社HELMIO 代表 新島麻生">
+              <img src="S__27566083.jpg" alt="株式会社HELMIO 代表 新島麻生">
             </figure>
           </div>
 
@@ -703,98 +837,409 @@
         <header class="achievement-index__header">
           <div>
             <p class="achievement-index__eyebrow">ACHIEVEMENTS</p>
-            <h2 id="achievement-index-title">主な実績</h2>
+            <h2 id="achievement-index-title">実績一覧</h2>
           </div>
-          <p class="achievement-index__lead">
-            企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績
-          </p>
+          <div>
+            <p class="achievement-index__lead">
+              企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績を分野別に掲載しています。
+            </p>
+            <p class="achievement-index__note">
+              ※掲載実績には、株式会社HELMIO設立以前に、代表者および参画プロフェッショナルが個人として担当した案件を含みます。
+            </p>
+          </div>
         </header>
 
-        <div class="achievement-index__grid">
-          <article class="achievement-card">
-            <div class="achievement-card__heading">
-              <span class="achievement-card__number">01</span>
-              <h3>政治・パブリック</h3>
-            </div>
-            <ul class="achievement-card__list">
-              <li class="achievement-card__item">
-                <h4>2024年 総裁選候補者</h4>
-                <p>表現・スピーチ指導</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>国会議員</h4>
-                <p>演説・登壇サポート</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>内閣官房オリンピック・パラリンピックレガシー推進室</h4>
-                <p>TOKYO 2020レガシー関連イベント</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>経済産業省</h4>
-                <p>アトツギ甲子園・ピッチコンテスト</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>経団連</h4>
-                <p>大企業経営層・人事担当者向けセミナー</p>
-              </li>
-            </ul>
-          </article>
+        <nav class="achievement-jump-list" aria-label="実績カテゴリー一覧">
+          <a href="#achievement-01">
+            <span class="achievement-jump-list__number">01</span>
+            <span class="achievement-jump-list__title">政治・行政・企業コミュニケーション</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-02">
+            <span class="achievement-jump-list__number">02</span>
+            <span class="achievement-jump-list__title">企業イベント・カンファレンス</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-03">
+            <span class="achievement-jump-list__number">03</span>
+            <span class="achievement-jump-list__title">展示会</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-04">
+            <span class="achievement-jump-list__number">04</span>
+            <span class="achievement-jump-list__title">式典・新製品発表会</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-05">
+            <span class="achievement-jump-list__number">05</span>
+            <span class="achievement-jump-list__title">セミナー・オンライン配信</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-06">
+            <span class="achievement-jump-list__number">06</span>
+            <span class="achievement-jump-list__title">テレビ・キャスター・リポーター</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-07">
+            <span class="achievement-jump-list__number">07</span>
+            <span class="achievement-jump-list__title">スポーツ</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-08">
+            <span class="achievement-jump-list__number">08</span>
+            <span class="achievement-jump-list__title">ラジオ</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-09">
+            <span class="achievement-jump-list__number">09</span>
+            <span class="achievement-jump-list__title">企業VP・ナレーション・MA</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-10">
+            <span class="achievement-jump-list__number">10</span>
+            <span class="achievement-jump-list__title">広告・CM・モデル</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+          <a href="#achievement-11">
+            <span class="achievement-jump-list__number">11</span>
+            <span class="achievement-jump-list__title">トークショー</span>
+            <span class="achievement-jump-list__arrow" aria-hidden="true">↓</span>
+          </a>
+        </nav>
 
-          <article class="achievement-card">
-            <div class="achievement-card__heading">
-              <span class="achievement-card__number">02</span>
-              <h3>企業コミュニケーション</h3>
-            </div>
-            <ul class="achievement-card__list">
-              <li class="achievement-card__item">
-                <h4>笹川平和財団</h4>
-                <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>大阪・関西万博</h4>
-                <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベント</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>Jリーグアウォーズ</h4>
-              </li>
-              <li class="achievement-card__item">
-                <h4>企業イベント・カンファレンス</h4>
-                <p>Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・Seiko・ZTE Japan・Audi ほか</p>
-              </li>
-              <li class="achievement-card__item">
-                <h4>ベンチャー企業</h4>
-                <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
-              </li>
-            </ul>
-          </article>
-
-          <article class="achievement-card">
-            <div class="achievement-card__heading">
-              <span class="achievement-card__number">03</span>
-              <h3>報道・メディア</h3>
-            </div>
-            <ul class="achievement-card__list">
-              <li class="achievement-card__item"><h4>NHK</h4></li>
-              <li class="achievement-card__item"><h4>TBS「Nスタ」</h4></li>
-              <li class="achievement-card__item"><h4>KBS京都</h4></li>
-              <li class="achievement-card__item"><h4>J:COM「LIVE news」</h4></li>
-              <li class="achievement-card__item"><h4>サンテレビ、CS、BS等</h4></li>
-            </ul>
-          </article>
-
-          <article class="achievement-card">
-            <div class="achievement-card__heading">
-              <span class="achievement-card__number">04</span>
-              <h3>企業VP・広告出演</h3>
-            </div>
-            <ul class="achievement-card__list">
-              <li class="achievement-card__item"><h4>日立ソリューションズ</h4></li>
-              <li class="achievement-card__item"><h4>オリックス自動車</h4></li>
-              <li class="achievement-card__item"><h4>JCB</h4></li>
-              <li class="achievement-card__item"><h4>KDDI・大正製薬「アライ」</h4></li>
-              <li class="achievement-card__item"><h4>YA-MAN・ニトリ・セキスイハイム</h4></li>
-            </ul>
-          </article>
+        <div class="achievement-archive">
+        <article class="achievement-detail" id="achievement-01" aria-labelledby="achievement-01-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">01</span>
+            <h3 id="achievement-01-title">政治・行政・企業コミュニケーション</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>2024年 総裁選候補者／表現・スピーチ指導</li>
+            <li>国会議員／演説・登壇サポート</li>
+            <li>内閣官房オリンピック・パラリンピックレガシー推進室主催イベント「大会を契機とした取り組みとレガシー〜TOKYO 2020〜」</li>
+            <li>経済産業省主催ピッチコンテスト「アトツギ甲子園」</li>
+            <li>経団連主催「大企業経営層・人事担当者向けセミナー」</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-02" aria-labelledby="achievement-02-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">02</span>
+            <h3 id="achievement-02-title">企業イベント・カンファレンス</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>大阪・関西万博 BLUE OCEAN DOME／ファシリテーター</li>
+            <li>大阪・関西万博 世界海の日特別イベント「広げよう海の恵み、つなげよう未来と世界へ」／MatsuriステージMC</li>
+            <li>Google Cloud Next Tokyo 2024・2025／MC</li>
+            <li>Google Cloud Next Leaders Circle／MC</li>
+            <li>PwC All Staff Meeting／MC</li>
+            <li>Gartner デジタル・ワークプレース サミット／MC</li>
+            <li>Gartner CIO Leadership Forum／MC</li>
+            <li>Gartner シンポジウム 2024／MC</li>
+            <li>Nikkei BP Executive Women カンファレンス／MC</li>
+            <li>J-MONEYカンファレンス／MC</li>
+            <li>Panasonic・パナソニックコネクト／イベントMC</li>
+            <li>ENEOSパビリオン／MC</li>
+            <li>大塚商会 実践ソリューションフェア／MC</li>
+            <li>freee TOGO World 2024／MC</li>
+            <li>セイコーゴールデングランプリ陸上2024／MC</li>
+            <li>dynabook35周年イベント／MC</li>
+            <li>NHK技研／MC</li>
+            <li>ASUSイベント／MC</li>
+            <li>KENWOODイベント／MC</li>
+            <li>シチズン時計プロモーション／MC</li>
+            <li>タカラトミー商談会／MC</li>
+            <li>キノコ伝説 勇者と魔法のランプ イベント／MC</li>
+            <li>声優朗読劇 フォアレーゼン千葉柏公演／MC</li>
+            <li>第39回・第40回 横浜港カッターレース／MC</li>
+            <li>朝日杯将棋オープン戦 名古屋対局／MC</li>
+            <li>株式会社ALLULE セミナー／MC</li>
+            <li>文京区都市交流フェスタ／MC</li>
+            <li>ディスカバー沖縄 in 羽田空港／MC</li>
+            <li>水かけまつり＆ワールドフェスタ／ステージMC</li>
+            <li>SATORI株式会社／MC</li>
+            <li>NTTコミュニケーションズ／ナレーター</li>
+            <li>野村不動産／ナレーター</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-03" aria-labelledby="achievement-03-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">03</span>
+            <h3 id="achievement-03-title">展示会</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>Japan Mobility Show 2025／主催者ステージMC・ナレーター</li>
+            <li>東京オートサロン／SUZUKIブースMC</li>
+            <li>大阪オートメッセ／SUZUKIブースMC</li>
+            <li>BMW</li>
+            <li>OMRON</li>
+            <li>大塚商会</li>
+            <li>JTBグループ</li>
+            <li>ツーリズムEXPO関西</li>
+            <li>Canon（CP＋）</li>
+            <li>DAIHEN</li>
+            <li>安藤ハザマ</li>
+            <li>国際福祉機器展／SUZUKIブースMC</li>
+            <li>Kawasaki KAZEギャル／MC</li>
+            <li>ドラッグストアショー／クラシエブースMC</li>
+            <li>ドラッグストアショー／hoyuブースMC</li>
+            <li>HVAC＆R／東京ガスブースMC</li>
+            <li>スマート工場EXPO／エレコムブースMC</li>
+            <li>リテールテック／東芝テックブースMC・役者</li>
+            <li>CETEC／デルタ電子ブースMC</li>
+            <li>働き方改革EXPO／リコージャパンブースMC</li>
+            <li>エコプロ／アイシティブースMC</li>
+            <li>第13回インターペット／旭化成ブースMC</li>
+            <li>Inter BEE／池上通信機ブースMC（2023・2024）</li>
+            <li>Interop Tokyo／NTTコミュニケーションズ</li>
+            <li>JIMTOF／ダイジェット工業ブースMC</li>
+            <li>ハイウェイテクノフェア／飛島建設ブースMC（2023・2024・2025）</li>
+            <li>プラントメンテナンスショー／高田工業所ブース ナレーター（2023・2024・2025）</li>
+            <li>SEMICON Japan 2024／高田工業所ブース ナレーター</li>
+            <li>国際物流総合展 2022／ブラザー販売ブースMC</li>
+            <li>教育ITソリューションEXPO／DynabookブースMC</li>
+            <li>メカトロテックジャパン／イスカルジャパンブースMC</li>
+            <li>FISMA TOKYO／川上製作所ブース ナレーター</li>
+            <li>地方自治情報化推進フェア／UiPathブースMC</li>
+            <li>インターフェックス／フジシールブースMC</li>
+            <li>インターフェックス／ダルトンブースMC</li>
+            <li>TOKYO PACK 2022／レンゴーブースMC</li>
+            <li>IGAS／ジクスブース ナレーター</li>
+            <li>ENEX／関電ファシリティーズブースMC</li>
+            <li>ブロックチェーンEXPO 2022・2023／パラミックスブースMC</li>
+            <li>資産運用EXPO／スカイコートブースMC</li>
+            <li>名古屋プラスチック工業展／東洋機械金属ブースMC</li>
+            <li>ダイカスト展／東洋機械金属ブースMC</li>
+            <li>コールセンター／CRM デモ＆コンファレンス／MC</li>
+            <li>外食ウィーク／エフ・エスブースMC</li>
+            <li>BATTERY JAPAN／LBHunetブースMC</li>
+            <li>MF-TOKYO／ゼロフォーブースMC</li>
+            <li>ロジスティクスソリューションフェア／日本通運ブースMC</li>
+            <li>JASIS／主催者ブースMC（2024・2025）</li>
+            <li>建築・建材展／光触媒工業会ブースMC</li>
+            <li>CRPI-EXPO／EngconブースMC</li>
+            <li>MF-TOKYO／旭精機工業ブースMC</li>
+            <li>製造業人手不足対策EXPO／日総工産ブース ナレーター</li>
+            <li>知財・情報フェア＆コンファレンス／アクアプラネットブース</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-04" aria-labelledby="achievement-04-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">04</span>
+            <h3 id="achievement-04-title">式典・新製品発表会</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>TOYOTA 新車発表会／司会</li>
+            <li>いすゞ自動車株式会社 新車発表会／司会</li>
+            <li>ZTE Japan 新製品発表会／司会</li>
+            <li>ヤマハ発動機 新製品発表会／MC</li>
+            <li>ウエルシア 新ブランド発表会／MC</li>
+            <li>JTB入社式（2023年〜）／司会</li>
+            <li>ダンロップフェニックストーナメント前夜祭／司会</li>
+            <li>茨城県×宇宙ベンチャー発表会「イバラキ・スペース」／司会</li>
+            <li>商船三井クルーズ×JTB 連携協定発表会／司会</li>
+            <li>一般財団法人大阪国際経済振興センター30周年記念パーティ／司会</li>
+            <li>神戸ダイハツ自動車 社内表彰式／司会</li>
+            <li>2023年度 グッドデザイン・ニューホープ賞 最終審査会／司会</li>
+            <li>プレナス大学 開校式／司会</li>
+            <li>ソニー生命 社内表彰式／司会</li>
+            <li>株式会社ケミカル工事 50周年式典／司会</li>
+            <li>株式会社BDS HOLDINHS 顧客招待イベント／MC</li>
+            <li>習志野市シルバー人材センター 40周年記念式典／司会</li>
+            <li>三菱ケミカル Science &amp; Innovation Center 本棟お披露目見学ツアー／MC</li>
+            <li>東京ガスまわりテクニカルコンテスト表彰式／MC</li>
+            <li>三菱電機「Serendie Street YIMP」オープニングイベント／MC</li>
+            <li>JA共済 書道・交通安全ポスターコンクール表彰式／司会</li>
+            <li>Daigasエナジー 価値創造セミナー／MC</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-05" aria-labelledby="achievement-05-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">05</span>
+            <h3 id="achievement-05-title">セミナー・オンライン配信</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>Googleセミナー／司会</li>
+            <li>バイオフィリア オンラインセミナー／MC</li>
+            <li>Panasonic／オンラインMC</li>
+            <li>CP＋ 主催者ステージ／MC</li>
+            <li>日経xwoman・日経ヘルスセミナー／MC</li>
+            <li>日経IR・個人投資家フェアセミナー／MC</li>
+            <li>日経主催「営業DX最前線―成果につながるデジタル活用の要点」／MC</li>
+            <li>デジタルアーツ パートナーミーティング／MC</li>
+            <li>サントリーホールディングス／オンラインMC</li>
+            <li>Miro Japan／セミナーMC</li>
+            <li>SoftBank／セミナーMC</li>
+            <li>株式会社NEWSTAR／セミナーMC</li>
+            <li>株式会社スウェージロック・ジャパン／セミナーMC</li>
+            <li>タニウム合同会社／セミナーMC</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-06" aria-labelledby="achievement-06-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">06</span>
+            <h3 id="achievement-06-title">テレビ・キャスター・リポーター</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>NHK スポーツキャスター</li>
+            <li>NHK Eテレ 小学生ボッチャ競技会／進行MC</li>
+            <li>KBS京都／ニュースキャスター</li>
+            <li>TBS「Nスタ」／番組出演</li>
+            <li>J:COM「LIVE news」／リポーター</li>
+            <li>J:COM「つながるセブン」</li>
+            <li>J:COM「湘南デイリーニュース」</li>
+            <li>J:COM IBSA柔道 東京国際オープントーナメント大会</li>
+            <li>サンテレビ「NEWS×情報キャッチ＋」／リポーター</li>
+            <li>サンテレビ「日本財団 海と日本PROJECT in ひょうご 海LIVE」／リポーター</li>
+            <li>笹川平和財団「ブルーエコノミー」レポーター</li>
+            <li>船橋競馬パドック中継</li>
+            <li>CS放送 平塚競輪</li>
+            <li>スカパー</li>
+            <li>BS「ONSEN女子旅」／リポーター</li>
+            <li>さんふらわあ ツアーリポート</li>
+            <li>Audi「チャージハブ」／リポーター</li>
+            <li>FOODEX 美食女子／リポーター</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-07" aria-labelledby="achievement-07-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">07</span>
+            <h3 id="achievement-07-title">スポーツ</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>Jリーグアウォーズ 2023〜2025／MC</li>
+            <li>ヴィッセル神戸 二冠優勝パーティ／司会</li>
+            <li>セレッソ大阪 パブリックビューイング＆選手トークショー／MC</li>
+            <li>三井不動産プレゼンツ サッカー日本代表戦パブリックビューイング／MC</li>
+            <li>YBSルヴァンカップ／リポーター</li>
+            <li>ダンロップフェニックストーナメント前夜祭／司会</li>
+            <li>docomo公式ゴルフコンテンツ「東大ゴルフ塾」／リポーター</li>
+            <li>URBAN FUTURES presented by livedoor／リポーター＆インタビュアー</li>
+            <li>TALENT SHOWCASE ラクロス＆アメリカンフットボールイベントトークショー／MC</li>
+            <li>セイコーゴールデングランプリ陸上2024／MC</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-08" aria-labelledby="achievement-08-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">08</span>
+            <h3 id="achievement-08-title">ラジオ</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>MBSラジオ「ええかげんにせぇ！」／リポーター</li>
+            <li>宮崎放送／ラジオパーソナリティ</li>
+            <li>FM湘南ナパサ</li>
+            <li>レディオ湘南「GOOD MORNING」</li>
+            <li>FM横浜</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-09" aria-labelledby="achievement-09-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">09</span>
+            <h3 id="achievement-09-title">企業VP・ナレーション・MA</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>積水ハウス 新施設紹介／MC</li>
+            <li>全国賃貸不動産管理業業界／進行MC</li>
+            <li>メディカル・コンシェルジュ 企業説明動画</li>
+            <li>大阪中小企業投資育成株式会社 デジタルサイネージ用映像</li>
+            <li>クラウズ・スパイス社</li>
+            <li>株式会社エスエナジー</li>
+            <li>自社ローンの窓口</li>
+            <li>Kredo</li>
+            <li>楽トス</li>
+            <li>オリックス自動車 社内研修用動画／ナビゲーター</li>
+            <li>ルーシッドCM／MA</li>
+            <li>日本金融政策公庫 団体信用生命保険／MA</li>
+            <li>アクアプラネット／MA</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-10" aria-labelledby="achievement-10-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">10</span>
+            <h3 id="achievement-10-title">広告・CM・モデル</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>日立ソリューションズ／タクシー広告</li>
+            <li>KDDI／WEB広告</li>
+            <li>東京インテリア／テレビCM</li>
+            <li>宮城県入浴施設 愛子天空の湯 そよぎの杜／テレビCM</li>
+            <li>JCB／テレビ・インフォマーシャル</li>
+            <li>美容機器メーカー YA-MAN／WEB・店頭</li>
+            <li>ニトリ／WEB・ルームウェアモデル</li>
+            <li>セキスイハイム／広告パンフレット</li>
+            <li>オンライン家庭教師メガスタ／WEB広告</li>
+            <li>さんふらわあ／駅サイネージ・パンフレット</li>
+            <li>大正製薬「アライ」／WEB広告</li>
+            <li>鈴茂器工／WEB・スチール</li>
+            <li>大阪工業大学／テレビ・インフォマーシャル</li>
+            <li>日経スペシャル「もしものマネー道 もしマネ」JCBインフォマーシャル</li>
+            <li>アデランス広告モデル（日本・中国・香港・台湾・タイ・シンガポール）</li>
+            <li>湘南ガールコンテスト／準グランプリ</li>
+            <li>飛馬日本 atelier * momo&amp;momo／アパレルモデル</li>
+            <li>アトリエ木下／着物モデル</li>
+            <li>富士フイルム 写真展／イメージモデル</li>
+            <li>渋谷植村スタジオ／モデル</li>
+            <li>Brocade 7月号／表紙</li>
+            <li>ORICON マウスケア商品／WEBモデル</li>
+            <li>Nikon／和装ウエディングモデル</li>
+            <li>シンガポール カメラ雑誌／表紙</li>
+            <li>戦国炎舞／WEB CM</li>
+            <li>オリエンタルランド 春キャン／モデル</li>
+            <li>CP＋ ケンコー・トキナーステージ／モデル</li>
+            <li>雑誌「ハイエースfan」／表紙</li>
+            <li>株式会社イトーキ オフィス家具カタログ／モデル</li>
+            <li>TGC NY STATE Bags／広告動画モデル</li>
+            <li>ワタミ／広告モデル</li>
+            <li>クラウズ・スパイス社／広告モデル</li>
+            <li>第一興商／広告モデル</li>
+            <li>カワサキバイクマガジン／モデル</li>
+            <li>ソフトバンク／広告モデル</li>
+            <li>ソフトバンク 新商品プレス向け発表会／モデル</li>
+            <li>O-net／広告モデル</li>
+            <li>横浜リーフみなとみらい検診クリニック／広告モデル</li>
+            <li>飛島建設／広告モデル</li>
+            <li>株式会社エフ・オー・プランニング／HPモデル</li>
+            <li>KADOKAWA オリジナルバッグ新商品／モデル</li>
+            <li>KADOKAWA 腕時計／モデル</li>
+            <li>TVCM「アデランスヘアアップa」／施術士役</li>
+            <li>dazzshop_official／メイク動画モデル</li>
+            <li>日産自動車「SAKURA」紹介動画／モデル</li>
+            <li>KING JIM 新商品発表会／モデル</li>
+            <li>Inter BEE 2022 富士フイルム／被写体モデル</li>
+            <li>ソフトバンクC&amp;S「Poly」動画／役者</li>
+            <li>ボートレース津／キャンペーンモデル</li>
+            <li>パーソルHRパートナーズ／モデル</li>
+            <li>ワールドプラスジム／HPモデル</li>
+            <li>FOODEX 美食女子／モデル</li>
+            <li>リテールテックJAPAN 東芝テック／ステージモデル</li>
+            <li>エミニナル矯正／YouTube出演</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
+        <article class="achievement-detail" id="achievement-11" aria-labelledby="achievement-11-title">
+          <header class="achievement-detail__header">
+            <span class="achievement-detail__number">11</span>
+            <h3 id="achievement-11-title">トークショー</h3>
+          </header>
+          <ul class="achievement-detail__list">
+            <li>西野七瀬さん・松下奈緒さん・柴田理恵さん・武井壮さん・佐久間宣之さん・福田正博さんほか／トークショーMC</li>
+            <li>マセラティ 武井壮さんトークショー／MC</li>
+            <li>BMW 全国キャラバン・荒聖次さんゲストトークショー／MC</li>
+            <li>バカルディ・ジャパン ウイスキー試飲会／MC</li>
+            <li>セイコーゴールデングランプリ陸上2024 セイコーブース／トークショーMC</li>
+            <li>ウエルシア 新ブランド発表会／トークショーMC</li>
+            <li>dynabook35周年イベント 伊沢拓司さんトークショー／MC</li>
+          </ul>
+          <a class="achievement-detail__back" href="#achievement-index">実績一覧へ戻る</a>
+        </article>
         </div>
       </div>
     </section>
