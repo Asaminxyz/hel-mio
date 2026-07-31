@@ -1576,6 +1576,208 @@ body.pr-diagnosis-modal-open {
   opacity: 0.68;
 }
 
+
+
+/* ==============================
+   HOME ACHIEVEMENTS — company card design
+============================== */
+.home-achievements {
+  padding: 76px 0 88px;
+  background: #f8f5ef;
+  border-top: 1px solid rgba(177, 138, 67, 0.18);
+  border-bottom: 1px solid rgba(177, 138, 67, 0.18);
+  scroll-margin-top: 90px;
+}
+
+.home-achievements__inner {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.home-achievements__header {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.home-achievements__eyebrow {
+  margin: 0 0 10px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.24em;
+}
+
+.home-achievements__header h2 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(30px, 4vw, 45px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.home-achievements__lead {
+  margin: 0;
+  color: #424c55;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.home-achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.home-achievement-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(16, 47, 82, 0.12);
+  border-radius: 15px;
+  box-shadow: 0 12px 32px rgba(16, 47, 82, 0.045);
+}
+
+.home-achievement-card__heading {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 22px 24px;
+  background: #102f52;
+  color: #ffffff;
+}
+
+.home-achievement-card__number {
+  color: #d8bd83;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.home-achievement-card__heading h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.home-achievement-card__list {
+  margin: 0;
+  padding: 0 24px;
+  list-style: none;
+}
+
+.home-achievement-card__item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.12);
+}
+
+.home-achievement-card__item:last-child {
+  border-bottom: 0;
+}
+
+.home-achievement-card__item h4 {
+  margin: 0;
+  color: #303940;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.home-achievement-card__item p {
+  margin: 5px 0 0;
+  color: #4f5962;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.home-achievements__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.home-achievements__more a {
+  display: inline-flex;
+  min-width: 260px;
+  min-height: 58px;
+  padding: 14px 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #ffffff;
+  background: #102f52;
+  border: 1px solid #102f52;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.home-achievements__more a:hover {
+  background: #0a2948;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .home-achievements__header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-achievements__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-achievements {
+    padding: 58px 0 68px;
+  }
+
+  .home-achievements__inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .home-achievements__header {
+    margin-bottom: 28px;
+  }
+
+  .home-achievements__lead {
+    font-size: 14px;
+  }
+
+  .home-achievement-card__heading {
+    padding: 19px 18px;
+  }
+
+  .home-achievement-card__list {
+    padding: 0 18px;
+  }
+
+  .home-achievement-card__item {
+    padding: 17px 0;
+  }
+
+  .home-achievement-card__item h4 {
+    font-size: 16px;
+  }
+
+  .home-achievements__more a {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1601,7 +1803,7 @@ body.pr-diagnosis-modal-open {
 <a href="#service">
           サービス
         </a>
-<a href="company.html#achievement-index">
+<a href="#works">
           実績
         </a>
 <a href="#talent">
@@ -1775,164 +1977,116 @@ body.pr-diagnosis-modal-open {
 <!-- ==============================
      SELECTED EXPERIENCE
 ============================== -->
-<section class="helmio-showcase" id="works">
-  <div class="helmio-showcase__inner">
-
-    <header class="helmio-showcase__heading">
-      <p class="helmio-showcase__eyebrow">WORKS</p>
-
-      <h2 class="helmio-showcase__title">
-        実績の一部
-      </h2>
-
-      <p class="helmio-showcase__lead">
+<section class="home-achievements" id="works" aria-labelledby="home-achievements-title">
+  <div class="home-achievements__inner">
+    <header class="home-achievements__header">
+      <div>
+        <p class="home-achievements__eyebrow">WORKS</p>
+        <h2 id="home-achievements-title">主な実績</h2>
+      </div>
+      <p class="home-achievements__lead">
         政治・行政、企業コミュニケーション、報道、企業映像・広告など、<br>
         幅広い領域でコミュニケーションを支援しています。
       </p>
     </header>
 
-    <div class="helmio-showcase__layout">
-      <div class="helmio-showcase__column">
-        <!-- 01 政治・パブリック -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">01</span>
-          <div>
-            <h3>政治・パブリック</h3>
-          </div>
+    <div class="home-achievements__grid">
+      <article class="home-achievement-card">
+        <div class="home-achievement-card__heading">
+          <span class="home-achievement-card__number">01</span>
+          <h3>政治・パブリック</h3>
         </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item">
+        <ul class="home-achievement-card__list">
+          <li class="home-achievement-card__item">
             <h4>2024年 総裁選候補者</h4>
             <p>表現・スピーチ指導</p>
-          </div>
-
-          <div class="helmio-showcase__item">
+          </li>
+          <li class="home-achievement-card__item">
             <h4>国会議員</h4>
             <p>演説・登壇サポート</p>
-          </div>
-
-          <div class="helmio-showcase__item">
+          </li>
+          <li class="home-achievement-card__item">
             <h4>内閣官房オリンピック・パラリンピックレガシー推進室</h4>
             <p>TOKYO 2020レガシー関連イベント</p>
-          </div>
-
-          <div class="helmio-showcase__item">
+          </li>
+          <li class="home-achievement-card__item">
             <h4>経済産業省</h4>
             <p>アトツギ甲子園・ピッチコンテスト</p>
-          </div>
-
-          <div class="helmio-showcase__item">
+          </li>
+          <li class="home-achievement-card__item">
             <h4>経団連</h4>
             <p>大企業経営層・人事担当者向けセミナー</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </article>
 
-        <!-- 03 報道・メディア -->
-      <article class="helmio-showcase__card">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">03</span>
-          <div>
-            <h3>報道・メディア</h3>
-          </div>
+      <article class="home-achievement-card">
+        <div class="home-achievement-card__heading">
+          <span class="home-achievement-card__number">02</span>
+          <h3>企業コミュニケーション</h3>
         </div>
-
-        <div class="helmio-showcase__list">
-          <div class="helmio-showcase__item"><h4>NHK</h4></div>
-          <div class="helmio-showcase__item"><h4>TBS「Nスタ」</h4></div>
-          <div class="helmio-showcase__item"><h4>KBS京都</h4></div>
-          <div class="helmio-showcase__item"><h4>J:COM「LIVE news」</h4></div>
-          <div class="helmio-showcase__item"><h4>サンテレビ、CS、BS等</h4></div>
-        </div>
-      </article>
-      </div>
-
-      <div class="helmio-showcase__column">
-        <!-- 02 企業コミュニケーション -->
-      <article class="helmio-showcase__card helmio-showcase__card--wide">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">02</span>
-          <div>
-            <h3>企業コミュニケーション</h3>
-          </div>
-        </div>
-
-        <div class="helmio-showcase__rows">
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>笹川平和財団</h4>
-            </div>
+        <ul class="home-achievement-card__list">
+          <li class="home-achievement-card__item">
+            <h4>笹川平和財団</h4>
             <p>「ブルーエコノミー」に関する広報・PR、現地リポート</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>大阪・関西万博</h4>
-            </div>
+          </li>
+          <li class="home-achievement-card__item">
+            <h4>大阪・関西万博</h4>
             <p>BLUE OCEAN DOMEファシリテーター・世界海の日イベント</p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>Jリーグアウォーズ</h4></div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>企業イベント・カンファレンス</h4>
-            </div>
-            <p>
-              Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・
-              Seiko・ZTE Japan・Audi ほか
-            </p>
-          </div>
-
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>ベンチャー企業</h4>
-            </div>
+          </li>
+          <li class="home-achievement-card__item">
+            <h4>Jリーグアウォーズ</h4>
+            <p>2023〜2025 MC</p>
+          </li>
+          <li class="home-achievement-card__item">
+            <h4>企業イベント・カンファレンス</h4>
+            <p>Panasonic・PwC・Gartner・日経BP・TOYOTA・ENEOS・Seiko・ZTE Japan・Audi ほか</p>
+          </li>
+          <li class="home-achievement-card__item">
+            <h4>ベンチャー企業</h4>
             <p>展示会出展企画・訴求設計・プレゼンテーション設計</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </article>
 
-        <!-- 04 企業VP・広告出演 -->
-      <article class="helmio-showcase__card helmio-showcase__card--wide">
-        <div class="helmio-showcase__card-heading">
-          <span class="helmio-showcase__card-number">04</span>
-          <div>
-            <h3>企業VP・広告出演</h3>
-          </div>
+      <article class="home-achievement-card">
+        <div class="home-achievement-card__heading">
+          <span class="home-achievement-card__number">03</span>
+          <h3>報道・メディア</h3>
         </div>
-
-        <div class="helmio-showcase__rows">
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>日立ソリューションズ</h4></div>
-          </div>
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>オリックス自動車</h4></div>
-          </div>
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>JCB</h4></div>
-          </div>
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>KDDI・大正製薬「アライ」</h4></div>
-          </div>
-          <div class="helmio-showcase__row">
-            <div class="helmio-showcase__row-title">
-              <h4>YA-MAN・ニトリ・セキスイハイム</h4></div>
-          </div>
-        </div>
+        <ul class="home-achievement-card__list">
+          <li class="home-achievement-card__item"><h4>NHK</h4></li>
+          <li class="home-achievement-card__item"><h4>TBS「Nスタ」</h4></li>
+          <li class="home-achievement-card__item"><h4>KBS京都</h4></li>
+          <li class="home-achievement-card__item"><h4>J:COM「LIVE news」</h4></li>
+          <li class="home-achievement-card__item"><h4>サンテレビ、CS、BS等</h4></li>
+        </ul>
       </article>
-      </div>
+
+      <article class="home-achievement-card">
+        <div class="home-achievement-card__heading">
+          <span class="home-achievement-card__number">04</span>
+          <h3>企業VP・広告出演</h3>
+        </div>
+        <ul class="home-achievement-card__list">
+          <li class="home-achievement-card__item"><h4>日立ソリューションズ</h4></li>
+          <li class="home-achievement-card__item"><h4>オリックス自動車</h4></li>
+          <li class="home-achievement-card__item"><h4>JCB</h4></li>
+          <li class="home-achievement-card__item"><h4>KDDI・大正製薬「アライ」</h4></li>
+          <li class="home-achievement-card__item"><h4>YA-MAN・ニトリ・セキスイハイム</h4></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="home-achievements__more">
+      <a href="company.html#achievement-index">
+        <span>実績をすべて見る</span>
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
+
 <!-- ==============================
          WHY HÉLMIO
     ============================== -->
