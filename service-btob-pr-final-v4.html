@@ -1,793 +1,651 @@
-<!DOCTYPE html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style id="newsroom-service-v3">
+/* =========================================================
+   SERVICE V3 — lightweight, no additional photographs
+   主役：発掘 → 設計 → 実装
+   下位：5つの実装領域
+========================================================= */
+.newsroom-service-v3 {
+  position: relative;
+  padding: 104px 0 112px;
+  overflow: hidden;
+  color: #263039;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(177, 138, 67, .08), transparent 27%),
+    linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+  border-top: 1px solid rgba(177, 138, 67, .18);
+  border-bottom: 1px solid rgba(177, 138, 67, .18);
+}
 
-<html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>専属ニュース室｜BtoB・技術企業の企業広報サービス｜HÉLMIO</title>
-<meta content="専属ニュース室は、記者・アナウンサーとマーケターが企業の社外広報チームとして伴走し、技術・実績・社会的価値を取材で発掘。ニュース設計を軸に、メディア発信、展示会、発表会、経営者発信まで支援します。" name="description"/>
-<link href="https://hel-mio.com/service-btob-pr-final-v4.html" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="ja_JP" property="og:locale"/>
-<meta content="専属ニュース室" property="og:site_name"/>
-<meta content="専属ニュース室｜企業専属の広報PRチーム" property="og:title"/>
-<meta content="専属ニュース室は、記者・アナウンサーとマーケターが企業の社外広報チームとして伴走し、技術・実績・社会的価値を取材で発掘。ニュース設計を軸に、メディア発信、展示会、発表会、経営者発信まで支援します。" property="og:description"/>
-<meta content="https://hel-mio.com/service-btob-pr-final-v4.html" property="og:url"/>
-<!-- 公開時に実画像へ差し替え -->
-<meta content="https://hel-mio.com/assets/images/ogp-btob-pr.jpg" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<style>
-    :root {
-      --wine: #102f52;
-      --wine-dark: #0a243f;
-      --wine-soft: #274a70;
-      --gold: #b18a43;
-      --cream: #fbfaf7;
-      --cream-2: #f2e5c5;
-      --paper: #ffffff;
-      --ink: #263039;
-      --muted: #687888;
-      --line: rgba(16, 47, 82, .18);
-      --shadow: 0 20px 50px rgba(16, 47, 82, .12);
-      --radius: 22px;
-      --content: 1160px;
-    }
+.newsroom-service-v3::before,
+.newsroom-service-v3::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(177, 138, 67, .10);
+  border-radius: 50%;
+  pointer-events: none;
+}
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans JP", sans-serif;
-      line-height: 1.85;
-      letter-spacing: .02em;
-    }
-    img { max-width: 100%; height: auto; }
-    a { color: inherit; }
-    button, input, select, textarea { font: inherit; }
+.newsroom-service-v3::before {
+  top: -170px;
+  right: -100px;
+}
 
-    .container {
-      width: min(calc(100% - 40px), var(--content));
-      margin-inline: auto;
-    }
+.newsroom-service-v3::after {
+  bottom: -190px;
+  left: -130px;
+}
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--wine);
-      font-size: .77rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
+.newsroom-service__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
 
-    h1, h2, h3 {
-      margin-top: 0;
-      font-family: "Noto Serif JP", serif;
-      line-height: 1.42;
-      letter-spacing: .035em;
-    }
-    h1 { font-size: clamp(2.15rem, 5vw, 4.45rem); }
-    h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
-    h3 { font-size: clamp(1.2rem, 2vw, 1.55rem); }
-    p { margin-top: 0; }
+.newsroom-service__header {
+  display: grid;
+  grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 52px;
+}
 
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid rgba(16, 47, 82, .1);
-      background: rgba(251, 250, 247, .92);
-      backdrop-filter: blur(16px);
-    }
-    .header-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-    .brand {
-      text-decoration: none;
-      font-family: "Noto Serif JP", serif;
-      font-size: 1.48rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      color: var(--wine);
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: .88rem;
-      font-weight: 600;
-    }
-    .nav a { text-decoration: none; }
+.newsroom-service__eyebrow {
+  margin: 0 0 12px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .24em;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 13px 24px;
-      border: 1px solid var(--wine);
-      border-radius: 999px;
-      background: var(--wine);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-      box-shadow: 0 10px 26px rgba(16, 47, 82, .18);
-    }
-    .btn:hover { transform: translateY(-2px); background: var(--wine-dark); }
-    .btn-ghost {
-      background: transparent;
-      color: var(--wine);
-      box-shadow: none;
-    }
-    .btn-small { min-height: 44px; padding: 9px 18px; font-size: .86rem; }
+.newsroom-service__header h2 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .035em;
+}
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 94px 0 88px;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto auto;
-      width: min(52vw, 760px);
-      height: 100%;
-      background:
-        radial-gradient(circle at 72% 30%, rgba(177,138,67,.22), transparent 27%),
-        radial-gradient(circle at 75% 60%, rgba(16,47,82,.18), transparent 35%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.14fr .86fr;
-      gap: 70px;
-      align-items: center;
-    }
-    .hero h1 { margin-bottom: 24px; color: var(--wine-dark); }
-    .hero h1 span { color: var(--wine); }
-    .hero-lead {
-      max-width: 680px;
-      margin-bottom: 28px;
-      font-size: 1.04rem;
-    }
-    .hero-catch {
-      display: inline-block;
-      margin: 0 0 28px;
-      padding-left: 18px;
-      border-left: 3px solid var(--gold);
-      color: var(--wine);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(1.1rem, 2vw, 1.45rem);
-      font-weight: 700;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-    .microcopy { width: 100%; color: var(--muted); font-size: .78rem; }
+.newsroom-service__lead {
+  margin: 0;
+  color: #3c4d5d;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
 
-    .score-card {
-      position: relative;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,.56);
-      border-radius: 28px;
-      background: rgba(255,255,255,.9);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-    }
-    .score-card::after {
-      content: "SAMPLE";
-      position: absolute;
-      top: 22px;
-      right: 22px;
-      color: var(--gold);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-    }
-    .score-top { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 20px; }
-    .score-number {
-      color: var(--wine);
-      font-family: "Noto Serif JP", serif;
-      font-size: 4.4rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .score-unit { padding-bottom: 9px; color: var(--muted); }
-    .score-summary { margin-bottom: 22px; font-weight: 700; }
-    .score-list { display: grid; gap: 13px; }
-    .score-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; font-size: .78rem; }
-    .bar { grid-column: 1 / -1; height: 6px; border-radius: 999px; background: var(--cream-2); overflow: hidden; }
-    .bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--wine), var(--gold)); }
+/* 3-step main service */
+.newsroom-service__process {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    .trust-strip {
-      padding: 18px 0;
-      background: var(--wine-dark);
-      color: #fff;
-    }
-    .trust-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 22px 38px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-    }
+.newsroom-service__step {
+  position: relative;
+  min-width: 0;
+  padding: 34px 30px 30px;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid rgba(177, 138, 67, .46);
+  border-radius: 20px;
+  box-shadow: 0 18px 42px rgba(16, 47, 82, .075);
+}
 
-    section { padding: 98px 0; }
-    .section-white { background: var(--paper); }
-    .section-wine { background: var(--wine-dark); color: #fff; }
-    .section-head { max-width: 780px; margin-bottom: 50px; }
-    .section-head p:last-child { margin-bottom: 0; }
+.newsroom-service__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: -39px;
+  width: 50px;
+  height: 18px;
+  transform: translateY(-50%);
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 18'%3E%3Cpath d='M1 9h43M36 2l8 7-8 7' fill='none' stroke='%23b18a43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
 
-    .pain-copy {
-      max-width: 850px;
-      margin-inline: auto;
-      text-align: center;
-    }
-    .pain-copy h2 { color: var(--wine-dark); }
-    .pain-lines {
-      display: grid;
-      gap: 4px;
-      margin: 28px 0;
-      font-size: clamp(1.06rem, 2.1vw, 1.32rem);
-      font-weight: 600;
-    }
-    .highlight-line {
-      margin: 34px auto 0;
-      color: var(--wine);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-      font-weight: 700;
-    }
+.newsroom-service__step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
 
-    .check-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .check-item {
-      position: relative;
-      padding: 19px 20px 19px 50px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: rgba(255,255,255,.48);
-      font-size: .93rem;
-    }
-    .check-item::before {
-      content: "✓";
-      position: absolute;
-      top: 18px;
-      left: 20px;
-      color: var(--wine);
-      font-weight: 800;
-    }
+.newsroom-service__number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+}
 
-    .diagnosis-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .diagnosis-sticky { position: sticky; top: 112px; }
-    .diagnosis-sticky h2 { color: #fff; }
-    .diagnosis-note {
-      margin-top: 26px;
-      padding: 19px 20px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 15px;
-      background: rgba(255,255,255,.06);
-      font-size: .86rem;
-    }
-    .diagnosis-cards { display: grid; gap: 16px; }
-    .diagnosis-card {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 18px;
-      padding: 24px;
-      border-radius: 18px;
-      background: #fff;
-      color: var(--ink);
-    }
-    .diagnosis-no {
-      color: var(--gold);
-      font-family: "Noto Serif JP", serif;
-      font-size: 1.55rem;
-      font-weight: 700;
-    }
-    .diagnosis-card h3 { margin-bottom: 7px; color: var(--wine-dark); }
-    .diagnosis-card p { margin-bottom: 0; font-size: .9rem; }
+.newsroom-service__number small {
+  color: #71808e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+}
 
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-    .flow-card {
-      padding: 26px 23px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--paper);
-    }
-    .flow-card .step { color: var(--wine); font-size: .74rem; font-weight: 700; letter-spacing: .16em; }
-    .flow-card h3 { margin: 9px 0 12px; }
-    .flow-card p { margin: 0; font-size: .87rem; }
+.newsroom-service__icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  color: #102f52;
+  background: #f2e5c5;
+  border-radius: 50%;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .service-card {
-      scroll-margin-top: 110px;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-    }
-    .service-no { color: var(--gold); font-family: "Noto Serif JP", serif; font-size: 1.1rem; font-weight: 700; }
-    .service-card h3 { margin: 16px 0 12px; color: var(--wine-dark); }
-    .service-card ul { margin: auto 0 0; padding-left: 1.25em; font-size: .87rem; }
+.newsroom-service__icon svg {
+  width: 29px;
+  height: 29px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-    .difference-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-    .difference-card {
-      padding: 28px;
-      border-top: 3px solid var(--gold);
-      background: rgba(255,255,255,.07);
-    }
-    .difference-card h3 { color: #fff; }
-    .difference-card p { margin-bottom: 0; color: rgba(255,255,255,.78); }
+.newsroom-service__step h3 {
+  margin: 0 0 14px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .025em;
+}
 
-    .experience-box {
-      padding: 38px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-    }
-    .logo-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0;
-    }
-    .logo-chip {
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: var(--cream-2);
-      color: var(--wine-dark);
-      font-size: .8rem;
-      font-weight: 700;
-    }
-    .note { color: var(--muted); font-size: .75rem; }
+.newsroom-service__step > p {
+  margin: 0;
+  color: #455563;
+  font-size: 14px;
+  line-height: 1.9;
+}
 
-    .faq { display: grid; gap: 12px; }
-    details {
-      padding: 0 22px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--paper);
-    }
-    summary {
-      cursor: pointer;
-      padding: 20px 34px 20px 0;
-      color: var(--wine-dark);
-      font-weight: 700;
-      list-style: none;
-    }
-    summary::-webkit-details-marker { display: none; }
-    details p { padding-bottom: 20px; margin-bottom: 0; }
+.newsroom-service__step ul {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(16, 47, 82, .12);
+}
 
-    .form-wrap {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 58px;
-      align-items: start;
-    }
-    .form-intro h2 { color: #fff; }
-    .form-points { margin: 25px 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-    .form-points li::before { content: "—"; margin-right: 8px; color: var(--gold); }
-    .form-card {
-      padding: 32px;
-      border-radius: 24px;
-      background: #fff;
-      color: var(--ink);
-      box-shadow: var(--shadow);
-    }
-    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
-    .field-full { grid-column: 1 / -1; }
-    label { display: block; margin-bottom: 7px; font-size: .82rem; font-weight: 700; }
-    .required { margin-left: 6px; color: var(--wine); font-size: .68rem; }
-    input, select, textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d9d1ce;
-      border-radius: 10px;
-      background: #fff;
-      color: var(--ink);
-    }
-    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(16,47,82,.18); border-color: var(--wine); }
-    .form-submit { width: 100%; margin-top: 20px; }
-    .privacy { margin: 12px 0 0; color: var(--muted); font-size: .72rem; text-align: center; }
+.newsroom-service__step li {
+  position: relative;
+  padding-left: 18px;
+  color: #26394b;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.65;
+}
 
-    .footer {
-      padding: 42px 0 94px;
-      background: #241820;
-      color: rgba(255,255,255,.74);
-    }
-    .footer-inner { display: flex; justify-content: space-between; gap: 28px; align-items: end; }
-    .footer .brand { color: #fff; }
-    .footer p { margin: 8px 0 0; font-size: .76rem; }
+.newsroom-service__step li::before {
+  content: "";
+  position: absolute;
+  top: .72em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  background: #b18a43;
+  border-radius: 50%;
+}
 
-    .mobile-cta { display: none; }
+/* Secondary implementation area */
+.newsroom-implementation {
+  margin-top: 72px;
+  padding-top: 54px;
+  border-top: 1px solid rgba(16, 47, 82, .16);
+}
 
-    @media (max-width: 900px) {
-      .nav a:not(.btn) { display: none; }
-      .hero { padding-top: 64px; }
-      .hero-grid, .diagnosis-grid, .form-wrap { grid-template-columns: 1fr; }
-      .hero-grid { gap: 44px; }
-      .score-card { max-width: 620px; }
-      .diagnosis-sticky { position: static; }
-      .flow, .services { grid-template-columns: repeat(2, 1fr); }
-      .flow-card:last-child, .service-card:last-child { grid-column: 1 / -1; }
-    }
+.newsroom-implementation__header {
+  display: grid;
+  grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
+  gap: 54px;
+  align-items: end;
+  margin-bottom: 34px;
+}
 
-    @media (max-width: 640px) {
-      body { line-height: 1.78; }
-      .container { width: min(calc(100% - 26px), var(--content)); }
-      .header-inner { min-height: 64px; }
-      .header .btn { display: none; }
-      .hero { padding: 54px 0 60px; }
-      .hero-actions { display: grid; }
-      .hero-actions .btn { width: 100%; }
-      .score-card { padding: 22px; }
-      section { padding: 72px 0; }
-      .check-grid, .flow, .services, .difference-grid, .form-grid { grid-template-columns: 1fr; }
-      .flow-card:last-child, .service-card:last-child { grid-column: auto; }
-      .diagnosis-card { grid-template-columns: 44px 1fr; padding: 20px; }
-      .experience-box, .form-card { padding: 24px 20px; }
-      .footer-inner { display: block; }
-      .mobile-cta {
-        position: fixed;
-        z-index: 60;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        display: block;
-      }
-      .mobile-cta .btn { width: 100%; min-height: 50px; }
-    }
-  </style>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://hel-mio.com/#organization",
-      "name": "株式会社HELMIO",
-      "legalName": "株式会社HELMIO",
-      "alternateName": [
-        "HÉLMIO",
-        "HELMIO",
-        "ヘルミオ"
-      ],
-      "url": "https://hel-mio.com/",
-      "logo": "https://hel-mio.com/assets/images/logo.png"
-    },
-    {
-      "@type": "Service",
-      "name": "専属ニュース室",
-      "url": "https://hel-mio.com/service-btob-pr-final-v4.html",
-      "provider": {
-        "@id": "https://hel-mio.com/#organization"
-      },
-      "areaServed": "JP",
-      "description": "専属ニュース室は、記者・アナウンサーとマーケターが企業の社外広報チームとして伴走し、技術・実績・社会的価値を取材で発掘。ニュース設計を軸に、メディア発信、展示会、発表会、経営者発信まで支援します。",
-      "serviceType": "BtoB・技術企業向け広報PR・企業コミュニケーション支援"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "まだプレスリリースを一度も出していなくても申し込めますか。",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい。発信実績がない企業の場合は、広報を始める前に整えるべき情報や、最初の発信テーマを整理します。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "BtoB企業や専門性の高い事業も対象ですか。",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "対象です。技術担当者や経営者への取材を通じて、専門性を損なわず、社外の人が理解できる表現へ整えます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "診断結果はどのように届きますか。",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "お申し込みから5営業日以内に、診断結果をPDFレポートにまとめ、ご登録のメールアドレスへお送りします。"
-          }
-        }
-      ]
-    }
-  ]
-}</script>
-<style>
-/* 専属ニュース室 brand adjustments */
-.header .brand { font-size: clamp(1.18rem, 2vw, 1.48rem); letter-spacing: .08em; white-space: nowrap; }
-.hero h1 > span { font-size: .58em; display: inline-block; margin-top: .35em; line-height: 1.55; }
-@media (max-width: 560px) { .header .brand { font-size: 1.08rem; } .hero h1 > span { font-size: .62em; } }
-</style></head>
-<body>
-<header class="header">
-<div class="container header-inner">
-<a aria-label="専属ニュース室 トップへ" class="brand" href="/">専属ニュース室</a>
-<nav aria-label="メインナビゲーション" class="nav">
-<a href="/">トップ</a>
-<a href="#service">サービス</a>
-<a href="#difference">特徴</a>
-<a href="#diagnosis">無料診断</a>
-<a class="btn btn-small" href="#diagnosis-form">無料でPRスコアを確認する</a>
-</nav>
-</div>
-</header>
-<main>
-<section class="hero">
-<div class="container hero-grid">
+.newsroom-implementation__header h3 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(28px, 3.1vw, 40px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.newsroom-implementation__header p {
+  margin: 0;
+  color: #536371;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.newsroom-implementation__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.newsroom-implementation__card {
+  grid-column: span 2;
+  position: relative;
+  min-height: 224px;
+  padding: 26px 24px 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(16, 47, 82, .16);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 47, 82, .05);
+}
+
+.newsroom-implementation__card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.newsroom-implementation__card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.newsroom-implementation__card::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -52px;
+  width: 132px;
+  height: 132px;
+  background: rgba(242, 229, 197, .62);
+  border-radius: 50%;
+}
+
+.newsroom-implementation__card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.newsroom-implementation__index {
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.newsroom-implementation__mini-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: #102f52;
+  background: #f8f3e8;
+  border: 1px solid rgba(177, 138, 67, .32);
+  border-radius: 50%;
+}
+
+.newsroom-implementation__mini-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.newsroom-implementation__card h4 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.newsroom-implementation__card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #4d5c69;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.newsroom-implementation__note {
+  margin: 24px 0 0;
+  color: #61707d;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.newsroom-service__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 46px;
+}
+
+.newsroom-service__actions a,
+.newsroom-service__actions button {
+  display: inline-flex;
+  min-width: 260px;
+  min-height: 58px;
+  padding: 14px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #102f52;
+  border-radius: 4px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .035em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+}
+
+.newsroom-service__actions .is-primary {
+  color: #fff;
+  background: #102f52;
+}
+
+.newsroom-service__actions .is-secondary {
+  color: #102f52;
+  background: #fff;
+}
+
+.newsroom-service__actions a:hover,
+.newsroom-service__actions button:hover {
+  transform: translateY(-1px);
+}
+
+.newsroom-service__actions .is-primary:hover {
+  background: #0a2948;
+}
+
+.newsroom-service__actions .is-secondary:hover {
+  background: #f8f3e8;
+}
+
+@media (max-width: 980px) {
+  .newsroom-service-v3 {
+    padding: 86px 0 94px;
+  }
+
+  .newsroom-service__header,
+  .newsroom-implementation__header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .newsroom-service__process {
+    gap: 16px;
+  }
+
+  .newsroom-service__step {
+    padding: 27px 22px 24px;
+  }
+
+  .newsroom-service__step h3 {
+    font-size: 21px;
+  }
+
+  .newsroom-service__step:not(:last-child)::after {
+    right: -25px;
+    width: 32px;
+  }
+
+  .newsroom-implementation__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsroom-implementation__card,
+  .newsroom-implementation__card:nth-child(4),
+  .newsroom-implementation__card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .newsroom-implementation__card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .newsroom-service-v3 {
+    padding: 66px 0 72px;
+  }
+
+  .newsroom-service__inner {
+    width: min(100% - 30px, 1180px);
+  }
+
+  .newsroom-service__header {
+    margin-bottom: 32px;
+  }
+
+  .newsroom-service__header h2 {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .newsroom-service__lead {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .newsroom-service__process {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .newsroom-service__step:not(:last-child)::after {
+    display: none;
+  }
+
+  .newsroom-service__step {
+    padding: 25px 21px 23px;
+    border-radius: 15px;
+  }
+
+  .newsroom-service__step-top {
+    margin-bottom: 18px;
+  }
+
+  .newsroom-service__step h3 {
+    font-size: 20px;
+  }
+
+  .newsroom-implementation {
+    margin-top: 54px;
+    padding-top: 40px;
+  }
+
+  .newsroom-implementation__header {
+    margin-bottom: 24px;
+  }
+
+  .newsroom-implementation__header h3 {
+    font-size: 27px;
+  }
+
+  .newsroom-implementation__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .newsroom-implementation__card,
+  .newsroom-implementation__card:last-child {
+    grid-column: auto;
+    min-height: 0;
+    padding: 22px 20px 21px;
+  }
+
+  .newsroom-implementation__card-top {
+    margin-bottom: 14px;
+  }
+
+  .newsroom-service__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+
+  .newsroom-service__actions a,
+  .newsroom-service__actions button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+</style><style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif;background:#fff}*{box-sizing:border-box}</style></head><body><section aria-labelledby="service-title" class="newsroom-service-v3" id="service">
+<div class="newsroom-service__inner">
+<div class="newsroom-service__header">
 <div>
-<p class="eyebrow">BtoB・技術企業向け 企業専属の広報PRチーム</p>
-<h1>専属ニュース室<br/><span>御社の中に、まだ発見されていないニュースがある。</span></h1>
-<p class="hero-lead">記者・アナウンサーとマーケターが、御社の社外広報チームとして伴走します。専任広報がいない企業にも、社内に広報機能はあるものの発信の軸が定まらない企業にも対応します。</p>
-<p class="hero-catch">取材で価値を見つけ、ニュースと次の行動へ。</p>
-<p class="hero-lead">企業の中に埋もれている技術、実績、変化、社会的価値を取材で発掘。独自のニュース設計を軸に、プレスリリースやメディア企画から、展示会、発表会、経営者発信まで一貫して支援します。</p>
-<div class="hero-actions">
-<a class="btn" href="#diagnosis-form">無料で自社のPRスコアを確認する</a>
-<a class="btn btn-ghost" href="#diagnosis">診断レポートの内容を見る</a>
-<span class="microcopy">入力約15秒｜必須4項目｜月5社限定｜5営業日以内にPDFで送付</span>
+<p class="newsroom-service__eyebrow">OUR SERVICE</p>
+<h2 id="service-title">取材で見つけ、ニュースに変え、<br>届く場まで実装する。</br></h2>
 </div>
+<p class="newsroom-service__lead">
+        専属ニュース室は、広報施策をばらばらに提供するサービスではありません。経営課題を起点に、企業の中に眠る事実を発掘し、発信の軸を設計。必要な手段を組み合わせ、事業成果につながる形で社会へ届けます。
+      </p>
 </div>
-<aside aria-label="PR診断レポートのサンプル" class="score-card">
-<p class="eyebrow">PR DIAGNOSIS REPORT</p>
-<div class="score-top">
-<span class="score-number">76</span>
-<span class="score-unit">/ 100</span>
+<ol class="newsroom-service__process">
+<li class="newsroom-service__step">
+<div class="newsroom-service__step-top">
+<span class="newsroom-service__number">01 <small>DISCOVER</small></span>
+<span aria-hidden="true" class="newsroom-service__icon">
+<svg viewbox="0 0 32 32"><circle cx="14" cy="14" r="8"></circle><path d="m20 20 7 7"></path><path d="M10 14h8M14 10v8"></path></svg>
+</span>
 </div>
-<p class="score-summary">広報資産はあるが、業界を代表する立場には未到達</p>
-<div class="score-list">
-<div class="score-row"><span>検索結果の第一印象</span><strong>12 / 15</strong><div class="bar"><span style="width:80%"></span></div></div>
-<div class="score-row"><span>公式サイト・ニュースルーム</span><strong>9 / 10</strong><div class="bar"><span style="width:90%"></span></div></div>
-<div class="score-row"><span>メディア露出・第三者評価</span><strong>11 / 15</strong><div class="bar"><span style="width:73%"></span></div></div>
-<div class="score-row"><span>ニュース性・社会との接続</span><strong>14 / 15</strong><div class="bar"><span style="width:93%"></span></div></div>
-</div>
-</aside>
-</div>
-</section>
-<div class="trust-strip">
-<div class="container">
-<ul class="trust-list">
-<li>元記者・アナウンサーによる分析</li>
-<li>公開情報から客観診断</li>
-<li>PDFレポートで納品</li>
-<li>契約を前提としない診断</li>
-</ul>
-</div>
-</div>
-<section class="section-white">
-<div class="container pain-copy">
-<p class="eyebrow">YOUR CHALLENGE</p>
-<h2>発信しているのに、<br/>事業の強さにつながらない。</h2>
-<div class="pain-lines">
-<span>説明しても違いが伝わらない。</span>
-<span>発信しても反応がない。</span>
-<span>展示会も名刺交換で終わってしまう。</span>
-</div>
-<p>問題は、発信量ではないかもしれません。何を強みとして、誰に、どんな文脈で伝えるのか。その位置が決まらないまま情報を増やしても、告知や製品説明の中に埋もれてしまいます。</p>
-<p class="highlight-line">広報施策を始める前に、「何の会社として知られるべきか」を整理する。</p>
-</div>
-</section>
-<section>
-<div class="container">
-<div class="section-head">
-<p class="eyebrow">IS THIS YOUR COMPANY?</p>
-<h2>このような状態に、心当たりはありませんか。</h2>
-</div>
-<div class="check-grid">
-<div class="check-item">技術やサービスを説明しても、結局価格で比較される</div>
-<div class="check-item">何をする会社なのか、一言で説明できない</div>
-<div class="check-item">プレスリリースを出したが、取材や問い合わせがない</div>
-<div class="check-item">展示会では人が集まっても、その後の商談につながらない</div>
-<div class="check-item">営業、採用、広報で、会社の説明がばらばらになっている</div>
-<div class="check-item">経営者や技術者の知見を、社外へ発信できていない</div>
-<div class="check-item">専任広報はいないが、継続的な発信体制をつくりたい</div>
-<div class="check-item">広報を始めたいが、最初に何をすべきか分からない</div>
-</div>
-</div>
-</section>
-<section id="service">
-<div class="container">
-<div class="section-head">
-<p class="eyebrow">専属ニュース室は、独自のニュース設計を軸に、価値の発掘から社会への実装まで3つの段階で支援します。</p>
-<h2>取材で見つけ、ニュースに変え、<br/>届く場まで実装する。</h2>
-<p>課題の整理から、社会への発信、人が伝える現場での実装まで。3つの領域で一貫して支援します。</p>
-</div>
-<div class="services">
-<article class="service-card" id="discovery">
-<span class="service-no">01</span>
 <h3>取材で価値を発掘する</h3>
 <p>経営者や技術者への取材を通じて、社内では当たり前になっている技術、実績、変化、思いを掘り起こします。</p>
-<ul><li>経営者・技術者への取材</li><li>事業の強みと社会的価値の整理</li><li>顧客・競合・業界の確認</li><li>代表者・専門家プロフィール整備</li><li>社内に眠る実績・データの棚卸し</li><li>ニュースの種の抽出</li></ul>
-</article>
-<article class="service-card" id="news-design">
-<span class="service-no">02</span>
+<ul>
+<li>経営者・技術者への取材</li>
+<li>強みと社会的価値の整理</li>
+<li>ニュースの種・データの棚卸し</li>
+</ul>
+</li>
+<li class="newsroom-service__step">
+<div class="newsroom-service__step-top">
+<span class="newsroom-service__number">02 <small>DESIGN</small></span>
+<span aria-hidden="true" class="newsroom-service__icon">
+<svg viewbox="0 0 32 32"><path d="M7 4h14l4 4v19H7z"></path><path d="M21 4v5h5M11 14h10M11 19h7"></path><path d="m19 25 7-7 3 3-7 7-4 1z"></path></svg>
+</span>
+</div>
 <h3>ニュース設計で、発信の軸をつくる</h3>
-<p>企業の事実と社会・業界の関心が重なる場所を整理し、誰に、何を、どの順番で伝えるかを設計します。</p>
-<ul><li>ニュースポジションの整理</li><li>発信テーマ・切り口の設計</li><li>コアメッセージの統一</li><li>広報企画・90日間の計画</li><li>プレスリリース企画</li><li>メディア向け企画書</li></ul>
-</article>
-<article class="service-card" id="delivery">
-<span class="service-no">03</span>
-<h3>メディアと人が伝える場へ届ける</h3>
-<p>ニュース設計を、メディア発信と、人が直接伝える現場の両方へ実装します。</p>
-<ul><li>プレスリリースの執筆・配信</li><li>メディアへの情報提供・取材対応</li><li>展示会の訴求・商談導線</li><li>新製品発表会・ステージ企画</li><li>経営者スピーチ・プレゼン</li><li>映像制作・キャスティング</li></ul>
-</article>
+<p>経営課題を起点に、得たい事業成果から逆算して、誰に、何を、どの順番で伝えるかを設計します。</p>
+<ul>
+<li>経営課題・事業目標の整理</li>
+<li>発信テーマと切り口の設計</li>
+<li>コアメッセージ・90日計画</li>
+</ul>
+</li>
+<li class="newsroom-service__step">
+<div class="newsroom-service__step-top">
+<span class="newsroom-service__number">03 <small>DELIVER</small></span>
+<span aria-hidden="true" class="newsroom-service__icon">
+<svg viewbox="0 0 32 32"><path d="M5 18v-6l15-6v18z"></path><path d="M20 10h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-4"></path><path d="m9 19 2 8h5l-2-10M27 8l2-2M28 24l2 2"></path></svg>
+</span>
 </div>
-</div>
-</section>
-<section class="section-wine" id="difference">
-<div class="container">
-<div class="section-head">
-<p class="eyebrow" style="color:#d8c08b">WHY SENZOKU NEWSROOM</p>
-<h2>専属ニュース室は、原稿を受け取って整えるだけではありません。</h2>
-</div>
-<div class="difference-grid">
-<article class="difference-card"><h3>取材して見つける</h3><p>経営者や担当者への取材を通じて、社内では当たり前になっている技術、変化、実績、思いを掘り起こします。</p></article>
-<article class="difference-card"><h3>社会との接点を整理する</h3><p>流行の社会課題を後付けせず、企業の事実と、社会や業界の関心が本当に重なる場所を探します。</p></article>
-<article class="difference-card"><h3>書く・話す・場をつくる</h3><p>プレスリリースだけでなく、展示会、発表会、映像、スピーチまで、一貫したメッセージで設計します。</p></article>
-<article class="difference-card"><h3>次の行動まで考える</h3><p>掲載件数だけでなく、指名検索、問い合わせ、商談、採用、協業など、事業につながる結果を重視します。</p></article>
-</div>
-</div>
-</section>
-<section class="section-wine" id="diagnosis">
-<div class="container diagnosis-grid">
-<div class="diagnosis-sticky">
-<p class="eyebrow" style="color:#d8c08b">FREE NEWS POSITION DIAGNOSIS</p>
-<h2>会社名を検索したとき、<br/>御社の価値は正しく伝わっていますか。</h2>
-<p>公式サイトや検索結果などの公開情報をもとに、第三者が御社をどのように受け取るかを採点・可視化します。</p>
-<p>現在の広報状態だけでなく、競合との差、社会や業界との接点、今後ニュースになり得るテーマまで整理します。</p>
-<div class="diagnosis-note">診断結果は、お申し込みから<strong>5営業日以内</strong>にPDFレポートにまとめ、ご登録のメールアドレスへお送りします。</div>
-<p style="margin-top:24px"><a class="btn" href="#diagnosis-form" style="background:#fff;color:var(--wine);border-color:#fff">無料でPRスコアを確認する</a></p>
-</div>
-<div class="diagnosis-cards">
-<article class="diagnosis-card"><div class="diagnosis-no">01</div><div><h3>現在の総合PRスコア</h3><p>検索結果、公式サイト、ニュース、SNS、代表者発信などを100点満点で採点します。</p></div></article>
-<article class="diagnosis-card"><div class="diagnosis-no">02</div><div><h3>最初の10秒で受ける印象</h3><p>顧客、取引先、求職者が、会社名を検索したときにどう判断するかを整理します。</p></div></article>
-<article class="diagnosis-card"><div class="diagnosis-no">03</div><div><h3>伝わっている強み・伝わっていない強み</h3><p>企業が伝えたい内容と、第三者が実際に受け取る印象のずれを確認します。</p></div></article>
-<article class="diagnosis-card"><div class="diagnosis-no">04</div><div><h3>優先して直すべき課題</h3><p>サイト、メッセージ、広報、経営者発信など、今取り組むべき施策を絞ります。</p></div></article>
-<article class="diagnosis-card"><div class="diagnosis-no">05</div><div><h3>ニュースになり得るテーマ</h3><p>社会情勢、業界動向、御社の技術・データ・実績から、発信企画の候補を提示します。</p></div></article>
-<article class="diagnosis-card"><div class="diagnosis-no">06</div><div><h3>今後90日間の改善方針</h3><p>発信を増やす前に、何から整え、どの順番で進めるべきかを示します。</p></div></article>
-</div>
-</div>
-</section>
-<section class="section-white">
-<div class="container">
-<div class="section-head">
-<p class="eyebrow">HOW IT WORKS</p>
-<h2>無料診断の流れ</h2>
-</div>
-<div class="flow">
-<article class="flow-card"><span class="step">STEP 01</span><h3>フォームから申し込む</h3><p>会社名、メールアドレス、お名前、経営課題をご入力ください。公式サイトのURLも任意で入力できます。</p></article>
-<article class="flow-card"><span class="step">STEP 02</span><h3>公開情報を調査・分析</h3><p>検索結果、公式サイト、ニュース、SNS、代表者情報などを確認。記者のニュースを見る視点と、ニュース設計の視点を掛け合わせ、御社の価値が第三者にどう伝わっているかを分析し、レポートにまとめます。</p></article>
-<article class="flow-card"><span class="step">STEP 03</span><h3>PDFレポートを受け取る</h3><p>お申し込みから5営業日以内に、診断結果をPDF形式で、ご登録のメールアドレスへお送りします。</p></article>
-<article class="flow-card"><span class="step">STEP 04</span><h3>必要な場合のみ相談する</h3><p>診断結果を踏まえ、具体的な広報施策やサポートを希望される場合はご相談いただけます。</p></article>
-</div>
-</div>
-</section>
-<section class="section-white">
-<div class="container">
-<div class="section-head">
-<p class="eyebrow">EXPERIENCE</p>
-<h2>報道から、企業、行政、社会的プロジェクトまで。</h2>
-</div>
-<div class="experience-box">
-<p>報道・メディア、企業イベント、展示会、政治・行政、社会的プロジェクトなど、異なる立場の人へ複雑な情報を伝える現場に携わってきました。</p>
-<div aria-label="主な関連実績" class="logo-list">
-<span class="logo-chip">NHK</span><span class="logo-chip">TBS「Nスタ」</span><span class="logo-chip">Panasonic</span><span class="logo-chip">PwC</span><span class="logo-chip">Gartner</span><span class="logo-chip">TOYOTA</span><span class="logo-chip">ENEOS</span><span class="logo-chip">経済産業省</span><span class="logo-chip">大阪・関西万博</span>
-</div>
-<p class="note">※掲載内容には、株式会社HELMIO設立以前の代表者・参画メンバー個人の実績を含みます。</p>
-</div>
-</div>
-</section>
-<section>
-<div class="container">
-<div class="section-head">
-<p class="eyebrow">FAQ</p>
-<h2>よくある質問</h2>
-</div>
-<div class="faq">
-<details><summary>まだプレスリリースを一度も出していなくても申し込めますか。</summary><p>はい。発信実績がない企業の場合は、広報を始める前に整えるべき情報や、最初の発信テーマを整理します。</p></details>
-<details><summary>BtoB企業や専門性の高い事業も対象ですか。</summary><p>対象です。技術担当者や経営者への取材を通じて、専門性を損なわず、社外の人が理解できる表現へ整えます。</p></details>
-<details><summary>診断結果はどのように届きますか。</summary><p>お申し込みから5営業日以内に、診断結果をPDFレポートにまとめ、ご登録のメールアドレスへお送りします。</p></details>
-<details><summary>診断を受けると、契約が必要ですか。</summary><p>必要ありません。まずは現在地を客観的に確認するためにご利用ください。支援をご希望の場合に限り、具体的な施策をご提案します。</p></details>
-<details><summary>必ずメディアに掲載されますか。</summary><p>掲載を保証するサービスではありません。企業の事実とニュース性を整理し、メディアが取材を判断できる情報をつくります。</p></details>
-</div>
-</div>
-</section>
-<section class="section-wine" id="diagnosis-form">
-<div class="container form-wrap">
-<div class="form-intro">
-<p class="eyebrow" style="color:#d8c08b">FREE PR DIAGNOSIS</p>
-<h2>御社の価値は、<br/>まだ十分に伝わっていないかもしれません。</h2>
-<p>発信を増やす前に、現在の見え方と、次に伝えるべきことを整理します。</p>
-<ul class="form-points"><li>入力約15秒</li><li>必須4項目</li><li>月5社限定</li><li>5営業日以内にPDFで送付</li></ul>
-</div>
- 専属ニュース室 無料ニュースポジション診断フォーム 
-<form action="https://formspree.io/f/mykrvjbq" class="form-card" method="post">
-<input name="_subject" type="hidden" value="【専属ニュース室】無料ニュースポジション診断のお申し込み"/>
-<input name="form_name" type="hidden" value="無料ニュースポジション診断"/>
-<input name="source" type="hidden" value="senzoku-newsroom"/>
-<div class="form-grid">
-<div class="field-full">
-<label for="website">公式サイトURL</label>
-<input id="website" inputmode="url" name="website_url" placeholder="https://example.co.jp/" type="url"/>
-</div>
+<h3>社会に届く場へ実装する</h3>
+<p>ニュース設計を、メディア発信と人が直接伝える現場の両方へ、一貫したメッセージで実装します。</p>
+<ul>
+<li>広報・メディア発信</li>
+<li>展示会・発表会・経営者発信</li>
+<li>映像・ナレーション・キャスティング</li>
+</ul>
+</li>
+</ol>
+<div class="newsroom-implementation">
+<div class="newsroom-implementation__header">
 <div>
-<label for="company">会社名<span class="required">必須</span></label>
-<input autocomplete="organization" id="company" name="company" placeholder="例：株式会社〇〇" required="" type="text"/>
+<p class="newsroom-service__eyebrow">IMPLEMENTATION AREAS</p>
+<h3>ニュースを届ける、5つの実装領域</h3>
 </div>
-<div>
-<label for="name">お名前<span class="required">必須</span></label>
-<input autocomplete="name" id="name" name="name" placeholder="例：山田 太郎" required="" type="text"/>
+<p>必要な施策だけを単発で並べるのではなく、ニュース設計に基づいて組み合わせます。広報を軸に、対面・音声・映像・人材まで一つのメッセージでつなぎます。</p>
 </div>
-<div class="field-full">
-<label for="email">メールアドレス<span class="required">必須</span></label>
-<input autocomplete="email" id="email" name="email" placeholder="例：name@company.co.jp" required="" type="email"/>
+<div class="newsroom-implementation__grid">
+<article class="newsroom-implementation__card">
+<div class="newsroom-implementation__card-top">
+<span class="newsroom-implementation__index">01</span>
+<span aria-hidden="true" class="newsroom-implementation__mini-icon">
+<svg viewbox="0 0 28 28"><path d="M4 5h20v18H4z"></path><path d="M8 9h7M8 13h12M8 17h12M18 9h2"></path></svg>
+</span>
 </div>
-<div class="field-full">
-<label for="issue">経営課題<span class="required">必須</span></label>
-<select id="issue" name="issue" required="">
-<option value="">選択してください</option>
-<option>売上・問い合わせを増やしたい</option>
-<option>業界で信頼される立場をつくりたい</option>
-<option>新商品・新規事業を広めたい</option>
-<option>展示会・イベントの成果を高めたい</option>
-<option>採用を強化したい</option>
-<option>会社の強みや発信テーマを整理したい</option>
-<option>その他</option>
-</select>
+<h4>広報・メディア発信</h4>
+<p>プレスリリース、メディア向け企画、情報提供、取材調整・対応まで支援します。</p>
+</article>
+<article class="newsroom-implementation__card">
+<div class="newsroom-implementation__card-top">
+<span class="newsroom-implementation__index">02</span>
+<span aria-hidden="true" class="newsroom-implementation__mini-icon">
+<svg viewbox="0 0 28 28"><path d="M3 22h22M6 22V9h16v13M9 9V5h10v4"></path><path d="M9 14h10M10 18h2M16 18h2"></path></svg>
+</span>
+</div>
+<h4>展示会・発表会</h4>
+<p>訴求設計、ステージ企画、プレゼンテーション、商談への導線まで設計します。</p>
+</article>
+<article class="newsroom-implementation__card">
+<div class="newsroom-implementation__card-top">
+<span class="newsroom-implementation__index">03</span>
+<span aria-hidden="true" class="newsroom-implementation__mini-icon">
+<svg viewbox="0 0 28 28"><circle cx="14" cy="7" r="3"></circle><path d="M8 24v-5a6 6 0 0 1 12 0v5M4 24h20M6 14h16"></path></svg>
+</span>
+</div>
+<h4>経営者発信</h4>
+<p>経営者や専門家のメッセージ設計、原稿、インタビュー、プレゼン・話し方を支援します。</p>
+</article>
+<article class="newsroom-implementation__card">
+<div class="newsroom-implementation__card-top">
+<span class="newsroom-implementation__index">04</span>
+<span aria-hidden="true" class="newsroom-implementation__mini-icon">
+<svg viewbox="0 0 28 28"><rect height="14" rx="2" width="15" x="3" y="7"></rect><path d="m18 11 7-3v12l-7-3zM9 11v6M12 10v8"></path></svg>
+</span>
+</div>
+<h4>映像・ナレーション</h4>
+<p>インタビュー、会社紹介、採用、商品説明など、目的に沿った映像と音声表現を制作します。</p>
+</article>
+<article class="newsroom-implementation__card">
+<div class="newsroom-implementation__card-top">
+<span class="newsroom-implementation__index">05</span>
+<span aria-hidden="true" class="newsroom-implementation__mini-icon">
+<svg viewbox="0 0 28 28"><circle cx="9" cy="9" r="3"></circle><circle cx="19" cy="9" r="3"></circle><circle cx="14" cy="6" r="3"></circle><path d="M3 23v-3a6 6 0 0 1 9-5M25 23v-3a6 6 0 0 0-9-5M8 23v-4a6 6 0 0 1 12 0v4"></path></svg>
+</span>
+</div>
+<h4>キャスティング</h4>
+<p>企画の目的やブランドに合わせ、アナウンサー、ナレーター、出演者、専門人材を選定します。</p>
+</article>
+</div>
+<p class="newsroom-implementation__note">※ 映像やキャスティングを単独の主役にせず、企業のニュースを適切な相手へ届けるための手段として設計します。</p>
+</div>
+<div class="newsroom-service__actions">
+<button aria-controls="prDiagnosisModal" aria-haspopup="dialog" class="is-primary" data-open-pr-diagnosis="" type="button">無料PR診断を申し込む</button>
+<a class="is-secondary" href="contact.html">サービスについて相談する</a>
 </div>
 </div>
-<button class="btn form-submit" type="submit">無料で自社のPRスコアを確認する</button>
-<p class="privacy">送信により、プライバシーポリシーに同意したものとみなします。</p>
-</form>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container footer-inner">
-<div><a class="brand" href="/">専属ニュース室</a><p>operated by 株式会社HELMIO｜PR &amp; Communication Design</p></div>
-<p>© 2026 HÉLMIO / 専属ニュース室</p>
-</div>
-</footer>
-<div class="mobile-cta"><a class="btn" href="#diagnosis-form">無料でPRスコアを確認する</a></div>
-</body>
-</html>
+</section></body></html>
