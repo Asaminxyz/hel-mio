@@ -2210,6 +2210,534 @@ body.pr-diagnosis-modal-open {
 }
 </style>
 
+
+<style id="newsroom-service-v3">
+/* =========================================================
+   SERVICE V3 — lightweight, no additional photographs
+   主役：発掘 → 設計 → 実装
+   下位：5つの実装領域
+========================================================= */
+.newsroom-service-v3 {
+  position: relative;
+  padding: 104px 0 112px;
+  overflow: hidden;
+  color: #263039;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(177, 138, 67, .08), transparent 27%),
+    linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+  border-top: 1px solid rgba(177, 138, 67, .18);
+  border-bottom: 1px solid rgba(177, 138, 67, .18);
+}
+
+.newsroom-service-v3::before,
+.newsroom-service-v3::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(177, 138, 67, .10);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.newsroom-service-v3::before {
+  top: -170px;
+  right: -100px;
+}
+
+.newsroom-service-v3::after {
+  bottom: -190px;
+  left: -130px;
+}
+
+.newsroom-service__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.newsroom-service__header {
+  display: grid;
+  grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+
+.newsroom-service__eyebrow {
+  margin: 0 0 12px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .24em;
+}
+
+.newsroom-service__header h2 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .035em;
+}
+
+.newsroom-service__lead {
+  margin: 0;
+  color: #3c4d5d;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+/* 3-step main service */
+.newsroom-service__process {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.newsroom-service__step {
+  position: relative;
+  min-width: 0;
+  padding: 34px 30px 30px;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid rgba(177, 138, 67, .46);
+  border-radius: 20px;
+  box-shadow: 0 18px 42px rgba(16, 47, 82, .075);
+}
+
+.newsroom-service__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: -39px;
+  width: 50px;
+  height: 18px;
+  transform: translateY(-50%);
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 18'%3E%3Cpath d='M1 9h43M36 2l8 7-8 7' fill='none' stroke='%23b18a43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.newsroom-service__step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.newsroom-service__number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.newsroom-service__number small {
+  color: #71808e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+}
+
+.newsroom-service__icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  color: #102f52;
+  background: #f2e5c5;
+  border-radius: 50%;
+}
+
+.newsroom-service__icon svg {
+  width: 29px;
+  height: 29px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.newsroom-service__step h3 {
+  margin: 0 0 14px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .025em;
+}
+
+.newsroom-service__step > p {
+  margin: 0;
+  color: #455563;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.newsroom-service__step ul {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(16, 47, 82, .12);
+}
+
+.newsroom-service__step li {
+  position: relative;
+  padding-left: 18px;
+  color: #26394b;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.newsroom-service__step li::before {
+  content: "";
+  position: absolute;
+  top: .72em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  background: #b18a43;
+  border-radius: 50%;
+}
+
+/* Secondary implementation area */
+.newsroom-implementation {
+  margin-top: 72px;
+  padding-top: 54px;
+  border-top: 1px solid rgba(16, 47, 82, .16);
+}
+
+.newsroom-implementation__header {
+  display: grid;
+  grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
+  gap: 54px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.newsroom-implementation__header h3 {
+  margin: 0;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(28px, 3.1vw, 40px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.newsroom-implementation__header p {
+  margin: 0;
+  color: #536371;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.newsroom-implementation__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.newsroom-implementation__card {
+  grid-column: span 2;
+  position: relative;
+  min-height: 224px;
+  padding: 26px 24px 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(16, 47, 82, .16);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 47, 82, .05);
+}
+
+.newsroom-implementation__card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.newsroom-implementation__card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.newsroom-implementation__card::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -52px;
+  width: 132px;
+  height: 132px;
+  background: rgba(242, 229, 197, .62);
+  border-radius: 50%;
+}
+
+.newsroom-implementation__card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.newsroom-implementation__index {
+  color: #b18a43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.newsroom-implementation__mini-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: #102f52;
+  background: #f8f3e8;
+  border: 1px solid rgba(177, 138, 67, .32);
+  border-radius: 50%;
+}
+
+.newsroom-implementation__mini-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.newsroom-implementation__card h4 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  color: #102f52;
+  font-family: "Noto Serif JP", serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.newsroom-implementation__card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #4d5c69;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.newsroom-implementation__note {
+  margin: 24px 0 0;
+  color: #61707d;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.newsroom-service__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 46px;
+}
+
+.newsroom-service__actions a,
+.newsroom-service__actions button {
+  display: inline-flex;
+  min-width: 260px;
+  min-height: 58px;
+  padding: 14px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #102f52;
+  border-radius: 4px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .035em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+}
+
+.newsroom-service__actions .is-primary {
+  color: #fff;
+  background: #102f52;
+}
+
+.newsroom-service__actions .is-secondary {
+  color: #102f52;
+  background: #fff;
+}
+
+.newsroom-service__actions a:hover,
+.newsroom-service__actions button:hover {
+  transform: translateY(-1px);
+}
+
+.newsroom-service__actions .is-primary:hover {
+  background: #0a2948;
+}
+
+.newsroom-service__actions .is-secondary:hover {
+  background: #f8f3e8;
+}
+
+@media (max-width: 980px) {
+  .newsroom-service-v3 {
+    padding: 86px 0 94px;
+  }
+
+  .newsroom-service__header,
+  .newsroom-implementation__header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .newsroom-service__process {
+    gap: 16px;
+  }
+
+  .newsroom-service__step {
+    padding: 27px 22px 24px;
+  }
+
+  .newsroom-service__step h3 {
+    font-size: 21px;
+  }
+
+  .newsroom-service__step:not(:last-child)::after {
+    right: -25px;
+    width: 32px;
+  }
+
+  .newsroom-implementation__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsroom-implementation__card,
+  .newsroom-implementation__card:nth-child(4),
+  .newsroom-implementation__card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .newsroom-implementation__card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .newsroom-service-v3 {
+    padding: 66px 0 72px;
+  }
+
+  .newsroom-service__inner {
+    width: min(100% - 30px, 1180px);
+  }
+
+  .newsroom-service__header {
+    margin-bottom: 32px;
+  }
+
+  .newsroom-service__header h2 {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .newsroom-service__lead {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .newsroom-service__process {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .newsroom-service__step:not(:last-child)::after {
+    display: none;
+  }
+
+  .newsroom-service__step {
+    padding: 25px 21px 23px;
+    border-radius: 15px;
+  }
+
+  .newsroom-service__step-top {
+    margin-bottom: 18px;
+  }
+
+  .newsroom-service__step h3 {
+    font-size: 20px;
+  }
+
+  .newsroom-implementation {
+    margin-top: 54px;
+    padding-top: 40px;
+  }
+
+  .newsroom-implementation__header {
+    margin-bottom: 24px;
+  }
+
+  .newsroom-implementation__header h3 {
+    font-size: 27px;
+  }
+
+  .newsroom-implementation__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .newsroom-implementation__card,
+  .newsroom-implementation__card:last-child {
+    grid-column: auto;
+    min-height: 0;
+    padding: 22px 20px 21px;
+  }
+
+  .newsroom-implementation__card-top {
+    margin-bottom: 14px;
+  }
+
+  .newsroom-service__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+
+  .newsroom-service__actions a,
+  .newsroom-service__actions button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="page">
@@ -2546,79 +3074,148 @@ body.pr-diagnosis-modal-open {
 </article>
 </div>
 </section>
+
 <!-- ==============================
-         SERVICE
-    ============================== -->
-<section aria-labelledby="service-title" class="service-section" id="service">
-<div class="section">
-<div class="service-layout">
-<div class="service-left">
-<p class="section-kicker">
-              OUR SERVICE
-            </p>
-<h2 id="service-title">
-              SERVICE
-            </h2>
-<p>
-              企業の「伝える」に関わる課題を、
-              企画・人材・表現・運営の面から支援します。
-            </p>
-<img alt="HÉLMIOのコミュニケーション支援" height="1100" loading="lazy" src="cando.png" width="800"/>
-</div>
-<div class="service-list">
-<a class="service-row" href="contact.html">
-<span>01</span>
-<div>
-<strong>展示会</strong>
-<p>
-                   総合代理店だと手薄になるステージ周りや商談接続。展示会の経験豊富なアナウンサーとマーケターが「情報を届ける」を設計します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>02</span>
-<div>
-<strong>キャスティング</strong>
-<p>
-                  案件の目的とブランドイメージに合う
-                  出演者を選定します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>03</span>
-<div>
-<strong>広報・PR</strong>
-<p>
-                  経営課題のヒアリング、発信内容の設計、取材対応など、
-                  企業広報の実務を支援します。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>04</span>
-<div>
-<strong>スピーチ</strong>
-<p>
-                  経営者や登壇者のメッセージ設計、原稿作成、
-                  話し方のトレーニングを行います。
-                </p>
-</div>
-</a>
-<a class="service-row" href="contact.html">
-<span>05</span>
-<div>
-<strong>映像コンテンツ制作</strong>
-<p>
-                  インタビュー、会社紹介など、
-                  伝える目的に沿った映像を制作します。
-                </p>
-</div>
-</a>
-</div>
-</div>
-</div>
+     SERVICE — 3-step core + implementation areas
+================================ -->
+<section aria-labelledby="service-title" class="newsroom-service-v3" id="service">
+  <div class="newsroom-service__inner">
+    <div class="newsroom-service__header">
+      <div>
+        <p class="newsroom-service__eyebrow">OUR SERVICE</p>
+        <h2 id="service-title">取材で見つけ、ニュースに変え、<br/>届く場まで実装する。</h2>
+      </div>
+      <p class="newsroom-service__lead">
+        専属ニュース室は、広報施策をばらばらに提供するサービスではありません。経営課題を起点に、企業の中に眠る事実を発掘し、発信の軸を設計。必要な手段を組み合わせ、事業成果につながる形で社会へ届けます。
+      </p>
+    </div>
+
+    <ol class="newsroom-service__process">
+      <li class="newsroom-service__step">
+        <div class="newsroom-service__step-top">
+          <span class="newsroom-service__number">01 <small>DISCOVER</small></span>
+          <span class="newsroom-service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/><path d="M10 14h8M14 10v8"/></svg>
+          </span>
+        </div>
+        <h3>取材で価値を発掘する</h3>
+        <p>経営者や技術者への取材を通じて、社内では当たり前になっている技術、実績、変化、思いを掘り起こします。</p>
+        <ul>
+          <li>経営者・技術者への取材</li>
+          <li>強みと社会的価値の整理</li>
+          <li>ニュースの種・データの棚卸し</li>
+        </ul>
+      </li>
+
+      <li class="newsroom-service__step">
+        <div class="newsroom-service__step-top">
+          <span class="newsroom-service__number">02 <small>DESIGN</small></span>
+          <span class="newsroom-service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M7 4h14l4 4v19H7z"/><path d="M21 4v5h5M11 14h10M11 19h7"/><path d="m19 25 7-7 3 3-7 7-4 1z"/></svg>
+          </span>
+        </div>
+        <h3>ニュース設計で、発信の軸をつくる</h3>
+        <p>経営課題を起点に、得たい事業成果から逆算して、誰に、何を、どの順番で伝えるかを設計します。</p>
+        <ul>
+          <li>経営課題・事業目標の整理</li>
+          <li>発信テーマと切り口の設計</li>
+          <li>コアメッセージ・90日計画</li>
+        </ul>
+      </li>
+
+      <li class="newsroom-service__step">
+        <div class="newsroom-service__step-top">
+          <span class="newsroom-service__number">03 <small>DELIVER</small></span>
+          <span class="newsroom-service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M5 18v-6l15-6v18z"/><path d="M20 10h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-4"/><path d="m9 19 2 8h5l-2-10M27 8l2-2M28 24l2 2"/></svg>
+          </span>
+        </div>
+        <h3>社会に届く場へ実装する</h3>
+        <p>ニュース設計を、メディア発信と人が直接伝える現場の両方へ、一貫したメッセージで実装します。</p>
+        <ul>
+          <li>広報・メディア発信</li>
+          <li>展示会・発表会・経営者発信</li>
+          <li>映像・ナレーション・キャスティング</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="newsroom-implementation">
+      <div class="newsroom-implementation__header">
+        <div>
+          <p class="newsroom-service__eyebrow">IMPLEMENTATION AREAS</p>
+          <h3>ニュースを届ける、5つの実装領域</h3>
+        </div>
+        <p>必要な施策だけを単発で並べるのではなく、ニュース設計に基づいて組み合わせます。広報を軸に、対面・音声・映像・人材まで一つのメッセージでつなぎます。</p>
+      </div>
+
+      <div class="newsroom-implementation__grid">
+        <article class="newsroom-implementation__card">
+          <div class="newsroom-implementation__card-top">
+            <span class="newsroom-implementation__index">01</span>
+            <span class="newsroom-implementation__mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28"><path d="M4 5h20v18H4z"/><path d="M8 9h7M8 13h12M8 17h12M18 9h2"/></svg>
+            </span>
+          </div>
+          <h4>広報・メディア発信</h4>
+          <p>プレスリリース、メディア向け企画、情報提供、取材調整・対応まで支援します。</p>
+        </article>
+
+        <article class="newsroom-implementation__card">
+          <div class="newsroom-implementation__card-top">
+            <span class="newsroom-implementation__index">02</span>
+            <span class="newsroom-implementation__mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28"><path d="M3 22h22M6 22V9h16v13M9 9V5h10v4"/><path d="M9 14h10M10 18h2M16 18h2"/></svg>
+            </span>
+          </div>
+          <h4>展示会・発表会</h4>
+          <p>訴求設計、ステージ企画、プレゼンテーション、商談への導線まで設計します。</p>
+        </article>
+
+        <article class="newsroom-implementation__card">
+          <div class="newsroom-implementation__card-top">
+            <span class="newsroom-implementation__index">03</span>
+            <span class="newsroom-implementation__mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28"><circle cx="14" cy="7" r="3"/><path d="M8 24v-5a6 6 0 0 1 12 0v5M4 24h20M6 14h16"/></svg>
+            </span>
+          </div>
+          <h4>経営者発信</h4>
+          <p>経営者や専門家のメッセージ設計、原稿、インタビュー、プレゼン・話し方を支援します。</p>
+        </article>
+
+        <article class="newsroom-implementation__card">
+          <div class="newsroom-implementation__card-top">
+            <span class="newsroom-implementation__index">04</span>
+            <span class="newsroom-implementation__mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28"><rect x="3" y="7" width="15" height="14" rx="2"/><path d="m18 11 7-3v12l-7-3zM9 11v6M12 10v8"/></svg>
+            </span>
+          </div>
+          <h4>映像・ナレーション</h4>
+          <p>インタビュー、会社紹介、採用、商品説明など、目的に沿った映像と音声表現を制作します。</p>
+        </article>
+
+        <article class="newsroom-implementation__card">
+          <div class="newsroom-implementation__card-top">
+            <span class="newsroom-implementation__index">05</span>
+            <span class="newsroom-implementation__mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28"><circle cx="9" cy="9" r="3"/><circle cx="19" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><path d="M3 23v-3a6 6 0 0 1 9-5M25 23v-3a6 6 0 0 0-9-5M8 23v-4a6 6 0 0 1 12 0v4"/></svg>
+            </span>
+          </div>
+          <h4>キャスティング</h4>
+          <p>企画の目的やブランドに合わせ、アナウンサー、ナレーター、出演者、専門人材を選定します。</p>
+        </article>
+      </div>
+
+      <p class="newsroom-implementation__note">※ 映像やキャスティングを単独の主役にせず、企業のニュースを適切な相手へ届けるための手段として設計します。</p>
+    </div>
+
+    <div class="newsroom-service__actions">
+      <button class="is-primary" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">無料PR診断を申し込む</button>
+      <a class="is-secondary" href="contact.html">サービスについて相談する</a>
+    </div>
+  </div>
 </section>
+
 <!-- ==============================
          PROFESSIONALS
     ============================== -->
