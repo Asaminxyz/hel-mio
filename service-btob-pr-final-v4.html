@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BtoB・技術企業向け広報PR支援｜HÉLMIO</title>
+  <meta name="description" content="技術やサービスの違いが伝わらないBtoB企業へ。元記者・アナウンサーの取材力とマーケターの戦略設計力で、企業の価値をニュース、信頼、問い合わせにつなげます。無料PR診断受付中。">
+  <link rel="canonical" href="https://hel-mio.com/service/btob-pr/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="HÉLMIO">
+  <meta property="og:title" content="BtoB・技術企業向け広報PR支援｜HÉLMIO">
+  <meta property="og:description" content="まだ伝わっていない価値を、ニュースと次の行動へ。取材編集型の広報PR支援と無料ニュースポジション診断。">
+  <meta property="og:url" content="https://hel-mio.com/service/btob-pr/">
+  <!-- 公開時に実画像へ差し替え -->
+  <meta property="og:image" content="https://hel-mio.com/assets/images/ogp-btob-pr.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #102f52;
+      --wine-dark: #0a243f;
+      --wine-soft: #274a70;
+      --gold: #b18a43;
+      --cream: #fbfaf7;
+      --cream-2: #f2e5c5;
+      --paper: #ffffff;
+      --ink: #263039;
+      --muted: #687888;
+      --line: rgba(16, 47, 82, .18);
+      --shadow: 0 20px 50px rgba(16, 47, 82, .12);
+      --radius: 22px;
+      --content: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.85;
+      letter-spacing: .02em;
+    }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--content));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--wine);
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      font-family: "Noto Serif JP", serif;
+      line-height: 1.42;
+      letter-spacing: .035em;
+    }
+    h1 { font-size: clamp(2.15rem, 5vw, 4.45rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.55rem); }
+    p { margin-top: 0; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(16, 47, 82, .1);
+      background: rgba(251, 250, 247, .92);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      text-decoration: none;
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.48rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--wine);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .nav a { text-decoration: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 13px 24px;
+      border: 1px solid var(--wine);
+      border-radius: 999px;
+      background: var(--wine);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .04em;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+      box-shadow: 0 10px 26px rgba(16, 47, 82, .18);
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--wine-dark); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--wine);
+      box-shadow: none;
+    }
+    .btn-small { min-height: 44px; padding: 9px 18px; font-size: .86rem; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 94px 0 88px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto auto;
+      width: min(52vw, 760px);
+      height: 100%;
+      background:
+        radial-gradient(circle at 72% 30%, rgba(177,138,67,.22), transparent 27%),
+        radial-gradient(circle at 75% 60%, rgba(16,47,82,.18), transparent 35%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.14fr .86fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .hero h1 { margin-bottom: 24px; color: var(--wine-dark); }
+    .hero h1 span { color: var(--wine); }
+    .hero-lead {
+      max-width: 680px;
+      margin-bottom: 28px;
+      font-size: 1.04rem;
+    }
+    .hero-catch {
+      display: inline-block;
+      margin: 0 0 28px;
+      padding-left: 18px;
+      border-left: 3px solid var(--gold);
+      color: var(--wine);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 700;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .microcopy { width: 100%; color: var(--muted); font-size: .78rem; }
+
+    .score-card {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.56);
+      border-radius: 28px;
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .score-card::after {
+      content: "SAMPLE";
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      color: var(--gold);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+    .score-top { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 20px; }
+    .score-number {
+      color: var(--wine);
+      font-family: "Noto Serif JP", serif;
+      font-size: 4.4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .score-unit { padding-bottom: 9px; color: var(--muted); }
+    .score-summary { margin-bottom: 22px; font-weight: 700; }
+    .score-list { display: grid; gap: 13px; }
+    .score-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; font-size: .78rem; }
+    .bar { grid-column: 1 / -1; height: 6px; border-radius: 999px; background: var(--cream-2); overflow: hidden; }
+    .bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--wine), var(--gold)); }
+
+    .trust-strip {
+      padding: 18px 0;
+      background: var(--wine-dark);
+      color: #fff;
+    }
+    .trust-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px 38px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    section { padding: 98px 0; }
+    .section-white { background: var(--paper); }
+    .section-wine { background: var(--wine-dark); color: #fff; }
+    .section-head { max-width: 780px; margin-bottom: 50px; }
+    .section-head p:last-child { margin-bottom: 0; }
+
+    .pain-copy {
+      max-width: 850px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .pain-copy h2 { color: var(--wine-dark); }
+    .pain-lines {
+      display: grid;
+      gap: 4px;
+      margin: 28px 0;
+      font-size: clamp(1.06rem, 2.1vw, 1.32rem);
+      font-weight: 600;
+    }
+    .highlight-line {
+      margin: 34px auto 0;
+      color: var(--wine);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .check-item {
+      position: relative;
+      padding: 19px 20px 19px 50px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.48);
+      font-size: .93rem;
+    }
+    .check-item::before {
+      content: "✓";
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      color: var(--wine);
+      font-weight: 800;
+    }
+
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .diagnosis-sticky { position: sticky; top: 112px; }
+    .diagnosis-sticky h2 { color: #fff; }
+    .diagnosis-note {
+      margin-top: 26px;
+      padding: 19px 20px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 15px;
+      background: rgba(255,255,255,.06);
+      font-size: .86rem;
+    }
+    .diagnosis-cards { display: grid; gap: 16px; }
+    .diagnosis-card {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 18px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .diagnosis-no {
+      color: var(--gold);
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+    }
+    .diagnosis-card h3 { margin-bottom: 7px; color: var(--wine-dark); }
+    .diagnosis-card p { margin-bottom: 0; font-size: .9rem; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .flow-card {
+      padding: 26px 23px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+    .flow-card .step { color: var(--wine); font-size: .74rem; font-weight: 700; letter-spacing: .16em; }
+    .flow-card h3 { margin: 9px 0 12px; }
+    .flow-card p { margin: 0; font-size: .87rem; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      scroll-margin-top: 110px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+    .service-no { color: var(--gold); font-family: "Noto Serif JP", serif; font-size: 1.1rem; font-weight: 700; }
+    .service-card h3 { margin: 16px 0 12px; color: var(--wine-dark); }
+    .service-card ul { margin: auto 0 0; padding-left: 1.25em; font-size: .87rem; }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .difference-card {
+      padding: 28px;
+      border-top: 3px solid var(--gold);
+      background: rgba(255,255,255,.07);
+    }
+    .difference-card h3 { color: #fff; }
+    .difference-card p { margin-bottom: 0; color: rgba(255,255,255,.78); }
+
+    .experience-box {
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+    .logo-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .logo-chip {
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--cream-2);
+      color: var(--wine-dark);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    .note { color: var(--muted); font-size: .75rem; }
+
+    .faq { display: grid; gap: 12px; }
+    details {
+      padding: 0 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+    summary {
+      cursor: pointer;
+      padding: 20px 34px 20px 0;
+      color: var(--wine-dark);
+      font-weight: 700;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p { padding-bottom: 20px; margin-bottom: 0; }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 58px;
+      align-items: start;
+    }
+    .form-intro h2 { color: #fff; }
+    .form-points { margin: 25px 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .form-points li::before { content: "—"; margin-right: 8px; color: var(--gold); }
+    .form-card {
+      padding: 32px;
+      border-radius: 24px;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
+    .field-full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; font-size: .82rem; font-weight: 700; }
+    .required { margin-left: 6px; color: var(--wine); font-size: .68rem; }
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d9d1ce;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(16,47,82,.18); border-color: var(--wine); }
+    .form-submit { width: 100%; margin-top: 20px; }
+    .privacy { margin: 12px 0 0; color: var(--muted); font-size: .72rem; text-align: center; }
+
+    .footer {
+      padding: 42px 0 94px;
+      background: #241820;
+      color: rgba(255,255,255,.74);
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 28px; align-items: end; }
+    .footer .brand { color: #fff; }
+    .footer p { margin: 8px 0 0; font-size: .76rem; }
+
+    .mobile-cta { display: none; }
+
+    @media (max-width: 900px) {
+      .nav a:not(.btn) { display: none; }
+      .hero { padding-top: 64px; }
+      .hero-grid, .diagnosis-grid, .form-wrap { grid-template-columns: 1fr; }
+      .hero-grid { gap: 44px; }
+      .score-card { max-width: 620px; }
+      .diagnosis-sticky { position: static; }
+      .flow, .services { grid-template-columns: repeat(2, 1fr); }
+      .flow-card:last-child, .service-card:last-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      body { line-height: 1.78; }
+      .container { width: min(calc(100% - 26px), var(--content)); }
+      .header-inner { min-height: 64px; }
+      .header .btn { display: none; }
+      .hero { padding: 54px 0 60px; }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .score-card { padding: 22px; }
+      section { padding: 72px 0; }
+      .check-grid, .flow, .services, .difference-grid, .form-grid { grid-template-columns: 1fr; }
+      .flow-card:last-child, .service-card:last-child { grid-column: auto; }
+      .diagnosis-card { grid-template-columns: 44px 1fr; padding: 20px; }
+      .experience-box, .form-card { padding: 24px 20px; }
+      .footer-inner { display: block; }
+      .mobile-cta {
+        position: fixed;
+        z-index: 60;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        display: block;
+      }
+      .mobile-cta .btn { width: 100%; min-height: 50px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hel-mio.com/#organization",
+        "name": "HÉLMIO",
+        "legalName": "株式会社HELMIO",
+        "alternateName": ["HELMIO", "ヘルミオ"],
+        "url": "https://hel-mio.com/",
+        "logo": "https://hel-mio.com/assets/images/logo.png"
+      },
+      {
+        "@type": "Service",
+        "name": "BtoB・技術企業向け広報PR支援",
+        "url": "https://hel-mio.com/service/btob-pr/",
+        "provider": {"@id": "https://hel-mio.com/#organization"},
+        "areaServed": "JP",
+        "description": "BtoB・技術企業の技術、専門性、社会的価値を取材によって発掘し、広報PR、展示会、新製品発表、経営者発信へ展開する支援サービス。"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "まだプレスリリースを一度も出していなくても申し込めますか。",
+            "acceptedAnswer": {"@type": "Answer", "text": "はい。発信実績がない企業の場合は、広報を始める前に整えるべき情報や、最初の発信テーマを整理します。"}
+          },
+          {
+            "@type": "Question",
+            "name": "BtoB企業や専門性の高い事業も対象ですか。",
+            "acceptedAnswer": {"@type": "Answer", "text": "対象です。技術担当者や経営者への取材を通じて、専門性を損なわず、社外の人が理解できる表現へ整えます。"}
+          },
+          {
+            "@type": "Question",
+            "name": "診断結果はどのように届きますか。",
+            "acceptedAnswer": {"@type": "Answer", "text": "お申し込みから5営業日以内に、診断結果をPDFレポートにまとめ、ご登録のメールアドレスへお送りします。"}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="/">HÉLMIO</a>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a href="/">トップ</a>
+        <a href="#service">サービス</a>
+        <a href="#difference">特徴</a>
+        <a href="#diagnosis">無料診断</a>
+        <a class="btn btn-small" href="#diagnosis-form">無料でPRスコアを確認する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">BtoB・技術企業向け 広報PR支援</p>
+          <h1>技術には自信がある。<br><span>けれど、説明しても違いが伝わらない。</span></h1>
+          <p class="hero-lead">発信しても反応がない。展示会に出ても、名刺交換だけで終わってしまう。価値がないのではなく、まだ<strong>伝わる形になっていない</strong>だけかもしれません。</p>
+          <p class="hero-catch">まだ伝わっていない価値を、ニュースと次の行動へ。</p>
+          <p class="hero-lead">HÉLMIOは、企業の中に埋もれている技術や取り組みを取材し、顧客・メディア・社会が理解できる言葉と企画へ変えます。</p>
+          <div class="hero-actions">
+            <a class="btn" href="#diagnosis-form">無料で自社のPRスコアを確認する</a>
+            <a class="btn btn-ghost" href="#diagnosis">診断レポートの内容を見る</a>
+            <span class="microcopy">入力約15秒｜必須4項目｜月5社限定｜5営業日以内にPDFで送付</span>
+          </div>
+        </div>
+
+        <aside class="score-card" aria-label="PR診断レポートのサンプル">
+          <p class="eyebrow">PR DIAGNOSIS REPORT</p>
+          <div class="score-top">
+            <span class="score-number">76</span>
+            <span class="score-unit">/ 100</span>
+          </div>
+          <p class="score-summary">広報資産はあるが、業界を代表する立場には未到達</p>
+          <div class="score-list">
+            <div class="score-row"><span>検索結果の第一印象</span><strong>12 / 15</strong><div class="bar"><span style="width:80%"></span></div></div>
+            <div class="score-row"><span>公式サイト・ニュースルーム</span><strong>9 / 10</strong><div class="bar"><span style="width:90%"></span></div></div>
+            <div class="score-row"><span>メディア露出・第三者評価</span><strong>11 / 15</strong><div class="bar"><span style="width:73%"></span></div></div>
+            <div class="score-row"><span>ニュース性・社会との接続</span><strong>14 / 15</strong><div class="bar"><span style="width:93%"></span></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container">
+        <ul class="trust-list">
+          <li>元記者・アナウンサーによる分析</li>
+          <li>公開情報から客観診断</li>
+          <li>PDFレポートで納品</li>
+          <li>契約を前提としない診断</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="section-white">
+      <div class="container pain-copy">
+        <p class="eyebrow">YOUR CHALLENGE</p>
+        <h2>発信しているのに、<br>事業の強さにつながらない。</h2>
+        <div class="pain-lines">
+          <span>説明しても違いが伝わらない。</span>
+          <span>発信しても反応がない。</span>
+          <span>展示会も名刺交換で終わってしまう。</span>
+        </div>
+        <p>問題は、発信量ではないかもしれません。何を強みとして、誰に、どんな文脈で伝えるのか。その位置が決まらないまま情報を増やしても、告知や製品説明の中に埋もれてしまいます。</p>
+        <p class="highlight-line">広報施策を始める前に、「何の会社として知られるべきか」を整理する。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">IS THIS YOUR COMPANY?</p>
+          <h2>このような状態に、心当たりはありませんか。</h2>
+        </div>
+        <div class="check-grid">
+          <div class="check-item">技術やサービスを説明しても、結局価格で比較される</div>
+          <div class="check-item">何をする会社なのか、一言で説明できない</div>
+          <div class="check-item">プレスリリースを出したが、取材や問い合わせがない</div>
+          <div class="check-item">展示会では人が集まっても、その後の商談につながらない</div>
+          <div class="check-item">営業、採用、広報で、会社の説明がばらばらになっている</div>
+          <div class="check-item">経営者や技術者の知見を、社外へ発信できていない</div>
+          <div class="check-item">専任広報はいないが、継続的な発信体制をつくりたい</div>
+          <div class="check-item">広報を始めたいが、最初に何をすべきか分からない</div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="service">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">SERVICE</p>
+          <h2>発信する前の設計から、<br>実際に人へ届く場まで。</h2>
+          <p>課題の整理から、社会への発信、人が伝える現場での実装まで。3つの領域で一貫して支援します。</p>
+        </div>
+        <div class="services">
+          <article class="service-card" id="strategy">
+            <span class="service-no">01</span>
+            <h3>広報戦略・ニュースポジション設計</h3>
+            <p>会社や事業が社会の中でどのような立場を取り、何について発信すべきかを整理します。</p>
+            <ul><li>経営者・技術者への取材</li><li>事業の強みと社会的価値の整理</li><li>競合・業界分析</li><li>発信テーマ設計</li><li>代表者プロフィール整備</li><li>90日間の広報計画</li></ul>
+          </article>
+          <article class="service-card" id="pr-media">
+            <span class="service-no">02</span>
+            <h3>広報PR・メディアコミュニケーション</h3>
+            <p>企業の事実や専門性を、顧客やメディアが理解・引用できる情報へ整え、外部へ届けます。</p>
+            <ul><li>プレスリリースの企画・執筆</li><li>メディア向け企画書</li><li>独自調査・データPR</li><li>メディアへの情報提供</li><li>取材調整・取材対応</li><li>掲載後の二次活用</li></ul>
+          </article>
+          <article class="service-card" id="communication">
+            <span class="service-no">03</span>
+            <h3>展示会・発表会・経営者コミュニケーション</h3>
+            <p>展示会、発表会、登壇、映像など、人が直接伝える場を一貫したメッセージで設計します。</p>
+            <ul><li>展示会の訴求・商談導線</li><li>ステージ企画・進行台本</li><li>新製品発表会</li><li>経営者スピーチ</li><li>メディアトレーニング</li><li>映像制作・キャスティング</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="difference" class="section-wine">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" style="color:#d8c08b">WHY HÉLMIO</p>
+          <h2>原稿を受け取って、整えるだけではありません。</h2>
+        </div>
+        <div class="difference-grid">
+          <article class="difference-card"><h3>取材して見つける</h3><p>経営者や担当者への取材を通じて、社内では当たり前になっている技術、変化、実績、思いを掘り起こします。</p></article>
+          <article class="difference-card"><h3>社会との接点を整理する</h3><p>流行の社会課題を後付けせず、企業の事実と、社会や業界の関心が本当に重なる場所を探します。</p></article>
+          <article class="difference-card"><h3>書く・話す・場をつくる</h3><p>プレスリリースだけでなく、展示会、発表会、映像、スピーチまで、一貫したメッセージで設計します。</p></article>
+          <article class="difference-card"><h3>次の行動まで考える</h3><p>掲載件数だけでなく、指名検索、問い合わせ、商談、採用、協業など、事業につながる結果を重視します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnosis" class="section-wine">
+      <div class="container diagnosis-grid">
+        <div class="diagnosis-sticky">
+          <p class="eyebrow" style="color:#d8c08b">FREE NEWS POSITION DIAGNOSIS</p>
+          <h2>会社名を検索したとき、<br>御社の価値は正しく伝わっていますか。</h2>
+          <p>公式サイトや検索結果などの公開情報をもとに、第三者が御社をどのように受け取るかを採点・可視化します。</p>
+          <p>現在の広報状態だけでなく、競合との差、社会や業界との接点、今後ニュースになり得るテーマまで整理します。</p>
+          <div class="diagnosis-note">診断結果は、お申し込みから<strong>5営業日以内</strong>にPDFレポートにまとめ、ご登録のメールアドレスへお送りします。</div>
+          <p style="margin-top:24px"><a class="btn" style="background:#fff;color:var(--wine);border-color:#fff" href="#diagnosis-form">無料でPRスコアを確認する</a></p>
+        </div>
+
+        <div class="diagnosis-cards">
+          <article class="diagnosis-card"><div class="diagnosis-no">01</div><div><h3>現在の総合PRスコア</h3><p>検索結果、公式サイト、ニュース、SNS、代表者発信などを100点満点で採点します。</p></div></article>
+          <article class="diagnosis-card"><div class="diagnosis-no">02</div><div><h3>最初の10秒で受ける印象</h3><p>顧客、取引先、求職者が、会社名を検索したときにどう判断するかを整理します。</p></div></article>
+          <article class="diagnosis-card"><div class="diagnosis-no">03</div><div><h3>伝わっている強み・伝わっていない強み</h3><p>企業が伝えたい内容と、第三者が実際に受け取る印象のずれを確認します。</p></div></article>
+          <article class="diagnosis-card"><div class="diagnosis-no">04</div><div><h3>優先して直すべき課題</h3><p>サイト、メッセージ、広報、経営者発信など、今取り組むべき施策を絞ります。</p></div></article>
+          <article class="diagnosis-card"><div class="diagnosis-no">05</div><div><h3>ニュースになり得るテーマ</h3><p>社会情勢、業界動向、御社の技術・データ・実績から、発信企画の候補を提示します。</p></div></article>
+          <article class="diagnosis-card"><div class="diagnosis-no">06</div><div><h3>今後90日間の改善方針</h3><p>発信を増やす前に、何から整え、どの順番で進めるべきかを示します。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2>無料診断の流れ</h2>
+        </div>
+        <div class="flow">
+          <article class="flow-card"><span class="step">STEP 01</span><h3>フォームから申し込む</h3><p>会社名、メールアドレス、お名前、経営課題をご入力ください。公式サイトのURLも任意で入力できます。</p></article>
+          <article class="flow-card"><span class="step">STEP 02</span><h3>公開情報を調査・分析</h3><p>検索結果、公式サイト、ニュース、SNS、代表者情報などを確認。記者のニュースを見る視点と、広報PRの戦略的な視点を掛け合わせ、御社の価値が第三者にどう伝わっているかを分析し、レポートにまとめます。</p></article>
+          <article class="flow-card"><span class="step">STEP 03</span><h3>PDFレポートを受け取る</h3><p>お申し込みから5営業日以内に、診断結果をPDF形式で、ご登録のメールアドレスへお送りします。</p></article>
+          <article class="flow-card"><span class="step">STEP 04</span><h3>必要な場合のみ相談する</h3><p>診断結果を踏まえ、具体的な広報施策やサポートを希望される場合はご相談いただけます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">EXPERIENCE</p>
+          <h2>報道から、企業、行政、社会的プロジェクトまで。</h2>
+        </div>
+        <div class="experience-box">
+          <p>報道・メディア、企業イベント、展示会、政治・行政、社会的プロジェクトなど、異なる立場の人へ複雑な情報を伝える現場に携わってきました。</p>
+          <div class="logo-list" aria-label="主な関連実績">
+            <span class="logo-chip">NHK</span><span class="logo-chip">TBS「Nスタ」</span><span class="logo-chip">Panasonic</span><span class="logo-chip">PwC</span><span class="logo-chip">Gartner</span><span class="logo-chip">TOYOTA</span><span class="logo-chip">ENEOS</span><span class="logo-chip">経済産業省</span><span class="logo-chip">大阪・関西万博</span>
+          </div>
+          <p class="note">※掲載内容には、株式会社HELMIO設立以前の代表者・参画メンバー個人の実績を含みます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq">
+          <details><summary>まだプレスリリースを一度も出していなくても申し込めますか。</summary><p>はい。発信実績がない企業の場合は、広報を始める前に整えるべき情報や、最初の発信テーマを整理します。</p></details>
+          <details><summary>BtoB企業や専門性の高い事業も対象ですか。</summary><p>対象です。技術担当者や経営者への取材を通じて、専門性を損なわず、社外の人が理解できる表現へ整えます。</p></details>
+          <details><summary>診断結果はどのように届きますか。</summary><p>お申し込みから5営業日以内に、診断結果をPDFレポートにまとめ、ご登録のメールアドレスへお送りします。</p></details>
+          <details><summary>診断を受けると、契約が必要ですか。</summary><p>必要ありません。まずは現在地を客観的に確認するためにご利用ください。支援をご希望の場合に限り、具体的な施策をご提案します。</p></details>
+          <details><summary>必ずメディアに掲載されますか。</summary><p>掲載を保証するサービスではありません。企業の事実とニュース性を整理し、メディアが取材を判断できる情報をつくります。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnosis-form" class="section-wine">
+      <div class="container form-wrap">
+        <div class="form-intro">
+          <p class="eyebrow" style="color:#d8c08b">FREE PR DIAGNOSIS</p>
+          <h2>御社の価値は、<br>まだ十分に伝わっていないかもしれません。</h2>
+          <p>発信を増やす前に、現在の見え方と、次に伝えるべきことを整理します。</p>
+          <ul class="form-points"><li>入力約15秒</li><li>必須4項目</li><li>月5社限定</li><li>5営業日以内にPDFで送付</li></ul>
+        </div>
+
+        <!-- HÉLMIO無料PR診断フォーム -->
+        <form class="form-card" action="https://formspree.io/f/mykrvjbq" method="post">
+          <input type="hidden" name="_subject" value="【HÉLMIO】無料PR診断のお申し込み">
+          <input type="hidden" name="form_name" value="無料PR診断">
+          <input type="hidden" name="source" value="service-btob-pr">
+          <div class="form-grid">
+            <div class="field-full">
+              <label for="website">公式サイトURL</label>
+              <input id="website" name="website_url" type="url" inputmode="url" placeholder="https://example.co.jp/">
+            </div>
+            <div>
+              <label for="company">会社名<span class="required">必須</span></label>
+              <input id="company" name="company" type="text" autocomplete="organization" required placeholder="例：株式会社HELMIO">
+            </div>
+            <div>
+              <label for="name">お名前<span class="required">必須</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="field-full">
+              <label for="email">メールアドレス<span class="required">必須</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="例：name@company.co.jp">
+            </div>
+            <div class="field-full">
+              <label for="issue">経営課題<span class="required">必須</span></label>
+              <select id="issue" name="issue" required>
+                <option value="">選択してください</option>
+                <option>売上・問い合わせを増やしたい</option>
+                <option>業界で信頼される立場をつくりたい</option>
+                <option>新商品・新規事業を広めたい</option>
+                <option>展示会・イベントの成果を高めたい</option>
+                <option>採用を強化したい</option>
+                <option>会社の強みや発信テーマを整理したい</option>
+                <option>その他</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn form-submit" type="submit">無料で自社のPRスコアを確認する</button>
+          <p class="privacy">送信により、プライバシーポリシーに同意したものとみなします。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><a class="brand" href="/">HÉLMIO</a><p>株式会社HELMIO｜PR & Communication Design</p></div>
+      <p>© 2026 HÉLMIO</p>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="btn" href="#diagnosis-form">無料でPRスコアを確認する</a></div>
+</body>
+</html>
