@@ -1781,6 +1781,222 @@ body.pr-diagnosis-modal-open {
 
 /* 2026-08 brand alignment */
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}.hero-actions .primary-btn,.hero-actions .secondary-btn{min-width:250px}.hero-diagnosis-btn{font:inherit;cursor:pointer}.secondary-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:13px 24px;border:1px solid #102f52;color:#102f52;background:transparent;text-decoration:none;font-weight:600;letter-spacing:.03em;transition:.2s}.secondary-btn:hover{background:#102f52;color:#fff}.hero-microcopy{width:100%;margin:2px 0 0;color:#687888;font-size:12px;line-height:1.6}.service-detail-link{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding:20px 0;border-top:1px solid rgba(177,138,67,.45);color:#102f52;text-decoration:none;font-weight:600}.service-detail-link:hover{color:#b18a43}.pr-campaign__delivery{margin:18px 0 0;padding:16px 0 0;border-top:1px solid #d8e0e8;color:#45576a;font-size:13px;line-height:1.85}.works-disclaimer{margin:20px 0 0;color:#697784;font-size:12px;line-height:1.7}@media(max-width:640px){.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .primary-btn,.hero-actions .secondary-btn{width:100%;min-width:0}.hero-microcopy{text-align:center}.service-detail-link{font-size:14px}}
+
+
+/* =========================================================
+   2026-08-01 FINAL LAYOUT QA
+   Fixes: hero CTA alignment / service balance / professional cards
+========================================================= */
+
+/* HERO — both CTAs share the same top, bottom and height */
+.hero-actions {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.18fr) minmax(240px, .82fr) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  width: min(100%, 790px) !important;
+  margin: 30px 0 0 !important;
+}
+.hero-actions .primary-btn,
+.hero-actions .secondary-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 64px !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+  padding: 0 26px !important;
+  box-sizing: border-box !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+.hero-actions .hero-microcopy {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-top: 2px !important;
+}
+
+/* SERVICE — align the two columns and remove the dead space below */
+.service-section {
+  padding: 88px 0 92px !important;
+}
+.service-section > .section {
+  width: min(1120px, calc(100% - 64px)) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+.service-layout {
+  display: grid !important;
+  grid-template-columns: minmax(320px, .76fr) minmax(0, 1.24fr) !important;
+  gap: 64px !important;
+  align-items: stretch !important;
+}
+.service-left {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+.service-left > p:last-of-type {
+  max-width: 390px !important;
+  margin-bottom: 0 !important;
+}
+.service-left img {
+  display: block !important;
+  width: 100% !important;
+  height: 360px !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: auto 0 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+.service-list {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+.service-row {
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) 52px !important;
+  column-gap: 20px !important;
+  align-items: center !important;
+  min-height: 0 !important;
+  padding: 30px 0 !important;
+  box-sizing: border-box !important;
+}
+.service-row > span {
+  align-self: start !important;
+  padding-top: 3px !important;
+}
+.service-row > div {
+  min-width: 0 !important;
+}
+.service-row strong {
+  display: block !important;
+  margin: 0 0 8px !important;
+  font-size: clamp(21px, 1.62vw, 26px) !important;
+  line-height: 1.55 !important;
+  letter-spacing: .025em !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+.service-title-nowrap {
+  white-space: nowrap !important;
+}
+.service-row p {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.85 !important;
+}
+.service-row::after {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  justify-self: end !important;
+}
+.service-detail-link {
+  margin: 20px 0 0 !important;
+  padding: 24px 0 0 !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  line-height: 1.5 !important;
+}
+
+/* PROFESSIONALS — cards end immediately after the name */
+.talent-cards {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  grid-auto-rows: auto !important;
+}
+.talent-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: start !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+.talent-card > img,
+.talent-card > .talent-placeholder {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+.talent-card-body {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 17px 18px 18px !important;
+  flex: 0 0 auto !important;
+}
+.talent-name {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 1020px) {
+  .service-layout {
+    grid-template-columns: minmax(270px, .68fr) minmax(0, 1.32fr) !important;
+    gap: 42px !important;
+  }
+  .service-left img { height: 330px !important; }
+  .service-row { grid-template-columns: 40px minmax(0, 1fr) 48px !important; gap: 15px !important; }
+  .service-row strong { font-size: 21px !important; }
+  .talent-cards { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 760px) {
+  .hero-actions {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn {
+    height: 58px !important;
+    min-height: 58px !important;
+  }
+  .hero-actions .hero-microcopy { text-align: center !important; }
+
+  .service-section { padding: 64px 0 70px !important; }
+  .service-section > .section { width: min(100% - 32px, 1120px) !important; }
+  .service-layout { grid-template-columns: 1fr !important; gap: 38px !important; }
+  .service-left img {
+    width: 100% !important;
+    height: 310px !important;
+    margin: 30px 0 0 !important;
+  }
+  .service-row {
+    grid-template-columns: 34px minmax(0, 1fr) 42px !important;
+    gap: 12px !important;
+    padding: 24px 0 !important;
+  }
+  .service-row strong { font-size: 20px !important; }
+  .service-row p { font-size: 14px !important; }
+  .service-title-nowrap { white-space: normal !important; }
+  .service-detail-link { margin-top: 12px !important; }
+}
+
+@media (max-width: 560px) {
+  .talent-cards { grid-template-columns: 1fr !important; gap: 18px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -1889,7 +2105,7 @@ body.pr-diagnosis-modal-open {
 <a class="service-row" href="service/btob-pr/#communication">
 <span>03</span>
 <div>
-<strong>展示会・発表会・経営者コミュニケーション</strong>
+<strong>展示会・発表会・<span class="service-title-nowrap">経営者コミュニケーション</span></strong>
 <p>展示会、新製品発表、スピーチ、映像など、人が直接伝える場を一貫したメッセージで設計します。</p>
 </div>
 </a>
