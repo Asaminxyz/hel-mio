@@ -2736,6 +2736,107 @@ body.pr-diagnosis-modal-open {
     min-width: 0;
   }
 }
+
+
+/* =========================================================
+   FINAL SIZE / HIERARCHY ADJUSTMENTS — 2026-08-01
+   ========================================================= */
+
+/* Hero: the image should remain visual support, not another message panel. */
+.hero--newsroom .hero-lead--main {
+  margin-bottom: 24px;
+}
+
+.hero--newsroom .hero-visual::after {
+  display: none;
+}
+
+/* Service: keep the three-step concept prominent without oversized copy. */
+.newsroom-service__header {
+  gap: 48px;
+  margin-bottom: 44px;
+}
+
+.newsroom-service__header h2 {
+  max-width: 760px;
+  font-size: clamp(30px, 3.35vw, 44px);
+  line-height: 1.48;
+  letter-spacing: .025em;
+}
+
+/* PR diagnosis campaign: reduce the promotional headline hierarchy. */
+.pr-campaign__hero {
+  padding: 24px 38px 20px;
+}
+
+.pr-campaign__limit {
+  margin-bottom: 7px;
+  font-size: 20px;
+}
+
+.pr-campaign__title {
+  font-size: clamp(30px, 3.55vw, 46px);
+  line-height: 1.28;
+  letter-spacing: .015em;
+}
+
+.pr-campaign__title span {
+  margin-left: .12em;
+}
+
+.pr-campaign__sub {
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: .045em;
+}
+
+@media (max-width: 980px) {
+  .newsroom-service__header h2 {
+    font-size: 35px;
+  }
+
+  .pr-campaign__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 700px) {
+  .newsroom-service__header {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .newsroom-service__header h2 {
+    font-size: 27px;
+    line-height: 1.55;
+  }
+
+  .pr-campaign__hero {
+    padding: 20px 14px 17px;
+  }
+
+  .pr-campaign__limit {
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  .pr-campaign__title {
+    font-size: 27px;
+    line-height: 1.38;
+  }
+
+  .pr-campaign__title span {
+    display: block;
+    margin: 2px 0 0;
+  }
+
+  .pr-campaign__sub {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.75;
+    letter-spacing: .025em;
+  }
+}
 </style>
 
 </head>
@@ -2775,7 +2876,6 @@ body.pr-diagnosis-modal-open {
 <span class="hero-title-line">ニュースがある。</span>
 </h1>
 <p class="hero-lead hero-lead--main">専属ニュース室は、記者・アナウンサーの取材力・言語化力と、マーケターの戦略設計力を掛け合わせた企業広報サービスです。企業の中に埋もれている技術、実績、変化、社会的価値を発掘し、広報PRから展示会、発表会、経営者発信まで、社会に届く形へ設計します。</p>
-<p class="hero-proof"><span aria-hidden="true">✓</span> 元NHKアナウンサー・報道経験者・マーケターによる広報PRチーム</p>
 <div class="hero-actions">
 <button class="primary-btn hero-primary" type="button" data-open-pr-diagnosis aria-haspopup="dialog" aria-controls="prDiagnosisModal">無料PR診断を申し込む</button>
 <a class="hero-secondary" href="#service">サービス詳細を見る</a>
@@ -2785,10 +2885,6 @@ body.pr-diagnosis-modal-open {
 <figure class="hero-visual">
 <!-- TODO: 実際の取材・登壇・展示会支援の写真が揃い次第、herohero.pngを実写へ差し替える -->
 <img alt="取材、ニュース設計、発表会まで支援する専属ニュース室" src="herohero.png" fetchpriority="high"/>
-<figcaption class="hero-visual-badge">
-<span>NEWSROOM TEAM</span>
-<strong>取材から、社会に届く現場まで。</strong>
-</figcaption>
 </figure>
 </section>
 
