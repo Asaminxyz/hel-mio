@@ -1,885 +1,123 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会社概要｜HÉLMIO</title>
-  <meta name="description" content="株式会社HELMIOの会社概要、代表メッセージ、主な実績をご紹介します。">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会社概要・代表プロフィール｜株式会社HELMIO</title>
+  <meta name="description" content="株式会社HELMIOの会社概要、代表・新島麻生のプロフィール、報道・企業コミュニケーション分野での経歴をご紹介します。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://hel-mio.com/company.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="会社概要・代表プロフィール｜株式会社HELMIO">
+  <meta property="og:description" content="株式会社HELMIOの会社情報と、代表・新島麻生の報道・取材経験をご紹介します。">
+  <meta property="og:url" content="https://hel-mio.com/company.html">
+  <meta property="og:site_name" content="HELMIO">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    :root {
-      --company-navy: #102f52;
-      --company-text: #34404a;
-      --company-gold: #b18a43;
-      --company-line: rgba(16, 47, 82, 0.14);
-      --company-cream: #fbf8f2;
-      --company-white: #ffffff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .company-page-main {
-      color: var(--company-text);
-      background: var(--company-white);
-    }
-
-    .company-page-hero {
-      padding: 92px 0 82px;
-      background:
-        radial-gradient(circle at 88% 12%, rgba(177, 138, 67, 0.09), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
-      border-bottom: 1px solid rgba(177, 138, 67, 0.18);
-    }
-
-    .company-page-hero__inner,
-    .representative-message__inner,
-    .company-profile__inner,
-    .achievement-index__inner,
-    .company-contact__inner {
-      width: min(1180px, calc(100% - 64px));
-      margin: 0 auto;
-    }
-
-    .company-page-hero__eyebrow,
-    .representative-message__label,
-    .company-profile__eyebrow,
-    .achievement-index__eyebrow,
-    .company-contact__eyebrow {
-      margin: 0 0 13px;
-      color: var(--company-gold);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: 0.23em;
-      text-transform: uppercase;
-    }
-
-    .company-page-hero h1 {
-      margin: 0;
-      color: var(--company-navy);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(58px, 8vw, 104px);
-      font-weight: 500;
-      line-height: 0.95;
-      letter-spacing: 0.04em;
-    }
-
-    .company-page-hero__ja {
-      margin: 22px 0 0;
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(22px, 3vw, 30px);
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: 0.08em;
-    }
-
-    .company-page-hero__lead {
-      max-width: 740px;
-      margin: 22px 0 0;
-      color: #53616e;
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    /* Representative message */
-    .representative-message {
-      padding: 96px 0;
-      background: var(--company-cream);
-      border-bottom: 1px solid rgba(177, 138, 67, 0.18);
-    }
-
-    .representative-message__label {
-      margin-bottom: 34px;
-    }
-
-    .representative-message__layout {
-      display: grid;
-      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
-      gap: 72px;
-      align-items: start;
-    }
-
-    .representative-message__lead {
-      display: grid;
-      gap: 30px;
-    }
-
-    .representative-message h2 {
-      margin: 0;
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(35px, 4.1vw, 54px);
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: 0.03em;
-    }
-
-    .representative-message__title-main,
-    .representative-message__title-sub {
-      display: block;
-    }
-
-    .representative-message__title-main {
-      white-space: nowrap;
-      font-size: clamp(36px, 2.8vw, 44px);
-      line-height: 1.45;
-      letter-spacing: 0.015em;
-    }
-
-    .representative-message__title-sub {
-      margin-top: 2px;
-      font-size: 0.72em;
-      line-height: 1.55;
-      letter-spacing: 0.05em;
-    }
-
-    .representative-message__photo {
-      margin: 0;
-      overflow: hidden;
-      border-radius: 18px;
-      background: #eae5dc;
-      box-shadow: 0 16px 40px rgba(16, 47, 82, 0.08);
-    }
-
-    .representative-message__photo img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .representative-message__body {
-      color: var(--company-text);
-      font-size: 16px;
-      line-height: 2.08;
-    }
-
-    .representative-message__body p {
-      margin: 0 0 25px;
-    }
-
-    .representative-message__signature {
-      display: grid;
-      gap: 6px;
-      justify-items: end;
-      margin-top: 42px;
-      padding-top: 24px;
-      border-top: 1px solid var(--company-line);
-      text-align: right;
-    }
-
-    .representative-message__signature span {
-      color: #687480;
-      font-size: 13px;
-      letter-spacing: 0.06em;
-    }
-
-    .representative-message__signature strong {
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: 23px;
-      font-weight: 500;
-      letter-spacing: 0.09em;
-    }
-
-    /* Company profile */
-    .company-profile {
-      padding: 90px 0 76px;
-      background: #ffffff;
-    }
-
-    .company-section-heading {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
-      gap: 56px;
-      align-items: end;
-      margin-bottom: 42px;
-    }
-
-    .company-section-heading h2 {
-      margin: 0;
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(30px, 4vw, 45px);
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: 0.04em;
-    }
-
-    .company-section-heading__lead {
-      margin: 0;
-      color: #56636f;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .company-profile__table {
-      margin: 0;
-      border-top: 1px solid var(--company-line);
-    }
-
-    .company-profile__row {
-      display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      border-bottom: 1px solid var(--company-line);
-    }
-
-    .company-profile__row dt,
-    .company-profile__row dd {
-      margin: 0;
-      padding: 25px 0;
-    }
-
-    .company-profile__row dt {
-      color: var(--company-navy);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-
-    .company-profile__row dd {
-      color: #3f4952;
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    .company-business-list {
-      display: grid;
-      gap: 7px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .company-business-list li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .company-business-list li::before {
-      content: "";
-      position: absolute;
-      top: 0.83em;
-      left: 0;
-      width: 6px;
-      height: 6px;
-      background: var(--company-gold);
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* Achievements archive */
-    .achievement-index {
-      padding: 72px 0 96px;
-      background: #fbfaf7;
-      border-top: 1px solid rgba(177, 138, 67, 0.18);
-      scroll-margin-top: 90px;
-    }
-
-    .achievement-index__header {
-      display: grid;
-      grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1.38fr);
-      gap: 64px;
-      align-items: start;
-      margin-bottom: 30px;
-    }
-
-    .achievement-index__header h2 {
-      margin: 0;
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(32px, 4vw, 47px);
-      font-weight: 500;
-      line-height: 1.45;
-      letter-spacing: 0.04em;
-    }
-
-    .achievement-index__lead {
-      margin: 0;
-      color: #424c55;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.95;
-    }
-
-    .achievement-index__note {
-      margin: 18px 0 0;
-      padding: 0;
-      color: #5d6872;
-      background: transparent;
-      border: 0;
-      font-size: 13px;
-      line-height: 1.85;
-    }
-
-    .achievement-jump-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin: 46px 0 0;
-      border-top: 1px solid var(--company-line);
-      border-left: 1px solid var(--company-line);
-    }
-
-    .achievement-jump-list a {
-      display: grid;
-      grid-template-columns: 62px minmax(0, 1fr) 22px;
-      gap: 16px;
-      align-items: center;
-      min-height: 78px;
-      padding: 17px 20px;
-      color: var(--company-navy);
-      background: #ffffff;
-      border-right: 1px solid var(--company-line);
-      border-bottom: 1px solid var(--company-line);
-      text-decoration: none;
-      transition: background-color 0.18s ease, color 0.18s ease;
-    }
-
-    .achievement-jump-list a:hover {
-      color: #ffffff;
-      background: var(--company-navy);
-    }
-
-    .achievement-jump-list__number {
-      color: var(--company-gold);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 1;
-    }
-
-    .achievement-jump-list__title {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .achievement-jump-list__arrow {
-      font-size: 18px;
-      line-height: 1;
-      text-align: right;
-    }
-
-    .achievement-archive {
-      margin-top: 78px;
-      border-top: 1px solid rgba(16, 47, 82, 0.22);
-    }
-
-    .achievement-detail {
-      padding: 66px 0 58px;
-      border-bottom: 1px solid rgba(16, 47, 82, 0.22);
-      scroll-margin-top: 92px;
-    }
-
-    .achievement-detail__header {
-      display: grid;
-      grid-template-columns: 104px minmax(0, 1fr);
-      gap: 24px;
-      align-items: baseline;
-      margin-bottom: 30px;
-    }
-
-    .achievement-detail__number {
-      color: var(--company-gold);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 44px;
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .achievement-detail__header h3 {
-      margin: 0;
-      color: var(--company-navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(25px, 3vw, 35px);
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: 0.03em;
-    }
-
-    .achievement-detail__list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 52px;
-      margin: 0 0 0 128px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .achievement-detail__list li {
-      position: relative;
-      padding: 14px 0 14px 19px;
-      color: #3d474f;
-      border-bottom: 1px solid rgba(16, 47, 82, 0.1);
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.8;
-    }
-
-    .achievement-detail__list li::before {
-      content: "";
-      position: absolute;
-      top: 1.92em;
-      left: 0;
-      width: 6px;
-      height: 6px;
-      background: var(--company-gold);
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
-
-    .achievement-detail__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin: 28px 0 0 128px;
-      color: #63707b;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .achievement-detail__back::before {
-      content: "↑";
-      color: var(--company-gold);
-      font-size: 16px;
-    }
-
-    .achievement-detail__back:hover {
-      color: var(--company-navy);
-    }
-
-    @media (min-width: 901px) and (max-width: 1100px) {
-      .representative-message__layout {
-        grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.22fr);
-        gap: 42px;
-      }
-
-      .representative-message__title-main {
-        font-size: 32px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .achievement-index__header {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .achievement-jump-list {
-        grid-template-columns: 1fr;
-      }
-
-      .achievement-detail__list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .achievement-index {
-        padding: 54px 0 72px;
-      }
-
-      .achievement-index__lead {
-        font-size: 14px;
-      }
-
-      .achievement-index__note {
-        font-size: 12px;
-      }
-
-      .achievement-jump-list {
-        margin-top: 32px;
-      }
-
-      .achievement-jump-list a {
-        grid-template-columns: 48px minmax(0, 1fr) 18px;
-        min-height: 68px;
-        padding: 14px 15px;
-      }
-
-      .achievement-jump-list__number {
-        font-size: 23px;
-      }
-
-      .achievement-jump-list__title {
-        font-size: 14px;
-      }
-
-      .achievement-archive {
-        margin-top: 54px;
-      }
-
-      .achievement-detail {
-        padding: 48px 0 42px;
-      }
-
-      .achievement-detail__header {
-        grid-template-columns: 58px minmax(0, 1fr);
-        gap: 13px;
-        margin-bottom: 23px;
-      }
-
-      .achievement-detail__number {
-        font-size: 34px;
-      }
-
-      .achievement-detail__header h3 {
-        font-size: 23px;
-      }
-
-      .achievement-detail__list {
-        margin-left: 0;
-      }
-
-      .achievement-detail__list li {
-        padding: 12px 0 12px 17px;
-        font-size: 13px;
-      }
-
-      .achievement-detail__back {
-        margin-left: 0;
-      }
-    }
-
-    /* Contact CTA */
-    .company-contact {
-      padding: 80px 0;
-      color: #ffffff;
-      background: var(--company-navy);
-    }
-
-    .company-contact__inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .company-contact__eyebrow {
-      color: #d9bd83;
-    }
-
-    .company-contact h2 {
-      margin: 0;
-      color: #ffffff;
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(27px, 4vw, 42px);
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .company-contact p:not(.company-contact__eyebrow) {
-      margin: 14px 0 0;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .company-contact__button {
-      display: inline-flex;
-      min-width: 260px;
-      min-height: 60px;
-      padding: 14px 24px;
-      align-items: center;
-      justify-content: center;
-      color: var(--company-navy);
-      background: #ffffff;
-      border: 1px solid #ffffff;
-      border-radius: 7px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.18s ease, background-color 0.18s ease;
-    }
-
-    .company-contact__button:hover {
-      background: #f2eadb;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 900px) {
-      .company-page-hero {
-        padding: 76px 0 68px;
-      }
-
-      .representative-message {
-        padding: 76px 0;
-      }
-
-      .representative-message__layout,
-      .company-section-heading,
-      .achievement-index__header,
-      .company-contact__inner {
-        grid-template-columns: 1fr;
-      }
-
-      .representative-message__layout {
-        gap: 38px;
-      }
-
-      .representative-message__photo {
-        max-width: 520px;
-      }
-
-      .company-profile__row {
-        grid-template-columns: 180px minmax(0, 1fr);
-      }
-
-
-      .company-contact__button {
-        justify-self: start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .company-page-hero__inner,
-      .representative-message__inner,
-      .company-profile__inner,
-      .achievement-index__inner,
-      .company-contact__inner {
-        width: min(100% - 32px, 1180px);
-      }
-
-      .company-page-hero {
-        padding: 58px 0 52px;
-      }
-
-      .company-page-hero__lead {
-        font-size: 14px;
-      }
-
-      .representative-message {
-        padding: 58px 0;
-      }
-
-      .representative-message__label {
-        margin-bottom: 24px;
-      }
-
-      .representative-message__lead {
-        gap: 23px;
-      }
-
-      .representative-message h2 {
-        font-size: 31px;
-      }
-
-      .representative-message__title-main {
-        font-size: 29px;
-        letter-spacing: 0.01em;
-      }
-
-      .representative-message__body {
-        font-size: 15px;
-        line-height: 1.95;
-      }
-
-      .representative-message__signature {
-        justify-items: start;
-        text-align: left;
-      }
-
-      .company-profile {
-        padding: 64px 0 52px;
-      }
-
-      .company-section-heading,
-      .achievement-index__header {
-        gap: 15px;
-        margin-bottom: 28px;
-      }
-
-      .company-profile__row {
-        grid-template-columns: 1fr;
-        padding: 20px 0;
-      }
-
-      .company-profile__row dt,
-      .company-profile__row dd {
-        padding: 0;
-      }
-
-      .company-profile__row dd {
-        margin-top: 8px;
-        font-size: 14px;
-      }
-
-
-      .company-contact {
-        padding: 60px 0;
-      }
-
-      .company-contact__button {
-        width: 100%;
-        min-width: 0;
-      }
-    }
-</style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"AboutPage","@id":"https://hel-mio.com/company.html#webpage","url":"https://hel-mio.com/company.html","name":"会社概要・代表プロフィール｜株式会社HELMIO","about":{"@id":"https://hel-mio.com/#organization"},"inLanguage":"ja"},
+      {"@type":"Person","@id":"https://hel-mio.com/company.html#asami-niijima","name":"新島 麻生","jobTitle":"代表","worksFor":{"@id":"https://hel-mio.com/#organization"},"description":"ニュースキャスター、スポーツキャスター、報道リポーターとして取材・構成・伝達を経験し、BtoB企業の広報PR支援に携わる。"}
+    ]
+  }
+  </script>
 </head>
-
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo-wrap" aria-label="HÉLMIO トップページ">
-      <div class="logo">HÉLMIO</div>
-      <div class="logo-sub">Corporate Communication &amp; Casting</div>
-    </a>
+<div class="page">
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="株式会社HELMIO トップページ">
+    <span class="brand__name">HÉLMIO</span>
+    <span class="brand__sub">External PR Team for BtoB</span>
+  </a>
+  <button class="menu-button" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
+    <a href="service/senzoku-newsroom/">専属ニュース室</a>
+    <a href="news-position.html">ニュースポジション</a>
+    <a href="index.html#diagnosis">無料診断</a>
+    <a href="company.html" aria-current="page">会社概要</a>
+    <a href="column/">コラム</a>
+    <a class="nav-contact" href="contact.html">法人のご相談</a>
+  </nav>
+</header>
+<main class="company-page-main" id="top">
+  <section class="company-page-hero" aria-labelledby="company-page-title">
+    <div class="company-page-hero__inner">
+      <p class="company-page-hero__eyebrow">ABOUT HELMIO</p>
+      <h1 id="company-page-title">COMPANY</h1>
+      <p class="company-page-hero__ja">会社概要</p>
+      <p class="company-page-hero__lead">HELMIOは、メディア露出を強化したいBtoB企業に伴走する外部PRチームです。経営者や現場への取材から、社内に埋もれている価値や経験を発掘し、社会やメディアが取り上げる理由のあるニュースへ編集します。</p>
+    </div>
+  </section>
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      type="button"
-      aria-controls="siteNav"
-      aria-expanded="false"
-      aria-label="メニューを開く"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
-      <a href="index.html#service">サービス</a>
-      <a href="company.html#achievement-index">実績</a>
-      <a href="index.html#talent">アナウンサー</a>
-      <a href="company.html" aria-current="page">会社概要</a>
-      <a href="contact.html#request">ご相談の流れ</a>
-      <a href="audition.html" class="nav-audition">オーディション</a>
-      <a href="contact.html" class="nav-contact">法人のお問い合わせ</a>
-    </nav>
-  </header>
-
-  <main class="company-page-main" id="top">
-    <section class="company-page-hero" aria-labelledby="company-page-title">
-      <div class="company-page-hero__inner">
-        <p class="company-page-hero__eyebrow">About HÉLMIO</p>
-        <h1 id="company-page-title">COMPANY</h1>
-        <p class="company-page-hero__ja">会社概要</p>
-        <p class="company-page-hero__lead">
-          人や企業の中にある思いや価値を見つけ、社会に届く言葉と形へ変える。
-          HÉLMIOは、取材・言語化・戦略設計を通じて、企業のコミュニケーションを支援します。
-        </p>
-      </div>
-    </section>
-
-    <section class="representative-message" aria-labelledby="representative-message-title">
-      <div class="representative-message__inner">
-        <p class="representative-message__label">MESSAGE</p>
-
-        <div class="representative-message__layout">
-          <div class="representative-message__lead">
-            <h2 id="representative-message-title">
-              <span class="representative-message__title-main">行動する人の思いを</span>
-              <span class="representative-message__title-sub">社会に届けたい</span>
-            </h2>
-
-            <figure class="representative-message__photo">
-              <img src="kaisyashokai.jpg" alt="株式会社HELMIO 代表 新島麻生">
-            </figure>
-          </div>
-
-          <div class="representative-message__body">
-            <p>
-              私は記者・アナウンサーとして、世の中の動きを取材し、ニュースとして届けてきました。
-            </p>
-
-            <p>
-              アナウンサーを志したきっかけは、高校時代にある社会課題に触れ、大学でボランティア活動に取り組む中で、その問題を社会をより良くしようと行動する社会起業家の方々に出会ったことです。
-            </p>
-
-            <p>
-              現在は、教育活動に取り組む一般社団法人の設立に向けて準備を進めています。また、アナウンサーという立場や放送という手段に限らず、行動する人や企業の中にある思いや価値を見つけ、社会に届く形へ変えていきたいと考え、HÉLMIOを立ち上げました。
-            </p>
-
-            <p>
-              HÉLMIOでは、アナウンサーが培ってきた取材力・言語化力と、マーケターの戦略設計力を掛け合わせます。企業の中にある事実や強みを見つけ、社会が知りたいテーマへと接続し、メディア、イベント、映像、経営者の言葉など、目的に応じて最も届く形に整えます。
-            </p>
-
-            <p>
-              社会のために行動する人たちの、縁の下の力持ちとして、本気で寄り添い、社会に届けます。
-            </p>
-
-            <div class="representative-message__signature">
-              <span>株式会社HELMIO 代表</span>
-              <strong>新島 麻生</strong>
-            </div>
-          </div>
+  <section class="representative-message" id="representative" aria-labelledby="representative-message-title">
+    <div class="representative-message__inner">
+      <p class="representative-message__label">MESSAGE</p>
+      <div class="representative-message__layout">
+        <div class="representative-message__lead">
+          <h2 id="representative-message-title"><span class="representative-message__title-main">価値が正しく伝わることで、</span><span class="representative-message__title-sub">企業の選択肢は増えていく。</span></h2>
+          <figure class="representative-message__photo"><img src="kaisyashokai.jpg" alt="株式会社HELMIO 代表 新島麻生"></figure>
+        </div>
+        <div class="representative-message__body">
+          <p>私はニュースキャスター、スポーツキャスター、報道リポーターとして、取材するテーマを調べ、話を聞く相手を選び、取材し、構成し、視聴者へ伝える仕事に携わってきました。</p>
+          <p>企業支援の現場では、技術や実績、社会的な意義があるにもかかわらず、外部の人に伝わる言葉へ整理されていない会社を多く見てきました。社内では当たり前になっている知識や経験ほど、外から見なければ価値に気づきにくいものです。</p>
+          <p>HELMIOでは、事業や業界を外から調べたうえで、経営者や現場を取材します。そして、何が新しく、誰の問題を解決し、なぜその企業が語る意味があるのかを整理し、社会やメディアが理解できるニュースへ編集します。</p>
+          <p>必要に応じて、経験豊富なアナウンサーが企業の伝え手となり、取材対応やイベントの司会・進行も担当します。発信する内容と、それを伝える人を分断せず、企業の価値が正しく届く状態をつくります。</p>
+          <div class="representative-message__signature"><span>株式会社HELMIO 代表</span><strong>新島 麻生</strong></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="company-profile" aria-labelledby="company-profile-title">
-      <div class="company-profile__inner">
-        <div class="company-section-heading">
-          <div>
-            <p class="company-profile__eyebrow">Company Profile</p>
-            <h2 id="company-profile-title">会社情報</h2>
-          </div>
-          <p class="company-section-heading__lead">
-            企業の「伝える」に関する課題を、取材と戦略の両面から支援します。
-          </p>
-        </div>
-
-        <dl class="company-profile__table">
-          <div class="company-profile__row">
-            <dt>会社名</dt>
-            <dd>株式会社HELMIO</dd>
-          </div>
-
-          <div class="company-profile__row">
-            <dt>代表</dt>
-            <dd>新島 麻生</dd>
-          </div>
-
-          <div class="company-profile__row">
-            <dt>所在地</dt>
-            <dd>〒107-0062 東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd>
-          </div>
-
-          <div class="company-profile__row">
-            <dt>設立</dt>
-            <dd>2026年7月</dd>
-          </div>
-
-          <div class="company-profile__row">
-            <dt>事業内容</dt>
-            <dd>
-              <ul class="company-business-list">
-                <li>企業コミュニケーション設計</li>
-                <li>展示会・イベントの企画運営</li>
-                <li>マーケティング・広報PR</li>
-                <li>キャスティング</li>
-                <li>スピーチ指導</li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
+  <section class="representative-profile" aria-labelledby="representative-profile-title">
+    <div class="representative-profile__inner">
+      <div class="company-section-heading"><div><p class="company-profile__eyebrow">REPRESENTATIVE</p><h2 id="representative-profile-title">代表プロフィール</h2></div><p class="company-section-heading__lead">報道で培った取材・情報整理・伝達の経験を、企業の広報設計とメディア対応に活かしています。</p></div>
+      <div class="representative-profile__grid">
+        <div><h3>新島 麻生 <span>ASAMI NIIJIMA</span></h3><p>ニュースキャスター、スポーツキャスター、報道リポーターとして活動。報道現場では、情報収集、取材先の選定、インタビュー、企画提案、構成、撮影、編集、プレゼンテーションまでを経験。現在は企業や経営者への取材を起点に、広報PR、ニュース企画、メッセージ設計、取材対応を支援する。</p></div>
+        <ul>
+          <li>NHK地方局アナウンサー／ニュース・スポーツ・報道</li>
+          <li>KBS京都 ニュースキャスター</li>
+          <li>J:COM、サンテレビほか 報道リポーター</li>
+          <li>企業イベント・カンファレンスの司会、インタビュー</li>
+          <li>経営者・登壇者へのスピーチ、伝え方支援</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="achievement-index" id="achievement-index" aria-labelledby="achievement-index-title">
+  <section class="company-profile" aria-labelledby="company-profile-title">
+    <div class="company-profile__inner">
+      <div class="company-section-heading"><div><p class="company-profile__eyebrow">COMPANY PROFILE</p><h2 id="company-profile-title">会社情報</h2></div><p class="company-section-heading__lead">広報支援を主軸に、企業が伝えるために必要な表現手段を連携します。</p></div>
+      <dl class="company-profile__table">
+        <div class="company-profile__row"><dt>会社名</dt><dd>株式会社HELMIO</dd></div>
+        <div class="company-profile__row"><dt>代表</dt><dd>新島 麻生</dd></div>
+        <div class="company-profile__row"><dt>所在地</dt><dd>〒107-0062 東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd></div>
+        <div class="company-profile__row"><dt>設立</dt><dd>2026年7月</dd></div>
+        <div class="company-profile__row"><dt>事業内容</dt><dd><ul class="company-business-list"><li>BtoB企業向け広報・PR支援「専属ニュース室」</li><li>ニュースポジション設計、広報戦略、メディアリレーション</li><li>経営者・現場への取材、コンテンツ・メッセージ設計</li><li>展示会・発表会の訴求設計、映像・ナレーション</li><li>司会・アナウンサーのキャスティング、スピーチ支援</li></ul></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="achievement-index" id="achievement-index" aria-labelledby="achievement-index-title">
       <div class="achievement-index__inner">
         <header class="achievement-index__header">
           <div>
             <p class="achievement-index__eyebrow">ACHIEVEMENTS</p>
-            <h2 id="achievement-index-title">実績一覧</h2>
+            <h2 id="achievement-index-title">代表・参画メンバーの経歴・実績</h2>
           </div>
           <div>
             <p class="achievement-index__lead">
-              企業コミュニケーション、イベント、展示会、報道、企業映像、広告出演など、これまでに携わった実績を分野別に掲載しています。
+              報道、企業イベント、展示会、映像、広告出演など、代表者および参画プロフェッショナルがこれまでに担当した経歴・実績を分野別に掲載しています。
             </p>
             <p class="achievement-index__note">
-              ※掲載実績には、株式会社HELMIO設立以前に、代表者および参画プロフェッショナルが個人として担当した案件を含みます。
+              ※以下は株式会社HELMIOの広報支援実績を示すものではなく、設立以前を含む代表者および参画プロフェッショナル個人の担当実績です。
             </p>
           </div>
         </header>
@@ -1279,38 +517,43 @@
       </div>
     </section>
 
-    <section class="company-contact" aria-labelledby="company-contact-title">
-      <div class="company-contact__inner">
-        <div>
-          <p class="company-contact__eyebrow">CONTACT</p>
-          <h2 id="company-contact-title">企業の課題をお聞かせください。</h2>
-          <p>まだ依頼内容が固まっていない段階でもご相談いただけます。</p>
-        </div>
-        <a class="company-contact__button" href="contact.html">法人のお問い合わせ</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <a class="footer-logo" href="index.html">HÉLMIO</a>
-        <p>Corporate Communication &amp; Casting</p>
-        <p class="footer-company-name">株式会社HELMIO</p>
-      </div>
-
-      <nav class="footer-nav" aria-label="フッターナビゲーション">
-        <a href="index.html">トップ</a>
-        <a href="index.html#service">サービス</a>
-        <a href="company.html#achievement-index">実績</a>
-        <a href="index.html#talent">アナウンサー</a>
-        <a href="company.html">会社概要</a>
-        <a href="audition.html">オーディション</a>
-        <a href="contact.html">法人のお問い合わせ</a>
-      </nav>
+  <section class="company-contact" aria-labelledby="company-contact-title">
+    <div class="company-contact__inner"><div><p class="company-contact__eyebrow">CONTACT</p><h2 id="company-contact-title">企業の価値を、社会に届くニュースへ。</h2><p>広報の課題がまだ整理されていない段階でもご相談いただけます。</p></div><a class="company-contact__button" href="contact.html">法人のご相談</a></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">HÉLMIO</a>
+      <p>株式会社HELMIO</p>
+      <p>メディア露出を強化したいBtoB企業に伴走する外部PRチーム</p>
     </div>
-  </footer>
-
-  <script src="main.js"></script>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="service/senzoku-newsroom/">専属ニュース室</a>
+      <a href="news-position.html">ニュースポジション</a>
+      <a href="index.html#diagnosis">無料ニュースポジション診断</a>
+      <a href="company.html">会社概要</a>
+      <a href="column/">コラム</a>
+      <a href="contact.html">法人のご相談</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">© 2026 HELMIO</div>
+</footer>
+</div>
+<script>
+(() => {
+  const button = document.querySelector('.menu-button');
+  const nav = document.querySelector('.site-nav');
+  if (!button || !nav) return;
+  const close = () => { button.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('is-open', !open);
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+</script>
 </body>
 </html>
