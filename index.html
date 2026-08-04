@@ -121,6 +121,7 @@
     .np-intro{display:grid;grid-template-columns:minmax(0,.93fr) minmax(460px,1.07fr);gap:68px;align-items:start}
     .np-copy{max-width:590px;padding-top:10px}.np-kicker{margin:0 0 18px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.2;letter-spacing:.22em}
     .np-title{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(30px,2.25vw,34px);font-weight:500;line-height:1.58;letter-spacing:.018em}.np-title span{display:block;white-space:nowrap}
+    .np-subcopy{margin:17px 0 0;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;line-height:1.8;letter-spacing:.035em}
     .np-description{max-width:590px;margin:25px 0 0;color:#27425d;font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:16px;font-weight:500;line-height:2.05;letter-spacing:.003em}
     .np-description strong{color:#a8731f;font-weight:800}
     .np-report-visual{display:block;width:100%;max-width:620px;justify-self:end;align-self:start;transition:transform .2s ease}.np-report-visual:hover{transform:translateY(-3px)}.np-report-visual img{width:100%;height:auto;filter:drop-shadow(0 16px 24px rgba(16,47,82,.10))}
@@ -135,7 +136,7 @@
     .np-offer__meta{display:flex;justify-content:center;gap:0;margin-top:2px;color:#40556a;font-size:11px;font-weight:600;line-height:1.6;text-align:center}.np-offer__meta span{padding:0 8px}.np-offer__meta span+span{border-left:1px solid rgba(16,47,82,.18)}.np-detail-link{display:inline-flex;margin-top:1px;align-items:center;justify-content:center;gap:7px;color:var(--navy);font-size:12px;font-weight:700;line-height:1.6;text-decoration:underline;text-decoration-color:rgba(177,138,67,.55);text-underline-offset:5px}.np-detail-link:hover{color:#9c6e20}
     @media(max-width:1180px){.np-intro{grid-template-columns:minmax(0,1fr) minmax(390px,.9fr);gap:42px}.np-offer{grid-template-columns:160px minmax(0,1fr);gap:26px}.np-badge{width:146px;height:146px}.np-badge strong{font-size:61px}.np-offer__actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.np-offer__meta,.np-detail-link{grid-column:1/-1}.np-action{min-height:60px}.np-points{gap:10px}.np-point+.np-point{padding-left:0;border-left:0}}
     @media(max-width:820px){.np-section{padding:78px 0 84px}.np-wrap{width:calc(100% - 40px)}.np-intro{grid-template-columns:1fr;gap:28px}.np-copy{max-width:680px;padding-top:0}.np-report-visual{max-width:620px;justify-self:start}.np-title span{white-space:normal}.np-description{max-width:680px;font-size:16px}.np-offer{grid-template-columns:1fr;padding:26px 22px 22px;text-align:left}.np-badge{margin-left:0}.np-offer__actions{display:flex}.np-points{display:grid;grid-template-columns:1fr}.np-point{min-width:0}.np-offer__meta{flex-wrap:wrap;justify-content:flex-start}.np-offer__meta span{padding:0 8px}.np-detail-link{justify-content:flex-start}}
-    @media(max-width:600px){.np-wrap{width:calc(100% - 28px)}.np-title{font-size:27px;line-height:1.65}.np-description{margin-top:20px;font-size:15px;line-height:1.95}.np-badge{width:138px;height:138px}.np-badge__ribbon{font-size:13px}.np-badge strong{font-size:58px}.np-badge__bottom{font-size:17px}.np-offer__content h3{font-size:27px}.np-offer__lead{font-size:14px}.np-action{min-height:59px;padding:12px 16px;font-size:15px}.np-offer__meta{display:grid;grid-template-columns:1fr;gap:3px}.np-offer__meta span{padding:0}.np-offer__meta span+span{border-left:0}}
+    @media(max-width:600px){.np-wrap{width:calc(100% - 28px)}.np-title{font-size:27px;line-height:1.65}.np-subcopy{margin-top:13px;font-size:15px;line-height:1.75}.np-description{margin-top:20px;font-size:15px;line-height:1.95}.np-badge{width:138px;height:138px}.np-badge__ribbon{font-size:13px}.np-badge strong{font-size:58px}.np-badge__bottom{font-size:17px}.np-offer__content h3{font-size:27px}.np-offer__lead{font-size:14px}.np-action{min-height:59px;padding:12px 16px;font-size:15px}.np-offer__meta{display:grid;grid-template-columns:1fr;gap:3px}.np-offer__meta span{padding:0}.np-offer__meta span+span{border-left:0}}
 
   </style>
 </head>
@@ -238,7 +239,8 @@
         <div class="np-intro">
           <div class="np-copy">
             <p class="np-kicker">NEWS POSITION</p>
-            <h2 class="np-title" id="np-title"><span>社会から、どう知られるかを</span><span>設計する。</span></h2>
+            <h2 class="np-title" id="np-title"><span>企業の知見を社会やメディアが</span><span>必要とするテーマへ。</span></h2>
+            <p class="np-subcopy">ニュースになる独自のポジションを設計</p>
             <p class="np-description">
               HELMIOでは、企業や経営者が社会や業界のどの問題について、当事者・取材先として知られるかという立ち位置を
               <strong>「ニュースポジション」</strong>と呼んでいます。商品の宣伝だけでは伝わりにくい、企業の経験や知見を社会の関心と結びつけ、継続して取材されるテーマとして設計します。
@@ -246,7 +248,7 @@
           </div>
 
           <a class="np-report-visual" href="news-position-diagnosis/" aria-label="無料ニュースポジション診断の詳細を見る">
-            <img src="report.png" alt="ニュースポジション診断レポートのサンプル" loading="lazy">
+            <img src="report2.png" alt="ニュースポジション診断レポートのサンプル" loading="lazy">
           </a>
         </div>
 
