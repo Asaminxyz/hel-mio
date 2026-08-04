@@ -318,15 +318,54 @@
   }
 }
 
+
+/* ===== Controlled Japanese line breaks ===== */
+.diagnosis h2 span{
+  display:block;
+  white-space:nowrap;
+}
+.diagnosis-question{
+  margin-top:15px !important;
+  color:#fff !important;
+  font-family:"Noto Serif JP",serif;
+  font-size:clamp(18px,1.45vw,21px) !important;
+  font-weight:600 !important;
+  line-height:1.65 !important;
+  letter-spacing:.025em;
+}
+.diagnosis-question span{
+  display:block;
+  white-space:nowrap;
+}
+.diagnosis-description{
+  margin-top:17px !important;
+}
+.support-heading span{
+  display:block;
+  white-space:nowrap;
+}
+@media(max-width:1100px){
+  .support-copy h2{
+    font-size:clamp(29px,2.55vw,35px);
+  }
+}
+@media(max-width:900px){
+  .diagnosis h2 span,
+  .diagnosis-question span,
+  .support-heading span{
+    white-space:normal;
+  }
+}
+
 </style>
 </head>
 <body>
-<header class="site-header"><a class="logo" href="#" aria-label="専属ニュース室 supported by HELMIO"><span class="logo-main">専属ニュース室</span><span class="logo-sub">SUPPORTED BY HELMIO</span></a><nav class="nav"><a href="#about">専属ニュース室とは</a><a href="#value">サービスの特徴</a><a href="#flow">支援の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a><a href="#diagnosis">無料診断を申し込む</a></nav><button class="menu">☰</button></header>
+<header class="site-header"><a class="logo" href="https://hel-mio.com/" aria-label="HELMIOトップページへ戻る"><span class="logo-main">専属ニュース室</span><span class="logo-sub">SUPPORTED BY HELMIO</span></a><nav class="nav"><a href="#about">専属ニュース室とは</a><a href="#value">サービスの特徴</a><a href="#flow">支援の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a><a href="#diagnosis">無料診断を申し込む</a></nav><button class="menu">☰</button></header>
 <main>
-<section class="hero" id="about"><div class="hero-copy"><h1>経営の強みを、<br>ニュースにする。</h1><p class="hero-sub">専属ニュース室が、御社の広報を支える。</p><p class="hero-text">戦略設計から企画・制作・メディアアプローチまで、継続的に伴走する広報パートナー。企業や現場の事実を掘り起こし、社会やメディアが必要とするテーマへ編集します。</p><div class="hero-points"><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M8 38V24h8v14M20 38V15h8v23M32 38V8h8v30M6 40h36"/></svg>戦略設計から<br>実行まで一貫支援</div><div class="hero-point"><svg viewBox="0 0 48 48"><circle cx="17" cy="17" r="7"/><circle cx="33" cy="17" r="7"/><path d="M5 39v-8c0-7 5-11 12-11s12 4 12 11v8M25 39v-8c0-6 3-10 8-10 6 0 10 4 10 10v8"/></svg>メディアとの<br>強いつながり</div><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M10 5h23l6 6v32H10zM33 5v8h8M16 21h17M16 28h17M16 35h10"/></svg>成果につながる<br>発信を継続</div></div></div><figure class="hero-visual"><img src="assets/hero-interview.jpg" alt="企業への取材対応を行うアナウンサー"><div class="hero-badge">月額<strong>40万円〜</strong>サービス立ち上げ限定<br>先着2社</div></figure></section>
-<section class="diagnosis" id="diagnosis"><div class="wrap diagnosis-grid"><div><p class="eyebrow">MONTHLY 5 COMPANIES</p><h2>無料ニュースポジション診断</h2><p>公開情報・競合・社会動向から、御社のニュースポジションを可視化。現在の広報状態を100点満点で整理し、ニュースになる可能性と、次の90日間に取り組む発信方針をレポートします。</p><div class="checks"><span>診断レポートを無料でご提供</span><span>オンラインで15〜30分の面談付き</span><span>無理な営業・勧誘は一切いたしません</span></div><div class="btns"><a class="btn btn-gold" href="#">無料診断を申し込む <b>→</b></a><a class="btn btn-outline" href="#">資料をダウンロードする <b>↓</b></a></div></div><figure class="report-frame"><img src="assets/sample-report.jpg" alt="無料ニュースポジション診断レポートのサンプル"></figure></div></section>
+<section class="hero" id="about"><div class="hero-copy"><h1>経営の強みを、<br>ニュースにする。</h1><p class="hero-sub">アナウンサーなど報道経験者が貴社の「専属ニュース室」に</p><p class="hero-text">戦略設計から企画・制作・メディアアプローチまで、継続的に伴走する広報パートナー。企業や現場の事実を掘り起こし、社会やメディアが必要とするテーマへ編集します。</p><div class="hero-points"><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M8 38V24h8v14M20 38V15h8v23M32 38V8h8v30M6 40h36"/></svg>戦略設計から<br>実行まで一貫支援</div><div class="hero-point"><svg viewBox="0 0 48 48"><circle cx="17" cy="17" r="7"/><circle cx="33" cy="17" r="7"/><path d="M5 39v-8c0-7 5-11 12-11s12 4 12 11v8M25 39v-8c0-6 3-10 8-10 6 0 10 4 10 10v8"/></svg>メディアとの<br>強いつながり</div><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M10 5h23l6 6v32H10zM33 5v8h8M16 21h17M16 28h17M16 35h10"/></svg>成果につながる<br>発信を継続</div></div></div><figure class="hero-visual"><img src="assets/hero-interview.jpg" alt="企業への取材対応を行うアナウンサー"><div class="hero-badge">月額<strong>40万円〜</strong>サービス立ち上げ限定<br>先着2社</div></figure></section>
+<section class="diagnosis" id="diagnosis"><div class="wrap diagnosis-grid"><div><p class="eyebrow">MONTHLY 5 COMPANIES</p><h2><span>無料ニュースポジション診断</span></h2><p class="diagnosis-question"><span>貴社は、社会やメディアから</span><span>どのような会社に見えているでしょうか。</span></p><p class="diagnosis-description">公開情報・競合・社会動向から、御社のニュースポジションを可視化。現在の広報状態を100点満点で整理し、ニュースになる可能性と、次の90日間に取り組む発信方針をレポートします。</p><div class="checks"><span>診断レポートを無料でご提供</span><span>オンラインで15〜30分の面談付き</span><span>無理な営業・勧誘は一切いたしません</span></div><div class="btns"><a class="btn btn-gold" href="#">無料診断を申し込む <b>→</b></a><a class="btn btn-outline" href="#">資料をダウンロードする <b>↓</b></a></div></div><figure class="report-frame"><img src="assets/sample-report.jpg" alt="無料ニュースポジション診断レポートのサンプル"></figure></div></section>
 <section class="section" id="value"><div class="wrap"><h2 class="section-title">専属ニュース室が提供する価値</h2><div class="value-grid"><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="7"/><path d="M24 3v8M45 24h-8M24 45v-8M3 24h8"/></svg><h3>経営の強みを発掘し<br>ニュースに設計</h3><p>事業・市場・社会の変化を分析し、ニュースとしての切り口を発掘。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M10 5h26v38H10zM16 14h14M16 21h14M16 28h10"/></svg><h3>企画・原稿・資料を<br>プロが制作</h3><p>メディアに伝わる企画設計と、質の高いコンテンツを制作。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M5 25V13l28-7v26L5 25zM13 27l4 15M37 14l6-4M38 21h7M37 28l6 4"/></svg><h3>メディアアプローチで<br>露出を創出</h3><p>記者ネットワークを活かし、最適な媒体へ個別アプローチ。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M8 38V25h8v13M20 38V17h8v21M32 38V8h8v30M6 40h36"/></svg><h3>継続的な発信で<br>信頼資産を蓄積</h3><p>定期的な発信で認知・信頼を高め、企業価値を積み上げる。</p></article><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="8"/><path d="M9 42v-9c0-9 6-14 15-14s15 5 15 14v9"/></svg><h3>効果測定と改善で<br>成果を最大化</h3><p>データで効果を検証し、次の施策へ改善を続けます。</p></article></div></div></section>
-<section class="support"><div class="wrap support-grid"><figure class="support-photo"><img src="assets/announcer-interview.jpg" alt="取材対応を行う白いスーツの女性アナウンサー"></figure><div class="support-copy"><p class="eyebrow">OPTIONAL SUPPORT</p><h2>アナウンサーが企業の顔となり、<br>社会へ届けるまで伴走</h2><p>企画や原稿を制作して終わるのではなく、必要に応じてアナウンサーが取材対応、広告出演、イベント司会、企業VP、SNS出演などを担当。設計したメッセージを、伝わる表現で社会へ届けます。</p><div class="support-list"><article class="support-item"><strong>01</strong><div><h3>取材対応</h3><p>記者会見、インタビュー、メディア取材での説明や進行を支援。</p></div></article><article class="support-item"><strong>02</strong><div><h3>広告出演</h3><p>ブランドの世界観に合わせ、広告やプロモーションへ出演。</p></div></article><article class="support-item"><strong>03</strong><div><h3>イベント司会</h3><p>展示会、記者発表、社内外イベントを円滑に進行します。</p></div></article><article class="support-item"><strong>04</strong><div><h3>企業VP出演</h3><p>会社紹介、採用、商品説明などの映像に企業の顔として出演。</p></div></article><article class="support-item"><strong>05</strong><div><h3>SNS・ライブ配信出演</h3><p>短尺動画やライブ配信で、継続的な情報発信を支援します。</p></div></article></div><p class="option-note"><b>OPTIONAL SUPPORT</b>　出演・登壇・司会等は、内容に応じて別途お見積りとなります。</p></div></div></section>
+<section class="support"><div class="wrap support-grid"><figure class="support-photo"><img src="assets/announcer-interview.jpg" alt="取材対応を行う白いスーツの女性アナウンサー"></figure><div class="support-copy"><p class="eyebrow">OPTIONAL SUPPORT</p><h2 class="support-heading"><span>アナウンサーが企業の顔となり、</span><span>社会へ届けるまで伴走</span></h2><p>企画や原稿を制作して終わるのではなく、必要に応じてアナウンサーが取材対応、広告出演、イベント司会、企業VP、SNS出演などを担当。設計したメッセージを、伝わる表現で社会へ届けます。</p><div class="support-list"><article class="support-item"><strong>01</strong><div><h3>取材対応</h3><p>記者会見、インタビュー、メディア取材での説明や進行を支援。</p></div></article><article class="support-item"><strong>02</strong><div><h3>広告出演</h3><p>ブランドの世界観に合わせ、広告やプロモーションへ出演。</p></div></article><article class="support-item"><strong>03</strong><div><h3>イベント司会</h3><p>展示会、記者発表、社内外イベントを円滑に進行します。</p></div></article><article class="support-item"><strong>04</strong><div><h3>企業VP出演</h3><p>会社紹介、採用、商品説明などの映像に企業の顔として出演。</p></div></article><article class="support-item"><strong>05</strong><div><h3>SNS・ライブ配信出演</h3><p>短尺動画やライブ配信で、継続的な情報発信を支援します。</p></div></article></div><p class="option-note"><b>OPTIONAL SUPPORT</b>　出演・登壇・司会等は、内容に応じて別途お見積りとなります。</p></div></div></section>
 <section class="pricing" id="pricing"><div class="wrap"><div class="price-card"><h2>ご相談しやすい<br>導入プラン</h2><div class="price-center"><p class="price-term">月額制 <i aria-hidden="true"></i> 原則6か月〜</p><p class="price-limited">サービス立ち上げ限定・先着2社</p><p class="price-amount"><span class="price-prefix">月額</span><strong>40</strong><span class="price-unit">万円〜</span></p></div><ul class="price-notes"><li>支援範囲、取材頻度、制作本数に応じて個別にお見積りします。</li><li>企画・取材・原稿制作・メディアアプローチ・取材対応を含みます。</li><li>詳細は診断レポートと面談をもとにご提案します。</li></ul></div></div></section>
 <section class="flow" id="flow"><div class="wrap"><h2 class="section-title">ご利用の流れ</h2><div class="flow-row"><article class="step"><span>01</span><h3>無料申込み</h3><p>フォームよりお申し込みください。</p></article><article class="step"><span>02</span><h3>事前ヒアリング</h3><p>オンラインで現状や課題をお伺いします。</p></article><article class="step"><span>03</span><h3>診断レポートのご提供</h3><p>公開情報をもとに診断し、レポートを作成します。</p></article><article class="step"><span>04</span><h3>ご提案・ご契約</h3><p>レポートをもとに支援内容をご提案します。</p></article></div></div></section>
 <section class="faq" id="faq"><div class="wrap"><h2 class="section-title">よくあるご質問</h2><div class="faq-grid"><details><summary>最低契約期間はありますか？</summary><p>原則6か月からのご契約です。広報資産を継続的に蓄積するための期間として設定しています。</p></details><details><summary>成果はどれくらいで出ますか？</summary><p>事業内容や情報資産によって異なります。掲載を保証するものではなく、取材される状態を継続的につくります。</p></details><details><summary>どのような企業が対象ですか？</summary><p>主にBtoB企業、新規事業、専門性の高いサービスを提供する企業を対象としています。</p></details><details><summary>料金以外に費用はかかりますか？</summary><p>撮影、出演、広告出稿などのオプション業務は別途お見積りとなります。</p></details><details><summary>社内に広報担当がいなくても大丈夫ですか？</summary><p>問題ありません。外部広報チームとして企画から実務まで伴走します。</p></details><details><summary>競合他社に知られることはありませんか？</summary><p>診断・支援に関する情報は適切に管理し、公開範囲を確認しながら進めます。</p></details></div></div></section>
