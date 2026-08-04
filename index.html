@@ -57,8 +57,8 @@
     .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:55px;padding:13px 25px;border:1px solid transparent;font-size:14px;font-weight:700;line-height:1.5;letter-spacing:.025em;transition:transform .18s,background .18s,border-color .18s}.button:hover{transform:translateY(-2px)}.button--primary{color:#fff;background:var(--navy);border-color:var(--navy)}.button--primary:hover{background:var(--gold);border-color:var(--gold)}.button--outline{color:var(--navy);background:#fff;border-color:rgba(16,47,82,.34)}.button--outline:hover{border-color:var(--gold)}.button--light{color:var(--navy);background:#fff}.button--gold{color:var(--navy-deep);background:#e0c98c;border-color:#e0c98c}.button--gold:hover{background:#f0dda8;border-color:#f0dda8}
     .challenge-section{position:relative;isolation:isolate;overflow:hidden;padding-top:92px;padding-right:max(56px,calc((100% - 1420px)/2));padding-bottom:108px;padding-left:max(56px,calc((100% - 1420px)/2));background:linear-gradient(180deg,#fbf9f4 0%,#f8f4ec 100%)}
     .challenge-section::before,.challenge-section::after{content:"";position:absolute;z-index:-1;bottom:-330px;width:760px;height:520px;border:1px solid rgba(177,138,67,.11);border-radius:50%;pointer-events:none}.challenge-section::before{left:-280px;transform:rotate(13deg)}.challenge-section::after{right:-300px;transform:rotate(-14deg)}
-    .challenge-heading{max-width:1320px;margin-bottom:50px}.challenge-heading .kicker{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:24px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{content:"";width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.challenge-heading .kicker::after{background:linear-gradient(90deg,var(--gold),transparent)}
-    .challenge-heading h2{font-size:clamp(38px,3.2vw,52px);line-height:1.68;letter-spacing:.018em}.challenge-heading h2 span{display:block;white-space:nowrap}.challenge-heading>p:last-child{margin-top:20px;color:#29415a;font-size:16px;font-weight:500;line-height:1.9}
+    .challenge-heading{max-width:1120px;margin:0 auto 46px}.challenge-heading .kicker{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:22px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{content:"";width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.challenge-heading .kicker::after{background:linear-gradient(90deg,var(--gold),transparent)}
+    .challenge-heading h2{max-width:900px;margin:0 auto;color:var(--navy);font-size:clamp(27px,1.75vw,34px);font-weight:500;line-height:1.72;letter-spacing:.035em;text-wrap:balance}.challenge-heading h2 span{display:block;white-space:nowrap}.challenge-heading h2 span+span{margin-top:3px}.challenge-heading>p:last-child{max-width:720px;margin:20px auto 0;color:#44566a;font-size:15px;font-weight:500;line-height:2}
     .challenge-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.challenge-grid article{position:relative;display:flex;min-height:334px;padding:40px 38px 38px;flex-direction:column;background:rgba(255,255,255,.96);border:1px solid rgba(177,138,67,.18);border-top:3px solid #c39a4b;box-shadow:0 18px 38px rgba(16,47,82,.075);transition:transform .22s ease,box-shadow .22s ease}.challenge-grid article::after{content:"";position:absolute;top:-3px;right:-1px;width:24px;height:24px;background:linear-gradient(225deg,#e0bf78 0 49%,transparent 50%);pointer-events:none}.challenge-grid article:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(16,47,82,.11)}
     .challenge-card__top{display:flex;min-height:88px;align-items:flex-start;justify-content:space-between;gap:18px}.challenge-number{position:relative;display:inline-block;padding-bottom:22px;color:#a97522;font-family:"Cormorant Garamond",serif;font-size:39px;font-weight:600;line-height:1;letter-spacing:.08em}.challenge-number::after{content:"";position:absolute;bottom:0;left:0;width:55px;height:1px;background:#c89a44}.challenge-icon{display:grid;width:72px;height:72px;place-items:center;flex:0 0 auto;color:var(--navy)}.challenge-icon svg{width:64px;height:64px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.challenge-icon .accent{stroke:#c49338}.challenge-icon .accent-fill{fill:#c49338;stroke:none}
     .challenge-grid h3{margin-top:40px;color:#0b2542;font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:18px;font-weight:700;line-height:1.9;letter-spacing:.002em}
@@ -74,7 +74,45 @@
     @media(max-width:1180px){.site-header{min-height:72px;padding:13px 24px}.brand__name{font-size:32px}.menu-button{display:block}.site-nav{position:absolute;top:72px;right:0;left:0;display:none;align-items:stretch;gap:0;padding:12px 24px 24px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(16,47,82,.08);white-space:normal}.site-nav.is-open{display:grid}.site-nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.site-nav a:not(.nav-contact)::after{display:none}.site-nav .nav-contact{margin-top:12px;text-align:center}}
     @media(max-width:1030px){.challenge-section{padding-right:32px;padding-left:32px}.hero{grid-template-columns:1fr minmax(370px,.78fr)}.hero__copy{padding:60px 42px}.challenge-heading h2 span{white-space:normal}.challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.challenge-grid article{min-height:275px}.newsroom{gap:45px}.service-grid{grid-template-columns:1fr 1fr}.service-card--main{grid-column:1/-1;min-height:300px}}
     @media(max-width:820px){.hero{grid-template-columns:1fr}.hero__copy{padding:66px 32px 54px}.hero__visual{height:56vw;min-height:390px}.split-heading{grid-template-columns:1fr;gap:28px}.concept__campaign{grid-template-columns:1fr;gap:22px}.concept__campaign .button{width:100%}.newsroom{grid-template-columns:1fr}.newsroom__visual{height:430px}.process{grid-template-columns:1fr}.process li{border-right:0;border-bottom:1px solid var(--line)}.process li:last-child{border-bottom:0}.why-layout{grid-template-columns:1fr}.why-photo{min-height:0;height:500px}.why-grid{grid-template-rows:none}.final-cta{grid-template-columns:1fr;gap:30px}.final-cta .button{width:100%}.footer-inner{display:grid}}
-    @media(max-width:600px){.section{width:calc(100% - 32px);padding:72px 0}.section--cream{width:100%;padding-right:16px;padding-left:16px}.challenge-section{padding-top:70px;padding-bottom:78px}.challenge-heading{margin-bottom:34px}.challenge-heading .kicker{gap:11px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{width:34px}.challenge-heading h2{font-size:29px;line-height:1.72}.challenge-heading>p:last-child{font-size:14px;line-height:1.9}.challenge-grid{gap:16px}.challenge-grid article{min-height:0;padding:28px 24px 29px}.challenge-card__top{min-height:64px}.challenge-number{font-size:34px}.challenge-icon{width:58px;height:58px}.challenge-icon svg{width:52px;height:52px}.challenge-grid h3{margin-top:28px;font-size:16px;line-height:1.85}.challenge-conclusion{min-height:0;margin-top:34px;padding:72px 24px 24px;font-size:14px;text-align:center}.challenge-conclusion__icon{top:18px;left:50%;transform:translateX(-50%)}.hero__copy{padding:54px 20px 46px}.hero h1{font-size:33px;line-height:1.55}.hero__lead{font-size:16px}.hero__body{font-size:14px}.hero__visual{height:330px;min-height:330px}.actions{display:grid}.button{width:100%}.challenge-grid{grid-template-columns:1fr}.challenge-grid article{min-height:0}.heading h2,.split-heading h2,.diagnosis h2{font-size:30px}.newsroom h2{font-size:28px;line-height:1.65}.newsroom-title-line{white-space:normal}.newsroom__visual{height:330px}.why-photo{height:390px}.why-grid article{padding:20px 18px}.why-grid h3{font-size:18px}.newsroom__copy>p:not(.kicker){font-size:15px}.newsroom li{font-size:14px}.concept{padding:76px 16px}.concept h2{font-size:34px}.concept__body{margin-top:24px}.concept__body .concept__lead{font-size:17px;line-height:1.95}.concept__campaign{margin-top:32px;padding:24px 20px}.concept__campaign h3{font-size:25px}.news-position-report-frame,.news-position-report-frame__placeholder{min-height:220px}.service-grid{grid-template-columns:1fr}.service-card--main{grid-column:auto}.service-card{min-height:300px;padding:30px 24px}.final-cta{padding:64px 16px}.footer-inner{width:calc(100% - 32px);padding:50px 0}.footer-nav{grid-template-columns:1fr}}
+    @media(max-width:600px){.section{width:calc(100% - 32px);padding:72px 0}.section--cream{width:100%;padding-right:16px;padding-left:16px}.challenge-section{padding-top:70px;padding-bottom:78px}.challenge-heading{margin-bottom:34px}.challenge-heading .kicker{gap:11px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{width:34px}.challenge-heading h2{font-size:23px;line-height:1.72;letter-spacing:.025em}.challenge-heading h2 span+span{margin-top:2px}.challenge-heading>p:last-child{font-size:14px;line-height:1.9}.challenge-grid{gap:16px}.challenge-grid article{min-height:0;padding:28px 24px 29px}.challenge-card__top{min-height:64px}.challenge-number{font-size:34px}.challenge-icon{width:58px;height:58px}.challenge-icon svg{width:52px;height:52px}.challenge-grid h3{margin-top:28px;font-size:16px;line-height:1.85}.challenge-conclusion{min-height:0;margin-top:34px;padding:72px 24px 24px;font-size:14px;text-align:center}.challenge-conclusion__icon{top:18px;left:50%;transform:translateX(-50%)}.hero__copy{padding:54px 20px 46px}.hero h1{font-size:33px;line-height:1.55}.hero__lead{font-size:16px}.hero__body{font-size:14px}.hero__visual{height:330px;min-height:330px}.actions{display:grid}.button{width:100%}.challenge-grid{grid-template-columns:1fr}.challenge-grid article{min-height:0}.heading h2,.split-heading h2,.diagnosis h2{font-size:30px}.newsroom h2{font-size:28px;line-height:1.65}.newsroom-title-line{white-space:normal}.newsroom__visual{height:330px}.why-photo{height:390px}.why-grid article{padding:20px 18px}.why-grid h3{font-size:18px}.newsroom__copy>p:not(.kicker){font-size:15px}.newsroom li{font-size:14px}.concept{padding:76px 16px}.concept h2{font-size:34px}.concept__body{margin-top:24px}.concept__body .concept__lead{font-size:17px;line-height:1.95}.concept__campaign{margin-top:32px;padding:24px 20px}.concept__campaign h3{font-size:25px}.news-position-report-frame,.news-position-report-frame__placeholder{min-height:220px}.service-grid{grid-template-columns:1fr}.service-card--main{grid-column:auto}.service-card{min-height:300px;padding:30px 24px}.final-cta{padding:64px 16px}.footer-inner{width:calc(100% - 32px);padding:50px 0}.footer-nav{grid-template-columns:1fr}}
+
+
+    /* WHY HELMIO — premium editorial layout */
+    .why-premium{position:relative;isolation:isolate;overflow:hidden;padding:108px 0 118px;background:linear-gradient(180deg,#fbf8f2 0%,#f8f4ed 100%);border-top:1px solid rgba(177,138,67,.13);border-bottom:1px solid rgba(177,138,67,.13)}
+    .why-premium::before{content:"";position:absolute;z-index:-1;top:220px;left:-175px;width:430px;height:430px;border:1px solid rgba(177,138,67,.13);border-radius:50%;box-shadow:0 0 0 18px rgba(177,138,67,.025),0 0 0 42px rgba(177,138,67,.018);pointer-events:none}
+    .why-premium::after{content:"";position:absolute;z-index:-1;right:-120px;bottom:-210px;width:470px;height:470px;background:radial-gradient(circle,rgba(177,138,67,.18) 1px,transparent 1.6px);background-size:11px 11px;opacity:.26;mask-image:radial-gradient(circle at center,#000 0 48%,transparent 70%);pointer-events:none}
+    .why-premium__inner{width:min(1220px,calc(100% - 64px));margin:0 auto}
+    .why-premium__intro{display:grid;grid-template-columns:minmax(0,.84fr) minmax(450px,1.16fr);gap:78px;align-items:end;margin-bottom:48px}
+    .why-premium__eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 20px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.2;letter-spacing:.22em;text-transform:uppercase}
+    .why-premium__eyebrow::after{content:"";width:42px;height:1px;background:rgba(177,138,67,.5)}
+    .why-premium__title{max-width:560px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(39px,3.35vw,54px);font-weight:500;line-height:1.48;letter-spacing:.025em}
+    .why-premium__subcopy{margin-top:18px;color:#ad7e2d;font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;line-height:1.8;letter-spacing:.03em}
+    .why-premium__lead{max-width:680px;padding-bottom:2px;color:#344b61;font-size:15px;font-weight:500;line-height:2.15}
+    .why-premium__lead strong{color:var(--navy);font-weight:700}
+    .why-premium__body{display:grid;grid-template-columns:minmax(330px,430px) minmax(0,1fr);gap:58px;align-items:start}
+    .why-premium__visual{position:relative}
+    .why-premium__photo-card{position:relative;overflow:hidden;aspect-ratio:4/5.15;background:#e9e3da;border:1px solid rgba(177,138,67,.25);border-radius:28px 8px 46px 8px;box-shadow:0 26px 58px rgba(16,47,82,.11)}
+    .why-premium__photo-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.16) 0%,transparent 34%,rgba(16,47,82,.05) 100%);pointer-events:none}
+    .why-premium__photo{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .why-premium__identity{position:absolute;z-index:2;right:20px;bottom:20px;left:20px;padding:16px 18px 15px;color:#fff;background:rgba(11,37,66,.91);border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 28px rgba(11,37,66,.23);backdrop-filter:blur(8px)}
+    .why-premium__identity small{display:block;color:#ddc58f;font-size:10px;font-weight:700;letter-spacing:.12em}
+    .why-premium__identity strong{display:block;margin-top:3px;font-family:"Noto Serif JP",serif;font-size:19px;font-weight:500;letter-spacing:.04em}
+    .why-premium__identity span{display:block;margin-top:9px;padding-top:9px;border-top:1px solid rgba(224,201,140,.45);font-size:11px;font-weight:500;letter-spacing:.035em}
+    .why-premium__profile-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:0 0 7px;color:var(--navy);font-size:14px;font-weight:700;border-bottom:1px dotted rgba(177,138,67,.7);transition:gap .18s ease,color .18s ease}
+    .why-premium__profile-link::before{content:"";width:32px;height:32px;border:1px solid rgba(177,138,67,.5);border-radius:50%;background:radial-gradient(circle at 50% 36%,transparent 0 4px,#b18a43 4.5px 5.5px,transparent 6px),radial-gradient(ellipse at 50% 72%,transparent 0 7px,#b18a43 7.5px 8.5px,transparent 9px)}
+    .why-premium__profile-link span{color:var(--gold);font-size:18px}.why-premium__profile-link:hover{gap:16px;color:#a8731f}
+    .why-premium__cards{display:grid;gap:14px}
+    .why-premium__card{position:relative;display:grid;grid-template-columns:108px minmax(0,1fr);gap:28px;min-height:144px;padding:24px 32px 23px;background:rgba(255,255,255,.88);border:1px solid rgba(177,138,67,.22);border-radius:14px;box-shadow:0 14px 34px rgba(16,47,82,.055);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .why-premium__card:hover{transform:translateY(-3px);border-color:rgba(177,138,67,.38);box-shadow:0 22px 44px rgba(16,47,82,.09)}
+    .why-premium__number{position:relative;display:flex;align-items:center;justify-content:center;color:#b68731;font-family:"Cormorant Garamond",serif;font-size:58px;font-weight:500;line-height:1}
+    .why-premium__number::after{content:"";position:absolute;top:10px;right:-14px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,#d6b66f 16%,#d6b66f 84%,transparent)}
+    .why-premium__number::before{content:"✦";position:absolute;top:3px;left:0;color:#d6b66f;font-size:12px}
+    .why-premium__content{align-self:center}
+    .why-premium__card h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;line-height:1.58;letter-spacing:.012em}
+    .why-premium__card p{margin-top:8px;color:#3e5368;font-size:13.5px;font-weight:500;line-height:1.85}
+    @media(max-width:1030px){.why-premium__intro{grid-template-columns:1fr;gap:26px}.why-premium__lead{max-width:820px}.why-premium__body{grid-template-columns:minmax(300px,390px) minmax(0,1fr);gap:34px}.why-premium__card{grid-template-columns:82px minmax(0,1fr);gap:22px;padding-right:24px;padding-left:24px}.why-premium__number{font-size:48px}}
+    @media(max-width:820px){.why-premium{padding:82px 0 90px}.why-premium__inner{width:calc(100% - 40px)}.why-premium__body{grid-template-columns:1fr}.why-premium__visual{max-width:520px}.why-premium__photo-card{aspect-ratio:4/4.5}.why-premium__cards{margin-top:10px}}
+    @media(max-width:600px){.why-premium{padding:72px 0 78px}.why-premium__inner{width:calc(100% - 32px)}.why-premium__intro{margin-bottom:34px}.why-premium__title{font-size:31px;line-height:1.58}.why-premium__subcopy{font-size:15px}.why-premium__lead{font-size:14px;line-height:2}.why-premium__photo-card{border-radius:22px 6px 34px 6px}.why-premium__identity{right:13px;bottom:13px;left:13px;padding:13px 14px}.why-premium__identity strong{font-size:17px}.why-premium__card{grid-template-columns:58px minmax(0,1fr);gap:16px;min-height:0;padding:21px 18px 20px;border-radius:10px}.why-premium__number{align-items:flex-start;padding-top:4px;font-size:38px}.why-premium__number::after{right:-8px}.why-premium__number::before{display:none}.why-premium__card h3{font-size:18px;line-height:1.65}.why-premium__card p{margin-top:7px;font-size:13px;line-height:1.85}}
 
 
     /* NEWS POSITION — editorial, square-based tone */
@@ -264,80 +302,66 @@
       </div>
     </section>
 
-<section class="why-premium" aria-labelledby="why-title">
-  <div class="why-premium__inner">
-    <div class="why-premium__intro">
-      <div>
-        <p class="why-premium__eyebrow">WHY HELMIO</p>
-        <h2 class="why-premium__title" id="why-title">専属ニュース室が<br>選ばれる理由</h2>
-        <p class="why-premium__subcopy">報道現場の取材力を、企業広報へ。</p>
+    <section class="why-premium" aria-labelledby="why-title">
+      <div class="why-premium__inner">
+        <div class="why-premium__intro">
+          <div>
+            <p class="why-premium__eyebrow">WHY HELMIO</p>
+            <h2 class="why-premium__title" id="why-title">専属ニュース室が<br>選ばれる理由</h2>
+            <p class="why-premium__subcopy">報道現場の取材力を、企業広報へ。</p>
+          </div>
+          <p class="why-premium__lead">代表の新島麻生は、ニュースキャスターや報道リポーターとして、取材先の選定から取材、構成、撮影、編集、伝達までを経験。その実務知見を基盤に、<strong>報道経験者とAI・マーケティングの専門家が連携し、企業の発信を戦略から実行まで支援します。</strong></p>
+        </div>
+
+        <div class="why-premium__body">
+          <div class="why-premium__visual">
+            <figure class="why-premium__photo-card">
+              <img class="why-premium__photo" src="./asami.png" alt="株式会社HELMIO代表 新島麻生" loading="lazy">
+              <figcaption class="why-premium__identity">
+                <small>株式会社HELMIO</small>
+                <strong>代表　新島麻生</strong>
+                <span>ニュースキャスター ／ 報道リポーター</span>
+              </figcaption>
+            </figure>
+            <a class="why-premium__profile-link" href="company.html#representative">代表プロフィールを見る <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="why-premium__cards">
+            <article class="why-premium__card">
+              <span class="why-premium__number">1.</span>
+              <div class="why-premium__content">
+                <h3>経営課題から逆算する広報設計</h3>
+                <p>売上、採用、事業理解などの経営課題を整理し、目指す成果から逆算して広報戦略を設計します。</p>
+              </div>
+            </article>
+
+            <article class="why-premium__card">
+              <span class="why-premium__number">2.</span>
+              <div class="why-premium__content">
+                <h3>AI・マーケティングの専門家と連携した分析体制</h3>
+                <p>社会動向、市場、競合、検索ニーズなどを多角的に調査し、企業が取るべきニュースポジションを設計します。</p>
+              </div>
+            </article>
+
+            <article class="why-premium__card">
+              <span class="why-premium__number">3.</span>
+              <div class="why-premium__content">
+                <h3>発信を社会の関心と接続し、露出を最大化</h3>
+                <p>企業が伝えたいことを、社会や業界、メディアの関心と接続。ニュース企画とメディアキャラバンを通じて、露出機会を広げます。</p>
+              </div>
+            </article>
+
+            <article class="why-premium__card">
+              <span class="why-premium__number">4.</span>
+              <div class="why-premium__content">
+                <h3>アナウンサーが貴社の顔として、取材対応や登壇を支援</h3>
+                <p>必要に応じてアナウンサーが、取材対応、インタビュー、イベント登壇、動画出演など、企業の顔となる発信まで支援します。</p>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
-
-      <p class="why-premium__lead">
-        代表の新島麻生は、ニュースキャスターや報道リポーターとして、取材先の選定から取材、構成、撮影、編集、伝達までを経験。
-        その実務知見を基盤に、<strong>報道経験者とAI・マーケティングの専門家が連携し、企業の発信を戦略から実行まで支援します。</strong>
-      </p>
-    </div>
-
-    <div class="why-premium__body">
-      <div class="why-premium__visual">
-        <figure class="why-premium__photo-card">
-          <img class="why-premium__photo" src="./asami.png" alt="株式会社HELMIO代表 新島麻生" loading="lazy">
-          <figcaption class="why-premium__photo-badge">Representative / Aso Niijima</figcaption>
-        </figure>
-        <a class="why-premium__cta" href="company.html#representative">
-          代表プロフィールを見る <span>→</span>
-        </a>
-      </div>
-
-      <div class="why-premium__cards">
-        <article class="why-premium__card">
-          <div class="why-premium__card-head">
-            <span class="why-premium__num">01</span>
-            <h3>経営課題から逆算する広報設計</h3>
-          </div>
-          <p>
-            売上、採用、事業理解などの経営課題を整理し、
-            目指す成果から逆算して広報戦略を設計します。
-          </p>
-        </article>
-
-        <article class="why-premium__card">
-          <div class="why-premium__card-head">
-            <span class="why-premium__num">02</span>
-            <h3>AI・マーケティングの専門家と連携した分析体制</h3>
-          </div>
-          <p>
-            社会動向、市場、競合、検索ニーズなどを多角的に調査し、
-            企業が取るべきニュースポジションを設計します。
-          </p>
-        </article>
-
-        <article class="why-premium__card">
-          <div class="why-premium__card-head">
-            <span class="why-premium__num">03</span>
-            <h3>発信を社会の関心と接続し、露出を最大化</h3>
-          </div>
-          <p>
-            企業が伝えたいことを、社会や業界、メディアの関心と接続。
-            ニュース企画とメディアキャラバンを通じて、露出機会を広げます。
-          </p>
-        </article>
-
-        <article class="why-premium__card">
-          <div class="why-premium__card-head">
-            <span class="why-premium__num">04</span>
-            <h3>アナウンサーが貴社の顔として、取材対応や登壇を支援</h3>
-          </div>
-          <p>
-            必要に応じてアナウンサーが、取材対応、インタビュー、
-            イベント登壇、動画出演など、企業の顔となる発信まで支援します。
-          </p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="section" aria-labelledby="services-title">
       <header class="heading heading--center"><p class="kicker">SERVICE</p><h2 id="services-title">HELMIOの主な支援</h2></header>
