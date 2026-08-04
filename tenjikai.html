@@ -1,935 +1,507 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>展示会プレゼン設計・台本制作・アナウンサー派遣｜HELMIO</title>
-  <meta name="description" content="HELMIOの展示会プレゼン設計は、出展企業や制作会社に向けて、プレゼン構成、台本、スライドの情報整理、登壇支援、司会・アナウンサー派遣までを支援するサービスです。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>展示会プレゼン設計・MCキャスティング・展示会プロデュース｜HELMIO</title>
+  <meta name="description" content="展示会を、説明する場所から商談が始まる場所へ。HELMIOは、プレゼン構成、台本、スライド、MCキャスティング、リハーサル、当日運営まで一貫して支援します。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://hel-mio.com/tenjikai.html">
-
   <meta property="og:type" content="website">
-  <meta property="og:title" content="展示会に、伝えるプロの専門チームを。｜HELMIO">
-  <meta property="og:description" content="展示会のプレゼン構成、台本、スライド、登壇支援からアナウンサー派遣まで。来場者に伝わり、次の会話につながるプレゼンを設計します。">
+  <meta property="og:title" content="展示会を、説明する場所から商談が始まる場所へ。｜HELMIO">
+  <meta property="og:description" content="プレゼンのプロが、展示会の伝達責任を持つ。企画・台本・スライド・キャスティング・本番まで一貫支援。">
   <meta property="og:url" content="https://hel-mio.com/tenjikai.html">
   <meta property="og:site_name" content="HELMIO">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://hel-mio.com/top.png">
   <meta name="twitter:card" content="summary_large_image">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    .exhibition-hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
-      min-height: 680px;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0b315d;
+      --navy-deep:#072543;
+      --ink:#162b41;
+      --blue:#eaf3f8;
+      --blue-2:#f4f8fb;
+      --gold:#b88934;
+      --gold-soft:#e6d5b3;
+      --cream:#f8f5ef;
+      --white:#fff;
+      --sub:#5d6976;
+      --line:rgba(11,49,93,.14);
+      --shadow:0 24px 60px rgba(7,37,67,.10);
+      --serif:"Noto Serif JP","Yu Mincho",serif;
+      --sans:"Noto Sans JP","Yu Gothic",sans-serif;
     }
+    html{scroll-behavior:smooth}
+    body{color:var(--ink);background:#fff;font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    img,svg{display:block;max-width:100%}
+    .page{overflow:hidden}
+    .container{width:min(1240px,calc(100% - 64px));margin-inline:auto}
+    .eyebrow{display:flex;align-items:center;gap:14px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+    .eyebrow::after{content:"";width:54px;height:1px;background:rgba(184,137,52,.55)}
+    .section-title{color:var(--navy);font-family:var(--serif);font-size:clamp(34px,4vw,56px);font-weight:500;line-height:1.55;letter-spacing:.025em}
+    .section-lead{max-width:740px;margin-top:18px;color:var(--sub);font-size:15px;line-height:2}
+    .button{display:inline-flex;min-height:58px;padding:14px 24px;align-items:center;justify-content:center;gap:20px;border:1px solid transparent;font-size:14px;font-weight:700;letter-spacing:.025em;transition:.2s ease}
+    .button::after{content:"→";font-size:18px;font-weight:400}
+    .button:hover{transform:translateY(-2px)}
+    .button--gold{color:#fff;background:var(--gold);box-shadow:0 12px 26px rgba(184,137,52,.18)}
+    .button--gold:hover{background:#a77928}
+    .button--navy{color:#fff;background:var(--navy)}
+    .button--outline{color:var(--navy);background:#fff;border-color:rgba(11,49,93,.28)}
 
-    .exhibition-hero__copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 86px 5.5vw 88px;
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:100;display:flex;min-height:80px;padding:12px 32px;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .brand{display:grid;gap:3px;line-height:1}
+    .brand strong{color:var(--navy);font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.08em}
+    .brand span{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:10px;font-weight:600;letter-spacing:.18em}
+    .site-nav{display:flex;align-items:center;gap:25px}
+    .site-nav a{color:var(--navy);font-size:12px;font-weight:700;white-space:nowrap}
+    .site-nav .nav-cta{padding:12px 17px;color:#fff;background:var(--navy)}
+    .menu{display:none;width:40px;height:36px;background:transparent;border:0}
+    .menu span{display:block;width:24px;height:1px;margin:6px auto;background:var(--navy)}
+
+    /* Hero */
+    .hero{position:relative;display:grid;grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);min-height:740px;background:#fff;border-bottom:1px solid var(--line)}
+    .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:92px clamp(38px,6vw,104px)}
+    .hero-copy .eyebrow{margin-bottom:22px}
+    .hero h1{max-width:760px;color:var(--navy);font-family:var(--serif);font-size:clamp(42px,4.4vw,66px);font-weight:500;line-height:1.45;letter-spacing:.03em}
+    .hero h1 span{display:block}
+    .hero-tagline{margin-top:22px;color:var(--gold);font-family:var(--serif);font-size:clamp(18px,1.7vw,23px);font-weight:600;line-height:1.7}
+    .hero-description{max-width:680px;margin-top:19px;color:#3c5064;font-size:15px;font-weight:500;line-height:2}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;max-width:690px;margin-top:42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .hero-proof div{padding:19px 20px 20px 0}
+    .hero-proof div+div{padding-left:20px;border-left:1px solid var(--line)}
+    .hero-proof strong{display:block;color:var(--navy);font-size:14px;line-height:1.65}
+    .hero-proof span{display:block;margin-top:4px;color:#71808f;font-size:11px;line-height:1.6}
+    .hero-visual{position:relative;overflow:hidden;min-height:740px;background:linear-gradient(145deg,#dce8ef 0%,#f2f6f8 50%,#d7e2e9 100%)}
+    .hero-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.14),transparent 28%),radial-gradient(circle at 78% 14%,rgba(255,255,255,.82),transparent 24%)}
+    .stage{position:absolute;inset:8% 5% 7%;perspective:1200px}
+    .stage-wall{position:absolute;inset:9% 7% 18%;overflow:hidden;background:linear-gradient(135deg,#0c355e 0 40%,#104b7c 40% 70%,#0a2b4e 70%);box-shadow:var(--shadow);transform:rotateY(-5deg);transform-origin:right center}
+    .stage-wall::before{content:"EXHIBITION\A PRESENTATION";white-space:pre;position:absolute;top:14%;left:8%;color:#fff;font-family:"Cormorant Garamond",serif;font-size:clamp(24px,2.6vw,42px);font-weight:600;line-height:1.25;letter-spacing:.08em}
+    .stage-wall::after{content:"複雑な技術を、3分で伝わる価値へ。";position:absolute;left:8%;bottom:16%;color:#e7d39f;font-family:var(--serif);font-size:clamp(16px,1.4vw,22px);letter-spacing:.04em}
+    .screen{position:absolute;top:19%;right:9%;width:41%;height:41%;padding:7%;background:#fff;border:9px solid rgba(255,255,255,.14);box-shadow:0 18px 34px rgba(0,0,0,.18)}
+    .screen::before{content:"";display:block;width:64%;height:10px;background:#0b315d;box-shadow:0 28px 0 #d5dfe6,0 56px 0 #d5dfe6,0 84px 0 #b88934}
+    .screen::after{content:"";position:absolute;right:9%;bottom:11%;width:37%;aspect-ratio:1;border:12px solid #dce6ec;border-top-color:#0b315d;border-right-color:#b88934;border-radius:50%}
+    .presenter{position:absolute;right:14%;bottom:10%;width:18%;height:41%;filter:drop-shadow(0 12px 18px rgba(0,0,0,.22))}
+    .presenter::before{content:"";position:absolute;top:0;left:28%;width:43%;aspect-ratio:1;border-radius:50%;background:#dcb393}
+    .presenter::after{content:"";position:absolute;top:23%;left:7%;width:86%;height:75%;border-radius:46% 46% 8% 8%;background:linear-gradient(90deg,#f5f5f3 0 48%,#e7e7e3 48%)}
+    .presenter-arm{position:absolute;z-index:2;top:35%;left:-44%;width:70%;height:7%;border-radius:999px;background:#e7e7e3;transform:rotate(-18deg);transform-origin:right center}
+    .audience{position:absolute;right:7%;bottom:0;width:86%;height:21%;background:linear-gradient(180deg,transparent 0 12%,rgba(7,37,67,.82) 12%);clip-path:polygon(0 62%,8% 28%,16% 55%,25% 18%,34% 48%,44% 24%,55% 55%,65% 20%,76% 52%,86% 26%,100% 58%,100% 100%,0 100%)}
+    .hero-badge{position:absolute;right:5.5%;bottom:6%;display:grid;width:158px;height:158px;place-items:center;padding:24px;color:#fff;background:linear-gradient(145deg,#c99a3e,#9c691f);border:1px solid #f0dca5;border-radius:50%;box-shadow:0 16px 35px rgba(71,49,13,.24),inset 0 0 0 6px rgba(255,255,255,.12);text-align:center}
+    .hero-badge strong{font-family:var(--serif);font-size:19px;font-weight:500;line-height:1.6}
+
+    /* Editorial problem */
+    .problem{padding:116px 0 110px;background:var(--cream)}
+    .problem-head{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:100px;align-items:start}
+    .problem-quote{color:var(--navy);font-family:var(--serif);font-size:clamp(31px,3.5vw,49px);font-weight:500;line-height:1.7}
+    .problem-body{color:#405264;font-size:16px;line-height:2.1}
+    .problem-body p+p{margin-top:21px}
+    .problem-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:64px;border-top:1px solid rgba(184,137,52,.35);border-bottom:1px solid rgba(184,137,52,.35)}
+    .problem-flow article{position:relative;min-height:210px;padding:30px 28px 33px}
+    .problem-flow article+article{border-left:1px solid rgba(184,137,52,.22)}
+    .problem-flow span{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:33px}
+    .problem-flow h3{margin-top:15px;color:var(--navy);font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.65}
+    .problem-flow p{margin-top:10px;color:#687583;font-size:12px;line-height:1.8}
+    .problem-conclusion{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:42px;padding:28px 34px;background:#fff;border-left:4px solid var(--gold);box-shadow:0 12px 30px rgba(7,37,67,.05)}
+    .problem-conclusion b{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:500}
+    .problem-conclusion p{color:var(--navy);font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.75}
+
+    /* Manifesto */
+    .manifesto{position:relative;padding:120px 0;color:#fff;background:var(--navy-deep)}
+    .manifesto::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 0 58%,rgba(255,255,255,.035) 58%),radial-gradient(circle at 12% 22%,rgba(184,137,52,.17),transparent 18%)}
+    .manifesto-inner{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(440px,1.15fr);gap:92px;align-items:center}
+    .manifesto-title{font-family:var(--serif);font-size:clamp(39px,4.8vw,64px);font-weight:500;line-height:1.55;letter-spacing:.025em}
+    .manifesto-title em{display:block;color:#e0c889;font-style:normal}
+    .manifesto-copy{font-size:16px;line-height:2.15;color:rgba(255,255,255,.82)}
+    .manifesto-copy p+p{margin-top:20px}
+    .manifesto-rule{display:flex;align-items:center;gap:18px;margin-top:34px;color:#e0c889;font-family:var(--serif);font-size:18px;font-weight:600}
+    .manifesto-rule::before{content:"";width:54px;height:1px;background:#e0c889}
+
+    /* Service tracks */
+    .tracks{padding:120px 0;background:#fff}
+    .tracks-intro{display:grid;grid-template-columns:minmax(260px,.76fr) minmax(0,1.24fr);gap:88px;align-items:end}
+    .tracks-lead{color:#4f5f6f;font-size:15px;line-height:2}
+    .track-list{margin-top:64px;border-top:1px solid var(--line)}
+    .track{display:grid;grid-template-columns:150px minmax(260px,.7fr) minmax(0,1.3fr);gap:40px;align-items:center;padding:44px 0;border-bottom:1px solid var(--line)}
+    .track-number{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:66px;font-weight:500;line-height:1}
+    .track h3{color:var(--navy);font-family:var(--serif);font-size:clamp(25px,2.3vw,34px);font-weight:600;line-height:1.55}
+    .track h3 small{display:block;margin-bottom:8px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:.16em}
+    .track-body{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:center}
+    .track-body p{color:#526170;font-size:14px;line-height:1.95}
+    .track-tags{display:flex;flex-wrap:wrap;gap:7px;max-width:300px;justify-content:flex-end}
+    .track-tags span{padding:6px 10px;color:var(--navy);background:var(--blue-2);border:1px solid rgba(11,49,93,.09);font-size:10px;font-weight:700}
+
+    /* Difference */
+    .difference{padding:112px 0;background:var(--blue-2)}
+    .difference-grid{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:86px;align-items:start}
+    .difference-copy{position:sticky;top:120px}
+    .difference-copy p{margin-top:22px;color:#506173;font-size:15px;line-height:2.05}
+    .compare{background:#fff;border:1px solid rgba(11,49,93,.11);box-shadow:var(--shadow)}
+    .compare-head,.compare-row{display:grid;grid-template-columns:150px 1fr 1fr}
+    .compare-head{color:#fff;background:var(--navy)}
+    .compare-head div{padding:18px 24px;font-size:13px;font-weight:700}
+    .compare-head div:last-child{color:#092c51;background:#dfc586}
+    .compare-row{min-height:112px;border-top:1px solid var(--line)}
+    .compare-row>div{display:flex;padding:21px 24px;align-items:center;color:#536273;font-size:13px;line-height:1.8}
+    .compare-row>div+div{border-left:1px solid var(--line)}
+    .compare-label{color:var(--navy)!important;font-weight:700}
+    .compare-helmio{color:var(--navy)!important;font-weight:600;background:#fffdf8}
+
+    /* Scope */
+    .scope{padding:120px 0;background:#fff}
+    .scope-grid{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:96px;margin-top:58px}
+    .scope-big{padding:46px 46px 44px;color:#fff;background:var(--navy);box-shadow:var(--shadow)}
+    .scope-big small{color:#dfc586;font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.17em}
+    .scope-big h3{margin-top:18px;font-family:var(--serif);font-size:35px;font-weight:500;line-height:1.6}
+    .scope-big p{margin-top:23px;color:rgba(255,255,255,.76);font-size:14px;line-height:2}
+    .scope-columns{display:grid;gap:0;border-top:1px solid var(--line)}
+    .scope-line{display:grid;grid-template-columns:140px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--line)}
+    .scope-line strong{color:var(--gold);font-family:var(--serif);font-size:17px}
+    .scope-line p{color:#526170;font-size:14px;line-height:1.9}
+
+    /* Case */
+    .case{padding:118px 0;background:var(--cream)}
+    .case-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:72px;align-items:start;margin-top:58px}
+    .case-stage{position:relative;min-height:520px;overflow:hidden;background:linear-gradient(145deg,#0a315b,#144c7c);box-shadow:var(--shadow)}
+    .case-stage::before{content:"MANUFACTURING\A EXHIBITION";white-space:pre;position:absolute;top:50px;left:48px;color:#fff;font-family:"Cormorant Garamond",serif;font-size:42px;font-weight:600;line-height:1.2;letter-spacing:.08em}
+    .case-stage::after{content:"製品の仕組みを、理解と商談につながるストーリーへ";position:absolute;right:44px;bottom:44px;left:44px;padding:22px 26px;color:#0b315d;background:#fff;font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.7}
+    .case-screen{position:absolute;top:165px;right:42px;left:42px;height:190px;background:#fff}
+    .case-screen span{position:absolute;height:12px;background:#dfe7ec}
+    .case-screen span:nth-child(1){top:40px;left:40px;width:52%;background:#0b315d}
+    .case-screen span:nth-child(2){top:80px;left:40px;width:72%}
+    .case-screen span:nth-child(3){top:120px;left:40px;width:62%;background:#b88934}
+    .case-screen i{position:absolute;right:45px;top:38px;width:100px;height:100px;border:18px solid #dfe7ec;border-top-color:#0b315d;border-right-color:#b88934;border-radius:50%}
+    .case-data{border-top:1px solid rgba(184,137,52,.45)}
+    .case-data-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:23px 0;border-bottom:1px solid rgba(184,137,52,.28)}
+    .case-data-row dt{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:13px;font-weight:600;letter-spacing:.14em}
+    .case-data-row dd{color:var(--navy);font-size:14px;font-weight:600;line-height:1.8}
+    .case-note{margin-top:24px;padding:22px 24px;color:#4f5e6c;background:#fff;border-left:3px solid var(--gold);font-size:13px;line-height:1.9}
+
+    /* Process */
+    .process{padding:118px 0;background:#fff}
+    .timeline{margin-top:64px;border-top:1px solid var(--line)}
+    .timeline-step{display:grid;grid-template-columns:150px 240px 1fr;gap:30px;align-items:start;padding:33px 0;border-bottom:1px solid var(--line)}
+    .timeline-step time{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.12em}
+    .timeline-step h3{color:var(--navy);font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.6}
+    .timeline-step p{color:#596776;font-size:14px;line-height:1.95}
+
+    /* Deliverables */
+    .deliverables{padding:108px 0;background:var(--navy-deep);color:#fff}
+    .deliverables .section-title{color:#fff}
+    .deliverables .section-lead{color:rgba(255,255,255,.68)}
+    .deliverable-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:54px;border-top:1px solid rgba(255,255,255,.17);border-bottom:1px solid rgba(255,255,255,.17)}
+    .deliverable{min-height:190px;padding:27px 20px}
+    .deliverable+.deliverable{border-left:1px solid rgba(255,255,255,.14)}
+    .deliverable span{color:#dfc586;font-family:"Cormorant Garamond",serif;font-size:31px}
+    .deliverable h3{margin-top:20px;font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.65}
+    .deliverable p{margin-top:8px;color:rgba(255,255,255,.58);font-size:10px;line-height:1.75}
+
+    /* Startups */
+    .startup{padding:118px 0;background:var(--blue-2)}
+    .startup-panel{display:grid;grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr);gap:72px;padding:62px;background:#fff;border:1px solid rgba(11,49,93,.11);box-shadow:var(--shadow)}
+    .startup-copy h2{color:var(--navy);font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);font-weight:500;line-height:1.6}
+    .startup-copy p{margin-top:20px;color:#536272;font-size:15px;line-height:2}
+    .startup-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:center}
+    .startup-map div{position:relative;display:grid;min-height:130px;padding:22px 14px;place-items:center;color:var(--navy);background:var(--cream);border:1px solid rgba(11,49,93,.10);font-size:12px;font-weight:700;text-align:center}
+    .startup-map div:nth-child(even){background:#fff}
+    .startup-map div::after{content:"+";position:absolute;right:-10px;z-index:2;color:var(--gold);font-size:20px}
+    .startup-map div:nth-child(3n)::after,.startup-map div:last-child::after{display:none}
+
+    /* FAQ */
+    .faq{padding:112px 0;background:#fff}
+    .faq-grid{display:grid;grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:84px;margin-top:54px}
+    .faq-note{color:#596877;font-size:14px;line-height:2}
+    details{border-top:1px solid var(--line)}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{display:flex;min-height:74px;padding:19px 0;align-items:center;justify-content:space-between;gap:22px;color:var(--navy);font-size:14px;font-weight:700;cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"＋";color:var(--gold);font-size:20px;font-weight:400}
+    details[open] summary::after{content:"−"}
+    details p{padding:0 44px 24px 0;color:#657381;font-size:13px;line-height:1.95}
+
+    /* CTA & Footer */
+    .cta{padding:82px 0;color:#fff;background:linear-gradient(120deg,#082746,#0b3a6a)}
+    .cta-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:56px;align-items:center}
+    .cta h2{font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-weight:500;line-height:1.6}
+    .cta p{margin-top:12px;color:rgba(255,255,255,.66);font-size:13px}
+    .cta-actions{display:flex;gap:12px}
+    footer{padding:34px 0;color:#8a96a2;background:#051b30;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:30px}
+    .footer-nav{display:flex;flex-wrap:wrap;gap:24px}
+
+    @media(max-width:1120px){
+      .site-nav{gap:15px}.site-nav a{font-size:11px}
+      .hero{grid-template-columns:minmax(0,.94fr) minmax(440px,1.06fr)}
+      .hero-copy{padding-inline:42px}
+      .problem-head,.manifesto-inner,.tracks-intro,.difference-grid,.scope-grid{gap:54px}
+      .deliverable-strip{grid-template-columns:repeat(3,1fr)}
+      .deliverable:nth-child(4){border-left:0}
+      .deliverable:nth-child(n+4){border-top:1px solid rgba(255,255,255,.14)}
     }
-
-    .exhibition-hero h1 {
-      max-width: 760px;
-      color: var(--navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(38px, 5vw, 68px);
-      font-weight: 500;
-      line-height: 1.45;
-      letter-spacing: .035em;
+    @media(max-width:900px){
+      .container{width:calc(100% - 40px)}
+      .menu{display:block}.site-nav{position:absolute;top:80px;right:0;left:0;display:none;padding:18px 24px 26px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(7,37,67,.08)}.site-nav.open{display:grid}.site-nav a{padding:10px 0;border-bottom:1px solid var(--line)}
+      .hero{grid-template-columns:1fr}.hero-copy{padding:76px 32px 58px}.hero-visual{min-height:590px}.hero-badge{width:132px;height:132px}
+      .problem-head,.manifesto-inner,.tracks-intro,.difference-grid,.scope-grid,.case-layout,.startup-panel,.faq-grid{grid-template-columns:1fr}
+      .problem-flow{grid-template-columns:repeat(2,1fr)}.problem-flow article:nth-child(3){border-left:0;border-top:1px solid rgba(184,137,52,.22)}.problem-flow article:nth-child(4){border-top:1px solid rgba(184,137,52,.22)}
+      .difference-copy{position:static}
+      .track{grid-template-columns:90px 1fr}.track-body{grid-column:2;grid-template-columns:1fr}.track-tags{justify-content:flex-start;max-width:none}
+      .scope-grid,.case-layout{gap:40px}
+      .startup-panel{padding:44px}
+      .timeline-step{grid-template-columns:110px 210px 1fr}
+      .cta-inner{grid-template-columns:1fr}.cta-actions{flex-wrap:wrap}
     }
-
-    .exhibition-hero__lead {
-      max-width: 720px;
-      margin-top: 30px;
-      color: #30445b;
-      font-size: clamp(17px, 1.7vw, 21px);
-      font-weight: 500;
-      line-height: 2;
-    }
-
-    .exhibition-hero__description {
-      max-width: 720px;
-      margin-top: 17px;
-      color: #5d6670;
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    .exhibition-hero__visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      padding: 72px 54px;
-      background:
-        radial-gradient(circle at 82% 18%, rgba(183, 155, 93, .22), transparent 25%),
-        linear-gradient(145deg, #102f52 0%, #173d68 58%, #0d243e 100%);
-    }
-
-    .exhibition-hero__visual::before,
-    .exhibition-hero__visual::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255,255,255,.11);
-      border-radius: 50%;
-    }
-
-    .exhibition-hero__visual::before {
-      width: 430px;
-      height: 430px;
-      top: -190px;
-      right: -140px;
-    }
-
-    .exhibition-hero__visual::after {
-      width: 310px;
-      height: 310px;
-      left: -150px;
-      bottom: -170px;
-    }
-
-    .presentation-board {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 510px);
-      padding: 42px 40px 38px;
-      color: #fff;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.26);
-      box-shadow: 0 30px 80px rgba(0,0,0,.23);
-      backdrop-filter: blur(8px);
-    }
-
-    .presentation-board__label {
-      color: #dfc58d;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 14px;
-      letter-spacing: .22em;
-    }
-
-    .presentation-board h2 {
-      margin-top: 18px;
-      color: #fff;
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(27px, 3vw, 39px);
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .presentation-board__flow {
-      display: grid;
-      gap: 13px;
-      margin-top: 31px;
-    }
-
-    .presentation-board__flow div {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-      align-items: center;
-      padding: 14px 0;
-      border-top: 1px solid rgba(255,255,255,.18);
-    }
-
-    .presentation-board__flow span {
-      color: #dfc58d;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
-    }
-
-    .presentation-board__flow strong {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .problem-statement {
-      display: grid;
-      grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
-      gap: 76px;
-      align-items: start;
-    }
-
-    .problem-statement__quote {
-      color: var(--navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(28px, 3.6vw, 46px);
-      font-weight: 500;
-      line-height: 1.65;
-    }
-
-    .problem-statement__body {
-      display: grid;
-      gap: 22px;
-      color: #48545f;
-      font-size: 16px;
-      line-height: 2.05;
-    }
-
-    .problem-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 16px;
-      margin-top: 48px;
-    }
-
-    .problem-list article {
-      min-height: 160px;
-      padding: 27px 28px;
-      background: #fff;
-      border: 1px solid rgba(16,47,82,.12);
-    }
-
-    .problem-list span,
-    .service-detail-grid span,
-    .partner-grid span {
-      display: block;
-      margin-bottom: 13px;
-      color: var(--gold);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 14px;
-      letter-spacing: .14em;
-    }
-
-    .problem-list h3 {
-      color: var(--navy);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.75;
-    }
-
-    .positioning-panel {
-      display: grid;
-      grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr);
-      gap: 66px;
-      padding: 56px;
-      background: #fff;
-      border: 1px solid rgba(183,155,93,.34);
-      box-shadow: 0 20px 50px rgba(15,39,71,.06);
-    }
-
-    .positioning-panel h2 {
-      color: var(--navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(30px, 3.8vw, 48px);
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .positioning-panel__body {
-      color: #46525d;
-      font-size: 16px;
-      line-height: 2;
-    }
-
-    .positioning-panel__body p + p {
-      margin-top: 20px;
-    }
-
-    .professional-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 48px;
-    }
-
-    .professional-grid article {
-      padding: 34px 30px 31px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.18);
-    }
-
-    .professional-grid span {
-      color: #dfc58d;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 15px;
-      letter-spacing: .15em;
-    }
-
-    .professional-grid h3 {
-      margin-top: 15px;
-      color: #fff;
-      font-size: 21px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .professional-grid p {
-      margin-top: 12px;
-      color: rgba(255,255,255,.76);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .service-detail-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 48px;
-    }
-
-    .service-detail-grid article {
-      padding: 32px 31px;
-      background: #fff;
-      border: 1px solid rgba(16,47,82,.13);
-    }
-
-    .service-detail-grid h3 {
-      color: var(--navy);
-      font-size: 21px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .service-detail-grid p {
-      margin-top: 11px;
-      color: #5b6670;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .service-detail-grid ul {
-      display: grid;
-      gap: 7px;
-      margin-top: 17px;
-    }
-
-    .service-detail-grid li {
-      position: relative;
-      padding-left: 17px;
-      color: #424d57;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .service-detail-grid li::before {
-      content: "";
-      position: absolute;
-      top: .78em;
-      left: 0;
-      width: 5px;
-      height: 5px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    .target-layout {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 46px;
-    }
-
-    .target-card {
-      padding: 38px 36px;
-      background: #fff;
-      border-top: 4px solid var(--gold);
-      box-shadow: 0 16px 40px rgba(15,39,71,.055);
-    }
-
-    .target-card h3 {
-      color: var(--navy);
-      font-family: "Noto Serif JP", serif;
-      font-size: 26px;
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .target-card p {
-      margin-top: 16px;
-      color: #56616b;
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    .target-card ul {
-      display: grid;
-      gap: 8px;
-      margin-top: 21px;
-    }
-
-    .target-card li {
-      position: relative;
-      padding-left: 18px;
-      color: #3f4a54;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .target-card li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 44px;
-    }
-
-    .partner-grid article {
-      padding: 28px 27px;
-      background: #fff;
-      border: 1px solid rgba(16,47,82,.12);
-    }
-
-    .partner-grid h3 {
-      color: var(--navy);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.65;
-    }
-
-    .partner-grid p {
-      margin-top: 10px;
-      color: #5b6670;
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .scope-note {
-      display: grid;
-      grid-template-columns: minmax(250px,.75fr) minmax(0,1.25fr);
-      gap: 62px;
-      padding: 46px 48px;
-      background: var(--navy);
-      color: #fff;
-    }
-
-    .scope-note h2 {
-      color: #fff;
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(29px, 3.5vw, 44px);
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .scope-note__body {
-      color: rgba(255,255,255,.78);
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    .scope-note__body p + p {
-      margin-top: 17px;
-    }
-
-    .exhibition-final-cta {
-      padding: 86px 0 92px;
-      background: #102f52;
-      color: #fff;
-    }
-
-    .exhibition-final-cta__inner {
-      display: grid;
-      grid-template-columns: minmax(0,1.15fr) minmax(300px,.85fr);
-      gap: 64px;
-      align-items: center;
-      width: min(1180px, calc(100% - 64px));
-      margin: 0 auto;
-    }
-
-    .exhibition-final-cta h2 {
-      color: #fff;
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(31px, 4vw, 50px);
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .exhibition-final-cta p {
-      margin-top: 18px;
-      color: rgba(255,255,255,.76);
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    .exhibition-final-cta__action {
-      display: grid;
-      gap: 16px;
-      justify-items: start;
-    }
-
-    .exhibition-final-cta__action small {
-      color: rgba(255,255,255,.62);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 1080px) {
-      .site-nav { gap: 18px; }
-      .site-nav a { font-size: 12px; }
-      .exhibition-hero { grid-template-columns: 1fr; }
-      .exhibition-hero__visual { min-height: 520px; }
-      .professional-grid,
-      .partner-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 820px) {
-      .problem-statement,
-      .positioning-panel,
-      .scope-note,
-      .exhibition-final-cta__inner { grid-template-columns: 1fr; gap: 30px; }
-      .problem-list,
-      .service-detail-grid,
-      .target-layout { grid-template-columns: 1fr; }
-      .positioning-panel { padding: 38px 30px; }
-      .scope-note { padding: 38px 30px; }
-    }
-
-    @media (max-width: 640px) {
-      .exhibition-hero__copy { padding: 66px 22px 58px; }
-      .exhibition-hero__visual { min-height: 430px; padding: 48px 22px; }
-      .presentation-board { padding: 32px 24px 28px; }
-      .problem-list article,
-      .service-detail-grid article,
-      .target-card { padding: 25px 22px; }
-      .exhibition-final-cta { padding: 68px 0 72px; }
-      .exhibition-final-cta__inner { width: min(100% - 36px, 1180px); }
+    @media(max-width:620px){
+      .container{width:calc(100% - 28px)}
+      .site-header{min-height:70px;padding:10px 16px}.site-nav{top:70px}.brand strong{font-size:17px}.brand span{font-size:8px}
+      .hero{min-height:auto}.hero-copy{padding:58px 18px 46px}.hero h1{font-size:35px;line-height:1.55}.hero-tagline{font-size:17px}.hero-description{font-size:14px}.hero-actions{display:grid}.button{width:100%}.hero-proof{grid-template-columns:1fr}.hero-proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+      .hero-visual{min-height:440px}.stage{inset:5% 1% 5%}.stage-wall{inset:7% 3% 18%}.presenter{right:8%;width:24%}.hero-badge{right:3%;bottom:3%;width:112px;height:112px;padding:16px}.hero-badge strong{font-size:14px}
+      .problem,.tracks,.difference,.scope,.case,.process,.startup,.faq{padding:78px 0}.manifesto{padding:84px 0}.deliverables{padding:78px 0}
+      .problem-flow{grid-template-columns:1fr}.problem-flow article+article{border-left:0;border-top:1px solid rgba(184,137,52,.22)}.problem-conclusion{grid-template-columns:1fr;gap:4px;padding:22px}
+      .track{grid-template-columns:60px 1fr;gap:18px}.track-number{font-size:46px}.track h3{font-size:23px}.track-body{grid-column:1/-1}
+      .compare-head,.compare-row{grid-template-columns:90px 1fr 1fr}.compare-head div,.compare-row>div{padding:14px 10px;font-size:10px}.compare-row{min-height:100px}
+      .scope-big{padding:32px 24px}.scope-line{grid-template-columns:1fr;gap:6px}
+      .case-stage{min-height:410px}.case-stage::before{top:32px;left:24px;font-size:31px}.case-screen{top:130px;right:20px;left:20px}.case-stage::after{right:20px;bottom:20px;left:20px;font-size:14px}.case-data-row{grid-template-columns:1fr;gap:5px}
+      .timeline-step{grid-template-columns:1fr;gap:5px}.timeline-step time{margin-bottom:5px}
+      .deliverable-strip{grid-template-columns:1fr 1fr}.deliverable:nth-child(odd){border-left:0}.deliverable:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}
+      .startup-panel{padding:30px 20px}.startup-map{grid-template-columns:1fr 1fr}.startup-map div:nth-child(3n)::after{display:block}.startup-map div:nth-child(even)::after{display:none}
+      .cta{padding:60px 0}.footer-inner{display:grid}.footer-nav{gap:14px}
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Service",
-        "@id":"https://hel-mio.com/tenjikai.html#service",
-        "name":"展示会プレゼン設計",
-        "serviceType":"展示会プレゼンテーションの構成・台本・登壇支援・アナウンサー派遣",
-        "provider":{"@id":"https://hel-mio.com/#organization"},
-        "areaServed":"JP",
-        "url":"https://hel-mio.com/tenjikai.html",
-        "description":"出展企業や展示会代理店・制作会社に向けて、プレゼン構成、台本、スライドの情報整理、登壇支援、司会・アナウンサー派遣までを行うサービス。"
-      },
-      {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"トップ","item":"https://hel-mio.com/"},
-          {"@type":"ListItem","position":2,"name":"展示会プレゼン設計","item":"https://hel-mio.com/tenjikai.html"}
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {"@type":"Question","name":"展示会全体の施工や運営も依頼できますか？","acceptedAnswer":{"@type":"Answer","text":"HELMIOはプレゼン設計、台本、スライドの情報整理、登壇支援、司会・アナウンサー派遣を中心に対応します。ブース施工や会場運営は、既存の代理店・制作会社と連携して進めます。"}},
-          {"@type":"Question","name":"台本だけの依頼も可能ですか？","acceptedAnswer":{"@type":"Answer","text":"可能です。ただし、来場者、出展目的、商品・技術の特徴を確認したうえで、プレゼン全体の構成から整理することをおすすめしています。"}},
-          {"@type":"Question","name":"アナウンサーやナレーターの手配もできますか？","acceptedAnswer":{"@type":"Answer","text":"対応可能です。商品プレゼン、ブースナレーション、司会進行、インタビュー、トークセッションなど、目的に合う人材を提案します。"}},
-          {"@type":"Question","name":"展示会代理店や制作会社からも依頼できますか？","acceptedAnswer":{"@type":"Answer","text":"可能です。施工・運営領域を変えず、プレゼン設計部分を専門チームとして補完します。提案段階からの協業にも対応します。"}}
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
 <div class="page">
-<header class="site-header">
-  <a class="brand" href="index.html" aria-label="株式会社HELMIO トップページ">
-    <span class="brand__name">HÉLMIO</span>
-    <span class="brand__sub">External PR Team for BtoB</span>
-  </a>
-  <button class="menu-button" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
-    <a href="service/senzoku-newsroom/">専属ニュース室</a>
-    <a aria-current="page" href="tenjikai.html">展示会プレゼン</a>
-    <a href="service/casting/">キャスティング</a>
-    <a href="professionals/">アナウンサー／モデル</a>
-    <a href="column/">コラム</a>
-    <a href="company.html">会社概要</a>
-    <a class="nav-audition" href="audition.html">オーディション</a>
-    <a class="nav-contact" href="contact.html">法人のご相談</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <a class="brand" href="https://hel-mio.com/" aria-label="HELMIOトップへ">
+      <strong>展示会プレゼン</strong>
+      <span>SUPPORTED BY HELMIO</span>
+    </a>
+    <button class="menu" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="ページ内ナビゲーション">
+      <a href="#concept">サービスの特徴</a>
+      <a href="#services">支援内容</a>
+      <a href="#case">支援イメージ</a>
+      <a href="#process">進め方</a>
+      <a href="#faq">よくある質問</a>
+      <a class="nav-cta" href="contact.html?request=exhibition#request">展示会について相談する</a>
+    </nav>
+  </header>
 
-<main>
-  <nav class="breadcrumb" aria-label="パンくずリスト">
-    <a href="index.html">トップ</a><span>›</span><span>展示会プレゼン設計</span>
-  </nav>
-
-  <section class="exhibition-hero" aria-labelledby="exhibition-title">
-    <div class="exhibition-hero__copy">
-      <p class="eyebrow">EXHIBITION PRESENTATION DESIGN</p>
-      <h1 id="exhibition-title">展示会に、<br>伝えるプロの専門チームを。</h1>
-      <p class="exhibition-hero__lead">プレゼン構成、台本、スライドの情報整理、登壇支援から、司会・アナウンサーの派遣まで。</p>
-      <p class="exhibition-hero__description">HELMIOは、ブース施工やイベント運営ではなく、来場者へ直接伝えるプレゼン部分を専門に支援します。アナウンサー・ナレーターの伝える技術と、マーケティングの顧客視点を組み合わせ、理解から次の会話へつながるステージを設計します。</p>
-      <div class="button-row">
-        <a class="button button--primary" href="contact.html?service=tenjikai">展示会プレゼンについて相談する</a>
-        <a class="button button--secondary" href="#support">支援内容を見る</a>
-      </div>
-    </div>
-
-    <div class="exhibition-hero__visual" aria-hidden="true">
-      <div class="presentation-board">
-        <p class="presentation-board__label">PRESENTATION DESIGN</p>
-        <h2>来場者に伝わり、<br>次の会話へ進む構成へ。</h2>
-        <div class="presentation-board__flow">
-          <div><span>01</span><strong>来場者と出展目的を整理</strong></div>
-          <div><span>02</span><strong>伝える価値と順番を編集</strong></div>
-          <div><span>03</span><strong>台本・スライド・登壇を連動</strong></div>
-          <div><span>04</span><strong>商談・問い合わせへの接続を設計</strong></div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">EXHIBITION PRESENTATION DESIGN</p>
+        <h1 id="hero-title"><span>展示会を、説明する場所から</span><span>商談が始まる場所へ。</span></h1>
+        <p class="hero-tagline">プレゼンのプロが、展示会の伝達責任を持つ。</p>
+        <p class="hero-description">商品や技術への取材から、プレゼン構成、台本、スライド、デモ進行、MCキャスティング、リハーサル、本番まで。来場者が理解し、足を止め、次の会話へ進む展示会を一貫して設計します。</p>
+        <div class="hero-actions">
+          <a class="button button--gold" href="contact.html?request=exhibition#request">展示会について相談する</a>
+          <a class="button button--outline" href="#services">支援内容を見る</a>
+        </div>
+        <div class="hero-proof" aria-label="HELMIOの展示会支援の特徴">
+          <div><strong>企画から本番まで</strong><span>構成・制作・出演を分断しない</span></div>
+          <div><strong>伝えるプロが設計</strong><span>アナウンサー・ナレーター視点</span></div>
+          <div><strong>ベンチャーも一括支援</strong><span>社内に専任担当がいなくても対応</span></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--cream" aria-labelledby="problem-title">
-    <div class="problem-statement">
-      <div>
-        <p class="section-label">THE MISSING PART</p>
-        <h2 class="problem-statement__quote" id="problem-title">大きな予算をかけた展示会でも、プレゼンだけが直前対応になっている。</h2>
+      <div class="hero-visual" aria-label="展示会ステージプレゼンのイメージ">
+        <div class="stage">
+          <div class="stage-wall"><div class="screen"></div><div class="presenter"><span class="presenter-arm"></span></div><div class="audience"></div></div>
+        </div>
+        <div class="hero-badge"><strong>企画・台本・出演<br>一つのチームで</strong></div>
       </div>
-      <div class="problem-statement__body">
-        <p>ブース施工、映像、運営、人員配置には専門会社が入る一方で、来場者へ直接語りかけるプレゼンは、出展企業側に任されることが少なくありません。</p>
-        <p>台本が当日まで固まらない。スライドは情報が多く、専門用語が中心。自社が伝えたいことは並んでいても、来場者が知りたいことや、プレゼン後の商談導線まで設計されていない。HELMIOは、この手薄になりやすい部分を専門チームとして引き受けます。</p>
+    </section>
+
+    <section class="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="problem-head">
+          <h2 class="problem-quote" id="problem-title">一番伝えたい瞬間が、<br>一番手薄になっている。</h2>
+          <div class="problem-body">
+            <p>展示会のブースや製品には大きな予算をかける一方で、来場者に価値を伝えるプレゼンは、台本・スライド・出演者が別々に手配されがちです。</p>
+            <p>MCやナレーターに台本が届くのは本番直前。専門用語が多く、話の流れが分かりにくくても、内容を再設計する時間も権限もない。結果として、プロが登壇しているのに「台本を読むだけ」になってしまいます。</p>
+          </div>
+        </div>
+        <div class="problem-flow">
+          <article><span>01</span><h3>情報を詰め込みすぎて、要点が残らない</h3><p>商品の特徴を網羅するほど、来場者が覚えるべき価値がぼやけます。</p></article>
+          <article><span>02</span><h3>台本とスライドが、別々に作られている</h3><p>話す順番と画面の情報が噛み合わず、理解を妨げます。</p></article>
+          <article><span>03</span><h3>出演者が内容を理解する時間がない</h3><p>直前共有では、言葉の意味やデモの意図まで掘り下げられません。</p></article>
+          <article><span>04</span><h3>盛り上がっても、商談へつながらない</h3><p>次の行動を設計していないため、拍手でプレゼンが終わります。</p></article>
+        </div>
+        <div class="problem-conclusion"><b>Therefore</b><p>プレゼンは、最後に追加する演出ではなく、展示会の成果から逆算して最初に設計すべきものです。</p></div>
       </div>
-    </div>
+    </section>
 
-    <div class="problem-list">
-      <article><span>01</span><h3>台本や進行が、展示会直前まで固まらない</h3></article>
-      <article><span>02</span><h3>スライドの情報量が多く、遠くから理解できない</h3></article>
-      <article><span>03</span><h3>専門用語と自社目線の説明に偏っている</h3></article>
-      <article><span>04</span><h3>プレゼン後の声かけや商談への接続が曖昧</h3></article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="position-title">
-    <div class="positioning-panel">
-      <div>
-        <p class="section-label">OUR POSITION</p>
-        <h2 id="position-title">展示会全体ではなく、成果に直結するプレゼン部分を切り出して依頼できます。</h2>
+    <section class="manifesto" id="concept" aria-labelledby="concept-title">
+      <div class="container manifesto-inner">
+        <h2 class="manifesto-title" id="concept-title">プレゼンのプロが、<em>展示会の伝達責任を持つ。</em></h2>
+        <div class="manifesto-copy">
+          <p>HELMIOでは、アナウンサーやナレーターが企画段階から商品や技術を理解します。誰に、何を、どの順番で伝えれば、足を止め、理解し、商談へ進むのかを設計します。</p>
+          <p>構成、台本、スライド、デモ進行、呼び込み、質疑対応を一つのストーリーに統合。登壇者自身が制作に関わるからこそ、本番での改善や来場者の反応に合わせた調整まで責任を持てます。</p>
+          <p class="manifesto-rule">設計した人が、伝わるところまで見届ける。</p>
+        </div>
       </div>
-      <div class="positioning-panel__body">
-        <p>展示会全体を新たに発注し直す必要はありません。現在の代理店、制作会社、施工会社との体制を変えずに、プレゼン設計部分だけをHELMIOへ外注できます。</p>
-        <p>出展目的と来場者を確認し、伝えるテーマ、構成、台本、スライド、話し方、プレゼン後の導線を一つにつなげます。必要に応じて、登壇するアナウンサーやナレーターの手配にも対応します。</p>
+    </section>
+
+    <section class="tracks" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="tracks-intro">
+          <div><p class="eyebrow">THREE WAYS TO SUPPORT</p><h2 class="section-title" id="services-title">必要な範囲から、<br>展示会全体まで。</h2></div>
+          <p class="tracks-lead">プレゼンだけを改善したい企業、出演者まで任せたい制作会社、展示会の進め方自体が分からないベンチャー企業。それぞれの体制に合わせて、支援範囲を設計します。</p>
+        </div>
+        <div class="track-list">
+          <article class="track">
+            <span class="track-number">01</span>
+            <h3><small>PRESENTATION DESIGN</small>プレゼン設計</h3>
+            <div class="track-body"><p>経営者・開発者・営業担当への取材から、来場者に残すべき一つの価値を定義。ステージ構成、台本、スライド、デモの見せ方、呼び込み、商談への導線まで設計します。</p><div class="track-tags"><span>取材</span><span>構成</span><span>台本</span><span>スライド</span><span>デモ進行</span></div></div>
+          </article>
+          <article class="track">
+            <span class="track-number">02</span>
+            <h3><small>CASTING & PERFORMANCE</small>キャスティング・登壇支援</h3>
+            <div class="track-body"><p>内容、会場、来場者、必要言語に合わせて、アナウンサー、ナレーター、バイリンガルMCなどを提案。読み合わせ、製品理解、リハーサルを通じて、伝わる表現へ仕上げます。</p><div class="track-tags"><span>MC選定</span><span>バイリンガル</span><span>読み合わせ</span><span>研修</span><span>本番出演</span></div></div>
+          </article>
+          <article class="track">
+            <span class="track-number">03</span>
+            <h3><small>FULL EXHIBITION SUPPORT</small>展示会まるごとプロデュース</h3>
+            <div class="track-body"><p>展示会経験の少ないベンチャー企業を中心に、出展目的の整理、ブース内コンテンツ、プレゼン、出演者、進行、当日運営まで一括で設計。必要な制作領域は案件ごとに体制を組みます。</p><div class="track-tags"><span>出展戦略</span><span>コンテンツ</span><span>スタッフ</span><span>当日運営</span><span>効果検証</span></div></div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section--navy" aria-labelledby="team-title">
-    <div class="section-heading">
-      <p class="section-label">PROFESSIONAL TEAM</p>
-      <h2 id="team-title">伝え方と顧客視点を、<br>一つのチームに。</h2>
-      <p>話す技術だけでも、マーケティングだけでもなく、来場者が理解して次の行動へ進める状態までを設計します。</p>
-    </div>
-
-    <div class="professional-grid">
-      <article>
-        <span>ANNOUNCER</span>
-        <h3>アナウンサーの伝える技術</h3>
-        <p>声、間、言葉の強弱、聞き手の理解速度を踏まえ、耳で聞いて分かる台本と進行へ整えます。</p>
-      </article>
-      <article>
-        <span>NARRATOR</span>
-        <h3>ナレーターの言語感覚</h3>
-        <p>専門的な内容を短い時間で伝えるため、言い回し、文章の長さ、映像やスライドとのタイミングを調整します。</p>
-      </article>
-      <article>
-        <span>MARKETING</span>
-        <h3>マーケターの顧客視点</h3>
-        <p>企業が言いたいことではなく、来場者が知りたいことから構成し、商談や問い合わせへの接続を考えます。</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section--cream" id="support" aria-labelledby="support-title">
-    <div class="split-heading">
-      <div>
-        <p class="section-label">WHAT WE DO</p>
-        <h2 id="support-title">展示会プレゼン設計の<br>支援内容</h2>
+    <section class="difference" aria-labelledby="difference-title">
+      <div class="container difference-grid">
+        <div class="difference-copy"><p class="eyebrow">THE DIFFERENCE</p><h2 class="section-title" id="difference-title">「台本を読むMC」ではなく、<br>伝達を設計するパートナー。</h2><p>出演者を最後に手配するのではなく、伝える内容をつくる段階から参加する。ここが、一般的なMCキャスティングとの大きな違いです。</p></div>
+        <div class="compare" role="table" aria-label="一般的な展示会MCとHELMIOの比較">
+          <div class="compare-head" role="row"><div></div><div>一般的な手配</div><div>HELMIO</div></div>
+          <div class="compare-row" role="row"><div class="compare-label">参加時期</div><div>台本完成後・本番直前</div><div class="compare-helmio">企画・取材・構成段階から参加</div></div>
+          <div class="compare-row" role="row"><div class="compare-label">役割</div><div>用意された台本を読む</div><div class="compare-helmio">伝える価値とストーリーを設計</div></div>
+          <div class="compare-row" role="row"><div class="compare-label">制作</div><div>台本・スライド・出演が分断</div><div class="compare-helmio">構成・画面・話し方を一体設計</div></div>
+          <div class="compare-row" role="row"><div class="compare-label">本番</div><div>決められた進行を実施</div><div class="compare-helmio">来場者の反応を見て改善・調整</div></div>
+          <div class="compare-row" role="row"><div class="compare-label">成果</div><div>滞りなくステージを終える</div><div class="compare-helmio">理解・リード・商談への接続を目指す</div></div>
+        </div>
       </div>
-      <p>必要な部分だけでも、プレゼン全体でも依頼できます。制作範囲と当日の支援範囲は、既存の代理店・制作会社との分担を確認して決定します。</p>
-    </div>
+    </section>
 
-    <div class="service-detail-grid">
-      <article>
-        <span>01 / STRATEGY</span>
-        <h3>出展目的・来場者・ゴールの整理</h3>
-        <p>誰に、何を理解してもらい、プレゼン後にどの行動へ進んでほしいかを定めます。</p>
-        <ul>
-          <li>出展目的とKPIの確認</li>
-          <li>想定来場者と関心事項の整理</li>
-          <li>商談・問い合わせへの導線設計</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>02 / INTERVIEW</span>
-        <h3>商品・技術・事業の取材</h3>
-        <p>担当者や開発者への取材から、来場者に伝える価値、根拠、具体例を引き出します。</p>
-        <ul>
-          <li>経営者・担当者・開発者への取材</li>
-          <li>専門用語と技術情報の整理</li>
-          <li>競合との違いと導入価値の確認</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>03 / STRUCTURE</span>
-        <h3>プレゼン構成の設計</h3>
-        <p>3分、5分、10分などの持ち時間に合わせ、冒頭からクロージングまでの流れを組み立てます。</p>
-        <ul>
-          <li>冒頭のつかみと課題提示</li>
-          <li>商品・技術・事例の提示順</li>
-          <li>短縮版・通常版の構成</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>04 / SCRIPT</span>
-        <h3>台本・進行原稿の制作</h3>
-        <p>文字で読める原稿ではなく、会場で聞いて理解できる言葉と長さへ編集します。</p>
-        <ul>
-          <li>登壇用台本・ナレーション原稿</li>
-          <li>司会進行・インタビュー台本</li>
-          <li>デモンストレーション進行</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>05 / SLIDES</span>
-        <h3>スライド・プレゼン資料の編集</h3>
-        <p>一枚ごとの役割を整理し、遠くから見ても要点が伝わる情報量と言葉へ調整します。</p>
-        <ul>
-          <li>見出し・コピー・情報量の改善</li>
-          <li>台本とスライドの連動</li>
-          <li>デザイン制作会社への指示整理</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>06 / TRAINING</span>
-        <h3>登壇者トレーニング・リハーサル</h3>
-        <p>話す速度、間、視線、強調する言葉、スライドとのタイミングを確認します。</p>
-        <ul>
-          <li>オンライン・現地リハーサル</li>
-          <li>話し方と時間配分の調整</li>
-          <li>質疑応答・声かけの準備</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>07 / CASTING</span>
-        <h3>司会・アナウンサーの派遣</h3>
-        <p>社内登壇者だけでなく、商品プレゼンや進行を担うプロフェッショナルを手配できます。</p>
-        <ul>
-          <li>商品・サービスプレゼン</li>
-          <li>ブースナレーション・司会進行</li>
-          <li>インタビュー・トークセッション</li>
-        </ul>
-      </article>
-
-      <article>
-        <span>08 / ON SITE</span>
-        <h3>当日のプレゼン支援</h3>
-        <p>現地リハーサル、台本の最終調整、登壇者への直前フィードバックなどに対応します。</p>
-        <ul>
-          <li>現地での最終確認</li>
-          <li>時間・進行・表現の微調整</li>
-          <li>制作会社・運営チームとの連携</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="client-title">
-    <div class="section-heading section-heading--center">
-      <p class="section-label">FOR CLIENTS &amp; PARTNERS</p>
-      <h2 id="client-title">出展企業にも、代理店・制作会社にも。</h2>
-      <p>プレゼン部分を切り出して依頼できるため、現在の制作体制を変えずに導入できます。</p>
-    </div>
-
-    <div class="target-layout">
-      <article class="target-card">
-        <h3>出展企業・BtoB企業の方へ</h3>
-        <p>展示会全体に大きな予算をかけなくても、来場者へ直接伝える重要な部分を専門家に任せられます。</p>
-        <ul>
-          <li>プレゼンの準備を社内だけで進める時間がない</li>
-          <li>商品や技術の説明が難しく、伝わりにくい</li>
-          <li>プレゼンから商談へつながる流れを整えたい</li>
-          <li>登壇できるアナウンサーも一緒に依頼したい</li>
-        </ul>
-      </article>
-
-      <article class="target-card">
-        <h3>展示会代理店・制作会社の方へ</h3>
-        <p>施工・映像・運営領域はそのままに、手薄になりやすいプレゼン部分を専門チームとして補完します。</p>
-        <ul>
-          <li>提案にプレゼン設計の専門性を加えたい</li>
-          <li>台本や登壇者対応を出展企業任せにしたくない</li>
-          <li>アナウンサーまでまとめて提案したい</li>
-          <li>案件ごとに必要な範囲だけ外部へ依頼したい</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section--cream" aria-labelledby="partner-title">
-    <div class="split-heading">
-      <div>
-        <p class="section-label">COLLABORATION</p>
-        <h2 id="partner-title">既存の制作体制を変えずに、<br>プレゼンの専門性を追加。</h2>
+    <section class="scope" aria-labelledby="scope-title">
+      <div class="container">
+        <p class="eyebrow">SUPPORT SCOPE</p>
+        <h2 class="section-title" id="scope-title">戦略だけで終わらせず、<br>制作と現場まで担います。</h2>
+        <div class="scope-grid">
+          <div class="scope-big"><small>ONE TEAM, ONE STORY</small><h3>ブースで目にするもの、<br>耳にする言葉を、<br>一つの物語に。</h3><p>展示会の成果は、台本だけでは決まりません。スライド、デモ、呼び込み、MCの声、営業担当への受け渡しまで、来場者が体験するすべてを整合させます。</p></div>
+          <div class="scope-columns">
+            <div class="scope-line"><strong>設計するもの</strong><p>出展目的、ターゲット、訴求軸、プレゼン構成、ステージ回数、商談への導線</p></div>
+            <div class="scope-line"><strong>制作するもの</strong><p>台本、スライド原稿、デモ進行、呼び込み文、想定質問、進行表、出演者向け資料</p></div>
+            <div class="scope-line"><strong>手配する人</strong><p>アナウンサー、ナレーター、MC、バイリンガル人材、必要に応じた運営スタッフ</p></div>
+            <div class="scope-line"><strong>実行すること</strong><p>事前取材、読み合わせ、製品研修、リハーサル、本番出演、現場改善、終了後レビュー</p></div>
+          </div>
+        </div>
       </div>
-      <p>HELMIOが展示会全体を取り仕切るのではなく、代理店・制作会社・施工会社と役割を分けて連携します。</p>
-    </div>
+    </section>
 
-    <div class="partner-grid">
-      <article><span>01</span><h3>提案段階から参加</h3><p>出展企画やステージ提案の段階から、プレゼン内容と必要な人材を整理します。</p></article>
-      <article><span>02</span><h3>制作途中から補完</h3><p>ブースや映像が進行中でも、台本、スライド、登壇部分から参加できます。</p></article>
-      <article><span>03</span><h3>当日運営と連携</h3><p>進行、音響、映像、ステージ担当者と情報を共有し、プレゼンを実装します。</p></article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="flow-title">
-    <div class="section-heading section-heading--center">
-      <p class="section-label">WORK FLOW</p>
-      <h2 id="flow-title">ご相談から展示会当日まで</h2>
-    </div>
-
-    <ol class="process-grid process-grid--four">
-      <li><span>01 / HEARING</span><h3>現状確認</h3><p>展示会、出展目的、商品、来場者、既存の制作体制を確認します。</p></li>
-      <li><span>02 / DESIGN</span><h3>設計・取材</h3><p>伝えるテーマとゴールを決め、担当者への取材から構成を作ります。</p></li>
-      <li><span>03 / PRODUCTION</span><h3>台本・資料制作</h3><p>台本、スライド、進行、登壇方法を整え、関係者と共有します。</p></li>
-      <li><span>04 / REHEARSAL</span><h3>リハーサル・本番</h3><p>話し方と時間を調整し、必要に応じて当日も現地で支援します。</p></li>
-    </ol>
-  </section>
-
-  <section class="section section--cream" aria-labelledby="scope-boundary-title">
-    <div class="scope-note">
-      <div>
-        <p class="section-label">SERVICE BOUNDARY</p>
-        <h2 id="scope-boundary-title">プレゼンを専門に。<br>施工・運営とは連携して進めます。</h2>
+    <section class="case" id="case" aria-labelledby="case-title">
+      <div class="container">
+        <p class="eyebrow">PROJECT IMAGE</p>
+        <h2 class="section-title" id="case-title">たとえば、大型製造機器の展示会なら。</h2>
+        <p class="section-lead">クライアント名を公開できない案件でも、支援範囲や進め方を具体的にご説明できます。以下は、実際に想定されるプロジェクトの一例です。</p>
+        <div class="case-layout">
+          <div class="case-stage"><div class="case-screen"><span></span><span></span><span></span><i></i></div></div>
+          <div>
+            <dl class="case-data">
+              <div class="case-data-row"><dt>EVENT</dt><dd>国内最大級の製造業展示会</dd></div>
+              <div class="case-data-row"><dt>PRODUCT</dt><dd>専門性の高い大型機器・ソリューション</dd></div>
+              <div class="case-data-row"><dt>STAGE</dt><dd>1日複数回のブースステージ</dd></div>
+              <div class="case-data-row"><dt>SUPPORT</dt><dd>製品取材、企画、台本、プレゼン資料、MCキャスティング、リハーサル、本番出演</dd></div>
+              <div class="case-data-row"><dt>GOAL</dt><dd>専門外の来場者にも価値が伝わり、説明員との商談へ自然につながる状態</dd></div>
+            </dl>
+            <p class="case-note">出演者が製品知識を学ぶだけでなく、開発者や営業担当への取材から「なぜ今この製品が必要なのか」を再構成します。</p>
+          </div>
+        </div>
       </div>
-      <div class="scope-note__body">
-        <p>HELMIOの中心領域は、プレゼン戦略、取材、構成、台本、スライドの情報整理、登壇支援、司会・アナウンサー派遣です。</p>
-        <p>ブース施工、会場手配、音響・照明・映像機材、展示会全体の事務局・運営は標準範囲に含みません。既に依頼している代理店や制作会社と連携し、必要な情報と制作物を共有します。</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" aria-labelledby="price-title">
-    <div class="price-panel">
-      <div>
-        <p class="section-label">PRICE</p>
-        <h2 id="price-title">料金は個別にお見積もりします。</h2>
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <p class="eyebrow">PROCESS</p>
+        <h2 class="section-title" id="process-title">展示会当日から逆算して、<br>伝わる状態をつくります。</h2>
+        <div class="timeline">
+          <article class="timeline-step"><time>STEP 01</time><h3>目的・商談導線の整理</h3><p>出展目的、来場者、商談化したい相手、現場の運営体制を確認。プレゼンに担わせる役割を定義します。</p></article>
+          <article class="timeline-step"><time>STEP 02</time><h3>商品・技術への取材</h3><p>経営者、開発者、営業担当へ取材。機能説明ではなく、顧客にとっての価値と話すべき根拠を掘り起こします。</p></article>
+          <article class="timeline-step"><time>STEP 03</time><h3>構成・台本・画面設計</h3><p>来場者の理解順序に合わせてストーリーを構築。スライド、デモ、呼び込み、質疑まで一体で設計します。</p></article>
+          <article class="timeline-step"><time>STEP 04</time><h3>キャスティング・研修</h3><p>企画に合う出演者を選定し、製品理解と表現をすり合わせます。台本は読み合わせを通じて改善します。</p></article>
+          <article class="timeline-step"><time>STEP 05</time><h3>リハーサル・本番運営</h3><p>会場環境、音響、デモとの連携を確認。本番では来場者の反応を見ながら、表現や間を調整します。</p></article>
+          <article class="timeline-step"><time>STEP 06</time><h3>振り返り・次回改善</h3><p>現場で得た反応、質問、商談への接続状況を共有。次回出展や営業コンテンツへ活用できる知見を残します。</p></article>
+        </div>
       </div>
-      <div>
-        <p>プレゼン時間、登壇回数、取材対象、台本・スライドの制作範囲、リハーサル、当日支援、アナウンサー派遣の有無を確認してご提案します。</p>
-        <p>台本のみ、既存資料の改善、プレゼン全体の設計、代理店・制作会社との協業など、必要な範囲からご相談いただけます。</p>
+    </section>
+
+    <section class="deliverables" aria-labelledby="deliverables-title">
+      <div class="container">
+        <p class="eyebrow">DELIVERABLES</p>
+        <h2 class="section-title" id="deliverables-title">実際に残る、支援成果物。</h2>
+        <p class="section-lead">口頭のアドバイスだけでなく、社内で再利用できる形に整えて納品します。案件により内容は異なります。</p>
+        <div class="deliverable-strip">
+          <article class="deliverable"><span>01</span><h3>プレゼン戦略設計</h3><p>目的・対象・訴求軸・商談導線</p></article>
+          <article class="deliverable"><span>02</span><h3>取材メモ</h3><p>技術・実績・顧客価値の整理</p></article>
+          <article class="deliverable"><span>03</span><h3>構成・台本</h3><p>ステージ進行・呼び込み・質疑</p></article>
+          <article class="deliverable"><span>04</span><h3>スライド原稿</h3><p>画面ごとの情報設計・文言</p></article>
+          <article class="deliverable"><span>05</span><h3>出演者資料</h3><p>製品理解・発音・注意事項</p></article>
+          <article class="deliverable"><span>06</span><h3>当日進行表</h3><p>ステージ・デモ・スタッフ連携</p></article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section--cream" aria-labelledby="faq-title">
-    <div class="section-heading section-heading--center">
-      <p class="section-label">FAQ</p>
-      <h2 id="faq-title">よくあるご質問</h2>
-    </div>
-
-    <div class="faq-list">
-      <details>
-        <summary>展示会全体の施工や運営も依頼できますか？</summary>
-        <p>HELMIOはプレゼン設計、台本、スライドの情報整理、登壇支援、司会・アナウンサー派遣を中心に対応します。ブース施工や会場運営は、既存の代理店・制作会社と連携して進めます。</p>
-      </details>
-      <details>
-        <summary>台本だけの依頼も可能ですか？</summary>
-        <p>可能です。ただし、来場者、出展目的、商品・技術の特徴を確認したうえで、プレゼン全体の構成から整理することをおすすめしています。</p>
-      </details>
-      <details>
-        <summary>既にスライドや台本がある場合も依頼できますか？</summary>
-        <p>可能です。既存資料を確認し、情報量、言葉、順番、台本との連動、時間配分を改善します。デザイン制作が必要な場合の範囲は、案件ごとに確認します。</p>
-      </details>
-      <details>
-        <summary>アナウンサーやナレーターの手配もできますか？</summary>
-        <p>対応可能です。商品プレゼン、ブースナレーション、司会進行、インタビュー、トークセッションなど、目的に合う人材を提案します。</p>
-      </details>
-      <details>
-        <summary>展示会代理店や制作会社からも依頼できますか？</summary>
-        <p>可能です。施工・運営領域を変えず、プレゼン設計部分を専門チームとして補完します。提案段階からの協業にも対応します。</p>
-      </details>
-      <details>
-        <summary>リード獲得数は保証されますか？</summary>
-        <p>来場者数、ブース位置、商品、営業体制など複数の条件が影響するため、リード数の保証は行っていません。プレゼンの理解度と、次の会話や商談へ進みやすい情報・導線を整えます。</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="exhibition-final-cta" aria-labelledby="exhibition-cta-title">
-    <div class="exhibition-final-cta__inner">
-      <div>
-        <p class="section-label">CONTACT</p>
-        <h2 id="exhibition-cta-title">展示会のプレゼン部分だけ、<br>専門チームに相談できます。</h2>
-        <p>出展企業からの直接相談、展示会代理店・制作会社からの協業相談のどちらにも対応します。現在の準備状況が分かる資料があれば、相談時に共有してください。</p>
+    <section class="startup" aria-labelledby="startup-title">
+      <div class="container startup-panel">
+        <div class="startup-copy"><p class="eyebrow">FOR STARTUPS</p><h2 id="startup-title">展示会担当がいなくても、<br>出展を前へ進められる。</h2><p>初出展や少人数チームでは、ブース、制作物、説明員、MC、スケジュール管理を同時に進めるだけでも大きな負担です。HELMIOが情報と関係者を整理し、伝達の軸を守りながら全体を進行します。</p><p>施工、映像、配信などを含む場合は、必要な対応範囲と体制を個別に設計します。</p></div>
+        <div class="startup-map" aria-label="展示会一括支援の構成要素"><div>出展目的<br>ターゲット</div><div>ブース内<br>コンテンツ</div><div>プレゼン<br>台本・画面</div><div>MC・出演者<br>キャスティング</div><div>リハーサル<br>当日進行</div><div>振り返り<br>次回改善</div></div>
       </div>
-      <div class="exhibition-final-cta__action">
-        <a class="button button--gold" href="contact.html?service=tenjikai">展示会プレゼンについて相談する</a>
-        <a class="text-link text-link--light" href="service/casting/">司会・アナウンサーのキャスティングを見る <span>→</span></a>
-        <small>料金：個別見積もり ／ 法人・代理店・制作会社向け</small>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html">HÉLMIO</a>
-      <p>株式会社HELMIO</p>
-      <p>企業の価値を、ニュースとプレゼンで社会へ届ける専門チーム</p>
-    </div>
-    <nav class="footer-nav" aria-label="フッターナビゲーション">
-      <a href="service/senzoku-newsroom/">専属ニュース室</a>
-      <a href="tenjikai.html">展示会プレゼン</a>
-      <a href="service/casting/">キャスティング</a>
-      <a href="professionals/">アナウンサー／モデル</a>
-      <a href="column/">コラム</a>
-      <a href="company.html">会社概要</a>
-      <a href="audition.html">オーディション</a>
-      <a href="contact.html">法人のご相談</a>
-    </nav>
-  </div>
-  <div class="footer-bottom">© 2026 HELMIO</div>
-</footer>
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title" id="faq-title">よくあるご質問</h2>
+        <div class="faq-grid">
+          <p class="faq-note">企画が固まっていない段階でもご相談いただけます。出展目的や社内体制を確認した上で、必要な支援範囲を整理します。</p>
+          <div>
+            <details><summary>台本制作だけでも依頼できますか。</summary><p>可能です。ただし、商品や来場者を十分に理解した上で制作するため、原則として事前ヒアリングまたは取材を行います。</p></details>
+            <details><summary>MCやナレーターのキャスティングだけも可能ですか。</summary><p>可能です。すでに企画や台本がある場合は、内容を確認し、会場・商材・必要言語に合う人材をご提案します。</p></details>
+            <details><summary>専門性の高い製造業やBtoB商材にも対応できますか。</summary><p>対応可能です。専門用語をそのまま読むのではなく、開発者や営業担当への取材を通じて、専門外の来場者にも理解できる順序と言葉へ整理します。</p></details>
+            <details><summary>どのくらい前から相談すればよいですか。</summary><p>プレゼン設計から行う場合は、展示会の2〜3か月前を目安にご相談ください。開催時期や支援範囲によっては短期間でも対応可能な場合があります。</p></details>
+            <details><summary>ブース施工や映像制作もまとめて依頼できますか。</summary><p>必要な範囲を確認し、案件ごとに体制を設計します。施工や映像を含む場合は、品質と責任範囲が明確になる形で個別にご提案します。</p></details>
+            <details><summary>料金はどのように決まりますか。</summary><p>取材回数、制作物、ステージ数、出演日数、必要人員、言語、当日運営の範囲によって個別にお見積りします。</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div><h2 id="cta-title">伝えたい商品や技術を、<br>商談が始まるプレゼンへ。</h2><p>企画が固まっていない段階から、展示会の目的と必要な支援範囲を一緒に整理します。</p></div>
+        <div class="cta-actions"><a class="button button--outline" href="#services">支援内容を見る</a><a class="button button--gold" href="contact.html?request=exhibition#request">展示会について相談する</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© 2026 HELMIO</span><nav class="footer-nav"><a href="https://hel-mio.com/">HELMIOトップ</a><a href="senzokunews.html">専属ニュース室</a><a href="professionals.html">アナウンサー／モデル</a><a href="company.html">会社概要</a><a href="contact.html">お問い合わせ</a></nav></div></footer>
 </div>
-
 <script>
 (() => {
-  const button = document.querySelector('.menu-button');
-  const nav = document.querySelector('.site-nav');
-  if (!button || !nav) return;
-
-  const close = () => {
-    button.setAttribute('aria-expanded', 'false');
-    nav.classList.remove('is-open');
-  };
-
-  button.addEventListener('click', () => {
-    const open = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!open));
-    nav.classList.toggle('is-open', !open);
-  });
-
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') close();
-  });
+  const button=document.querySelector('.menu');
+  const nav=document.querySelector('.site-nav');
+  if(button&&nav){
+    button.addEventListener('click',()=>{
+      const open=button.getAttribute('aria-expanded')==='true';
+      button.setAttribute('aria-expanded',String(!open));
+      nav.classList.toggle('open',!open);
+    });
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');button.setAttribute('aria-expanded','false')}));
+  }
 })();
 </script>
 </body>
