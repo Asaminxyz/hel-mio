@@ -272,7 +272,101 @@
       .startup-panel{padding:30px 20px}.startup-map{grid-template-columns:1fr 1fr}.startup-map div:nth-child(3n)::after{display:block}.startup-map div:nth-child(even)::after{display:none}
       .cta{padding:60px 0}.footer-inner{display:grid}.footer-nav{gap:14px}
     }
-  </style>
+  
+/* =========================================================
+   FINAL TYPOGRAPHY & SCALE REFINEMENT
+   ========================================================= */
+.controlled-lines > span,.controlled-lines > em{display:block;white-space:nowrap}
+.controlled-lines--single > span{display:inline-block}
+.section-title{font-size:clamp(28px,2.55vw,40px);line-height:1.58;letter-spacing:.02em}
+.section-lead{margin-top:15px}
+.hero{grid-template-columns:minmax(0,.98fr) minmax(470px,1.02fr);min-height:610px}
+.hero-copy{padding:62px clamp(38px,5vw,78px) 56px}
+.hero-copy .eyebrow{margin-bottom:17px}
+.hero h1{max-width:690px;font-size:clamp(34px,3.15vw,49px);line-height:1.48;letter-spacing:.025em}
+.hero-tagline{margin-top:17px;font-size:clamp(16px,1.25vw,19px);line-height:1.62}
+.hero-description{max-width:650px;margin-top:15px;font-size:14px;line-height:1.95}
+.hero-actions{margin-top:25px}
+.hero-proof{max-width:650px;margin-top:29px}
+.hero-proof div{padding-top:15px;padding-bottom:16px}
+.hero-proof strong{font-size:13px}
+.hero-visual{min-height:610px}
+.stage{inset:6% 4% 5%}
+.stage-wall{inset:8% 6% 17%}
+.hero-badge{width:136px;height:136px;padding:20px}
+.hero-badge strong{font-size:16px}
+.problem{padding:94px 0 90px}
+.problem-head{grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);gap:72px}
+.problem-quote{font-size:clamp(29px,2.55vw,38px);line-height:1.65}
+.problem-body{font-size:15px;line-height:2}
+.problem-flow{margin-top:50px}
+.problem-flow article{min-height:190px}
+.problem-conclusion{margin-top:34px}
+.manifesto{padding:96px 0}
+.manifesto-inner{grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);gap:70px}
+.manifesto-title{font-size:clamp(31px,3vw,43px);line-height:1.58}
+.manifesto-copy{font-size:15px;line-height:2.05}
+.tracks,.scope,.case,.process,.startup{padding:96px 0}
+.difference,.faq{padding:92px 0}
+.deliverables{padding:88px 0}
+.tracks-intro{grid-template-columns:minmax(310px,.82fr) minmax(0,1.18fr);gap:66px}
+.track-list{margin-top:48px}
+.track{padding:36px 0}
+.difference-grid{grid-template-columns:minmax(370px,.88fr) minmax(0,1.12fr);gap:66px}
+.difference-copy p{margin-top:18px}
+.scope-grid{margin-top:44px;gap:70px}
+.scope-big h3{font-size:30px}
+.case-layout{margin-top:46px}
+.timeline{margin-top:48px}
+.startup-panel{grid-template-columns:minmax(0,.94fr) minmax(410px,1.06fr);gap:58px;padding:52px}
+.startup-copy h2{font-size:clamp(29px,2.55vw,38px);line-height:1.62}
+@media(max-width:1120px){
+  .hero{grid-template-columns:minmax(0,1fr) minmax(420px,.98fr)}
+  .hero-copy{padding-inline:38px}
+  .hero h1{font-size:42px}
+  .problem-head,.manifesto-inner,.tracks-intro,.difference-grid,.scope-grid{gap:46px}
+  .difference-grid{grid-template-columns:minmax(330px,.86fr) minmax(0,1.14fr)}
+}
+@media(max-width:900px){
+  .controlled-lines > span,.controlled-lines > em{white-space:normal}
+  .controlled-lines--single > span{display:block}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:64px 32px 50px}
+  .hero h1{font-size:40px}
+  .hero-visual{min-height:500px}
+  .problem-head,.manifesto-inner,.tracks-intro,.difference-grid,.scope-grid,.startup-panel{grid-template-columns:1fr}
+  .problem-quote{max-width:620px}
+}
+@media(max-width:620px){
+  .hero-copy{padding:50px 18px 42px}
+  .hero h1{font-size:31px;line-height:1.58}
+  .hero-tagline{font-size:16px}
+  .hero-visual{min-height:390px}
+  .section-title{font-size:28px}
+  .problem-quote{font-size:27px}
+  .manifesto-title{font-size:29px}
+  .startup-copy h2{font-size:28px}
+}
+
+</style>
+
+<style id="final-scale-tuning">
+@media(min-width:901px){
+  .section-title{font-size:clamp(27px,2.2vw,36px)}
+  .hero{min-height:570px;grid-template-columns:minmax(0,1fr) minmax(450px,1fr)}
+  .hero-copy{padding:50px clamp(36px,4.4vw,70px) 46px}
+  .hero h1{font-size:clamp(32px,2.8vw,44px);line-height:1.5}
+  .hero-tagline{font-size:17px}
+  .hero-description{font-size:13.5px}
+  .hero-proof{margin-top:24px}
+  .hero-visual{min-height:570px}
+  .hero-badge{width:126px;height:126px}
+  .hero-badge strong{font-size:15px}
+  .problem-quote{font-size:clamp(27px,2.15vw,34px)}
+  .manifesto-title{font-size:clamp(29px,2.45vw,38px)}
+  .startup-copy h2{font-size:clamp(27px,2.2vw,34px)}
+}
+</style>
 </head>
 <body>
 <div class="page">
@@ -296,8 +390,8 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">EXHIBITION PRESENTATION DESIGN</p>
-        <h1 id="hero-title"><span>展示会を、説明する場所から</span><span>商談が始まる場所へ。</span></h1>
-        <p class="hero-tagline">プレゼンのプロが、展示会の伝達責任を持つ。</p>
+        <h1 class="controlled-lines" id="hero-title"><span>展示会を、説明する場所から</span><span>商談が始まる場所へ。</span></h1>
+        <p class="hero-tagline controlled-lines"><span>プレゼンのプロが、</span><span>展示会の伝達責任を持つ。</span></p>
         <p class="hero-description">商品や技術への取材から、プレゼン構成、台本、スライド、デモ進行、MCキャスティング、リハーサル、本番まで。来場者が理解し、足を止め、次の会話へ進む展示会を一貫して設計します。</p>
         <div class="hero-actions">
           <a class="button button--gold" href="contact.html?request=exhibition#request">展示会について相談する</a>
@@ -320,7 +414,7 @@
     <section class="problem" aria-labelledby="problem-title">
       <div class="container">
         <div class="problem-head">
-          <h2 class="problem-quote" id="problem-title">一番伝えたい瞬間が、<br>一番手薄になっている。</h2>
+          <h2 class="problem-quote controlled-lines" id="problem-title"><span>一番伝えたい瞬間が、</span><span>一番手薄になっている。</span></h2>
           <div class="problem-body">
             <p>展示会のブースや製品には大きな予算をかける一方で、来場者に価値を伝えるプレゼンは、台本・スライド・出演者が別々に手配されがちです。</p>
             <p>MCやナレーターに台本が届くのは本番直前。専門用語が多く、話の流れが分かりにくくても、内容を再設計する時間も権限もない。結果として、プロが登壇しているのに「台本を読むだけ」になってしまいます。</p>
@@ -338,7 +432,7 @@
 
     <section class="manifesto" id="concept" aria-labelledby="concept-title">
       <div class="container manifesto-inner">
-        <h2 class="manifesto-title" id="concept-title">プレゼンのプロが、<em>展示会の伝達責任を持つ。</em></h2>
+        <h2 class="manifesto-title controlled-lines" id="concept-title"><span>プレゼンのプロが、</span><em>展示会の伝達責任を持つ。</em></h2>
         <div class="manifesto-copy">
           <p>HELMIOでは、アナウンサーやナレーターが企画段階から商品や技術を理解します。誰に、何を、どの順番で伝えれば、足を止め、理解し、商談へ進むのかを設計します。</p>
           <p>構成、台本、スライド、デモ進行、呼び込み、質疑対応を一つのストーリーに統合。登壇者自身が制作に関わるからこそ、本番での改善や来場者の反応に合わせた調整まで責任を持てます。</p>
@@ -350,7 +444,7 @@
     <section class="tracks" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="tracks-intro">
-          <div><p class="eyebrow">THREE WAYS TO SUPPORT</p><h2 class="section-title" id="services-title">必要な範囲から、<br>展示会全体まで。</h2></div>
+          <div><p class="eyebrow">THREE WAYS TO SUPPORT</p><h2 class="section-title controlled-lines" id="services-title"><span>必要な範囲から、</span><span>展示会全体まで。</span></h2></div>
           <p class="tracks-lead">プレゼンだけを改善したい企業、出演者まで任せたい制作会社、展示会の進め方自体が分からないベンチャー企業。それぞれの体制に合わせて、支援範囲を設計します。</p>
         </div>
         <div class="track-list">
@@ -375,7 +469,7 @@
 
     <section class="difference" aria-labelledby="difference-title">
       <div class="container difference-grid">
-        <div class="difference-copy"><p class="eyebrow">THE DIFFERENCE</p><h2 class="section-title" id="difference-title">「台本を読むMC」ではなく、<br>伝達を設計するパートナー。</h2><p>出演者を最後に手配するのではなく、伝える内容をつくる段階から参加する。ここが、一般的なMCキャスティングとの大きな違いです。</p></div>
+        <div class="difference-copy"><p class="eyebrow">THE DIFFERENCE</p><h2 class="section-title controlled-lines" id="difference-title"><span>「台本を読むMC」ではなく、</span><span>伝達を設計するパートナー。</span></h2><p>出演者を最後に手配するのではなく、伝える内容をつくる段階から参加する。ここが、一般的なMCキャスティングとの大きな違いです。</p></div>
         <div class="compare" role="table" aria-label="一般的な展示会MCとHELMIOの比較">
           <div class="compare-head" role="row"><div></div><div>一般的な手配</div><div>HELMIO</div></div>
           <div class="compare-row" role="row"><div class="compare-label">参加時期</div><div>台本完成後・本番直前</div><div class="compare-helmio">企画・取材・構成段階から参加</div></div>
@@ -390,7 +484,7 @@
     <section class="scope" aria-labelledby="scope-title">
       <div class="container">
         <p class="eyebrow">SUPPORT SCOPE</p>
-        <h2 class="section-title" id="scope-title">戦略だけで終わらせず、<br>制作と現場まで担います。</h2>
+        <h2 class="section-title controlled-lines" id="scope-title"><span>戦略だけで終わらせず、</span><span>制作と現場まで担います。</span></h2>
         <div class="scope-grid">
           <div class="scope-big"><small>ONE TEAM, ONE STORY</small><h3>ブースで目にするもの、<br>耳にする言葉を、<br>一つの物語に。</h3><p>展示会の成果は、台本だけでは決まりません。スライド、デモ、呼び込み、MCの声、営業担当への受け渡しまで、来場者が体験するすべてを整合させます。</p></div>
           <div class="scope-columns">
@@ -406,7 +500,7 @@
     <section class="case" id="case" aria-labelledby="case-title">
       <div class="container">
         <p class="eyebrow">PROJECT IMAGE</p>
-        <h2 class="section-title" id="case-title">たとえば、大型製造機器の展示会なら。</h2>
+        <h2 class="section-title controlled-lines controlled-lines--single" id="case-title"><span>たとえば、大型製造機器の展示会なら。</span></h2>
         <p class="section-lead">クライアント名を公開できない案件でも、支援範囲や進め方を具体的にご説明できます。以下は、実際に想定されるプロジェクトの一例です。</p>
         <div class="case-layout">
           <div class="case-stage"><div class="case-screen"><span></span><span></span><span></span><i></i></div></div>
@@ -427,7 +521,7 @@
     <section class="process" id="process" aria-labelledby="process-title">
       <div class="container">
         <p class="eyebrow">PROCESS</p>
-        <h2 class="section-title" id="process-title">展示会当日から逆算して、<br>伝わる状態をつくります。</h2>
+        <h2 class="section-title controlled-lines" id="process-title"><span>展示会当日から逆算して、</span><span>伝わる状態をつくります。</span></h2>
         <div class="timeline">
           <article class="timeline-step"><time>STEP 01</time><h3>目的・商談導線の整理</h3><p>出展目的、来場者、商談化したい相手、現場の運営体制を確認。プレゼンに担わせる役割を定義します。</p></article>
           <article class="timeline-step"><time>STEP 02</time><h3>商品・技術への取材</h3><p>経営者、開発者、営業担当へ取材。機能説明ではなく、顧客にとっての価値と話すべき根拠を掘り起こします。</p></article>
@@ -457,7 +551,7 @@
 
     <section class="startup" aria-labelledby="startup-title">
       <div class="container startup-panel">
-        <div class="startup-copy"><p class="eyebrow">FOR STARTUPS</p><h2 id="startup-title">展示会担当がいなくても、<br>出展を前へ進められる。</h2><p>初出展や少人数チームでは、ブース、制作物、説明員、MC、スケジュール管理を同時に進めるだけでも大きな負担です。HELMIOが情報と関係者を整理し、伝達の軸を守りながら全体を進行します。</p><p>施工、映像、配信などを含む場合は、必要な対応範囲と体制を個別に設計します。</p></div>
+        <div class="startup-copy"><p class="eyebrow">FOR STARTUPS</p><h2 class="controlled-lines" id="startup-title"><span>展示会担当がいなくても、</span><span>出展を前へ進められる。</span></h2><p>初出展や少人数チームでは、ブース、制作物、説明員、MC、スケジュール管理を同時に進めるだけでも大きな負担です。HELMIOが情報と関係者を整理し、伝達の軸を守りながら全体を進行します。</p><p>施工、映像、配信などを含む場合は、必要な対応範囲と体制を個別に設計します。</p></div>
         <div class="startup-map" aria-label="展示会一括支援の構成要素"><div>出展目的<br>ターゲット</div><div>ブース内<br>コンテンツ</div><div>プレゼン<br>台本・画面</div><div>MC・出演者<br>キャスティング</div><div>リハーサル<br>当日進行</div><div>振り返り<br>次回改善</div></div>
       </div>
     </section>
