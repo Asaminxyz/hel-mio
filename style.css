@@ -428,3 +428,324 @@ img {
     padding: 32px 22px;
   }
 }
+/* ===== WHY HELMIO / Premium redesign ===== */
+.why-premium{
+  position:relative;
+  overflow:hidden;
+  padding-top:110px;
+  padding-bottom:120px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(177,138,67,.08), transparent 28%),
+    linear-gradient(180deg, #faf7f1 0%, #f7f3ec 100%);
+}
+
+.why-premium::before{
+  content:"";
+  position:absolute;
+  top:120px;
+  right:-120px;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(177,138,67,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.why-premium__inner{
+  width:min(1220px, calc(100% - 64px));
+  margin:0 auto;
+}
+
+.why-premium__intro{
+  display:grid;
+  grid-template-columns:minmax(0, .9fr) minmax(420px, 1.1fr);
+  gap:72px;
+  align-items:end;
+  margin-bottom:52px;
+}
+
+.why-premium__eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+  color:var(--gold);
+  font-family:"Cormorant Garamond", serif;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.why-premium__eyebrow::after{
+  content:"";
+  width:52px;
+  height:1px;
+  background:rgba(177,138,67,.5);
+}
+
+.why-premium__title{
+  max-width:540px;
+  color:var(--navy);
+  font-family:"Noto Serif JP", serif;
+  font-size:clamp(36px, 3.4vw, 54px);
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.02em;
+}
+
+.why-premium__subcopy{
+  margin-top:20px;
+  color:var(--gold);
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+
+.why-premium__lead{
+  max-width:650px;
+  color:#44505b;
+  font-size:15px;
+  line-height:2.05;
+}
+
+.why-premium__lead strong{
+  color:var(--navy);
+  font-weight:700;
+}
+
+.why-premium__body{
+  display:grid;
+  grid-template-columns:minmax(320px, 420px) minmax(0, 1fr);
+  gap:34px;
+  align-items:start;
+}
+
+.why-premium__visual{
+  position:relative;
+}
+
+.why-premium__photo-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  background:#e8e3db;
+  box-shadow:0 28px 60px rgba(16,47,82,.11);
+  border:1px solid rgba(16,47,82,.08);
+}
+
+.why-premium__photo-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.24), transparent 28%),
+    linear-gradient(135deg, rgba(177,138,67,.10), transparent 42%);
+  pointer-events:none;
+}
+
+.why-premium__photo{
+  aspect-ratio: 4 / 5;
+  width:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.why-premium__photo-badge{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  color:var(--navy);
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(16,47,82,.08);
+  border-radius:999px;
+  box-shadow:0 10px 24px rgba(16,47,82,.10);
+  backdrop-filter:blur(8px);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+.why-premium__photo-badge::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--gold);
+  flex:0 0 auto;
+}
+
+.why-premium__cta{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-top:20px;
+  padding-bottom:6px;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  border-bottom:1px solid rgba(16,47,82,.22);
+  transition:gap .18s ease, border-color .18s ease;
+}
+
+.why-premium__cta span{
+  color:var(--gold);
+  font-size:18px;
+}
+
+.why-premium__cta:hover{
+  gap:16px;
+  border-color:rgba(177,138,67,.55);
+}
+
+.why-premium__cards{
+  display:grid;
+  gap:18px;
+}
+
+.why-premium__card{
+  position:relative;
+  padding:28px 28px 26px 28px;
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(16,47,82,.08);
+  border-radius:22px;
+  box-shadow:0 14px 34px rgba(16,47,82,.06);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.why-premium__card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg, #c89b47 0%, #e0c27d 100%);
+}
+
+.why-premium__card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(177,138,67,.20);
+  box-shadow:0 22px 42px rgba(16,47,82,.10);
+}
+
+.why-premium__card-head{
+  display:grid;
+  grid-template-columns:62px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+}
+
+.why-premium__num{
+  display:grid;
+  place-items:center;
+  width:62px;
+  height:62px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(177,138,67,.12) 0%, rgba(177,138,67,.04) 100%);
+  border:1px solid rgba(177,138,67,.18);
+  color:#a97825;
+  font-family:"Cormorant Garamond", serif;
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:.08em;
+  line-height:1;
+}
+
+.why-premium__card h3{
+  margin-top:4px;
+  color:var(--navy);
+  font-family:"Noto Serif JP", serif;
+  font-size:clamp(21px, 2vw, 26px);
+  font-weight:500;
+  line-height:1.6;
+  letter-spacing:.01em;
+}
+
+.why-premium__card p{
+  margin-top:12px;
+  padding-left:80px;
+  color:#4d5964;
+  font-size:14px;
+  line-height:1.9;
+}
+
+@media (max-width: 1024px){
+  .why-premium__intro{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .why-premium__body{
+    grid-template-columns:1fr;
+  }
+
+  .why-premium__visual{
+    max-width:520px;
+  }
+}
+
+@media (max-width: 640px){
+  .why-premium{
+    padding-top:78px;
+    padding-bottom:84px;
+  }
+
+  .why-premium__inner{
+    width:calc(100% - 32px);
+  }
+
+  .why-premium__title{
+    font-size:32px;
+    line-height:1.55;
+  }
+
+  .why-premium__subcopy{
+    font-size:14px;
+  }
+
+  .why-premium__lead{
+    font-size:14px;
+    line-height:1.95;
+  }
+
+  .why-premium__card{
+    padding:22px 18px 20px;
+    border-radius:18px;
+  }
+
+  .why-premium__card-head{
+    grid-template-columns:52px minmax(0,1fr);
+    gap:14px;
+  }
+
+  .why-premium__num{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    font-size:24px;
+  }
+
+  .why-premium__card h3{
+    font-size:19px;
+    line-height:1.55;
+  }
+
+  .why-premium__card p{
+    padding-left:0;
+    margin-top:10px;
+    font-size:13.5px;
+  }
+
+  .why-premium__photo-badge{
+    left:14px;
+    bottom:14px;
+    padding:8px 12px;
+    font-size:11px;
+  }
+}
