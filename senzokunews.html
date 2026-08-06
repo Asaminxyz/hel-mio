@@ -736,10 +736,40 @@
 .usage-scene-card__media img[src="syanailecture.png"]{object-position:center 43%}
 .usage-scene-card__media img[src="presstaiou.png"]{object-position:center 38%}
 
+
+
+/* ===== INQUIRY MODAL / diagnosis & consultation ===== */
+body.inquiry-modal-open{overflow:hidden}
+.inquiry-modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,28,52,.72);backdrop-filter:blur(8px)}
+.inquiry-modal.is-open{display:flex}
+.inquiry-modal__dialog{position:relative;width:min(720px,100%);max-height:calc(100vh - 48px);overflow:auto;padding:46px 48px 42px;background:#fff;border:1px solid rgba(177,138,67,.28);box-shadow:0 30px 90px rgba(5,28,52,.28)}
+.inquiry-modal__close{position:absolute;top:16px;right:17px;width:40px;height:40px;border:1px solid rgba(16,47,82,.18);border-radius:50%;background:#fff;color:#0b315d;font-size:25px;line-height:1;cursor:pointer}
+.inquiry-modal__eyebrow{color:#b88934;font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;letter-spacing:.2em}
+.inquiry-modal h2{margin-top:10px;color:#0b315d;font-family:"Noto Serif JP",serif;font-size:clamp(27px,3vw,36px);font-weight:500;line-height:1.5}
+.inquiry-modal__lead{margin-top:12px;color:#5b6975;font-size:13px;line-height:1.9}
+.inquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.inquiry-field{display:grid;gap:8px}
+.inquiry-field--full{grid-column:1/-1}
+.inquiry-field label{color:#173a5d;font-size:13px;font-weight:700}
+.inquiry-required{display:inline-block;margin-left:7px;padding:2px 7px;border-radius:999px;background:#b88934;color:#fff;font-size:10px;line-height:1.5}
+.inquiry-field input,.inquiry-field select,.inquiry-field textarea{width:100%;border:1px solid #cdd8e2;border-radius:4px;background:#fff;color:#26384b;outline:none;transition:.2s}
+.inquiry-field input,.inquiry-field select{height:52px;padding:0 14px}
+.inquiry-field textarea{min-height:128px;padding:13px 14px;resize:vertical}
+.inquiry-field input:focus,.inquiry-field select:focus,.inquiry-field textarea:focus{border-color:#7ba2bf;box-shadow:0 0 0 3px rgba(123,162,191,.15)}
+.inquiry-form__submit{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;min-height:58px;margin-top:4px;padding:14px 20px;border:0;background:#0b315d;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.inquiry-form__submit:hover{background:#b88934}
+.inquiry-form__submit:disabled{cursor:not-allowed;opacity:.62}
+.inquiry-form__status{grid-column:1/-1;min-height:1.8em;color:#5b6975;font-size:13px;font-weight:700;text-align:center}
+.inquiry-form__status.is-success{color:#246840}
+.inquiry-form__status.is-error{color:#a13d39}
+.inquiry-form__note{grid-column:1/-1;color:#75818b;font-size:11px;text-align:center}
+.inquiry-hp{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(1px,1px,1px,1px)!important;white-space:nowrap!important}
+@media(max-width:680px){.inquiry-modal{padding:10px}.inquiry-modal__dialog{max-height:calc(100vh - 20px);padding:40px 20px 28px}.inquiry-form{grid-template-columns:1fr;gap:15px}.inquiry-field--full,.inquiry-form__submit,.inquiry-form__status,.inquiry-form__note{grid-column:1}.inquiry-modal h2{font-size:27px}}
+
 </style>
 </head>
 <body>
-<header class="site-header"><a class="logo" href="https://hel-mio.com/" aria-label="HELMIOトップページへ戻る"><span class="logo-main">専属ニュース室</span><span class="logo-sub">SUPPORTED BY HELMIO</span></a><nav class="nav"><a href="#about">専属ニュース室とは</a><a href="#value">サービスの特徴</a><a href="#flow">支援の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a><a href="#diagnosis">無料診断を申し込む</a></nav><button class="menu">☰</button></header>
+<header class="site-header"><a class="logo" href="https://hel-mio.com/" aria-label="HELMIOトップページへ戻る"><span class="logo-main">専属ニュース室</span><span class="logo-sub">SUPPORTED BY HELMIO</span></a><nav class="nav"><a href="#about">専属ニュース室とは</a><a href="#value">サービスの特徴</a><a href="#flow">支援の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a><a href="#diagnosis" data-open-inquiry="diagnosis">無料診断を申し込む</a></nav><button class="menu">☰</button></header>
 <main>
 <section class="hero" id="top"><div class="hero-copy"><h1>経営の強みを、<br>ニュースにする。</h1><p class="hero-sub">アナウンサーなど報道経験者が貴社の「専属ニュース室」に</p><p class="hero-text">戦略設計から企画・制作・メディアアプローチまで、継続的に伴走する広報パートナー。企業や現場の事実を掘り起こし、社会やメディアが必要とするテーマへ編集します。</p><div class="hero-points"><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M8 38V24h8v14M20 38V15h8v23M32 38V8h8v30M6 40h36"/></svg>戦略設計から<br>実行まで一貫支援</div><div class="hero-point"><svg viewBox="0 0 48 48"><circle cx="17" cy="17" r="7"/><circle cx="33" cy="17" r="7"/><path d="M5 39v-8c0-7 5-11 12-11s12 4 12 11v8M25 39v-8c0-6 3-10 8-10 6 0 10 4 10 10v8"/></svg>メディアとの<br>強いつながり</div><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M10 5h23l6 6v32H10zM33 5v8h8M16 21h17M16 28h17M16 35h10"/></svg>成果につながる<br>発信を継続</div></div></div><figure class="hero-visual"><img src="assets/hero-interview.jpg" alt="企業への取材対応を行うアナウンサー"><div class="hero-badge">月額<strong>40万円〜</strong>サービス立ち上げ限定<br>先着2社</div></figure></section>
 
@@ -764,7 +794,7 @@
   </div>
 </section>
 
-<section class="diagnosis" id="diagnosis"><div class="wrap diagnosis-grid"><div><p class="eyebrow">MONTHLY 5 COMPANIES</p><h2><span>無料ニュースポジション診断</span></h2><p class="diagnosis-question"><span>貴社は、社会やメディアから</span><span>どのような会社に見えているでしょうか。</span></p><p class="diagnosis-description">公開情報・競合・社会動向から、御社のニュースポジションを可視化。現在の広報状態を100点満点で整理し、ニュースになる可能性と、次の90日間に取り組む発信方針をレポートします。</p><div class="checks"><span>診断レポートを無料でご提供</span><span>オンラインで15〜30分の面談付き</span><span>無理な営業・勧誘は一切いたしません</span></div><div class="btns"><a class="btn btn-gold" href="#">無料診断を申し込む <b>→</b></a><a class="btn btn-outline" href="#">資料をダウンロードする <b>↓</b></a></div></div><figure class="report-frame"><img src="assets/sample-report.jpg" alt="無料ニュースポジション診断レポートのサンプル"></figure></div></section>
+<section class="diagnosis" id="diagnosis"><div class="wrap diagnosis-grid"><div><p class="eyebrow">MONTHLY 5 COMPANIES</p><h2><span>無料ニュースポジション診断</span></h2><p class="diagnosis-question"><span>貴社は、社会やメディアから</span><span>どのような会社に見えているでしょうか。</span></p><p class="diagnosis-description">公開情報・競合・社会動向から、御社のニュースポジションを可視化。現在の広報状態を100点満点で整理し、ニュースになる可能性と、次の90日間に取り組む発信方針をレポートします。</p><div class="checks"><span>診断レポートを無料でご提供</span><span>オンラインで15〜30分の面談付き</span><span>無理な営業・勧誘は一切いたしません</span></div><div class="btns"><a class="btn btn-gold" href="#inquiry-form" data-open-inquiry="diagnosis">無料診断を申し込む <b>→</b></a><a class="btn btn-outline" href="#">資料をダウンロードする <b>↓</b></a></div></div><figure class="report-frame"><img src="assets/sample-report.jpg" alt="無料ニュースポジション診断レポートのサンプル"></figure></div></section>
 <section class="section" id="value"><div class="wrap"><h2 class="section-title">専属ニュース室が提供する価値</h2><div class="value-grid"><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="7"/><path d="M24 3v8M45 24h-8M24 45v-8M3 24h8"/></svg><h3>経営の強みを発掘し<br>ニュースに設計</h3><p>事業・市場・社会の変化を分析し、ニュースとしての切り口を発掘。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M10 5h26v38H10zM16 14h14M16 21h14M16 28h10"/></svg><h3>企画・原稿・資料を<br>プロが制作</h3><p>メディアに伝わる企画設計と、質の高いコンテンツを制作。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M5 25V13l28-7v26L5 25zM13 27l4 15M37 14l6-4M38 21h7M37 28l6 4"/></svg><h3>メディアアプローチで<br>露出を創出</h3><p>記者ネットワークを活かし、最適な媒体へ個別アプローチ。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M8 38V25h8v13M20 38V17h8v21M32 38V8h8v30M6 40h36"/></svg><h3>継続的な発信で<br>信頼資産を蓄積</h3><p>定期的な発信で認知・信頼を高め、企業価値を積み上げる。</p></article><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="8"/><path d="M9 42v-9c0-9 6-14 15-14s15 5 15 14v9"/></svg><h3>効果測定と改善で<br>成果を最大化</h3><p>データで効果を検証し、次の施策へ改善を続けます。</p></article></div></div></section>
 
 
@@ -809,7 +839,7 @@
         <svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="20" rx="3"></rect><path d="M10 4v6M22 4v6M5 13h22M10 18h4M18 18h4M10 23h4"></path></svg>
       </span>
       <div class="usage-scenes__cta-copy"><strong>貴社の課題に合わせた活用プランをご提案します</strong><span>取材・発信・出演に関するお悩みやご要望を、まずはお気軽にご相談ください。</span></div>
-      <a class="btn" href="contact.html?request=pr#request">お問い合わせ・ご相談はこちら　→</a>
+      <a class="btn" href="#inquiry-form" data-open-inquiry="consultation">お問い合わせ・ご相談はこちら　→</a>
     </aside>
   </div>
 </section>
@@ -817,7 +847,183 @@
 <section class="pricing" id="pricing"><div class="wrap"><div class="price-card"><h2>ご相談しやすい<br>導入プラン</h2><div class="price-center"><p class="price-term">月額制 <i aria-hidden="true"></i> 原則6か月〜</p><p class="price-limited">サービス立ち上げ限定・先着2社</p><p class="price-amount"><span class="price-prefix">月額</span><strong>40</strong><span class="price-unit">万円〜</span></p></div><ul class="price-notes"><li>支援範囲、取材頻度、制作本数に応じて個別にお見積りします。</li><li>企画・取材・原稿制作・メディアアプローチ・取材対応を含みます。</li><li>詳細は診断レポートと面談をもとにご提案します。</li></ul></div></div></section>
 <section class="flow" id="flow"><div class="wrap"><h2 class="section-title">ご利用の流れ</h2><div class="flow-row"><article class="step"><span>01</span><h3>無料申込み</h3><p>フォームよりお申し込みください。</p></article><article class="step"><span>02</span><h3>事前ヒアリング</h3><p>オンラインで現状や課題をお伺いします。</p></article><article class="step"><span>03</span><h3>診断レポートのご提供</h3><p>公開情報をもとに診断し、レポートを作成します。</p></article><article class="step"><span>04</span><h3>ご提案・ご契約</h3><p>レポートをもとに支援内容をご提案します。</p></article></div></div></section>
 <section class="faq" id="faq"><div class="wrap"><h2 class="section-title">よくあるご質問</h2><div class="faq-grid"><details><summary>最低契約期間はありますか？</summary><p>原則6か月からのご契約です。広報資産を継続的に蓄積するための期間として設定しています。</p></details><details><summary>成果はどれくらいで出ますか？</summary><p>事業内容や情報資産によって異なります。掲載を保証するものではなく、取材される状態を継続的につくります。</p></details><details><summary>どのような企業が対象ですか？</summary><p>主にBtoB企業、新規事業、専門性の高いサービスを提供する企業を対象としています。</p></details><details><summary>料金以外に費用はかかりますか？</summary><p>撮影、出演、広告出稿などのオプション業務は別途お見積りとなります。</p></details><details><summary>社内に広報担当がいなくても大丈夫ですか？</summary><p>問題ありません。外部広報チームとして企画から実務まで伴走します。</p></details><details><summary>競合他社に知られることはありませんか？</summary><p>診断・支援に関する情報は適切に管理し、公開範囲を確認しながら進めます。</p></details></div></div></section>
-<section class="closing"><div class="wrap closing-grid"><div><h2>まずは、御社のニュースポジションを<br>可視化することから始めませんか？</h2><p>専属ニュース室の資料ダウンロード、無料診断はお気軽にご利用ください。</p></div><a class="btn btn-outline" href="#">資料をダウンロードする ↓</a><a class="btn btn-gold" href="#diagnosis">無料ニュースポジション診断を申し込む →</a></div></section>
+<section class="closing"><div class="wrap closing-grid"><div><h2>まずは、御社のニュースポジションを<br>可視化することから始めませんか？</h2><p>専属ニュース室の資料ダウンロード、無料診断はお気軽にご利用ください。</p></div><a class="btn btn-outline" href="#">資料をダウンロードする ↓</a><a class="btn btn-gold" href="#inquiry-form" data-open-inquiry="diagnosis">無料ニュースポジション診断を申し込む →</a></div></section>
 </main>
+
+<!-- ==============================
+     FREE DIAGNOSIS / CONSULTATION FORM
+============================== -->
+<div class="inquiry-modal" id="inquiryModal" aria-hidden="true">
+  <div class="inquiry-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle">
+    <button class="inquiry-modal__close" id="inquiryModalClose" type="button" aria-label="フォームを閉じる">×</button>
+    <p class="inquiry-modal__eyebrow" id="inquiryModalEyebrow">FREE NEWS POSITION DIAGNOSIS</p>
+    <h2 id="inquiryModalTitle">無料ニュースポジション診断のお申し込み</h2>
+    <p class="inquiry-modal__lead" id="inquiryModalLead">公開情報をもとに、貴社のPRの現在地と、優先して改善すべきポイントを整理します。</p>
+
+    <form class="inquiry-form" id="inquiryForm" action="https://formspree.io/f/mykrvjbq" method="post">
+      <input id="inquirySubject" type="hidden" name="_subject" value="【HELMIO】無料ニュースポジション診断">
+      <input id="inquiryType" type="hidden" name="inquiry_type" value="無料ニュースポジション診断">
+      <input type="hidden" name="source" value="senzokunews-page">
+
+      <div class="inquiry-hp" aria-hidden="true">
+        <label for="inquiryWebsiteHp">ウェブサイト</label>
+        <input id="inquiryWebsiteHp" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="inquiry-field inquiry-field--full">
+        <label for="inquiryCompany">会社名<span class="inquiry-required">必須</span></label>
+        <input id="inquiryCompany" name="company" type="text" autocomplete="organization" placeholder="例：株式会社HELMIO" required>
+      </div>
+
+      <div class="inquiry-field">
+        <label for="inquiryName">お名前<span class="inquiry-required">必須</span></label>
+        <input id="inquiryName" name="name" type="text" autocomplete="name" placeholder="例：山田 太郎" required>
+      </div>
+
+      <div class="inquiry-field">
+        <label for="inquiryEmail">メールアドレス<span class="inquiry-required">必須</span></label>
+        <input id="inquiryEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="例：name@company.co.jp" required>
+      </div>
+
+      <div class="inquiry-field">
+        <label for="inquiryPhone">電話番号</label>
+        <input id="inquiryPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="例：03-1234-5678">
+      </div>
+
+      <div class="inquiry-field">
+        <label for="inquiryUrl">会社・サービスのWebサイト</label>
+        <input id="inquiryUrl" name="company_url" type="url" inputmode="url" placeholder="https://">
+      </div>
+
+      <div class="inquiry-field inquiry-field--full">
+        <label for="inquiryIssue">現在の課題・ご相談内容<span class="inquiry-required">必須</span></label>
+        <textarea id="inquiryIssue" name="message" placeholder="現在感じている広報課題や、ご相談になりたい内容をご記入ください" required></textarea>
+      </div>
+
+      <button class="inquiry-form__submit" type="submit"><span id="inquirySubmitLabel">無料診断を申し込む</span><span aria-hidden="true">→</span></button>
+      <p class="inquiry-form__status" id="inquiryFormStatus" role="status" aria-live="polite"></p>
+      <p class="inquiry-form__note">送信内容はお問い合わせへの回答・診断の作成にのみ使用します。</p>
+    </form>
+  </div>
+</div>
+
+
+<script>
+(() => {
+  const modal = document.getElementById('inquiryModal');
+  const dialog = modal?.querySelector('.inquiry-modal__dialog');
+  const closeButton = document.getElementById('inquiryModalClose');
+  const form = document.getElementById('inquiryForm');
+  const status = document.getElementById('inquiryFormStatus');
+  const subject = document.getElementById('inquirySubject');
+  const type = document.getElementById('inquiryType');
+  const eyebrow = document.getElementById('inquiryModalEyebrow');
+  const title = document.getElementById('inquiryModalTitle');
+  const lead = document.getElementById('inquiryModalLead');
+  const submitLabel = document.getElementById('inquirySubmitLabel');
+  let lastTrigger = null;
+
+  const content = {
+    diagnosis: {
+      eyebrow: 'FREE NEWS POSITION DIAGNOSIS',
+      title: '無料ニュースポジション診断のお申し込み',
+      lead: '公開情報をもとに、貴社のPRの現在地と、優先して改善すべきポイントを整理します。',
+      subject: '【HELMIO】無料ニュースポジション診断',
+      type: '無料ニュースポジション診断',
+      button: '無料診断を申し込む'
+    },
+    consultation: {
+      eyebrow: 'CONTACT / CONSULTATION',
+      title: '専属ニュース室へのお問い合わせ',
+      lead: '広報課題、取材・発信、アナウンサー出演など、現時点で分かる範囲をご記入ください。',
+      subject: '【HELMIO】専属ニュース室へのお問い合わせ',
+      type: '専属ニュース室へのお問い合わせ・相談',
+      button: 'お問い合わせを送信する'
+    }
+  };
+
+  const openModal = (kind, trigger) => {
+    if (!modal) return;
+    const selected = content[kind] || content.consultation;
+    lastTrigger = trigger || null;
+    eyebrow.textContent = selected.eyebrow;
+    title.textContent = selected.title;
+    lead.textContent = selected.lead;
+    subject.value = selected.subject;
+    type.value = selected.type;
+    submitLabel.textContent = selected.button;
+    status.textContent = '';
+    status.className = 'inquiry-form__status';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('inquiry-modal-open');
+    window.setTimeout(() => document.getElementById('inquiryCompany')?.focus(), 30);
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('inquiry-modal-open');
+    lastTrigger?.focus?.();
+  };
+
+  document.querySelectorAll('[data-open-inquiry]').forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      openModal(trigger.dataset.openInquiry, trigger);
+    });
+  });
+
+  closeButton?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', event => {
+    if (event.target === modal) closeModal();
+  });
+  dialog?.addEventListener('click', event => event.stopPropagation());
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
+  });
+
+  form?.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    const original = submitLabel.textContent;
+    button.disabled = true;
+    submitLabel.textContent = '送信中です…';
+    status.textContent = '';
+    status.className = 'inquiry-form__status';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error('send failed');
+
+      status.textContent = '送信しました。内容を確認のうえ、担当者よりご連絡します。';
+      status.className = 'inquiry-form__status is-success';
+      const currentSubject = subject.value;
+      const currentType = type.value;
+      form.reset();
+      subject.value = currentSubject;
+      type.value = currentType;
+      window.setTimeout(closeModal, 1800);
+    } catch (error) {
+      status.textContent = '送信できませんでした。時間をおいて再度お試しください。';
+      status.className = 'inquiry-form__status is-error';
+    } finally {
+      button.disabled = false;
+      submitLabel.textContent = original;
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
