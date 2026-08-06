@@ -442,12 +442,318 @@
   .usage-scenes__cta .btn{grid-column:1/-1}
 }
 
+
+/* =========================================================
+   MAIN SERVICE INTRO + ICE BLUE DIAGNOSIS
+   ========================================================= */
+.newsroom-intro{
+  position:relative;
+  padding:98px 0 94px;
+  overflow:hidden;
+  background:#fff;
+  border-bottom:1px solid rgba(11,49,93,.08);
+}
+.newsroom-intro::before{
+  content:"";
+  position:absolute;
+  top:-190px;
+  right:-180px;
+  width:430px;
+  height:430px;
+  border:1px solid rgba(184,137,52,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+.newsroom-intro__grid{
+  display:grid;
+  grid-template-columns:minmax(380px,.92fr) minmax(0,1.08fr);
+  gap:76px;
+  align-items:center;
+}
+.newsroom-intro__visual{
+  position:relative;
+  min-height:0;
+  aspect-ratio:4 / 4.65;
+  overflow:hidden;
+  background:#edf2f4;
+  box-shadow:0 22px 58px rgba(15,47,82,.10);
+}
+.newsroom-intro__visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(15,47,82,.08);
+  pointer-events:none;
+}
+.newsroom-intro__visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.newsroom-intro__copy{
+  min-width:0;
+  padding-right:8px;
+}
+.newsroom-intro__copy .eyebrow{
+  margin-bottom:24px;
+}
+.newsroom-intro__copy h2{
+  color:#0b315d;
+  font-family:"Noto Serif JP",serif;
+  font-size:clamp(30px,2.65vw,41px);
+  font-weight:500;
+  line-height:1.68;
+  letter-spacing:.025em;
+}
+.newsroom-intro__copy h2 span{
+  display:block;
+  white-space:nowrap;
+}
+.newsroom-intro__copy>p:not(.eyebrow){
+  max-width:720px;
+  margin-top:24px;
+  color:#2d465d;
+  font-size:15px;
+  font-weight:500;
+  line-height:2.08;
+}
+.newsroom-intro__copy strong{
+  color:#a77220;
+  font-weight:700;
+}
+.newsroom-intro__cta{
+  display:inline-flex;
+  min-height:58px;
+  margin-top:31px;
+  padding:14px 25px;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+  color:#fff;
+  background:#0b315d;
+  border:1px solid #0b315d;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.02em;
+  transition:transform .2s,background .2s,border-color .2s;
+}
+.newsroom-intro__cta:hover{
+  background:#b88934;
+  border-color:#b88934;
+  transform:translateY(-2px);
+}
+
+/* Ice-blue diagnosis panel */
+.diagnosis{
+  position:relative;
+  padding:82px 0;
+  overflow:hidden;
+  color:#173653;
+  background:
+    radial-gradient(circle at 5% 12%,rgba(255,255,255,.92),transparent 26%),
+    radial-gradient(circle at 96% 84%,rgba(255,255,255,.70),transparent 27%),
+    linear-gradient(135deg,#eef8fc 0%,#e2f1f7 48%,#edf8fb 100%);
+  border-top:1px solid rgba(74,128,154,.10);
+  border-bottom:1px solid rgba(74,128,154,.17);
+}
+.diagnosis::before{
+  content:"";
+  position:absolute;
+  top:-140px;
+  left:-115px;
+  width:360px;
+  height:360px;
+  border:1px solid rgba(86,142,168,.13);
+  border-radius:50%;
+  pointer-events:none;
+}
+.diagnosis::after{
+  content:"";
+  position:absolute;
+  right:-100px;
+  bottom:-170px;
+  width:390px;
+  height:390px;
+  border:1px solid rgba(184,137,52,.10);
+  border-radius:50%;
+  pointer-events:none;
+}
+.diagnosis-grid{
+  position:relative;
+  z-index:1;
+  grid-template-columns:minmax(410px,.86fr) minmax(0,1.14fr);
+  gap:68px;
+}
+.diagnosis .eyebrow{
+  color:#9f762e;
+}
+.diagnosis h2{
+  color:#0b315d;
+  font-size:clamp(30px,2.55vw,38px);
+  font-weight:600;
+  letter-spacing:.015em;
+}
+.diagnosis h2 span{
+  white-space:nowrap;
+}
+.diagnosis p,
+.diagnosis .diagnosis-description{
+  color:#3e586e;
+  font-weight:500;
+  line-height:2;
+}
+.diagnosis .diagnosis-question{
+  margin-top:18px !important;
+  color:#153b5f !important;
+  font-family:"Noto Serif JP",serif;
+  font-size:clamp(18px,1.45vw,22px) !important;
+  font-weight:600 !important;
+  line-height:1.75 !important;
+  letter-spacing:.02em;
+}
+.diagnosis .checks{
+  color:#173c5e;
+  font-weight:600;
+}
+.diagnosis .checks span::before{
+  color:#0b315d;
+  background:rgba(255,255,255,.62);
+  border-color:#8eb4c6;
+}
+.diagnosis .btn-gold{
+  color:#fff;
+  background:#b88934;
+  border-color:#b88934;
+  box-shadow:0 11px 25px rgba(164,116,32,.17);
+}
+.diagnosis .btn-gold:hover{
+  background:#a77725;
+  border-color:#a77725;
+}
+.diagnosis .btn-outline{
+  color:#0b315d;
+  background:rgba(255,255,255,.56);
+  border-color:#8daebe;
+}
+.diagnosis .btn-outline:hover{
+  background:#fff;
+  border-color:#0b315d;
+}
+.diagnosis .report-frame{
+  padding:16px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(38,83,108,.11);
+  border-radius:10px;
+  box-shadow:0 25px 58px rgba(30,73,95,.14);
+}
+
+@media(max-width:1000px){
+  .newsroom-intro__grid{
+    grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);
+    gap:48px;
+  }
+  .newsroom-intro__copy h2{
+    font-size:31px;
+  }
+  .diagnosis-grid{
+    grid-template-columns:minmax(340px,.86fr) minmax(0,1.14fr);
+    gap:42px;
+  }
+}
+@media(max-width:900px){
+  .newsroom-intro{
+    padding:76px 0;
+  }
+  .newsroom-intro__grid,
+  .diagnosis-grid{
+    grid-template-columns:1fr;
+  }
+  .newsroom-intro__visual{
+    width:min(100%,680px);
+    aspect-ratio:16 / 11;
+  }
+  .newsroom-intro__copy{
+    padding-right:0;
+  }
+  .newsroom-intro__copy h2 span,
+  .diagnosis h2 span,
+  .diagnosis-question span{
+    white-space:normal;
+  }
+  .diagnosis{
+    padding:72px 0;
+  }
+  .diagnosis .report-frame{
+    margin-top:4px;
+  }
+}
+@media(max-width:560px){
+  .newsroom-intro{
+    padding:62px 0 64px;
+  }
+  .newsroom-intro__visual{
+    aspect-ratio:4 / 3;
+  }
+  .newsroom-intro__copy .eyebrow{
+    margin-top:2px;
+    margin-bottom:17px;
+  }
+  .newsroom-intro__copy h2{
+    font-size:27px;
+    line-height:1.7;
+  }
+  .newsroom-intro__copy>p:not(.eyebrow){
+    margin-top:18px;
+    font-size:14px;
+    line-height:1.95;
+  }
+  .newsroom-intro__cta{
+    width:100%;
+    margin-top:25px;
+  }
+  .diagnosis{
+    padding:58px 0 62px;
+  }
+  .diagnosis-grid{
+    gap:34px;
+  }
+  .diagnosis h2{
+    font-size:28px;
+  }
+  .diagnosis .diagnosis-question{
+    font-size:18px !important;
+  }
+}
+
 </style>
 </head>
 <body>
 <header class="site-header"><a class="logo" href="https://hel-mio.com/" aria-label="HELMIOトップページへ戻る"><span class="logo-main">専属ニュース室</span><span class="logo-sub">SUPPORTED BY HELMIO</span></a><nav class="nav"><a href="#about">専属ニュース室とは</a><a href="#value">サービスの特徴</a><a href="#flow">支援の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a><a href="#diagnosis">無料診断を申し込む</a></nav><button class="menu">☰</button></header>
 <main>
-<section class="hero" id="about"><div class="hero-copy"><h1>経営の強みを、<br>ニュースにする。</h1><p class="hero-sub">アナウンサーなど報道経験者が貴社の「専属ニュース室」に</p><p class="hero-text">戦略設計から企画・制作・メディアアプローチまで、継続的に伴走する広報パートナー。企業や現場の事実を掘り起こし、社会やメディアが必要とするテーマへ編集します。</p><div class="hero-points"><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M8 38V24h8v14M20 38V15h8v23M32 38V8h8v30M6 40h36"/></svg>戦略設計から<br>実行まで一貫支援</div><div class="hero-point"><svg viewBox="0 0 48 48"><circle cx="17" cy="17" r="7"/><circle cx="33" cy="17" r="7"/><path d="M5 39v-8c0-7 5-11 12-11s12 4 12 11v8M25 39v-8c0-6 3-10 8-10 6 0 10 4 10 10v8"/></svg>メディアとの<br>強いつながり</div><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M10 5h23l6 6v32H10zM33 5v8h8M16 21h17M16 28h17M16 35h10"/></svg>成果につながる<br>発信を継続</div></div></div><figure class="hero-visual"><img src="assets/hero-interview.jpg" alt="企業への取材対応を行うアナウンサー"><div class="hero-badge">月額<strong>40万円〜</strong>サービス立ち上げ限定<br>先着2社</div></figure></section>
+<section class="hero" id="top"><div class="hero-copy"><h1>経営の強みを、<br>ニュースにする。</h1><p class="hero-sub">アナウンサーなど報道経験者が貴社の「専属ニュース室」に</p><p class="hero-text">戦略設計から企画・制作・メディアアプローチまで、継続的に伴走する広報パートナー。企業や現場の事実を掘り起こし、社会やメディアが必要とするテーマへ編集します。</p><div class="hero-points"><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M8 38V24h8v14M20 38V15h8v23M32 38V8h8v30M6 40h36"/></svg>戦略設計から<br>実行まで一貫支援</div><div class="hero-point"><svg viewBox="0 0 48 48"><circle cx="17" cy="17" r="7"/><circle cx="33" cy="17" r="7"/><path d="M5 39v-8c0-7 5-11 12-11s12 4 12 11v8M25 39v-8c0-6 3-10 8-10 6 0 10 4 10 10v8"/></svg>メディアとの<br>強いつながり</div><div class="hero-point"><svg viewBox="0 0 48 48"><path d="M10 5h23l6 6v32H10zM33 5v8h8M16 21h17M16 28h17M16 35h10"/></svg>成果につながる<br>発信を継続</div></div></div><figure class="hero-visual"><img src="assets/hero-interview.jpg" alt="企業への取材対応を行うアナウンサー"><div class="hero-badge">月額<strong>40万円〜</strong>サービス立ち上げ限定<br>先着2社</div></figure></section>
+
+<section class="newsroom-intro" id="about" aria-labelledby="newsroom-intro-title">
+  <div class="wrap newsroom-intro__grid">
+    <figure class="newsroom-intro__visual">
+      <img src="main.png" alt="企業への取材を通じて社内の事実をニュースへ編集するアナウンサー" loading="eager">
+    </figure>
+    <div class="newsroom-intro__copy">
+      <p class="eyebrow">MAIN SERVICE</p>
+      <h2 id="newsroom-intro-title">
+        <span>アナウンサーが、社内にある事実を</span>
+        <span>外部が理解できるニュースへ。</span>
+      </h2>
+      <p>
+        アナウンサーや記者などの報道経験者が、貴社の専属広報チームとして伴走します。
+        <strong>経営者や現場への取材に加え、AIも活用した社会動向の調査から、貴社が何について当事者・取材先として知られるべきかという「ニュースポジション」を設計。</strong>
+        広報戦略、ニュース企画、原稿制作、メディアへの個別アプローチ、取材対応まで一貫して支援します。
+      </p>
+      <a class="newsroom-intro__cta" href="#diagnosis">無料ニュースポジション診断を見る <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="diagnosis" id="diagnosis"><div class="wrap diagnosis-grid"><div><p class="eyebrow">MONTHLY 5 COMPANIES</p><h2><span>無料ニュースポジション診断</span></h2><p class="diagnosis-question"><span>貴社は、社会やメディアから</span><span>どのような会社に見えているでしょうか。</span></p><p class="diagnosis-description">公開情報・競合・社会動向から、御社のニュースポジションを可視化。現在の広報状態を100点満点で整理し、ニュースになる可能性と、次の90日間に取り組む発信方針をレポートします。</p><div class="checks"><span>診断レポートを無料でご提供</span><span>オンラインで15〜30分の面談付き</span><span>無理な営業・勧誘は一切いたしません</span></div><div class="btns"><a class="btn btn-gold" href="#">無料診断を申し込む <b>→</b></a><a class="btn btn-outline" href="#">資料をダウンロードする <b>↓</b></a></div></div><figure class="report-frame"><img src="assets/sample-report.jpg" alt="無料ニュースポジション診断レポートのサンプル"></figure></div></section>
 <section class="section" id="value"><div class="wrap"><h2 class="section-title">専属ニュース室が提供する価値</h2><div class="value-grid"><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="7"/><path d="M24 3v8M45 24h-8M24 45v-8M3 24h8"/></svg><h3>経営の強みを発掘し<br>ニュースに設計</h3><p>事業・市場・社会の変化を分析し、ニュースとしての切り口を発掘。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M10 5h26v38H10zM16 14h14M16 21h14M16 28h10"/></svg><h3>企画・原稿・資料を<br>プロが制作</h3><p>メディアに伝わる企画設計と、質の高いコンテンツを制作。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M5 25V13l28-7v26L5 25zM13 27l4 15M37 14l6-4M38 21h7M37 28l6 4"/></svg><h3>メディアアプローチで<br>露出を創出</h3><p>記者ネットワークを活かし、最適な媒体へ個別アプローチ。</p></article><article class="value"><svg viewBox="0 0 48 48"><path d="M8 38V25h8v13M20 38V17h8v21M32 38V8h8v30M6 40h36"/></svg><h3>継続的な発信で<br>信頼資産を蓄積</h3><p>定期的な発信で認知・信頼を高め、企業価値を積み上げる。</p></article><article class="value"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="8"/><path d="M9 42v-9c0-9 6-14 15-14s15 5 15 14v9"/></svg><h3>効果測定と改善で<br>成果を最大化</h3><p>データで効果を検証し、次の施策へ改善を続けます。</p></article></div></div></section>
 
