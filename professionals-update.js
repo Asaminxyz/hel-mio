@@ -1,7 +1,19 @@
 (() => {
   'use strict';
 
-  const customTalents = [
+  const updateHero = () => {
+    const title = document.getElementById('professionals-title');
+    if (title) {
+      title.innerHTML = '<span><em class="hero-highlight">NHK・民放出身、</em></span><span>元局アナウンサー専門事務所</span>';
+    }
+
+    const lead = document.querySelector('.pro-hero__lead');
+    if (lead) {
+      lead.textContent = '地上波や国を挙げた大型イベントで確かな実績を積んだ、経験豊富なプロフェッショナルが皆様のご要望に柔軟にお応えします。';
+    }
+  };
+
+  const newTalents = [
     {
       id: 'asuka-nakashima',
       name: '中島 あすか',
@@ -193,19 +205,7 @@
         skills: '',
         qualifications: '英検準2級、漢検準2級、数検2級'
       },
-      tags: [
-        '企業イベント',
-        '展示会',
-        '式典',
-        'セミナー',
-        '記者発表会',
-        'トークショー',
-        'インタビュー',
-        'リポーター',
-        'ライブ配信',
-        'ナレーション',
-        'BtoB'
-      ],
+      tags: ['企業イベント', '展示会', '式典', 'セミナー', '記者発表会', 'トークショー', 'インタビュー', 'リポーター', 'ライブ配信', 'ナレーション', 'BtoB'],
       careers: [
         { category: '式典・表彰式', text: 'EBARA WAVE アリーナおおた 新名称記念式典' },
         { category: '式典・表彰式', text: '港区スポーツ推進委員60周年記念事業' },
@@ -229,37 +229,12 @@
     }
   ];
 
-  const updateHero = () => {
-    const title = document.getElementById('professionals-title');
-    if (title) {
-      title.innerHTML =
-        '<span><em class="hero-highlight">NHK・民放出身、</em></span><span>元局アナウンサー専門事務所</span>';
-    }
-
-    const lead = document.querySelector('.pro-hero__lead');
-    if (lead) {
-      lead.textContent =
-        '地上波や国を挙げた大型イベントで確かな実績を積んだ、経験豊富なプロフェッショナルが皆様のご要望に柔軟にお応えします。';
-    }
-  };
-
-  const removeIntro = () => {
-    const intro = document.querySelector('#professionals .talent-intro');
-    if (intro) intro.remove();
-  };
-
   const mutateTalentData = () => {
     if (!Array.isArray(window.HELMIO_TALENTS)) return;
-
-    const ids = new Set(customTalents.map(t => t.id));
-    const base = window.HELMIO_TALENTS.filter(t => t && t.id !== 'coming-soon' && !ids.has(t.id));
-
-    window.HELMIO_TALENTS.splice(
-      0,
-      window.HELMIO_TALENTS.length,
-      ...base,
-      ...customTalents
-    );
+    const base = window.HELMIO_TALENTS.filter(t => t && t.id !== 'coming-soon');
+    const ids = new Set(newTalents.map(t => t.id));
+    const kept = base.filter(t => !ids.has(t.id));
+    window.HELMIO_TALENTS.splice(0, window.HELMIO_TALENTS.length, ...kept, ...newTalents);
   };
 
   const buildCard = (id, name, englishName, image) => `
@@ -268,11 +243,8 @@
         <span class="talent-card__fallback">${englishName}</span>
         <img alt="${name}" loading="lazy" src="${image}">
       </div>
-      <div class="talent-card-body">
-        <p class="talent-name">${name}</p>
-      </div>
-    </button>
-  `;
+      <div class="talent-card-body"><p class="talent-name">${name}</p></div>
+    </button>`;
 
   const rebuildCards = () => {
     const container = document.getElementById('talentCards');
@@ -312,19 +284,20 @@
           ${buildCard('miku-nakajima', '中嶋 未来', 'MIKU NAKAJIMA', 'miku-nakajima.jpg')}
           ${buildCard('mitsuki-yamano', '山野 光希', 'MITSUKI YAMANO', 'mitsuki-yamano.jpg')}
         </div>
-      </section>
-    `;
+      </section>`;
 
     container.querySelectorAll('.talent-card__media img').forEach(img => {
-      img.addEventListener('error', () => {
-        img.closest('.talent-card__media')?.classList.add('is-missing');
-      });
+      img.addEventListener('error', () => img.closest('.talent-card__media')?.classList.add('is-missing'));
     });
+  };
+
+  const removeIntro = () => {
+    const intro = document.querySelector('#professionals .talent-intro');
+    if (intro) intro.remove();
   };
 
   const injectStyles = () => {
     if (document.getElementById('helmio-professionals-update-styles')) return;
-
     const style = document.createElement('style');
     style.id = 'helmio-professionals-update-styles';
     style.textContent = `
@@ -332,51 +305,22 @@
       .talent-group{margin-top:52px}
       .talent-group:first-child{margin-top:0}
       .talent-group+.talent-group{margin-top:76px;padding-top:58px;border-top:1px solid var(--line)}
-      .talent-group__eyebrow{
-        margin-bottom:10px;
-        color:var(--gold);
-        font-family:"Cormorant Garamond",serif;
-        font-size:13px;
-        font-weight:600;
-        letter-spacing:.18em;
-        text-transform:uppercase
-      }
-      .talent-group__title{
-        color:var(--ink);
-        font-family:"Noto Serif JP",serif;
-        font-size:clamp(24px,2.5vw,34px);
-        font-weight:600;
-        line-height:1.55
-      }
-      .talent-group__lead{
-        max-width:820px;
-        margin:12px 0 28px;
-        color:var(--muted);
-        font-size:14px;
-        line-height:1.9
-      }
+      .talent-group__eyebrow{margin-bottom:10px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+      .talent-group__title{color:var(--ink);font-family:"Noto Serif JP",serif;font-size:clamp(24px,2.5vw,34px);font-weight:600;line-height:1.55}
+      .talent-group__lead{max-width:820px;margin:12px 0 28px;color:var(--muted);font-size:14px;line-height:1.9}
       .talent-cards--group{margin-top:0}
-      @media (max-width:600px){
+      @media(max-width:600px){
         .talent-group{margin-top:42px}
         .talent-group+.talent-group{margin-top:54px;padding-top:42px}
         .talent-group__title{font-size:22px}
         .talent-group__lead{font-size:13px;margin-bottom:22px}
-      }
-    `;
+      }`;
     document.head.appendChild(style);
   };
 
-  const init = () => {
-    injectStyles();
-    mutateTalentData();
-    updateHero();
-    removeIntro();
-    rebuildCards();
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
-  } else {
-    init();
-  }
+  mutateTalentData();
+  injectStyles();
+  updateHero();
+  removeIntro();
+  rebuildCards();
 })();
