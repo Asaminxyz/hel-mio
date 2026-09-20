@@ -313,7 +313,7 @@
             '新島 麻生',
             'ASAMI NIIJIMA',
             'S__27566083.jpg',
-            '企業を伝える、ビジネスアナウンサー'
+            'スポーツとビジネスに強いアナウンサー'
           )}
 
           ${buildCard(
@@ -321,7 +321,7 @@
             '村上 史',
             'FUMI MURAKAMI',
             'S__27557921.jpg',
-            'ラジオアナ×NHK。実力と親しみやすさ'
+            'ラジオアナ→NHK。実力と親しみやすさ'
           )}
 
           ${buildCard(
@@ -337,7 +337,7 @@
             '山北 愛琳',
             'AIRI YAMAKITA',
             'airi-yamakita.jpg',
-            'NHK約10年。金融にも強いキャスター'
+            'NHK約10年。金融に強いキャスター'
           )}
 
           ${buildCard(
@@ -345,7 +345,7 @@
             '當麻 陽香',
             'HARUKA TOUMA',
             'haruka-touma.jpg',
-            'ダジャレで人気の元NHKキャスター'
+            'ダジャレで人気の愛されNHKキャスター'
           )}
 
         </div>
@@ -373,7 +373,7 @@
             '南 青良',
             'SEIRA MINAMI',
             'seira-new.jpeg',
-            '女優出身。企業イベントに強い、端正な進行'
+            '女優出身。信頼感、清潔感のある端正な進行'
           )}
 
           ${buildCard(
@@ -381,7 +381,7 @@
             '早川 里香',
             'RIKA HAYAKAWA',
             'rika-hayakawa-main.jpg',
-            'リピートされるBtoBイベントMC'
+            '安定感でリピートされるBtoBイベントMC'
           )}
 
         </div>
