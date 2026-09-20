@@ -1902,3 +1902,909 @@
   }
 
 })();
+/* =========================================================
+   HÉLMIO PROFESSIONALS
+   FINAL CONTENT / ORDER UPDATE
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  const updateHero = () => {
+
+    const title =
+      document.getElementById('professionals-title');
+
+    if (title) {
+      title.innerHTML = `
+        <span>
+          <em class="hero-highlight">
+            局アナのキャスティングから、
+          </em>
+        </span>
+        <span>
+          準備を含めたご相談まで。
+        </span>
+      `;
+    }
+
+
+    const lead =
+      document.querySelector('.pro-hero__lead');
+
+    if (lead) {
+      lead.textContent =
+        'HELMIOは、元放送局アナウンサーとマーケティングチームにより、展示会の商談につながるコミュニケーションを設計する会社です。';
+    }
+
+
+    const primary =
+      document.querySelector(
+        '.pro-hero .button--primary'
+      );
+
+    if (primary) {
+      primary.textContent =
+        '候補者・料金目安を相談する';
+
+      primary.setAttribute(
+        'href',
+        '#casting-form'
+      );
+    }
+
+
+    const secondary =
+      document.querySelector(
+        '.pro-hero .button--secondary'
+      );
+
+    if (secondary) {
+      secondary.textContent =
+        'アナウンサーを見る';
+
+      secondary.setAttribute(
+        'href',
+        '#professionals'
+      );
+    }
+
+  };
+
+
+  /* =========================================================
+     HEADER
+     ========================================================= */
+
+  const updateHeader = () => {
+
+    const nav =
+      document.getElementById('siteNav');
+
+    if (!nav) return;
+
+
+    nav.innerHTML = `
+      <a href="#professionals">
+        候補者を見る
+      </a>
+
+      <a href="#service">
+        サービス
+      </a>
+
+      <a
+        class="nav-contact"
+        href="#casting-form"
+      >
+        ご相談
+      </a>
+    `;
+
+
+    const menuButton =
+      document.querySelector('.menu-button');
+
+
+    nav.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        nav.classList.remove('open');
+
+        if (menuButton) {
+          menuButton.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+        }
+
+        document.body.classList.remove(
+          'is-menu-open'
+        );
+
+      });
+
+    });
+
+  };
+
+
+  /* =========================================================
+     OLD CASTING SUPPORT REMOVE
+     ========================================================= */
+
+  const removeCastingSupport = () => {
+
+    const section =
+      document.getElementById(
+        'casting-support'
+      );
+
+    if (section) {
+      section.remove();
+    }
+
+  };
+
+
+  /* =========================================================
+     HELMIO FEATURES
+     ========================================================= */
+
+  const updateFeatures = () => {
+
+    const section =
+      document.getElementById('features');
+
+    if (!section) return;
+
+
+    const lead =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+    if (lead) {
+      lead.textContent =
+        'キャスティングだけでなく、展示会の目的から逆算した「伝え方」まで。必要な領域を一つの窓口で支援します。';
+    }
+
+
+    const list =
+      section.querySelector(
+        '.feature-list'
+      );
+
+    if (!list) return;
+
+
+    list.innerHTML = `
+
+      <!-- =========================
+           01
+           ========================= -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          01
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="24"
+              cy="31"
+              r="14"
+            />
+
+            <path
+              d="
+                M10 31h28
+                M24 17c5 5 7 10 7 14s-2 9-7 14
+                M24 17c-5 5-7 10-7 14s2 9 7 14
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M39 18l6-5 3 5 7-2-2 7
+                5 4-6 3 1 7-7-2-4 6-4-6
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            全国のネットワークから、
+            案件に合うプロフェッショナルを提案
+          </h3>
+
+          <p>
+            元アナウンサーの代表が築いてきた、
+            全国のアナウンサーのネットワークから、
+            商材や展示会の目的に合う人材をご提案します。
+            <br><br>
+            大切な展示会だからこそ、
+            出演者選びを一か八かにしない。
+            ただきれいに読むだけではなく、
+            目の前の来場者の足を止め、
+            商品の魅力を伝えることが必要です。
+            内容やコアメッセージを分かりやすく、
+            人の心を動かせる
+            「伝えるプロ」のみを選定します。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           02
+           ========================= -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          02
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="32"
+              cy="21"
+              r="9"
+            />
+
+            <path
+              d="
+                M16 52c1-11 7-17 16-17s15 6 16 17
+              "
+            />
+
+            <path
+              d="
+                M22 15c2-6 17-8 20 2
+                M24 38l8 8 8-8
+              "
+            />
+
+            <path
+              class="accent"
+              d="M29 46l3 5 3-5"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            「伝える」プロが、
+            メッセージ設計からプレゼン準備まで
+          </h3>
+
+          <p>
+            出演者の手配だけでなく、
+            必要に応じてメッセージ設計、
+            プレゼン構成、台本、スライド、
+            読み合わせ、リハーサル、
+            リスト獲得につなげる動線設計まで
+            対応します。
+            <br><br>
+            すべてをお任せいただく必要はありません。
+            キャスティングのみ、
+            台本制作のみなど、
+            案件に必要な部分だけ
+            ご依頼いただけます。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           03
+           ========================= -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          03
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <path
+              d="
+                M16 9h26l8 8v38H16z
+              "
+            />
+
+            <path
+              d="
+                M42 9v10h8
+                M23 28h19
+                M23 35h13
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M35 47l14-14 5 5-14 14-7 2z
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            アナウンサー × マーケティングの視点で
+            「伝え方」を設計
+          </h3>
+
+          <p>
+            代表は放送局アナウンサー、
+            展示会ナレーターとして
+            「伝える側」を経験する一方、
+            スタートアップでは
+            マーケティング責任者として、
+            出展する側からも
+            数々の展示会に携わってきました。
+            <br><br>
+            展示会は、
+            説明すること自体が目的ではありません。
+            <strong>
+              商品やサービスを理解してもらい、
+              記憶に残し、
+              その先の商談や認知につなげること。
+            </strong>
+            <br><br>
+            必要に応じて、
+            アナウンサーの派遣に加え、
+            その目的から逆算して、
+            誰が、何を、どの順番で、
+            どう伝えるかを設計します。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           04
+           ========================= -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          04
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="20"
+              cy="22"
+              r="7"
+            />
+
+            <circle
+              cx="44"
+              cy="22"
+              r="7"
+            />
+
+            <path
+              d="
+                M10 51c1-9 5-14 10-14s9 5 10 14
+                M34 51c1-9 5-14 10-14s9 5 10 14
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M27 31l5 5 5-5
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            既存の制作体制を変えず、
+            必要な領域だけ
+          </h3>
+
+          <p>
+            制作会社・広告代理店の
+            既存の制作体制を変えることなく、
+            キャスティングのみ、
+            台本制作のみ、
+            プレゼン準備のみなど、
+            案件に必要な領域だけ
+            お任せいただけます。
+            <br><br>
+            若手MCの起用に、
+            元局アナウンサーによる
+            台本・表現監修を組み合わせるなど、
+            ご予算と求める品質に応じた
+            体制設計も可能です。
+          </p>
+
+        </div>
+
+      </article>
+
+    `;
+
+  };
+
+
+  /* =========================================================
+     SERVICE
+     写真・画像部分は一切変更しない
+     ========================================================= */
+
+  const updateServices = () => {
+
+    const service =
+      document.getElementById('service');
+
+    if (!service) return;
+
+
+    const intro =
+      service.querySelector(
+        '.section-head > p'
+      );
+
+    if (intro) {
+      intro.textContent =
+        'キャスティングから、メッセージ・プレゼンテーション制作、展示会コミュニケーション設計まで。案件に必要な領域だけご依頼いただけます。';
+    }
+
+
+    const cards =
+      service.querySelectorAll(
+        '.service-card'
+      );
+
+
+    /* -------------------------
+       01 キャスティング
+       ------------------------- */
+
+    if (cards[0]) {
+
+      const body =
+        cards[0].querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            01
+          </span>
+
+          <h3>
+            キャスティング
+          </h3>
+
+          <p class="service-card__catch">
+            案件に合う、伝えるプロをご提案
+          </p>
+
+          <p>
+            元放送局アナウンサーを中心に、
+            案件の内容や商材、会場、
+            求める雰囲気に合わせて
+            人材をご提案します。
+            <br><br>
+            ナレーター・MCは、
+            HELMIOの基準をクリアした
+            プロフェッショナルのみを選定。
+            出演者のみのご依頼も可能です。
+          </p>
+
+          <a
+            class="service-card__link"
+            href="#professionals"
+          >
+            候補者を見る
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    /* -------------------------
+       02
+       メッセージ・
+       プレゼンテーション制作
+       ------------------------- */
+
+    if (cards[1]) {
+
+      const body =
+        cards[1].querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            02
+          </span>
+
+          <h3>
+            メッセージ・<br>
+            プレゼンテーション制作
+          </h3>
+
+          <p class="service-card__catch">
+            伝わる内容と、伝わる見せ方をつくる
+          </p>
+
+          <p>
+            メッセージ設計、
+            プレゼン構成、台本、
+            スライドを制作。
+            <br><br>
+            出演者との読み合わせや
+            リハーサル、
+            表現の調整まで対応します。
+          </p>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            制作について相談する
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    /* -------------------------
+       03
+       展示会コミュニケーション設計
+       ------------------------- */
+
+    if (cards[2]) {
+
+      const body =
+        cards[2].querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            03
+          </span>
+
+          <h3>
+            展示会<br>
+            コミュニケーション設計
+          </h3>
+
+          <p class="service-card__catch">
+            「伝える」から、その先の商談までを設計
+          </p>
+
+          <p>
+            来場者の足を止め、
+            商品やサービスを理解してもらい、
+            リード獲得や営業担当との会話に
+            つなげるまでの
+            コミュニケーションを設計します。
+            <br><br>
+            アナウンサーとしての
+            「伝える」知見と、
+            マーケティングの視点を掛け合わせ、
+            <strong class="service-highlight">
+              展示会の目的から逆算して設計します。
+            </strong>
+          </p>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            展示会について相談する
+          </a>
+
+        `;
+
+      }
+
+    }
+
+  };
+
+
+  /* =========================================================
+     SECTION ORDER
+
+     HERO
+       ↓
+     FEATURES
+       ↓
+     PROFESSIONALS
+       ↓
+     SERVICE
+       ↓
+     SELECTED WORKS
+       ↓
+     FLOW
+       ↓
+     FAQ / CONTACT
+     ========================================================= */
+
+  const reorderSections = () => {
+
+    const hero =
+      document.querySelector('.pro-hero');
+
+    const features =
+      document.getElementById('features');
+
+    const professionals =
+      document.getElementById(
+        'professionals'
+      );
+
+    const service =
+      document.getElementById('service');
+
+
+    if (
+      hero &&
+      features
+    ) {
+
+      hero.insertAdjacentElement(
+        'afterend',
+        features
+      );
+
+    }
+
+
+    if (
+      features &&
+      professionals
+    ) {
+
+      features.insertAdjacentElement(
+        'afterend',
+        professionals
+      );
+
+    }
+
+
+    if (
+      professionals &&
+      service
+    ) {
+
+      professionals.insertAdjacentElement(
+        'afterend',
+        service
+      );
+
+    }
+
+  };
+
+
+  /* =========================================================
+     STYLE
+     既存トンマナ・写真は変更しない
+     ========================================================= */
+
+  const injectStyles = () => {
+
+    if (
+      document.getElementById(
+        'helmio-final-content-styles'
+      )
+    ) {
+      return;
+    }
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-final-content-styles';
+
+
+    style.textContent = `
+
+      #features
+      .feature-item__content
+      p {
+        line-height: 2;
+      }
+
+
+      #features
+      .feature-item__content
+      strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+
+      #service
+      .service-card__catch {
+        margin:
+          12px 0 14px;
+
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          17px;
+
+        font-weight:
+          600;
+
+        line-height:
+          1.7;
+      }
+
+
+      #service
+      .service-card__body
+      > p:not(.service-card__catch) {
+        line-height: 1.9;
+      }
+
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #features
+        .feature-item__content
+        p {
+          line-height: 1.9;
+        }
+
+
+        #service
+        .service-card__catch {
+          font-size: 16px;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(style);
+
+  };
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const applyFinalUpdate = () => {
+
+    removeCastingSupport();
+
+    injectStyles();
+
+    updateHeader();
+
+    updateHero();
+
+    updateFeatures();
+
+    updateServices();
+
+    reorderSections();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      applyFinalUpdate,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    applyFinalUpdate();
+
+  }
+
+})();
