@@ -1,19 +1,7 @@
 (() => {
   'use strict';
 
-  const updateHero = () => {
-    const title = document.getElementById('professionals-title');
-    if (title) {
-      title.innerHTML = '<span><em class="hero-highlight">NHK・民放出身、</em></span><span>元局アナウンサー専門事務所</span>';
-    }
-
-    const lead = document.querySelector('.pro-hero__lead');
-    if (lead) {
-      lead.textContent = '地上波や国を挙げた大型イベントで確かな実績を積んだ、経験豊富なプロフェッショナルが皆様のご要望に柔軟にお応えします。';
-    }
-  };
-
-  const newTalents = [
+  const customTalents = [
     {
       id: 'asuka-nakashima',
       name: '中島 あすか',
@@ -107,7 +95,7 @@
       englishName: 'CHIZURU HAYAKAWA',
       pdf: 'chizuru-hayakawa-profile.pdf',
       cardImage: 'chizuru-hayakawa.jpg',
-      photos: ['chizuru-hayakawa.jpg'],
+      photos: ['chizuru-hayakawa.jpg', 'chizuru-hayakawa-2.jpg'],
       summary: '早稲田大学創造理工学部に在学しながら、アナウンサー・モデルとして活動。小学館「NEWSポストセブン」ではレギュラーキャスターとして出演し、リポーターやナレーション、イベントMC、ラジオにも活動の幅を広げている。防災士資格を持ち、環境問題を学ぶ理系学生としての視点も強み。',
       profile: {
         height: '',
@@ -164,7 +152,7 @@
       englishName: 'MITSUKI YAMANO',
       pdf: 'mitsuki-yamano-profile.pdf',
       cardImage: 'mitsuki-yamano.jpg',
-      photos: ['mitsuki-yamano.jpg'],
+      photos: ['mitsuki-yamano.jpg', 'mitsuki-yamano-2.jpg', 'mitsuki-yamano-3.jpg'],
       summary: 'ラジオ、テレビ、WEB広告、モデル、演技など幅広いメディアで活動。MBSラジオの番組出演やラジオパーソナリティの経験を持ち、明るく親しみやすいキャラクターを活かして、トークからモデル・映像出演まで柔軟に対応する。',
       profile: {
         height: '161cm',
@@ -186,15 +174,92 @@
         { category: 'その他', text: 'ミスサークルコンテスト2024審査員特別賞／第11代有田みかん大使／超十代ULTRA TEENS FES 2025ランウェイ' }
       ],
       youtube: []
+    },
+    {
+      id: 'rika-hayakawa',
+      name: '早川 里香',
+      kana: 'はやかわ りか',
+      englishName: 'RIKA HAYAKAWA',
+      pdf: 'rika-hayakawa-profile.pdf',
+      cardImage: 'rika-hayakawa-3.jpg',
+      photos: ['rika-hayakawa-3.jpg', 'rika-hayakawa.jpg', 'rika-hayakawa-2.jpg'],
+      summary: '理系メーカーでの開発職を経てMCへ転身。展示会・企業イベント・式典・スポーツイベントなど幅広い現場で司会を担当。技術系・BtoBイベントを得意とし、落ち着いた進行と臨機応変な対応力を強みとする。展示会プレゼンテーション、セミナー、記者発表会、インタビュー、リポート、ライブ配信、ナレーションまで幅広く対応。',
+      profile: {
+        height: '160cm',
+        birthplace: '鹿児島県',
+        bloodType: '',
+        education: '',
+        hobbies: '',
+        skills: '',
+        qualifications: '英検準2級、漢検準2級、数検2級'
+      },
+      tags: [
+        '企業イベント',
+        '展示会',
+        '式典',
+        'セミナー',
+        '記者発表会',
+        'トークショー',
+        'インタビュー',
+        'リポーター',
+        'ライブ配信',
+        'ナレーション',
+        'BtoB'
+      ],
+      careers: [
+        { category: '式典・表彰式', text: 'EBARA WAVE アリーナおおた 新名称記念式典' },
+        { category: '式典・表彰式', text: '港区スポーツ推進委員60周年記念事業' },
+        { category: '式典・表彰式', text: 'ナミテクノロジージャパン 設立1周年・新製品発表会' },
+        { category: '式典・表彰式', text: '自衛隊セレモニー 司会進行・インタビュー' },
+        { category: '式典・表彰式', text: '取手競輪FⅠ・伊東温泉競輪FⅠ 表彰式' },
+        { category: 'セミナー', text: 'Care Show Japan／越境セミナー／IT企業セミナー／イーコマースフェア東京／大塚商会セミナー' },
+        { category: 'イベント', text: 'フジタ技術フェア／埼玉モビリティフェア／My Yamaha motorcycle エキシビジョン' },
+        { category: 'イベント', text: 'Bayfm サマーキャンペーン／サイクルアートフェスティバル／INFLUENCER’S EXPO リポーター・司会' },
+        { category: '展示会・ナレーター', text: 'CEATEC デルタ電子／Inter BEE NEC／リテールテック NEC／ENEX IHI' },
+        { category: '展示会・ナレーター', text: 'モビリティショー パナソニック／東京おもちゃショー タカラトミー／内視鏡学会 富士フイルムメディカル' },
+        { category: '展示会・ナレーター', text: 'SEMICON 日本精工／下水道展 パルテム技術協会／人とクルマのテクノロジー展 ヌヴォトンテクノロジージャパン' },
+        { category: '展示会・ナレーター', text: 'テクノフロンティア・国際物流展 シナノケンシ／TOKYO PACK レンゴー ほか' },
+        { category: 'トークショー', text: 'サイクルアートフェスティバル／自衛官合同企業説明会／映画「レンタル家族」舞台挨拶' },
+        { category: 'テレビ・配信', text: '松阪・富山ミッドナイト競輪 CS中継司会／競輪グランプリ・立川競輪などCS中継アシスタント・リポーター' },
+        { category: 'テレビ・配信', text: 'ABEMA 競輪・オートレース／伊勢崎オートレース公式／松山競輪 ほか' },
+        { category: 'MA・ナレーション', text: 'タカラトミーアーツ／横浜市観光局／パーフェクトワン ほか' },
+        { category: 'MA・ナレーション', text: 'ヌヴォトンテクノロジージャパン 会社紹介PV' }
+      ],
+      youtube: []
     }
   ];
 
+  const updateHero = () => {
+    const title = document.getElementById('professionals-title');
+    if (title) {
+      title.innerHTML =
+        '<span><em class="hero-highlight">NHK・民放出身、</em></span><span>元局アナウンサー専門事務所</span>';
+    }
+
+    const lead = document.querySelector('.pro-hero__lead');
+    if (lead) {
+      lead.textContent =
+        '地上波や国を挙げた大型イベントで確かな実績を積んだ、経験豊富なプロフェッショナルが皆様のご要望に柔軟にお応えします。';
+    }
+  };
+
+  const removeIntro = () => {
+    const intro = document.querySelector('#professionals .talent-intro');
+    if (intro) intro.remove();
+  };
+
   const mutateTalentData = () => {
     if (!Array.isArray(window.HELMIO_TALENTS)) return;
-    const base = window.HELMIO_TALENTS.filter(t => t && t.id !== 'coming-soon');
-    const ids = new Set(newTalents.map(t => t.id));
-    const kept = base.filter(t => !ids.has(t.id));
-    window.HELMIO_TALENTS.splice(0, window.HELMIO_TALENTS.length, ...kept, ...newTalents);
+
+    const ids = new Set(customTalents.map(t => t.id));
+    const base = window.HELMIO_TALENTS.filter(t => t && t.id !== 'coming-soon' && !ids.has(t.id));
+
+    window.HELMIO_TALENTS.splice(
+      0,
+      window.HELMIO_TALENTS.length,
+      ...base,
+      ...customTalents
+    );
   };
 
   const buildCard = (id, name, englishName, image) => `
@@ -203,8 +268,11 @@
         <span class="talent-card__fallback">${englishName}</span>
         <img alt="${name}" loading="lazy" src="${image}">
       </div>
-      <div class="talent-card-body"><p class="talent-name">${name}</p></div>
-    </button>`;
+      <div class="talent-card-body">
+        <p class="talent-name">${name}</p>
+      </div>
+    </button>
+  `;
 
   const rebuildCards = () => {
     const container = document.getElementById('talentCards');
@@ -212,17 +280,26 @@
 
     container.classList.add('talent-groups');
     container.innerHTML = `
-      <section class="talent-group" aria-labelledby="experienced-professionals-title">
-        <p class="talent-group__eyebrow">EXPERIENCED PROFESSIONALS</p>
-        <h3 class="talent-group__title" id="experienced-professionals-title">元局アナウンサー・経験豊富なプロフェッショナル</h3>
+      <section class="talent-group" aria-labelledby="broadcast-professionals-title">
+        <p class="talent-group__eyebrow">BROADCAST PROFESSIONALS</p>
+        <h3 class="talent-group__title" id="broadcast-professionals-title">元局アナウンサー・放送経験豊富なプロフェッショナル</h3>
         <p class="talent-group__lead">ニュース・情報番組・リポート・大型イベント・式典など、放送と現場の両方で経験を積んだプロフェッショナルです。</p>
         <div class="talent-cards talent-cards--group">
           ${buildCard('asami-niijima', '新島 麻生', 'ASAMI NIIJIMA', 'S__27566083.jpg')}
-          ${buildCard('seira-minami', '南 青良', 'SEIRA MINAMI', 'seira-new.jpeg')}
           ${buildCard('fumi-murakami', '村上 史', 'FUMI MURAKAMI', 'S__27557921.jpg')}
           ${buildCard('asuka-nakashima', '中島 あすか', 'ASUKA NAKASHIMA', 'asuka-nakashima.jpg')}
           ${buildCard('airi-yamakita', '山北 愛琳', 'AIRI YAMAKITA', 'airi-yamakita.jpg')}
           ${buildCard('haruka-touma', '當麻 陽香', 'HARUKA TOUMA', 'haruka-touma.jpg')}
+        </div>
+      </section>
+
+      <section class="talent-group" aria-labelledby="pro-mc-title">
+        <p class="talent-group__eyebrow">PROFESSIONAL MC / NARRATOR</p>
+        <h3 class="talent-group__title" id="pro-mc-title">実績と対応力をもとに選定した、プロMC・ナレーター</h3>
+        <p class="talent-group__lead">企業イベント・展示会・式典・セミナーなど、幅広い現場経験を持つプロフェッショナルを厳選。進行力、表現力、現場対応力を備えた人材をご提案します。</p>
+        <div class="talent-cards talent-cards--group">
+          ${buildCard('seira-minami', '南 青良', 'SEIRA MINAMI', 'seira-new.jpeg')}
+          ${buildCard('rika-hayakawa', '早川 里香', 'RIKA HAYAKAWA', 'rika-hayakawa-3.jpg')}
         </div>
       </section>
 
@@ -235,22 +312,19 @@
           ${buildCard('miku-nakajima', '中嶋 未来', 'MIKU NAKAJIMA', 'miku-nakajima.jpg')}
           ${buildCard('mitsuki-yamano', '山野 光希', 'MITSUKI YAMANO', 'mitsuki-yamano.jpg')}
         </div>
-      </section>`;
+      </section>
+    `;
 
     container.querySelectorAll('.talent-card__media img').forEach(img => {
-      img.addEventListener('error', () => img.closest('.talent-card__media')?.classList.add('is-missing'));
+      img.addEventListener('error', () => {
+        img.closest('.talent-card__media')?.classList.add('is-missing');
+      });
     });
-  };
-
-  const updateIntro = () => {
-    const intro = document.querySelector('#professionals .talent-intro');
-    if (intro) {
-      intro.textContent = '放送局で経験を積んだアナウンサーから、テレビ・ラジオ・リポートなどメディア経験を持つ若手人材まで、案件に合わせてご提案します。カードをクリックすると、プロフィールや主な経歴をご覧いただけます。';
-    }
   };
 
   const injectStyles = () => {
     if (document.getElementById('helmio-professionals-update-styles')) return;
+
     const style = document.createElement('style');
     style.id = 'helmio-professionals-update-styles';
     style.textContent = `
@@ -258,22 +332,51 @@
       .talent-group{margin-top:52px}
       .talent-group:first-child{margin-top:0}
       .talent-group+.talent-group{margin-top:76px;padding-top:58px;border-top:1px solid var(--line)}
-      .talent-group__eyebrow{margin-bottom:10px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
-      .talent-group__title{color:var(--ink);font-family:"Noto Serif JP",serif;font-size:clamp(24px,2.5vw,34px);font-weight:600;line-height:1.55}
-      .talent-group__lead{max-width:820px;margin:12px 0 28px;color:var(--muted);font-size:14px;line-height:1.9}
+      .talent-group__eyebrow{
+        margin-bottom:10px;
+        color:var(--gold);
+        font-family:"Cormorant Garamond",serif;
+        font-size:13px;
+        font-weight:600;
+        letter-spacing:.18em;
+        text-transform:uppercase
+      }
+      .talent-group__title{
+        color:var(--ink);
+        font-family:"Noto Serif JP",serif;
+        font-size:clamp(24px,2.5vw,34px);
+        font-weight:600;
+        line-height:1.55
+      }
+      .talent-group__lead{
+        max-width:820px;
+        margin:12px 0 28px;
+        color:var(--muted);
+        font-size:14px;
+        line-height:1.9
+      }
       .talent-cards--group{margin-top:0}
-      @media(max-width:600px){
+      @media (max-width:600px){
         .talent-group{margin-top:42px}
         .talent-group+.talent-group{margin-top:54px;padding-top:42px}
         .talent-group__title{font-size:22px}
         .talent-group__lead{font-size:13px;margin-bottom:22px}
-      }`;
+      }
+    `;
     document.head.appendChild(style);
   };
 
-  mutateTalentData();
-  injectStyles();
-  updateHero();
-  updateIntro();
-  rebuildCards();
+  const init = () => {
+    injectStyles();
+    mutateTalentData();
+    updateHero();
+    removeIntro();
+    rebuildCards();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 })();
