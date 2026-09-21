@@ -6413,3 +6413,370 @@
   }
 
 })();
+/* =========================================================
+   HELMIO FEATURES
+   FINAL SIMPLE VERSION
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const updateFeaturesFinal = () => {
+
+    const section =
+      document.getElementById('features');
+
+    if (!section) return;
+
+
+    /* 上の説明文も短く */
+    const lead =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+    if (lead) {
+      lead.textContent =
+        'キャスティングから、展示会の「伝え方」の設計まで。';
+    }
+
+
+    const list =
+      section.querySelector(
+        '.feature-list'
+      );
+
+    if (!list) return;
+
+
+    list.innerHTML = `
+
+      <!-- =========================
+           01
+           ========================= -->
+
+      <article class="feature-item feature-item--simple">
+
+        <span class="feature-item__number">
+          01
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="24"
+              cy="31"
+              r="14"
+            />
+
+            <path
+              d="
+                M10 31h28
+                M24 17c5 5 7 10 7 14s-2 9-7 14
+                M24 17c-5 5-7 10-7 14s2 9 7 14
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M39 18l6-5 3 5 7-2-2 7
+                5 4-6 3 1 7-7-2-4 6-4-6
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            全国ネットワークから、<br>
+            案件に合うプロを
+          </h3>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           02
+           ========================= -->
+
+      <article class="feature-item feature-item--simple">
+
+        <span class="feature-item__number">
+          02
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="32"
+              cy="21"
+              r="9"
+            />
+
+            <path
+              d="
+                M16 52c1-11 7-17 16-17s15 6 16 17
+              "
+            />
+
+            <path
+              d="
+                M22 15c2-6 17-8 20 2
+                M24 38l8 8 8-8
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M29 46l3 5 3-5
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            メッセージ設計から、<br>
+            プレゼン準備まで
+          </h3>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           03
+           ========================= -->
+
+      <article class="feature-item feature-item--simple">
+
+        <span class="feature-item__number">
+          03
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <path
+              d="
+                M16 9h26l8 8v38H16z
+              "
+            />
+
+            <path
+              d="
+                M42 9v10h8
+                M23 28h19
+                M23 35h13
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M35 47l14-14 5 5-14 14-7 2z
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            展示会の目的から、<br>
+            「伝え方」を設計
+          </h3>
+
+          <p class="feature-item__short-copy">
+            目的から逆算し、
+            話す内容と見せ方を設計します。
+          </p>
+
+        </div>
+
+      </article>
+
+    `;
+
+  };
+
+
+  const addFeatureStyles = () => {
+
+    const oldStyle =
+      document.getElementById(
+        'helmio-feature-final-simple'
+      );
+
+    if (oldStyle) {
+      oldStyle.remove();
+    }
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-feature-final-simple';
+
+
+    style.textContent = `
+
+      /* =========================
+         FEATURE SIMPLE
+         ========================= */
+
+      #features
+      .feature-item--simple {
+        min-height:
+          0;
+      }
+
+
+      #features
+      .feature-item--simple
+      .feature-item__content {
+        display:
+          flex;
+
+        flex-direction:
+          column;
+
+        justify-content:
+          center;
+      }
+
+
+      #features
+      .feature-item--simple
+      h3 {
+        margin:
+          0;
+
+        font-size:
+          clamp(
+            22px,
+            2.5vw,
+            30px
+          );
+
+        line-height:
+          1.6;
+      }
+
+
+      #features
+      .feature-item__short-copy {
+        margin-top:
+          12px !important;
+
+        color:
+          var(--text);
+
+        font-size:
+          14px;
+
+        line-height:
+          1.8;
+      }
+
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #features
+        .feature-item--simple
+        h3 {
+          font-size:
+            21px;
+
+          line-height:
+            1.55;
+        }
+
+
+        #features
+        .feature-item__short-copy {
+          margin-top:
+            8px !important;
+
+          font-size:
+            13px;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(style);
+
+  };
+
+
+  const apply = () => {
+
+    updateFeaturesFinal();
+
+    addFeatureStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
