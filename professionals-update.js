@@ -9449,3 +9449,14 @@
   }
 
 })();
+(() => {
+  const brand = document.querySelector('.site-header .brand');
+
+  if (!brand) return;
+
+  brand.removeAttribute('href');
+  brand.removeAttribute('aria-label');
+
+  brand.style.cursor = 'default';
+  brand.style.pointerEvents = 'none';
+})();
