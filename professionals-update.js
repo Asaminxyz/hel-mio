@@ -9473,4 +9473,141 @@
     logo.style.pointerEvents = 'none';
   });
 })();
+(() => {
+  'use strict';
 
+  const updateMessageCopy = () => {
+
+    const message =
+      document.querySelector(
+        '#company-overview .helmio-message__copy'
+      );
+
+    if (!message) return;
+
+
+    message.innerHTML = `
+
+      <h2>
+        伝えることを、<br>
+        商談の入口に。
+      </h2>
+
+
+      <p>
+        放送局では、リポーターや朝のキャスターとして、
+        取材し、情報を整理し、
+        自分で原稿をつくり、
+        自分の言葉で伝える仕事をしてきました。
+      </p>
+
+
+      <p>
+        その後、スタートアップでは
+        マーケティング責任者として出展する側を経験し、
+        フリーアナウンサーとしても
+        数多くの展示会の現場に立ってきました。
+      </p>
+
+
+      <p>
+        <strong>
+          伝える側と、成果をつくる側。
+          その両方を経験するほど、
+          展示会の奥深さと面白さに惹かれ、
+          私は本当に展示会が好きになりました。
+        </strong>
+      </p>
+
+
+      <p>
+        数秒で足を止めてもらい、
+        言葉ひとつで反応が変わり、
+        その先の会話や商談につながっていく。
+        <strong>
+          その可能性を、もっと大きくしたい。
+        </strong>
+      </p>
+
+
+      <p class="helmio-message__key">
+        HELMIOは、その瞬間をつくる
+        「伝え方」を設計します。
+      </p>
+
+
+      <p class="helmio-message__signature">
+        株式会社HELMIO 代表
+        <strong>
+          新島 麻生
+        </strong>
+      </p>
+
+    `;
+
+  };
+
+
+  const addMessageStyles = () => {
+
+    const style =
+      document.createElement('style');
+
+
+    style.textContent = `
+
+      #company-overview
+      .helmio-message__copy
+      > p > strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+
+      #company-overview
+      .helmio-message__copy p {
+        line-height: 1.9;
+      }
+
+
+      #company-overview
+      .helmio-message__key {
+        margin-top: 16px !important;
+      }
+
+    `;
+
+
+    document.head.appendChild(style);
+
+  };
+
+
+  const apply = () => {
+
+    updateMessageCopy();
+
+    addMessageStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
