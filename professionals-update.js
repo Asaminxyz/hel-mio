@@ -6108,3 +6108,308 @@
   }
 
 })();
+/* =========================================================
+   PRICE / BUSINESS FINAL FIX
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const updatePrices = () => {
+
+    const cards =
+      document.querySelectorAll(
+        '#service .service-card'
+      );
+
+
+    const prices = [
+      {
+        label: '参考価格',
+        price: '90,000円〜',
+        note: '1日'
+      },
+      {
+        label: '参考価格',
+        price: '200,000円〜',
+        note: ''
+      },
+      {
+        label: '参考価格',
+        price: '200,000円〜',
+        note: ''
+      }
+    ];
+
+
+    cards.forEach((card, index) => {
+
+      if (!prices[index]) return;
+
+
+      let price =
+        card.querySelector(
+          '.service-card__price'
+        );
+
+
+      if (!price) {
+
+        price =
+          document.createElement('p');
+
+        price.className =
+          'service-card__price';
+
+
+        const link =
+          card.querySelector(
+            '.service-card__link'
+          );
+
+
+        if (link) {
+
+          link.insertAdjacentElement(
+            'beforebegin',
+            price
+          );
+
+        }
+
+      }
+
+
+      const data =
+        prices[index];
+
+
+      price.innerHTML = `
+
+        <span>
+          ${data.label}
+        </span>
+
+        <strong>
+          ${data.price}
+        </strong>
+
+        ${
+          data.note
+            ? `<small>${data.note}</small>`
+            : ''
+        }
+
+      `;
+
+    });
+
+  };
+
+
+  const updateBusinessList = () => {
+
+    const rows =
+      document.querySelectorAll(
+        '#company-overview .helmio-company-table > div'
+      );
+
+
+    rows.forEach(row => {
+
+      const title =
+        row.querySelector('dt');
+
+
+      if (
+        !title ||
+        title.textContent.trim() !==
+        '事業内容'
+      ) {
+        return;
+      }
+
+
+      const content =
+        row.querySelector('dd');
+
+
+      if (!content) return;
+
+
+      content.innerHTML = `
+
+        <ul class="helmio-business-list">
+
+          <li>
+            展示会マーケティング事業
+          </li>
+
+          <li>
+            キャスティング事業
+          </li>
+
+          <li>
+            広報・PR事業
+          </li>
+
+        </ul>
+
+      `;
+
+    });
+
+  };
+
+
+  const addStyles = () => {
+
+    const style =
+      document.createElement('style');
+
+
+    style.textContent = `
+
+      #service
+      .service-card__price {
+        display:
+          flex;
+
+        align-items:
+          baseline;
+
+        justify-content:
+          center;
+
+        gap:
+          8px;
+
+        margin:
+          14px 0 0 !important;
+
+        padding-top:
+          12px;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.10);
+      }
+
+
+      #service
+      .service-card__price span {
+        color:
+          var(--muted);
+
+        font-size:
+          10px;
+
+        letter-spacing:
+          .08em;
+      }
+
+
+      #service
+      .service-card__price strong {
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          20px;
+
+        font-weight:
+          600;
+      }
+
+
+      #service
+      .service-card__price small {
+        color:
+          var(--muted);
+
+        font-size:
+          11px;
+      }
+
+
+      .helmio-business-list {
+        margin: 0;
+        padding: 0 !important;
+        list-style: none;
+      }
+
+
+      .helmio-business-list li {
+        position: relative;
+        padding-left: 14px;
+      }
+
+
+      .helmio-business-list li::before {
+        content: "";
+
+        position: absolute;
+
+        top: .75em;
+        left: 0;
+
+        width: 4px;
+        height: 4px;
+
+        border-radius: 50%;
+
+        background:
+          var(--gold);
+      }
+
+
+      .helmio-business-list
+      li + li {
+        margin-top: 6px;
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  const apply = () => {
+
+    updatePrices();
+
+    updateBusinessList();
+
+    addStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
