@@ -6780,3 +6780,2672 @@
   }
 
 })();
+/* =========================================================
+   HELMIO PROFESSIONALS
+   FINAL COMPLETE OVERRIDE
+   2026-09-21
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     HELPERS
+     ========================================================= */
+
+  const escapeHtml = value =>
+    String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+
+
+  /* =========================================================
+     REMOVE OLD OVERRIDES / DUPLICATES
+     ========================================================= */
+
+  const cleanLegacy = () => {
+
+    [
+      'helmio-final-content-styles',
+      'helmio-company-section-styles',
+      'helmio-final-master-styles',
+      'helmio-feature-final-simple',
+      'helmio-price-styles',
+      'helmio-final-complete-styles'
+    ].forEach(id => {
+      document.getElementById(id)?.remove();
+    });
+
+
+    document
+      .getElementById('casting-support')
+      ?.remove();
+
+
+    document
+      .getElementById('selected-works')
+      ?.remove();
+
+
+    document
+      .getElementById('company-overview')
+      ?.remove();
+
+  };
+
+
+  /* =========================================================
+     HEADER
+     ========================================================= */
+
+  const updateHeader = () => {
+
+    const nav =
+      document.getElementById('siteNav');
+
+    if (!nav) return;
+
+
+    nav.innerHTML = `
+
+      <a href="#service">
+        サービス
+      </a>
+
+      <a href="#professionals">
+        候補者を見る
+      </a>
+
+      <a
+        class="nav-contact"
+        href="#casting-form"
+      >
+        ご相談
+      </a>
+
+    `;
+
+
+    const menuButton =
+      document.querySelector(
+        '.menu-button'
+      );
+
+
+    nav.querySelectorAll('a')
+      .forEach(link => {
+
+        link.addEventListener(
+          'click',
+          () => {
+
+            nav.classList.remove('open');
+
+            document.body.classList.remove(
+              'is-menu-open'
+            );
+
+
+            if (menuButton) {
+
+              menuButton.setAttribute(
+                'aria-expanded',
+                'false'
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+  };
+
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  const updateHero = () => {
+
+    const title =
+      document.getElementById(
+        'professionals-title'
+      );
+
+
+    if (title) {
+
+      title.innerHTML = `
+
+        <span>
+          <em class="hero-highlight">
+            局アナのキャスティングから、
+          </em>
+        </span>
+
+        <span>
+          準備を含めたご相談まで。
+        </span>
+
+      `;
+
+    }
+
+
+    const lead =
+      document.querySelector(
+        '.pro-hero__lead'
+      );
+
+
+    if (lead) {
+
+      lead.textContent =
+        'HELMIOは、元放送局アナウンサーとマーケティングチームにより、展示会の商談につながるコミュニケーションを設計する会社です。';
+
+    }
+
+
+    const primary =
+      document.querySelector(
+        '.pro-hero .button--primary'
+      );
+
+
+    if (primary) {
+
+      primary.textContent =
+        '候補者・料金目安を相談する';
+
+      primary.href =
+        '#casting-form';
+
+    }
+
+
+    const secondary =
+      document.querySelector(
+        '.pro-hero .button--secondary'
+      );
+
+
+    if (secondary) {
+
+      secondary.textContent =
+        'アナウンサーを見る';
+
+      secondary.href =
+        '#professionals';
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FEATURES
+     ========================================================= */
+
+  const updateFeatures = () => {
+
+    const section =
+      document.getElementById(
+        'features'
+      );
+
+    if (!section) return;
+
+
+    const lead =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (lead) {
+
+      lead.textContent =
+        'キャスティングから、展示会の「伝え方」の設計まで。';
+
+    }
+
+
+    const list =
+      section.querySelector(
+        '.feature-list'
+      );
+
+    if (!list) return;
+
+
+    list.innerHTML = `
+
+
+      <!-- 01 -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          01
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="24"
+              cy="31"
+              r="14"
+            />
+
+            <path
+              d="
+                M10 31h28
+                M24 17c5 5 7 10 7 14s-2 9-7 14
+                M24 17c-5 5-7 10-7 14s2 9 7 14
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M39 18l6-5 3 5 7-2-2 7
+                5 4-6 3 1 7-7-2-4 6-4-6
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            全国ネットワークから、<br>
+            案件に合うプロを
+          </h3>
+
+          <p>
+            元アナウンサーの代表が築いた
+            全国のネットワークから、
+            商材・目的・現場に合う人材を選定。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 02 -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          02
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="32"
+              cy="21"
+              r="9"
+            />
+
+            <path
+              d="
+                M16 52c1-11 7-17 16-17s15 6 16 17
+              "
+            />
+
+            <path
+              d="
+                M22 15c2-6 17-8 20 2
+                M24 38l8 8 8-8
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M29 46l3 5 3-5
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            メッセージ設計から、<br>
+            プレゼン準備まで
+          </h3>
+
+          <p>
+            プレゼンテーションのプロが、
+            メッセージ設計、台本、スライド、
+            読み合わせ、リハーサルまで
+            必要な範囲を支援。
+            部分的なご依頼にも対応します。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 03 -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          03
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <path
+              d="
+                M16 9h26l8 8v38H16z
+              "
+            />
+
+            <path
+              d="
+                M42 9v10h8
+                M23 28h19
+                M23 35h13
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M35 47l14-14 5 5-14 14-7 2z
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            アナウンサー × マーケティングで<br>
+            「伝え方」を設計
+          </h3>
+
+          <p>
+            展示会経験豊富な「伝えるプロ」と、
+            マーケティングの知見を掛け合わせ、
+            商談につながる伝え方を設計します。
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 04 -->
+
+      <article class="feature-item">
+
+        <span class="feature-item__number">
+          04
+        </span>
+
+
+        <div
+          class="feature-item__icon"
+          aria-hidden="true"
+        >
+
+          <svg viewBox="0 0 64 64">
+
+            <circle
+              cx="20"
+              cy="22"
+              r="7"
+            />
+
+            <circle
+              cx="44"
+              cy="22"
+              r="7"
+            />
+
+            <path
+              d="
+                M10 51c1-9 5-14 10-14s9 5 10 14
+                M34 51c1-9 5-14 10-14s9 5 10 14
+              "
+            />
+
+            <path
+              class="accent"
+              d="
+                M27 31l5 5 5-5
+              "
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div class="feature-item__content">
+
+          <h3>
+            既存体制を変えず、<br>
+            必要な領域だけ
+          </h3>
+
+          <p>
+            制作会社・広告代理店の体制に合わせ、
+            キャスティング、台本、
+            プレゼン準備など必要な部分だけを補完。
+            若手MC＋元局アナ監修など、
+            予算と品質に応じた体制設計も可能です。
+          </p>
+
+        </div>
+
+      </article>
+
+    `;
+
+  };
+
+
+  /* =========================================================
+     SERVICE
+     ========================================================= */
+
+  const updateServices = () => {
+
+    const section =
+      document.getElementById(
+        'service'
+      );
+
+    if (!section) return;
+
+
+    const intro =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (intro) {
+
+      intro.textContent =
+        'キャスティングから、プレゼン制作、展示会コミュニケーション設計まで。必要な領域だけご依頼いただけます。';
+
+    }
+
+
+    const cards =
+      section.querySelectorAll(
+        '.service-card'
+      );
+
+
+    /* 01 CASTING */
+
+    if (cards[0]) {
+
+      const body =
+        cards[0].querySelector(
+          '.service-card__body'
+        );
+
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            01
+          </span>
+
+          <h3>
+            キャスティング
+          </h3>
+
+          <p class="service-card__catch">
+            案件に合う、伝えるプロをご提案
+          </p>
+
+          <p class="service-card__description">
+            元放送局アナウンサーを中心に、
+            商材・目的・現場に合う人材を選定。
+            出演者のみのご依頼も可能です。
+          </p>
+
+          <div class="service-card__price">
+
+            <span>
+              参考価格
+            </span>
+
+            <strong>
+              80,000円〜
+            </strong>
+
+            <small>
+              ／1日
+            </small>
+
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#professionals"
+          >
+            候補者を見る
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    /* 02 PRESENTATION */
+
+    if (cards[1]) {
+
+      const media =
+        cards[1].querySelector(
+          '.service-card__media'
+        );
+
+
+      const image =
+        media?.querySelector('img');
+
+
+      const fallback =
+        media?.querySelector(
+          '.service-card__fallback'
+        );
+
+
+      if (image) {
+
+        image.src =
+          'service-presentation.png';
+
+        image.alt =
+          'メッセージ・プレゼンテーション制作の打ち合わせ';
+
+      }
+
+
+      if (fallback) {
+
+        fallback.textContent =
+          'MESSAGE / PRESENTATION';
+
+      }
+
+
+      const body =
+        cards[1].querySelector(
+          '.service-card__body'
+        );
+
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            02
+          </span>
+
+          <h3>
+            メッセージ・<br>
+            プレゼン制作
+          </h3>
+
+          <p class="service-card__catch">
+            伝わる内容と、
+            伝わる見せ方をつくる
+          </p>
+
+          <p class="service-card__description">
+            メッセージ設計、構成、
+            台本、スライドから、
+            読み合わせ・リハーサルまで
+            必要な範囲を支援します。
+          </p>
+
+          <div class="service-card__price">
+
+            <span>
+              参考価格
+            </span>
+
+            <strong>
+              200,000円〜
+            </strong>
+
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            制作について相談する
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    /* 03 EXHIBITION */
+
+    if (cards[2]) {
+
+      const body =
+        cards[2].querySelector(
+          '.service-card__body'
+        );
+
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            03
+          </span>
+
+          <h3>
+            展示会<br>
+            コミュニケーション設計
+          </h3>
+
+          <p class="service-card__catch">
+            「伝える」から、
+            その先の商談まで
+          </p>
+
+          <p class="service-card__description">
+            来場者の足を止め、
+            理解・リード獲得・
+            営業との会話につなげるまでを、
+            展示会の目的から逆算して設計します。
+          </p>
+
+          <div class="service-card__price">
+
+            <span>
+              参考価格
+            </span>
+
+            <strong>
+              200,000円〜
+            </strong>
+
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            展示会について相談する
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    const grid =
+      section.querySelector(
+        '.service-grid'
+      );
+
+
+    if (
+      grid &&
+      !section.querySelector(
+        '.service-price-note'
+      )
+    ) {
+
+      const note =
+        document.createElement('p');
+
+
+      note.className =
+        'service-price-note';
+
+
+      note.textContent =
+        '※参考価格です。業務内容・拘束時間・会場・制作範囲などにより個別にお見積もりします。';
+
+
+      grid.insertAdjacentElement(
+        'afterend',
+        note
+      );
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FLOW
+     ========================================================= */
+
+  const updateFlow = () => {
+
+    const section =
+      document.getElementById(
+        'flow'
+      );
+
+    if (!section) return;
+
+
+    const intro =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (intro) {
+
+      intro.textContent =
+        '出演者のみのご依頼から、メッセージ設計・プレゼン制作まで。案件に必要な範囲に合わせて進行します。';
+
+    }
+
+
+    const grid =
+      section.querySelector(
+        '.flow-grid'
+      );
+
+    if (!grid) return;
+
+
+    grid.innerHTML = `
+
+      <article class="flow-step">
+
+        <span>01</span>
+
+        <h3>
+          お問い合わせ
+        </h3>
+
+        <p>
+          開催日・会場・案件内容など、
+          現時点で分かる範囲を
+          お知らせください。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>02</span>
+
+        <h3>
+          ご要望の確認・ご提案
+        </h3>
+
+        <p>
+          目的や商材、
+          必要な支援範囲を確認し、
+          出演者や制作内容をご提案します。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>03</span>
+
+        <h3>
+          キャスティング・制作準備
+        </h3>
+
+        <p>
+          出演者の決定、
+          台本・スライド制作、
+          読み合わせ、リハーサルなど、
+          必要な準備を進めます。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>04</span>
+
+        <h3>
+          本番
+        </h3>
+
+        <p>
+          出演者を現場へ送り出し、
+          本番までHELMIOが
+          サポートします。
+        </p>
+
+      </article>
+
+    `;
+
+  };
+
+
+  /* =========================================================
+     COMPANY / MESSAGE
+     ========================================================= */
+
+  const buildCompanySection = () => {
+
+    const faq =
+      document.getElementById('faq');
+
+    if (!faq) return;
+
+
+    document
+      .getElementById(
+        'company-overview'
+      )
+      ?.remove();
+
+
+    const section =
+      document.createElement(
+        'section'
+      );
+
+
+    section.id =
+      'company-overview';
+
+
+    section.className =
+      'helmio-company-section';
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+
+        <!-- =================================
+             MESSAGE
+             ================================= -->
+
+        <div class="helmio-message">
+
+          <p class="section-label">
+            MESSAGE
+          </p>
+
+
+          <div class="helmio-message__grid">
+
+
+            <figure class="helmio-message__photo">
+
+              <img
+                src="syacho.jpg"
+                alt="株式会社HELMIO 代表 新島麻生"
+                loading="lazy"
+              >
+
+            </figure>
+
+
+            <div class="helmio-message__copy">
+
+              <h2>
+                伝えることを、<br>
+                商談の入口に。
+              </h2>
+
+
+              <p>
+                放送局アナウンサーとして
+                キャスターを経験したのち、
+                スタートアップでは
+                マーケティング責任者として、
+                出展する側からも
+                展示会に携わってきました。
+                フリーアナウンサーとして
+                展示会ナレーターの現場にも
+                立っています。
+              </p>
+
+
+              <p>
+                展示会は、
+                目の前の来場者の関心を瞬時に捉え、
+                足を止めてもらい、
+                商品の魅力を伝える仕事。
+              </p>
+
+
+              <p class="helmio-message__key">
+                HELMIOは、その先の商談につながる
+                「伝え方」をつくります。
+              </p>
+
+
+              <p class="helmio-message__signature">
+                株式会社HELMIO 代表
+                <strong>
+                  新島 麻生
+                </strong>
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             COMPANY
+             ================================= -->
+
+        <div class="helmio-company-profile">
+
+          <p class="section-label">
+            COMPANY
+          </p>
+
+          <h2>
+            会社情報
+          </h2>
+
+
+          <dl class="helmio-company-table">
+
+            <div>
+
+              <dt>
+                会社名
+              </dt>
+
+              <dd>
+                株式会社HELMIO
+              </dd>
+
+            </div>
+
+
+            <div>
+
+              <dt>
+                代表
+              </dt>
+
+              <dd>
+                新島 麻生
+              </dd>
+
+            </div>
+
+
+            <div>
+
+              <dt>
+                所在地
+              </dt>
+
+              <dd>
+                〒107-0062
+                東京都港区南青山3丁目1番36号
+                青山丸竹ビル6F
+              </dd>
+
+            </div>
+
+
+            <div>
+
+              <dt>
+                設立
+              </dt>
+
+              <dd>
+                2026年7月
+              </dd>
+
+            </div>
+
+
+            <div>
+
+              <dt>
+                事業内容
+              </dt>
+
+              <dd>
+
+                <ul class="helmio-business-list">
+
+                  <li>
+                    展示会マーケティング事業
+                  </li>
+
+                  <li>
+                    キャスティング事業
+                  </li>
+
+                  <li>
+                    広報・PR事業
+                  </li>
+
+                </ul>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+        </div>
+
+
+
+        <!-- =================================
+             ACHIEVEMENTS
+             ================================= -->
+
+        <div
+          class="helmio-achievements"
+          id="helmio-company-achievements"
+        >
+
+          <header class="helmio-achievements__header">
+
+
+            <div>
+
+              <p class="section-label">
+                ACHIEVEMENTS
+              </p>
+
+              <h2>
+                代表・参画メンバーの<br>
+                経歴・実績
+              </h2>
+
+            </div>
+
+
+            <div>
+
+              <p>
+                報道、企業イベント、展示会、
+                映像、広告出演など、
+                代表者および参画プロフェッショナルの
+                経歴・実績を分野別に掲載しています。
+              </p>
+
+              <p class="helmio-achievements__note">
+                ※設立以前を含む、
+                代表者および参画プロフェッショナル
+                個人の担当実績を含みます。
+              </p>
+
+            </div>
+
+          </header>
+
+
+          <div
+            class="helmio-achievement-list"
+            id="helmioAchievementAccordion"
+          >
+
+            <p class="helmio-achievement-loading">
+              実績を読み込んでいます。
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    `;
+
+
+    faq.insertAdjacentElement(
+      'beforebegin',
+      section
+    );
+
+  };
+
+
+  /* =========================================================
+     ACHIEVEMENTS
+     company.html から自動取得
+     ========================================================= */
+
+  const loadAchievements = async () => {
+
+    const container =
+      document.getElementById(
+        'helmioAchievementAccordion'
+      );
+
+    if (!container) return;
+
+
+    try {
+
+      const response =
+        await fetch(
+          'company.html',
+          {
+            cache: 'no-store'
+          }
+        );
+
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+
+      const html =
+        await response.text();
+
+
+      const doc =
+        new DOMParser()
+          .parseFromString(
+            html,
+            'text/html'
+          );
+
+
+      const items =
+        Array.from(
+          doc.querySelectorAll(
+            '.achievement-detail'
+          )
+        );
+
+
+      if (!items.length) {
+        throw new Error();
+      }
+
+
+      container.innerHTML =
+        items.map(
+          (item, index) => {
+
+            const number =
+              String(index + 1)
+                .padStart(
+                  2,
+                  '0'
+                );
+
+
+            const title =
+              item
+                .querySelector('h3')
+                ?.textContent
+                ?.trim() || '実績';
+
+
+            const rows =
+              Array.from(
+                item.querySelectorAll(
+                  '.achievement-detail__list li'
+                )
+              );
+
+
+            const listHtml =
+              rows.map(row => `
+
+                <li>
+                  ${escapeHtml(
+                    row.textContent.trim()
+                  )}
+                </li>
+
+              `).join('');
+
+
+            return `
+
+              <details class="helmio-achievement-item">
+
+
+                <summary>
+
+                  <span class="helmio-achievement-number">
+                    ${number}
+                  </span>
+
+                  <span class="helmio-achievement-title">
+                    ${escapeHtml(title)}
+                  </span>
+
+                  <span
+                    class="helmio-achievement-arrow"
+                    aria-hidden="true"
+                  >
+                    ↓
+                  </span>
+
+                </summary>
+
+
+                <div class="helmio-achievement-content">
+
+                  <ul>
+                    ${listHtml}
+                  </ul>
+
+                </div>
+
+
+              </details>
+
+            `;
+
+          }
+        ).join('');
+
+
+    } catch (error) {
+
+      container.innerHTML = `
+
+        <div class="helmio-achievement-error">
+
+          <p>
+            実績一覧は会社概要ページでも
+            ご覧いただけます。
+          </p>
+
+          <a
+            href="company.html#achievement-index"
+          >
+            実績を見る →
+          </a>
+
+        </div>
+
+      `;
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FAQ
+     ========================================================= */
+
+  const updateFaq = () => {
+
+    const list =
+      document.querySelector(
+        '#faq .faq-list'
+      );
+
+    if (!list) return;
+
+
+    document
+      .getElementById(
+        'faq-casting-only'
+      )
+      ?.remove();
+
+
+    const item =
+      document.createElement(
+        'details'
+      );
+
+
+    item.className =
+      'faq-item';
+
+
+    item.id =
+      'faq-casting-only';
+
+
+    item.innerHTML = `
+
+      <summary>
+        出演者のみの依頼も可能ですか？
+      </summary>
+
+      <div class="faq-answer">
+        可能です。
+        キャスティングのみ、
+        台本制作のみ、
+        プレゼン準備のみなど、
+        必要な部分だけご依頼いただけます。
+      </div>
+
+    `;
+
+
+    list.prepend(item);
+
+  };
+
+
+  /* =========================================================
+     FINAL CTA
+     ========================================================= */
+
+  const updateFinalCta = () => {
+
+    const title =
+      document.getElementById(
+        'contact-title'
+      );
+
+
+    if (title) {
+
+      title.textContent =
+        '候補者プロフィール・料金目安のご相談';
+
+    }
+
+
+    const section =
+      title?.closest(
+        '.final-cta'
+      );
+
+
+    const text =
+      section?.querySelector(
+        '.final-cta__inner > div > p:last-child'
+      );
+
+
+    if (text) {
+
+      text.textContent =
+        '出演者のみのご依頼から、メッセージ設計・プレゼン制作まで。案件に必要な範囲をご相談ください。';
+
+    }
+
+
+    const button =
+      section?.querySelector(
+        '.button'
+      );
+
+
+    if (button) {
+
+      button.innerHTML =
+        '相談する <span aria-hidden="true">→</span>';
+
+      button.href =
+        '#casting-form';
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FOOTER
+     リンク一覧を削除
+     ========================================================= */
+
+  const simplifyFooter = () => {
+
+    document
+      .querySelector(
+        '.site-footer .footer-nav'
+      )
+      ?.remove();
+
+  };
+
+
+  /* =========================================================
+     SECTION ORDER
+
+     HERO
+     ↓
+     FEATURE
+     ↓
+     SERVICE
+     ↓
+     PROFESSIONALS
+     ↓
+     FLOW
+     ↓
+     MESSAGE
+     ↓
+     COMPANY
+     ↓
+     ACHIEVEMENTS
+     ↓
+     FAQ
+     ↓
+     CTA
+     ↓
+     FORM
+     ========================================================= */
+
+  const reorderSections = () => {
+
+    const hero =
+      document.querySelector(
+        '.pro-hero'
+      );
+
+    const features =
+      document.getElementById(
+        'features'
+      );
+
+    const service =
+      document.getElementById(
+        'service'
+      );
+
+    const professionals =
+      document.getElementById(
+        'professionals'
+      );
+
+    const flow =
+      document.getElementById(
+        'flow'
+      );
+
+    const company =
+      document.getElementById(
+        'company-overview'
+      );
+
+    const faq =
+      document.getElementById(
+        'faq'
+      );
+
+    const finalCta =
+      document.querySelector(
+        '.final-cta'
+      );
+
+    const form =
+      document.getElementById(
+        'casting-form'
+      );
+
+
+    if (
+      hero &&
+      features
+    ) {
+
+      hero.insertAdjacentElement(
+        'afterend',
+        features
+      );
+
+    }
+
+
+    if (
+      features &&
+      service
+    ) {
+
+      features.insertAdjacentElement(
+        'afterend',
+        service
+      );
+
+    }
+
+
+    if (
+      service &&
+      professionals
+    ) {
+
+      service.insertAdjacentElement(
+        'afterend',
+        professionals
+      );
+
+    }
+
+
+    if (
+      professionals &&
+      flow
+    ) {
+
+      professionals.insertAdjacentElement(
+        'afterend',
+        flow
+      );
+
+    }
+
+
+    if (
+      flow &&
+      company
+    ) {
+
+      flow.insertAdjacentElement(
+        'afterend',
+        company
+      );
+
+    }
+
+
+    if (
+      company &&
+      faq
+    ) {
+
+      company.insertAdjacentElement(
+        'afterend',
+        faq
+      );
+
+    }
+
+
+    if (
+      faq &&
+      finalCta
+    ) {
+
+      faq.insertAdjacentElement(
+        'afterend',
+        finalCta
+      );
+
+    }
+
+
+    if (
+      finalCta &&
+      form
+    ) {
+
+      finalCta.insertAdjacentElement(
+        'afterend',
+        form
+      );
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FINAL CSS
+     ========================================================= */
+
+  const injectStyles = () => {
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'helmio-final-complete-styles';
+
+
+    style.textContent = `
+
+
+      /* ========================================
+         FEATURES
+         ======================================== */
+
+      #features
+      .feature-item__content p {
+        margin-top:
+          10px !important;
+
+        font-size:
+          14px !important;
+
+        line-height:
+          1.8 !important;
+      }
+
+
+      #features
+      .feature-item__content h3 {
+        line-height:
+          1.55;
+      }
+
+
+
+      /* ========================================
+         SERVICE - COMPACT
+         ======================================== */
+
+      #service
+      .service-card {
+        min-height:
+          0 !important;
+      }
+
+
+      #service
+      .service-card__media {
+        aspect-ratio:
+          1.75 / 1;
+      }
+
+
+      #service
+      .service-card:nth-child(2)
+      .service-card__media img {
+        object-fit:
+          cover !important;
+
+        object-position:
+          center top !important;
+      }
+
+
+      #service
+      .service-card__body {
+        padding:
+          38px 22px 18px !important;
+      }
+
+
+      #service
+      .service-card h3 {
+        font-size:
+          21px !important;
+
+        line-height:
+          1.45 !important;
+      }
+
+
+      #service
+      .service-card__catch {
+        margin:
+          8px 0 6px !important;
+
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          14px !important;
+
+        font-weight:
+          600;
+
+        line-height:
+          1.6 !important;
+
+        text-align:
+          center;
+      }
+
+
+      #service
+      .service-card__description {
+        margin-top:
+          6px !important;
+
+        font-size:
+          13px !important;
+
+        line-height:
+          1.75 !important;
+      }
+
+
+      #service
+      .service-card__price {
+        display:
+          flex !important;
+
+        align-items:
+          baseline;
+
+        justify-content:
+          center;
+
+        gap:
+          6px;
+
+        margin:
+          14px 0 0 !important;
+
+        padding-top:
+          12px;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.10);
+
+        line-height:
+          1.4 !important;
+      }
+
+
+      #service
+      .service-card__price span {
+        color:
+          var(--muted);
+
+        font-size:
+          10px;
+
+        letter-spacing:
+          .08em;
+      }
+
+
+      #service
+      .service-card__price strong {
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          20px;
+
+        font-weight:
+          600;
+      }
+
+
+      #service
+      .service-card__price small {
+        color:
+          var(--muted);
+
+        font-size:
+          10px;
+      }
+
+
+      #service
+      .service-card__link {
+        margin-top:
+          14px !important;
+
+        padding-top:
+          12px !important;
+
+        font-size:
+          12.5px;
+      }
+
+
+      .service-price-note {
+        margin:
+          16px 0 0;
+
+        color:
+          var(--muted);
+
+        font-size:
+          10.5px;
+
+        line-height:
+          1.7;
+
+        text-align:
+          right;
+      }
+
+
+
+      /* ========================================
+         COMPANY AREA
+         ======================================== */
+
+      .helmio-company-section {
+        padding:
+          88px 0;
+
+        background:
+          #faf8f3;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+
+      /* MESSAGE */
+
+      .helmio-message {
+        padding-bottom:
+          70px;
+      }
+
+
+      .helmio-message__grid {
+        display:
+          grid;
+
+        grid-template-columns:
+          210px
+          minmax(0, 1fr);
+
+        gap:
+          48px;
+
+        align-items:
+          start;
+
+        max-width:
+          860px;
+
+        margin:
+          28px auto 0;
+      }
+
+
+      .helmio-message__photo {
+        margin:
+          0;
+      }
+
+
+      .helmio-message__photo img {
+        display:
+          block;
+
+        width:
+          100%;
+
+        aspect-ratio:
+          4 / 5;
+
+        object-fit:
+          cover;
+
+        object-position:
+          center top;
+
+        border-radius:
+          8px;
+
+        box-shadow:
+          0 12px 30px
+          rgba(16,47,82,.08);
+      }
+
+
+      .helmio-message__copy h2 {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            27px,
+            3vw,
+            38px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.55;
+      }
+
+
+      .helmio-message__copy p {
+        margin-top:
+          12px;
+
+        color:
+          var(--text);
+
+        font-size:
+          13.5px;
+
+        line-height:
+          1.9;
+      }
+
+
+      .helmio-message__key {
+        color:
+          var(--ink) !important;
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          15px !important;
+
+        font-weight:
+          600;
+      }
+
+
+      .helmio-message__signature {
+        margin-top:
+          18px !important;
+
+        color:
+          var(--muted) !important;
+
+        font-size:
+          11px !important;
+      }
+
+
+      .helmio-message__signature strong {
+        margin-left:
+          8px;
+
+        color:
+          var(--ink);
+
+        font-size:
+          15px;
+      }
+
+
+
+      /* COMPANY */
+
+      .helmio-company-profile {
+        padding:
+          68px 0;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-profile h2,
+      .helmio-achievements h2 {
+        margin-top:
+          8px;
+
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            30px,
+            3.5vw,
+            43px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.5;
+      }
+
+
+      .helmio-company-table {
+        max-width:
+          860px;
+
+        margin:
+          34px auto 0;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-table > div {
+        display:
+          grid;
+
+        grid-template-columns:
+          140px
+          minmax(0, 1fr);
+
+        padding:
+          17px 0;
+
+        border-bottom:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-table dt {
+        color:
+          var(--muted);
+
+        font-size:
+          12px;
+
+        font-weight:
+          700;
+      }
+
+
+      .helmio-company-table dd {
+        margin:
+          0;
+
+        color:
+          var(--ink);
+
+        font-size:
+          13px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .helmio-business-list {
+        margin:
+          0;
+
+        padding:
+          0 !important;
+
+        list-style:
+          none;
+      }
+
+
+      .helmio-business-list li {
+        position:
+          relative;
+
+        padding-left:
+          14px;
+      }
+
+
+      .helmio-business-list
+      li::before {
+        content:
+          "";
+
+        position:
+          absolute;
+
+        top:
+          .75em;
+
+        left:
+          0;
+
+        width:
+          4px;
+
+        height:
+          4px;
+
+        border-radius:
+          50%;
+
+        background:
+          var(--gold);
+      }
+
+
+      .helmio-business-list
+      li + li {
+        margin-top:
+          5px;
+      }
+
+
+
+      /* ACHIEVEMENTS */
+
+      .helmio-achievements {
+        padding-top:
+          68px;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-achievements__header {
+        display:
+          grid;
+
+        grid-template-columns:
+          minmax(260px,.8fr)
+          minmax(0,1.2fr);
+
+        gap:
+          56px;
+      }
+
+
+      .helmio-achievements__header
+      > div:last-child {
+        color:
+          var(--text);
+
+        font-size:
+          13px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .helmio-achievements__note {
+        margin-top:
+          10px;
+
+        color:
+          var(--muted);
+
+        font-size:
+          10.5px;
+      }
+
+
+      .helmio-achievement-list {
+        display:
+          grid;
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+
+        margin-top:
+          38px;
+
+        border-top:
+          1px solid var(--line);
+
+        border-left:
+          1px solid var(--line);
+      }
+
+
+      .helmio-achievement-item {
+        background:
+          rgba(255,255,255,.5);
+
+        border-right:
+          1px solid var(--line);
+
+        border-bottom:
+          1px solid var(--line);
+      }
+
+
+      .helmio-achievement-item summary {
+        display:
+          grid;
+
+        grid-template-columns:
+          42px
+          minmax(0,1fr)
+          26px;
+
+        gap:
+          12px;
+
+        align-items:
+          center;
+
+        min-height:
+          66px;
+
+        padding:
+          14px;
+
+        cursor:
+          pointer;
+
+        list-style:
+          none;
+      }
+
+
+      .helmio-achievement-item
+      summary::-webkit-details-marker {
+        display:
+          none;
+      }
+
+
+      .helmio-achievement-number {
+        color:
+          var(--gold);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          16px;
+      }
+
+
+      .helmio-achievement-title {
+        color:
+          var(--ink);
+
+        font-size:
+          12.5px;
+
+        font-weight:
+          700;
+
+        line-height:
+          1.55;
+      }
+
+
+      .helmio-achievement-arrow {
+        color:
+          var(--navy);
+
+        text-align:
+          center;
+
+        transition:
+          transform .2s ease;
+      }
+
+
+      .helmio-achievement-item[open]
+      .helmio-achievement-arrow {
+        transform:
+          rotate(180deg);
+      }
+
+
+      .helmio-achievement-content {
+        padding:
+          0 20px 21px 56px;
+      }
+
+
+      .helmio-achievement-content ul {
+        margin:
+          0;
+
+        padding-left:
+          1em;
+      }
+
+
+      .helmio-achievement-content li {
+        color:
+          var(--text);
+
+        font-size:
+          12px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .helmio-achievement-content
+      li + li {
+        margin-top:
+          6px;
+      }
+
+
+      .helmio-achievement-loading,
+      .helmio-achievement-error {
+        grid-column:
+          1 / -1;
+
+        padding:
+          24px;
+
+        color:
+          var(--muted);
+      }
+
+
+
+      /* ========================================
+         FOOTER
+         リンク一覧を消してコンパクトに
+         ======================================== */
+
+      .site-footer {
+        padding-top:
+          34px !important;
+      }
+
+
+      .site-footer
+      .footer-nav {
+        display:
+          none !important;
+      }
+
+
+      .site-footer
+      .footer-inner {
+        display:
+          block !important;
+
+        padding-bottom:
+          28px !important;
+      }
+
+
+
+      /* ========================================
+         TABLET
+         ======================================== */
+
+      @media (
+        max-width: 820px
+      ) {
+
+        .helmio-message__grid {
+          grid-template-columns:
+            170px
+            minmax(0,1fr);
+
+          gap:
+            30px;
+        }
+
+
+        .helmio-achievements__header {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            24px;
+        }
+
+
+        .helmio-achievement-list {
+          grid-template-columns:
+            1fr;
+        }
+
+      }
+
+
+
+      /* ========================================
+         MOBILE
+         ======================================== */
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #features
+        .feature-item__content p {
+          font-size:
+            13px !important;
+        }
+
+
+        #service
+        .service-card__body {
+          padding:
+            36px 18px 17px !important;
+        }
+
+
+        #service
+        .service-card h3 {
+          font-size:
+            20px !important;
+        }
+
+
+        .service-price-note {
+          text-align:
+            left;
+        }
+
+
+        .helmio-company-section {
+          padding:
+            62px 0;
+        }
+
+
+        .helmio-message {
+          padding-bottom:
+            54px;
+        }
+
+
+        .helmio-message__grid {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            22px;
+
+          margin-top:
+            22px;
+        }
+
+
+        .helmio-message__photo {
+          max-width:
+            170px;
+        }
+
+
+        .helmio-message__copy h2 {
+          font-size:
+            26px;
+        }
+
+
+        .helmio-company-profile {
+          padding:
+            54px 0;
+        }
+
+
+        .helmio-company-table
+        > div {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            5px;
+        }
+
+
+        .helmio-achievements {
+          padding-top:
+            54px;
+        }
+
+
+        .helmio-achievement-item
+        summary {
+          grid-template-columns:
+            35px
+            minmax(0,1fr)
+            23px;
+
+          gap:
+            8px;
+
+          padding:
+            13px 10px;
+        }
+
+
+        .helmio-achievement-content {
+          padding:
+            0 15px 19px 45px;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const applyFinal = async () => {
+
+    cleanLegacy();
+
+    injectStyles();
+
+    updateHeader();
+
+    updateHero();
+
+    updateFeatures();
+
+    updateServices();
+
+    updateFlow();
+
+    buildCompanySection();
+
+    updateFaq();
+
+    updateFinalCta();
+
+    simplifyFooter();
+
+    reorderSections();
+
+    await loadAchievements();
+
+  };
+
+
+  if (
+    document.readyState ===
+    'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      applyFinal,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    applyFinal();
+
+  }
+
+})();
