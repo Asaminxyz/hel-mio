@@ -2808,3 +2808,1064 @@
   }
 
 })();
+/* =========================================================
+   HÉLMIO COMPANY SECTION
+   MESSAGE / COMPANY PROFILE / ACHIEVEMENTS
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const escapeHtml = value =>
+    String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+
+
+  const buildCompanySection = () => {
+
+    if (
+      document.getElementById(
+        'company-overview'
+      )
+    ) {
+      return;
+    }
+
+
+    const finalCta =
+      document.querySelector(
+        '.final-cta'
+      );
+
+    if (!finalCta) return;
+
+
+    const section =
+      document.createElement(
+        'section'
+      );
+
+
+    section.id =
+      'company-overview';
+
+    section.className =
+      'helmio-company-section';
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+
+        <!-- =========================
+             MESSAGE
+             ========================= -->
+
+        <div class="helmio-company-message">
+
+          <p class="section-label">
+            MESSAGE
+          </p>
+
+
+          <div class="helmio-company-message__grid">
+
+            <div>
+
+              <h2>
+                伝えることを、<br>
+                商談の入口に。
+              </h2>
+
+              <p class="helmio-company-signature">
+                株式会社HELMIO 代表<br>
+                <strong>新島 麻生</strong>
+              </p>
+
+            </div>
+
+
+            <div class="helmio-company-message__body">
+
+              <p>
+                放送局で「伝える」仕事をしてきました。
+              </p>
+
+              <p>
+                その後、スタートアップの
+                マーケティング責任者として、
+                展示会を成果につなげる側も経験しました。
+              </p>
+
+              <p>
+                展示会では、
+                誰が、何を、どの順番で伝えるかで、
+                その先の会話が変わります。
+              </p>
+
+              <p>
+                HELMIOは、
+                人材とメッセージを分けず、
+                必要な領域まで一緒に設計します。
+              </p>
+
+              <p>
+                商品の魅力が伝わり、
+                その先の商談につながる場をつくります。
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             COMPANY PROFILE
+             ========================= -->
+
+        <div class="helmio-company-profile">
+
+          <div class="helmio-company-heading">
+
+            <div>
+
+              <p class="section-label">
+                COMPANY
+              </p>
+
+              <h2>
+                会社情報
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <dl class="helmio-company-table">
+
+            <div>
+              <dt>会社名</dt>
+              <dd>株式会社HELMIO</dd>
+            </div>
+
+            <div>
+              <dt>代表</dt>
+              <dd>新島 麻生</dd>
+            </div>
+
+            <div>
+              <dt>所在地</dt>
+              <dd>
+                〒107-0062<br>
+                東京都港区南青山3丁目1番36号
+                青山丸竹ビル6F
+              </dd>
+            </div>
+
+            <div>
+              <dt>設立</dt>
+              <dd>2026年7月</dd>
+            </div>
+
+            <div>
+
+              <dt>
+                事業内容
+              </dt>
+
+              <dd>
+
+                <ul>
+
+                  <li>
+                    BtoB企業向け広報・PR支援
+                  </li>
+
+                  <li>
+                    ニュースポジション設計、
+                    広報戦略、
+                    メディアリレーション
+                  </li>
+
+                  <li>
+                    コンテンツ・
+                    メッセージ設計
+                  </li>
+
+                  <li>
+                    展示会・発表会の
+                    コミュニケーション設計
+                  </li>
+
+                  <li>
+                    司会・アナウンサー・
+                    ナレーターのキャスティング
+                  </li>
+
+                </ul>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+        </div>
+
+
+
+        <!-- =========================
+             ACHIEVEMENTS
+             ========================= -->
+
+        <div
+          class="helmio-company-achievements"
+          id="helmio-company-achievements"
+        >
+
+          <header
+            class="helmio-company-achievements__header"
+          >
+
+            <div>
+
+              <p class="section-label">
+                ACHIEVEMENTS
+              </p>
+
+              <h2>
+                代表・参画メンバーの<br>
+                経歴・実績
+              </h2>
+
+            </div>
+
+
+            <div>
+
+              <p>
+                報道、企業イベント、
+                展示会、映像、広告出演など、
+                代表者および参画プロフェッショナルが
+                これまでに担当した経歴・実績を
+                分野別に掲載しています。
+              </p>
+
+              <p class="helmio-company-achievements__note">
+                ※株式会社HELMIOの支援実績ではなく、
+                設立以前を含む代表者および
+                参画プロフェッショナル個人の
+                担当実績を含みます。
+              </p>
+
+            </div>
+
+          </header>
+
+
+          <div
+            class="helmio-achievement-accordion"
+            id="helmioAchievementAccordion"
+          >
+
+            <p class="helmio-achievement-loading">
+              実績を読み込んでいます。
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    `;
+
+
+    finalCta.insertAdjacentElement(
+      'beforebegin',
+      section
+    );
+
+  };
+
+
+  const loadAchievements = async () => {
+
+    const container =
+      document.getElementById(
+        'helmioAchievementAccordion'
+      );
+
+    if (!container) return;
+
+
+    try {
+
+      const response =
+        await fetch(
+          'company.html',
+          {
+            cache: 'no-store'
+          }
+        );
+
+
+      if (!response.ok) {
+        throw new Error(
+          'company.html could not be loaded'
+        );
+      }
+
+
+      const html =
+        await response.text();
+
+
+      const doc =
+        new DOMParser()
+          .parseFromString(
+            html,
+            'text/html'
+          );
+
+
+      const details =
+        Array.from(
+          doc.querySelectorAll(
+            '.achievement-detail'
+          )
+        );
+
+
+      if (!details.length) {
+        throw new Error(
+          'No achievements found'
+        );
+      }
+
+
+      container.innerHTML =
+        details.map(
+          (item, index) => {
+
+            const number =
+              String(index + 1)
+                .padStart(
+                  2,
+                  '0'
+                );
+
+
+            const title =
+              item
+                .querySelector('h3')
+                ?.textContent
+                ?.trim() || '実績';
+
+
+            const rows =
+              Array.from(
+                item.querySelectorAll(
+                  '.achievement-detail__list li'
+                )
+              );
+
+
+            const listHtml =
+              rows.map(row => `
+                <li>
+                  ${escapeHtml(
+                    row.textContent.trim()
+                  )}
+                </li>
+              `).join('');
+
+
+            return `
+
+              <details
+                class="helmio-achievement-item"
+              >
+
+                <summary>
+
+                  <span
+                    class="helmio-achievement-number"
+                  >
+                    ${number}
+                  </span>
+
+
+                  <span
+                    class="helmio-achievement-title"
+                  >
+                    ${escapeHtml(title)}
+                  </span>
+
+
+                  <span
+                    class="helmio-achievement-arrow"
+                    aria-hidden="true"
+                  >
+                    ↓
+                  </span>
+
+                </summary>
+
+
+                <div
+                  class="helmio-achievement-content"
+                >
+
+                  <ul>
+                    ${listHtml}
+                  </ul>
+
+                </div>
+
+              </details>
+
+            `;
+
+          }
+        ).join('');
+
+
+    } catch (error) {
+
+      container.innerHTML = `
+
+        <div class="helmio-achievement-error">
+
+          <p>
+            実績一覧は会社概要ページでも
+            ご覧いただけます。
+          </p>
+
+          <a
+            href="company.html#achievement-index"
+          >
+            実績を見る →
+          </a>
+
+        </div>
+
+      `;
+
+    }
+
+  };
+
+
+  const injectCompanyStyles = () => {
+
+    if (
+      document.getElementById(
+        'helmio-company-section-styles'
+      )
+    ) {
+      return;
+    }
+
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'helmio-company-section-styles';
+
+
+    style.textContent = `
+
+      .helmio-company-section {
+        padding:
+          110px 0 80px;
+
+        background:
+          #faf8f3;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      /* MESSAGE */
+
+      .helmio-company-message {
+        padding-bottom:
+          100px;
+      }
+
+
+      .helmio-company-message__grid {
+        display:
+          grid;
+
+        grid-template-columns:
+          minmax(280px, .8fr)
+          minmax(0, 1.2fr);
+
+        gap:
+          90px;
+
+        margin-top:
+          34px;
+      }
+
+
+      .helmio-company-message h2 {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            31px,
+            3.5vw,
+            48px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.65;
+      }
+
+
+      .helmio-company-message__body {
+        color:
+          var(--text);
+
+        font-size:
+          15px;
+
+        line-height:
+          2;
+      }
+
+
+      .helmio-company-message__body p + p {
+        margin-top:
+          8px;
+      }
+
+
+      .helmio-company-signature {
+        margin-top:
+          30px;
+
+        color:
+          var(--muted);
+
+        font-size:
+          12px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .helmio-company-signature strong {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          18px;
+
+        font-weight:
+          500;
+      }
+
+
+
+      /* COMPANY */
+
+      .helmio-company-profile {
+        padding:
+          90px 0;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-heading h2,
+      .helmio-company-achievements h2 {
+        margin-top:
+          10px;
+
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            32px,
+            4vw,
+            48px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.45;
+      }
+
+
+      .helmio-company-table {
+        margin-top:
+          46px;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-table > div {
+        display:
+          grid;
+
+        grid-template-columns:
+          180px minmax(0, 1fr);
+
+        padding:
+          22px 0;
+
+        border-bottom:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-table dt {
+        color:
+          var(--muted);
+
+        font-size:
+          13px;
+
+        font-weight:
+          700;
+      }
+
+
+      .helmio-company-table dd {
+        margin:
+          0;
+
+        color:
+          var(--ink);
+
+        font-size:
+          14px;
+
+        line-height:
+          1.9;
+      }
+
+
+      .helmio-company-table ul {
+        margin:
+          0;
+
+        padding-left:
+          1.2em;
+      }
+
+
+
+      /* ACHIEVEMENTS */
+
+      .helmio-company-achievements {
+        padding-top:
+          90px;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+
+      .helmio-company-achievements__header {
+        display:
+          grid;
+
+        grid-template-columns:
+          minmax(280px, .8fr)
+          minmax(0, 1.2fr);
+
+        gap:
+          90px;
+      }
+
+
+      .helmio-company-achievements__header
+      > div:last-child {
+        color:
+          var(--text);
+
+        font-size:
+          14px;
+
+        line-height:
+          1.9;
+      }
+
+
+      .helmio-company-achievements__note {
+        margin-top:
+          14px;
+
+        color:
+          var(--muted);
+
+        font-size:
+          11px;
+      }
+
+
+      .helmio-achievement-accordion {
+        display:
+          grid;
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        margin-top:
+          48px;
+
+        border-top:
+          1px solid var(--line);
+
+        border-left:
+          1px solid var(--line);
+      }
+
+
+      .helmio-achievement-item {
+        border-right:
+          1px solid var(--line);
+
+        border-bottom:
+          1px solid var(--line);
+
+        background:
+          rgba(
+            255,
+            255,
+            255,
+            .55
+          );
+      }
+
+
+      .helmio-achievement-item summary {
+        display:
+          grid;
+
+        grid-template-columns:
+          48px minmax(0, 1fr) 32px;
+
+        gap:
+          18px;
+
+        align-items:
+          center;
+
+        min-height:
+          76px;
+
+        padding:
+          18px;
+
+        cursor:
+          pointer;
+
+        list-style:
+          none;
+      }
+
+
+      .helmio-achievement-item
+      summary::-webkit-details-marker {
+        display:
+          none;
+      }
+
+
+      .helmio-achievement-number {
+        color:
+          var(--gold);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          17px;
+      }
+
+
+      .helmio-achievement-title {
+        color:
+          var(--ink);
+
+        font-size:
+          13px;
+
+        font-weight:
+          700;
+
+        line-height:
+          1.6;
+      }
+
+
+      .helmio-achievement-arrow {
+        color:
+          var(--navy);
+
+        font-size:
+          17px;
+
+        text-align:
+          center;
+
+        transition:
+          transform .2s ease;
+      }
+
+
+      .helmio-achievement-item[open]
+      .helmio-achievement-arrow {
+        transform:
+          rotate(180deg);
+      }
+
+
+      .helmio-achievement-content {
+        padding:
+          0 28px 28px 66px;
+      }
+
+
+      .helmio-achievement-content ul {
+        margin:
+          0;
+
+        padding-left:
+          1.1em;
+      }
+
+
+      .helmio-achievement-content li {
+        color:
+          var(--text);
+
+        font-size:
+          12.5px;
+
+        line-height:
+          1.85;
+      }
+
+
+      .helmio-achievement-content
+      li + li {
+        margin-top:
+          7px;
+      }
+
+
+      .helmio-achievement-loading,
+      .helmio-achievement-error {
+        grid-column:
+          1 / -1;
+
+        padding:
+          28px;
+
+        color:
+          var(--muted);
+      }
+
+
+      .helmio-achievement-error a {
+        display:
+          inline-block;
+
+        margin-top:
+          12px;
+
+        color:
+          var(--navy);
+
+        font-weight:
+          700;
+      }
+
+
+
+      @media (
+        max-width: 820px
+      ) {
+
+        .helmio-company-section {
+          padding:
+            80px 0 60px;
+        }
+
+
+        .helmio-company-message__grid,
+        .helmio-company-achievements__header {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            34px;
+        }
+
+
+        .helmio-company-table
+        > div {
+          grid-template-columns:
+            120px minmax(0, 1fr);
+        }
+
+
+        .helmio-achievement-accordion {
+          grid-template-columns:
+            1fr;
+        }
+
+      }
+
+
+      @media (
+        max-width: 600px
+      ) {
+
+        .helmio-company-message {
+          padding-bottom:
+            70px;
+        }
+
+
+        .helmio-company-profile {
+          padding:
+            70px 0;
+        }
+
+
+        .helmio-company-achievements {
+          padding-top:
+            70px;
+        }
+
+
+        .helmio-company-message h2 {
+          font-size:
+            28px;
+        }
+
+
+        .helmio-company-table
+        > div {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            8px;
+        }
+
+
+        .helmio-achievement-item summary {
+          grid-template-columns:
+            38px
+            minmax(0, 1fr)
+            26px;
+
+          gap:
+            10px;
+
+          padding:
+            16px 12px;
+        }
+
+
+        .helmio-achievement-content {
+          padding:
+            0 18px 22px 50px;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  const initCompanySection =
+    async () => {
+
+      injectCompanyStyles();
+
+      buildCompanySection();
+
+      await loadAchievements();
+
+    };
+
+
+  if (
+    document.readyState ===
+    'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initCompanySection,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    initCompanySection();
+
+  }
+
+})();
