@@ -9460,3 +9460,17 @@
   brand.style.cursor = 'default';
   brand.style.pointerEvents = 'none';
 })();
+(() => {
+  const logos = document.querySelectorAll(
+    '.site-header .brand, .site-footer .footer-logo'
+  );
+
+  logos.forEach(logo => {
+    logo.removeAttribute('href');
+    logo.removeAttribute('aria-label');
+
+    logo.style.cursor = 'default';
+    logo.style.pointerEvents = 'none';
+  });
+})();
+
