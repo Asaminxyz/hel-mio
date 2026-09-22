@@ -9699,3 +9699,536 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   WHO WE SUPPORT / CLIENT PAINS
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const buildClientCases = () => {
+
+    /* 二重生成防止 */
+    document
+      .getElementById('client-cases')
+      ?.remove();
+
+
+    const hero =
+      document.querySelector('.pro-hero');
+
+    const features =
+      document.getElementById('features');
+
+
+    if (!hero) return;
+
+
+    const section =
+      document.createElement('section');
+
+
+    section.id =
+      'client-cases';
+
+    section.className =
+      'client-cases-section';
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+        <header class="client-cases-heading">
+
+          <div>
+
+            <p class="section-label">
+              WHO WE SUPPORT
+            </p>
+
+            <h2>
+              こんな課題を持つ企業へ
+            </h2>
+
+          </div>
+
+        </header>
+
+
+        <div class="client-cases-grid">
+
+
+          <!-- =========================
+               CASE 01
+               ========================= -->
+
+          <article class="client-case">
+
+            <div class="client-case__meta">
+
+              <span class="client-case__number">
+                CASE 01
+              </span>
+
+              <span class="client-case__target">
+                出展企業・マーケティング担当
+              </span>
+
+            </div>
+
+
+            <h3>
+              商品の魅力を、商談につながる形で届けたい
+            </h3>
+
+
+            <div class="client-case__body">
+
+              <p>
+                社員だけでは難しい呼び込みやプレゼンを、
+                展示会を知る「伝えるプロ」に任せたい。
+              </p>
+
+              <p>
+                プレゼンやメッセージも含めてプロが整え、
+                営業担当がその先の会話に集中できる
+                展示会にしたい。
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CASE 02
+               ========================= -->
+
+          <article class="client-case">
+
+            <div class="client-case__meta">
+
+              <span class="client-case__number">
+                CASE 02
+              </span>
+
+              <span class="client-case__target">
+                広告代理店・イベント制作会社
+              </span>
+
+            </div>
+
+
+            <h3>
+              出演・プレゼン領域を、安心して任せたい
+            </h3>
+
+
+            <div class="client-case__body">
+
+              <p>
+                案件に合うMC・ナレーターの選定だけでなく、
+                台本理解、読み合わせ、リハーサル、
+                本番対応まで任せたい。
+              </p>
+
+              <p>
+                既存の制作体制はそのままに、
+                クライアントの前に立つ
+                「伝える領域」の品質を任せられる
+                パートナーがほしい。
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    /*
+      HERO
+      ↓
+      CLIENT CASES
+      ↓
+      FEATURES
+    */
+
+    hero.insertAdjacentElement(
+      'afterend',
+      section
+    );
+
+
+    if (features) {
+
+      section.insertAdjacentElement(
+        'afterend',
+        features
+      );
+
+    }
+
+  };
+
+
+  /* =========================================================
+     STYLE
+     ========================================================= */
+
+  const addClientCaseStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-client-case-styles'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-client-case-styles';
+
+
+    style.textContent = `
+
+      /* ========================================
+         SECTION
+         ======================================== */
+
+      #client-cases {
+        padding:
+          92px 0 96px;
+
+        background:
+          #faf8f3;
+
+        border-bottom:
+          1px solid var(--line);
+      }
+
+
+      #client-cases
+      .client-cases-heading {
+        margin-bottom:
+          42px;
+      }
+
+
+      #client-cases
+      .client-cases-heading h2 {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            32px,
+            4vw,
+            48px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.5;
+      }
+
+
+
+      /* ========================================
+         TWO CASES
+         ======================================== */
+
+      #client-cases
+      .client-cases-grid {
+        display:
+          grid;
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        gap:
+          26px;
+      }
+
+
+      #client-cases
+      .client-case {
+        position:
+          relative;
+
+        padding:
+          34px 34px 36px;
+
+        background:
+          #fff;
+
+        border:
+          1px solid
+          rgba(16,47,82,.12);
+
+        border-top:
+          3px solid
+          var(--gold);
+
+        border-radius:
+          4px;
+      }
+
+
+
+      /* ========================================
+         META
+         ======================================== */
+
+      #client-cases
+      .client-case__meta {
+        display:
+          flex;
+
+        align-items:
+          center;
+
+        flex-wrap:
+          wrap;
+
+        gap:
+          10px 16px;
+
+        margin-bottom:
+          22px;
+      }
+
+
+      #client-cases
+      .client-case__number {
+        color:
+          var(--gold);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          14px;
+
+        font-weight:
+          600;
+
+        letter-spacing:
+          .14em;
+      }
+
+
+      #client-cases
+      .client-case__target {
+        color:
+          var(--muted);
+
+        font-size:
+          11px;
+
+        font-weight:
+          700;
+
+        letter-spacing:
+          .04em;
+      }
+
+
+
+      /* ========================================
+         TITLE
+         ======================================== */
+
+      #client-cases
+      .client-case h3 {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            21px,
+            2.1vw,
+            27px
+          );
+
+        font-weight:
+          600;
+
+        line-height:
+          1.65;
+      }
+
+
+
+      /* ========================================
+         BODY
+         ======================================== */
+
+      #client-cases
+      .client-case__body {
+        margin-top:
+          22px;
+
+        padding-top:
+          20px;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.10);
+      }
+
+
+      #client-cases
+      .client-case__body p {
+        color:
+          var(--text);
+
+        font-size:
+          13.5px;
+
+        line-height:
+          1.9;
+      }
+
+
+      #client-cases
+      .client-case__body p + p {
+        margin-top:
+          10px;
+      }
+
+
+
+      /* ========================================
+         TABLET / MOBILE
+         ======================================== */
+
+      @media (
+        max-width: 760px
+      ) {
+
+        #client-cases {
+          padding:
+            68px 0 72px;
+        }
+
+
+        #client-cases
+        .client-cases-grid {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            18px;
+        }
+
+
+        #client-cases
+        .client-case {
+          padding:
+            28px 24px 30px;
+        }
+
+      }
+
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #client-cases
+        .client-cases-heading {
+          margin-bottom:
+            30px;
+        }
+
+
+        #client-cases
+        .client-cases-heading h2 {
+          font-size:
+            29px;
+        }
+
+
+        #client-cases
+        .client-case h3 {
+          font-size:
+            20px;
+
+          line-height:
+            1.6;
+        }
+
+
+        #client-cases
+        .client-case__body p {
+          font-size:
+            13px;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  const applyClientCases = () => {
+
+    addClientCaseStyles();
+
+    buildClientCases();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      applyClientCases,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    applyClientCases();
+
+  }
+
+})();
