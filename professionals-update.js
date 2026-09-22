@@ -11188,3 +11188,358 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   CASE HEADING / ACHIEVEMENT ORDER FINAL FIX
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* ========================================
+     「こんな課題はありませんか？」に統一
+     ======================================== */
+
+  const updateCaseHeading = () => {
+
+    const heading =
+      document.querySelector(
+        '#client-cases .client-cases-heading h2'
+      );
+
+    if (heading) {
+      heading.textContent =
+        'こんな課題はありませんか？';
+    }
+
+  };
+
+
+  /* ========================================
+     実績をプロフェッショナル直後へ
+     ======================================== */
+
+  const moveAchievementsUp = () => {
+
+    const professionals =
+      document.getElementById(
+        'professionals'
+      );
+
+    const achievements =
+      document.querySelector(
+        '.helmio-achievements'
+      );
+
+    const flow =
+      document.getElementById(
+        'flow'
+      );
+
+
+    if (
+      professionals &&
+      achievements
+    ) {
+
+      professionals.insertAdjacentElement(
+        'afterend',
+        achievements
+      );
+
+    }
+
+
+    /* 実績の次にFLOW */
+    if (
+      achievements &&
+      flow
+    ) {
+
+      achievements.insertAdjacentElement(
+        'afterend',
+        flow
+      );
+
+    }
+
+  };
+
+
+  /* ========================================
+     MESSAGE・会社情報は下部のまま
+     ======================================== */
+
+  const keepCompanyAtBottom = () => {
+
+    const company =
+      document.getElementById(
+        'company-overview'
+      );
+
+    const form =
+      document.getElementById(
+        'casting-form'
+      );
+
+
+    if (
+      !company ||
+      !form
+    ) {
+      return;
+    }
+
+
+    form.insertAdjacentElement(
+      'afterend',
+      company
+    );
+
+  };
+
+
+  /* ========================================
+     TYPOGRAPHY FIX
+     ======================================== */
+
+  const addStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-case-achievement-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-case-achievement-final-style';
+
+
+    style.textContent = `
+
+      /* -----------------------------
+         課題セクション見出し
+         ----------------------------- */
+
+      #client-cases
+      .client-cases-heading h2 {
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          clamp(
+            27px,
+            2.8vw,
+            34px
+          ) !important;
+
+        font-weight:
+          700 !important;
+
+        line-height:
+          1.45 !important;
+
+        letter-spacing:
+          -.02em;
+      }
+
+
+      /* -----------------------------
+         CASE対象者
+         ----------------------------- */
+
+      #client-cases
+      .client-case__target {
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          20px !important;
+
+        font-weight:
+          700 !important;
+
+        line-height:
+          1.5 !important;
+
+        color:
+          var(--navy) !important;
+      }
+
+
+      /* -----------------------------
+         課題そのもの
+         ここを大きくする
+         ----------------------------- */
+
+      #client-cases
+      .client-case h3 {
+        margin-top:
+          4px;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          clamp(
+            19px,
+            1.8vw,
+            22px
+          ) !important;
+
+        font-weight:
+          700 !important;
+
+        line-height:
+          1.65 !important;
+
+        color:
+          var(--ink) !important;
+
+        letter-spacing:
+          -.01em;
+      }
+
+
+      #client-cases
+      .client-case__body {
+        margin-top:
+          18px !important;
+
+        padding-top:
+          18px !important;
+      }
+
+
+      #client-cases
+      .client-case__body p {
+        font-size:
+          13.5px !important;
+
+        line-height:
+          1.85 !important;
+      }
+
+
+
+      /* -----------------------------
+         実績を独立セクションとして
+         上に出した時の余白
+         ----------------------------- */
+
+      .helmio-achievements {
+        padding:
+          76px max(
+            32px,
+            calc(
+              (100vw - 1180px) / 2
+            )
+          ) !important;
+
+        background:
+          #fff;
+
+        border-top:
+          1px solid var(--line);
+
+        border-bottom:
+          1px solid var(--line);
+      }
+
+
+      .helmio-achievements__header,
+      .helmio-achievement-list {
+        max-width:
+          1180px;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+      }
+
+
+      .helmio-achievement-list {
+        margin-top:
+          36px !important;
+      }
+
+
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #client-cases
+        .client-case__target {
+          font-size:
+            18px !important;
+        }
+
+
+        #client-cases
+        .client-case h3 {
+          font-size:
+            19px !important;
+        }
+
+
+        .helmio-achievements {
+          padding:
+            60px 24px !important;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  const apply = () => {
+
+    updateCaseHeading();
+
+    moveAchievementsUp();
+
+    keepCompanyAtBottom();
+
+    addStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
