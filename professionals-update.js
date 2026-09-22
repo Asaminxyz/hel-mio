@@ -11543,3 +11543,201 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   BUSINESS / FEATURE 03 / CTA FINAL UPDATE
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* ========================================
+     会社情報：事業内容
+     ======================================== */
+
+  const updateBusinessList = () => {
+
+    const list =
+      document.querySelector(
+        '#company-overview .helmio-business-list'
+      );
+
+    if (!list) return;
+
+
+    list.innerHTML = `
+
+      <li>
+        展示会マーケティング事業
+      </li>
+
+      <li>
+        キャスティング事業
+      </li>
+
+      <li>
+        採用広報代行・コンテンツ制作
+      </li>
+
+      <li>
+        子ども向けプレゼンテーション教育事業
+        <span class="helmio-business-note">
+          （オンラインスクール運営・教育プログラムのライセンス提供）
+        </span>
+      </li>
+
+    `;
+
+  };
+
+
+  /* ========================================
+     HELMIOの特徴 03
+     ======================================== */
+
+  const updateFeature03 = () => {
+
+    const items =
+      document.querySelectorAll(
+        '#features .feature-item'
+      );
+
+    const item =
+      items[2];
+
+    if (!item) return;
+
+
+    const heading =
+      item.querySelector('h3');
+
+    const body =
+      item.querySelector('p');
+
+
+    if (heading) {
+
+      heading.textContent =
+        'アナウンサー × マーケターチームで、商談までの導線を設計';
+
+    }
+
+
+    if (body) {
+
+      body.textContent =
+        '展示会経験豊富な「伝えるプロ」とマーケターチームが、来場者との接点から営業との会話・商談までを見据えて、伝え方を設計します。';
+
+    }
+
+  };
+
+
+  /* ========================================
+     大きいCTA帯を完全に削除
+     ======================================== */
+
+  const removeFinalCta = () => {
+
+    document
+      .querySelectorAll(
+        '.final-cta'
+      )
+      .forEach(
+        section => section.remove()
+      );
+
+  };
+
+
+  /* ========================================
+     COMPANY BUSINESS STYLE
+     ======================================== */
+
+  const addStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-business-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-business-final-style';
+
+
+    style.textContent = `
+
+      #company-overview
+      .helmio-business-note {
+        display: inline;
+
+        color:
+          var(--muted);
+
+        font-size:
+          .92em;
+
+        font-weight:
+          400;
+
+        line-height:
+          1.8;
+      }
+
+
+      #features
+      .feature-item:nth-child(3) h3 {
+        white-space:
+          normal !important;
+
+        word-break:
+          normal !important;
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  const apply = () => {
+
+    updateBusinessList();
+
+    updateFeature03();
+
+    removeFinalCta();
+
+    addStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      { once: true }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
