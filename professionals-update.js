@@ -10232,3 +10232,959 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   FINAL TYPOGRAPHY / FORM / BOTTOM ORDER
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     CASE 01 最終文言
+     ========================================================= */
+
+  const updateClientCase01 = () => {
+
+    const card =
+      document.querySelector(
+        '#client-cases .client-case'
+      );
+
+    if (!card) return;
+
+
+    const title =
+      card.querySelector('h3');
+
+
+    if (title) {
+      title.textContent =
+        '来場者との接点を、商談までつなげきれない';
+    }
+
+
+    const body =
+      card.querySelector(
+        '.client-case__body'
+      );
+
+
+    if (body) {
+
+      body.innerHTML = `
+
+        <p>
+          商品説明はできても、
+          来場者の足を止め、
+          興味を引き、
+          営業担当との会話につなげるところまで
+          設計できていない。
+        </p>
+
+        <p>
+          呼び込みやプレゼンを
+          「伝えるプロ」に任せ、
+          営業担当はその先の商談に集中したい。
+        </p>
+
+      `;
+
+    }
+
+  };
+
+
+  /* =========================================================
+     COMPANYをページ最下部へ
+     ========================================================= */
+
+  const moveCompanyToBottom = () => {
+
+    const company =
+      document.getElementById(
+        'company-overview'
+      );
+
+    const form =
+      document.getElementById(
+        'casting-form'
+      );
+
+
+    if (
+      !company ||
+      !form
+    ) {
+      return;
+    }
+
+
+    form.insertAdjacentElement(
+      'afterend',
+      company
+    );
+
+  };
+
+
+  /* =========================================================
+     FINAL CTAもフォーム直前にコンパクト配置
+     ========================================================= */
+
+  const moveFinalCta = () => {
+
+    const cta =
+      document.querySelector(
+        '.final-cta'
+      );
+
+    const form =
+      document.getElementById(
+        'casting-form'
+      );
+
+
+    if (
+      !cta ||
+      !form
+    ) {
+      return;
+    }
+
+
+    form.insertAdjacentElement(
+      'beforebegin',
+      cta
+    );
+
+  };
+
+
+  /* =========================================================
+     TYPOGRAPHY
+     ========================================================= */
+
+  const addFinalTypography = () => {
+
+    document
+      .getElementById(
+        'helmio-final-typography'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'helmio-final-typography';
+
+
+    style.textContent = `
+
+
+      /* =====================================================
+         TYPE SCALE
+
+         HERO     : 最大 42px
+         SECTION  : 最大 34px
+         CARD     : 18〜22px
+
+         HEROより大きな文字を作らない
+         ===================================================== */
+
+
+      /* -----------------------------
+         HERO
+         ----------------------------- */
+
+      .pro-hero h1 {
+        font-size:
+          clamp(
+            31px,
+            2.7vw,
+            42px
+          ) !important;
+
+        line-height:
+          1.58 !important;
+      }
+
+
+
+      /* -----------------------------
+         MAIN SECTION HEADINGS
+         ----------------------------- */
+
+      .section-head h2,
+
+      #client-cases
+      .client-cases-heading h2,
+
+      #talent-list-title,
+
+      #flow-title,
+
+      #faq-title,
+
+      #casting-form-title,
+
+      .helmio-company-profile h2,
+
+      .helmio-achievements h2 {
+
+        font-size:
+          clamp(
+            27px,
+            2.8vw,
+            34px
+          ) !important;
+
+        line-height:
+          1.45 !important;
+
+        letter-spacing:
+          -.02em;
+      }
+
+
+      /* 「こんな課題はありませんか？」は明朝にしない */
+
+      #client-cases
+      .client-cases-heading h2 {
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-weight:
+          700 !important;
+
+      }
+
+
+
+      /* -----------------------------
+         MESSAGE
+         ----------------------------- */
+
+      .helmio-message__copy h2 {
+
+        font-size:
+          clamp(
+            26px,
+            2.7vw,
+            33px
+          ) !important;
+
+        line-height:
+          1.55 !important;
+
+      }
+
+
+
+      /* -----------------------------
+         FEATURE
+         ----------------------------- */
+
+      #features
+      .feature-item h3 {
+
+        font-size:
+          clamp(
+            19px,
+            1.8vw,
+            23px
+          ) !important;
+
+        line-height:
+          1.55 !important;
+
+      }
+
+
+      #features
+      .feature-item p {
+
+        font-size:
+          13.5px !important;
+
+        line-height:
+          1.8 !important;
+
+      }
+
+
+
+      /* -----------------------------
+         CLIENT CASE
+         ----------------------------- */
+
+      #client-cases
+      .client-case__target {
+
+        font-size:
+          clamp(
+            18px,
+            1.8vw,
+            21px
+          ) !important;
+
+      }
+
+
+      #client-cases
+      .client-case h3 {
+
+        font-size:
+          16px !important;
+
+        line-height:
+          1.65 !important;
+
+      }
+
+
+      #client-cases
+      .client-case__body p {
+
+        font-size:
+          13px !important;
+
+        line-height:
+          1.85 !important;
+
+      }
+
+
+
+      /* -----------------------------
+         SERVICE
+         ----------------------------- */
+
+      #service
+      .service-card h3 {
+
+        font-size:
+          20px !important;
+
+        line-height:
+          1.45 !important;
+
+      }
+
+
+      #service
+      .service-card__catch {
+
+        font-size:
+          13.5px !important;
+
+      }
+
+
+
+      /* -----------------------------
+         FLOW
+         ----------------------------- */
+
+      #flow
+      .flow-step h3 {
+
+        font-size:
+          18px !important;
+
+      }
+
+
+      #flow
+      .flow-step p {
+
+        font-size:
+          13px !important;
+
+      }
+
+
+
+      /* =====================================================
+         SECTION SPACING
+         ===================================================== */
+
+      .section {
+
+        padding:
+          78px 0;
+
+      }
+
+
+      .section-head {
+
+        margin-bottom:
+          38px;
+
+      }
+
+
+      .section-head > p {
+
+        font-size:
+          14px !important;
+
+        line-height:
+          1.85 !important;
+
+      }
+
+
+
+      /* =====================================================
+         CASTING FORM
+         今より小さく、品のあるサイズへ
+         ===================================================== */
+
+      #casting-form {
+
+        padding:
+          68px 0 !important;
+
+      }
+
+
+      #casting-form
+      .container {
+
+        max-width:
+          980px;
+
+      }
+
+
+      #casting-form
+      .casting-form-heading {
+
+        display:
+          grid;
+
+        grid-template-columns:
+          minmax(240px,.75fr)
+          minmax(0,1.25fr);
+
+        gap:
+          42px;
+
+        margin-bottom:
+          28px;
+
+      }
+
+
+      #casting-form
+      .casting-form-heading h2 {
+
+        font-size:
+          clamp(
+            26px,
+            2.6vw,
+            32px
+          ) !important;
+
+      }
+
+
+      #casting-form
+      .casting-form-heading > p {
+
+        font-size:
+          13px !important;
+
+        line-height:
+          1.8 !important;
+
+      }
+
+
+      #casting-form
+      .casting-form-shell {
+
+        max-width:
+          900px;
+
+        margin:
+          0 auto;
+
+        border-radius:
+          10px !important;
+
+        box-shadow:
+          0 12px 34px
+          rgba(16,47,82,.06) !important;
+
+      }
+
+
+      #casting-form
+      .casting-progress__item {
+
+        padding:
+          13px 16px !important;
+
+        font-size:
+          12px !important;
+
+      }
+
+
+      #casting-form
+      .casting-progress__number {
+
+        width:
+          27px !important;
+
+        height:
+          27px !important;
+
+        font-size:
+          14px !important;
+
+      }
+
+
+      #casting-form
+      .casting-form {
+
+        padding:
+          34px 38px 38px !important;
+
+      }
+
+
+      #casting-form
+      .casting-step__title {
+
+        margin-bottom:
+          28px !important;
+
+        font-size:
+          21px !important;
+
+      }
+
+
+      #casting-form
+      .casting-step__title small {
+
+        font-size:
+          13px !important;
+
+      }
+
+
+      #casting-form
+      .casting-grid {
+
+        gap:
+          22px 26px !important;
+
+      }
+
+
+      #casting-form
+      .form-label,
+
+      #casting-form
+      .form-field legend {
+
+        margin-bottom:
+          8px !important;
+
+        font-size:
+          13px !important;
+
+      }
+
+
+      #casting-form
+      .choice-card span {
+
+        min-height:
+          48px !important;
+
+        padding:
+          9px 12px !important;
+
+        font-size:
+          12.5px !important;
+
+      }
+
+
+      #casting-form
+      .form-control {
+
+        min-height:
+          48px !important;
+
+        padding:
+          10px 13px !important;
+
+        font-size:
+          13px !important;
+
+      }
+
+
+      #casting-form
+      textarea.form-control {
+
+        min-height:
+          115px !important;
+
+      }
+
+
+      #casting-form
+      .simple-check {
+
+        min-height:
+          48px !important;
+
+      }
+
+
+      #casting-form
+      .casting-actions {
+
+        margin-top:
+          30px !important;
+
+        padding-top:
+          20px !important;
+
+      }
+
+
+      #casting-form
+      .casting-actions .button {
+
+        min-width:
+          160px !important;
+
+        min-height:
+          46px !important;
+
+        padding:
+          10px 18px !important;
+
+        font-size:
+          13px !important;
+
+      }
+
+
+
+      /* =====================================================
+         FINAL CTA
+         大きい紺帯をコンパクトに
+         ===================================================== */
+
+      .final-cta {
+
+        padding:
+          42px 0 !important;
+
+      }
+
+
+      .final-cta__inner {
+
+        gap:
+          36px !important;
+
+      }
+
+
+      .final-cta h2 {
+
+        font-size:
+          clamp(
+            24px,
+            2.4vw,
+            31px
+          ) !important;
+
+        line-height:
+          1.5 !important;
+
+      }
+
+
+      .final-cta
+      p:not(.section-label) {
+
+        max-width:
+          650px;
+
+        margin-top:
+          9px !important;
+
+        font-size:
+          12.5px !important;
+
+        line-height:
+          1.75 !important;
+
+      }
+
+
+      .final-cta
+      .button {
+
+        min-height:
+          44px !important;
+
+        padding:
+          9px 18px !important;
+
+        font-size:
+          12.5px !important;
+
+      }
+
+
+
+      /* =====================================================
+         COMPANY
+         一番下なので少し静かな見せ方
+         ===================================================== */
+
+      #company-overview {
+
+        padding:
+          70px 0 60px !important;
+
+      }
+
+
+      #company-overview
+      .helmio-company-profile {
+
+        padding-top:
+          58px !important;
+
+        padding-bottom:
+          58px !important;
+
+      }
+
+
+      #company-overview
+      .helmio-achievements {
+
+        padding-top:
+          58px !important;
+
+      }
+
+
+
+      /* =====================================================
+         MOBILE
+         ===================================================== */
+
+      @media (
+        max-width: 700px
+      ) {
+
+        .section {
+
+          padding:
+            62px 0;
+
+        }
+
+
+        .section-head {
+
+          grid-template-columns:
+            1fr;
+
+          gap:
+            14px;
+
+          margin-bottom:
+            30px;
+
+        }
+
+
+        .section-head h2,
+
+        #client-cases
+        .client-cases-heading h2,
+
+        #talent-list-title,
+
+        #flow-title,
+
+        #faq-title,
+
+        .helmio-company-profile h2,
+
+        .helmio-achievements h2 {
+
+          font-size:
+            27px !important;
+
+        }
+
+
+        .pro-hero h1 {
+
+          font-size:
+            30px !important;
+
+        }
+
+
+        #casting-form {
+
+          padding:
+            56px 0 !important;
+
+        }
+
+
+        #casting-form
+        .casting-form-heading {
+
+          grid-template-columns:
+            1fr;
+
+          gap:
+            12px;
+
+        }
+
+
+        #casting-form
+        .casting-form-shell {
+
+          border-radius:
+            8px !important;
+
+        }
+
+
+        #casting-form
+        .casting-form {
+
+          padding:
+            28px 20px 30px !important;
+
+        }
+
+
+        #casting-form
+        .casting-grid {
+
+          grid-template-columns:
+            1fr !important;
+
+          gap:
+            20px !important;
+
+        }
+
+
+        #casting-form
+        .casting-actions {
+
+          flex-direction:
+            column;
+
+        }
+
+
+        #casting-form
+        .casting-actions .button {
+
+          width:
+            100%;
+
+        }
+
+
+        .final-cta {
+
+          padding:
+            36px 0 !important;
+
+        }
+
+
+        .final-cta__inner {
+
+          grid-template-columns:
+            1fr !important;
+
+          gap:
+            20px !important;
+
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const apply = () => {
+
+    updateClientCase01();
+
+    addFinalTypography();
+
+    moveFinalCta();
+
+    moveCompanyToBottom();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
