@@ -9611,3 +9611,91 @@
   }
 
 })();
+(() => {
+  'use strict';
+
+  const updateFeatureHeadings = () => {
+
+    const items =
+      document.querySelectorAll(
+        '#features .feature-item'
+      );
+
+    if (!items.length) return;
+
+
+    const headings = [
+      '全国ネットワークから、案件に合うプロを',
+      'メッセージ設計から、プレゼン準備まで',
+      'アナウンサー × マーケターチームで商談までの導線を設計',
+      '既存体制を変えず、必要な領域だけ'
+    ];
+
+
+    items.forEach((item, index) => {
+
+      const heading =
+        item.querySelector('h3');
+
+      if (
+        heading &&
+        headings[index]
+      ) {
+        heading.textContent =
+          headings[index];
+      }
+
+    });
+
+  };
+
+
+  const addFeatureHeadingStyles = () => {
+
+    const style =
+      document.createElement('style');
+
+
+    style.textContent = `
+
+      #features
+      .feature-item__content h3 {
+        white-space: normal;
+        word-break: keep-all;
+      }
+
+    `;
+
+
+    document.head.appendChild(style);
+
+  };
+
+
+  const apply = () => {
+
+    updateFeatureHeadings();
+    addFeatureHeadingStyles();
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    apply();
+
+  }
+
+})();
