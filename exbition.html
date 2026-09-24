@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELMIO</title>
+</head>
+<body>
+<script>
+(async () => {
+  'use strict';
+
+  try {
+    const response = await fetch('professionals.html', { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error('professionals.html could not be loaded');
+    }
+
+    let source = await response.text();
+
+    const overrideCode = `
+(() => {
+  'use strict';
+
+  const applyExbitionPage = () => {
+
+    /* HERO：指定文言に変更 */
+    const title = document.getElementById('professionals-title');
+
+    if (title) {
+      title.innerHTML = \`
+        <span><em class="hero-highlight">展示会を、説明する場所から</em></span>
+        <span><em class="hero-highlight">商談が始まる場所へ。</em></span>
+        <span>プレゼンのプロが、</span>
+        <span>展示会の伝達責任を持つ。</span>
+      \`;
+    }
+
+
+    const lead = document.querySelector('.pro-hero__lead');
+
+    if (lead) {
+      lead.innerHTML = \`
+        キャスティングにとどまらず、必要に応じて、製品・技術への取材から、<br>
+        来場者へ届けるメッセージ、構成、台本、スライドを設計。<br>
+        製品研修、リハーサル、本番まで一貫して支援します。
+      \`;
+    }
+
+
+    /* 「ラジオ・キャスターなど、メディア経験豊富な若手人材」だけ削除 */
+    document
+      .querySelector('#professionals .talent-group--young')
+      ?.remove();
+
+
+    /* 代わりに professionals.html へのCTAを追加 */
+    const container = document.getElementById('talentCards');
+
+    if (
+      container &&
+      !document.getElementById('more-professionals-cta')
+    ) {
+      const cta = document.createElement('div');
+
+      cta.id = 'more-professionals-cta';
+
+      cta.innerHTML = \`
+        <a
+          class="button button--secondary"
+          href="https://hel-mio.com/professionals.html"
+        >
+          もっとプロフェッショナルをみる
+        </a>
+      \`;
+
+      container.appendChild(cta);
+    }
+
+
+    /* CTAの配置だけ既存デザインに合わせる */
+    if (!document.getElementById('exbition-only-style')) {
+      const style = document.createElement('style');
+
+      style.id = 'exbition-only-style';
+
+      style.textContent = \`
+        #more-professionals-cta {
+          display: flex;
+          justify-content: center;
+          margin-top: 52px;
+        }
+      \`;
+
+      document.head.appendChild(style);
+    }
+  };
+
+
+  const run = () => {
+    applyExbitionPage();
+
+    /* professionals-update.js の反映後にも最終適用 */
+    setTimeout(applyExbitionPage, 80);
+  };
+
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      { once: true }
+    );
+  } else {
+    run();
+  }
+
+})();
+`;
+
+    const injectedScript =
+      '<scr' + 'ipt id="helmio-exbition-page-update">' +
+      overrideCode +
+      '</scr' + 'ipt>';
+
+    source = source.replace(
+      /<\/body>/i,
+      injectedScript + '\n</body>'
+    );
+
+    document.open();
+    document.write(source);
+    document.close();
+
+  } catch (error) {
+    document.body.innerHTML =
+      '<main style="max-width:720px;margin:80px auto;padding:24px;font-family:sans-serif;line-height:1.8">' +
+      '<h1 style="font-size:24px">ページを読み込めませんでした。</h1>' +
+      '<p>このファイルを professionals.html と同じ階層にアップロードしてください。</p>' +
+      '</main>';
+  }
+})();
+</script>
+</body>
+</html>
