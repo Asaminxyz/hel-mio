@@ -11741,3 +11741,978 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   PROFESSIONALS = CASTING ONLY
+   FINAL OVERRIDE
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     META
+     ========================================================= */
+
+  const updateMeta = () => {
+
+    document.title =
+      '元放送局アナウンサーのキャスティング｜HELMIO';
+
+
+    const description =
+      document.querySelector(
+        'meta[name="description"]'
+      );
+
+    if (description) {
+      description.setAttribute(
+        'content',
+        'HELMIOは、元局アナウンサーを中心とした企業イベント専門のキャスティングサービスです。記者発表、式典、カンファレンス、経営者登壇など、進行品質が求められる場を支えます。'
+      );
+    }
+
+
+    const ogTitle =
+      document.querySelector(
+        'meta[property="og:title"]'
+      );
+
+    if (ogTitle) {
+      ogTitle.setAttribute(
+        'content',
+        '元放送局アナウンサーのキャスティング｜HELMIO'
+      );
+    }
+
+
+    const ogDescription =
+      document.querySelector(
+        'meta[property="og:description"]'
+      );
+
+    if (ogDescription) {
+      ogDescription.setAttribute(
+        'content',
+        '失敗できない企業イベントに、元局アナという選択を。HELMIOは企業イベント専門のキャスティングサービスです。'
+      );
+    }
+
+  };
+
+
+  /* =========================================================
+     展示会・マーケティング色の強いセクションを削除
+     ========================================================= */
+
+  const removeExhibitionContent = () => {
+
+    /* WHO WE SUPPORT */
+    document
+      .getElementById(
+        'client-cases'
+      )
+      ?.remove();
+
+
+    /* 古いCASTING SUPPORT */
+    document
+      .getElementById(
+        'casting-support'
+      )
+      ?.remove();
+
+
+    /*
+      展示会について語っている代表MESSAGEは
+      キャスティングページでは削除
+    */
+    document
+      .querySelector(
+        '#company-overview .helmio-message'
+      )
+      ?.remove();
+
+
+    /* 以前の大きいCTA帯 */
+    document
+      .querySelectorAll(
+        '.final-cta'
+      )
+      .forEach(
+        element => element.remove()
+      );
+
+  };
+
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  const updateHero = () => {
+
+    const title =
+      document.getElementById(
+        'professionals-title'
+      );
+
+
+    if (title) {
+
+      title.innerHTML = `
+
+        <span>
+          <em class="hero-highlight">
+            失敗できない企業イベントに、
+          </em>
+        </span>
+
+        <span>
+          元局アナという選択を。
+        </span>
+
+      `;
+
+    }
+
+
+    const lead =
+      document.querySelector(
+        '.pro-hero__lead'
+      );
+
+
+    if (lead) {
+
+      lead.innerHTML = `
+
+        HELMIOは、元局アナウンサーを中心とした
+        企業イベント専門のキャスティングサービスです。
+        <br><br>
+
+        台本を読むだけではなく、
+        案件内容を理解し、
+        事前確認・読み合わせ・リハーサルを経て本番へ。
+        <br><br>
+
+        記者発表、式典、カンファレンス、経営者登壇など、
+        進行品質が求められる場を支えます。
+
+      `;
+
+    }
+
+
+    const primary =
+      document.querySelector(
+        '.pro-hero .button--primary'
+      );
+
+
+    if (primary) {
+
+      primary.textContent =
+        'キャスティングを相談する';
+
+      primary.href =
+        '#casting-form';
+
+    }
+
+
+    const secondary =
+      document.querySelector(
+        '.pro-hero .button--secondary'
+      );
+
+
+    if (secondary) {
+
+      secondary.textContent =
+        'アナウンサーを見る';
+
+      secondary.href =
+        '#professionals';
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FEATURES
+     ========================================================= */
+
+  const updateFeatures = () => {
+
+    const section =
+      document.getElementById(
+        'features'
+      );
+
+    if (!section) return;
+
+
+    const lead =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (lead) {
+
+      lead.textContent =
+        '企業イベントの本番を任せられる、プロフェッショナルのキャスティング。';
+
+    }
+
+
+    const items =
+      section.querySelectorAll(
+        '.feature-item'
+      );
+
+
+    const features = [
+
+      {
+        title:
+          '元局アナウンサーを中心としたプロフェッショナル',
+
+        body:
+          'ニュース、生放送、リポート、大型イベントなど、緊張感のある現場を経験した人材を中心にご提案。'
+      },
+
+      {
+        title:
+          '案件を理解してから、本番に立つ',
+
+        body:
+          '企業名や肩書きを読むだけではなく、イベントの目的、製品・サービス、登壇者、進行を事前に確認。'
+      },
+
+      {
+        title:
+          '読み合わせ・リハーサルまで対応',
+
+        body:
+          '台本確認、読み合わせ、会場リハーサルなど、必要な準備を本番前に実施。'
+      },
+
+      {
+        title:
+          '制作会社・代理店の体制を変えずに使える',
+
+        body:
+          'キャスティングのみ、台本確認込み、リハーサル込みなど、案件に必要な範囲だけ対応。'
+      }
+
+    ];
+
+
+    items.forEach(
+      (item, index) => {
+
+        const data =
+          features[index];
+
+        if (!data) return;
+
+
+        const heading =
+          item.querySelector('h3');
+
+        const body =
+          item.querySelector(
+            '.feature-item__content p'
+          );
+
+
+        if (heading) {
+          heading.textContent =
+            data.title;
+        }
+
+
+        if (body) {
+          body.textContent =
+            data.body;
+        }
+
+      }
+    );
+
+  };
+
+
+  /* =========================================================
+     SERVICE
+     2サービスだけにする
+     ========================================================= */
+
+  const updateServices = () => {
+
+    const section =
+      document.getElementById(
+        'service'
+      );
+
+    if (!section) return;
+
+
+    const intro =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (intro) {
+
+      intro.textContent =
+        '企業イベントの司会・MCを、案件内容と求める進行品質に合わせてご提案します。';
+
+    }
+
+
+    const cards =
+      Array.from(
+        section.querySelectorAll(
+          '.service-card'
+        )
+      );
+
+
+    /* 3枚目以降は削除 */
+    cards
+      .slice(2)
+      .forEach(
+        card => card.remove()
+      );
+
+
+    /* =====================================
+       01 一日司会
+       ===================================== */
+
+    const first =
+      cards[0];
+
+
+    if (first) {
+
+      const media =
+        first.querySelector(
+          '.service-card__media'
+        );
+
+
+      const image =
+        media?.querySelector('img');
+
+
+      const fallback =
+        media?.querySelector(
+          '.service-card__fallback'
+        );
+
+
+      if (image) {
+
+        image.src =
+          'service-mc.jpg';
+
+        image.alt =
+          '企業イベントで司会を務めるアナウンサー';
+
+      }
+
+
+      if (fallback) {
+
+        fallback.textContent =
+          'MC / ANNOUNCER';
+
+      }
+
+
+      const body =
+        first.querySelector(
+          '.service-card__body'
+        );
+
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            01
+          </span>
+
+          <h3>
+            一日司会
+          </h3>
+
+          <p class="service-card__catch">
+            企業イベントを、
+            経験あるプロの進行で
+          </p>
+
+          <p class="service-card__description">
+            記者発表、式典、カンファレンス、
+            表彰式、経営者登壇など。
+            案件内容を事前に確認し、
+            必要に応じて読み合わせ・
+            リハーサルまで対応します。
+          </p>
+
+          <div class="service-card__price">
+
+            <span>
+              参考価格
+            </span>
+
+            <strong>
+              90,000円〜
+            </strong>
+
+            <small>
+              ／1日
+            </small>
+
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#professionals"
+          >
+            候補者を見る
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================
+       02 外国語対応
+       ===================================== */
+
+    const second =
+      cards[1];
+
+
+    if (second) {
+
+      const media =
+        second.querySelector(
+          '.service-card__media'
+        );
+
+
+      const image =
+        media?.querySelector('img');
+
+
+      const fallback =
+        media?.querySelector(
+          '.service-card__fallback'
+        );
+
+
+      if (image) {
+
+        image.src =
+          'service-bilingual.jpg';
+
+        image.alt =
+          '外国語で企業イベントを進行するバイリンガルMC';
+
+      }
+
+
+      if (fallback) {
+
+        fallback.textContent =
+          'BILINGUAL MC';
+
+      }
+
+
+      const body =
+        second.querySelector(
+          '.service-card__body'
+        );
+
+
+      if (body) {
+
+        body.innerHTML = `
+
+          <span class="service-card__number">
+            02
+          </span>
+
+          <h3>
+            外国語対応
+          </h3>
+
+          <p class="service-card__catch">
+            国際イベント・海外ゲストにも対応
+          </p>
+
+          <p class="service-card__description">
+            英語・中国語などの外国語進行、
+            バイリンガルMC、
+            海外ゲストを迎えるイベントなど、
+            案件に合わせて対応可能な
+            プロフェッショナルをご提案します。
+          </p>
+
+          <div class="service-card__price">
+
+            <span>
+              参考価格
+            </span>
+
+            <strong>
+              130,000円〜
+            </strong>
+
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            外国語対応を相談する
+          </a>
+
+        `;
+
+      }
+
+    }
+
+
+    const priceNote =
+      section.querySelector(
+        '.service-price-note'
+      );
+
+
+    if (priceNote) {
+
+      priceNote.textContent =
+        '※参考価格です。案件内容・拘束時間・開催地域・事前準備の有無などにより個別にお見積もりします。';
+
+    }
+
+  };
+
+
+  /* =========================================================
+     PROFESSIONALS INTRO
+     ========================================================= */
+
+  const updateProfessionalsIntro = () => {
+
+    const intro =
+      document.querySelector(
+        '#professionals .talent-intro'
+      );
+
+
+    if (intro) {
+
+      intro.textContent =
+        '元放送局アナウンサーを中心に、記者発表、式典、カンファレンス、企業イベントなど、進行品質が求められる場に対応するプロフェッショナルをご紹介します。カードをクリックすると、プロフィールや主な経歴をご覧いただけます。';
+
+    }
+
+  };
+
+
+  /* =========================================================
+     FLOW
+     キャスティングだけの流れにする
+     ========================================================= */
+
+  const updateFlow = () => {
+
+    const section =
+      document.getElementById(
+        'flow'
+      );
+
+    if (!section) return;
+
+
+    const intro =
+      section.querySelector(
+        '.section-head > p'
+      );
+
+
+    if (intro) {
+
+      intro.textContent =
+        'お問い合わせから候補者のご提案、事前確認・読み合わせ、本番まで。案件に必要な準備を含めて進行します。';
+
+    }
+
+
+    const grid =
+      section.querySelector(
+        '.flow-grid'
+      );
+
+
+    if (!grid) return;
+
+
+    grid.innerHTML = `
+
+      <article class="flow-step">
+
+        <span>
+          01
+        </span>
+
+        <h3>
+          お問い合わせ
+        </h3>
+
+        <p>
+          開催日・会場・イベント内容など、
+          現時点で分かる範囲を
+          お知らせください。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>
+          02
+        </span>
+
+        <h3>
+          候補者のご提案
+        </h3>
+
+        <p>
+          イベントの目的、
+          求める雰囲気や進行内容を確認し、
+          条件に合う候補者をご提案します。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>
+          03
+        </span>
+
+        <h3>
+          事前確認・読み合わせ
+        </h3>
+
+        <p>
+          出演者決定後、
+          台本や進行内容を確認。
+          必要に応じて読み合わせや
+          会場リハーサルを行います。
+        </p>
+
+      </article>
+
+
+      <article class="flow-step">
+
+        <span>
+          04
+        </span>
+
+        <h3>
+          本番
+        </h3>
+
+        <p>
+          経験あるプロフェッショナルが
+          当日の進行を担当します。
+        </p>
+
+      </article>
+
+    `;
+
+  };
+
+
+  /* =========================================================
+     FORM
+     サービス内容も2択へ
+     ========================================================= */
+
+  const updateForm = () => {
+
+    const field =
+      document.querySelector(
+        '#casting-form [data-required-group="service"]'
+      );
+
+
+    const choices =
+      field?.querySelector(
+        '.choice-grid'
+      );
+
+
+    if (!choices) return;
+
+
+    choices.innerHTML = `
+
+      <label class="choice-card">
+
+        <input
+          type="checkbox"
+          name="service[]"
+          value="一日司会"
+        >
+
+        <span>
+          一日司会
+        </span>
+
+      </label>
+
+
+      <label class="choice-card">
+
+        <input
+          type="checkbox"
+          name="service[]"
+          value="外国語対応"
+        >
+
+        <span>
+          外国語対応
+        </span>
+
+      </label>
+
+    `;
+
+
+    choices
+      .querySelectorAll('input')
+      .forEach(input => {
+
+        input.addEventListener(
+          'change',
+          () => {
+
+            field.classList.remove(
+              'has-error'
+            );
+
+          }
+        );
+
+      });
+
+  };
+
+
+  /* =========================================================
+     STYLE
+     デザインは既存のまま。
+     2カード化に必要な部分だけ調整。
+     ========================================================= */
+
+  const addStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-casting-only-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement('style');
+
+
+    style.id =
+      'helmio-casting-only-final-style';
+
+
+    style.textContent = `
+
+      /* サービス2枚 */
+
+      #service
+      .service-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          ) !important;
+
+        max-width:
+          900px;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+
+      }
+
+
+      #service
+      .service-card {
+
+        min-height:
+          0 !important;
+
+      }
+
+
+      /* 特徴の見出しに強制改行を入れない */
+
+      #features
+      .feature-item h3 {
+
+        white-space:
+          normal !important;
+
+        word-break:
+          normal !important;
+
+      }
+
+
+      /* フォームも2択 */
+
+      #casting-form
+      [data-required-group="service"]
+      .choice-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          ) !important;
+
+      }
+
+
+      @media (
+        max-width: 720px
+      ) {
+
+        #service
+        .service-grid {
+
+          grid-template-columns:
+            1fr !important;
+
+        }
+
+
+        #casting-form
+        [data-required-group="service"]
+        .choice-grid {
+
+          grid-template-columns:
+            1fr !important;
+
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const apply = () => {
+
+    updateMeta();
+
+    removeExhibitionContent();
+
+    updateHero();
+
+    updateFeatures();
+
+    updateServices();
+
+    updateProfessionalsIntro();
+
+    updateFlow();
+
+    updateForm();
+
+    addStyles();
+
+  };
+
+
+  const run = () => {
+
+    apply();
+
+    /*
+      既存の古い追記コードが多いので
+      最後にもう一度だけ確定させる
+    */
+
+    setTimeout(
+      apply,
+      120
+    );
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
