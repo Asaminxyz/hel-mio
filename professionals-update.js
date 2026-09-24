@@ -12716,3 +12716,66 @@
   }
 
 })();
+/* =========================================================
+   HERO COPY FINAL FIX
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const fixHeroCopy = () => {
+
+    const title =
+      document.getElementById(
+        'professionals-title'
+      );
+
+    if (title) {
+      title.innerHTML = `
+        <span>
+          <em class="hero-highlight">
+            失敗できない企業イベントに、
+          </em>
+        </span>
+
+        <span>
+          局アナウンサーという選択を。
+        </span>
+      `;
+    }
+
+
+    const lead =
+      document.querySelector(
+        '.pro-hero__lead'
+      );
+
+    if (lead) {
+      lead.textContent =
+        'HELMIOは、元局アナウンサーを中心とした企業イベント専門のキャスティングサービスです。台本を読むだけではなく、案件内容を理解し、事前確認・読み合わせ・リハーサルを経て本番へ。記者発表、式典、カンファレンス、経営者登壇など、進行品質が求められる場を支えます。';
+    }
+
+  };
+
+
+  const run = () => {
+    fixHeroCopy();
+
+    setTimeout(
+      fixHeroCopy,
+      150
+    );
+  };
+
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      { once: true }
+    );
+  } else {
+    run();
+  }
+
+})();
