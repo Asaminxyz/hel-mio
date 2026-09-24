@@ -144,3 +144,483 @@
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    展示会マーケティング・プレゼン支援｜HELMIO
+  </title>
+</head>
+
+
+<body>
+
+
+<script>
+
+(async () => {
+
+  'use strict';
+
+
+  try {
+
+
+    /* =====================================================
+       professionals.html の基本デザインだけ読み込む
+       ===================================================== */
+
+    const response =
+      await fetch(
+        'professionals.html',
+        {
+          cache: 'no-store'
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        'professionals.html could not be loaded'
+      );
+
+    }
+
+
+    let source =
+      await response.text();
+
+
+
+    /* =====================================================
+       重要
+
+       キャスティング版
+       professionals-update.js
+
+       ↓
+
+       展示会版
+       exbition-update.js
+
+       に変更
+       ===================================================== */
+
+    source =
+      source.replace(
+
+        /<script\s+src=["']professionals-update\.js["']\s*><\/script>/i,
+
+        '<script src="exbition-update.js"></script>'
+
+      );
+
+
+
+    /* =====================================================
+       展示会ページだけの最終調整
+       ===================================================== */
+
+    const exhibitionOverride = `
+
+(() => {
+
+  'use strict';
+
+
+
+  const applyExhibitionPage = () => {
+
+
+    /* ==========================================
+       HERO
+       ========================================== */
+
+    const title =
+      document.getElementById(
+        'professionals-title'
+      );
+
+
+    if (title) {
+
+      title.innerHTML = \`
+
+        <span>
+          <em class="hero-highlight">
+            展示会を、説明する場所から
+          </em>
+        </span>
+
+        <span>
+          商談が始まる場所へ。
+        </span>
+
+        <span class="exhibition-hero-sub">
+          プレゼンのプロが、
+          展示会の伝達責任を持つ。
+        </span>
+
+      \`;
+
+    }
+
+
+
+    const lead =
+      document.querySelector(
+        '.pro-hero__lead'
+      );
+
+
+    if (lead) {
+
+      lead.innerHTML = \`
+        キャスティングにとどまらず、
+        必要に応じて、製品・技術への取材から、
+        来場者へ届けるメッセージ、構成、台本、スライドを設計。
+        製品研修、リハーサル、本番まで一貫して支援します。
+      \`;
+
+    }
+
+
+
+    /* ==========================================
+       HERO CTA
+       ========================================== */
+
+    const primary =
+      document.querySelector(
+        '.pro-hero .button--primary'
+      );
+
+
+    if (primary) {
+
+      primary.textContent =
+        '展示会について相談する';
+
+      primary.href =
+        '#casting-form';
+
+    }
+
+
+
+    const secondary =
+      document.querySelector(
+        '.pro-hero .button--secondary'
+      );
+
+
+    if (secondary) {
+
+      secondary.textContent =
+        'サービスを見る';
+
+      secondary.href =
+        '#service';
+
+    }
+
+
+
+    /* ==========================================
+       若手人材エリアは展示会ページでは削除
+       ========================================== */
+
+    document
+      .querySelector(
+        '#professionals .talent-group--young'
+      )
+      ?.remove();
+
+
+
+    /* ==========================================
+       もっとプロフェッショナルを見る
+       ========================================== */
+
+    const talentContainer =
+      document.getElementById(
+        'talentCards'
+      );
+
+
+    if (
+      talentContainer &&
+      !document.getElementById(
+        'more-professionals-cta'
+      )
+    ) {
+
+      const cta =
+        document.createElement(
+          'div'
+        );
+
+
+      cta.id =
+        'more-professionals-cta';
+
+
+      cta.innerHTML = \`
+
+        <a
+          class="button button--secondary"
+          href="https://hel-mio.com/professionals.html"
+        >
+          もっとプロフェッショナルをみる
+        </a>
+
+      \`;
+
+
+      talentContainer.appendChild(
+        cta
+      );
+
+    }
+
+
+
+    /* ==========================================
+       展示会ページ専用CSS
+       ========================================== */
+
+    document
+      .getElementById(
+        'exhibition-page-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'exhibition-page-final-style';
+
+
+    style.textContent = \`
+
+
+      /* HERO 3行目 */
+
+      .pro-hero h1
+      .exhibition-hero-sub {
+
+        margin-top:
+          8px;
+
+        color:
+          var(--ink);
+
+        font-size:
+          .78em;
+
+        line-height:
+          1.55;
+
+      }
+
+
+
+      /* プロ一覧CTA */
+
+      #more-professionals-cta {
+
+        display:
+          flex;
+
+        justify-content:
+          center;
+
+        margin-top:
+          48px;
+
+      }
+
+
+
+      @media (
+        max-width: 700px
+      ) {
+
+        .pro-hero h1
+        .exhibition-hero-sub {
+
+          font-size:
+            .76em;
+
+        }
+
+
+        #more-professionals-cta {
+
+          margin-top:
+            36px;
+
+        }
+
+      }
+
+    \`;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+
+  /* ==========================================
+     展示会版JSの処理が終わった最後に適用
+     ========================================== */
+
+  const run = () => {
+
+    applyExhibitionPage();
+
+
+    setTimeout(
+      applyExhibitionPage,
+      100
+    );
+
+
+    setTimeout(
+      applyExhibitionPage,
+      300
+    );
+
+  };
+
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+
+})();
+
+    `;
+
+
+
+    /* =====================================================
+       </body> の直前に展示会専用処理を入れる
+       ===================================================== */
+
+    const injectedScript =
+
+      '<scr' +
+      'ipt id="helmio-exhibition-page-final">' +
+
+      exhibitionOverride +
+
+      '</scr' +
+      'ipt>';
+
+
+
+    source =
+      source.replace(
+
+        /<\/body>/i,
+
+        injectedScript +
+        '\\n</body>'
+
+      );
+
+
+
+    /* =====================================================
+       ページ表示
+       ===================================================== */
+
+    document.open();
+
+    document.write(
+      source
+    );
+
+    document.close();
+
+
+
+  } catch (error) {
+
+
+    document.body.innerHTML = `
+
+      <main
+        style="
+          max-width:720px;
+          margin:80px auto;
+          padding:24px;
+          font-family:sans-serif;
+          line-height:1.8;
+        "
+      >
+
+        <h1
+          style="
+            font-size:24px;
+          "
+        >
+          ページを読み込めませんでした。
+        </h1>
+
+        <p>
+          professionals.html と
+          exbition-update.js を
+          exbition.html と同じ階層に
+          アップロードしてください。
+        </p>
+
+      </main>
+
+    `;
+
+  }
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
