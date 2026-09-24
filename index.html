@@ -1,433 +1,588 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BtoB企業の広報支援・外部PRチーム｜株式会社HELMIO</title>
-  <meta name="description" content="メディア露出を強化したいBtoB企業にアナウンサー・記者が伴走します。経営者や現場への取材から強みや経験を発掘し、広報戦略、ニュース企画、メディアアプローチまで支援します。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://hel-mio.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="BtoB企業の広報支援・外部PRチーム｜株式会社HELMIO">
-  <meta property="og:description" content="事業が知られ、選ばれ、取材される会社へ。取材から企業独自のニュースを発掘する外部PRチームです。">
-  <meta property="og:url" content="https://hel-mio.com/">
-  <meta property="og:site_name" content="HELMIO">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://hel-mio.com/tophero.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebSite",
-        "@id":"https://hel-mio.com/#website",
-        "url":"https://hel-mio.com/",
-        "name":"HELMIO",
-        "alternateName":["HÉLMIO","ヘルミオ"],
-        "inLanguage":"ja"
-      },
-      {
-        "@type":"Organization",
-        "@id":"https://hel-mio.com/#organization",
-        "name":"株式会社HELMIO",
-        "alternateName":["HELMIO","HÉLMIO","ヘルミオ"],
-        "url":"https://hel-mio.com/",
-        "description":"メディア露出を強化したいBtoB企業に伴走する外部PRチーム。経営者や現場への取材から企業の強みや経験を発掘し、ニュースへ編集する。",
-        "founder":{"@type":"Person","name":"新島 麻生"}
-      }
-    ]
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HELMIO | 可能性は、いつも想像以上。</title>
+<meta name="description" content="株式会社HELMIO。アナウンサーによるコミュニケーションパートナー。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f4ee;
+  --paper-2:#fbfaf7;
+  --ink:#4f626b;
+  --navy:#607985;
+  --muted:#76868d;
+  --blue:#b9d0d8;
+  --blue-mid:#9ebfca;
+  --blue-soft:#e3ecef;
+  --line:rgba(79,98,107,.16);
+  --serif:"Noto Serif JP","Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--serif);font-weight:400;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100% - 96px));margin:auto}
+.label{font-family:var(--sans);font-size:11px;line-height:1.4;letter-spacing:.34em;text-transform:uppercase;color:#788285}
+header{position:fixed;z-index:30;inset:0 0 auto;height:68px;border-bottom:1px solid rgba(79,98,107,.10);background:rgba(247,244,238,.92);backdrop-filter:blur(12px)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.19em;color:#526872}.navlinks{display:flex;align-items:center;gap:31px;font-family:var(--sans);font-size:10px;letter-spacing:.17em;color:#74848b}
+/* HERO: v5の文字サイズを維持。背景の“ふんわり光”は廃止し、水平線と波だけでHELM / 海 / 未知を表現 */
+.hero{min-height:760px;height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--paper)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:15%;height:1px;background:linear-gradient(90deg,transparent 0 8%,rgba(83,121,136,.14) 24%,rgba(83,121,136,.30) 52%,rgba(83,121,136,.12) 82%,transparent 100%)}
+.hero-inner{padding-top:38px;position:relative;z-index:2}.hero-kicker{display:flex;gap:24px;align-items:center;margin-bottom:36px}.hero-kicker .label{margin:0;font-size:11px;letter-spacing:.17em}.hero-partner{font-family:var(--sans);font-size:13px;letter-spacing:.075em;color:#6f8087;padding-left:24px;border-left:1px solid rgba(36,33,30,.18);font-weight:400}
+.hero h1{margin:0;font-size:clamp(48px,4.55vw,68px);font-weight:500;line-height:1.62;letter-spacing:.075em}.hero-sub{font-size:14px;line-height:2.1;margin-top:30px;color:#708088;letter-spacing:.07em}.scroll{position:absolute;right:48px;bottom:28px;font-family:var(--sans);font-size:9px;letter-spacing:.25em;color:#8a989e}
+.sea-mark{display:none}.sea-mark path{fill:none;stroke:#9fbec8;stroke-width:1.1}.sea-mark path:nth-child(2){opacity:.62}.sea-mark path:nth-child(3){opacity:.35}.sea-word{position:absolute;right:5.5%;bottom:25%;font-family:var(--sans);font-size:9px;letter-spacing:.46em;color:rgba(59,87,98,.48);writing-mode:vertical-rl}
+.message{min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 24px 86px;background:var(--paper);position:relative;overflow:hidden}
+.message-inner{max-width:940px;position:relative;z-index:2}.message-copy{margin:0;font-size:clamp(22px,1.85vw,29px);line-height:2.55;letter-spacing:.11em}.message-line{display:block;opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}.message-inner.show .message-line{opacity:1;transform:none}.message-inner.show .message-line:nth-child(1){transition-delay:.05s}.message-inner.show .message-line:nth-child(2){transition-delay:.25s}.message-inner.show .message-line:nth-child(3){transition-delay:.45s}.message-line.accent{font-weight:600;color:#556d78}.message-art{margin:42px auto 0;display:block;width:min(440px,72vw);height:auto;opacity:.78}.message-art path,.message-art circle{animation:floatWave 7s ease-in-out infinite}
+.about{padding:132px 0 148px;background:var(--paper)}.section-head{text-align:center;margin-bottom:74px}.section-head .label{display:block;margin-bottom:22px}.section-head h2{font-size:clamp(28px,2.2vw,35px);line-height:1.55;letter-spacing:.14em;font-weight:500;margin:0}
+.about-grid{max-width:1040px;margin:0 auto}.about-row{display:grid;grid-template-columns:1fr 1.22fr;align-items:center;gap:76px;min-height:330px}.about-row + .about-row{margin-top:72px}.about-row.reverse{grid-template-columns:1.22fr 1fr}.about-copy .label{margin-bottom:28px;color:#778184}.about-copy h3{font-size:clamp(27px,2.25vw,34px);font-weight:500;line-height:1.95;letter-spacing:.075em;margin:0}
+.photo-slot{width:100%;height:300px;border-radius:14px;background:#f0ede7;border:1px solid rgba(36,33,30,.1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:#7d7a75;font-family:var(--sans);font-size:9px;letter-spacing:.25em}.photo-slot:before{content:"";position:absolute;inset:14px;border:1px solid rgba(36,33,30,.08);border-radius:8px}.photo-slot:after{content:"PHOTO";position:relative;z-index:1}.photo-slot .horizon{position:absolute;left:0;right:0;bottom:25%;height:1px;background:rgba(73,111,126,.20)}.illustration-slot{width:100%;height:300px;border-radius:14px;background:#f4f1eb;border:1px solid rgba(79,98,107,.10);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.illustration-slot svg{width:100%;height:100%}.illustration-slot .caption{position:absolute;bottom:18px;left:22px;font-family:var(--sans);font-size:9px;letter-spacing:.24em;color:#88a2ad}.illustration-slot{width:100%;height:300px;border-radius:14px;background:linear-gradient(180deg,#f3f0e8 0%,#ebe8df 100%);border:1px solid rgba(36,33,30,.1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.illustration-slot svg{width:86%;height:auto}.illustration-slot .caption{position:absolute;bottom:16px;left:20px;font-family:var(--sans);font-size:9px;letter-spacing:.22em;color:#7d7a75}
+.value{margin:0}.value .label{margin-bottom:29px}.value h3{font-size:clamp(27px,2.25vw,34px);line-height:1.9;letter-spacing:.075em;font-weight:500;margin:0}
+.service{padding:126px 0 150px;background:var(--paper)}.service .section-head{margin-bottom:42px}.service-intro{max-width:760px;margin:0 auto 62px;text-align:center;font-size:14px;line-height:2.15;letter-spacing:.055em;color:#708088}.service-grid{max-width:980px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.service-card{min-height:338px;border:1px solid rgba(36,33,30,.12);border-radius:18px;background:rgba(255,255,255,.88);padding:42px 34px 30px;display:flex;flex-direction:column;transition:.25s ease}.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(30,35,38,.05)}.service-no{font-family:var(--sans);font-size:10px;letter-spacing:.22em;color:#7d8c91;margin-bottom:24px}.service-card h3{font-size:clamp(20px,1.62vw,26px);line-height:1.62;letter-spacing:.07em;font-weight:500;margin:0 0 24px}.service-card p{font-size:13px;line-height:2.05;letter-spacing:.045em;margin:0;color:#5e5954}.service-link{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:#68787d;display:flex;justify-content:space-between;align-items:center}
+.story{padding:132px 0 160px;background:var(--paper-2)}.story .section-head{margin-bottom:62px}.founder{max-width:980px;margin:0 auto 60px;display:block}.founder-name{font-size:24px;letter-spacing:.12em;margin:0 0 10px;font-weight:500}.founder small{font-family:var(--sans);font-size:9px;letter-spacing:.13em;color:#85949b}.founder-intro{max-width:760px;margin:18px 0 0;font-size:15px;line-height:2.15;letter-spacing:.045em;color:#708088}
+.timeline{max-width:980px;margin:auto;position:relative;padding:10px 120px 0 0}.timeline:after{content:"";position:absolute;top:0;bottom:0;right:48px;width:1px;background:#9ebfca}.timeline svg,.timeline .ghost{display:none}.timeline-grid{position:relative;z-index:2;display:block}.node{position:relative;padding:0 78px 34px 0;margin:0 0 18px;border-bottom:1px solid rgba(36,33,30,.08)}.node:last-child{margin-bottom:0;border-bottom:0}.node-dot{position:absolute;right:43px;top:7px;width:10px;height:10px;border:1.5px solid #425259;border-radius:50%;background:var(--paper-2);margin:0;transform:translateX(50%)}.node:last-child .node-dot{background:#8db4c1}.node-meta{font-family:var(--sans);font-size:8.5px;letter-spacing:.16em;color:#829096;margin-bottom:11px}.node h4{font-size:16px;line-height:1.72;letter-spacing:.048em;font-weight:500;margin:0 0 10px}.node h4.cliff-title{font-size:22px;line-height:1.56}.node p{font-size:11.5px;line-height:1.9;margin:0;color:#7a888f;max-width:690px}.node .drop{font-weight:500;color:#4c4844}.story-end{max-width:850px;margin:92px auto 0;text-align:center;padding-top:58px;border-top:1px solid var(--line)}.story-end .belief{font-size:clamp(27px,2.35vw,36px);line-height:1.95;letter-spacing:.09em;margin:0 0 56px;font-weight:500}.take{font-family:var(--sans);font-size:clamp(39px,4vw,62px);letter-spacing:.08em;margin:0 0 31px}.story-end p{font-size:14px;line-height:2.2;letter-spacing:.04em;margin:0 0 10px}.profile{display:inline-block;margin-top:29px;font-family:var(--sans);font-size:9px;letter-spacing:.16em;padding-bottom:6px;border-bottom:1px solid #766f67}
+.contact{padding:120px 0;text-align:center;background:var(--blue)}.contact h2{font-size:clamp(28px,2.3vw,36px);line-height:1.95;letter-spacing:.085em;font-weight:500;margin:0 0 45px}.contact a{font-family:var(--sans);font-size:10px;letter-spacing:.18em;border-bottom:1px solid var(--ink);padding:0 3px 7px}
+footer{background:var(--navy);color:#f9f7f2;padding:58px 0 28px;font-family:var(--sans)}.footer-top{display:flex;justify-content:space-between;gap:45px;margin-bottom:56px}.footer-logo{font-size:21px;font-weight:600;letter-spacing:.22em}.footer-copy{font-family:var(--serif);font-size:12px;letter-spacing:.05em;color:#d9e2e5;margin-top:12px}.footer-links{display:grid;grid-template-columns:repeat(2,auto);gap:11px 34px;font-size:10px;color:#e0e7e9}.legal{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:9px;color:#d4dde0;line-height:1.9}.reveal{opacity:0;transform:translateY(12px);transition:.75s ease}.reveal.show{opacity:1;transform:none}
+@keyframes floatWave{0%,100%{transform:translateY(0px)}50%{transform:translateY(-4px)}}
+@media(max-width:1180px){.wrap{width:min(1040px,calc(100% - 64px))}.node h4{font-size:15px}}
+@media(max-width:760px){.wrap{width:calc(100% - 40px)}header{height:58px}.navlinks{display:none}.hero{min-height:680px}.hero-kicker{display:block;margin-bottom:32px}.hero-partner{border-left:0;padding:10px 0 0;font-size:12px}.hero-kicker .label{font-size:10px}.hero h1{font-size:42px;line-height:1.55;letter-spacing:.055em}.hero-sub{font-size:12px}.sea-mark{width:100%;right:-22%;bottom:2%;height:220px}.sea-word{display:none}.scroll{right:20px}.message{min-height:560px;padding:82px 20px 72px}.message p{font-size:20px;line-height:2.28;letter-spacing:.07em}.message-art{width:min(320px,82vw);margin-top:28px}.about{padding:100px 0 115px}.section-head{margin-bottom:58px}.section-head h2{font-size:27px}.about-row,.about-row.reverse{grid-template-columns:1fr;gap:44px;min-height:0}.about-row + .about-row{margin-top:92px}.about-row.reverse .about-copy{order:2}.about-row.reverse .photo-slot{order:1}.photo-slot,.illustration-slot{height:220px}.about-copy{text-align:left}.about-copy h3{font-size:25px}.service{padding:100px 0 115px}.service .section-head{margin-bottom:34px}.service-intro{text-align:left;margin-bottom:50px;font-size:13px}.service-grid{grid-template-columns:1fr}.service-card{min-height:330px;padding:36px 27px 28px}.service-card h3{font-size:24px}.story{padding:105px 0 120px}.founder{margin-bottom:46px}.founder-intro{margin-top:18px}.timeline{padding:0 0 0 24px;border-left:1.5px solid #9ebfca}.timeline:after{display:none}.timeline-grid{display:block}.node{padding:0 0 0 0!important;margin:0 0 52px;position:relative;border-bottom:0}.node-dot{position:absolute;left:-25px;right:auto;top:7px;transform:translateX(-50%)}.node-meta,.node h4,.node p{margin-left:16px}.node h4{font-size:18px}.node p{font-size:12px}.story-end{margin-top:65px;padding-top:52px;text-align:left}.story-end .belief{font-size:27px}.take{font-size:39px}.contact{padding:90px 0}.contact h2{font-size:27px}.footer-top{display:block}.footer-links{margin-top:35px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== v10 refinements ===== */
+.photo-visual,.vision-placeholder{
+  width:100%;height:300px;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(79,98,107,.10);background:#f0ede7;position:relative;
+}
+.photo-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.mission-visual img{object-position:center 54%}
+
+.vision-placeholder{
+  background:
+    linear-gradient(180deg,rgba(248,246,241,.65),rgba(228,235,236,.82)),
+    linear-gradient(135deg,#f4f1eb 0%,#dfe8ea 100%);
+}
+.vision-path{
+  position:absolute;left:13%;right:10%;bottom:25%;height:1px;
+  background:#aac2ca;transform:rotate(-6deg);transform-origin:left center;
+}
+.vision-path:after{
+  content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;
+  border-radius:50%;background:#8fadb8;
+}
+.vision-note{
+  position:absolute;left:24px;bottom:22px;font-family:var(--sans);
+  font-size:9px;line-height:1.8;letter-spacing:.18em;color:#7d939c;
+}
+.vision-note span{font-size:9px;letter-spacing:.08em;color:#91a0a6}
+
+.value-center{
+  max-width:880px;margin:116px auto 0;text-align:center;padding:0;
+}
+.value-center .label{margin-bottom:28px;color:#7d939c}
+.value-center h3{
+  margin:0;font-size:clamp(27px,2.25vw,34px);font-weight:500;
+  line-height:1.9;letter-spacing:.075em;color:var(--ink);
+}
+
+/* STORY: portrait on left, history on right */
+.story-layout{
+  max-width:1080px;margin:0 auto;display:grid;
+  grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
+  gap:82px;align-items:start;
+}
+.story-portrait{position:sticky;top:112px}
+.portrait-slot{
+  width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;
+  border:1px solid rgba(79,98,107,.11);
+  background:linear-gradient(160deg,#ece9e2 0%,#e4edef 100%);
+  position:relative;display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:9px;letter-spacing:.24em;color:#879aa2;
+}
+.portrait-slot:after{
+  content:"";position:absolute;left:12%;right:12%;bottom:18%;
+  height:1px;background:#a8c2cb;
+}
+.portrait-line{
+  position:absolute;width:62%;height:62%;border:1px solid rgba(143,173,184,.24);
+  border-radius:50% 50% 46% 54% / 58% 43% 57% 42%;transform:rotate(-8deg);
+}
+.portrait-caption{padding:25px 4px 0}
+.founder-name{font-size:22px;letter-spacing:.12em;margin:0 0 8px;font-weight:500}
+.portrait-caption small{
+  font-family:var(--sans);font-size:9px;letter-spacing:.13em;color:#85949b
+}
+.founder-intro{
+  max-width:none;margin:24px 0 0;font-size:13px;line-height:2;
+  letter-spacing:.04em;color:#708088;
+}
+.story-history{min-width:0}
+.story .timeline{
+  max-width:none;margin:0;position:relative;padding:4px 70px 0 0;
+}
+.story .timeline:after{
+  content:"";position:absolute;top:0;bottom:0;right:24px;width:1px;background:#9ebfca;
+}
+.story .timeline-grid{display:block}
+.story .node{
+  position:relative;padding:0 56px 35px 0;margin:0 0 24px;
+  border-bottom:1px solid rgba(79,98,107,.09);
+}
+.story .node:last-child{border-bottom:0;margin-bottom:0}
+.story .node-dot{
+  position:absolute;right:19px;top:7px;width:10px;height:10px;
+  border:1.5px solid #6f8994;border-radius:50%;background:var(--paper-2);
+  transform:translateX(50%);margin:0;
+}
+.story .node:last-child .node-dot{background:#9ebfca}
+.story .node h4{font-size:18px;line-height:1.7;letter-spacing:.045em}
+.story .node p{font-size:12px;line-height:1.95;max-width:none}
+.story .node p strong{font-weight:500;color:#5c737d}
+
+.story-end{margin-top:100px}
+
+@media(max-width:760px){
+  .photo-visual,.vision-placeholder{height:220px}
+  .value-center{margin-top:92px;text-align:left}
+  .value-center h3{font-size:25px}
+  .story-layout{display:block}
+  .story-portrait{position:relative;top:auto;margin-bottom:62px}
+  .portrait-slot{max-width:360px;aspect-ratio:4/5}
+  .portrait-caption{padding-top:22px}
+  .story .timeline{padding:0 0 0 24px;border-left:1.5px solid #9ebfca}
+  .story .timeline:after{display:none}
+  .story .node{padding:0!important;margin:0 0 52px;border-bottom:0}
+  .story .node-dot{left:-25px;right:auto;top:7px;transform:translateX(-50%)}
+  .story .node-meta,.story .node h4,.story .node p{margin-left:16px}
+  .story .node h4{font-size:18px}
+  .story .node p{font-size:12px}
+}
+
+
+/* ===== HELMIO v11 — art direction ===== */
+:root{
+  --paper:#f7f4ee;
+  --paper-2:#fbfaf7;
+  --ink:#536b75;
+  --ink-deep:#425d68;
+  --muted:#758991;
+  --blue:#b9d0d8;
+  --blue-mid:#9ebfca;
+  --blue-soft:#e3ecef;
+  --line:rgba(83,107,117,.15);
+}
+body{color:var(--ink)}
+header{border-bottom-color:rgba(83,107,117,.09)}
+.logo{color:var(--ink-deep)}
+.navlinks{color:#71858d}
+.hero{isolation:isolate}
+.hero-inner{z-index:3}
+.hero h1{color:var(--ink-deep)}
+.hero-kicker .label{color:#78909a}
+.hero-partner{color:#70858e;border-left-color:rgba(83,107,117,.18)}
+.hero-world{
+  position:absolute;right:-1.5%;bottom:2%;width:min(58vw,840px);height:auto;
+  z-index:1;opacity:.78;pointer-events:none;
+}
+.hero:after{bottom:15%;background:linear-gradient(90deg,transparent 0 8%,rgba(121,156,168,.08) 24%,rgba(121,156,168,.22) 52%,rgba(121,156,168,.08) 82%,transparent 100%)}
+.sea-word{display:none}
+.message{min-height:600px}
+.message-copy{color:#5b717b}
+.message-line.accent{font-weight:600;color:var(--ink-deep)}
+.message-art{width:min(500px,74vw);margin-top:34px;opacity:.82;animation:currentDrift 8s ease-in-out infinite}
+
+.about-copy h3,.value-center h3,.section-head h2{color:var(--ink-deep)}
+.photo-visual,.vision-art{
+  height:300px;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(83,107,117,.10);background:#eef0ed;
+}
+.photo-visual img,.vision-art img{width:100%;height:100%;object-fit:cover;display:block}
+.mission-visual img{object-position:center 55%}
+.vision-art img{object-fit:cover}
+.value-center{margin-top:108px;position:relative}
+.value-center:before{
+  content:"";display:block;width:38px;height:1px;background:#9ebfca;
+  margin:0 auto 34px;
+}
+.value-center .label{margin-bottom:26px}
+.value-center h3{font-weight:500}
+
+.service-card{border-color:rgba(83,107,117,.13);background:rgba(255,255,255,.86)}
+.service-card:hover{box-shadow:0 18px 52px rgba(83,107,117,.08)}
+.service-card h3{color:var(--ink-deep)}
+.service-card p{color:#657a83}
+.service-no,.service-link{color:#78949e}
+
+.story{background:#faf9f5}
+.portrait-slot{
+  background:
+    linear-gradient(150deg,rgba(247,244,238,.55),rgba(211,226,231,.82)),
+    #e6edef;
+  color:#8197a0;
+}
+.portrait-caption .founder-name{color:var(--ink-deep)}
+.story .node h4{color:var(--ink-deep)}
+.story .node p{color:#71858d}
+.story .node-meta{color:#829ba5}
+.story .timeline:after{background:#abc5ce}
+.story .node-dot{border-color:#75929d}
+.story-end .belief,.take{color:var(--ink-deep)}
+
+.contact{
+  background:#c7d9de;color:var(--ink-deep);padding:110px 0;
+}
+.contact-label{display:block;margin-bottom:24px;color:#6d8791}
+.contact h2{margin-bottom:24px}
+.contact p{
+  margin:0 auto 38px;font-size:13px;line-height:2.1;letter-spacing:.04em;
+  color:#5f7680;
+}
+.contact a{border-bottom-color:#69838d;color:#526b75}
+footer{background:#617b86;color:#f9f7f2}
+.footer-copy{color:#e0e8ea}.footer-links{color:#edf1f2}.legal{color:#dce5e7}
+
+@keyframes currentDrift{
+  0%,100%{transform:translateX(0) translateY(0)}
+  50%{transform:translateX(7px) translateY(-3px)}
+}
+
+@media(max-width:760px){
+  .hero-world{width:112vw;right:-35%;bottom:3%;opacity:.56}
+  .message{min-height:540px}
+  .photo-visual,.vision-art{height:220px}
+  .value-center:before{margin-left:0}
+  .contact p br{display:none}
+}
+
+
+/* v12 — actual founder portrait */
+.portrait-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(83,107,117,.10);
+  background:#eef0ed;
+}
+.portrait-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 42%;
+}
+@media(max-width:760px){
+  .portrait-photo{max-width:360px}
+}
+
+
+/* ===== v13 — softer / more alive HERO ===== */
+.hero{
+  background:
+    linear-gradient(180deg,#f8f5ef 0%,#f7f4ee 68%,#f6f4ef 100%);
+}
+.hero:after{display:none}
+.hero-inner{position:relative;z-index:4}
+.hero-kicker{margin-bottom:34px}
+.hero h1{position:relative;color:var(--ink-deep)}
+.hero-title-line{
+  display:block;
+  opacity:0;
+  transform:translateY(28px);
+  animation:heroTitleIn .95s cubic-bezier(.2,.7,.25,1) forwards;
+}
+.hero-title-line.line-1{animation-delay:.42s}
+.hero-title-line.line-2{animation-delay:.60s}
+
+.hero-reveal{
+  opacity:0;
+  transform:translateY(10px);
+  animation:heroMetaIn .72s ease forwards;
+}
+.reveal-1{animation-delay:.10s}
+.reveal-2{animation-delay:.24s}
+.reveal-5{animation-delay:.93s}
+
+.hero-note{
+  margin-top:38px;
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:.29em;
+  color:#93aab3;
+}
+.hero-blue-field{
+  position:absolute;
+  z-index:1;
+  right:-2vw;
+  bottom:2.5vh;
+  width:min(61vw,900px);
+  height:min(48vw,470px);
+  pointer-events:none;
+  overflow:visible;
+}
+.hero-current{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.current-line,.route-line{
+  fill:none;
+  stroke-linecap:round;
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+}
+.current-line{
+  stroke:#a8c7d1;
+  stroke-width:1.35;
+  animation:drawCurrent 1.8s cubic-bezier(.3,.65,.25,1) forwards,
+            driftCurrent 8s ease-in-out 2s infinite;
+}
+.line-a{opacity:.86;animation-delay:.78s,2.2s}
+.line-b{
+  stroke:#c3d8de;
+  stroke-width:1.05;
+  opacity:.74;
+  animation-delay:.96s,2.4s;
+}
+.route-line{
+  stroke:#91b2be;
+  stroke-width:1.15;
+  stroke-dasharray:.025 .016;
+  animation:drawRoute 1.45s ease 1.28s forwards;
+  opacity:.74;
+}
+.route-point{
+  fill:#88aab6;
+  opacity:0;
+  animation:pointIn .45s ease forwards, pointPulse 4.2s ease-in-out infinite;
+}
+.p1{animation-delay:1.48s,2.3s}
+.p2{animation-delay:1.68s,2.7s}
+.p3{animation-delay:1.90s,3.1s}
+
+.blue-orb{
+  position:absolute;
+  display:block;
+  border-radius:50%;
+  background:#c5dbe2;
+  opacity:.42;
+  filter:blur(.2px);
+  animation:orbFloat 7.8s ease-in-out infinite;
+}
+.orb-a{width:78px;height:78px;right:13%;top:20%;opacity:.28}
+.orb-b{width:20px;height:20px;right:35%;top:12%;animation-delay:-2.2s}
+.orb-c{width:10px;height:10px;right:6%;top:50%;opacity:.55;animation-delay:-4s}
+.horizon-word{
+  position:absolute;
+  right:4%;
+  bottom:4%;
+  font-family:var(--sans);
+  font-size:8px;
+  letter-spacing:.42em;
+  color:#9bb1b9;
+  opacity:0;
+  animation:heroMetaIn .8s ease 1.45s forwards;
+}
+.scroll{
+  color:#91a2a9;
+  animation:scrollPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes heroTitleIn{
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes heroMetaIn{
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes drawCurrent{
+  to{stroke-dashoffset:0}
+}
+@keyframes drawRoute{
+  to{stroke-dashoffset:0}
+}
+@keyframes pointIn{
+  to{opacity:.82}
+}
+@keyframes driftCurrent{
+  0%,100%{transform:translateX(0) translateY(0)}
+  50%{transform:translateX(8px) translateY(-4px)}
+}
+@keyframes pointPulse{
+  0%,100%{opacity:.58;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.35)}
+}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0)}
+  45%{transform:translate(-9px,-12px)}
+  70%{transform:translate(4px,-5px)}
+}
+@keyframes scrollPulse{
+  0%,100%{opacity:.45;transform:translateY(0)}
+  50%{opacity:.9;transform:translateY(5px)}
+}
+
+/* Keep hero playful without changing the restrained typography scale. */
+@media(max-width:760px){
+  .hero-blue-field{
+    width:118vw;
+    height:330px;
+    right:-47vw;
+    bottom:2vh;
+    opacity:.78;
   }
-  </script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#102f52;--navy-deep:#0b2542;--gold:#b18a43;--text:#2f3a43;--sub:#65717c;--line:rgba(16,47,82,.15);--cream:#f8f5ef;--white:#fff;--shadow:0 18px 50px rgba(16,47,82,.08)}
-    html{scroll-behavior:smooth}body{color:var(--text);background:#fff;font-family:"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}img{display:block;width:100%;height:auto}a{color:inherit;text-decoration:none}ul{list-style:none}button{font:inherit;color:inherit}.page{min-height:100vh;overflow:clip;background:#fff}
-    .site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;min-height:82px;padding:13px 36px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-    .brand{display:grid;gap:2px;flex:0 0 auto}.brand__name{color:var(--navy);font-family:"Cormorant Garamond",serif;font-size:35px;font-weight:600;line-height:1;letter-spacing:.16em}.brand__sub{color:#77818a;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-    .site-nav{display:flex;align-items:center;gap:22px;white-space:nowrap}.site-nav a{position:relative;color:var(--navy);font-size:12px;font-weight:600;letter-spacing:.015em}.site-nav a:not(.nav-contact)::after{content:"";position:absolute;right:0;bottom:-7px;left:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .2s}.site-nav a:hover::after{transform:scaleX(1)}.site-nav .nav-audition{color:var(--gold)}.site-nav .nav-contact{padding:11px 15px;color:#fff;background:var(--navy);border:1px solid var(--navy)}.site-nav .nav-contact:hover{background:var(--gold);border-color:var(--gold)}
-    .menu-button{display:none;width:38px;height:34px;padding:4px;background:transparent;border:0;cursor:pointer}.menu-button span{display:block;height:1px;margin:6px 0;background:var(--navy)}
-    .kicker{margin:0 0 14px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.2;letter-spacing:.22em;text-transform:uppercase}
-    .section{width:min(1180px,calc(100% - 64px));margin:0 auto;padding:100px 0}.section--cream{width:100%;padding-right:max(32px,calc((100% - 1180px)/2));padding-left:max(32px,calc((100% - 1180px)/2));background:var(--cream)}
-    .heading{max-width:810px;margin-bottom:47px}.heading--center{margin-right:auto;margin-left:auto;text-align:center}.heading h2,.split-heading h2,.newsroom h2,.concept h2,.diagnosis h2,.final-cta h2{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(31px,3.45vw,47px);font-weight:500;line-height:1.55;letter-spacing:.02em;text-wrap:balance}.heading>p:last-child{margin-top:17px;color:var(--sub);font-size:15px;line-height:2}
-    .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(430px,.95fr);min-height:670px;border-bottom:1px solid var(--line)}.hero__copy{display:flex;flex-direction:column;justify-content:center;padding:72px clamp(32px,5.4vw,86px)}.hero h1{max-width:760px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(38px,3.65vw,55px);font-weight:500;line-height:1.5;letter-spacing:.025em}.hero__lead{max-width:720px;margin-top:27px;color:var(--navy);font-size:18px;font-weight:700;line-height:1.9}.hero__body{max-width:700px;margin-top:13px;color:#53616d;font-size:15px;line-height:2}.hero__visual{position:relative;min-height:670px;overflow:hidden;background:#e9e4dc}.hero__visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.16),transparent 46%);pointer-events:none}.hero__visual img{height:100%;object-fit:cover;object-position:center}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:55px;padding:13px 25px;border:1px solid transparent;font-size:14px;font-weight:700;line-height:1.5;letter-spacing:.025em;transition:transform .18s,background .18s,border-color .18s}.button:hover{transform:translateY(-2px)}.button--primary{color:#fff;background:var(--navy);border-color:var(--navy)}.button--primary:hover{background:var(--gold);border-color:var(--gold)}.button--outline{color:var(--navy);background:#fff;border-color:rgba(16,47,82,.34)}.button--outline:hover{border-color:var(--gold)}.button--light{color:var(--navy);background:#fff}.button--gold{color:var(--navy-deep);background:#e0c98c;border-color:#e0c98c}.button--gold:hover{background:#f0dda8;border-color:#f0dda8}
-    .challenge-section{position:relative;isolation:isolate;overflow:hidden;padding-top:92px;padding-right:max(56px,calc((100% - 1420px)/2));padding-bottom:108px;padding-left:max(56px,calc((100% - 1420px)/2));background:linear-gradient(180deg,#fbf9f4 0%,#f8f4ec 100%)}
-    .challenge-section::before,.challenge-section::after{content:"";position:absolute;z-index:-1;bottom:-330px;width:760px;height:520px;border:1px solid rgba(177,138,67,.11);border-radius:50%;pointer-events:none}.challenge-section::before{left:-280px;transform:rotate(13deg)}.challenge-section::after{right:-300px;transform:rotate(-14deg)}
-    .challenge-heading{max-width:1120px;margin:0 auto 46px}.challenge-heading .kicker{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:22px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{content:"";width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.challenge-heading .kicker::after{background:linear-gradient(90deg,var(--gold),transparent)}
-    .challenge-heading h2{max-width:900px;margin:0 auto;color:var(--navy);font-size:clamp(27px,1.75vw,34px);font-weight:500;line-height:1.72;letter-spacing:.035em;text-wrap:balance}.challenge-heading h2 span{display:block;white-space:nowrap}.challenge-heading h2 span+span{margin-top:3px}.challenge-heading>p:last-child{max-width:720px;margin:20px auto 0;color:#44566a;font-size:15px;font-weight:500;line-height:2}
-    .challenge-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.challenge-grid article{position:relative;display:flex;min-height:334px;padding:40px 38px 38px;flex-direction:column;background:rgba(255,255,255,.96);border:1px solid rgba(177,138,67,.18);border-top:3px solid #c39a4b;box-shadow:0 18px 38px rgba(16,47,82,.075);transition:transform .22s ease,box-shadow .22s ease}.challenge-grid article::after{content:"";position:absolute;top:-3px;right:-1px;width:24px;height:24px;background:linear-gradient(225deg,#e0bf78 0 49%,transparent 50%);pointer-events:none}.challenge-grid article:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(16,47,82,.11)}
-    .challenge-card__top{display:flex;min-height:88px;align-items:flex-start;justify-content:space-between;gap:18px}.challenge-number{position:relative;display:inline-block;padding-bottom:22px;color:#a97522;font-family:"Cormorant Garamond",serif;font-size:39px;font-weight:600;line-height:1;letter-spacing:.08em}.challenge-number::after{content:"";position:absolute;bottom:0;left:0;width:55px;height:1px;background:#c89a44}.challenge-icon{display:grid;width:72px;height:72px;place-items:center;flex:0 0 auto;color:var(--navy)}.challenge-icon svg{width:64px;height:64px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.challenge-icon .accent{stroke:#c49338}.challenge-icon .accent-fill{fill:#c49338;stroke:none}
-    .challenge-grid h3{margin-top:40px;color:#0b2542;font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:18px;font-weight:700;line-height:1.9;letter-spacing:.002em}
-    .challenge-conclusion{position:relative;display:flex;max-width:1220px;min-height:112px;margin:56px auto 0;padding:27px 48px 27px 118px;align-items:center;background:rgba(255,255,255,.66);border:1px solid rgba(177,138,67,.28);box-shadow:0 10px 28px rgba(16,47,82,.035);color:var(--navy);font-size:16px;font-weight:700;line-height:1.9;text-align:left}.challenge-conclusion::before{content:"";position:absolute;top:-7px;left:50%;width:11px;height:11px;background:#c79a43;transform:translateX(-50%) rotate(45deg)}.challenge-conclusion__icon{position:absolute;left:42px;display:grid;width:48px;height:48px;place-items:center;background:#fff;border:1px solid rgba(177,138,67,.2);border-radius:50%;box-shadow:0 4px 14px rgba(16,47,82,.07);color:#b68731}.challenge-conclusion__icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-    .split-heading{display:grid;grid-template-columns:minmax(0,.96fr) minmax(360px,1.04fr);gap:70px;align-items:end;margin-bottom:49px}.split-heading>p{color:#52606c;font-size:15px;line-height:2}.split-heading h2{max-width:650px}
-    .process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.process li{padding:33px 30px 36px;border-right:1px solid var(--line)}.process li:last-child{border-right:0}.process span{font-size:13px}.process h3{margin-top:18px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:24px;font-weight:500}.process p{margin-top:12px;color:#63707a;font-size:14px;line-height:1.9}
-    .newsroom{display:grid;grid-template-columns:minmax(380px,.92fr) minmax(0,1.08fr);gap:70px;align-items:center}.newsroom__visual{height:560px;overflow:hidden;background:var(--cream)}.newsroom__visual img{height:100%;object-fit:cover}.newsroom h2{font-size:clamp(30px,2.55vw,39px);line-height:1.62}.newsroom-title-line{display:block;white-space:nowrap}.newsroom__copy>p:not(.kicker){margin-top:21px;color:#18314d;font-size:16px;font-weight:500;line-height:2}.newsroom__emphasis{color:#a8731f;font-weight:700}.newsroom ul{display:grid;gap:11px;margin-top:26px}.newsroom li{position:relative;padding-left:26px;color:var(--navy);font-size:15px;font-weight:600;line-height:1.75}.newsroom li::before{content:"";position:absolute;top:.68em;left:0;width:11px;height:6px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold);transform:rotate(-45deg)}.newsroom .button{margin-top:31px}
-    .concept{padding:104px max(32px,calc((100% - 1180px)/2));background:#fff;border-top:1px solid rgba(177,138,67,.18);border-bottom:1px solid rgba(177,138,67,.18)}.concept__inner{max-width:1180px;margin:0 auto}.concept__heading{max-width:860px}.concept h2{max-width:820px;color:var(--navy);font-size:clamp(36px,4vw,54px);line-height:1.45}.concept__body{max-width:1000px;margin-top:34px}.concept__body p{color:#4f5c67;font-size:16px;line-height:2}.concept__body .concept__lead{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:20px;line-height:2}.concept__campaign{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:center;margin-top:42px;padding:30px 34px;background:var(--cream);border:1px solid rgba(177,138,67,.34);border-left:5px solid var(--gold);box-shadow:0 16px 38px rgba(16,47,82,.065)}.concept__campaign-label{margin:0 0 7px;color:#9a702d;font-size:13px;font-weight:700;letter-spacing:.08em}.concept__campaign h3{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(24px,2.5vw,33px);font-weight:600;line-height:1.55}.concept__campaign p:last-child{margin-top:9px;color:#5e6a74;font-size:14px;line-height:1.8}.concept__campaign .button{min-width:260px;min-height:60px}.news-position-report-frame{display:grid;place-items:center;min-height:420px;margin-top:34px;overflow:hidden;background:linear-gradient(135deg,#fbfaf7,#f2eee6);border:1px solid rgba(16,47,82,.16);box-shadow:0 22px 55px rgba(16,47,82,.1)}.news-position-report-frame img{width:100%;height:auto}.news-position-report-frame__placeholder{display:grid;place-items:center;width:100%;min-height:420px;padding:40px;color:#81909c;border:1px dashed rgba(16,47,82,.24);font-size:14px;font-weight:600;letter-spacing:.06em;text-align:center}
-    .service-grid{display:grid;grid-template-columns:1.12fr .94fr .94fr;gap:16px}.service-card{display:flex;min-height:338px;padding:34px 34px 32px;flex-direction:column;background:#fff;border:1px solid rgba(16,47,82,.18);border-top:2px solid rgba(177,138,67,.72);box-shadow:0 10px 28px rgba(16,47,82,.045);transition:transform .2s,border-color .2s,box-shadow .2s}.service-card:hover{transform:translateY(-4px);border-color:rgba(177,138,67,.72);box-shadow:0 16px 36px rgba(16,47,82,.09)}.service-card--main{color:#fff;background:var(--navy);border-color:var(--navy);border-top-color:#d5b66f;box-shadow:0 14px 34px rgba(16,47,82,.12)}.service-card>span{color:#9a702d;font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:12.5px;font-weight:700;line-height:1.4;letter-spacing:.11em}.service-card--main>span{color:#e2c985}.service-card h3{margin-top:23px;color:var(--navy-deep);font-family:"Noto Serif JP",serif;font-size:30px;font-weight:600;line-height:1.5;letter-spacing:.01em}.service-card--main h3{color:#fff}.service-card p{margin-top:17px;color:#34495d;font-size:15px;font-weight:500;line-height:1.9}.service-card--main p{color:rgba(255,255,255,.91)}.service-card strong{margin-top:auto;padding-top:28px;color:var(--navy-deep);font-size:14.5px;font-weight:700}.service-card--main strong{color:#fff}
-    .why-title-note{margin-top:13px;color:var(--gold);font-size:15px;font-weight:700;letter-spacing:.04em}.why-layout{display:grid;grid-template-columns:minmax(300px,.74fr) minmax(0,1.26fr);gap:20px;align-items:stretch}.why-photo{min-height:540px;overflow:hidden;background:#e7e2da}.why-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.why-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(4,minmax(0,1fr));gap:10px}.why-grid article{position:relative;display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:16px;align-content:center;padding:18px 22px;background:#fff;border:1px solid rgba(16,47,82,.09);border-left:3px solid var(--gold)}.why-grid__number{grid-row:1 / span 2;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;letter-spacing:.08em;line-height:1.4}.why-grid h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;line-height:1.52}.why-grid p{margin-top:6px;color:#34495d;font-size:13.5px;font-weight:500;line-height:1.75}.text-link{display:inline-flex;align-items:center;gap:14px;margin-top:28px;color:var(--navy);font-size:14px;font-weight:700;border-bottom:1px solid rgba(16,47,82,.35)}.text-link span{color:var(--gold);font-size:18px}
-    .final-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:56px;align-items:center;padding:78px max(32px,calc((100% - 1180px)/2));color:#fff;background:var(--navy-deep)}.final-cta h2{max-width:780px;color:#fff;font-size:clamp(28px,3.2vw,42px)}.final-cta>div>p:not(.kicker){margin-top:15px;color:rgba(255,255,255,.72);font-size:15px}.final-cta .button{min-width:285px;min-height:62px}
-    .site-footer{color:#fff;background:#081f37}.footer-inner{display:flex;justify-content:space-between;gap:50px;width:min(1180px,calc(100% - 64px));margin:0 auto;padding:62px 0}.footer-logo{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:600;letter-spacing:.16em}.footer-brand p{margin-top:7px;color:rgba(255,255,255,.6);font-size:11px}.footer-nav{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:12px 30px;align-content:start}.footer-nav a{color:rgba(255,255,255,.78);font-size:12px}.footer-nav a:hover{color:#fff}.footer-bottom{padding:17px max(32px,calc((100% - 1180px)/2));color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.1);font-size:11px}
-    @media(max-width:1180px){.site-header{min-height:72px;padding:13px 24px}.brand__name{font-size:32px}.menu-button{display:block}.site-nav{position:absolute;top:72px;right:0;left:0;display:none;align-items:stretch;gap:0;padding:12px 24px 24px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(16,47,82,.08);white-space:normal}.site-nav.is-open{display:grid}.site-nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.site-nav a:not(.nav-contact)::after{display:none}.site-nav .nav-contact{margin-top:12px;text-align:center}}
-    @media(max-width:1030px){.challenge-section{padding-right:32px;padding-left:32px}.hero{grid-template-columns:1fr minmax(370px,.78fr)}.hero__copy{padding:60px 42px}.challenge-heading h2 span{white-space:normal}.challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.challenge-grid article{min-height:275px}.newsroom{gap:45px}.service-grid{grid-template-columns:1fr 1fr}.service-card--main{grid-column:1/-1;min-height:300px}}
-    @media(max-width:820px){.hero{grid-template-columns:1fr}.hero__copy{padding:66px 32px 54px}.hero__visual{height:56vw;min-height:390px}.split-heading{grid-template-columns:1fr;gap:28px}.concept__campaign{grid-template-columns:1fr;gap:22px}.concept__campaign .button{width:100%}.newsroom{grid-template-columns:1fr}.newsroom__visual{height:430px}.process{grid-template-columns:1fr}.process li{border-right:0;border-bottom:1px solid var(--line)}.process li:last-child{border-bottom:0}.why-layout{grid-template-columns:1fr}.why-photo{min-height:0;height:500px}.why-grid{grid-template-rows:none}.final-cta{grid-template-columns:1fr;gap:30px}.final-cta .button{width:100%}.footer-inner{display:grid}}
-    @media(max-width:600px){.section{width:calc(100% - 32px);padding:72px 0}.section--cream{width:100%;padding-right:16px;padding-left:16px}.challenge-section{padding-top:70px;padding-bottom:78px}.challenge-heading{margin-bottom:34px}.challenge-heading .kicker{gap:11px}.challenge-heading .kicker::before,.challenge-heading .kicker::after{width:34px}.challenge-heading h2{font-size:23px;line-height:1.72;letter-spacing:.025em}.challenge-heading h2 span+span{margin-top:2px}.challenge-heading>p:last-child{font-size:14px;line-height:1.9}.challenge-grid{gap:16px}.challenge-grid article{min-height:0;padding:28px 24px 29px}.challenge-card__top{min-height:64px}.challenge-number{font-size:34px}.challenge-icon{width:58px;height:58px}.challenge-icon svg{width:52px;height:52px}.challenge-grid h3{margin-top:28px;font-size:16px;line-height:1.85}.challenge-conclusion{min-height:0;margin-top:34px;padding:72px 24px 24px;font-size:14px;text-align:center}.challenge-conclusion__icon{top:18px;left:50%;transform:translateX(-50%)}.hero__copy{padding:54px 20px 46px}.hero h1{font-size:33px;line-height:1.55}.hero__lead{font-size:16px}.hero__body{font-size:14px}.hero__visual{height:330px;min-height:330px}.actions{display:grid}.button{width:100%}.challenge-grid{grid-template-columns:1fr}.challenge-grid article{min-height:0}.heading h2,.split-heading h2,.diagnosis h2{font-size:30px}.newsroom h2{font-size:28px;line-height:1.65}.newsroom-title-line{white-space:normal}.newsroom__visual{height:330px}.why-photo{height:390px}.why-grid article{padding:20px 18px}.why-grid h3{font-size:18px}.newsroom__copy>p:not(.kicker){font-size:15px}.newsroom li{font-size:14px}.concept{padding:76px 16px}.concept h2{font-size:34px}.concept__body{margin-top:24px}.concept__body .concept__lead{font-size:17px;line-height:1.95}.concept__campaign{margin-top:32px;padding:24px 20px}.concept__campaign h3{font-size:25px}.news-position-report-frame,.news-position-report-frame__placeholder{min-height:220px}.service-grid{grid-template-columns:1fr}.service-card--main{grid-column:auto}.service-card{min-height:300px;padding:30px 24px}.final-cta{padding:64px 16px}.footer-inner{width:calc(100% - 32px);padding:50px 0}.footer-nav{grid-template-columns:1fr}}
+  .hero-note{margin-top:29px;font-size:8px;letter-spacing:.22em}
+  .orb-a{width:58px;height:58px}
+  .horizon-word{display:none}
+}
+
+/* Don't animate aggressively for users who request reduced motion. */
+@media(prefers-reduced-motion:reduce){
+  .hero-title-line,.hero-reveal,.current-line,.route-line,.route-point,
+  .blue-orb,.horizon-word,.scroll{
+    animation:none!important;
+    opacity:1;
+    transform:none;
+    stroke-dashoffset:0;
+  }
+}
 
 
-    /* WHY HELMIO — premium editorial layout */
-    .why-premium{position:relative;isolation:isolate;overflow:hidden;padding:108px 0 118px;background:linear-gradient(180deg,#fbf8f2 0%,#f8f4ed 100%);border-top:1px solid rgba(177,138,67,.13);border-bottom:1px solid rgba(177,138,67,.13)}
-    .why-premium::before{content:"";position:absolute;z-index:-1;top:220px;left:-175px;width:430px;height:430px;border:1px solid rgba(177,138,67,.13);border-radius:50%;box-shadow:0 0 0 18px rgba(177,138,67,.025),0 0 0 42px rgba(177,138,67,.018);pointer-events:none}
-    .why-premium::after{content:"";position:absolute;z-index:-1;right:-120px;bottom:-210px;width:470px;height:470px;background:radial-gradient(circle,rgba(177,138,67,.18) 1px,transparent 1.6px);background-size:11px 11px;opacity:.26;mask-image:radial-gradient(circle at center,#000 0 48%,transparent 70%);pointer-events:none}
-    .why-premium__inner{width:min(1220px,calc(100% - 64px));margin:0 auto}
-    .why-premium__intro{display:grid;grid-template-columns:minmax(0,.84fr) minmax(450px,1.16fr);gap:78px;align-items:end;margin-bottom:48px}
-    .why-premium__eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 20px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.2;letter-spacing:.22em;text-transform:uppercase}
-    .why-premium__eyebrow::after{content:"";width:42px;height:1px;background:rgba(177,138,67,.5)}
-    .why-premium__title{max-width:560px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(39px,3.35vw,54px);font-weight:500;line-height:1.48;letter-spacing:.025em}
-    .why-premium__subcopy{margin-top:18px;color:#ad7e2d;font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;line-height:1.8;letter-spacing:.03em}
-    .why-premium__lead{max-width:680px;padding-bottom:2px;color:#344b61;font-size:15px;font-weight:500;line-height:2.15}
-    .why-premium__lead strong{color:var(--navy);font-weight:700}
-    .why-premium__body{display:grid;grid-template-columns:minmax(330px,430px) minmax(0,1fr);gap:58px;align-items:start}
-    .why-premium__visual{position:relative}
-    .why-premium__photo-card{position:relative;overflow:hidden;aspect-ratio:4/5.15;background:#e9e3da;border:1px solid rgba(177,138,67,.25);border-radius:28px 8px 46px 8px;box-shadow:0 26px 58px rgba(16,47,82,.11)}
-    .why-premium__photo-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.16) 0%,transparent 34%,rgba(16,47,82,.05) 100%);pointer-events:none}
-    .why-premium__photo{width:100%;height:100%;object-fit:cover;object-position:center top}
-    .why-premium__identity{position:absolute;z-index:2;right:20px;bottom:20px;left:20px;padding:16px 18px 15px;color:#fff;background:rgba(11,37,66,.91);border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 28px rgba(11,37,66,.23);backdrop-filter:blur(8px)}
-    .why-premium__identity small{display:block;color:#ddc58f;font-size:10px;font-weight:700;letter-spacing:.12em}
-    .why-premium__identity strong{display:block;margin-top:3px;font-family:"Noto Serif JP",serif;font-size:19px;font-weight:500;letter-spacing:.04em}
-    .why-premium__identity span{display:block;margin-top:9px;padding-top:9px;border-top:1px solid rgba(224,201,140,.45);font-size:11px;font-weight:500;letter-spacing:.035em}
-    .why-premium__profile-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:0 0 7px;color:var(--navy);font-size:14px;font-weight:700;border-bottom:1px dotted rgba(177,138,67,.7);transition:gap .18s ease,color .18s ease}
-    .why-premium__profile-link::before{content:"";width:32px;height:32px;border:1px solid rgba(177,138,67,.5);border-radius:50%;background:radial-gradient(circle at 50% 36%,transparent 0 4px,#b18a43 4.5px 5.5px,transparent 6px),radial-gradient(ellipse at 50% 72%,transparent 0 7px,#b18a43 7.5px 8.5px,transparent 9px)}
-    .why-premium__profile-link span{color:var(--gold);font-size:18px}.why-premium__profile-link:hover{gap:16px;color:#a8731f}
-    .why-premium__cards{display:grid;gap:14px}
-    .why-premium__card{position:relative;display:grid;grid-template-columns:108px minmax(0,1fr);gap:28px;min-height:144px;padding:24px 32px 23px;background:rgba(255,255,255,.88);border:1px solid rgba(177,138,67,.22);border-radius:14px;box-shadow:0 14px 34px rgba(16,47,82,.055);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-    .why-premium__card:hover{transform:translateY(-3px);border-color:rgba(177,138,67,.38);box-shadow:0 22px 44px rgba(16,47,82,.09)}
-    .why-premium__number{position:relative;display:flex;align-items:center;justify-content:center;color:#b68731;font-family:"Cormorant Garamond",serif;font-size:58px;font-weight:500;line-height:1}
-    .why-premium__number::after{content:"";position:absolute;top:10px;right:-14px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,#d6b66f 16%,#d6b66f 84%,transparent)}
-    .why-premium__number::before{content:"✦";position:absolute;top:3px;left:0;color:#d6b66f;font-size:12px}
-    .why-premium__content{align-self:center}
-    .why-premium__card h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;line-height:1.58;letter-spacing:.012em}
-    .why-premium__card p{margin-top:8px;color:#3e5368;font-size:13.5px;font-weight:500;line-height:1.85}
-    @media(max-width:1030px){.why-premium__intro{grid-template-columns:1fr;gap:26px}.why-premium__lead{max-width:820px}.why-premium__body{grid-template-columns:minmax(300px,390px) minmax(0,1fr);gap:34px}.why-premium__card{grid-template-columns:82px minmax(0,1fr);gap:22px;padding-right:24px;padding-left:24px}.why-premium__number{font-size:48px}}
-    @media(max-width:820px){.why-premium{padding:82px 0 90px}.why-premium__inner{width:calc(100% - 40px)}.why-premium__body{grid-template-columns:1fr}.why-premium__visual{max-width:520px}.why-premium__photo-card{aspect-ratio:4/4.5}.why-premium__cards{margin-top:10px}}
-    @media(max-width:600px){.why-premium{padding:72px 0 78px}.why-premium__inner{width:calc(100% - 32px)}.why-premium__intro{margin-bottom:34px}.why-premium__title{font-size:31px;line-height:1.58}.why-premium__subcopy{font-size:15px}.why-premium__lead{font-size:14px;line-height:2}.why-premium__photo-card{border-radius:22px 6px 34px 6px}.why-premium__identity{right:13px;bottom:13px;left:13px;padding:13px 14px}.why-premium__identity strong{font-size:17px}.why-premium__card{grid-template-columns:58px minmax(0,1fr);gap:16px;min-height:0;padding:21px 18px 20px;border-radius:10px}.why-premium__number{align-items:flex-start;padding-top:4px;font-size:38px}.why-premium__number::after{right:-8px}.why-premium__number::before{display:none}.why-premium__card h3{font-size:18px;line-height:1.65}.why-premium__card p{margin-top:7px;font-size:13px;line-height:1.85}}
+/* ===== v14 — MVV photo swap ===== */
+.mission-visual img{
+  object-position:center 42%;
+}
+.vision-sea img{
+  object-position:center 58%;
+}
 
-
-    /* WHY HELMIO — profile image refinement */
-    .why-premium__visual{display:flex;flex-direction:column}
-    .why-premium__photo-card{aspect-ratio:4/4.72;border-radius:24px 7px 38px 7px;box-shadow:0 22px 48px rgba(16,47,82,.10)}
-    .why-premium__photo-card::after{background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 46%,rgba(16,47,82,.025))}
-    .why-premium__photo{object-position:center top}
-    .why-premium__identity{display:none}
-    .why-premium__profile-card{margin-top:18px;padding:19px 0 0;border-top:1px solid rgba(177,138,67,.38)}
-    .why-premium__profile-meta{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:start}
-    .why-premium__profile-meta>p{padding-top:4px;color:#a77727;font-family:"Cormorant Garamond",serif;font-size:11px;font-weight:600;line-height:1.5;letter-spacing:.15em;text-transform:uppercase}
-    .why-premium__profile-meta strong{display:block;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:20px;font-weight:500;line-height:1.55;letter-spacing:.035em}
-    .why-premium__profile-meta span{display:block;margin-top:5px;color:#53677a;font-size:11.5px;font-weight:500;line-height:1.65;letter-spacing:.02em}
-    .why-premium__profile-link{display:flex;width:100%;justify-content:space-between;gap:16px;margin-top:16px;padding:13px 0 9px;border-top:1px solid rgba(16,47,82,.10);border-bottom:1px solid rgba(16,47,82,.18)}
-    .why-premium__profile-link::before{display:none}
-    .why-premium__profile-link span{margin-left:auto}
-    @media(max-width:820px){.why-premium__photo-card{aspect-ratio:4/4.5}.why-premium__profile-card{max-width:520px}}
-    @media(max-width:600px){.why-premium__profile-meta{grid-template-columns:1fr;gap:5px}.why-premium__profile-meta>p{padding-top:0}.why-premium__profile-meta strong{font-size:18px}.why-premium__profile-link{font-size:13px}}
-
-
-    /* NEWS POSITION — editorial, square-based tone */
-    .np-section{padding:96px 0 102px;background:#fff;border-top:1px solid rgba(16,47,82,.10);border-bottom:1px solid rgba(16,47,82,.10)}
-    .np-wrap{width:min(1240px,calc(100% - 64px));margin:0 auto}
-    .np-intro{display:grid;grid-template-columns:minmax(0,.93fr) minmax(460px,1.07fr);gap:68px;align-items:start}
-    .np-copy{max-width:590px;padding-top:10px}.np-kicker{margin:0 0 18px;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.2;letter-spacing:.22em}
-    .np-title{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(30px,2.25vw,34px);font-weight:500;line-height:1.58;letter-spacing:.018em}.np-title span{display:block;white-space:nowrap}
-    .np-subcopy{margin:17px 0 0;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;line-height:1.8;letter-spacing:.035em}
-    .np-description{max-width:590px;margin:25px 0 0;color:#27425d;font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:16px;font-weight:500;line-height:2.05;letter-spacing:.003em}
-    .np-description strong{color:#a8731f;font-weight:800}
-    .np-report-visual{display:block;width:100%;max-width:620px;justify-self:end;align-self:start;transition:transform .2s ease}.np-report-visual:hover{transform:translateY(-3px)}.np-report-visual img{width:100%;height:auto;filter:drop-shadow(0 16px 24px rgba(16,47,82,.10))}
-    .np-offer{position:relative;display:grid;grid-template-columns:180px minmax(0,1fr) 340px;gap:32px;align-items:center;margin-top:44px;padding:30px 30px 26px;background:#faf8f2;border:1px solid rgba(177,138,67,.42);border-radius:6px;box-shadow:0 12px 30px rgba(16,47,82,.055)}
-    .np-badge,.np-offer__content,.np-offer__actions{position:relative;z-index:1}
-    .np-badge{display:flex;width:156px;height:156px;margin:auto;flex-direction:column;align-items:center;justify-content:center;color:#9f711d;background:#fff;border:1.5px solid #c79b42;border-radius:50%;box-shadow:0 0 0 6px #f4ead3;text-align:center}
-    .np-badge__ribbon{display:block;margin-bottom:0;padding:3px 18px;color:#fff;background:var(--navy);font-size:14px;font-weight:800;line-height:1.25;letter-spacing:.08em}
-    .np-badge strong{display:block;margin-top:5px;color:#ad7718;font-family:"Cormorant Garamond",serif;font-size:66px;font-weight:600;line-height:.88;letter-spacing:.01em}.np-badge__bottom{display:block;margin-top:7px;font-size:18px;font-weight:800;line-height:1.2;letter-spacing:.07em}.np-badge__stars{display:none}
-    .np-offer__eyebrow{margin:0 0 8px;color:#9f711d;font-family:"Cormorant Garamond",serif;font-size:11px;font-weight:600;line-height:1.2;letter-spacing:.18em}.np-offer__content h3{margin:0;color:var(--navy);font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:clamp(29px,2.55vw,38px);font-weight:800;line-height:1.35;letter-spacing:.002em}.np-offer__lead{max-width:650px;margin:12px 0 0;color:#334b62;font-size:14px;font-weight:500;line-height:1.9}
-    .np-points{display:flex;flex-wrap:wrap;gap:0;margin-top:19px}.np-point{display:flex;min-width:170px;padding:2px 20px 2px 0;align-items:center;gap:9px;color:var(--navy);font-size:13px;font-weight:700;line-height:1.55}.np-point+.np-point{padding-left:20px;border-left:1px solid rgba(16,47,82,.14)}.np-point__icon{display:grid;width:35px;height:35px;place-items:center;flex:0 0 auto;color:var(--navy)}.np-point__icon svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-    .np-offer__actions{display:flex;flex-direction:column;gap:10px}.np-action{display:flex;width:100%;min-height:64px;padding:13px 21px;align-items:center;justify-content:space-between;border-radius:4px;box-shadow:none;font-size:16px;font-weight:800;line-height:1.45;letter-spacing:.005em;transition:transform .18s ease,background .18s ease}.np-action:hover{transform:translateY(-2px)}.np-action--gold{color:#fff;background:#b98a32}.np-action--gold:hover{background:#a97924}.np-action--navy{color:#fff;background:var(--navy)}.np-action--navy:hover{background:#0b2542}.np-action>span:last-child{font-size:21px;font-weight:500;line-height:1}
-    .np-offer__meta{display:flex;justify-content:center;gap:0;margin-top:2px;color:#40556a;font-size:11px;font-weight:600;line-height:1.6;text-align:center}.np-offer__meta span{padding:0 8px}.np-offer__meta span+span{border-left:1px solid rgba(16,47,82,.18)}.np-detail-link{display:inline-flex;margin-top:1px;align-items:center;justify-content:center;gap:7px;color:var(--navy);font-size:12px;font-weight:700;line-height:1.6;text-decoration:underline;text-decoration-color:rgba(177,138,67,.55);text-underline-offset:5px}.np-detail-link:hover{color:#9c6e20}
-    @media(max-width:1180px){.np-intro{grid-template-columns:minmax(0,1fr) minmax(390px,.9fr);gap:42px}.np-offer{grid-template-columns:160px minmax(0,1fr);gap:26px}.np-badge{width:146px;height:146px}.np-badge strong{font-size:61px}.np-offer__actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.np-offer__meta,.np-detail-link{grid-column:1/-1}.np-action{min-height:60px}.np-points{gap:10px}.np-point+.np-point{padding-left:0;border-left:0}}
-    @media(max-width:820px){.np-section{padding:78px 0 84px}.np-wrap{width:calc(100% - 40px)}.np-intro{grid-template-columns:1fr;gap:28px}.np-copy{max-width:680px;padding-top:0}.np-report-visual{max-width:620px;justify-self:start}.np-title span{white-space:normal}.np-description{max-width:680px;font-size:16px}.np-offer{grid-template-columns:1fr;padding:26px 22px 22px;text-align:left}.np-badge{margin-left:0}.np-offer__actions{display:flex}.np-points{display:grid;grid-template-columns:1fr}.np-point{min-width:0}.np-offer__meta{flex-wrap:wrap;justify-content:flex-start}.np-offer__meta span{padding:0 8px}.np-detail-link{justify-content:flex-start}}
-    @media(max-width:600px){.np-wrap{width:calc(100% - 28px)}.np-title{font-size:27px;line-height:1.65}.np-subcopy{margin-top:13px;font-size:15px;line-height:1.75}.np-description{margin-top:20px;font-size:15px;line-height:1.95}.np-badge{width:138px;height:138px}.np-badge__ribbon{font-size:13px}.np-badge strong{font-size:58px}.np-badge__bottom{font-size:17px}.np-offer__content h3{font-size:27px}.np-offer__lead{font-size:14px}.np-action{min-height:59px;padding:12px 16px;font-size:15px}.np-offer__meta{display:grid;grid-template-columns:1fr;gap:3px}.np-offer__meta span{padding:0}.np-offer__meta span+span{border-left:0}}
-
-  </style>
+</style>
 </head>
 <body>
-<div class="page">
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="株式会社HELMIO トップページ">
-      <span class="brand__name">HÉLMIO</span>
-      <span class="brand__sub">External PR Team for BtoB</span>
-    </a>
-    <button class="menu-button" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
-      <a href="/senzokunews.html">専属ニュース室</a>
-      <a href="tenjikai.html">展示会プレゼン</a>
-      <a href="professionals.html">アナウンサー／モデル</a>
-      <a href="column/">コラム</a>
-      <a href="company.html">会社概要</a>
-      <a class="nav-audition" href="audition.html">オーディション</a>
-      <a class="nav-contact" href="contact.html">法人のご相談</a>
-    </nav>
-  </header>
+<header><div class="wrap nav"><a class="logo" href="#top">HELMIO</a><nav class="navlinks"><a href="#about">ABOUT</a><a href="#service">SERVICE</a><a href="#story">STORY</a><a href="#contact">CONTACT</a></nav></div></header>
+<main id="top">
+<section class="hero">
+  <div class="hero-blue-field" aria-hidden="true">
+    <span class="blue-orb orb-a"></span>
+    <span class="blue-orb orb-b"></span>
+    <span class="blue-orb orb-c"></span>
+    <svg class="hero-current" viewBox="0 0 860 330" preserveAspectRatio="none">
+      <path class="current-line line-a" pathLength="1" d="M18 206 C112 178 171 220 267 198 S438 166 548 195 S714 225 840 183"/>
+      <path class="current-line line-b" pathLength="1" d="M42 244 C138 225 201 254 295 237 S467 211 572 237 S724 255 830 225"/>
+      <path class="route-line" pathLength="1" d="M515 214 C560 179 592 142 626 106 S698 58 771 45"/>
+      <circle class="route-point p1" cx="515" cy="214" r="4"/>
+      <circle class="route-point p2" cx="626" cy="106" r="3.5"/>
+      <circle class="route-point p3" cx="771" cy="45" r="4"/>
+    </svg>
+    <span class="horizon-word">BEYOND THE HORIZON</span>
+  </div>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <p class="kicker">BtoB PR SUPPORT / EXTERNAL PR TEAM</p>
-        <h1 id="hero-title">事業が知られ、選ばれ、<br>取材される会社へ。</h1>
-        <p class="hero__lead">メディア露出を強化したいBtoB企業にアナウンサー・記者が伴走します。</p>
-        <p class="hero__body">経営者や現場への取材から、社内に埋もれている強みや経験を発掘し、社会やメディアが取り上げる理由のあるニュースへ編集します。</p>
-        <div class="actions">
-          <a class="button button--primary" href="news-position-diagnosis/">無料ニュースポジション診断</a>
-          <a class="button button--outline" href="/senzokunews.html">専属ニュース室を見る</a>
-        </div>
-      </div>
-      <figure class="hero__visual"><img src="tophero.png" alt="企業への取材を通じて強みや経験を発掘するHELMIO" fetchpriority="high"></figure>
-    </section>
-
-    <section class="section section--cream challenge-section" aria-labelledby="challenges-title">
-      <header class="heading heading--center challenge-heading">
-        <p class="kicker">YOUR CHALLENGES</p>
-        <h2 id="challenges-title"><span>事業も実績もある。発信もしている。</span><span>でも、問い合わせや取材につながらない。</span></h2>
-        <p>第三者にとって理解しやすく、紹介しやすい形に整理されていないからかもしれません。</p>
-      </header>
-      <div class="challenge-grid">
-        <article>
-          <div class="challenge-card__top">
-            <span class="challenge-number">01</span>
-            <span class="challenge-icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72"><circle cx="36" cy="24" r="8"></circle><circle cx="18" cy="29" r="6"></circle><circle cx="54" cy="29" r="6"></circle><path d="M24 52c0-9 5-14 12-14s12 5 12 14"></path><path d="M6 53c0-7 4-12 11-12 3 0 5 1 7 3M66 53c0-7-4-12-11-12-3 0-5 1-7 3"></path><path class="accent" d="M19 16c5-6 11-9 17-9 7 0 13 3 18 9" stroke-dasharray="2 5"></path></svg>
-            </span>
-          </div>
-          <h3>営業担当や社員によって、会社や事業の説明がばらついている</h3>
-        </article>
-        <article>
-          <div class="challenge-card__top">
-            <span class="challenge-number">02</span>
-            <span class="challenge-icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72"><path d="M12 12h34a8 8 0 0 1 8 8v18a8 8 0 0 1-8 8H30L19 56V46h-7a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8Z"></path><circle cx="21" cy="29" r="1.5" class="accent-fill"></circle><circle cx="30" cy="29" r="1.5" class="accent-fill"></circle><circle cx="39" cy="29" r="1.5" class="accent-fill"></circle><circle cx="55" cy="49" r="12" fill="#fff"></circle><circle cx="55" cy="49" r="12" class="accent"></circle><path class="accent" d="m51 45 8 8m0-8-8 8"></path></svg>
-            </span>
-          </div>
-          <h3>発信しても、顧客やメディアの反応につながらない</h3>
-        </article>
-        <article>
-          <div class="challenge-card__top">
-            <span class="challenge-number">03</span>
-            <span class="challenge-icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72"><circle cx="25" cy="28" r="9"></circle><path d="M10 57c0-11 6-18 15-18s15 7 15 18"></path><path class="accent" d="M46 27c0-7 5-12 12-12s12 5 12 12c0 5-3 8-6 11-1 1-2 3-2 5h-8c0-2-1-4-2-5-3-3-6-6-6-11Z"></path><path class="accent" d="M54 47h8m-7 5h6M58 9V4m-12 9-4-4m28 4 4-4"></path></svg>
-            </span>
-          </div>
-          <h3>経営者や現場には知見があるのに、どのように発信すべきかわからない</h3>
-        </article>
-        <article>
-          <div class="challenge-card__top">
-            <span class="challenge-number">04</span>
-            <span class="challenge-icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72"><path d="M16 8h35v49H16Z"></path><path class="accent" d="M23 18h9v6h-9z"></path><path d="M23 32h21M23 40h17M23 48h12"></path><path class="accent" d="m46 54 13-13 6 6-13 13-8 2 2-8Z"></path><path class="accent" d="m56 44 6 6"></path></svg>
-            </span>
-          </div>
-          <h3>広報の専任者がおらず、戦略的に企画・取材・発信を継続できない</h3>
-        </article>
-      </div>
-      <div class="challenge-conclusion">
-        <span class="challenge-conclusion__icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m7 16 6 6L25 9"></path></svg></span>
-        <p>つまり、何の会社で、何について取材すべき企業なのかが、外部から見えにくい状態です。</p>
-      </div>
-    </section>
-
-    <section class="section newsroom" aria-labelledby="newsroom-title">
-      <figure class="newsroom__visual"><img src="main.png" alt="取材を起点に企業のニュースを設計する専属ニュース室"></figure>
-      <div class="newsroom__copy">
-        <p class="kicker">MAIN SERVICE</p>
-        <h2 id="newsroom-title"><span class="newsroom-title-line">アナウンサーが、社内にある事実を</span><span class="newsroom-title-line">外部が理解できるニュースへ。</span></h2>
-        <p>アナウンサーや記者などの報道経験者が、貴社の専属広報チームとして伴走します。<span class="newsroom__emphasis">経営者や現場への取材に加え、AIも活用した社会動向の調査から、貴社が何について当事者・取材先として知られるべきかという「ニュースポジション」を設計。</span>広報戦略、ニュース企画、原稿制作、メディアへの個別アプローチ、取材対応まで一貫して支援します。</p>
-        <a class="button button--primary" href="/senzokunews.html">専属ニュース室の詳細を見る&nbsp; →</a>
-      </div>
-    </section>
-
-    <section class="np-section" id="news-position" aria-labelledby="np-title">
-      <div class="np-wrap">
-        <div class="np-intro">
-          <div class="np-copy">
-            <p class="np-kicker">NEWS POSITION</p>
-            <h2 class="np-title" id="np-title"><span>企業の知見を社会やメディアが</span><span>必要とするテーマへ。</span></h2>
-            <p class="np-subcopy">ニュースになる独自のポジションを設計</p>
-            <p class="np-description">
-              HELMIOでは、企業や経営者が社会や業界のどの問題について、当事者・取材先として知られるかという立ち位置を
-              <strong>「ニュースポジション」</strong>と呼んでいます。商品の宣伝だけでは伝わりにくい、企業の経験や知見を社会の関心と結びつけ、継続して取材されるテーマとして設計します。
-            </p>
-          </div>
-
-          <a class="np-report-visual" href="news-position-diagnosis/" aria-label="無料ニュースポジション診断の詳細を見る">
-            <img src="report2.png" alt="ニュースポジション診断レポートのサンプル" loading="lazy">
-          </a>
-        </div>
-
-        <div class="np-offer" aria-labelledby="np-offer-title">
-          <div class="np-badge" aria-label="毎月5社限定">
-            <span class="np-badge__ribbon">毎月</span>
-            <strong>05</strong>
-            <span class="np-badge__bottom">社限定</span>
-            <span class="np-badge__stars" aria-hidden="true">★ ★ ★</span>
-          </div>
-
-          <div class="np-offer__content">
-            <p class="np-offer__eyebrow">FREE NEWS POSITION DIAGNOSIS</p>
-            <h3 id="np-offer-title">無料ニュースポジション診断</h3>
-            <p class="np-offer__lead">
-              公開情報をもとに、御社が現在どのような会社として見えているかを確認。まだ伝わっていない知見と、次に設計すべきニューステーマをPDFレポートにまとめます。
-            </p>
-            <div class="np-points" aria-label="診断で分かること">
-              <div class="np-point">
-                <span class="np-point__icon" aria-hidden="true">
-                  <svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"></circle><path d="m20 20 8 8"></path></svg>
-                </span>
-                <span>検索時の<br>第一印象</span>
-              </div>
-              <div class="np-point">
-                <span class="np-point__icon" aria-hidden="true">
-                  <svg viewBox="0 0 32 32"><path d="M10 20c-2-2-3-4-3-7a9 9 0 1 1 18 0c0 3-1 5-3 7-1 1-2 3-2 5h-8c0-2-1-4-2-5Z"></path><path d="M12 28h8M13 24h6"></path></svg>
-                </span>
-                <span>埋もれている<br>強み・知見</span>
-              </div>
-              <div class="np-point">
-                <span class="np-point__icon" aria-hidden="true">
-                  <svg viewBox="0 0 32 32"><path d="M4 18V9l18-5v19L4 18Z"></path><path d="m9 19 3 9M25 9l4-3M26 15h5M25 21l4 3"></path></svg>
-                </span>
-                <span>狙えるメディアや<br>テーマ</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="np-offer__actions">
-            <a class="np-action np-action--gold" href="contact.html?request=news-position-diagnosis#request">
-              <span>無料診断を申し込む</span><span aria-hidden="true">→</span>
-            </a>
-            <a class="np-action np-action--navy" href="/senzokunews.html">
-              <span>専属ニュース室の詳細を見る</span><span aria-hidden="true">→</span>
-            </a>
-            <div class="np-offer__meta" aria-label="診断の条件">
-              <span>PDFで納品</span><span>原則5営業日以内</span><span>診断後の契約不要</span>
-            </div>
-            <a class="np-detail-link" href="news-position-diagnosis/">診断内容を詳しく見る <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-premium" aria-labelledby="why-title">
-      <div class="why-premium__inner">
-        <div class="why-premium__intro">
-          <div>
-            <p class="why-premium__eyebrow">WHY HELMIO</p>
-            <h2 class="why-premium__title" id="why-title">専属ニュース室が<br>選ばれる理由</h2>
-            <p class="why-premium__subcopy">報道現場の取材力を、企業広報へ。</p>
-          </div>
-          <p class="why-premium__lead">代表の新島麻生は、ニュースキャスターや報道リポーターとして、取材先の選定から取材、構成、撮影、編集、伝達までを経験。その実務知見を基盤に、<strong>報道経験者とAI・マーケティングの専門家が連携し、企業の発信を戦略から実行まで支援します。</strong></p>
-        </div>
-
-        <div class="why-premium__body">
-          <div class="why-premium__visual">
-            <figure class="why-premium__photo-card">
-              <img class="why-premium__photo" src="syacho.jpg" alt="株式会社HELMIO代表 新島麻生" loading="lazy">
-            </figure>
-            <div class="why-premium__profile-card">
-              <div class="why-premium__profile-meta">
-                <p>株式会社HELMIO</p>
-                <div>
-                  <strong>代表　新島麻生</strong>
-                  <span>ニュースキャスター ／ 報道リポーター</span>
-                </div>
-              </div>
-              <a class="why-premium__profile-link" href="company.html#representative">代表プロフィールを見る <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-
-          <div class="why-premium__cards">
-            <article class="why-premium__card">
-              <span class="why-premium__number">1.</span>
-              <div class="why-premium__content">
-                <h3>経営課題から逆算する広報設計</h3>
-                <p>売上、採用、事業理解などの経営課題を整理し、目指す成果から逆算して広報戦略を設計します。</p>
-              </div>
-            </article>
-
-            <article class="why-premium__card">
-              <span class="why-premium__number">2.</span>
-              <div class="why-premium__content">
-                <h3>AI・マーケティングの専門家と連携した分析体制</h3>
-                <p>社会動向、市場、競合、検索ニーズなどを多角的に調査し、企業が取るべきニュースポジションを設計します。</p>
-              </div>
-            </article>
-
-            <article class="why-premium__card">
-              <span class="why-premium__number">3.</span>
-              <div class="why-premium__content">
-                <h3>発信を社会の関心と接続し、露出を最大化</h3>
-                <p>企業が伝えたいことを、社会や業界、メディアの関心と接続。ニュース企画とメディアキャラバンを通じて、露出機会を広げます。</p>
-              </div>
-            </article>
-
-            <article class="why-premium__card">
-              <span class="why-premium__number">4.</span>
-              <div class="why-premium__content">
-                <h3>アナウンサーが貴社の顔として、取材対応や登壇を支援</h3>
-                <p>必要に応じてアナウンサーが、取材対応、インタビュー、イベント登壇、動画出演など、企業の顔となる発信まで支援します。</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="services-title">
-      <header class="heading heading--center"><p class="kicker">SERVICE</p><h2 id="services-title">HELMIOの主な支援</h2></header>
-      <div class="service-grid">
-        <a class="service-card service-card--main" href="/senzokunews.html">
-          <span>01 / PR SUPPORT</span><h3>専属ニュース室</h3><p>調査・取材からニュースを設計し、原稿制作、メディアアプローチ、取材対応まで伴走します。</p><strong>詳しく見る →</strong>
-        </a>
-        <a class="service-card" href="tenjikai.html">
-          <span>02 / EXHIBITION PRESENTATION</span><h3>展示会プレゼン</h3><p>アナウンサー・ナレーターとマーケティングの視点から、構成、台本、スライド、登壇支援まで担います。</p><strong>詳しく見る →</strong>
-        </a>
-        <a class="service-card" href="professionals.html">
-          <span>03 / PROFESSIONALS</span><h3>アナウンサー／モデル</h3><p>局アナウンサーや女優など、経験豊富なプロフェッショナルを企業イベント、展示会、映像、広告などへご提案します。</p><strong>プロフィールを見る →</strong>
-        </a>
-      </div>
-    </section>
-
-    <section class="final-cta" aria-labelledby="final-title">
-      <div><p class="kicker">MONTHLY 5 COMPANIES ONLY</p><h2 id="final-title">まずは、御社が外からどう見えているか確認しませんか。</h2><p>無料ニュースポジション診断は、自動採点ではなく、一社ずつ公開情報を確認して作成します。</p></div>
-      <a class="button button--gold" href="contact.html?request=news-position-diagnosis#request">無料診断を申し込む&nbsp; →</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand"><a class="footer-logo" href="index.html">HÉLMIO</a><p>株式会社HELMIO</p><p>メディア露出を強化したいBtoB企業に伴走する外部PRチーム</p></div>
-      <nav class="footer-nav" aria-label="フッターナビゲーション">
-        <a href="/senzokunews.html">専属ニュース室</a><a href="tenjikai.html">展示会プレゼン</a><a href="professionals.html">アナウンサー／モデル</a><a href="news-position-diagnosis/">無料ニュースポジション診断</a><a href="column/">コラム</a><a href="company.html">会社概要</a><a href="audition.html">オーディション</a><a href="contact.html">法人のご相談</a>
-      </nav>
+  <div class="wrap hero-inner">
+    <div class="hero-kicker">
+      <div class="label hero-reveal reveal-1">HELMIO — TAKE THE HELM OF YOUR LIFE</div>
+      <div class="hero-partner hero-reveal reveal-2">アナウンサーによるコミュニケーションパートナー</div>
     </div>
-    <div class="footer-bottom">© 2026 HELMIO</div>
-  </footer>
-</div>
+    <h1 class="hero-title">
+      <span class="hero-title-line line-1">可能性は、</span>
+      <span class="hero-title-line line-2">いつも想像以上。</span>
+    </h1>
+    <div class="hero-note hero-reveal reveal-5">WORDS CAN OPEN A NEW COURSE.</div>
+  </div>
+
+  <div class="scroll">SCROLL</div>
+</section>
+
+<section class="message"><div class="message-inner reveal"><div class="message-copy"><span class="message-line">誰かの言葉で、世界が広がることがある。</span><span class="message-line">自分の言葉で、未来が動き出すことがある。</span><span class="message-line accent">伝えることは、可能性を拡げるということ。</span></div>
+    <img class="message-art" src="assets/message-current.svg" alt=""></div></section>
+<section class="about" id="about"><div class="wrap"><div class="section-head reveal"><span class="label">ABOUT US</span><h2>私たちについて</h2></div><div class="about-grid">
+  <div class="about-row reveal">
+      <div class="photo-visual mission-visual" aria-label="MISSION写真"><img src="assets/mission-communicator.webp" alt="打ち合わせをしながら伝える仕事を体現するイメージ写真"></div>
+      <div class="about-copy"><div class="label">MISSION</div><h3>伝える力で、<br>選択肢と可能性を広げる。</h3></div>
+    </div>
+  <div class="about-row reverse reveal">
+      <div class="about-copy"><div class="label">VISION</div><h3>自分の人生の舵を、<br>自分で取れる社会へ。</h3></div>
+      <div class="vision-art vision-sea" aria-label="VISION写真"><img src="assets/vision-sea.webp" alt="水平線へ続く海の風景"></div>
+    </div>
+    </div>
+  <div class="value-center reveal">
+      <div class="label">VALUE</div>
+      <h3>できない理由より、<br>できる方法を。</h3>
+    </div>
+</div></div></section>
+<section class="service" id="service"><div class="wrap"><div class="section-head reveal"><span class="label">SERVICE</span><h2>私たちのサービス</h2></div><p class="service-intro reveal">HELMIOは、アナウンサーをはじめとする「伝える」の専門家が中心となり、<br>人や企業の魅力を引き出し、新しい出会いをつくります。</p><div class="service-grid">
+  <a class="service-card reveal" href="/recruiting/"><div class="service-no">01</div><h3>BtoB専門の採用広報</h3><p>知らなかった会社を、働いてみたい会社へ。<br><br>学生に伝わりにくいBtoBの魅力を、学生リポーター × アナウンサー × 映像のプロが採用コンテンツに。独自の学生ネットワークに届けます。</p><div class="service-link"><span>事業を見る</span><span>→</span></div></a>
+  <a class="service-card reveal" href="/casting/"><div class="service-no">02</div><h3>プロ人材のキャスティング</h3><p>放送局出身専門。確かな経験を持つアナウンサーのみが在籍。<br><br>目的や企画に合わせたプロ人材をご紹介し、プロジェクトの成功を支えます。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
+  <a class="service-card reveal" href="/training/"><div class="service-no">03</div><h3>社員研修</h3><p>マナー研修・話し方研修。<br><br>元放送局アナウンサー × 社長秘書・マナー講師による実践型研修。現場で培ったプロフェッショナルな話し方の技術を短期間で習得。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
+  <a class="service-card reveal" href="/school/"><div class="service-no">04</div><h3>AI時代の「伝える力」オンラインスクール</h3><p>教育の専門知見に基づいた、AI時代の学びを。<br><br>教育工学・学習科学の専門家とともに、子どもたちの「考える・聞く・伝える力」を育むオンラインレッスンを提供します。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
+</div></div></section>
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="label">STORY</span><h2>私のこれまで</h2></div>
+    <div class="story-layout">
+      <aside class="story-portrait reveal">
+        <div class="portrait-photo">
+          <img src="assets/asami-niijima.webp" alt="株式会社HELMIO 代表 新島麻生">
+        </div>
+        <div class="portrait-caption">
+          <p class="founder-name">新島 麻生</p>
+          <small>NIIJIMA ASAMI — 株式会社HELMIO 代表</small>
+          <p class="founder-intro">自分に自信がなく、20代前半まで人前で話すことが大の苦手でした。<br>アナウンサーへの挑戦、挫折、転職。その振れ幅ごと、今のHELMIOにつながっています。</p>
+        </div>
+      </aside>
+
+      <div class="story-history">
+        <div class="timeline">
+          <div class="timeline-grid">
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">01 / START</div><h4>人前で話すことが、<br>大の苦手だった。</h4><p>小さい頃、とても内向的で、人前や目立つことが苦手。スポーツ中心で、大学はラクロスに明け暮れる。あるきっかけで、突然アナウンサーを目指す。</p></div>
+
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">02 / JOB HUNT</div><h4>アナウンサー就活、<br>落ちる。</h4><p>専門に練習してきた候補者との差は大きく、受けた4社とも不合格。その後、小さくスターダストプロモーションのキャスター部門を経て、4年かけてアナウンサーへ。</p></div>
+
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">03 / NHK</div><h4>NHKで4年、<br>アナウンサーを経験。</h4><p>ニュースキャスター、取材、インタビュー、生放送を経験。「伝える」を仕事にし、世界が変わりました。人に理解してもらえること、人とのつながり、人生の選択肢が広がりました。</p></div>
+
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">04 / DROP</div><h4>「アナウンサーは、<br>潰しが効かない。」</h4><p><strong>次に挑戦したかったビジネス・スタートアップの世界へ。</strong><br><strong>ところが、キャリアは思うようには進みませんでした。</strong></p></div>
+
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">05 / 140 TALKS</div><h4>転職で、<br>約140社と話した。</h4><p>カジュアル面談を重ね、さまざまな企業・仕事・人に出会い、キャリアの構造を学びました。</p></div>
+
+            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">06 / HELMIO</div><h4>そして今、<br>HELMIOへ。</h4><p>キャリアの可能性を広げること、「伝える」の教育分野に携わりたいと思い、HELMIOを設立。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-end reveal">
+      <p class="belief">可能性は、いつも想像以上。</p>
+      <div class="take">TAKE THE HELM.</div>
+      <p>HELMIOという名前には、<strong>「自分の人生の舵を取る」</strong>という思いを込めています。</p>
+      <p>自分で考え、自分で選び、進んでいく。<br>そのきっかけをつくっていきたい。</p>
+      <a class="profile" href="/profile/">PROFILE &amp; STORY →</a>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact"><div class="wrap reveal">
+      <span class="label contact-label">CONTACT</span>
+      <h2>まずは、話すことから。</h2>
+      <p>採用広報、キャスティング、研修、教育。<br>ご相談内容がまだまとまっていなくても、お気軽にお聞かせください。</p>
+      <a href="mailto:info@hel-mio.com">CONTACT →</a>
+    </div></section>
+</main>
+<footer><div class="wrap"><div class="footer-top"><div><div class="footer-logo">HELMIO</div><div class="footer-copy">可能性は、いつも想像以上。</div></div><div class="footer-links"><a href="/recruiting/">採用広報</a><a href="/profile/">PROFILE</a><a href="/casting/">キャスティング</a><a href="#contact">CONTACT</a><a href="/training/">社員研修</a><a href="#">PRIVACY POLICY</a><a href="/school/">オンラインスクール</a><a href="#">COMPANY</a></div></div><div class="legal">株式会社HELMIO　代表取締役 新島 麻生　所在地 東京都港区<br>© HELMIO Inc.</div></div></footer>
 <script>
-(() => {
-  const button=document.querySelector('.menu-button');
-  const nav=document.querySelector('.site-nav');
-  if(!button||!nav)return;
-  const close=()=>{button.setAttribute('aria-expanded','false');nav.classList.remove('is-open')};
-  button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});
-  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',close));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape')close()});
-})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const hero=document.querySelector('.hero');
+const blueField=document.querySelector('.hero-blue-field');
+if(hero && blueField && window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  hero.addEventListener('pointermove',e=>{
+    const r=hero.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    blueField.style.transform=`translate3d(${x*10}px,${y*7}px,0)`;
+  });
+  hero.addEventListener('pointerleave',()=>{blueField.style.transform='translate3d(0,0,0)'});
+}
 </script>
-</body>
-</html>
+</body></html>
