@@ -13534,3 +13534,398 @@
   }
 
 })();
+/* =========================================================
+   SERVICE RESTORE FINAL
+   01・02を元のカードデザインに戻す
+   03だけ追加
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const restoreServices = () => {
+
+    const section =
+      document.getElementById('service');
+
+    if (!section) return;
+
+
+    /* -------------------------
+       前に追加した別デザインCSSを消す
+       ------------------------- */
+
+    document
+      .getElementById('helmio-casting-custom-style')
+      ?.remove();
+
+    document
+      .getElementById('helmio-casting-only-final-style')
+      ?.remove();
+
+
+    /*
+      元のページと同じ
+      container / section-head / service-grid /
+      service-card 構造に戻す
+    */
+
+    section.className =
+      'section section--cream';
+
+    section.setAttribute(
+      'aria-labelledby',
+      'service-title'
+    );
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+        <header class="section-head">
+
+          <div>
+
+            <p class="section-label">
+              SERVICE
+            </p>
+
+            <h2 id="service-title">
+              サービス内容
+            </h2>
+
+          </div>
+
+          <p>
+            企業イベントの目的や会場、
+            求める進行品質に合わせて、
+            プロフェッショナルをご提案します。
+          </p>
+
+        </header>
+
+
+        <div class="service-grid">
+
+
+          <!-- =========================
+               01 一日司会
+               ========================= -->
+
+          <article class="service-card">
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                MC / ANNOUNCER
+              </span>
+
+              <img
+                src="service-mc.jpg"
+                alt="企業イベントで司会を務めるアナウンサー"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('is-missing')"
+              >
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                01
+              </span>
+
+              <h3>
+                一日司会
+              </h3>
+
+              <p class="service-card__catch">
+                企業イベントを、
+                経験あるプロの進行で
+              </p>
+
+              <p class="service-card__description">
+                記者発表、式典、
+                カンファレンス、表彰式、
+                経営者登壇など。
+                案件内容を事前に確認し、
+                必要に応じて読み合わせ・
+                リハーサルまで対応します。
+              </p>
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  90,000円〜
+                </strong>
+
+                <small>
+                  ／1日
+                </small>
+
+              </div>
+
+              <a
+                class="service-card__link"
+                href="#professionals"
+              >
+                候補者を見る
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               02 外国語対応
+               ========================= -->
+
+          <article class="service-card">
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                BILINGUAL MC
+              </span>
+
+              <img
+                src="service-bilingual.jpg"
+                alt="国際イベントで進行するバイリンガルMC"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('is-missing')"
+              >
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                02
+              </span>
+
+              <h3>
+                外国語対応
+              </h3>
+
+              <p class="service-card__catch">
+                国際イベント・海外ゲストにも対応
+              </p>
+
+              <p class="service-card__description">
+                英語・中国語などの外国語進行、
+                バイリンガルMC、
+                海外ゲストを迎えるイベントなど、
+                案件に合わせて対応可能な
+                プロフェッショナルをご提案します。
+              </p>
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  130,000円〜
+                </strong>
+
+              </div>
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                外国語対応を相談する
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               03 広告・VP・ナレーション
+               ========================= -->
+
+          <article class="service-card">
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                AD / VP / NARRATION
+              </span>
+
+              <img
+                src="ad-vp-narration.png"
+                alt="広告・VP・ナレーション撮影"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('is-missing')"
+              >
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                03
+              </span>
+
+              <h3>
+                広告・VP・ナレーション
+              </h3>
+
+              <p class="service-card__catch">
+                映像・広告にも、
+                伝えるプロを
+              </p>
+
+              <p class="service-card__description">
+                企業VP、商品紹介動画、
+                採用映像、WEB広告、
+                ナレーションなど、
+                案件に合う出演者・声を
+                ご提案します。
+              </p>
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                出演・ナレーションを相談する
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    /* -------------------------
+       3枚横並びだけ保証
+       フォントやカードデザインは
+       既存CSSをそのまま使う
+       ------------------------- */
+
+    let style =
+      document.getElementById(
+        'service-restore-final-style'
+      );
+
+    if (!style) {
+
+      style =
+        document.createElement('style');
+
+      style.id =
+        'service-restore-final-style';
+
+      document.head.appendChild(style);
+
+    }
+
+
+    style.textContent = `
+
+      #service .service-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      #service .service-card__media {
+        display: block !important;
+      }
+
+      #service .service-card__media img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+
+      @media (max-width: 900px) {
+
+        #service .service-grid {
+          grid-template-columns:
+            1fr !important;
+        }
+
+      }
+
+    `;
+
+  };
+
+
+  const run = () => {
+
+    restoreServices();
+
+    /*
+      古い追記コードが後から動いても
+      最後にこれを勝たせる
+    */
+
+    setTimeout(
+      restoreServices,
+      350
+    );
+
+    setTimeout(
+      restoreServices,
+      750
+    );
+
+    setTimeout(
+      restoreServices,
+      1200
+    );
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      { once: true }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
