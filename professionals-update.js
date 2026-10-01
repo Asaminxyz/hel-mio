@@ -13929,3 +13929,1456 @@
   }
 
 })();
+/* =========================================================
+   HELMIO PROFESSIONALS PAGE
+   FINAL SERVICE / LOGO UPDATE
+
+   ・HELMIOの特徴 → 実績ロゴエリアへ
+   ・01 一日司会 → 元の画像付きカード
+   ・02 外国語対応 → 元の画像付きカード
+   ・03 広告・VP・ナレーション → 新規追加
+   ・元のフォント / カードデザインに統一
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     古い追加デザインを整理
+     ========================================================= */
+
+  const cleanupOldCustomStyles = () => {
+
+    [
+      'helmio-casting-custom-style',
+      'helmio-casting-only-final-style',
+      'service-restore-final-style',
+      'helmio-service-grid-final-style',
+      'helmio-logo-custom-style',
+      'helmio-service-custom-style',
+      'helmio-professionals-service-final-style'
+    ].forEach(id => {
+
+      document
+        .getElementById(id)
+        ?.remove();
+
+    });
+
+
+    /*
+      前に作った別形式の
+      ロゴセクションが残っていたら削除
+    */
+
+    document
+      .getElementById(
+        'helmioLogoSection'
+      )
+      ?.remove();
+
+  };
+
+
+
+  /* =========================================================
+     FEATURESの場所を
+     実績ロゴエリアに変更
+     ========================================================= */
+
+  const buildLogoSection = () => {
+
+    const service =
+      document.getElementById(
+        'service'
+      );
+
+    if (!service) return;
+
+
+    /*
+      既存featuresがあれば
+      その場所をそのまま使う
+    */
+
+    let section =
+      document.getElementById(
+        'features'
+      );
+
+
+    /*
+      すでにfeaturesが削除済みなら
+      SERVICEの直前に新しく作る
+    */
+
+    if (!section) {
+
+      section =
+        document.createElement(
+          'section'
+        );
+
+      service.insertAdjacentElement(
+        'beforebegin',
+        section
+      );
+
+    }
+
+
+    section.id =
+      'selected-clients';
+
+    section.className =
+      'section helmio-clients-section';
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+        <header class="helmio-clients-header">
+
+          <p class="section-label">
+            SELECTED EXPERIENCE
+          </p>
+
+          <h2>
+            主な実績
+          </h2>
+
+          <p>
+            企業イベント・カンファレンス・
+            ステージ・映像など、
+            さまざまな現場で経験を重ねています。
+          </p>
+
+        </header>
+
+
+        <div class="helmio-client-grid">
+
+
+          <!-- 大阪・関西万博 -->
+
+          <div class="helmio-client-item">
+
+            <img
+              src="logo-expo2025.png"
+              alt="大阪・関西万博"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='block';
+              "
+            >
+
+            <span class="helmio-client-fallback">
+              大阪・関西万博
+            </span>
+
+          </div>
+
+
+
+          <!-- JTB -->
+
+          <div class="helmio-client-item">
+
+            <img
+              src="logo-jtb.png"
+              alt="JTB"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='block';
+              "
+            >
+
+            <span class="helmio-client-fallback">
+              JTB
+            </span>
+
+          </div>
+
+
+
+          <!-- Jリーグ -->
+
+          <div class="helmio-client-item">
+
+            <img
+              src="logo-jleague.png"
+              alt="Jリーグ"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='block';
+              "
+            >
+
+            <span class="helmio-client-fallback">
+              J.LEAGUE
+            </span>
+
+          </div>
+
+
+
+          <!-- 笹川平和財団 -->
+
+          <div class="helmio-client-item">
+
+            <img
+              src="logo-sasakawa.png"
+              alt="笹川平和財団"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='block';
+              "
+            >
+
+            <span class="helmio-client-fallback">
+              笹川平和財団
+            </span>
+
+          </div>
+
+
+
+          <!-- TOYOTA -->
+
+          <div class="helmio-client-item">
+
+            <img
+              src="logo-toyota.png"
+              alt="TOYOTA"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='block';
+              "
+            >
+
+            <span class="helmio-client-fallback">
+              TOYOTA
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+  };
+
+
+
+  /* =========================================================
+     SERVICE
+     3枚とも「元のservice-card」で作り直す
+     ========================================================= */
+
+  const buildServices = () => {
+
+    const section =
+      document.getElementById(
+        'service'
+      );
+
+    if (!section) return;
+
+
+    /*
+      元ページと同じsection構造
+    */
+
+    section.className =
+      'section section--cream';
+
+    section.setAttribute(
+      'aria-labelledby',
+      'service-title'
+    );
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+
+        <header class="section-head">
+
+          <div>
+
+            <p class="section-label">
+              SERVICE
+            </p>
+
+            <h2 id="service-title">
+              サービス内容
+            </h2>
+
+          </div>
+
+
+          <p>
+            企業イベントの目的や会場、
+            求める進行品質に合わせて、
+            プロフェッショナルをご提案します。
+          </p>
+
+        </header>
+
+
+
+        <div class="service-grid">
+
+
+          <!-- =================================================
+               01 一日司会
+               ================================================= -->
+
+          <article class="service-card">
+
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                MC / ANNOUNCER
+              </span>
+
+
+              <img
+                src="service-mc.jpg"
+                alt="企業イベントで司会を務めるアナウンサー"
+                loading="lazy"
+                onerror="
+                  this.parentElement.classList.add('is-missing')
+                "
+              >
+
+            </div>
+
+
+
+            <div class="service-card__body">
+
+
+              <span class="service-card__number">
+                01
+              </span>
+
+
+              <h3>
+                一日司会
+              </h3>
+
+
+              <p class="service-card__catch">
+                企業イベントを、
+                経験あるプロの進行で
+              </p>
+
+
+              <p class="service-card__description">
+
+                記者発表、式典、
+                カンファレンス、
+                表彰式、経営者登壇など。
+
+                案件内容を事前に確認し、
+                必要に応じて
+                読み合わせ・リハーサルまで
+                対応します。
+
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  90,000円〜
+                </strong>
+
+                <small>
+                  ／1日
+                </small>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#professionals"
+              >
+                候補者を見る
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- =================================================
+               02 外国語対応
+               ================================================= -->
+
+          <article class="service-card">
+
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                BILINGUAL MC
+              </span>
+
+
+              <img
+                src="service-bilingual.jpg"
+                alt="国際イベントで進行するバイリンガルMC"
+                loading="lazy"
+                onerror="
+                  this.parentElement.classList.add('is-missing')
+                "
+              >
+
+            </div>
+
+
+
+            <div class="service-card__body">
+
+
+              <span class="service-card__number">
+                02
+              </span>
+
+
+              <h3>
+                外国語対応
+              </h3>
+
+
+              <p class="service-card__catch">
+                国際イベント・
+                海外ゲストにも対応
+              </p>
+
+
+              <p class="service-card__description">
+
+                英語・中国語などの外国語進行、
+                バイリンガルMC、
+                海外ゲストを迎えるイベントなど。
+
+                案件に合わせて、
+                対応可能なプロフェッショナルを
+                ご提案します。
+
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  130,000円〜
+                </strong>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                外国語対応を相談する
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- =================================================
+               03 広告・VP・ナレーション
+               ================================================= -->
+
+          <article class="service-card">
+
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                AD / VP / NARRATION
+              </span>
+
+
+              <img
+                src="ad-vp-narration.png.png"
+                alt="広告・VP・ナレーションの撮影"
+                loading="lazy"
+                onerror="
+                  this.parentElement.classList.add('is-missing')
+                "
+              >
+
+            </div>
+
+
+
+            <div class="service-card__body">
+
+
+              <span class="service-card__number">
+                03
+              </span>
+
+
+              <h3>
+                広告・VP・ナレーション
+              </h3>
+
+
+              <p class="service-card__catch">
+                映像・広告にも、
+                伝えるプロを
+              </p>
+
+
+              <p class="service-card__description">
+
+                企業VP、商品紹介動画、
+                採用映像、WEB広告、
+                ナレーションなど。
+
+                案件の内容やブランドに合う
+                出演者・声をご提案します。
+
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                出演・ナレーションを相談する
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <p class="service-price-note">
+
+          ※参考価格です。
+          案件内容・拘束時間・開催地域・
+          事前準備の有無などにより
+          個別にお見積もりします。
+
+        </p>
+
+
+      </div>
+
+    `;
+
+  };
+
+
+
+  /* =========================================================
+     FINAL STYLE
+     元のデザインに戻す
+     ========================================================= */
+
+  const injectFinalStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-professionals-service-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'helmio-professionals-service-final-style';
+
+
+    style.textContent = `
+
+
+      /* =====================================================
+         CLIENT / EXPERIENCE LOGOS
+         ===================================================== */
+
+      #selected-clients {
+        background:
+          #fff;
+      }
+
+
+      #selected-clients
+      .helmio-clients-header {
+        display:
+          grid;
+
+        grid-template-columns:
+          minmax(0,.72fr)
+          minmax(360px,1.28fr);
+
+        gap:
+          70px;
+
+        align-items:
+          end;
+
+        margin-bottom:
+          48px;
+      }
+
+
+      #selected-clients
+      .helmio-clients-header
+      .section-label {
+        grid-column:
+          1 / -1;
+
+        margin-bottom:
+          -42px;
+      }
+
+
+      #selected-clients
+      .helmio-clients-header
+      h2 {
+        color:
+          var(--ink);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            34px,
+            4vw,
+            52px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.45;
+      }
+
+
+      #selected-clients
+      .helmio-clients-header
+      > p:last-child {
+        color:
+          var(--text);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          15px;
+
+        line-height:
+          2;
+      }
+
+
+      .helmio-client-grid {
+        display:
+          grid;
+
+        grid-template-columns:
+          repeat(
+            5,
+            minmax(0,1fr)
+          );
+
+        border-top:
+          1px solid
+          var(--line);
+
+        border-bottom:
+          1px solid
+          var(--line);
+      }
+
+
+      .helmio-client-item {
+        display:
+          flex;
+
+        align-items:
+          center;
+
+        justify-content:
+          center;
+
+        min-height:
+          128px;
+
+        padding:
+          24px 18px;
+
+        background:
+          #fff;
+
+        border-right:
+          1px solid
+          var(--line);
+      }
+
+
+      .helmio-client-item:last-child {
+        border-right:
+          0;
+      }
+
+
+      .helmio-client-item img {
+        display:
+          block;
+
+        width:
+          auto;
+
+        max-width:
+          135px;
+
+        max-height:
+          46px;
+
+        object-fit:
+          contain;
+      }
+
+
+      .helmio-client-fallback {
+        display:
+          none;
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          16px;
+
+        font-weight:
+          700;
+
+        letter-spacing:
+          .03em;
+
+        text-align:
+          center;
+      }
+
+
+
+
+      /* =====================================================
+         SERVICE
+         元のカードデザイン
+         ===================================================== */
+
+      #service
+      .service-grid {
+        display:
+          grid !important;
+
+        grid-template-columns:
+          repeat(
+            3,
+            minmax(0,1fr)
+          ) !important;
+
+        gap:
+          24px !important;
+      }
+
+
+      #service
+      .service-card {
+        display:
+          flex !important;
+
+        flex-direction:
+          column !important;
+
+        min-height:
+          590px !important;
+
+        overflow:
+          hidden !important;
+
+        background:
+          #fff !important;
+
+        border:
+          1px solid
+          rgba(16,47,82,.14) !important;
+
+        border-radius:
+          14px !important;
+
+        box-shadow:
+          0 15px 36px
+          rgba(16,47,82,.08) !important;
+      }
+
+
+      #service
+      .service-card__media {
+        position:
+          relative !important;
+
+        display:
+          block !important;
+
+        width:
+          100% !important;
+
+        aspect-ratio:
+          1.75 / 1 !important;
+
+        overflow:
+          hidden !important;
+
+        background:
+          linear-gradient(
+            135deg,
+            #e8e1d6,
+            #d8cdbd
+          ) !important;
+      }
+
+
+      #service
+      .service-card__media img {
+        display:
+          block;
+
+        width:
+          100% !important;
+
+        height:
+          100% !important;
+
+        object-fit:
+          cover !important;
+
+        object-position:
+          center center !important;
+      }
+
+
+      #service
+      .service-card__media.is-missing
+      img {
+        display:
+          none !important;
+      }
+
+
+      #service
+      .service-card__media.is-missing
+      .service-card__fallback {
+        display:
+          grid !important;
+      }
+
+
+      #service
+      .service-card__fallback {
+        display:
+          none;
+
+        position:
+          absolute;
+
+        inset:
+          0;
+
+        place-items:
+          center;
+
+        padding:
+          20px;
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          18px;
+
+        letter-spacing:
+          .12em;
+
+        text-align:
+          center;
+      }
+
+
+      #service
+      .service-card__body {
+        position:
+          relative !important;
+
+        display:
+          flex !important;
+
+        flex:
+          1 !important;
+
+        flex-direction:
+          column !important;
+
+        padding:
+          54px 30px 28px !important;
+      }
+
+
+      #service
+      .service-card__number {
+        position:
+          absolute !important;
+
+        top:
+          0 !important;
+
+        left:
+          50% !important;
+
+        display:
+          grid !important;
+
+        width:
+          78px !important;
+
+        height:
+          42px !important;
+
+        place-items:
+          center !important;
+
+        color:
+          var(--gold) !important;
+
+        font-family:
+          "Cormorant Garamond",
+          serif !important;
+
+        font-size:
+          18px !important;
+
+        font-weight:
+          600 !important;
+
+        letter-spacing:
+          .12em !important;
+
+        background:
+          #fff !important;
+
+        border:
+          1px solid
+          rgba(177,138,67,.42) !important;
+
+        border-bottom:
+          0 !important;
+
+        border-radius:
+          999px 999px 0 0 !important;
+
+        transform:
+          translate(
+            -50%,
+            -100%
+          ) !important;
+      }
+
+
+      #service
+      .service-card h3 {
+        margin:
+          0 !important;
+
+        color:
+          var(--ink) !important;
+
+        font-family:
+          "Noto Serif JP",
+          serif !important;
+
+        font-size:
+          25px !important;
+
+        font-weight:
+          600 !important;
+
+        line-height:
+          1.55 !important;
+
+        text-align:
+          center !important;
+      }
+
+
+      #service
+      .service-card__catch {
+        margin:
+          16px 0 0 !important;
+
+        color:
+          var(--ink) !important;
+
+        font-family:
+          "Noto Serif JP",
+          serif !important;
+
+        font-size:
+          15px !important;
+
+        font-weight:
+          600 !important;
+
+        line-height:
+          1.75 !important;
+
+        text-align:
+          center !important;
+      }
+
+
+      #service
+      .service-card__description {
+        margin-top:
+          18px !important;
+
+        color:
+          var(--text) !important;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          14px !important;
+
+        font-weight:
+          400 !important;
+
+        line-height:
+          2 !important;
+
+        text-align:
+          left !important;
+      }
+
+
+      #service
+      .service-card__price {
+        display:
+          flex !important;
+
+        flex-wrap:
+          wrap;
+
+        align-items:
+          baseline;
+
+        justify-content:
+          center;
+
+        gap:
+          6px;
+
+        margin-top:
+          22px !important;
+
+        padding-top:
+          18px !important;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.12);
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        text-align:
+          center;
+      }
+
+
+      #service
+      .service-card__price span {
+        color:
+          var(--muted);
+
+        font-size:
+          11px;
+
+        font-weight:
+          600;
+      }
+
+
+      #service
+      .service-card__price strong {
+        color:
+          var(--navy);
+
+        font-size:
+          18px;
+
+        font-weight:
+          700;
+      }
+
+
+      #service
+      .service-card__price small {
+        color:
+          var(--muted);
+
+        font-size:
+          11px;
+      }
+
+
+      #service
+      .service-card__link {
+        display:
+          flex !important;
+
+        align-items:
+          center !important;
+
+        gap:
+          8px !important;
+
+        margin-top:
+          auto !important;
+
+        padding-top:
+          20px !important;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.14) !important;
+
+        color:
+          var(--navy) !important;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          14px !important;
+
+        font-weight:
+          700 !important;
+      }
+
+
+      #service
+      .service-card__link::after {
+        content:
+          "→";
+
+        color:
+          var(--gold);
+      }
+
+
+      #service
+      .service-price-note {
+        margin-top:
+          22px;
+
+        color:
+          var(--muted);
+
+        font-size:
+          12px;
+
+        line-height:
+          1.8;
+
+        text-align:
+          right;
+      }
+
+
+
+
+      /* =====================================================
+         TABLET
+         ===================================================== */
+
+      @media (
+        max-width: 980px
+      ) {
+
+        .helmio-client-grid {
+          grid-template-columns:
+            repeat(
+              3,
+              minmax(0,1fr)
+            );
+        }
+
+
+        .helmio-client-item {
+          border-bottom:
+            1px solid
+            var(--line);
+        }
+
+
+        #service
+        .service-grid {
+          grid-template-columns:
+            1fr !important;
+
+          max-width:
+            620px;
+
+          margin:
+            0 auto;
+        }
+
+
+        #service
+        .service-card {
+          min-height:
+            0 !important;
+        }
+
+      }
+
+
+
+
+      /* =====================================================
+         MOBILE
+         ===================================================== */
+
+      @media (
+        max-width: 600px
+      ) {
+
+        #selected-clients
+        .helmio-clients-header {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            18px;
+        }
+
+
+        #selected-clients
+        .helmio-clients-header
+        .section-label {
+          grid-column:
+            auto;
+
+          margin-bottom:
+            0;
+        }
+
+
+        .helmio-client-grid {
+          grid-template-columns:
+            repeat(
+              2,
+              minmax(0,1fr)
+            );
+        }
+
+
+        .helmio-client-item {
+          min-height:
+            96px;
+
+          padding:
+            18px 12px;
+        }
+
+
+        .helmio-client-item img {
+          max-width:
+            110px;
+
+          max-height:
+            36px;
+        }
+
+
+        .helmio-client-fallback {
+          font-size:
+            14px;
+        }
+
+
+        #service
+        .service-card__body {
+          padding:
+            48px 22px 24px !important;
+        }
+
+
+        #service
+        .service-card h3 {
+          font-size:
+            22px !important;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const applyAll = () => {
+
+    cleanupOldCustomStyles();
+
+    buildLogoSection();
+
+    buildServices();
+
+    injectFinalStyles();
+
+  };
+
+
+
+  const run = () => {
+
+    applyAll();
+
+
+    /*
+      これまでの古い追記コードより
+      最後に確実に勝たせる
+    */
+
+    setTimeout(
+      applyAll,
+      150
+    );
+
+
+    setTimeout(
+      applyAll,
+      500
+    );
+
+
+    setTimeout(
+      applyAll,
+      1200
+    );
+
+  };
+
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
