@@ -13307,3 +13307,230 @@
   }
 
 })();
+/* =========================================================
+   SERVICE FINAL FIX
+   01・02を元に戻して、03だけ追加
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const fixServices = () => {
+
+    const section =
+      document.getElementById('service');
+
+    if (!section) return;
+
+
+    const cards =
+      section.querySelectorAll(
+        '.service-card'
+      );
+
+
+    /* =========================
+       01 元の「一日司会」
+       ========================= */
+
+    const first = cards[0];
+
+    if (first) {
+
+      const body =
+        first.querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+          <span class="service-card__number">
+            01
+          </span>
+
+          <h3>
+            一日司会
+          </h3>
+
+          <p class="service-card__catch">
+            企業イベントを、
+            経験あるプロの進行で
+          </p>
+
+          <p class="service-card__description">
+            記者発表、式典、カンファレンス、
+            表彰式、経営者登壇など。
+            案件内容を事前に確認し、
+            必要に応じて読み合わせ・
+            リハーサルまで対応します。
+          </p>
+
+          <div class="service-card__price">
+            <span>参考価格</span>
+            <strong>90,000円〜</strong>
+            <small>／1日</small>
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#professionals"
+          >
+            候補者を見る
+          </a>
+        `;
+      }
+    }
+
+
+    /* =========================
+       02 元の「外国語対応」
+       ========================= */
+
+    const second = cards[1];
+
+    if (second) {
+
+      const body =
+        second.querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+          <span class="service-card__number">
+            02
+          </span>
+
+          <h3>
+            外国語対応
+          </h3>
+
+          <p class="service-card__catch">
+            国際イベント・海外ゲストにも対応
+          </p>
+
+          <p class="service-card__description">
+            英語・中国語などの外国語進行、
+            バイリンガルMC、
+            海外ゲストを迎えるイベントなど、
+            案件に合わせて対応可能な
+            プロフェッショナルをご提案します。
+          </p>
+
+          <div class="service-card__price">
+            <span>参考価格</span>
+            <strong>130,000円〜</strong>
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            外国語対応を相談する
+          </a>
+        `;
+      }
+    }
+
+
+    /* =========================
+       03 広告・VP・ナレーション
+       ========================= */
+
+    const third = cards[2];
+
+    if (third) {
+
+      const media =
+        third.querySelector(
+          '.service-card__media'
+        );
+
+      const image =
+        media?.querySelector('img');
+
+      if (image) {
+        image.src =
+          'ad-vp-narration.png';
+
+        image.alt =
+          '広告・VP・ナレーション撮影';
+      }
+
+
+      const body =
+        third.querySelector(
+          '.service-card__body'
+        );
+
+      if (body) {
+
+        body.innerHTML = `
+          <span class="service-card__number">
+            03
+          </span>
+
+          <h3>
+            広告・VP・ナレーション
+          </h3>
+
+          <p class="service-card__catch">
+            映像・広告にも、
+            伝えるプロを
+          </p>
+
+          <p class="service-card__description">
+            企業VP、商品紹介動画、
+            採用映像、WEB広告、
+            ナレーションなど、
+            案件に合う出演者・声をご提案します。
+          </p>
+
+          <div class="service-card__price">
+            <span>参考価格</span>
+            <strong>案件ごとにお見積り</strong>
+          </div>
+
+          <a
+            class="service-card__link"
+            href="#casting-form"
+          >
+            出演・ナレーションを相談する
+          </a>
+        `;
+      }
+    }
+
+  };
+
+
+  const apply = () => {
+    fixServices();
+
+    setTimeout(
+      fixServices,
+      120
+    );
+
+    setTimeout(
+      fixServices,
+      300
+    );
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+    document.addEventListener(
+      'DOMContentLoaded',
+      apply,
+      { once: true }
+    );
+  } else {
+    apply();
+  }
+
+})();
