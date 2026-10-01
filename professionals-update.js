@@ -12779,3 +12779,304 @@
   }
 
 })();
+(() => {
+  'use strict';
+
+  const LOGO_FILES = [
+    { name: '関西万博', file: './images/logo-expo2025.svg' },
+    { name: 'JTB', file: './images/logo-jtb.svg' },
+    { name: 'Jリーグ', file: './images/logo-jleague.svg' },
+    { name: '笹川平和財団', file: './images/logo-sasakawa.svg' },
+    { name: 'TOYOTA', file: './images/logo-toyota.svg' }
+  ];
+
+  const AD_VP_IMAGE = './images/ad-vp-narration.png';
+
+  function injectStyles() {
+    if (document.getElementById('helmio-casting-custom-style')) return;
+
+    const style = document.createElement('style');
+    style.id = 'helmio-casting-custom-style';
+    style.textContent = `
+      .helmio-logo-section {
+        padding: 100px 0 40px;
+        border-top: 1px solid #d9d9d9;
+      }
+
+      .helmio-logo-inner {
+        width: min(1200px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .helmio-logo-eyebrow {
+        margin: 0 0 16px;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        color: #b58b3c;
+        text-transform: uppercase;
+      }
+
+      .helmio-logo-title {
+        margin: 0 0 18px;
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1.2;
+        color: #18385f;
+        font-weight: 500;
+      }
+
+      .helmio-logo-subtitle {
+        margin: 0 0 36px;
+        font-size: 16px;
+        line-height: 1.9;
+        color: #4c5a6a;
+      }
+
+      .helmio-logo-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .helmio-logo-item {
+        min-height: 108px;
+        background: #f8f7f3;
+        border: 1px solid #e8e2d8;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .helmio-logo-item img {
+        max-width: 100%;
+        max-height: 42px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .helmio-logo-fallback {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #18385f;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .helmio-service-grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 40px;
+      }
+
+      .helmio-service-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 22px;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .helmio-service-card-media {
+        aspect-ratio: 4 / 3;
+        background: #f5f5f5;
+      }
+
+      .helmio-service-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .helmio-service-card-body {
+        padding: 26px 24px 24px;
+      }
+
+      .helmio-service-card-number {
+        margin: 0 0 10px;
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        color: #b58b3c;
+      }
+
+      .helmio-service-card-title {
+        margin: 0 0 12px;
+        font-size: 26px;
+        line-height: 1.4;
+        color: #18385f;
+        font-weight: 500;
+      }
+
+      .helmio-service-card-price {
+        margin: 0 0 14px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #18385f;
+        font-weight: 600;
+      }
+
+      .helmio-service-card-text {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.9;
+        color: #4c5a6a;
+      }
+
+      @media (max-width: 1100px) {
+        .helmio-logo-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .helmio-service-grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 767px) {
+        .helmio-logo-section {
+          padding: 72px 0 20px;
+        }
+
+        .helmio-logo-inner {
+          width: calc(100% - 32px);
+        }
+
+        .helmio-logo-grid,
+        .helmio-service-grid-3 {
+          grid-template-columns: 1fr;
+        }
+
+        .helmio-logo-item {
+          min-height: 88px;
+        }
+
+        .helmio-service-card-title {
+          font-size: 22px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function getHeadingText(section) {
+    const heading = section.querySelector('h1, h2, h3, h4');
+    return heading ? heading.textContent.replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function findSectionByHeading(keywords) {
+    const sections = [...document.querySelectorAll('section')];
+    return sections.find((section) => {
+      const text = getHeadingText(section);
+      return keywords.some((keyword) => text.includes(keyword));
+    });
+  }
+
+  function replaceFeatureSection() {
+    const featureSection = findSectionByHeading(['HELMIOの特徴']);
+    if (!featureSection) return;
+
+    featureSection.className = '';
+    featureSection.id = 'helmioLogoSection';
+    featureSection.innerHTML = `
+      <div class="helmio-logo-section">
+        <div class="helmio-logo-inner">
+          <p class="helmio-logo-eyebrow">ACHIEVEMENTS</p>
+          <h2 class="helmio-logo-title">主な実績・関係先</h2>
+          <p class="helmio-logo-subtitle">
+            関西万博、JTB、Jリーグ、笹川平和財団、TOYOTA など、
+            企業イベント・広報・ナレーション領域での実績があります。
+          </p>
+          <div class="helmio-logo-grid">
+            ${LOGO_FILES.map((logo) => `
+              <div class="helmio-logo-item">
+                <img
+                  src="${logo.file}"
+                  alt="${logo.name}"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                />
+                <div class="helmio-logo-fallback" style="display:none;">${logo.name}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function replaceServicesSection() {
+    const serviceSection = findSectionByHeading(['サービス内容', '私たちのサービス', 'SERVICE']);
+    if (!serviceSection) return;
+
+    serviceSection.id = serviceSection.id || 'services';
+
+    serviceSection.innerHTML = `
+      <div class="helmio-logo-inner">
+        <p class="helmio-logo-eyebrow">SERVICE</p>
+        <h2 class="helmio-logo-title">サービス内容</h2>
+
+        <div class="helmio-service-grid-3">
+          <article class="helmio-service-card">
+            <div class="helmio-service-card-body">
+              <p class="helmio-service-card-number">01</p>
+              <h3 class="helmio-service-card-title">司会・MCキャスティング</h3>
+              <p class="helmio-service-card-price">90,000円〜 / 1日</p>
+              <p class="helmio-service-card-text">
+                式典、記者発表、カンファレンス、企業イベントなど、
+                進行品質が求められる現場に合わせて、
+                元局アナウンサーを中心とした人材をご提案します。
+              </p>
+            </div>
+          </article>
+
+          <article class="helmio-service-card">
+            <div class="helmio-service-card-body">
+              <p class="helmio-service-card-number">02</p>
+              <h3 class="helmio-service-card-title">外国語対応MC・ナレーター</h3>
+              <p class="helmio-service-card-price">130,000円〜</p>
+              <p class="helmio-service-card-text">
+                英語など外国語対応が必要なイベントや、
+                海外来賓対応、国際カンファレンスなどに対応。
+                内容理解から本番進行まで丁寧にサポートします。
+              </p>
+            </div>
+          </article>
+
+          <article class="helmio-service-card">
+            <div class="helmio-service-card-media">
+              <img src="${AD_VP_IMAGE}" alt="広告・VP・ナレーション" loading="lazy">
+            </div>
+            <div class="helmio-service-card-body">
+              <p class="helmio-service-card-number">03</p>
+              <h3 class="helmio-service-card-title">広告・VP・ナレーション</h3>
+              <p class="helmio-service-card-price">案件ごとにお見積り</p>
+              <p class="helmio-service-card-text">
+                広告、企業VP、商品紹介動画、採用映像、館内音声など、
+                伝える内容に合わせて、声・表現・届け方まで含めて対応します。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    `;
+  }
+
+  function run() {
+    injectStyles();
+    replaceFeatureSection();
+    replaceServicesSection();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+
+  setTimeout(run, 200);
+  setTimeout(run, 500);
+})();
