@@ -1,588 +1,1909 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HELMIO | 可能性は、いつも想像以上。</title>
-<meta name="description" content="株式会社HELMIO。アナウンサーによるコミュニケーションパートナー。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#f7f4ee;
-  --paper-2:#fbfaf7;
-  --ink:#4f626b;
-  --navy:#607985;
-  --muted:#76868d;
-  --blue:#b9d0d8;
-  --blue-mid:#9ebfca;
-  --blue-soft:#e3ecef;
-  --line:rgba(79,98,107,.16);
-  --serif:"Noto Serif JP","Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif;
-  --sans:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--serif);font-weight:400;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100% - 96px));margin:auto}
-.label{font-family:var(--sans);font-size:11px;line-height:1.4;letter-spacing:.34em;text-transform:uppercase;color:#788285}
-header{position:fixed;z-index:30;inset:0 0 auto;height:68px;border-bottom:1px solid rgba(79,98,107,.10);background:rgba(247,244,238,.92);backdrop-filter:blur(12px)}
-.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.19em;color:#526872}.navlinks{display:flex;align-items:center;gap:31px;font-family:var(--sans);font-size:10px;letter-spacing:.17em;color:#74848b}
-/* HERO: v5の文字サイズを維持。背景の“ふんわり光”は廃止し、水平線と波だけでHELM / 海 / 未知を表現 */
-.hero{min-height:760px;height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--paper)}
-.hero:after{content:"";position:absolute;left:0;right:0;bottom:15%;height:1px;background:linear-gradient(90deg,transparent 0 8%,rgba(83,121,136,.14) 24%,rgba(83,121,136,.30) 52%,rgba(83,121,136,.12) 82%,transparent 100%)}
-.hero-inner{padding-top:38px;position:relative;z-index:2}.hero-kicker{display:flex;gap:24px;align-items:center;margin-bottom:36px}.hero-kicker .label{margin:0;font-size:11px;letter-spacing:.17em}.hero-partner{font-family:var(--sans);font-size:13px;letter-spacing:.075em;color:#6f8087;padding-left:24px;border-left:1px solid rgba(36,33,30,.18);font-weight:400}
-.hero h1{margin:0;font-size:clamp(48px,4.55vw,68px);font-weight:500;line-height:1.62;letter-spacing:.075em}.hero-sub{font-size:14px;line-height:2.1;margin-top:30px;color:#708088;letter-spacing:.07em}.scroll{position:absolute;right:48px;bottom:28px;font-family:var(--sans);font-size:9px;letter-spacing:.25em;color:#8a989e}
-.sea-mark{display:none}.sea-mark path{fill:none;stroke:#9fbec8;stroke-width:1.1}.sea-mark path:nth-child(2){opacity:.62}.sea-mark path:nth-child(3){opacity:.35}.sea-word{position:absolute;right:5.5%;bottom:25%;font-family:var(--sans);font-size:9px;letter-spacing:.46em;color:rgba(59,87,98,.48);writing-mode:vertical-rl}
-.message{min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 24px 86px;background:var(--paper);position:relative;overflow:hidden}
-.message-inner{max-width:940px;position:relative;z-index:2}.message-copy{margin:0;font-size:clamp(22px,1.85vw,29px);line-height:2.55;letter-spacing:.11em}.message-line{display:block;opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}.message-inner.show .message-line{opacity:1;transform:none}.message-inner.show .message-line:nth-child(1){transition-delay:.05s}.message-inner.show .message-line:nth-child(2){transition-delay:.25s}.message-inner.show .message-line:nth-child(3){transition-delay:.45s}.message-line.accent{font-weight:600;color:#556d78}.message-art{margin:42px auto 0;display:block;width:min(440px,72vw);height:auto;opacity:.78}.message-art path,.message-art circle{animation:floatWave 7s ease-in-out infinite}
-.about{padding:132px 0 148px;background:var(--paper)}.section-head{text-align:center;margin-bottom:74px}.section-head .label{display:block;margin-bottom:22px}.section-head h2{font-size:clamp(28px,2.2vw,35px);line-height:1.55;letter-spacing:.14em;font-weight:500;margin:0}
-.about-grid{max-width:1040px;margin:0 auto}.about-row{display:grid;grid-template-columns:1fr 1.22fr;align-items:center;gap:76px;min-height:330px}.about-row + .about-row{margin-top:72px}.about-row.reverse{grid-template-columns:1.22fr 1fr}.about-copy .label{margin-bottom:28px;color:#778184}.about-copy h3{font-size:clamp(27px,2.25vw,34px);font-weight:500;line-height:1.95;letter-spacing:.075em;margin:0}
-.photo-slot{width:100%;height:300px;border-radius:14px;background:#f0ede7;border:1px solid rgba(36,33,30,.1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:#7d7a75;font-family:var(--sans);font-size:9px;letter-spacing:.25em}.photo-slot:before{content:"";position:absolute;inset:14px;border:1px solid rgba(36,33,30,.08);border-radius:8px}.photo-slot:after{content:"PHOTO";position:relative;z-index:1}.photo-slot .horizon{position:absolute;left:0;right:0;bottom:25%;height:1px;background:rgba(73,111,126,.20)}.illustration-slot{width:100%;height:300px;border-radius:14px;background:#f4f1eb;border:1px solid rgba(79,98,107,.10);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.illustration-slot svg{width:100%;height:100%}.illustration-slot .caption{position:absolute;bottom:18px;left:22px;font-family:var(--sans);font-size:9px;letter-spacing:.24em;color:#88a2ad}.illustration-slot{width:100%;height:300px;border-radius:14px;background:linear-gradient(180deg,#f3f0e8 0%,#ebe8df 100%);border:1px solid rgba(36,33,30,.1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.illustration-slot svg{width:86%;height:auto}.illustration-slot .caption{position:absolute;bottom:16px;left:20px;font-family:var(--sans);font-size:9px;letter-spacing:.22em;color:#7d7a75}
-.value{margin:0}.value .label{margin-bottom:29px}.value h3{font-size:clamp(27px,2.25vw,34px);line-height:1.9;letter-spacing:.075em;font-weight:500;margin:0}
-.service{padding:126px 0 150px;background:var(--paper)}.service .section-head{margin-bottom:42px}.service-intro{max-width:760px;margin:0 auto 62px;text-align:center;font-size:14px;line-height:2.15;letter-spacing:.055em;color:#708088}.service-grid{max-width:980px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.service-card{min-height:338px;border:1px solid rgba(36,33,30,.12);border-radius:18px;background:rgba(255,255,255,.88);padding:42px 34px 30px;display:flex;flex-direction:column;transition:.25s ease}.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(30,35,38,.05)}.service-no{font-family:var(--sans);font-size:10px;letter-spacing:.22em;color:#7d8c91;margin-bottom:24px}.service-card h3{font-size:clamp(20px,1.62vw,26px);line-height:1.62;letter-spacing:.07em;font-weight:500;margin:0 0 24px}.service-card p{font-size:13px;line-height:2.05;letter-spacing:.045em;margin:0;color:#5e5954}.service-link{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:#68787d;display:flex;justify-content:space-between;align-items:center}
-.story{padding:132px 0 160px;background:var(--paper-2)}.story .section-head{margin-bottom:62px}.founder{max-width:980px;margin:0 auto 60px;display:block}.founder-name{font-size:24px;letter-spacing:.12em;margin:0 0 10px;font-weight:500}.founder small{font-family:var(--sans);font-size:9px;letter-spacing:.13em;color:#85949b}.founder-intro{max-width:760px;margin:18px 0 0;font-size:15px;line-height:2.15;letter-spacing:.045em;color:#708088}
-.timeline{max-width:980px;margin:auto;position:relative;padding:10px 120px 0 0}.timeline:after{content:"";position:absolute;top:0;bottom:0;right:48px;width:1px;background:#9ebfca}.timeline svg,.timeline .ghost{display:none}.timeline-grid{position:relative;z-index:2;display:block}.node{position:relative;padding:0 78px 34px 0;margin:0 0 18px;border-bottom:1px solid rgba(36,33,30,.08)}.node:last-child{margin-bottom:0;border-bottom:0}.node-dot{position:absolute;right:43px;top:7px;width:10px;height:10px;border:1.5px solid #425259;border-radius:50%;background:var(--paper-2);margin:0;transform:translateX(50%)}.node:last-child .node-dot{background:#8db4c1}.node-meta{font-family:var(--sans);font-size:8.5px;letter-spacing:.16em;color:#829096;margin-bottom:11px}.node h4{font-size:16px;line-height:1.72;letter-spacing:.048em;font-weight:500;margin:0 0 10px}.node h4.cliff-title{font-size:22px;line-height:1.56}.node p{font-size:11.5px;line-height:1.9;margin:0;color:#7a888f;max-width:690px}.node .drop{font-weight:500;color:#4c4844}.story-end{max-width:850px;margin:92px auto 0;text-align:center;padding-top:58px;border-top:1px solid var(--line)}.story-end .belief{font-size:clamp(27px,2.35vw,36px);line-height:1.95;letter-spacing:.09em;margin:0 0 56px;font-weight:500}.take{font-family:var(--sans);font-size:clamp(39px,4vw,62px);letter-spacing:.08em;margin:0 0 31px}.story-end p{font-size:14px;line-height:2.2;letter-spacing:.04em;margin:0 0 10px}.profile{display:inline-block;margin-top:29px;font-family:var(--sans);font-size:9px;letter-spacing:.16em;padding-bottom:6px;border-bottom:1px solid #766f67}
-.contact{padding:120px 0;text-align:center;background:var(--blue)}.contact h2{font-size:clamp(28px,2.3vw,36px);line-height:1.95;letter-spacing:.085em;font-weight:500;margin:0 0 45px}.contact a{font-family:var(--sans);font-size:10px;letter-spacing:.18em;border-bottom:1px solid var(--ink);padding:0 3px 7px}
-footer{background:var(--navy);color:#f9f7f2;padding:58px 0 28px;font-family:var(--sans)}.footer-top{display:flex;justify-content:space-between;gap:45px;margin-bottom:56px}.footer-logo{font-size:21px;font-weight:600;letter-spacing:.22em}.footer-copy{font-family:var(--serif);font-size:12px;letter-spacing:.05em;color:#d9e2e5;margin-top:12px}.footer-links{display:grid;grid-template-columns:repeat(2,auto);gap:11px 34px;font-size:10px;color:#e0e7e9}.legal{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:9px;color:#d4dde0;line-height:1.9}.reveal{opacity:0;transform:translateY(12px);transition:.75s ease}.reveal.show{opacity:1;transform:none}
-@keyframes floatWave{0%,100%{transform:translateY(0px)}50%{transform:translateY(-4px)}}
-@media(max-width:1180px){.wrap{width:min(1040px,calc(100% - 64px))}.node h4{font-size:15px}}
-@media(max-width:760px){.wrap{width:calc(100% - 40px)}header{height:58px}.navlinks{display:none}.hero{min-height:680px}.hero-kicker{display:block;margin-bottom:32px}.hero-partner{border-left:0;padding:10px 0 0;font-size:12px}.hero-kicker .label{font-size:10px}.hero h1{font-size:42px;line-height:1.55;letter-spacing:.055em}.hero-sub{font-size:12px}.sea-mark{width:100%;right:-22%;bottom:2%;height:220px}.sea-word{display:none}.scroll{right:20px}.message{min-height:560px;padding:82px 20px 72px}.message p{font-size:20px;line-height:2.28;letter-spacing:.07em}.message-art{width:min(320px,82vw);margin-top:28px}.about{padding:100px 0 115px}.section-head{margin-bottom:58px}.section-head h2{font-size:27px}.about-row,.about-row.reverse{grid-template-columns:1fr;gap:44px;min-height:0}.about-row + .about-row{margin-top:92px}.about-row.reverse .about-copy{order:2}.about-row.reverse .photo-slot{order:1}.photo-slot,.illustration-slot{height:220px}.about-copy{text-align:left}.about-copy h3{font-size:25px}.service{padding:100px 0 115px}.service .section-head{margin-bottom:34px}.service-intro{text-align:left;margin-bottom:50px;font-size:13px}.service-grid{grid-template-columns:1fr}.service-card{min-height:330px;padding:36px 27px 28px}.service-card h3{font-size:24px}.story{padding:105px 0 120px}.founder{margin-bottom:46px}.founder-intro{margin-top:18px}.timeline{padding:0 0 0 24px;border-left:1.5px solid #9ebfca}.timeline:after{display:none}.timeline-grid{display:block}.node{padding:0 0 0 0!important;margin:0 0 52px;position:relative;border-bottom:0}.node-dot{position:absolute;left:-25px;right:auto;top:7px;transform:translateX(-50%)}.node-meta,.node h4,.node p{margin-left:16px}.node h4{font-size:18px}.node p{font-size:12px}.story-end{margin-top:65px;padding-top:52px;text-align:left}.story-end .belief{font-size:27px}.take{font-size:39px}.contact{padding:90px 0}.contact h2{font-size:27px}.footer-top{display:block}.footer-links{margin-top:35px}}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HELMIO | 可能性は、想像の先にある。</title>
+  <meta name="description" content="株式会社HELMIO。採用広報支援、展示会・営業コミュニケーション支援、AI時代の「伝える力」教育を通して、人や企業のまだ伝わっていない価値を見つけ、言葉にし、届く形にします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
 
-/* ===== v10 refinements ===== */
-.photo-visual,.vision-placeholder{
-  width:100%;height:300px;border-radius:14px;overflow:hidden;
-  border:1px solid rgba(79,98,107,.10);background:#f0ede7;position:relative;
-}
-.photo-visual img{width:100%;height:100%;object-fit:cover;display:block}
-.mission-visual img{object-position:center 54%}
+  <style>
+    :root{
+      --paper:#f7f4ee;
+      --paper-soft:#fbfaf7;
+      --ink:#3e5863;
+      --ink-deep:#294752;
+      --muted:#5d737c;
+      --blue:#bfd3da;
+      --blue-mid:#9ebfca;
+      --blue-soft:#e6eef0;
+      --white:rgba(255,255,255,.90);
+      --line:rgba(82,106,116,.14);
+      --serif:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;
+      --sans:"Noto Sans JP","Yu Gothic",sans-serif;
+      --max:1180px;
+    }
 
-.vision-placeholder{
-  background:
-    linear-gradient(180deg,rgba(248,246,241,.65),rgba(228,235,236,.82)),
-    linear-gradient(135deg,#f4f1eb 0%,#dfe8ea 100%);
-}
-.vision-path{
-  position:absolute;left:13%;right:10%;bottom:25%;height:1px;
-  background:#aac2ca;transform:rotate(-6deg);transform-origin:left center;
-}
-.vision-path:after{
-  content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;
-  border-radius:50%;background:#8fadb8;
-}
-.vision-note{
-  position:absolute;left:24px;bottom:22px;font-family:var(--sans);
-  font-size:9px;line-height:1.8;letter-spacing:.18em;color:#7d939c;
-}
-.vision-note span{font-size:9px;letter-spacing:.08em;color:#91a0a6}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:var(--serif);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    [hidden]{display:none!important}
 
-.value-center{
-  max-width:880px;margin:116px auto 0;text-align:center;padding:0;
-}
-.value-center .label{margin-bottom:28px;color:#7d939c}
-.value-center h3{
-  margin:0;font-size:clamp(27px,2.25vw,34px);font-weight:500;
-  line-height:1.9;letter-spacing:.075em;color:var(--ink);
-}
+    .wrap{width:min(var(--max),calc(100% - 96px));margin:0 auto}
+    .eyebrow{
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:#78909a;
+    }
+    .section-head{text-align:center;margin-bottom:70px}
+    .section-head .eyebrow{display:block;margin-bottom:21px}
+    .section-head h2{
+      margin:0;
+      color:var(--ink-deep);
+      font-weight:500;
+      font-size:clamp(28px,2.35vw,35px);
+      line-height:1.55;
+      letter-spacing:.12em;
+    }
 
-/* STORY: portrait on left, history on right */
-.story-layout{
-  max-width:1080px;margin:0 auto;display:grid;
-  grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
-  gap:82px;align-items:start;
-}
-.story-portrait{position:sticky;top:112px}
-.portrait-slot{
-  width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;
-  border:1px solid rgba(79,98,107,.11);
-  background:linear-gradient(160deg,#ece9e2 0%,#e4edef 100%);
-  position:relative;display:flex;align-items:center;justify-content:center;
-  font-family:var(--sans);font-size:9px;letter-spacing:.24em;color:#879aa2;
-}
-.portrait-slot:after{
-  content:"";position:absolute;left:12%;right:12%;bottom:18%;
-  height:1px;background:#a8c2cb;
-}
-.portrait-line{
-  position:absolute;width:62%;height:62%;border:1px solid rgba(143,173,184,.24);
-  border-radius:50% 50% 46% 54% / 58% 43% 57% 42%;transform:rotate(-8deg);
-}
-.portrait-caption{padding:25px 4px 0}
-.founder-name{font-size:22px;letter-spacing:.12em;margin:0 0 8px;font-weight:500}
-.portrait-caption small{
-  font-family:var(--sans);font-size:9px;letter-spacing:.13em;color:#85949b
-}
-.founder-intro{
-  max-width:none;margin:24px 0 0;font-size:13px;line-height:2;
-  letter-spacing:.04em;color:#708088;
-}
-.story-history{min-width:0}
-.story .timeline{
-  max-width:none;margin:0;position:relative;padding:4px 70px 0 0;
-}
-.story .timeline:after{
-  content:"";position:absolute;top:0;bottom:0;right:24px;width:1px;background:#9ebfca;
-}
-.story .timeline-grid{display:block}
-.story .node{
-  position:relative;padding:0 56px 35px 0;margin:0 0 24px;
-  border-bottom:1px solid rgba(79,98,107,.09);
-}
-.story .node:last-child{border-bottom:0;margin-bottom:0}
-.story .node-dot{
-  position:absolute;right:19px;top:7px;width:10px;height:10px;
-  border:1.5px solid #6f8994;border-radius:50%;background:var(--paper-2);
-  transform:translateX(50%);margin:0;
-}
-.story .node:last-child .node-dot{background:#9ebfca}
-.story .node h4{font-size:18px;line-height:1.7;letter-spacing:.045em}
-.story .node p{font-size:12px;line-height:1.95;max-width:none}
-.story .node p strong{font-weight:500;color:#5c737d}
+    /* ---------- Header ---------- */
+    .site-header{
+      position:fixed;
+      z-index:50;
+      inset:0 0 auto;
+      height:68px;
+      border-bottom:1px solid rgba(82,106,116,.08);
+      background:rgba(247,244,238,.90);
+      backdrop-filter:blur(14px);
+    }
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{
+      font-family:var(--sans);
+      font-weight:600;
+      font-size:16px;
+      letter-spacing:.19em;
+      color:var(--ink-deep);
+    }
+    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links a{
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.17em;
+      color:#71858d;
+    }
 
-.story-end{margin-top:100px}
+    /* ---------- Hero ---------- */
+    .hero{
+      min-height:740px;
+      height:100svh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .hero-inner{position:relative;z-index:3;padding-top:34px}
+    .hero-meta{display:flex;align-items:center;gap:24px;margin-bottom:35px}
+    .hero-meta .eyebrow{font-size:11px;letter-spacing:.16em}
+    .hero-partner{
+      font-family:var(--sans);
+      font-size:13px;
+      letter-spacing:.07em;
+      color:#647a83;
+      padding-left:24px;
+      border-left:1px solid rgba(82,106,116,.18);
+    }
+    .hero-title{
+      margin:0;
+      color:var(--ink-deep);
+      font-size:clamp(48px,4.55vw,68px);
+      font-weight:500;
+      line-height:1.58;
+      letter-spacing:.07em;
+    }
+    .hero-title span{display:block}
+    .hero-note{
+      margin-top:28px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.31em;
+      color:#8ba0a8;
+    }
+    .hero-field{
+      position:absolute;
+      right:-2%;
+      bottom:3%;
+      width:min(58vw,840px);
+      height:340px;
+      z-index:1;
+      pointer-events:none;
+      transition:transform .5s cubic-bezier(.2,.8,.2,1);
+    }
+    .hero-current{width:100%;height:100%;overflow:visible}
+    .current-line,.route-line{fill:none;stroke-linecap:round}
+    .current-line{
+      stroke:#9ebfca;
+      stroke-width:1.15;
+      opacity:.55;
+      stroke-dasharray:1;
+      stroke-dashoffset:1;
+      animation:draw 1.9s ease forwards;
+    }
+    .current-line.b{opacity:.28;animation-delay:.25s}
+    .route-line{
+      stroke:#aac8d1;
+      stroke-width:1;
+      opacity:.78;
+      stroke-dasharray:1;
+      stroke-dashoffset:1;
+      animation:draw 1.8s ease .55s forwards;
+    }
+    .route-point{
+      fill:#92b3bf;
+      opacity:0;
+      animation:pointIn .5s ease forwards,pulse 4.2s ease-in-out infinite;
+    }
+    .p1{animation-delay:1.45s,2.3s}.p2{animation-delay:1.65s,2.7s}.p3{animation-delay:1.9s,3.1s}
+    .orb{position:absolute;border-radius:50%;background:#c5dbe2;opacity:.35;animation:float 7.5s ease-in-out infinite}
+    .orb.a{width:76px;height:76px;right:13%;top:19%;opacity:.25}
+    .orb.b{width:18px;height:18px;right:35%;top:10%;animation-delay:-2.2s}
+    .orb.c{width:9px;height:9px;right:5%;top:50%;opacity:.56;animation-delay:-4s}
+    .hero-field-word{
+      position:absolute;
+      right:4%;
+      bottom:3%;
+      font-family:var(--sans);
+      font-size:8px;
+      letter-spacing:.42em;
+      color:#9bb1b9;
+    }
+    .scroll{
+      position:absolute;
+      right:48px;
+      bottom:28px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.25em;
+      color:#91a2a9;
+      animation:scrollPulse 2.4s ease-in-out infinite;
+    }
 
-@media(max-width:760px){
-  .photo-visual,.vision-placeholder{height:220px}
-  .value-center{margin-top:92px;text-align:left}
-  .value-center h3{font-size:25px}
-  .story-layout{display:block}
-  .story-portrait{position:relative;top:auto;margin-bottom:62px}
-  .portrait-slot{max-width:360px;aspect-ratio:4/5}
-  .portrait-caption{padding-top:22px}
-  .story .timeline{padding:0 0 0 24px;border-left:1.5px solid #9ebfca}
-  .story .timeline:after{display:none}
-  .story .node{padding:0!important;margin:0 0 52px;border-bottom:0}
-  .story .node-dot{left:-25px;right:auto;top:7px;transform:translateX(-50%)}
-  .story .node-meta,.story .node h4,.story .node p{margin-left:16px}
-  .story .node h4{font-size:18px}
-  .story .node p{font-size:12px}
-}
+    /* ---------- Message ---------- */
+    .message{
+      min-height:590px;
+      padding:96px 24px 82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+    .message-inner{max-width:920px}
+    .message-copy{
+      margin:0;
+      font-size:clamp(21px,1.8vw,28px);
+      line-height:2.5;
+      letter-spacing:.10em;
+      color:#5b717b;
+    }
+    .message-line{display:block}
+    .message-line:last-child{font-weight:600;color:var(--ink-deep)}
+    .message-art{
+      width:min(500px,72vw);
+      margin:36px auto 0;
+      opacity:.76;
+      animation:float 8s ease-in-out infinite;
+    }
+
+    /* ---------- About ---------- */
+    .about{padding:126px 0 142px}
+    .about-grid{max-width:1030px;margin:0 auto}
+    .about-row{
+      display:grid;
+      grid-template-columns:1fr 1.18fr;
+      align-items:center;
+      gap:74px;
+      min-height:325px;
+    }
+    .about-row + .about-row{margin-top:78px}
+    .about-row.reverse{grid-template-columns:1.18fr 1fr}
+    .about-visual{
+      height:300px;
+      border-radius:15px;
+      overflow:hidden;
+      border:1px solid rgba(82,106,116,.10);
+      background:#edf0ef;
+    }
+    .about-visual img{width:100%;height:100%;object-fit:cover}
+    .mission-visual img{object-position:center 53%}
+    .vision-visual img{object-position:center center}
+    .about-copy .eyebrow{display:block;margin-bottom:28px}
+    .about-copy h3,.value h3{
+      margin:0;
+      color:var(--ink-deep);
+      font-size:clamp(27px,2.25vw,34px);
+      font-weight:500;
+      line-height:1.9;
+      letter-spacing:.072em;
+    }
+    .value{max-width:860px;margin:108px auto 0;text-align:center}
+    .value .eyebrow{display:block;margin-bottom:27px}
+
+    /* ---------- Service ---------- */
+    .service{padding:122px 0 146px;background:var(--paper-soft)}
+    .service .section-head{margin-bottom:38px}
+    .service-intro{
+      max-width:760px;
+      margin:0 auto 60px;
+      text-align:center;
+      font-size:14px;
+      line-height:2.15;
+      letter-spacing:.05em;
+      color:#64777f;
+    }
+    .service-grid{
+      max-width:980px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+    .service-card{
+      min-height:340px;
+      padding:42px 34px 30px;
+      display:flex;
+      flex-direction:column;
+      border:1px solid rgba(82,106,116,.13);
+      border-radius:18px;
+      background:var(--white);
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .service-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 48px rgba(82,106,116,.08);
+      border-color:rgba(82,106,116,.19);
+    }
+    .service-no{
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.22em;
+      color:#67838d;
+      margin-bottom:24px;
+    }
+    .service-card h3{
+      margin:0 0 22px;
+      color:var(--ink-deep);
+      font-size:clamp(20px,1.6vw,26px);
+      line-height:1.62;
+      letter-spacing:.065em;
+      font-weight:500;
+    }
+    .service-card p{
+      margin:0;
+      color:#5d727b;
+      font-size:13px;
+      line-height:2.03;
+      letter-spacing:.04em;
+    }
+    .service-link{
+      margin-top:auto;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.14em;
+      color:#67838d;
+    }
+
+    /* ---------- Story ---------- */
+    .story{padding:128px 0 150px;background:#f9f8f4}
+    .story-layout{
+      max-width:1080px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
+      gap:82px;
+      align-items:start;
+    }
+    .story-portrait{position:sticky;top:112px}
+    .portrait-photo{
+      aspect-ratio:4/5;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(82,106,116,.10);
+      background:#edf0ef;
+    }
+    .portrait-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 28%;
+    }
+    .portrait-caption{padding:24px 4px 0}
+    .founder-name{
+      margin:0 0 8px;
+      color:var(--ink-deep);
+      font-size:22px;
+      font-weight:500;
+      letter-spacing:.11em;
+    }
+    .portrait-caption small{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.13em;
+      color:#85949b;
+    }
+    .founder-intro{
+      margin:23px 0 0;
+      color:#64777f;
+      font-size:13px;
+      line-height:2;
+      letter-spacing:.035em;
+    }
+    .story-history{position:relative;padding-right:64px}
+    .story-history:after{
+      content:"";
+      position:absolute;
+      right:24px;
+      top:3px;
+      bottom:3px;
+      width:1px;
+      background:#abc5ce;
+    }
+    .story-chapter{
+      position:relative;
+      padding:0 46px 42px 0;
+      margin-bottom:34px;
+      border-bottom:1px solid rgba(82,106,116,.09);
+    }
+    .story-chapter:last-child{margin-bottom:0;border-bottom:0}
+    .story-dot{
+      position:absolute;
+      right:19px;
+      top:8px;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:1.5px solid #75929d;
+      background:#f9f8f4;
+      transform:translateX(50%);
+      z-index:2;
+    }
+    .story-chapter:last-child .story-dot{background:#9ebfca}
+    .story-meta{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.17em;
+      color:#829ba5;
+      margin-bottom:13px;
+    }
+    .story-chapter h3{
+      margin:0 0 17px;
+      color:var(--ink-deep);
+      font-size:20px;
+      line-height:1.65;
+      letter-spacing:.055em;
+      font-weight:500;
+    }
+    .story-chapter p{
+      margin:0;
+      color:#627780;
+      font-size:13px;
+      line-height:2.05;
+      letter-spacing:.035em;
+    }
+    .story-chapter p + p{margin-top:13px}
+    .story-chapter .em{color:#526f7a;font-weight:500}
+
+    .story-end{
+      max-width:840px;
+      margin:94px auto 0;
+      padding-top:56px;
+      border-top:1px solid var(--line);
+      text-align:center;
+    }
+    .story-belief{
+      margin:0 0 48px;
+      color:var(--ink-deep);
+      font-size:clamp(27px,2.35vw,36px);
+      line-height:1.85;
+      letter-spacing:.085em;
+      font-weight:500;
+    }
+    .take{
+      margin:0 0 28px;
+      color:var(--ink-deep);
+      font-family:var(--sans);
+      font-size:clamp(38px,4vw,58px);
+      letter-spacing:.08em;
+    }
+    .story-end p{
+      margin:0;
+      color:#627780;
+      font-size:14px;
+      line-height:2.15;
+      letter-spacing:.035em;
+    }
+    .story-end p + p{margin-top:8px}
+    .profile-link{
+      display:inline-block;
+      margin-top:28px;
+      padding-bottom:6px;
+      border-bottom:1px solid #70858e;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.16em;
+      color:#647a83;
+    }
+
+    /* ---------- Personal note ---------- */
+    .note{padding:124px 0 146px;background:var(--paper)}
+    .note-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:36px;
+      margin-bottom:48px;
+    }
+    .note-head-left .eyebrow{display:block;margin-bottom:18px}
+    .note-head h2{
+      margin:0;
+      color:var(--ink-deep);
+      font-size:clamp(34px,3.3vw,50px);
+      line-height:1.2;
+      letter-spacing:.12em;
+      font-weight:500;
+    }
+    .note-owner{
+      margin:14px 0 0;
+      font-family:var(--sans);
+      color:#87979d;
+      font-size:11px;
+      letter-spacing:.06em;
+    }
+    .note-all{
+      padding-bottom:8px;
+      font-family:var(--sans);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.08em;
+      color:#6f8b96;
+      white-space:nowrap;
+    }
+    .note-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+    .note-card{
+      min-width:0;
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(82,106,116,.08);
+      box-shadow:0 12px 30px rgba(82,106,116,.05);
+      transition:transform .24s ease,box-shadow .24s ease;
+    }
+    .note-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 38px rgba(82,106,116,.09);
+    }
+    .note-thumb{
+      aspect-ratio:1.55/1;
+      position:relative;
+      overflow:hidden;
+      background:#edf2f3;
+    }
+    .note-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .note-thumb--placeholder:before,
+    .note-thumb--placeholder:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+    }
+    .note-thumb--placeholder:before{
+      width:74%;
+      height:74%;
+      right:-20%;
+      top:-32%;
+      background:rgba(157,192,203,.40);
+    }
+    .note-thumb--placeholder:after{
+      width:72%;
+      height:72%;
+      left:-30%;
+      bottom:-42%;
+      background:rgba(218,229,232,.82);
+    }
+    .note-thumb .thumb-line{
+      position:absolute;
+      left:10%;
+      right:10%;
+      bottom:28%;
+      height:1px;
+      background:#93b6c2;
+      transform:rotate(-7deg);
+      z-index:2;
+    }
+    .note-thumb .thumb-kicker{
+      position:absolute;
+      left:20px;
+      top:18px;
+      z-index:3;
+      font-family:var(--sans);
+      font-size:8px;
+      letter-spacing:.23em;
+      color:#78939e;
+    }
+    .note-thumb .thumb-title{
+      position:absolute;
+      left:20px;
+      right:18px;
+      bottom:22px;
+      z-index:3;
+      color:#46626e;
+      font-size:16px;
+      line-height:1.55;
+      letter-spacing:.045em;
+      font-weight:500;
+    }
+    .note-body{padding:22px 21px 20px}
+    .note-body h3{
+      margin:0;
+      color:var(--ink-deep);
+      font-family:var(--sans);
+      font-size:14px;
+      line-height:1.75;
+      letter-spacing:.025em;
+      font-weight:600;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .note-meta{
+      margin-top:13px;
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.05em;
+      color:#94a1a6;
+    }
+    .note-empty{
+      grid-column:1/-1;
+      padding:44px 0 12px;
+      color:#8a999f;
+      font-family:var(--sans);
+      font-size:12px;
+      letter-spacing:.06em;
+      border-top:1px solid var(--line);
+    }
+
+    /* ---------- Contact ---------- */
+    .contact{padding:116px 0;text-align:center;background:var(--blue)}
+    .contact .eyebrow{display:block;margin-bottom:21px;color:#66818c}
+    .contact h2{
+      margin:0 0 27px;
+      color:var(--ink-deep);
+      font-size:clamp(28px,2.35vw,36px);
+      line-height:1.8;
+      letter-spacing:.085em;
+      font-weight:500;
+    }
+    .contact p{
+      margin:0 0 34px;
+      color:#617984;
+      font-size:13px;
+      line-height:2.1;
+      letter-spacing:.04em;
+    }
+    .contact-link{
+      display:inline-block;
+      padding-bottom:7px;
+      border-bottom:1px solid var(--ink-deep);
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.18em;
+      color:var(--ink-deep);
+    }
+
+    /* ---------- Footer ---------- */
+    footer{
+      padding:56px 0 28px;
+      background:#607985;
+      color:#f7fafb;
+      font-family:var(--sans);
+    }
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:44px;
+      margin-bottom:52px;
+    }
+    .footer-logo{font-size:21px;font-weight:600;letter-spacing:.22em}
+    .footer-copy{
+      margin-top:12px;
+      font-family:var(--serif);
+      font-size:12px;
+      letter-spacing:.05em;
+      color:#dce5e8;
+    }
+    .footer-links{
+      display:grid;
+      grid-template-columns:repeat(2,auto);
+      gap:11px 34px;
+      font-size:10px;
+      color:#e2e9eb;
+    }
+    .legal{
+      padding-top:21px;
+      border-top:1px solid rgba(255,255,255,.13);
+      font-size:9px;
+      line-height:1.9;
+      color:#d7e0e3;
+    }
+
+    /* ---------- Motion ---------- */
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      transition:opacity .75s ease,transform .75s ease;
+    }
+    .reveal.show{opacity:1;transform:none}
+    .hero-reveal{
+      opacity:0;
+      transform:translateY(12px);
+      animation:heroIn .75s ease forwards;
+    }
+    .hero-reveal.r1{animation-delay:.18s}
+    .hero-reveal.r2{animation-delay:.34s}
+    .hero-reveal.r3{animation-delay:.56s}
+    .hero-reveal.r4{animation-delay:.76s}
+    .hero-reveal.r5{animation-delay:1s}
+
+    @keyframes heroIn{to{opacity:1;transform:none}}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    @keyframes pointIn{to{opacity:.84}}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.32)}}
+    @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-8px,-7px)}}
+    @keyframes scrollPulse{0%,100%{opacity:.45;transform:translateY(0)}50%{opacity:.9;transform:translateY(5px)}}
+
+    @media(max-width:1000px){
+      .wrap{width:min(var(--max),calc(100% - 64px))}
+      .note-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:760px){
+      .wrap{width:calc(100% - 40px)}
+      .site-header{height:58px}
+      .nav-links{display:none}
+
+      .hero{min-height:680px;height:100svh}
+      .hero-meta{display:block;margin-bottom:31px}
+      .hero-partner{border:0;padding:10px 0 0;font-size:12px}
+      .hero-title{font-size:42px;line-height:1.53;letter-spacing:.052em}
+      .hero-field{width:118vw;height:325px;right:-46vw;bottom:2vh;opacity:.78}
+      .hero-field-word{display:none}
+      .scroll{right:20px}
+
+      .message{min-height:540px;padding:78px 20px 70px}
+      .message-copy{font-size:20px;line-height:2.25;letter-spacing:.065em}
+
+      .about{padding:98px 0 112px}
+      .section-head{margin-bottom:56px}
+      .section-head h2{font-size:27px}
+      .about-row,.about-row.reverse{grid-template-columns:1fr;gap:42px;min-height:0}
+      .about-row + .about-row{margin-top:88px}
+      .about-row.reverse .about-copy{order:2}
+      .about-row.reverse .about-visual{order:1}
+      .about-visual{height:220px}
+      .about-copy h3,.value h3{font-size:25px}
+      .value{text-align:left;margin-top:88px}
+
+      .service{padding:98px 0 112px}
+      .service-intro{text-align:left;font-size:13px;margin-bottom:48px}
+      .service-grid{grid-template-columns:1fr}
+      .service-card{min-height:326px;padding:36px 27px 28px}
+      .service-card h3{font-size:23px}
+
+      .story{padding:102px 0 118px}
+      .story-layout{display:block}
+      .story-portrait{position:relative;top:auto;margin-bottom:60px}
+      .portrait-photo{max-width:360px}
+      .story-history{padding:0 0 0 24px;border-left:1.5px solid #abc5ce}
+      .story-history:after{display:none}
+      .story-chapter{padding:0!important;margin:0 0 48px;border:0}
+      .story-dot{left:-25px;right:auto;top:8px;transform:translateX(-50%)}
+      .story-meta,.story-chapter h3,.story-chapter p{margin-left:16px}
+      .story-chapter h3{font-size:19px}
+      .story-end{margin-top:68px;padding-top:48px;text-align:left}
+      .story-belief{font-size:27px}
+      .take{font-size:39px}
+
+      .note{padding:96px 0 108px}
+      .note-head{align-items:flex-start;margin-bottom:38px}
+      .note-head h2{font-size:34px}
+      .note-all{padding-top:34px}
+      .note-grid{
+        display:flex;
+        gap:16px;
+        overflow-x:auto;
+        padding:0 20px 12px;
+        margin:0 -20px;
+        scroll-snap-type:x mandatory;
+        scrollbar-width:none;
+      }
+      .note-grid::-webkit-scrollbar{display:none}
+      .note-card{flex:0 0 78vw;scroll-snap-align:start}
+      .note-empty{min-width:100%}
+
+      .contact{padding:88px 0}
+      .contact h2{font-size:27px}
+
+      .footer-top{display:block}
+      .footer-links{margin-top:34px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+      }
+      .reveal,.hero-reveal{opacity:1;transform:none}
+      .current-line,.route-line{stroke-dashoffset:0}
+      .route-point{opacity:.84}
+    }
+
+    /* ---------- v16: conversion-oriented top page ---------- */
+    .hero-subcopy{
+      max-width:720px;
+      margin:30px 0 0;
+      color:#667c85;
+      font-size:15px;
+      line-height:2;
+      letter-spacing:.04em;
+    }
+    .hero-services{
+      margin-top:15px;
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.16em;
+      color:#879aa2;
+    }
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      margin-top:32px;
+    }
+    .hero-button{
+      min-width:150px;
+      padding:14px 20px 13px;
+      border:1px solid rgba(64,93,105,.30);
+      border-radius:999px;
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.14em;
+      text-align:center;
+      transition:background .2s ease,color .2s ease,transform .2s ease;
+    }
+    .hero-button.primary{
+      background:var(--ink-deep);
+      color:#fff;
+      border-color:var(--ink-deep);
+    }
+    .hero-button:hover{transform:translateY(-2px)}
+    .service-lead{
+      max-width:820px;
+      margin:0 auto 62px;
+      text-align:center;
+    }
+    .service-lead strong{
+      display:block;
+      margin-bottom:17px;
+      color:var(--ink-deep);
+      font-size:clamp(22px,1.8vw,28px);
+      font-weight:500;
+      letter-spacing:.06em;
+      line-height:1.8;
+    }
+    .service-lead p{
+      margin:0;
+      color:#657981;
+      font-size:13px;
+      line-height:2;
+      letter-spacing:.04em;
+    }
+
+    .expertise{
+      padding:132px 0 142px;
+      background:var(--paper);
+    }
+    .expertise-grid{
+      max-width:1030px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:92px;
+      align-items:center;
+    }
+    .expertise-steps{
+      display:grid;
+      gap:3px;
+    }
+    .expertise-word{
+      color:var(--ink-deep);
+      font-size:clamp(34px,3.1vw,49px);
+      line-height:1.5;
+      letter-spacing:.10em;
+      font-weight:500;
+    }
+    .expertise-word:nth-child(2){padding-left:30px}
+    .expertise-word:nth-child(3){padding-left:60px}
+    .expertise-word:nth-child(4){padding-left:90px}
+    .expertise-copy .eyebrow{display:block;margin-bottom:26px}
+    .expertise-copy h2{
+      margin:0 0 28px;
+      color:var(--ink-deep);
+      font-size:clamp(26px,2.15vw,33px);
+      line-height:1.8;
+      letter-spacing:.07em;
+      font-weight:500;
+    }
+    .expertise-copy p{
+      margin:0;
+      color:#62767e;
+      font-size:14px;
+      line-height:2.15;
+      letter-spacing:.035em;
+    }
+    .expertise-copy p + p{margin-top:15px}
+
+    .message-v16{
+      min-height:620px;
+      padding:112px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:var(--paper-soft);
+    }
+    .message-v16 .message-copy{line-height:2.35}
+    .message-v16 .message-line:last-child{
+      margin-top:8px;
+      font-weight:600;
+      color:var(--ink-deep);
+    }
+
+    .story-intro{
+      max-width:720px;
+      margin:-24px auto 74px;
+      text-align:center;
+      color:#778990;
+      font-size:13px;
+      line-height:2;
+      letter-spacing:.04em;
+    }
+    .story-end .vision-line{
+      margin-top:36px;
+      padding-top:34px;
+      border-top:1px solid var(--line);
+      color:#607983;
+      font-size:16px;
+      line-height:1.9;
+      letter-spacing:.07em;
+    }
+    .story-end .vision-line strong{
+      color:var(--ink-deep);
+      font-weight:500;
+    }
+
+    .note-caption{
+      margin:14px 0 0;
+      color:#87979d;
+      font-family:var(--sans);
+      font-size:11px;
+      letter-spacing:.04em;
+    }
+
+    @media(max-width:760px){
+      .hero-subcopy{font-size:13px;line-height:1.9}
+      .hero-services{line-height:1.9}
+      .hero-actions{flex-wrap:wrap}
+      .hero-button{min-width:0;flex:1 1 140px}
+      .service-lead{text-align:left;margin-bottom:46px}
+      .service-lead strong{font-size:22px}
+      .expertise{padding:98px 0 108px}
+      .expertise-grid{grid-template-columns:1fr;gap:58px}
+      .expertise-word{font-size:34px}
+      .expertise-word:nth-child(2){padding-left:18px}
+      .expertise-word:nth-child(3){padding-left:36px}
+      .expertise-word:nth-child(4){padding-left:54px}
+      .message-v16{min-height:540px;padding:88px 20px}
+      .story-intro{text-align:left;margin:-18px 0 54px}
+    }
 
 
-/* ===== HELMIO v11 — art direction ===== */
-:root{
-  --paper:#f7f4ee;
-  --paper-2:#fbfaf7;
-  --ink:#536b75;
-  --ink-deep:#425d68;
-  --muted:#758991;
-  --blue:#b9d0d8;
-  --blue-mid:#9ebfca;
-  --blue-soft:#e3ecef;
-  --line:rgba(83,107,117,.15);
-}
-body{color:var(--ink)}
-header{border-bottom-color:rgba(83,107,117,.09)}
-.logo{color:var(--ink-deep)}
-.navlinks{color:#71858d}
-.hero{isolation:isolate}
-.hero-inner{z-index:3}
-.hero h1{color:var(--ink-deep)}
-.hero-kicker .label{color:#78909a}
-.hero-partner{color:#70858e;border-left-color:rgba(83,107,117,.18)}
-.hero-world{
-  position:absolute;right:-1.5%;bottom:2%;width:min(58vw,840px);height:auto;
-  z-index:1;opacity:.78;pointer-events:none;
-}
-.hero:after{bottom:15%;background:linear-gradient(90deg,transparent 0 8%,rgba(121,156,168,.08) 24%,rgba(121,156,168,.22) 52%,rgba(121,156,168,.08) 82%,transparent 100%)}
-.sea-word{display:none}
-.message{min-height:600px}
-.message-copy{color:#5b717b}
-.message-line.accent{font-weight:600;color:var(--ink-deep)}
-.message-art{width:min(500px,74vw);margin-top:34px;opacity:.82;animation:currentDrift 8s ease-in-out infinite}
+    /* ---------- v17: service hierarchy / experience / visible note ---------- */
+    .service-grid--primary{
+      grid-template-columns:repeat(3,1fr);
+      max-width:1120px;
+    }
+    .service-card.primary-service{
+      min-height:390px;
+    }
+    .service-card .service-kicker{
+      margin:-6px 0 18px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.16em;
+      color:#8aa0a8;
+    }
+    .other-service{
+      max-width:1120px;
+      margin:26px auto 0;
+      padding:26px 30px;
+      border-top:1px solid rgba(82,106,116,.15);
+      border-bottom:1px solid rgba(82,106,116,.15);
+      display:grid;
+      grid-template-columns:180px 1fr auto;
+      align-items:center;
+      gap:28px;
+    }
+    .other-service-label{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.18em;
+      color:#81959d;
+    }
+    .other-service h3{
+      margin:0 0 6px;
+      color:var(--ink-deep);
+      font-size:19px;
+      font-weight:500;
+      letter-spacing:.055em;
+    }
+    .other-service p{
+      margin:0;
+      color:#687c84;
+      font-size:12px;
+      line-height:1.9;
+      letter-spacing:.03em;
+    }
+    .other-service a{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.14em;
+      color:#6f8892;
+      white-space:nowrap;
+    }
 
-.about-copy h3,.value-center h3,.section-head h2{color:var(--ink-deep)}
-.photo-visual,.vision-art{
-  height:300px;border-radius:14px;overflow:hidden;
-  border:1px solid rgba(83,107,117,.10);background:#eef0ed;
-}
-.photo-visual img,.vision-art img{width:100%;height:100%;object-fit:cover;display:block}
-.mission-visual img{object-position:center 55%}
-.vision-art img{object-fit:cover}
-.value-center{margin-top:108px;position:relative}
-.value-center:before{
-  content:"";display:block;width:38px;height:1px;background:#9ebfca;
-  margin:0 auto 34px;
-}
-.value-center .label{margin-bottom:26px}
-.value-center h3{font-weight:500}
+    .experience{
+      padding:112px 0 122px;
+      background:#fcfbf8;
+    }
+    .experience-top{
+      margin-bottom:62px;
+    }
+    .experience-top .eyebrow{
+      display:block;
+      margin-bottom:24px;
+      color:#a57f4e;
+    }
+    .experience-top h2{
+      margin:0;
+      color:var(--ink-deep);
+      font-size:clamp(28px,2.35vw,35px);
+      font-weight:500;
+      letter-spacing:.12em;
+      line-height:1.55;
+    }
+    .experience-top p{
+      margin:0 0 7px;
+      color:#5c727b;
+      font-size:14px;
+      line-height:2;
+      letter-spacing:.035em;
+    }
+    .experience-note{
+      margin-top:10px!important;
+      font-family:var(--sans);
+      font-size:9px!important;
+      letter-spacing:.04em!important;
+      color:#94a2a8!important;
+    }
+    .experience-list{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border-top:1px solid #cfd9dd;
+      border-bottom:1px solid #cfd9dd;
+    }
+    .experience-item{
+      min-height:156px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:22px 16px;
+      border-right:1px solid #d8e0e3;
+      color:#425f6b;
+      font-family:var(--sans);
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:.03em;
+    }
+    .experience-item:last-child{border-right:0}
 
-.service-card{border-color:rgba(83,107,117,.13);background:rgba(255,255,255,.86)}
-.service-card:hover{box-shadow:0 18px 52px rgba(83,107,117,.08)}
-.service-card h3{color:var(--ink-deep)}
-.service-card p{color:#657a83}
-.service-no,.service-link{color:#78949e}
+    .note{
+      display:block!important;
+    }
+    .note[hidden]{display:block!important}
+    .note-grid{
+      grid-template-columns:repeat(3,1fr);
+    }
+    .note-empty{
+      padding:0;
+      border:0;
+    }
+    .note-placeholder-card{
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(82,106,116,.08);
+      box-shadow:0 12px 30px rgba(82,106,116,.05);
+    }
+    .note-placeholder-card .note-thumb{
+      aspect-ratio:1.55/1;
+    }
+    .note-placeholder-card .note-body{
+      min-height:128px;
+    }
+    .note-placeholder-card .note-body h3{
+      color:#607983;
+      font-family:var(--serif);
+      font-weight:500;
+    }
+    .note-soon{
+      margin-top:13px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.08em;
+      color:#9aa7ac;
+    }
 
-.story{background:#faf9f5}
-.portrait-slot{
-  background:
-    linear-gradient(150deg,rgba(247,244,238,.55),rgba(211,226,231,.82)),
-    #e6edef;
-  color:#8197a0;
-}
-.portrait-caption .founder-name{color:var(--ink-deep)}
-.story .node h4{color:var(--ink-deep)}
-.story .node p{color:#71858d}
-.story .node-meta{color:#829ba5}
-.story .timeline:after{background:#abc5ce}
-.story .node-dot{border-color:#75929d}
-.story-end .belief,.take{color:var(--ink-deep)}
+    @media(max-width:1000px){
+      .service-grid--primary{grid-template-columns:1fr}
+      .experience-list{grid-template-columns:repeat(2,1fr)}
+      .experience-item:nth-child(2n){border-right:0}
+      .experience-item:nth-child(n+3){border-top:1px solid #d8e0e3}
+      .experience-item:last-child{
+        grid-column:1/-1;
+        border-right:0;
+      }
+    }
 
-.contact{
-  background:#c7d9de;color:var(--ink-deep);padding:110px 0;
-}
-.contact-label{display:block;margin-bottom:24px;color:#6d8791}
-.contact h2{margin-bottom:24px}
-.contact p{
-  margin:0 auto 38px;font-size:13px;line-height:2.1;letter-spacing:.04em;
-  color:#5f7680;
-}
-.contact a{border-bottom-color:#69838d;color:#526b75}
-footer{background:#617b86;color:#f9f7f2}
-.footer-copy{color:#e0e8ea}.footer-links{color:#edf1f2}.legal{color:#dce5e7}
-
-@keyframes currentDrift{
-  0%,100%{transform:translateX(0) translateY(0)}
-  50%{transform:translateX(7px) translateY(-3px)}
-}
-
-@media(max-width:760px){
-  .hero-world{width:112vw;right:-35%;bottom:3%;opacity:.56}
-  .message{min-height:540px}
-  .photo-visual,.vision-art{height:220px}
-  .value-center:before{margin-left:0}
-  .contact p br{display:none}
-}
-
-
-/* v12 — actual founder portrait */
-.portrait-photo{
-  width:100%;
-  aspect-ratio:4/5;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(83,107,117,.10);
-  background:#eef0ed;
-}
-.portrait-photo img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:50% 42%;
-}
-@media(max-width:760px){
-  .portrait-photo{max-width:360px}
-}
-
-
-/* ===== v13 — softer / more alive HERO ===== */
-.hero{
-  background:
-    linear-gradient(180deg,#f8f5ef 0%,#f7f4ee 68%,#f6f4ef 100%);
-}
-.hero:after{display:none}
-.hero-inner{position:relative;z-index:4}
-.hero-kicker{margin-bottom:34px}
-.hero h1{position:relative;color:var(--ink-deep)}
-.hero-title-line{
-  display:block;
-  opacity:0;
-  transform:translateY(28px);
-  animation:heroTitleIn .95s cubic-bezier(.2,.7,.25,1) forwards;
-}
-.hero-title-line.line-1{animation-delay:.42s}
-.hero-title-line.line-2{animation-delay:.60s}
-
-.hero-reveal{
-  opacity:0;
-  transform:translateY(10px);
-  animation:heroMetaIn .72s ease forwards;
-}
-.reveal-1{animation-delay:.10s}
-.reveal-2{animation-delay:.24s}
-.reveal-5{animation-delay:.93s}
-
-.hero-note{
-  margin-top:38px;
-  font-family:var(--sans);
-  font-size:9px;
-  letter-spacing:.29em;
-  color:#93aab3;
-}
-.hero-blue-field{
-  position:absolute;
-  z-index:1;
-  right:-2vw;
-  bottom:2.5vh;
-  width:min(61vw,900px);
-  height:min(48vw,470px);
-  pointer-events:none;
-  overflow:visible;
-}
-.hero-current{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  overflow:visible;
-}
-.current-line,.route-line{
-  fill:none;
-  stroke-linecap:round;
-  stroke-dasharray:1;
-  stroke-dashoffset:1;
-}
-.current-line{
-  stroke:#a8c7d1;
-  stroke-width:1.35;
-  animation:drawCurrent 1.8s cubic-bezier(.3,.65,.25,1) forwards,
-            driftCurrent 8s ease-in-out 2s infinite;
-}
-.line-a{opacity:.86;animation-delay:.78s,2.2s}
-.line-b{
-  stroke:#c3d8de;
-  stroke-width:1.05;
-  opacity:.74;
-  animation-delay:.96s,2.4s;
-}
-.route-line{
-  stroke:#91b2be;
-  stroke-width:1.15;
-  stroke-dasharray:.025 .016;
-  animation:drawRoute 1.45s ease 1.28s forwards;
-  opacity:.74;
-}
-.route-point{
-  fill:#88aab6;
-  opacity:0;
-  animation:pointIn .45s ease forwards, pointPulse 4.2s ease-in-out infinite;
-}
-.p1{animation-delay:1.48s,2.3s}
-.p2{animation-delay:1.68s,2.7s}
-.p3{animation-delay:1.90s,3.1s}
-
-.blue-orb{
-  position:absolute;
-  display:block;
-  border-radius:50%;
-  background:#c5dbe2;
-  opacity:.42;
-  filter:blur(.2px);
-  animation:orbFloat 7.8s ease-in-out infinite;
-}
-.orb-a{width:78px;height:78px;right:13%;top:20%;opacity:.28}
-.orb-b{width:20px;height:20px;right:35%;top:12%;animation-delay:-2.2s}
-.orb-c{width:10px;height:10px;right:6%;top:50%;opacity:.55;animation-delay:-4s}
-.horizon-word{
-  position:absolute;
-  right:4%;
-  bottom:4%;
-  font-family:var(--sans);
-  font-size:8px;
-  letter-spacing:.42em;
-  color:#9bb1b9;
-  opacity:0;
-  animation:heroMetaIn .8s ease 1.45s forwards;
-}
-.scroll{
-  color:#91a2a9;
-  animation:scrollPulse 2.4s ease-in-out infinite;
-}
-
-@keyframes heroTitleIn{
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes heroMetaIn{
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes drawCurrent{
-  to{stroke-dashoffset:0}
-}
-@keyframes drawRoute{
-  to{stroke-dashoffset:0}
-}
-@keyframes pointIn{
-  to{opacity:.82}
-}
-@keyframes driftCurrent{
-  0%,100%{transform:translateX(0) translateY(0)}
-  50%{transform:translateX(8px) translateY(-4px)}
-}
-@keyframes pointPulse{
-  0%,100%{opacity:.58;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.35)}
-}
-@keyframes orbFloat{
-  0%,100%{transform:translate(0,0)}
-  45%{transform:translate(-9px,-12px)}
-  70%{transform:translate(4px,-5px)}
-}
-@keyframes scrollPulse{
-  0%,100%{opacity:.45;transform:translateY(0)}
-  50%{opacity:.9;transform:translateY(5px)}
-}
-
-/* Keep hero playful without changing the restrained typography scale. */
-@media(max-width:760px){
-  .hero-blue-field{
-    width:118vw;
-    height:330px;
-    right:-47vw;
-    bottom:2vh;
-    opacity:.78;
-  }
-  .hero-note{margin-top:29px;font-size:8px;letter-spacing:.22em}
-  .orb-a{width:58px;height:58px}
-  .horizon-word{display:none}
-}
-
-/* Don't animate aggressively for users who request reduced motion. */
-@media(prefers-reduced-motion:reduce){
-  .hero-title-line,.hero-reveal,.current-line,.route-line,.route-point,
-  .blue-orb,.horizon-word,.scroll{
-    animation:none!important;
-    opacity:1;
-    transform:none;
-    stroke-dashoffset:0;
-  }
-}
+    @media(max-width:760px){
+      .other-service{
+        grid-template-columns:1fr;
+        gap:10px;
+        padding:24px 4px;
+      }
+      .experience{padding:92px 0 102px}
+      .experience-top{
+        margin-bottom:42px;
+      }
+      .experience-top h2{font-size:27px}
+      .experience-list{grid-template-columns:1fr}
+      .experience-item{
+        min-height:100px;
+        justify-content:flex-start;
+        text-align:left;
+        border-right:0!important;
+        border-top:1px solid #d8e0e3;
+        padding:20px 4px;
+      }
+      .experience-item:first-child{border-top:0}
+      .experience-item:last-child{grid-column:auto}
+      .note-grid{
+        display:flex;
+        grid-template-columns:none;
+      }
+      .note-placeholder-card{flex:0 0 78vw}
+    }
 
 
-/* ===== v14 — MVV photo swap ===== */
-.mission-visual img{
-  object-position:center 42%;
-}
-.vision-sea img{
-  object-position:center 58%;
-}
+    .service-card p strong{
+      color:var(--ink-deep);
+      font-weight:500;
+    }
+    .education-credit{
+      display:block;
+      margin-top:12px;
+      font-family:var(--sans);
+      font-size:10px;
+      line-height:1.8;
+      letter-spacing:.03em;
+      color:#70858d;
+    }
 
-</style>
+
+    /* ======================================================
+       v22 FINAL OVERRIDES
+       ====================================================== */
+
+    /* Slightly deeper body copy, without using pure black */
+    body{color:#3e5863}
+    .service-card p,
+    .expertise-copy p,
+    .story-chapter p,
+    .story-end p,
+    .service-lead p,
+    .contact p{color:#506a74}
+
+    /* SERVICE: 3 main pillars + one secondary service */
+    .service-grid--primary{
+      grid-template-columns:repeat(3,1fr);
+      max-width:1120px;
+    }
+    .service-card.primary-service{min-height:420px}
+    .service-card .service-kicker{
+      margin:-6px 0 18px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.16em;
+      color:#6f8790;
+    }
+    .service-card p strong{
+      color:var(--ink-deep);
+      font-weight:500;
+    }
+
+    .other-service{
+      max-width:1120px;
+      margin:28px auto 0;
+      padding:27px 30px;
+      border-top:1px solid rgba(70,95,105,.16);
+      border-bottom:1px solid rgba(70,95,105,.16);
+      display:grid;
+      grid-template-columns:180px 1fr auto;
+      align-items:center;
+      gap:28px;
+    }
+    .other-service-label{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.18em;
+      color:#6d858e;
+    }
+    .other-service h3{
+      margin:0 0 6px;
+      color:var(--ink-deep);
+      font-size:19px;
+      font-weight:500;
+      letter-spacing:.055em;
+    }
+    .other-service p{
+      margin:0;
+      color:#536d76;
+      font-size:12px;
+      line-height:1.9;
+      letter-spacing:.03em;
+    }
+    .other-service a{
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.14em;
+      color:#667f89;
+      white-space:nowrap;
+    }
+
+    /* OUR EXPERTISE */
+    .expertise-copy h2{
+      white-space:nowrap;
+    }
+
+    /* SELECTED EXPERIENCE */
+    .experience{
+      padding:112px 0 122px;
+      background:#fcfbf8;
+    }
+    .experience-top{
+      margin-bottom:52px;
+    }
+    .experience-top .eyebrow{
+      display:block;
+      margin-bottom:21px;
+      color:#9b7d55;
+    }
+    .experience-top h2{
+      margin:0;
+      color:var(--ink-deep);
+      font-size:clamp(28px,2.35vw,35px);
+      font-weight:500;
+      line-height:1.55;
+      letter-spacing:.12em;
+    }
+    .experience-list{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border-top:1px solid #cfd9dd;
+      border-bottom:1px solid #cfd9dd;
+    }
+    .experience-item{
+      min-height:156px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:22px 16px;
+      border-right:1px solid #d8e0e3;
+      color:#385763;
+      font-family:var(--sans);
+      font-size:15px;
+      font-weight:600;
+      letter-spacing:.03em;
+    }
+    .experience-item:last-child{border-right:0}
+
+    /* STORY: slightly calmer, editorial */
+    .story-intro{
+      max-width:760px;
+      margin:-24px auto 74px;
+      text-align:center;
+      color:#687c84;
+      font-size:13px;
+      line-height:2;
+      letter-spacing:.04em;
+    }
+
+    /* NOTE stays visible before CONTACT */
+    .note{display:block!important}
+    .note[hidden]{display:block!important}
+    .note-grid{grid-template-columns:repeat(3,1fr)}
+    .note-placeholder-card{
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(70,95,105,.08);
+      box-shadow:0 12px 30px rgba(70,95,105,.05);
+    }
+    .note-placeholder-card .note-body{min-height:128px}
+    .note-placeholder-card .note-body h3{
+      color:#556d76;
+      font-family:var(--serif);
+      font-weight:500;
+    }
+    .note-soon{
+      margin-top:13px;
+      font-family:var(--sans);
+      font-size:9px;
+      letter-spacing:.08em;
+      color:#95a2a7;
+    }
+
+    @media(max-width:1000px){
+      .service-grid--primary{grid-template-columns:1fr}
+      .experience-list{grid-template-columns:repeat(2,1fr)}
+      .experience-item:nth-child(2n){border-right:0}
+      .experience-item:nth-child(n+3){border-top:1px solid #d8e0e3}
+      .experience-item:last-child{
+        grid-column:1/-1;
+        border-right:0;
+      }
+    }
+
+    @media(max-width:760px){
+      .other-service{
+        grid-template-columns:1fr;
+        gap:10px;
+        padding:24px 4px;
+      }
+      .expertise-copy h2{white-space:normal}
+      .experience{padding:92px 0 102px}
+      .experience-top{margin-bottom:38px}
+      .experience-top h2{font-size:27px}
+      .experience-list{grid-template-columns:1fr}
+      .experience-item{
+        min-height:96px;
+        justify-content:flex-start;
+        text-align:left;
+        border-right:0!important;
+        border-top:1px solid #d8e0e3;
+        padding:20px 4px;
+      }
+      .experience-item:first-child{border-top:0}
+      .experience-item:last-child{grid-column:auto}
+      .story-intro{text-align:left;margin:-18px 0 54px}
+      .note-grid{
+        display:flex;
+        grid-template-columns:none;
+      }
+      .note-placeholder-card{flex:0 0 78vw}
+    }
+
+
+    /* Service card visuals — unified size */
+    .service-card{
+      overflow:hidden;
+      padding-top:0;
+    }
+    .service-card-media{
+      width:calc(100% + 48px);
+      margin:0 -24px 26px;
+      aspect-ratio:16/9;
+      background:#faf9f6;
+      border-bottom:1px solid rgba(70,95,105,.08);
+      overflow:hidden;
+    }
+    .service-card-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+    @media(max-width:760px){
+      .service-card-media{
+        width:calc(100% + 36px);
+        margin:0 -18px 22px;
+      }
+    }
+
+
+    /* v25 — equal service card rhythm */
+    .service-card.primary-service{
+      height:100%;
+    }
+    .service-card.primary-service > p{
+      min-height:188px;
+    }
+    @media(max-width:1000px){
+      .service-card.primary-service > p{min-height:auto}
+    }
+
+
+    /* v27 — streamlined expertise */
+    .expertise-grid{grid-template-columns:1fr;max-width:780px;margin:0 auto;}
+    .expertise-copy{max-width:780px;}
+
+  </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="logo" href="#top">HELMIO</a><nav class="navlinks"><a href="#about">ABOUT</a><a href="#service">SERVICE</a><a href="#story">STORY</a><a href="#contact">CONTACT</a></nav></div></header>
-<main id="top">
-<section class="hero">
-  <div class="hero-blue-field" aria-hidden="true">
-    <span class="blue-orb orb-a"></span>
-    <span class="blue-orb orb-b"></span>
-    <span class="blue-orb orb-c"></span>
-    <svg class="hero-current" viewBox="0 0 860 330" preserveAspectRatio="none">
-      <path class="current-line line-a" pathLength="1" d="M18 206 C112 178 171 220 267 198 S438 166 548 195 S714 225 840 183"/>
-      <path class="current-line line-b" pathLength="1" d="M42 244 C138 225 201 254 295 237 S467 211 572 237 S724 255 830 225"/>
-      <path class="route-line" pathLength="1" d="M515 214 C560 179 592 142 626 106 S698 58 771 45"/>
-      <circle class="route-point p1" cx="515" cy="214" r="4"/>
-      <circle class="route-point p2" cx="626" cy="106" r="3.5"/>
-      <circle class="route-point p3" cx="771" cy="45" r="4"/>
-    </svg>
-    <span class="horizon-word">BEYOND THE HORIZON</span>
-  </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="#top">HELMIO</a>
+      <nav class="nav-links" aria-label="主要ナビゲーション">
+        <a href="#service">SERVICE</a>
+        <a href="#expertise">EXPERTISE</a>
+        <a href="#story">STORY</a>
+        <a href="#note">NOTE</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="wrap hero-inner">
-    <div class="hero-kicker">
-      <div class="label hero-reveal reveal-1">HELMIO — TAKE THE HELM OF YOUR LIFE</div>
-      <div class="hero-partner hero-reveal reveal-2">アナウンサーによるコミュニケーションパートナー</div>
-    </div>
-    <h1 class="hero-title">
-      <span class="hero-title-line line-1">可能性は、</span>
-      <span class="hero-title-line line-2">いつも想像以上。</span>
-    </h1>
-    <div class="hero-note hero-reveal reveal-5">WORDS CAN OPEN A NEW COURSE.</div>
-  </div>
 
-  <div class="scroll">SCROLL</div>
-</section>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-field" aria-hidden="true">
+        <span class="orb a"></span>
+        <span class="orb b"></span>
+        <span class="orb c"></span>
 
-<section class="message"><div class="message-inner reveal"><div class="message-copy"><span class="message-line">誰かの言葉で、世界が広がることがある。</span><span class="message-line">自分の言葉で、未来が動き出すことがある。</span><span class="message-line accent">伝えることは、可能性を拡げるということ。</span></div>
-    <img class="message-art" src="assets/message-current.svg" alt=""></div></section>
-<section class="about" id="about"><div class="wrap"><div class="section-head reveal"><span class="label">ABOUT US</span><h2>私たちについて</h2></div><div class="about-grid">
-  <div class="about-row reveal">
-      <div class="photo-visual mission-visual" aria-label="MISSION写真"><img src="assets/mission-communicator.webp" alt="打ち合わせをしながら伝える仕事を体現するイメージ写真"></div>
-      <div class="about-copy"><div class="label">MISSION</div><h3>伝える力で、<br>選択肢と可能性を広げる。</h3></div>
-    </div>
-  <div class="about-row reverse reveal">
-      <div class="about-copy"><div class="label">VISION</div><h3>自分の人生の舵を、<br>自分で取れる社会へ。</h3></div>
-      <div class="vision-art vision-sea" aria-label="VISION写真"><img src="assets/vision-sea.webp" alt="水平線へ続く海の風景"></div>
-    </div>
-    </div>
-  <div class="value-center reveal">
-      <div class="label">VALUE</div>
-      <h3>できない理由より、<br>できる方法を。</h3>
-    </div>
-</div></div></section>
-<section class="service" id="service"><div class="wrap"><div class="section-head reveal"><span class="label">SERVICE</span><h2>私たちのサービス</h2></div><p class="service-intro reveal">HELMIOは、アナウンサーをはじめとする「伝える」の専門家が中心となり、<br>人や企業の魅力を引き出し、新しい出会いをつくります。</p><div class="service-grid">
-  <a class="service-card reveal" href="/recruiting/"><div class="service-no">01</div><h3>BtoB専門の採用広報</h3><p>知らなかった会社を、働いてみたい会社へ。<br><br>学生に伝わりにくいBtoBの魅力を、学生リポーター × アナウンサー × 映像のプロが採用コンテンツに。独自の学生ネットワークに届けます。</p><div class="service-link"><span>事業を見る</span><span>→</span></div></a>
-  <a class="service-card reveal" href="/casting/"><div class="service-no">02</div><h3>プロ人材のキャスティング</h3><p>放送局出身専門。確かな経験を持つアナウンサーのみが在籍。<br><br>目的や企画に合わせたプロ人材をご紹介し、プロジェクトの成功を支えます。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
-  <a class="service-card reveal" href="/training/"><div class="service-no">03</div><h3>社員研修</h3><p>マナー研修・話し方研修。<br><br>元放送局アナウンサー × 社長秘書・マナー講師による実践型研修。現場で培ったプロフェッショナルな話し方の技術を短期間で習得。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
-  <a class="service-card reveal" href="/school/"><div class="service-no">04</div><h3>AI時代の「伝える力」オンラインスクール</h3><p>教育の専門知見に基づいた、AI時代の学びを。<br><br>教育工学・学習科学の専門家とともに、子どもたちの「考える・聞く・伝える力」を育むオンラインレッスンを提供します。</p><div class="service-link"><span>詳しく見る</span><span>→</span></div></a>
-</div></div></section>
-<section class="story" id="story">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="label">STORY</span><h2>私のこれまで</h2></div>
-    <div class="story-layout">
-      <aside class="story-portrait reveal">
-        <div class="portrait-photo">
-          <img src="assets/asami-niijima.webp" alt="株式会社HELMIO 代表 新島麻生">
+        <svg class="hero-current" viewBox="0 0 860 330" preserveAspectRatio="none">
+          <path class="current-line" pathLength="1" d="M18 206 C112 178 171 220 267 198 S438 166 548 195 S714 225 840 183"/>
+          <path class="current-line b" pathLength="1" d="M42 244 C138 225 201 254 295 237 S467 211 572 237 S724 255 830 225"/>
+          <path class="route-line" pathLength="1" d="M515 214 C560 179 592 142 626 106 S698 58 771 45"/>
+          <circle class="route-point p1" cx="515" cy="214" r="4"/>
+          <circle class="route-point p2" cx="626" cy="106" r="3.5"/>
+          <circle class="route-point p3" cx="771" cy="45" r="4"/>
+        </svg>
+
+        <span class="hero-field-word">BEYOND THE HORIZON</span>
+      </div>
+
+      <div class="wrap hero-inner">
+        <div class="hero-meta">
+          <div class="eyebrow hero-reveal r1">HELMIO — TAKE THE HELM OF YOUR LIFE</div>
         </div>
-        <div class="portrait-caption">
-          <p class="founder-name">新島 麻生</p>
-          <small>NIIJIMA ASAMI — 株式会社HELMIO 代表</small>
-          <p class="founder-intro">自分に自信がなく、20代前半まで人前で話すことが大の苦手でした。<br>アナウンサーへの挑戦、挫折、転職。その振れ幅ごと、今のHELMIOにつながっています。</p>
+
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-reveal r3">可能性は、</span>
+          <span class="hero-reveal r4">想像の先にある。</span>
+        </h1>
+
+        <p class="hero-subcopy hero-reveal r5">
+          人や企業の、まだ伝わっていない価値を見つけ、<br>
+          言葉にし、届く形にする。
+        </p>
+        <div class="hero-services hero-reveal r5">採用広報　｜　展示会・営業支援　｜　教育</div>
+        <div class="hero-actions hero-reveal r5">
+          <a class="hero-button primary" href="#service">SERVICEを見る</a>
+          <a class="hero-button" href="#contact">相談する</a>
         </div>
-      </aside>
+      </div>
 
-      <div class="story-history">
-        <div class="timeline">
-          <div class="timeline-grid">
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">01 / START</div><h4>人前で話すことが、<br>大の苦手だった。</h4><p>小さい頃、とても内向的で、人前や目立つことが苦手。スポーツ中心で、大学はラクロスに明け暮れる。あるきっかけで、突然アナウンサーを目指す。</p></div>
+      <div class="scroll">SCROLL</div>
+    </section>
 
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">02 / JOB HUNT</div><h4>アナウンサー就活、<br>落ちる。</h4><p>専門に練習してきた候補者との差は大きく、受けた4社とも不合格。その後、小さくスターダストプロモーションのキャスター部門を経て、4年かけてアナウンサーへ。</p></div>
 
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">03 / NHK</div><h4>NHKで4年、<br>アナウンサーを経験。</h4><p>ニュースキャスター、取材、インタビュー、生放送を経験。「伝える」を仕事にし、世界が変わりました。人に理解してもらえること、人とのつながり、人生の選択肢が広がりました。</p></div>
 
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">04 / DROP</div><h4>「アナウンサーは、<br>潰しが効かない。」</h4><p><strong>次に挑戦したかったビジネス・スタートアップの世界へ。</strong><br><strong>ところが、キャリアは思うようには進みませんでした。</strong></p></div>
+    <section class="service" id="service">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">SERVICE</span>
+          <h2>私たちができること</h2>
+        </div>
 
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">05 / 140 TALKS</div><h4>転職で、<br>約140社と話した。</h4><p>カジュアル面談を重ね、さまざまな企業・仕事・人に出会い、キャリアの構造を学びました。</p></div>
+        <div class="service-lead reveal">
+          <strong>まだ伝わっていない価値を、届く形へ。</strong>
+          <p>
+            HELMIOは「伝える」を軸に、人や企業の魅力を引き出し、<br>
+            新しい出会いと選択肢をつくります。
+          </p>
+        </div>
 
-            <div class="node reveal"><div class="node-dot"></div><div class="node-meta">06 / HELMIO</div><h4>そして今、<br>HELMIOへ。</h4><p>キャリアの可能性を広げること、「伝える」の教育分野に携わりたいと思い、HELMIOを設立。</p></div>
+        <div class="service-grid service-grid--primary">
+          <a class="service-card primary-service reveal" href="/recruiting/">
+            <div class="service-card-media">
+              <img src="assets/service-recruiting.webp" alt="学生目線で企業の魅力を伝える採用広報支援">
+            </div>
+            <div class="service-no">01</div>
+            <div class="service-kicker">RECRUITING PR</div>
+            <h3>採用広報支援</h3>
+            <p>
+              「知らなかった会社を、働いてみたい会社へ。」<br><br>
+              学生目線の取材と、プロによる企画・編集・発信で、企業の魅力を学生に届く採用コンテンツへ。
+              <strong>独自の学生ネットワーク2,000人以上にリーチします。</strong>
+            </p>
+            <div class="service-link"><span>詳しく見る</span><span>→</span></div>
+          </a>
+
+          <a class="service-card primary-service reveal" href="https://hel-mio.com/exbition.html">
+            <div class="service-card-media">
+              <img src="assets/service-exhibition.webp" alt="展示会で来場者にプレゼンテーションを行う様子">
+            </div>
+            <div class="service-no">02</div>
+            <div class="service-kicker">EXHIBITION / SALES COMMUNICATION</div>
+            <h3>展示会・営業コミュニケーション支援</h3>
+            <p>
+              「5秒で足を止め、1分で理解させ、商談につなげる。」<br><br>
+              展示会プレゼンの構成、営業資料・スライド、台本、登壇レッスン、リハーサルまで。
+              <strong>「伝わる」を、次のアクションにつなげます。</strong>
+            </p>
+            <div class="service-link"><span>詳しく見る</span><span>→</span></div>
+          </a>
+
+          <a class="service-card primary-service reveal" href="/school/">
+            <div class="service-card-media">
+              <img src="assets/service-education.webp" alt="子ども向けAI時代の伝える力スクール">
+            </div>
+            <div class="service-no">03</div>
+            <div class="service-kicker">EDUCATION</div>
+            <h3>AI時代の「伝える力」教育</h3>
+            <p>
+              「自分で考え、自分の言葉で伝える。その力が、未来をひらく。」<br><br>
+              全国の仲間やAIとの対話を通して、自分なりに考え、言葉にして相手へ届ける力を育てます。<br><br>
+              <strong>青山学院大学 教育人間科学部 教育学科・益川弘如教授監修。</strong>
+            </p>
+            <div class="service-link"><span>詳しく見る</span><span>→</span></div>
+          </a>
+        </div>
+
+        <div class="other-service reveal">
+          <div class="other-service-label">OTHER SERVICE</div>
+          <div>
+            <h3>アナウンサー・プロ人材キャスティング</h3>
+            <p>
+              企画・イベント・映像など、目的に合う「伝え手」を企業の現場へ。
+              放送局経験者を中心としたプロ人材をご紹介します。
+            </p>
+          </div>
+          <a href="https://hel-mio.com/professionals.html">詳しく見る →</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="expertise" id="expertise">
+      <div class="wrap">
+        <div class="expertise-grid">
+          <div class="expertise-copy reveal">
+            <span class="eyebrow">OUR EXPERTISE</span>
+            <h2>「伝える」を、事業の力に。</h2>
+            <p>
+              アナウンサーとして培った「聞く・引き出す・言葉にする・届ける」力に、
+              教育スタートアップのPR、コンテンツマーケティング、スタートアップのマーケティング責任者として培った事業視点を掛け合わせています。
+            </p>
+            <p>
+              人や企業の価値を言葉にするだけでなく、
+              <strong>誰に、どこで、どう届ければ行動につながるのかまで考える。</strong>
+              その専門性を、HELMIOのすべての事業の土台にしています。
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="story-end reveal">
-      <p class="belief">可能性は、いつも想像以上。</p>
-      <div class="take">TAKE THE HELM.</div>
-      <p>HELMIOという名前には、<strong>「自分の人生の舵を取る」</strong>という思いを込めています。</p>
-      <p>自分で考え、自分で選び、進んでいく。<br>そのきっかけをつくっていきたい。</p>
-      <a class="profile" href="/profile/">PROFILE &amp; STORY →</a>
-    </div>
-  </div>
-</section>
-<section class="contact" id="contact"><div class="wrap reveal">
-      <span class="label contact-label">CONTACT</span>
-      <h2>まずは、話すことから。</h2>
-      <p>採用広報、キャスティング、研修、教育。<br>ご相談内容がまだまとまっていなくても、お気軽にお聞かせください。</p>
-      <a href="mailto:info@hel-mio.com">CONTACT →</a>
-    </div></section>
-</main>
-<footer><div class="wrap"><div class="footer-top"><div><div class="footer-logo">HELMIO</div><div class="footer-copy">可能性は、いつも想像以上。</div></div><div class="footer-links"><a href="/recruiting/">採用広報</a><a href="/profile/">PROFILE</a><a href="/casting/">キャスティング</a><a href="#contact">CONTACT</a><a href="/training/">社員研修</a><a href="#">PRIVACY POLICY</a><a href="/school/">オンラインスクール</a><a href="#">COMPANY</a></div></div><div class="legal">株式会社HELMIO　代表取締役 新島 麻生　所在地 東京都港区<br>© HELMIO Inc.</div></div></footer>
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-const hero=document.querySelector('.hero');
-const blueField=document.querySelector('.hero-blue-field');
-if(hero && blueField && window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  hero.addEventListener('pointermove',e=>{
-    const r=hero.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    blueField.style.transform=`translate3d(${x*10}px,${y*7}px,0)`;
-  });
-  hero.addEventListener('pointerleave',()=>{blueField.style.transform='translate3d(0,0,0)'});
-}
-</script>
-</body></html>
+
+    <section class="experience" id="experience">
+      <div class="wrap">
+        <div class="experience-top reveal">
+          <span class="eyebrow">SELECTED EXPERIENCE</span>
+          <h2>主な実績</h2>
+        </div>
+
+        <div class="experience-list reveal" aria-label="主な実績">
+          <div class="experience-item">大阪・関西万博</div>
+          <div class="experience-item">JTB</div>
+          <div class="experience-item">J.LEAGUE</div>
+          <div class="experience-item">笹川平和財団</div>
+          <div class="experience-item">TOYOTA</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="message-v16">
+      <div class="message-inner reveal">
+        <p class="message-copy">
+          <span class="message-line">誰かの言葉で、知らなかった世界に出会う。</span>
+          <span class="message-line">自分の言葉で、次の一歩を選ぶ。</span>
+          <span class="message-line">言葉は、まだ見えていない選択肢をひらく。</span>
+        </p>
+        <img class="message-art" src="assets/message-current.svg" alt="">
+      </div>
+    </section>
+
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">STORY</span>
+          <h2>なぜ、HELMIOをつくったのか</h2>
+        </div>
+
+        <p class="story-intro reveal">
+          「伝える」を仕事にした原点。<br>
+          可能性を、今ある経歴だけで決めたくないと思うようになった経験。<br>
+          その両方が、HELMIOにつながっています。
+        </p>
+
+        <div class="story-layout">
+          <aside class="story-portrait reveal">
+            <div class="portrait-photo">
+              <img src="assets/asami-niijima.webp" alt="株式会社HELMIO 代表 新島麻生">
+            </div>
+
+            <div class="portrait-caption">
+              <p class="founder-name">新島 麻生</p>
+              <small>NIIJIMA ASAMI — 株式会社HELMIO 代表</small>
+              <p class="founder-intro">
+                スターダストプロモーション芸能1部に所属し、アナウンサー・タレント活動を経験。<br>
+                その後、NHK熊本・山梨でキャスター・リポーターとして、取材・中継・生放送を経験。<br>
+                教育スタートアップのPR、コンテンツマーケティング会社での実務を経て、スタートアップのマーケティング責任者を務める。<br>
+                現在はHELMIO代表として、採用広報・コミュニケーション支援・教育事業に取り組む。
+              </p>
+            </div>
+          </aside>
+
+          <div class="story-history">
+            <article class="story-chapter reveal">
+              <span class="story-dot" aria-hidden="true"></span>
+              <div class="story-meta">01 / ORIGIN</div>
+              <h3>価値があっても、伝わらなければ届かない。</h3>
+              <p>
+                学生時代、社会課題に関わる活動に触れる中で感じたことがありました。
+                どれだけ意味のある活動でも、知られなければ必要な人には届かない。
+              </p>
+              <p>
+                その価値を見つけ、わかる言葉にして、社会へ届ける役割があるのではないか。
+                そこから「伝える」仕事に惹かれ、アナウンサーを目指しました。
+              </p>
+              <p class="em">
+                これが、HELMIOの「伝える」の原点です。
+              </p>
+            </article>
+
+            <article class="story-chapter reveal">
+              <span class="story-dot" aria-hidden="true"></span>
+              <div class="story-meta">02 / POSSIBILITY</div>
+              <h3>人の可能性は、経歴だけでは決まらない。</h3>
+              <p>
+                上京後、体調を崩して芸能事務所を退所。
+                25歳で転職活動を始めると、「新卒」ではなく「既卒」として扱われ、
+                選択肢が急に狭くなりました。
+              </p>
+              <p>
+                まだ25歳なのに、過去の経歴だけで、この先の選択肢まで狭まっていくように感じました。
+                それでも学び直しを続け、地方局のアナウンサーへ。
+              </p>
+              <p>
+                放送局を離れた後は、約140社と話し、ビジネスの世界へ進みました。
+              </p>
+              <p class="em">
+                今ある肩書きと、その人ができることは、同じではない。
+              </p>
+            </article>
+
+            <article class="story-chapter reveal">
+              <span class="story-dot" aria-hidden="true"></span>
+              <div class="story-meta">03 / HELMIO</div>
+              <h3>まだ伝わっていない価値を、選択肢に変える。</h3>
+              <p>
+                アナウンサーとして培ったのは、話す技術だけではありません。
+                人の話を聞き、本質を引き出し、情報を整理し、相手に届く言葉にする力。
+              </p>
+              <p>
+                その後、教育スタートアップのPR、コンテンツマーケティング会社での実務、
+                スタートアップのマーケティング責任者としての経験を重ねました。
+              </p>
+              <p>
+                そこで、言葉をつくるだけではなく、
+                <strong>誰に、どこで、どう届ければ人が動くのか</strong>を、事業の側から学びました。
+              </p>
+              <p>
+                企業には、まだ伝わっていない価値がある。
+                人には、まだ知らない選択肢がある。
+                その間を、言葉でつなぐ。
+              </p>
+              <p class="em">
+                知らなかったものを、選べるものに変える。そのために、HELMIOをつくりました。
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="story-end reveal">
+          <p class="story-belief">可能性は、想像の先にある。</p>
+          <div class="take">TAKE THE HELM.</div>
+          <p>
+            HELMIOという名前には、<strong>「自分の人生の舵を取る」</strong>という思いを込めています。
+          </p>
+          <p>
+            誰かに決められた未来ではなく、自分で知り、自分で考え、自分で選ぶ。<br>
+            そのための出会いを、つくっていきたい。
+          </p>
+          <a class="profile-link" href="/profile/">PROFILE &amp; STORY →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+      NOTE placement:
+      STORYで人物理解をつくった直後に、継続発信へつなげる。
+      SERVICEより前に置くと外部離脱が増えるため、CONTACT直前を採用。
+      NOTE_CONFIGを有効にすると本人記事へ差し替え可能。
+    -->
+
+
+    <section class="note" id="note">
+      <div class="wrap">
+        <div class="note-head reveal">
+          <div class="note-head-left">
+            <span class="eyebrow">ASAMI'S NOTE</span>
+            <h2>NOTE</h2>
+            <p class="note-caption">仕事のこと。教育のこと。人と出会って、考えたこと。</p>
+          </div>
+          <a class="note-all" id="noteAll" href="#" target="_blank" rel="noopener" hidden>もっと読む　→</a>
+        </div>
+
+        <div class="note-grid" id="noteGrid">
+          <div class="note-placeholder-card reveal">
+            <div class="note-thumb note-thumb--placeholder">
+              <span class="thumb-kicker">CAREER / WORK</span>
+              <span class="thumb-line"></span>
+              <span class="thumb-title">ASAMI'S<br>NOTE</span>
+            </div>
+            <div class="note-body">
+              <h3>仕事やキャリアについて、考えていること。</h3>
+              <div class="note-soon">NOTE ARTICLE — COMING SOON</div>
+            </div>
+          </div>
+
+          <div class="note-placeholder-card reveal">
+            <div class="note-thumb note-thumb--placeholder">
+              <span class="thumb-kicker">EDUCATION</span>
+              <span class="thumb-line"></span>
+              <span class="thumb-title">ASAMI'S<br>NOTE</span>
+            </div>
+            <div class="note-body">
+              <h3>教育と「伝える力」について。</h3>
+              <div class="note-soon">NOTE ARTICLE — COMING SOON</div>
+            </div>
+          </div>
+
+          <div class="note-placeholder-card reveal">
+            <div class="note-thumb note-thumb--placeholder">
+              <span class="thumb-kicker">PEOPLE / ENCOUNTERS</span>
+              <span class="thumb-line"></span>
+              <span class="thumb-title">ASAMI'S<br>NOTE</span>
+            </div>
+            <div class="note-body">
+              <h3>人と出会って、考えたこと。</h3>
+              <div class="note-soon">NOTE ARTICLE — COMING SOON</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="contact" id="contact">
+      <div class="wrap reveal">
+        <span class="eyebrow">CONTACT</span>
+        <h2>まずは、話すことから。</h2>
+        <p>
+          採用広報、展示会・営業コミュニケーション、教育、キャスティング。<br>
+          「こんなことは相談できる？」という段階でも、お気軽にお聞かせください。
+        </p>
+        <a class="contact-link" href="mailto:info@hel-mio.com">相談する →</a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">HELMIO</div>
+          <div class="footer-copy">可能性は、想像の先にある。</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="/recruiting/">採用広報</a>
+          <a href="/profile/">PROFILE</a>
+          <a href="/casting/">キャスティング</a>
+          <a href="#contact">CONTACT</a>
+          <a href="/training/">社員研修</a>
+          <a href="#">PRIVACY POLICY</a>
+          <a href="/school/">オンラインスクール</a>
+          <a href="#">COMPANY</a>
+        </div>
+      </div>
+
+      <div class="legal">
+        株式会社HELMIO　代表取締役 新島 麻生　所在地 東京都港区<br>
+        © HELMIO Inc.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      ============================================================
+      NOTE CONFIG — ここだけ変えれば、新島麻生さん本人のnoteを表示できます
+      ============================================================
+
+      例：
+      const NOTE_CONFIG = {
+        enabled: true,
+        accountUrl: "https://note.com/xxxxx",
+        articles: [
+          {
+            title: "記事タイトル",
+            date: "2026.10.02",
+            url: "https://note.com/xxxxx/n/xxxxx",
+            image: "https://assets.st-note.com/xxxxx.jpg",
+            kicker: "CAREER"
+          }
+        ]
+      };
+
+      image が空なら、HELMIOトーンの仮サムネイルを自動表示します。
+    */
+    const NOTE_CONFIG = {
+      enabled: false,
+      accountUrl: "",
+      articles: []
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const hero = document.querySelector(".hero");
+    const field = document.querySelector(".hero-field");
+    const finePointer = window.matchMedia("(pointer:fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (hero && field && finePointer && !reduceMotion) {
+      hero.addEventListener("pointermove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        field.style.transform = `translate3d(${x * 10}px, ${y * 7}px, 0)`;
+      });
+
+      hero.addEventListener("pointerleave", () => {
+        field.style.transform = "translate3d(0,0,0)";
+      });
+    }
+
+    function escapeHtml(value = "") {
+      return value.replace(/[&<>"']/g, (char) => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#039;"
+      }[char]));
+    }
+
+    function renderNote() {
+      const noteAll = document.getElementById("noteAll");
+      const noteGrid = document.getElementById("noteGrid");
+
+      if (!NOTE_CONFIG.enabled) return;
+
+      if (NOTE_CONFIG.accountUrl) {
+        noteAll.hidden = false;
+        noteAll.href = NOTE_CONFIG.accountUrl;
+      }
+
+      const articles = NOTE_CONFIG.articles.slice(0, 3);
+      if (!articles.length) return;
+
+      noteGrid.innerHTML = articles.map((article, index) => {
+        const title = escapeHtml(article.title || "Untitled");
+        const date = escapeHtml(article.date || "");
+        const url = article.url || "#";
+        const kicker = escapeHtml(article.kicker || `NOTE / ${String(index + 1).padStart(2, "0")}`);
+
+        const thumb = article.image
+          ? `<div class="note-thumb"><img src="${article.image}" alt=""></div>`
+          : `
+            <div class="note-thumb note-thumb--placeholder">
+              <span class="thumb-kicker">${kicker}</span>
+              <span class="thumb-line"></span>
+              <span class="thumb-title">ASAMI'S<br>NOTE</span>
+            </div>
+          `;
+
+        return `
+          <a class="note-card reveal" href="${url}" target="_blank" rel="noopener">
+            ${thumb}
+            <div class="note-body">
+              <h3>${title}</h3>
+              <div class="note-meta">${date}</div>
+            </div>
+          </a>
+        `;
+      }).join("");
+
+      noteGrid.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    }
+
+    renderNote();
+  </script>
+</body>
+</html>
