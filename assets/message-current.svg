@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 138">
+<g fill="none" stroke-linecap="round">
+  <path d="M16 84 C82 66 138 96 210 80 S345 57 424 80 S500 96 544 81" stroke="#9ebdc8" stroke-width="1.5"/>
+  <path d="M24 105 C94 92 148 116 224 104 S359 83 438 104 S504 116 536 108" stroke="#c4d7dd" stroke-width="1.1"/>
+  <path d="M280 14 L280 40 M267 27 L293 27" stroke="#a0bbc5" stroke-width="1"/>
+</g>
+<circle cx="280" cy="27" r="3" fill="#8fadb8"/>
+<g font-family="Arial, sans-serif" fill="#9aafb7">
+  <text x="364" y="34" font-size="8" letter-spacing="3">WORDS / WORLD / FUTURE</text>
+</g>
+</svg>
