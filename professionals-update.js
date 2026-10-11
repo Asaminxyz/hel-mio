@@ -16308,3 +16308,613 @@
   }
 
 })();
+/* =========================================================
+   東條 麻依子 追加
+   ・元局アナウンサー枠
+   ・今井友理恵さんの直後
+   ・一覧写真 = 添付3枚目
+   ・詳細写真 = 4枚
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const TALENT_ID =
+    'maiko-tojo';
+
+
+
+  /* =========================================================
+     PROFILE DATA
+     ========================================================= */
+
+  const maikoTojo = {
+
+    id:
+      TALENT_ID,
+
+    name:
+      '東條 麻依子',
+
+    kana:
+      '',
+
+    englishName:
+      'MAIKO TOJO',
+
+    pdf:
+      '',
+
+
+    /* 一覧カードは添付3枚目 */
+    cardImage:
+      'maiko-tojo-main.png',
+
+
+    /* プロフィール内の写真 */
+    photos: [
+
+      'maiko-tojo-main.png',
+
+      'maiko-tojo-sub1.jpg',
+
+      'maiko-tojo-full.png',
+
+      'maiko-tojo-radio.png'
+
+    ],
+
+
+
+    /* =====================================================
+       SUMMARY
+       他のアナウンサーと同じ形式に整理
+       ===================================================== */
+
+    summary:
+      '同志社大学経済学部卒業後、2018年にテレビせとうちへ入社。8年間、局アナウンサーとして報道・経済・スポーツ番組を担当した。報道番組「TSCnews5」のキャスターを経て、経済番組「プライド せとうち経済のチカラ」では6年間にわたりMC・ディレクターを担当。200人を超える経営者への取材・対談を経験している。\n\n企業の事業内容を紹介するだけでなく、挑戦の背景や働く人の思いまで掘り下げるインタビューを得意とし、経営者との対談やシンポジウムでは、相手の言葉を受けて次の問いにつなげるファシリテーションを行う。\n\nスポーツ分野では2022年からファジアーノ岡山の実況を担当。2024年にはクラブ史上初となるJ1昇格の瞬間を実況。企業イベント、式典、トークショーから経済・スポーツまで、内容を理解したうえで安定した進行に対応する。',
+
+
+
+    /* =====================================================
+       BASIC PROFILE
+       提供情報がある項目だけ掲載
+       ===================================================== */
+
+    profile: {
+
+      height:
+        '',
+
+      birthplace:
+        '',
+
+      bloodType:
+        '',
+
+      education:
+        '同志社大学 経済学部',
+
+      hobbies:
+        '',
+
+      skills:
+        '経営者インタビュー、ファシリテーション、スポーツ実況',
+
+      qualifications:
+        ''
+
+    },
+
+
+
+    /* =====================================================
+       対応領域
+       ===================================================== */
+
+    tags: [
+
+      '元局アナウンサー',
+
+      '経済番組',
+
+      'ニュース・報道',
+
+      '企業イベント',
+
+      '式典',
+
+      'トークショー',
+
+      'ファシリテーション',
+
+      '経営者インタビュー',
+
+      'スポーツ実況',
+
+      'ナレーション'
+
+    ],
+
+
+
+    /* =====================================================
+       主な経歴・実績
+       ===================================================== */
+
+    careers: [
+
+
+      /* ==============================
+         テレビせとうち
+         ============================== */
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '2018年入社。8年間、局アナウンサーとして報道・経済・スポーツ番組を担当'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「TSCnews5」キャスター（2018年〜2019年）'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「プライド せとうち経済のチカラ」MC・ディレクター（2020年〜2026年）'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「スタートアップテラス 集まれ！せとうち未来人」'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「LBS ザ・フォーラムせとうち in 岡山2025」'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「せとうち企業対決！困っている人を助けるものづくり選手権」'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「ジモサーチ 津山編」'
+      },
+
+      {
+        category:
+          'テレビせとうち',
+
+        text:
+          '「みんなの岡山県議会」'
+      },
+
+
+
+      /* ==============================
+         経済・企業取材
+         ============================== */
+
+      {
+        category:
+          '経済・企業取材',
+
+        text:
+          '経済番組で6年間、MC・ディレクターとして200人を超える経営者を取材'
+      },
+
+      {
+        category:
+          '経済・企業取材',
+
+        text:
+          '地元経営者との対談・討論でファシリテーターを担当し、経営戦略や地域経済について議論を進行'
+      },
+
+
+
+      /* ==============================
+         スポーツ実況
+         ============================== */
+
+      {
+        category:
+          'スポーツ実況',
+
+        text:
+          'ファジアーノ岡山 実況生中継'
+      },
+
+      {
+        category:
+          'スポーツ実況',
+
+        text:
+          '実況16試合を担当。2024年、クラブ史上初となるJ1昇格の瞬間を実況'
+      },
+
+
+
+      /* ==============================
+         式典・企業イベント
+         ============================== */
+
+      {
+        category:
+          '式典・企業イベント',
+
+        text:
+          '英田エンジニアリング 50周年式典'
+      },
+
+      {
+        category:
+          '式典・企業イベント',
+
+        text:
+          '大松精機 赤磐工場竣工式 オープニングセレモニー＆トークショー'
+      },
+
+      {
+        category:
+          '式典・企業イベント',
+
+        text:
+          'つなぐ・はばたく青年経済人シンポジウム'
+      },
+
+      {
+        category:
+          '式典・企業イベント',
+
+        text:
+          'マルイ協力会 第29回総会＆トークショー'
+      },
+
+      {
+        category:
+          '式典・企業イベント',
+
+        text:
+          '日本トリム Presents 第14回全国女子選抜フットサル大会'
+      },
+
+
+
+      /* ==============================
+         ファシリテーション
+         ============================== */
+
+      {
+        category:
+          'ファシリテーション',
+
+        text:
+          'シンポジウムや企業対談で、相手の回答を受けて問いを重ね、新たな視点や思いを引き出す進行を担当'
+      },
+
+
+
+      /* ==============================
+         ナレーション
+         ============================== */
+
+      {
+        category:
+          'ナレーション',
+
+        text:
+          '映像の展開や音楽の流れに合わせ、間や抑揚を意識したナレーション収録に対応'
+      }
+
+    ],
+
+
+    youtube:
+      []
+
+  };
+
+
+
+  /* =========================================================
+     TALENT DATAへ追加
+     ========================================================= */
+
+  const addTalentData = () => {
+
+    if (
+      !Array.isArray(
+        window.HELMIO_TALENTS
+      )
+    ) {
+      return;
+    }
+
+
+    const existingIndex =
+      window.HELMIO_TALENTS
+        .findIndex(
+          talent =>
+            talent?.id ===
+            TALENT_ID
+        );
+
+
+    if (
+      existingIndex !== -1
+    ) {
+
+      window.HELMIO_TALENTS.splice(
+        existingIndex,
+        1
+      );
+
+    }
+
+
+    window.HELMIO_TALENTS.push(
+      maikoTojo
+    );
+
+  };
+
+
+
+  /* =========================================================
+     CARD
+     今井友理恵さんの直後へ
+     ========================================================= */
+
+  const addTalentCard = () => {
+
+    const broadcastGroup =
+      document.querySelector(
+        '#broadcast-professionals-title'
+      )
+      ?.closest(
+        '.talent-group'
+      );
+
+
+    const grid =
+      broadcastGroup
+        ?.querySelector(
+          '.talent-cards--group'
+        );
+
+
+    if (!grid) {
+      return;
+    }
+
+
+    /*
+      二重表示防止
+    */
+
+    grid
+      .querySelector(
+        `[data-talent-id="${TALENT_ID}"]`
+      )
+      ?.remove();
+
+
+
+    const card =
+      document.createElement(
+        'button'
+      );
+
+
+    card.type =
+      'button';
+
+    card.className =
+      'talent-card';
+
+    card.setAttribute(
+      'aria-haspopup',
+      'dialog'
+    );
+
+    card.setAttribute(
+      'data-talent-id',
+      TALENT_ID
+    );
+
+
+    card.innerHTML = `
+
+      <div class="talent-card__media">
+
+        <span class="talent-card__fallback">
+          MAIKO TOJO
+        </span>
+
+        <img
+          src="maiko-tojo-main.png"
+          alt="東條 麻依子"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="talent-card-body">
+
+        <p class="talent-name">
+          東條 麻依子
+        </p>
+
+        <p class="talent-catchphrase">
+          経済番組MC6年。
+          経営者の本音を引き出す進行力
+        </p>
+
+      </div>
+
+    `;
+
+
+
+    /*
+      今井さんの直後に配置
+    */
+
+    const imai =
+      grid.querySelector(
+        '[data-talent-id="yurie-imai"]'
+      );
+
+
+    if (imai) {
+
+      imai.insertAdjacentElement(
+        'afterend',
+        card
+      );
+
+    } else {
+
+      /*
+        今井さんがまだ描画前なら
+        村上さんの直後に一時配置。
+        後の再実行で今井さんの次へ移る。
+      */
+
+      const murakami =
+        grid.querySelector(
+          '[data-talent-id="fumi-murakami"]'
+        );
+
+
+      if (murakami) {
+
+        murakami.insertAdjacentElement(
+          'afterend',
+          card
+        );
+
+      } else {
+
+        grid.appendChild(
+          card
+        );
+
+      }
+
+    }
+
+
+
+    card
+      .querySelector('img')
+      ?.addEventListener(
+        'error',
+        event => {
+
+          event.currentTarget
+            .closest(
+              '.talent-card__media'
+            )
+            ?.classList.add(
+              'is-missing'
+            );
+
+        }
+      );
+
+  };
+
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const apply = () => {
+
+    addTalentData();
+
+    addTalentCard();
+
+  };
+
+
+  const run = () => {
+
+    apply();
+
+
+    /*
+      今井さん追加コードや
+      既存カード再構築より後に
+      最終位置を確定させる
+    */
+
+    [
+      200,
+      500,
+      950,
+      1500,
+      1900
+    ].forEach(
+      delay => {
+
+        setTimeout(
+          apply,
+          delay
+        );
+
+      }
+    );
+
+  };
+
+
+  if (
+    document.readyState ===
+    'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
