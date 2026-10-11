@@ -15382,3 +15382,146 @@
   }
 
 })();
+/* =========================================================
+   ACHIEVEMENTS DUPLICATE FIX
+   実績ロゴエリアを1つだけ残す
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const repairAchievements = () => {
+
+    /* 古いロゴ実績セクションは削除 */
+    document
+      .querySelectorAll('#helmioLogoSection')
+      .forEach(section => section.remove());
+
+
+    /* selected-clients は1つだけ残す */
+    const sections =
+      Array.from(
+        document.querySelectorAll(
+          '#selected-clients'
+        )
+      );
+
+
+    sections.forEach(
+      (section, index) => {
+
+        if (index > 0) {
+          section.remove();
+        }
+
+      }
+    );
+
+
+    const selected =
+      document.querySelector(
+        '#selected-clients'
+      );
+
+
+    if (!selected) return;
+
+
+    /* 見出しも詳細実績と被らないように変更 */
+    const label =
+      selected.querySelector(
+        '.section-label'
+      );
+
+    if (label) {
+      label.textContent =
+        'SELECTED EXPERIENCE';
+    }
+
+
+    const title =
+      selected.querySelector('h2');
+
+    if (title) {
+      title.textContent =
+        '主な担当・参画実績';
+    }
+
+
+    const lead =
+      selected.querySelector(
+        '.helmio-clients-header > p:last-child'
+      );
+
+    if (lead) {
+      lead.textContent =
+        '企業イベント、カンファレンス、スポーツ、映像など、代表・参画メンバーの主な担当・参画実績です。';
+    }
+
+
+    /* 必ずサービスの直前に1個だけ配置 */
+    const service =
+      document.getElementById(
+        'service'
+      );
+
+    if (
+      service &&
+      selected.nextElementSibling !== service
+    ) {
+
+      service.insertAdjacentElement(
+        'beforebegin',
+        selected
+      );
+
+    }
+
+  };
+
+
+  const run = () => {
+
+    repairAchievements();
+
+    /*
+      古い追記コードのタイマー処理が
+      後から実績欄を再生成するので、
+      最後まで掃除する
+    */
+
+    [
+      250,
+      600,
+      1000,
+      1400,
+      1800
+    ].forEach(delay => {
+
+      setTimeout(
+        repairAchievements,
+        delay
+      );
+
+    });
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      { once: true }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
