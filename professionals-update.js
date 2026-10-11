@@ -16918,3 +16918,697 @@
   }
 
 })();
+/* =========================================================
+   HELMIO SERVICE
+   FINAL 4 CARDS
+   ・カードデザインは既存のまま
+   ・01 一日司会
+   ・02 広報・PR支援
+   ・03 企業研修
+   ・04 広告・VP・ナレーション
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const rebuildServiceCards = () => {
+
+    const section =
+      document.getElementById('service');
+
+    if (!section) return;
+
+
+    section.className =
+      'section section--cream';
+
+    section.setAttribute(
+      'aria-labelledby',
+      'service-title'
+    );
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+
+        <header class="section-head">
+
+          <div>
+
+            <p class="section-label">
+              SERVICE
+            </p>
+
+            <h2 id="service-title">
+              サービス内容
+            </h2>
+
+          </div>
+
+
+          <p>
+            企業の「伝える」を、
+            プロフェッショナルの力で。
+            司会・広報・研修・映像まで、
+            必要な領域に合わせてご相談いただけます。
+          </p>
+
+        </header>
+
+
+
+        <div class="service-grid">
+
+
+          <!-- =================================================
+               01 一日司会
+               ================================================= -->
+
+          <article class="service-card">
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                MC / ANNOUNCER
+              </span>
+
+              <img
+                src="service-mc.jpg"
+                alt="企業イベントで司会を務めるアナウンサー"
+                loading="lazy"
+                onerror="
+                  this.parentElement.classList.add('is-missing')
+                "
+              >
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                01
+              </span>
+
+              <h3>
+                一日司会
+              </h3>
+
+              <p class="service-card__catch">
+                企業イベントを、
+                経験あるプロの進行で
+              </p>
+
+              <p class="service-card__description">
+                記者発表、式典、カンファレンス、
+                表彰式、経営者登壇など。
+                案件内容を事前に確認し、
+                必要に応じて
+                読み合わせ・リハーサルまで対応します。
+                英語・中国語・韓国語に対応できる
+                アナウンサーも在籍しています。
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  90,000円〜
+                </strong>
+
+                <small>
+                  ／1日
+                </small>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#professionals"
+              >
+                候補者を見る
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               02 広報・PR支援
+               ================================================= -->
+
+          <article class="service-card">
+
+            <div
+              class="service-card__media is-missing"
+            >
+
+              <span class="service-card__fallback">
+                PUBLIC RELATIONS
+              </span>
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                02
+              </span>
+
+              <h3>
+                広報・PR支援
+              </h3>
+
+              <p class="service-card__catch">
+                メディアの視点から、
+                届く企画をつくる
+              </p>
+
+              <p class="service-card__description">
+                元放送局アナウンサーと
+                大手PR会社出身者が、
+                企業の広報・PRを支援。
+                メディアが何をニュースとして
+                取り上げるのかを知る視点から、
+                発信テーマの整理、PR企画、
+                プレスリリース、
+                メディアアプローチ、
+                取材対応までサポートします。
+              </p>
+
+
+              <p class="service-card__mini">
+                PR企画 ／ プレスリリース ／
+                メディアリレーション ／
+                取材対応 ／ PRイベント
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                広報・PRについて相談する
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               03 企業研修
+               ================================================= -->
+
+          <article class="service-card">
+
+            <div
+              class="service-card__media is-missing"
+            >
+
+              <span class="service-card__fallback">
+                CORPORATE TRAINING
+              </span>
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                03
+              </span>
+
+              <h3>
+                企業研修
+              </h3>
+
+              <p class="service-card__catch">
+                伝わる話し方を、
+                仕事の武器に
+              </p>
+
+              <p class="service-card__description">
+                放送・司会の現場で培った
+                「話す・伝える・引き出す」技術を
+                企業研修へ。
+                マナー・秘書関連資格を持つ
+                アナウンサーや、
+                スピーチ指導経験を持つ講師が、
+                第一印象、話し方、
+                プレゼンテーション、
+                質疑応答まで実践形式で指導します。
+              </p>
+
+
+              <div class="service-training-targets">
+
+                <p>
+                  <strong>新入社員</strong>
+                  マナー・敬語・報連相・第一印象
+                </p>
+
+                <p>
+                  <strong>営業・管理職</strong>
+                  説明力・プレゼン・質問力
+                </p>
+
+                <p>
+                  <strong>経営者・登壇者</strong>
+                  スピーチ・記者発表・メディア対応
+                </p>
+
+              </div>
+
+
+              <p class="service-card__mini">
+                経営者・登壇者・政治家への
+                スピーチ／プレゼンテーション
+                指導実績あり
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <a
+                class="service-card__link"
+                href="#casting-form"
+              >
+                研修内容を相談する
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               04 広告・VP・ナレーション
+               ================================================= -->
+
+          <article class="service-card">
+
+            <div class="service-card__media">
+
+              <span class="service-card__fallback">
+                AD / VP / NARRATION
+              </span>
+
+              <img
+                src="ad-vp-narration.png.png"
+                alt="広告・VP・ナレーション撮影"
+                loading="lazy"
+                onerror="
+                  this.parentElement.classList.add('is-missing')
+                "
+              >
+
+            </div>
+
+
+            <div class="service-card__body">
+
+              <span class="service-card__number">
+                04
+              </span>
+
+              <h3>
+                広告・VP・ナレーション
+              </h3>
+
+              <p class="service-card__catch">
+                企業や商品の「顔」と「声」を、
+                伝えるプロから
+              </p>
+
+              <p class="service-card__description">
+                企業VP、商品紹介動画、
+                WEB広告、採用映像、
+                ナレーションなど。
+                元局アナウンサーをはじめ、
+                カメラ前での表現や
+                ナレーション経験を持つ人材から、
+                ブランドや企画に合う
+                出演者・声をご提案します。
+              </p>
+
+
+              <div class="service-card__price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <div class="service-card__actions">
+
+                <a
+                  class="service-card__link"
+                  href="https://www.youtube.com/watch?v=3G7n4kBCafk&amp;feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  出演サンプルを見る
+                </a>
+
+
+                <a
+                  class="service-card__link"
+                  href="#casting-form"
+                >
+                  出演・ナレーションを相談する
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+
+        <p class="service-price-note">
+          ※参考価格です。
+          案件内容・拘束時間・開催地域・
+          事前準備の有無などにより
+          個別にお見積もりします。
+        </p>
+
+
+      </div>
+
+    `;
+
+
+    /* =====================================================
+       今までのカードデザインは維持
+       4枚なのでグリッドだけ調整
+       ===================================================== */
+
+    let style =
+      document.getElementById(
+        'helmio-service-four-cards-style'
+      );
+
+
+    if (!style) {
+
+      style =
+        document.createElement('style');
+
+      style.id =
+        'helmio-service-four-cards-style';
+
+      document.head.appendChild(style);
+
+    }
+
+
+    style.textContent = `
+
+      /* 既存カードの見た目はそのまま */
+
+      #service .service-grid {
+        display:
+          grid !important;
+
+        grid-template-columns:
+          repeat(
+            4,
+            minmax(0, 1fr)
+          ) !important;
+
+        gap:
+          20px !important;
+      }
+
+
+      #service .service-card {
+        min-width:
+          0;
+      }
+
+
+      #service .service-card__media {
+        display:
+          block !important;
+      }
+
+
+      #service
+      .service-card__media img {
+        width:
+          100% !important;
+
+        height:
+          100% !important;
+
+        object-fit:
+          cover !important;
+
+        object-position:
+          center center !important;
+      }
+
+
+      #service
+      .service-card__mini {
+        margin-top:
+          16px;
+
+        padding-top:
+          14px;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.10);
+
+        color:
+          var(--muted);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          11.5px;
+
+        line-height:
+          1.8;
+      }
+
+
+      #service
+      .service-training-targets {
+        margin-top:
+          17px;
+
+        padding:
+          14px 15px;
+
+        background:
+          var(--cream);
+
+        border-left:
+          2px solid
+          var(--gold);
+      }
+
+
+      #service
+      .service-training-targets p {
+        margin:
+          0 0 10px;
+
+        color:
+          var(--text);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          11.5px;
+
+        line-height:
+          1.7;
+      }
+
+
+      #service
+      .service-training-targets p:last-child {
+        margin-bottom:
+          0;
+      }
+
+
+      #service
+      .service-training-targets strong {
+        display:
+          block;
+
+        margin-bottom:
+          2px;
+
+        color:
+          var(--navy);
+
+        font-weight:
+          700;
+      }
+
+
+      #service
+      .service-card__actions {
+        margin-top:
+          auto;
+      }
+
+
+      #service
+      .service-card__actions
+      .service-card__link {
+        margin-top:
+          0 !important;
+      }
+
+
+      #service
+      .service-card__actions
+      .service-card__link
+      + .service-card__link {
+        margin-top:
+          14px !important;
+      }
+
+
+      @media (
+        max-width: 1100px
+      ) {
+
+        #service
+        .service-grid {
+          grid-template-columns:
+            repeat(
+              2,
+              minmax(0,1fr)
+            ) !important;
+        }
+
+      }
+
+
+      @media (
+        max-width: 700px
+      ) {
+
+        #service
+        .service-grid {
+          grid-template-columns:
+            1fr !important;
+        }
+
+      }
+
+    `;
+
+  };
+
+
+
+  /* =========================================================
+     APPLY
+     古いサービス書き換え処理より最後に勝たせる
+     ========================================================= */
+
+  const run = () => {
+
+    rebuildServiceCards();
+
+
+    [
+      250,
+      650,
+      1300,
+      1800,
+      2400
+    ].forEach(
+      delay => {
+
+        setTimeout(
+          rebuildServiceCards,
+          delay
+        );
+
+      }
+    );
+
+  };
+
+
+  if (
+    document.readyState ===
+    'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
