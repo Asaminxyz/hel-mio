@@ -19036,3 +19036,357 @@
   }
 
 })();
+/* =========================================================
+   HELMIO SERVICE
+   COPY / PRICE / LABEL FINAL TWEAK
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  const applyServiceTweaks = () => {
+
+    const section =
+      document.getElementById('service');
+
+    if (!section) return;
+
+
+    /* =====================================================
+       セクション見出し
+       ===================================================== */
+
+    const heading =
+      section.querySelector(
+        '.helmio-service-premium-head h2'
+      );
+
+    if (heading) {
+
+      heading.textContent =
+        'プロのアナウンサーが企業の「伝える」をお手伝いします';
+
+    }
+
+
+
+    /* =====================================================
+       02 広報・PR
+       300,000円〜
+       ===================================================== */
+
+    const cards =
+      section.querySelectorAll(
+        '.helmio-service-premium-card'
+      );
+
+
+    const prCard =
+      cards[1];
+
+    if (prCard) {
+
+      const price =
+        prCard.querySelector(
+          '.helmio-service-premium-price'
+        );
+
+      if (price) {
+
+        price.innerHTML = `
+
+          <span>
+            参考価格
+          </span>
+
+          <strong>
+            300,000円〜
+          </strong>
+
+        `;
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       03 企業研修
+       1クール 300,000円〜
+       ===================================================== */
+
+    const trainingCard =
+      cards[2];
+
+    if (trainingCard) {
+
+      const price =
+        trainingCard.querySelector(
+          '.helmio-service-premium-price'
+        );
+
+      if (price) {
+
+        price.innerHTML = `
+
+          <span>
+            参考価格
+          </span>
+
+          <strong>
+            300,000円〜
+          </strong>
+
+          <small>
+            ／1クール
+          </small>
+
+        `;
+
+      }
+
+
+      /*
+        ラベル：
+        「秘書・マナー検定」が
+        1行に収まるようにする
+      */
+
+      const label =
+        trainingCard.querySelector(
+          '.helmio-service-premium-label strong'
+        );
+
+      if (label) {
+
+        label.textContent =
+          '秘書・マナー検定';
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       04 広告
+       ===================================================== */
+
+    const adCard =
+      cards[3];
+
+    if (adCard) {
+
+      const label =
+        adCard.querySelector(
+          '.helmio-service-premium-label strong'
+        );
+
+      if (label) {
+
+        label.textContent =
+          '広告';
+
+      }
+
+
+      const price =
+        adCard.querySelector(
+          '.helmio-service-premium-price'
+        );
+
+      if (price) {
+
+        price.innerHTML = `
+
+          <span>
+            参考価格
+          </span>
+
+          <strong>
+            案件ごとにお見積り
+          </strong>
+
+        `;
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       STYLE
+       03の「秘書・マナー検定」を
+       1行でギリギリ収める
+       ===================================================== */
+
+    let style =
+      document.getElementById(
+        'helmio-service-label-price-tweak'
+      );
+
+
+    if (!style) {
+
+      style =
+        document.createElement('style');
+
+      style.id =
+        'helmio-service-label-price-tweak';
+
+      document.head.appendChild(style);
+
+    }
+
+
+    style.textContent = `
+
+      /* ==============================
+         SERVICE HEADING
+         ============================== */
+
+      #service
+      .helmio-service-premium-head h2 {
+        max-width:
+          1000px;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+      }
+
+
+      /* ==============================
+         03 TRAINING LABEL ONLY
+         秘書・マナー検定を1行に
+         ============================== */
+
+      #service
+      .helmio-service-premium-card:nth-child(3)
+      .helmio-service-premium-label {
+        flex-wrap:
+          nowrap;
+      }
+
+
+      #service
+      .helmio-service-premium-card:nth-child(3)
+      .helmio-service-premium-label strong {
+        white-space:
+          nowrap;
+
+        font-size:
+          clamp(
+            20px,
+            1.8vw,
+            27px
+          ) !important;
+
+        letter-spacing:
+          -.04em;
+      }
+
+
+      /* ==============================
+         04 広告
+         少し存在感を出す
+         ============================== */
+
+      #service
+      .helmio-service-premium-card:nth-child(4)
+      .helmio-service-premium-label strong {
+        font-size:
+          clamp(
+            25px,
+            2.2vw,
+            34px
+          ) !important;
+      }
+
+
+      @media (
+        max-width: 1120px
+      ) {
+
+        #service
+        .helmio-service-premium-card:nth-child(3)
+        .helmio-service-premium-label strong {
+          font-size:
+            25px !important;
+        }
+
+      }
+
+
+      @media (
+        max-width: 700px
+      ) {
+
+        #service
+        .helmio-service-premium-card:nth-child(3)
+        .helmio-service-premium-label strong {
+          font-size:
+            23px !important;
+
+          letter-spacing:
+            -.05em;
+        }
+
+      }
+
+    `;
+
+  };
+
+
+
+  const run = () => {
+
+    applyServiceTweaks();
+
+
+    [
+      400,
+      900,
+      1500,
+      2200,
+      3000,
+      3800
+    ].forEach(
+      delay => {
+
+        setTimeout(
+          applyServiceTweaks,
+          delay
+        );
+
+      }
+    );
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
