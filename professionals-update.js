@@ -19390,3 +19390,199 @@
   }
 
 })();
+/* =========================================================
+   HELMIO SERVICE FIX
+   崩れ修正 + 文言最終調整
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const setPrice = (card, mainText, noteText = '') => {
+    if (!card) return;
+
+    const price = card.querySelector('.helmio-service-premium-price');
+    if (!price) return;
+
+    price.innerHTML = `
+      <span>参考価格</span>
+      <strong>${mainText}</strong>
+      ${noteText ? `<small>${noteText}</small>` : ''}
+    `;
+  };
+
+  const setLabel = (card, text) => {
+    if (!card) return;
+
+    const strong = card.querySelector('.helmio-service-premium-label strong');
+    if (strong) strong.textContent = text;
+  };
+
+  const applyServiceFix = () => {
+    const section = document.getElementById('service');
+    if (!section) return;
+
+    const heading = section.querySelector('.helmio-service-premium-head h2');
+    if (heading) {
+      heading.textContent = 'プロのアナウンサーが企業の「伝える」をお手伝いします';
+    }
+
+    const cards = section.querySelectorAll('.helmio-service-premium-card');
+    if (!cards.length) return;
+
+    const eventCard = cards[0];
+    const prCard = cards[1];
+    const trainingCard = cards[2];
+    const videoCard = cards[3];
+
+    [eventCard, prCard, trainingCard, videoCard].forEach(card => {
+      if (!card) return;
+      card.classList.remove(
+        'helmio-service-card-event',
+        'helmio-service-card-pr',
+        'helmio-service-card-training',
+        'helmio-service-card-video'
+      );
+    });
+
+    if (eventCard) eventCard.classList.add('helmio-service-card-event');
+    if (prCard) prCard.classList.add('helmio-service-card-pr');
+    if (trainingCard) trainingCard.classList.add('helmio-service-card-training');
+    if (videoCard) videoCard.classList.add('helmio-service-card-video');
+
+    /* 02 広報・PR */
+    setPrice(prCard, '300,000円〜');
+
+    /* 03 企業研修 */
+    setLabel(trainingCard, '秘書・マナー検定');
+    setPrice(trainingCard, '300,000円〜', '／1クール');
+
+    /* 04 映像 */
+    setLabel(videoCard, '映像');
+    setPrice(videoCard, '案件ごとにお見積り');
+
+    /*
+      以前の崩れるスタイルを無効化
+    */
+    const oldStyle = document.getElementById('helmio-service-label-price-tweak');
+    if (oldStyle) {
+      oldStyle.remove();
+    }
+
+    /*
+      修正版スタイル
+    */
+    let style = document.getElementById('helmio-service-fix-final-style');
+
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'helmio-service-fix-final-style';
+      document.head.appendChild(style);
+    }
+
+    style.textContent = `
+      /* 見出し */
+      #service .helmio-service-premium-head h2 {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /*
+        03 企業研修
+        「アナウンサー×」が縦崩れしないように修正
+      */
+      #service .helmio-service-card-training .helmio-service-premium-label {
+        display: flex;
+        align-items: baseline;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+      }
+
+      #service .helmio-service-card-training .helmio-service-premium-label span {
+        white-space: nowrap;
+        flex: 0 0 auto;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      #service .helmio-service-card-training .helmio-service-premium-label strong {
+        white-space: nowrap;
+        font-size: clamp(23px, 1.75vw, 28px) !important;
+        letter-spacing: -0.04em;
+        line-height: 1.12;
+      }
+
+      /*
+        04 映像
+      */
+      #service .helmio-service-card-video .helmio-service-premium-label {
+        display: flex;
+        align-items: baseline;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+      }
+
+      #service .helmio-service-card-video .helmio-service-premium-label span {
+        white-space: nowrap;
+        flex: 0 0 auto;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      #service .helmio-service-card-video .helmio-service-premium-label strong {
+        white-space: nowrap;
+        font-size: clamp(26px, 2.1vw, 34px) !important;
+        line-height: 1.12;
+      }
+
+      /*
+        価格まわりの見た目安定
+      */
+      #service .helmio-service-card-training .helmio-service-premium-price strong,
+      #service .helmio-service-card-video .helmio-service-premium-price strong,
+      #service .helmio-service-card-pr .helmio-service-premium-price strong {
+        line-height: 1.2;
+      }
+
+      @media (max-width: 900px) {
+        #service .helmio-service-card-training .helmio-service-premium-label strong {
+          font-size: 25px !important;
+        }
+      }
+
+      @media (max-width: 700px) {
+        #service .helmio-service-card-training .helmio-service-premium-label {
+          gap: 8px 10px;
+        }
+
+        #service .helmio-service-card-training .helmio-service-premium-label span,
+        #service .helmio-service-card-video .helmio-service-premium-label span {
+          font-size: 15px;
+        }
+
+        #service .helmio-service-card-training .helmio-service-premium-label strong {
+          font-size: 22px !important;
+        }
+
+        #service .helmio-service-card-video .helmio-service-premium-label strong {
+          font-size: 28px !important;
+        }
+      }
+    `;
+  };
+
+  const run = () => {
+    applyServiceFix();
+
+    [300, 800, 1400, 2200, 3200].forEach(delay => {
+      setTimeout(applyServiceFix, delay);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+})();
