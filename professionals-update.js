@@ -19586,3 +19586,442 @@
     run();
   }
 })();
+/* =========================================================
+   SERVICE LABEL FINAL FIX
+   ・アナウンサー× の縦崩れ完全修正
+   ・専門領域を大きく表示
+   ・04 広告 → 映像
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+  const fixServiceLabels = () => {
+
+    const section =
+      document.getElementById('service');
+
+    if (!section) return;
+
+
+    const cards =
+      section.querySelectorAll(
+        '.helmio-service-premium-card'
+      );
+
+    if (!cards.length) return;
+
+
+    /* =====================================
+       01 イベント
+       ===================================== */
+
+    if (cards[0]) {
+
+      const label =
+        cards[0].querySelector(
+          '.helmio-service-premium-label'
+        );
+
+      if (label) {
+
+        label.innerHTML = `
+          <span>アナウンサー ×</span>
+          <strong>イベント</strong>
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================
+       02 広報・PR
+       ===================================== */
+
+    if (cards[1]) {
+
+      const label =
+        cards[1].querySelector(
+          '.helmio-service-premium-label'
+        );
+
+      if (label) {
+
+        label.innerHTML = `
+          <span>アナウンサー ×</span>
+          <strong>広報・PR</strong>
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================
+       03 秘書・マナー検定
+       ===================================== */
+
+    if (cards[2]) {
+
+      const label =
+        cards[2].querySelector(
+          '.helmio-service-premium-label'
+        );
+
+      if (label) {
+
+        label.innerHTML = `
+          <span>アナウンサー ×</span>
+          <strong>秘書・マナー検定</strong>
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================
+       04 映像
+       ===================================== */
+
+    if (cards[3]) {
+
+      const label =
+        cards[3].querySelector(
+          '.helmio-service-premium-label'
+        );
+
+      if (label) {
+
+        label.innerHTML = `
+          <span>アナウンサー ×</span>
+          <strong>映像</strong>
+        `;
+
+      }
+
+    }
+
+
+
+    /* =====================================
+       古い修正CSSを無効化
+       ===================================== */
+
+    document
+      .getElementById(
+        'helmio-service-label-price-tweak'
+      )
+      ?.remove();
+
+    document
+      .getElementById(
+        'helmio-service-fix-final-style'
+      )
+      ?.remove();
+
+
+    /* =====================================
+       最終CSS
+       ===================================== */
+
+    let style =
+      document.getElementById(
+        'helmio-service-label-absolute-final'
+      );
+
+
+    if (!style) {
+
+      style =
+        document.createElement('style');
+
+      style.id =
+        'helmio-service-label-absolute-final';
+
+      document.head.appendChild(style);
+
+    }
+
+
+    style.textContent = `
+
+      /* ==================================
+         全カード共通
+
+         アナウンサー ×
+         専門領域
+
+         の2段構成に固定
+         ================================== */
+
+      #service
+      .helmio-service-premium-label {
+        display:
+          block !important;
+
+        width:
+          100% !important;
+
+        min-width:
+          0 !important;
+
+        white-space:
+          normal !important;
+      }
+
+
+      /* アナウンサー × */
+
+      #service
+      .helmio-service-premium-label span {
+        display:
+          block !important;
+
+        width:
+          auto !important;
+
+        max-width:
+          none !important;
+
+        margin:
+          0 0 5px !important;
+
+        padding:
+          0 !important;
+
+        color:
+          #66758a !important;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif !important;
+
+        font-size:
+          12px !important;
+
+        font-weight:
+          500 !important;
+
+        line-height:
+          1.4 !important;
+
+        letter-spacing:
+          .06em !important;
+
+        white-space:
+          nowrap !important;
+
+        word-break:
+          keep-all !important;
+
+        overflow-wrap:
+          normal !important;
+
+        writing-mode:
+          horizontal-tb !important;
+
+        text-orientation:
+          mixed !important;
+      }
+
+
+      /* 掛け合わせる専門領域 */
+
+      #service
+      .helmio-service-premium-label strong {
+        display:
+          block !important;
+
+        width:
+          100% !important;
+
+        margin:
+          0 !important;
+
+        color:
+          var(--navy) !important;
+
+        font-family:
+          "Noto Serif JP",
+          serif !important;
+
+        font-size:
+          31px !important;
+
+        font-weight:
+          600 !important;
+
+        line-height:
+          1.25 !important;
+
+        letter-spacing:
+          -.035em !important;
+
+        white-space:
+          nowrap !important;
+
+        word-break:
+          keep-all !important;
+
+        overflow-wrap:
+          normal !important;
+
+        writing-mode:
+          horizontal-tb !important;
+
+        text-orientation:
+          mixed !important;
+      }
+
+
+      /* ==================================
+         03だけ文字数が多いので
+         ギリギリ大きく1行に収める
+         ================================== */
+
+      #service
+      .helmio-service-premium-card:nth-child(3)
+      .helmio-service-premium-label strong {
+        font-size:
+          23px !important;
+
+        letter-spacing:
+          -.055em !important;
+      }
+
+
+      /* ==================================
+         04 映像
+         ================================== */
+
+      #service
+      .helmio-service-premium-card:nth-child(4)
+      .helmio-service-premium-label strong {
+        font-size:
+          31px !important;
+      }
+
+
+
+      /* ==================================
+         2列表示時
+         ================================== */
+
+      @media (
+        max-width: 1120px
+      ) {
+
+        #service
+        .helmio-service-premium-label strong {
+          font-size:
+            30px !important;
+        }
+
+
+        #service
+        .helmio-service-premium-card:nth-child(3)
+        .helmio-service-premium-label strong {
+          font-size:
+            27px !important;
+
+          letter-spacing:
+            -.04em !important;
+        }
+
+      }
+
+
+
+      /* ==================================
+         スマホ
+         1列なので十分幅がある
+         ================================== */
+
+      @media (
+        max-width: 700px
+      ) {
+
+        #service
+        .helmio-service-premium-label span {
+          font-size:
+            12px !important;
+        }
+
+
+        #service
+        .helmio-service-premium-label strong {
+          font-size:
+            29px !important;
+        }
+
+
+        #service
+        .helmio-service-premium-card:nth-child(3)
+        .helmio-service-premium-label strong {
+          font-size:
+            26px !important;
+
+          letter-spacing:
+            -.045em !important;
+        }
+
+      }
+
+    `;
+
+  };
+
+
+  const run = () => {
+
+    fixServiceLabels();
+
+
+    /*
+      過去のコードが後からカードを再生成するので
+      最後までこの修正版を勝たせる
+    */
+
+    [
+      300,
+      700,
+      1200,
+      1800,
+      2600,
+      3500,
+      4500
+    ].forEach(
+      delay => {
+
+        setTimeout(
+          fixServiceLabels,
+          delay
+        );
+
+      }
+    );
+
+  };
+
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
