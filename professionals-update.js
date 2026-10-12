@@ -17612,3 +17612,1427 @@
   }
 
 })();
+/* =========================================================
+   HELMIO
+   HERO + SERVICE FINAL PREMIUM DESIGN
+   最終版
+   ========================================================= */
+
+(() => {
+  'use strict';
+
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  const updateHeroFinal = () => {
+
+    const title =
+      document.getElementById(
+        'professionals-title'
+      );
+
+
+    if (title) {
+
+      title.innerHTML = `
+
+        <span>
+          <em class="hero-highlight">
+            失敗できないコミュニケーションに、
+          </em>
+        </span>
+
+        <span>
+          局アナという選択肢を。
+        </span>
+
+      `;
+
+    }
+
+
+    const lead =
+      document.querySelector(
+        '.pro-hero__lead'
+      );
+
+
+    if (lead) {
+
+      lead.textContent =
+        'ニュース・取材の現場を経験した元放送局アナウンサーを中心に、企業イベント、広報、研修、映像など、企業のさまざまなコミュニケーションの場面を支えます。';
+
+    }
+
+  };
+
+
+
+  /* =========================================================
+     SERVICE
+     ========================================================= */
+
+  const rebuildPremiumServices = () => {
+
+    const section =
+      document.getElementById(
+        'service'
+      );
+
+    if (!section) return;
+
+
+    section.className =
+      'section section--cream';
+
+    section.setAttribute(
+      'aria-labelledby',
+      'service-title'
+    );
+
+
+    section.innerHTML = `
+
+      <div class="container">
+
+
+        <header class="helmio-service-premium-head">
+
+          <p class="section-label">
+            SERVICE
+          </p>
+
+          <h2 id="service-title">
+            伝える力で、
+            ビジネスの可能性を広げる
+          </h2>
+
+          <p>
+            アナウンサーとして培った
+            「伝える力」と専門性を掛け合わせ、
+            企業のさまざまなコミュニケーションを支援します。
+          </p>
+
+        </header>
+
+
+
+        <div class="helmio-service-premium-grid">
+
+
+          <!-- =================================================
+               01 EVENT
+               ================================================= -->
+
+          <article class="helmio-service-premium-card">
+
+
+            <div class="helmio-service-premium-media">
+
+              <img
+                src="service-mc.jpg"
+                alt="企業イベントで司会を務めるアナウンサー"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="helmio-service-premium-body">
+
+
+              <div class="helmio-service-premium-label">
+
+                <span>
+                  アナウンサー ×
+                </span>
+
+                <strong>
+                  イベント
+                </strong>
+
+              </div>
+
+
+              <h3>
+                司会
+              </h3>
+
+
+              <div class="helmio-service-premium-line"></div>
+
+
+              <p class="helmio-service-premium-description">
+
+                社内イベントから、
+                記者発表、式典、
+                カンファレンス、表彰式、
+                経営者登壇などに
+                プロが対応。
+
+              </p>
+
+
+              <p class="helmio-service-premium-emphasis">
+
+                英語・中国語・韓国語に対応できる
+                アナウンサーも在籍しています。
+
+              </p>
+
+
+              <div class="helmio-service-premium-price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  90,000円〜
+                </strong>
+
+                <small>
+                  ／1日
+                </small>
+
+              </div>
+
+
+              <a
+                class="helmio-service-premium-link"
+                href="#professionals"
+              >
+                候補者を見る
+              </a>
+
+
+              <span
+                class="helmio-service-premium-number"
+                aria-hidden="true"
+              >
+                01
+              </span>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               02 PR
+               ================================================= -->
+
+          <article class="helmio-service-premium-card">
+
+
+            <div class="helmio-service-premium-media">
+
+              <img
+                src="service-pr.png"
+                alt="企業の広報・PR戦略を打ち合わせるアナウンサー"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="helmio-service-premium-body">
+
+
+              <div class="helmio-service-premium-label">
+
+                <span>
+                  アナウンサー ×
+                </span>
+
+                <strong>
+                  広報・PR
+                </strong>
+
+              </div>
+
+
+              <h3>
+                広報・PR支援
+              </h3>
+
+
+              <div class="helmio-service-premium-line"></div>
+
+
+              <p class="
+                helmio-service-premium-description
+                helmio-service-premium-description--strong
+              ">
+
+                メディアが何をニュースとして
+                取り上げるのかを知る視点を熟知し、
+                またメディアとのリレーションを活かし
+                サポート。
+
+              </p>
+
+
+              <p class="helmio-service-premium-description">
+
+                メディア発信テーマの整理、
+                PR企画、プレスリリース、
+                メディアアプローチ、
+                取材対応まで。
+                大手PR会社勤務のキャストが在籍。
+
+              </p>
+
+
+              <div class="helmio-service-premium-price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <a
+                class="helmio-service-premium-link"
+                href="#casting-form"
+              >
+                広報・PRについて相談する
+              </a>
+
+
+              <span
+                class="helmio-service-premium-number"
+                aria-hidden="true"
+              >
+                02
+              </span>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               03 TRAINING
+               ================================================= -->
+
+          <article class="helmio-service-premium-card">
+
+
+            <div class="helmio-service-premium-media">
+
+              <img
+                src="service-training.png"
+                alt="アナウンサーによる企業研修"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="helmio-service-premium-body">
+
+
+              <div class="helmio-service-premium-label">
+
+                <span>
+                  アナウンサー ×
+                </span>
+
+                <strong>
+                  秘書・マナー検定
+                </strong>
+
+              </div>
+
+
+              <h3>
+                企業研修
+              </h3>
+
+
+              <div class="helmio-service-premium-line"></div>
+
+
+              <p class="helmio-service-premium-description">
+
+                マナー・秘書関連資格を持つキャスト、
+                総裁選候補者へスピーチ指導経験を持つ
+                キャストが在籍。
+
+              </p>
+
+
+              <p class="helmio-service-premium-emphasis">
+
+                新入社員研修
+                <span>
+                  （マナー、第一印象など）
+                </span>
+                プレゼンといったビジネスマンの
+                必須スキルから経営者スピーチまで
+                実践形式で指導します。
+
+              </p>
+
+
+              <div class="helmio-service-premium-price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <a
+                class="helmio-service-premium-link"
+                href="#casting-form"
+              >
+                研修内容を相談する
+              </a>
+
+
+              <span
+                class="helmio-service-premium-number"
+                aria-hidden="true"
+              >
+                03
+              </span>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               04 AD / VP
+               ================================================= -->
+
+          <article class="helmio-service-premium-card">
+
+
+            <div class="helmio-service-premium-media">
+
+              <img
+                src="ad-vp-narration.png.png"
+                alt="広告・VP・ナレーション撮影"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="helmio-service-premium-body">
+
+
+              <div class="helmio-service-premium-label">
+
+                <span>
+                  アナウンサー ×
+                </span>
+
+                <strong>
+                  モデル・映像
+                </strong>
+
+              </div>
+
+
+              <h3>
+                広告・VP・ナレーション
+              </h3>
+
+
+              <div class="helmio-service-premium-line"></div>
+
+
+              <p class="helmio-service-premium-description">
+
+                企業VP、商品紹介動画、
+                WEB広告、採用映像、
+                ナレーションなど、
+                御社の顔としてブランドに合う、
+                話せるモデル・出演者・声を
+                ご提案します。
+
+              </p>
+
+
+              <div class="helmio-service-premium-price">
+
+                <span>
+                  参考価格
+                </span>
+
+                <strong>
+                  案件ごとにお見積り
+                </strong>
+
+              </div>
+
+
+              <div class="helmio-service-premium-actions">
+
+
+                <a
+                  class="helmio-service-premium-link"
+                  href="https://www.youtube.com/watch?v=3G7n4kBCafk&amp;feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  出演サンプルを見る
+                </a>
+
+
+                <a
+                  class="helmio-service-premium-link"
+                  href="#casting-form"
+                >
+                  出演・ナレーションを相談する
+                </a>
+
+
+              </div>
+
+
+              <span
+                class="helmio-service-premium-number"
+                aria-hidden="true"
+              >
+                04
+              </span>
+
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+
+        <p class="helmio-service-premium-note">
+
+          ※参考価格です。
+          案件内容・拘束時間・開催地域・
+          事前準備の有無などにより
+          個別にお見積もりします。
+
+        </p>
+
+
+      </div>
+
+    `;
+
+  };
+
+
+
+  /* =========================================================
+     STYLE
+     ========================================================= */
+
+  const injectPremiumServiceStyles = () => {
+
+    document
+      .getElementById(
+        'helmio-service-premium-final-style'
+      )
+      ?.remove();
+
+
+    const style =
+      document.createElement(
+        'style'
+      );
+
+
+    style.id =
+      'helmio-service-premium-final-style';
+
+
+    style.textContent = `
+
+
+      /* =====================================================
+         SECTION
+         ===================================================== */
+
+      #service {
+        background:
+          #faf8f3 !important;
+      }
+
+
+      #service
+      .container {
+        max-width:
+          1380px;
+      }
+
+
+
+      /* =====================================================
+         HEADING
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-head {
+        max-width:
+          940px;
+
+        margin:
+          0 auto 50px;
+
+        text-align:
+          center;
+      }
+
+
+      #service
+      .helmio-service-premium-head
+      .section-label {
+        margin-bottom:
+          18px;
+
+        color:
+          var(--gold);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          14px;
+
+        font-weight:
+          600;
+
+        letter-spacing:
+          .24em;
+      }
+
+
+      #service
+      .helmio-service-premium-head h2 {
+        margin:
+          0;
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            32px,
+            4vw,
+            50px
+          );
+
+        font-weight:
+          500;
+
+        line-height:
+          1.5;
+
+        letter-spacing:
+          .01em;
+      }
+
+
+      #service
+      .helmio-service-premium-head > p:last-child {
+        max-width:
+          760px;
+
+        margin:
+          18px auto 0;
+
+        color:
+          #475467;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          15px;
+
+        font-weight:
+          500;
+
+        line-height:
+          2;
+      }
+
+
+
+      /* =====================================================
+         GRID
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-grid {
+        display:
+          grid;
+
+        grid-template-columns:
+          repeat(
+            4,
+            minmax(0, 1fr)
+          );
+
+        gap:
+          14px;
+      }
+
+
+
+      /* =====================================================
+         CARD
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-card {
+        position:
+          relative;
+
+        display:
+          flex;
+
+        flex-direction:
+          column;
+
+        min-width:
+          0;
+
+        overflow:
+          hidden;
+
+        background:
+          #fff;
+
+        border:
+          1px solid
+          rgba(20,47,82,.10);
+
+        box-shadow:
+          0 14px 36px
+          rgba(16,47,82,.055);
+      }
+
+
+
+      /* =====================================================
+         IMAGE
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-media {
+        width:
+          100%;
+
+        aspect-ratio:
+          1.32 / 1;
+
+        overflow:
+          hidden;
+
+        background:
+          #ece8df;
+      }
+
+
+      #service
+      .helmio-service-premium-media img {
+        display:
+          block;
+
+        width:
+          100%;
+
+        height:
+          100%;
+
+        object-fit:
+          cover;
+
+        object-position:
+          center center;
+      }
+
+
+
+      /* =====================================================
+         BODY
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-body {
+        position:
+          relative;
+
+        display:
+          flex;
+
+        flex:
+          1;
+
+        flex-direction:
+          column;
+
+        padding:
+          28px 28px 26px;
+      }
+
+
+
+      /* =====================================================
+         LABEL
+         「アナウンサー×」は小さく
+         掛ける側を大きく
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-label {
+        display:
+          flex;
+
+        flex-wrap:
+          wrap;
+
+        align-items:
+          baseline;
+
+        gap:
+          5px 9px;
+
+        color:
+          var(--navy);
+      }
+
+
+      #service
+      .helmio-service-premium-label span {
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          12px;
+
+        font-weight:
+          500;
+
+        letter-spacing:
+          .04em;
+
+        opacity:
+          .72;
+      }
+
+
+      #service
+      .helmio-service-premium-label strong {
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          clamp(
+            25px,
+            2.2vw,
+            34px
+          );
+
+        font-weight:
+          600;
+
+        line-height:
+          1.35;
+
+        letter-spacing:
+          -.02em;
+      }
+
+
+
+      /* =====================================================
+         SERVICE NAME
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-body h3 {
+        margin:
+          18px 0 0;
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          21px;
+
+        font-weight:
+          600;
+
+        line-height:
+          1.55;
+
+        text-align:
+          left;
+      }
+
+
+
+      /* =====================================================
+         GOLD LINE
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-line {
+        width:
+          48px;
+
+        height:
+          1px;
+
+        margin:
+          18px 0;
+
+        background:
+          var(--gold);
+      }
+
+
+
+      /* =====================================================
+         COPY
+         濃く・少し大きく
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-description,
+      #service
+      .helmio-service-premium-emphasis {
+        margin:
+          0;
+
+        color:
+          #26384d;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          14px;
+
+        font-weight:
+          500;
+
+        line-height:
+          1.95;
+
+        letter-spacing:
+          .01em;
+      }
+
+
+      #service
+      .helmio-service-premium-description
+      + .helmio-service-premium-description,
+      #service
+      .helmio-service-premium-description
+      + .helmio-service-premium-emphasis {
+        margin-top:
+          13px;
+      }
+
+
+      #service
+      .helmio-service-premium-description--strong {
+        color:
+          #142f52;
+
+        font-weight:
+          700;
+      }
+
+
+      #service
+      .helmio-service-premium-emphasis {
+        color:
+          #142f52;
+
+        font-weight:
+          700;
+      }
+
+
+      #service
+      .helmio-service-premium-emphasis span {
+        font-weight:
+          500;
+      }
+
+
+
+      /* =====================================================
+         PRICE
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-price {
+        display:
+          flex;
+
+        flex-wrap:
+          wrap;
+
+        align-items:
+          baseline;
+
+        gap:
+          5px 7px;
+
+        margin-top:
+          22px;
+
+        padding-top:
+          17px;
+
+        border-top:
+          1px solid
+          rgba(16,47,82,.10);
+      }
+
+
+      #service
+      .helmio-service-premium-price span {
+        color:
+          #6b7280;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          10px;
+
+        font-weight:
+          600;
+
+        letter-spacing:
+          .08em;
+      }
+
+
+      #service
+      .helmio-service-premium-price strong {
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Serif JP",
+          serif;
+
+        font-size:
+          17px;
+
+        font-weight:
+          600;
+      }
+
+
+      #service
+      .helmio-service-premium-price small {
+        color:
+          #6b7280;
+
+        font-size:
+          10px;
+      }
+
+
+
+      /* =====================================================
+         LINK
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-link {
+        display:
+          inline-flex;
+
+        align-items:
+          center;
+
+        gap:
+          8px;
+
+        width:
+          fit-content;
+
+        margin-top:
+          auto;
+
+        padding-top:
+          24px;
+
+        color:
+          var(--navy);
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          13px;
+
+        font-weight:
+          700;
+
+        text-decoration:
+          none;
+
+        border-bottom:
+          1px solid
+          var(--gold);
+      }
+
+
+      #service
+      .helmio-service-premium-link::after {
+        content:
+          "→";
+
+        color:
+          var(--gold);
+
+        font-size:
+          15px;
+      }
+
+
+      #service
+      .helmio-service-premium-actions {
+        display:
+          flex;
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+
+        margin-top:
+          auto;
+      }
+
+
+      #service
+      .helmio-service-premium-actions
+      .helmio-service-premium-link {
+        margin-top:
+          18px;
+      }
+
+
+
+      /* =====================================================
+         LARGE NUMBER
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-number {
+        position:
+          absolute;
+
+        right:
+          16px;
+
+        bottom:
+          4px;
+
+        color:
+          rgba(177,138,67,.16);
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size:
+          70px;
+
+        font-style:
+          italic;
+
+        font-weight:
+          400;
+
+        line-height:
+          1;
+
+        pointer-events:
+          none;
+      }
+
+
+
+      /* =====================================================
+         NOTE
+         ===================================================== */
+
+      #service
+      .helmio-service-premium-note {
+        margin:
+          22px 0 0;
+
+        color:
+          #6b7280;
+
+        font-family:
+          "Noto Sans JP",
+          sans-serif;
+
+        font-size:
+          11px;
+
+        line-height:
+          1.8;
+
+        text-align:
+          right;
+      }
+
+
+
+      /* =====================================================
+         TABLET
+         ===================================================== */
+
+      @media (
+        max-width: 1120px
+      ) {
+
+        #service
+        .helmio-service-premium-grid {
+          grid-template-columns:
+            repeat(
+              2,
+              minmax(0, 1fr)
+            );
+
+          gap:
+            20px;
+        }
+
+
+        #service
+        .helmio-service-premium-label strong {
+          font-size:
+            30px;
+        }
+
+      }
+
+
+
+      /* =====================================================
+         MOBILE
+         ===================================================== */
+
+      @media (
+        max-width: 700px
+      ) {
+
+        #service
+        .helmio-service-premium-head {
+          margin-bottom:
+            34px;
+
+          text-align:
+            left;
+        }
+
+
+        #service
+        .helmio-service-premium-head h2 {
+          font-size:
+            29px;
+        }
+
+
+        #service
+        .helmio-service-premium-head > p:last-child {
+          margin-top:
+            14px;
+
+          font-size:
+            14px;
+        }
+
+
+        #service
+        .helmio-service-premium-grid {
+          grid-template-columns:
+            1fr;
+
+          gap:
+            22px;
+        }
+
+
+        #service
+        .helmio-service-premium-media {
+          aspect-ratio:
+            1.65 / 1;
+        }
+
+
+        #service
+        .helmio-service-premium-body {
+          padding:
+            25px 22px 24px;
+        }
+
+
+        #service
+        .helmio-service-premium-label strong {
+          font-size:
+            29px;
+        }
+
+
+        #service
+        .helmio-service-premium-description,
+        #service
+        .helmio-service-premium-emphasis {
+          font-size:
+            14px;
+
+          line-height:
+            1.9;
+        }
+
+
+        #service
+        .helmio-service-premium-number {
+          font-size:
+            58px;
+        }
+
+
+        #service
+        .helmio-service-premium-note {
+          text-align:
+            left;
+        }
+
+      }
+
+    `;
+
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+
+
+  /* =========================================================
+     APPLY
+     ========================================================= */
+
+  const applyFinalPremium = () => {
+
+    updateHeroFinal();
+
+    rebuildPremiumServices();
+
+    injectPremiumServiceStyles();
+
+  };
+
+
+  const run = () => {
+
+    applyFinalPremium();
+
+
+    /*
+      過去の大量の追記コードが
+      あとからSERVICEを書き換えてくるため
+      最後にこの版を何度か再適用
+    */
+
+    [
+      300,
+      700,
+      1200,
+      1800,
+      2600,
+      3400
+    ].forEach(
+      delay => {
+
+        setTimeout(
+          applyFinalPremium,
+          delay
+        );
+
+      }
+    );
+
+  };
+
+
+  if (
+    document.readyState ===
+    'loading'
+  ) {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      run,
+      {
+        once: true
+      }
+    );
+
+  } else {
+
+    run();
+
+  }
+
+})();
